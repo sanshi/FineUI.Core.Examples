@@ -1,0 +1,66 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonWidthHeightModel
+@{
+    ViewBag.Title = "Button/ButtonWidthHeight";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button ID="btnIcon1" Text="图标在左侧" Width="150" Height="60" Icon="Email" CssClass="marginr" />
+    <f:Button ID="btnIcon2" Text="图标在右侧" Width="150" Height="60" IconAlign="Right" Icon="Star" />
+    <br />
+    <br />
+    <f:Button ID="btnIcon3" Text="图标在上面" Width="150" Height="60" IconAlign="Top" Icon="Email" CssClass="marginr" />
+    <f:Button ID="btnIcon4" Text="图标在下面" Width="150" Height="60" IconAlign="Bottom" Icon="Star" />
+    <br />
+    <br />
+    只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button1" IconUrl="~/res/images/16/1.png" Width="50" Height="40" CssClass="marginr" />
+    <f:Button ID="Button2" IconUrl="~/res/images/16/8.png" Width="50" Height="40" />
+    <br />
+    <br />
+    大按钮：
+    <br />
+    <br />
+    <f:Button ID="Button3" Size="Large" Text="图标在左侧" Width="150" Height="80" Icon="Email" CssClass="marginr" />
+    <f:Button ID="Button4" Size="Large" Text="图标在右侧" Width="150" Height="80" IconAlign="Right" Icon="Star" />
+    <br />
+    <br />
+    <f:Button ID="Button5" Size="Large" Text="图标在上面" Width="150" Height="80" IconAlign="Top" Icon="Email" CssClass="marginr" />
+    <f:Button ID="Button6" Size="Large" Text="图标在下面" Width="150" Height="80" IconAlign="Bottom" Icon="Star" />
+    <br />
+    <br />
+    <hr />
+    <br />
+    <br />
+    <f:Button ID="Button7" Text="图标在左侧" Width="150" Height="60" IconFont="_Home" CssClass="marginr" />
+    <f:Button ID="Button8" Text="图标在右侧" Width="150" Height="60" IconAlign="Right" IconFont="_Car" />
+    <br />
+    <br />
+    <f:Button ID="Button9" Text="图标在上面" Width="150" Height="60" IconAlign="Top" IconFont="_Camera" CssClass="marginr" />
+    <f:Button ID="Button10" Text="图标在下面" Width="150" Height="60" IconAlign="Bottom" IconFont="_Phone" />
+    <br />
+    <br />
+    只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button11" IconFont="_Android" Width="50" Height="40" CssClass="marginr" />
+    <f:Button ID="Button12" IconFont="_Apple" Width="50" Height="40" CssClass="marginr" />
+    <br />
+    <br />
+    大按钮：
+    <br />
+    <br />
+    <f:Button ID="Button15" Size="Large" Text="图标在左侧" Width="150" Height="80" IconFont="_Home" CssClass="marginr" />
+    <f:Button ID="Button16" Size="Large" Text="图标在右侧" Width="150" Height="80" IconAlign="Right" IconFont="_Car" />
+    <br />
+    <br />
+    <f:Button ID="Button17" Size="Large" Text="图标在上面" Width="150" Height="80" IconAlign="Top" IconFont="_Camera" CssClass="marginr" />
+    <f:Button ID="Button18" Size="Large" Text="图标在下面" Width="150" Height="80" IconAlign="Bottom" IconFont="_Phone" />
+    <br />
+    <br />
+}

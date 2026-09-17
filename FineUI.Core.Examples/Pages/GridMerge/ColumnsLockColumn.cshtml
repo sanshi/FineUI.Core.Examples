@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMerge.ColumnsLockColumnModel
+@{
+    ViewBag.Title = "GridMerge/ColumnsLockColumn";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true" AllowColumnLocking="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="ID" DataField="ID" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="300" EnableLock="true" />
+            <f:RenderField HeaderText="分组A" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="分组B" DataField="GroupB" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="onGridDataLoad"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+        function onGridDataLoad(event) {
+            this.mergeColumns(['EntranceYear', 'Major']);
+        }
+    </script>
+
+}

@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.ComplexPropertyModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/Student.cs;~/Pages/DataModel/Models/Family.cs;~/Pages/DataModel/Models/StudentHelper.cs";
+    ViewBag.Title = "DataModel/ComplexProperty";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField For="Students.First().Name" />
+            <f:RenderField For="Students.First().Gender" RendererFunction="renderGender" />
+            <f:RenderField For="Students.First().EntranceYear" />
+            <f:RenderCheckField For="Students.First().AtSchool" RenderAsStaticField="true" />
+            <f:RenderField For="Students.First().Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField For="Students.First().Family.FatherName" Width="220" />
+            <f:RenderField For="Students.First().Family.MotherName" Width="220" />
+        </Columns>
+    </f:Grid>
+
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

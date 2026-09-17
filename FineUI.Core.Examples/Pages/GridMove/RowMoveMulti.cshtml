@@ -1,0 +1,78 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.RowMoveMultiModel
+@{
+    ViewBag.Title = "GridMove/RowMoveMulti";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            EnableMultiSelect="true">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnMoveUp" Text="选中行上移（可多选）" CssClass="marginr" ClickHandler="onMoveUpClick"></f:Button>
+    <f:Button ID="btnMoveDown" Text="选中行下移（可多选）" CssClass="marginr" ClickHandler="onMoveDownClick"></f:Button>
+    <br>
+    <br>
+
+    <f:Button ID="btnSaveToDB" Text="保存数据" CssClass="marginr" ClickHandler="onSaveToDBClick"></f:Button>
+    <f:Button ID="btnRefresh" Text="刷新本页面（请先点击保存按钮）" CssClass="marginr" ClickHandler="onRefreshClick"></f:Button>
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onRefreshClick(event) {
+            window.location.reload();
+        }
+
+
+        function onMoveUpClick(event) {
+            var grid = F.ui.Grid1;
+
+            // 向上移动
+            grid.moveRowsUp(grid.getSelectedRows());
+        }
+
+        function onMoveDownClick(event) {
+            var grid = F.ui.Grid1;
+
+            // 向下移动
+            grid.moveRowsDown(grid.getSelectedRows());
+        }
+
+        function onSaveToDBClick(event) {
+            var grid = F.ui.Grid1;
+
+            // 列顺序数组
+            var rowIds = $.map(grid.data, function (item, index) {
+                return item.id;
+            });
+
+            // 触发后台事件
+            F.customEvent('Grid1_RowMove', {
+                rowIds: rowIds
+            });
+        }
+
+    </script>
+}

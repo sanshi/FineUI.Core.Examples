@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.TagsCheckBoxListModel
+@{
+    ViewBag.Title = "DropDownBox/TagsCheckBoxList";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" ShowBorder="true" Title="下拉复选框列表" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" DataControlID="CheckBoxList1" EnableMultiSelect="true" _Values="js,php" MultiSelectMode="Tags">
+                <PopPanel>
+                    <f:SimpleForm ID="SimpleForm2" BodyPadding="10px" AutoScroll="true" ShowBorder="true" ShowHeader="false" Hidden="true">
+                        <Items>
+                            <f:Label ID="Label1" Text="请选择编程语言："></f:Label>
+                            <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="3">
+                                <f:CheckItem Text="C#" Value="csharp" />
+                                <f:CheckItem Text="JavaScript" Value="js" />
+                                <f:CheckItem Text="JAVA" Value="java" />
+                                <f:CheckItem Text="Ruby" Value="ruby" />
+                                <f:CheckItem Text="PHP" Value="php" />
+                                <f:CheckItem Text="Objective-C" Value="objc" />
+                                <f:CheckItem Text="Python" Value="python" />
+                                <f:CheckItem Text="Perl" Value="perl" />
+                                <f:CheckItem Text="C++" Value="cplusplus" />
+                                <f:CheckItem Text="Basic" Value="basic" />
+                                <f:CheckItem Text="Go" Value="go" />
+                                <f:CheckItem Text="Swift" Value="swift" />
+                            </f:CheckBoxList>
+                        </Items>
+                    </f:SimpleForm>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Button ID="btnSelectItem6" Text="选中[php,basic]" OnClick="btnSelectItem6_Click" CssClass="marginr"></f:Button>
+            <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+

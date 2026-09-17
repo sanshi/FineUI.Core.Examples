@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.CheckBoxModel
+@{
+    ViewBag.Title = "Form/CheckBox";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
+        <Items>
+            <f:CheckBox ID="CheckBox1" ShowLabel="false" Text="复选框" Checked="true">
+            </f:CheckBox>
+            <f:Button ID="btnSelectCheckBox" CssClass="marginr" Text="选择/反选复选框" OnClick="btnSelectCheckBox_Click"></f:Button>
+            <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选复选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
+            <f:Button ID="btnChangeText" Text="改变复选框文本" CssClass="marginr" OnClick="btnChangeText_Click"></f:Button>
+            <f:Button ID="btnDisable" CssClass="marginr" Text="启用/禁用复选框" OnClick="btnDisableCheckBox_Click"></f:Button>
+            <f:Label ID="Label1">
+            </f:Label>
+            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" Text="复选框（OnCheckedChanged）" OnCheckedChanged="CheckBox2_CheckedChanged">
+            </f:CheckBox>
+            <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
+            </f:Label>
+        </Items>
+    </f:SimpleForm>
+
+}
+
+
+@section script {
+    <script>
+
+        function onChangeCheckStatusClick(event) {
+            var checkbox = F.ui.CheckBox1;
+            checkbox.setValue(!checkbox.getValue());
+        }
+
+    </script>
+}

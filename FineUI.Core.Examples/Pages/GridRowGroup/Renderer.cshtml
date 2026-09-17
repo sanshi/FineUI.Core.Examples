@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.Pages.GridRowGroup.RendererModel
+@{
+    ViewBag.Title = "GridRowGroup/Renderer";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" Height="500" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()"
+            EnableRowGroup="true" DataRowGroupField="EntranceYear" RowGroupRendererFunction="onGrid1RowGroupRenderer">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowGroupRenderer(groupValue, rowData) {
+            var maleCount = 0, total = rowData.children.length;
+            for (var i = 0; i < total; i++) {
+                var childData = rowData.children[i];
+                var genderVaue = childData.values['Gender'];
+                if (genderVaue === 1) {
+                    maleCount++;
+                }
+            }
+            return F.formatString('入学年份：{0}，男：{1}，女：{2}', groupValue, maleCount, total - maleCount);
+        }
+
+    </script>
+
+}

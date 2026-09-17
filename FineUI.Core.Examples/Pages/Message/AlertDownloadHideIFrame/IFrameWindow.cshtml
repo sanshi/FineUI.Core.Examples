@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.AlertDownloadHideIFrame.IFrameWindowModel
+@{
+    ViewData["Title"] = "IFrameWindow";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        body.f-body {
+            padding: 0;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Button Text="操作（先弹出提示框，点击确定后先关闭弹出窗体，然后下载文件）" ID="btnOperation" OnClick="btnOperation_Click"></f:Button>
+
+}
+

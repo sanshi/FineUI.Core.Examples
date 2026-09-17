@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.IFrameReLoadFirstModel
+@{
+    ViewBag.SourceFiles = "~/TabStrip/IFrameReLoadFirstEmptyPage";
+    ViewBag.Title = "TabStrip/IFrameReLoadFirst";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" ShowBorder="true" ActiveTabIndex="1">
+        <Tabs>
+            <f:Tab ID="Tab1" EnableIFrame="true" BodyPadding="10" IFrameUrl="@Url.Content("~/TabStrip/IFrameReLoadFirstEmptyPage")" Title="标签一（每次切换到此选项卡都重新加载IFrame）">
+            </f:Tab>
+            <f:Tab ID="Tab2" EnableIFrame="true" BodyPadding="10" IFrameUrl="@Url.Content("~/TabStrip/IFrameReLoadFirstEmptyPage")" Title="标签二">
+            </f:Tab>
+            <f:Tab ID="Tab3" EnableIFrame="true" BodyPadding="10" IFrameUrl="@Url.Content("~/TabStrip/IFrameReLoadFirstEmptyPage")" Title="标签三">
+            </f:Tab>
+        </Tabs>
+        <Listeners>
+            <f:Listener Event="tabchange" Handler="onTabChange" />
+        </Listeners>
+    </f:TabStrip>
+    <br>
+    <br>
+    注：只有第一个选项卡在每次激活时都重新加载其中的IFrame。
+    <br>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onTabChange(event, tab) {
+            // 如果激活的是第一个选项卡，则重新加载其中的IFrame
+            if (tab.id === 'Tab1') {
+                tab.refreshIFrame();
+            }
+        }
+
+
+    </script>
+}

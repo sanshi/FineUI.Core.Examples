@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.MultiLang.GridModel
+@{
+    ViewBag.Title = "MultiLang/Grid";
+    var F = Html.F();
+}
+
+@functions {
+    ParamsFunc<string, object, string> _R => Model.GetResource;
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="@_R("表格")" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="@_R("姓名")" DataField="Name" Width="150" />
+            <f:RenderField HeaderText="@_R("性别")" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Width="150" />
+            <f:RenderField HeaderText="@_R("入学年份")" DataField="EntranceYear" FieldType="Int" Width="150" />
+            <f:RenderCheckField HeaderText="@_R("是否在校")" DataField="AtSchool" RenderAsStaticField="true" Width="150" />
+            <f:RenderField HeaderText="@_R("所学专业")" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="@_R("分组")" DataField="Group" RendererFunction="renderGroup" Width="150" />
+            <f:RenderField HeaderText="@_R("注册日期")" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="@_R("选中了哪些行")" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <!-- 输出多语言资源 -->
+    <script type="text/javascript">
+        @Html.Raw(FineUI.Core.PageContext.GetJavaScriptResourcesReference<SharedJavaScriptResources>())
+    </script>
+
+}

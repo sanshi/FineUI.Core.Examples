@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.GridLockColumn.GroupFieldModel
+@{
+    ViewBag.Title = "GridLockColumn/GroupField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()"
+            AllowColumnLocking="true" AllowSorting="true" Width="1000">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField _HeaderTextRawHtml="姓名<br>（换行）" DataField="Name" SortField="Name" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" />
+            <f:GroupField EnableLock="true" HeaderText="考试成绩" TextAlign="Center">
+                <Columns>
+                    <f:RenderField EnableLock="true" DataField="ChineseScore" SortField="ChineseScore" HeaderText="语文成绩" TextAlign="Center" />
+                    <f:RenderField EnableLock="true" DataField="MathScore" SortField="MathScore" HeaderText="数学成绩" TextAlign="Center" />
+                    <f:RenderField EnableLock="true" DataField="TotalScore" SortField="TotalScore" HeaderText="总成绩" TextAlign="Center" />
+                </Columns>
+            </f:GroupField>
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" SortField="Major" RendererFunction="renderMajor" Width="800" EnableLock="true" />
+            <f:RenderField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
+            <f:RenderField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
+            <f:RenderField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
+            <f:RenderField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <br />
+    注：当分组表头的某一列变成锁定列时，则该分组表头中的其他列都会自动变成锁定列。
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

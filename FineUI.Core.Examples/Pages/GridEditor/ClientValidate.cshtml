@@ -1,0 +1,177 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.ClientValidateModel
+@{
+    ViewBag.Title = "GridEditor/ClientValidate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnReset" Text="重置表格数据" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" ClickHandler="onSubmitClick"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    注：保存数据前，验证“姓名”不能为空（现有数据可以简单通过 Required="true" 属性来控制，新增数据默认为空的话需要这个客户端验证）。
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function isValid() {
+            var grid1 = F.ui.Grid1;
+            var valid = true, modifiedData = grid1.getModifiedData();
+
+            $.each(modifiedData, function (index, rowData) {
+
+                // rowData.id: 行ID
+                // rowData.status: 行状态（newadded, modified, deleted）
+                // rowData.values: 行中修改单元格对象，比如 { "Name": "刘国2", "Gender": 0, "EntranceYear": 2003 }
+                if (rowData.status === 'deleted') {
+                    return true; // continue
+                }
+
+                var name = rowData.values['Name'];
+                // 更改了姓名列，并且为空字符串
+                if (typeof (name) != 'undefined' && $.trim(name) == '') {
+                    F.alert({
+                        message: '姓名不能为空！',
+                        ok: function () {
+                            grid1.startEdit(rowData.id, 'Name');
+                        }
+                    });
+
+                    valid = false;
+
+                    return false; // break
+                }
+            });
+
+
+            return valid;
+        }
+
+        function onSubmitClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 自定义验证是否通过
+            if (!isValid()) {
+                return;
+            }
+
+            // 触发后台事件
+            F.customEvent('Submit_Click');
+        }
+
+        function onNewClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 新增一行（返回新增行的ID）
+            var addedRowId = grid1.addNewRecord({
+                'Name': '',     // 默认设为空，保存之前会进行判断
+                'Gender': '1',
+                'EntranceYear': '2015',
+                'EntranceDate': '2016-11-15',
+                'AtSchool': false,
+                'Major': '化学系'
+            }, true);
+
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function () {
+                    F.ui.Grid1.rejectChanges();
+                }
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var selectedRows = grid1.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;行数据吗？'),
+                target: '_top',
+                ok: function () {
+                    grid1.deleteRows(selectedRows);
+                }
+            });
+        }
+
+
+        // 行命令
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+        
+
+    </script>
+}

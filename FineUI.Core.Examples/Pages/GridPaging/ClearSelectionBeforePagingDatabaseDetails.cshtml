@@ -1,0 +1,112 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.ClearSelectionBeforePagingDatabaseDetailsModel
+@{
+    ViewBag.Title = "GridPaging/ClearSelectionBeforePagingDatabaseDetails";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
+            KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true" ClearSelectionBeforeBinding="false" >
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="onGrid1DataLoad"></f:Listener>
+            <f:Listener Event="selectionchange" Handler="onGrid1SelectionChange"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedRowIdsClick"></f:Button>
+    <br>
+    <br>
+        注意设置属性：
+    <ul>
+        <li>DataIDField=Id：行标识符字段</li>
+        <li>KeepCurrentSelection=true：多选时保持当前已选中行（客户端）</li>
+        <li>KeepPagedSelection=true：多选时保持分页中已选中行（客户端）</li>
+        <li>ClearSelectionBeforePaging=false：分页前清空选中项（客户端）</li>
+        <li>ClearSelectionBeforeBinding=false：数据绑定前清空选中项（服务端，数据库分页事件中需要重新绑定数据）</li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 缓存的行数据
+        var cachedRows = {};
+
+        function onShowSelectedRowIdsClick(event) {
+            var selectedRowIds = F.ui.Grid1.getSelectedRows();
+
+            if (!selectedRowIds.length) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var result = ['<table class="result">'];
+            result.push('<tr>');
+            result.push('<th>ID</th>');
+            result.push('<th>Text</th>');
+            result.push('<th>性别</th>');
+            result.push('<th>专业</th>');
+            result.push('</tr>');
+
+            $.each(selectedRowIds, function (index, item) {
+                var rowId = item, rowData = cachedRows[rowId];
+                result.push('<tr>');
+                result.push('<td>' + rowId + '</td>');
+                result.push('<td>' + rowData.text + '</td>');
+                result.push('<td>' + (rowData.values['Gender'] == 1 ? '男' : '女') + '</td>');
+                result.push('<td>' + rowData.values['Major'] + '</td>');
+                result.push('</tr>');
+            });
+            result.push('</table>');
+
+            F.notify({
+                message: F.rawHtml(result.join('')),
+                target: '_top',
+                header: false,
+                messageIcon: '',
+                displayMilliseconds: 3000,
+                positionX: 'center',
+                positionY: 'top'
+            });
+        }
+
+        // 缓存当前页选中行的数据
+        function cacheCurrentPage() {
+            $.each(F.ui.Grid1.getSelectedRows(true), function (index, item) {
+                var rowId = item.id;
+                if (!cachedRows[rowId]) {
+                    cachedRows[rowId] = item;
+                }
+            });
+        }
+
+        function onGrid1SelectionChange(event) {
+            cacheCurrentPage();
+        }
+
+        function onGrid1DataLoad(event) {
+            cacheCurrentPage();
+        }
+
+    </script>
+
+}

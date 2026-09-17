@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.ConfirmButtonsAutoFocusModel
+@{
+    ViewBag.Title = "Message/ConfirmButtonsAutoFocus";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Button Text="操作一（设置自动获取焦点的按钮）" ID="btnOperation1" ClickHandler="onOperation1Click"></f:Button>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onOperation1Click(event) {
+
+            F.create({
+                type: 'MessageBox',
+                message: '您即将直接退出，如果您修改了相关信息，请先保存！',
+                title: '确认退出',
+                buttons: [{
+                    buttonId: 'ok',
+                    text: '直接退出'
+                }, {
+                    buttonId: 'cancel',
+                    text: '不退出'
+                }],
+                // 自动获取焦点的按钮 - buttonId
+                autoFocusButtonId: 'cancel',
+                handler: function (event, buttonId) {
+                    if (buttonId === 'ok') {
+                        F.customEvent('ConfirmOK');
+                    } else {
+                        F.customEvent('ConfirmCancel');
+                    }
+                }
+            });
+
+        }
+
+    </script>
+}

@@ -1,0 +1,23 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.NumberBoxTextChangedModel
+@{
+    ViewBag.Title = "Form/NumberBoxTextChanged";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="简单表单" LabelWidth="120">
+        <Items>
+            <f:NumberBox Label="非负整数" ID="NumberBox3" EmptyText="比如 99" NoDecimal="true" NoNegative="true" Required="true" ShowRedStar="true" OnTextChanged="NumberBox3_TextChanged" />
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <br />
+    注：手工输入数字，或者点击右侧上下箭头都会触发文本改变事件。
+
+
+}
+

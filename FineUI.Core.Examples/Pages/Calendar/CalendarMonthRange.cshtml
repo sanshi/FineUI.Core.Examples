@@ -1,0 +1,22 @@
+@page
+@model FineUI.Core.Examples.Pages.Calendar.CalendarMonthRangeModel
+@{
+    ViewBag.Title = "Calendar/CalendarMonthRange";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Calendar ID="Calendar1" DisplayType="MonthRange" OnDateSelect="Calendar1_DateSelect">
+    </f:Calendar>
+    <br />
+    <br />
+    <f:Button ID="Button1" OnClick="Button1_Click"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+}
+

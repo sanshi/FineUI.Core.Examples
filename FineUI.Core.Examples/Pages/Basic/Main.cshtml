@@ -1,0 +1,110 @@
+@page
+@model FineUI.Core.Examples.Pages.Basic.MainModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Basic/Main.cshtml;~/Pages/Basic/Main.cshtml.cs";
+    ViewBag.Title = "FineUI.Core · 首页";
+}
+
+@section head {
+
+    <style>
+        body { padding: 0; }
+
+        .intro { max-width: 920px; margin: 0 auto; padding: 44px 32px 64px; color: var(--f-content-text-color); font-size: 14px; line-height: 1.7; }
+
+        .position { max-width: 840px; margin: 28px auto 4px; text-align: center; }
+        .position .headline { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5; letter-spacing: .2px; }
+        .position .headline-detail { display: inline-block; margin-top: 2px; color: var(--f-content-text-color); font-size: 20px; font-weight: 600; }
+        .position p { max-width: 760px; margin: 16px auto 0; color: var(--f-content-text-color); opacity: .72; }
+
+        .capability-head { margin: 80px auto 0; text-align: center; }
+        .capability-head h2 { margin: 0; color: var(--f-content-text-color); font-size: 24px; font-weight: 700; letter-spacing: .2px; }
+        .capability-head .divider { width: 36px; height: 2px; margin: 13px auto 10px; border-radius: 2px; background: var(--f-active-border-color); }
+        .capability-head p { margin: 0; color: var(--f-content-text-color); opacity: .65; }
+
+        .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 30px 0 8px; }
+        .feature { min-width: 0; padding: 20px 22px; border: 1px solid var(--f-content-border-color); border-radius: 12px; background: var(--f-content-background-color); box-shadow: 0 2px 12px rgba(20, 40, 55, .04); }
+        .feature .ico { font-size: 24px; line-height: 1; }
+        .feature h3 { margin: 10px 0 6px; color: var(--f-content-text-color); font-size: 16px; }
+        .feature p { margin: 0; color: var(--f-content-text-color); font-size: 13px; opacity: .72; }
+
+        .demo { margin: 40px 0 8px; }
+        .demo .demo-title { margin-bottom: 14px; color: var(--f-content-text-color); font-size: 13px; text-align: center; opacity: .55; }
+        .demo .code { padding: 18px 22px; overflow-x: auto; border: 1px solid var(--f-content-border-color); border-radius: 10px; background: #1e2a30; }
+        .demo pre { margin: 0; color: #cfe3dc; font: 13px/1.75 Consolas, 'Courier New', monospace; white-space: pre; }
+        .demo .cap { margin-top: 12px; color: var(--f-content-text-color); font-size: 12px; text-align: center; opacity: .55; }
+        .k { color: #6fb3d2; }
+        .a { color: #b3d78c; }
+        .s { color: #e0a978; }
+        .c { color: #7c8b93; }
+
+        .foot { margin-top: 44px; color: var(--f-content-text-color); font-size: 13px; text-align: center; opacity: .55; }
+
+        @@media (max-width: 640px) {
+            .intro { padding: 32px 20px 48px; }
+            .position { margin-top: 24px; }
+            .position .headline { font-size: 20px; }
+            .position .headline-detail { font-size: 17px; }
+            .capability-head { margin-top: 42px; }
+            .capability-head h2 { font-size: 21px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+}
+
+@section body {
+
+    <div class="intro">
+        <div class="position">
+            <h2 class="headline">FineUI.Core<br /><span class="headline-detail">「AI 友好 · 标签式 · 有状态」企业级全栈 UI 框架</span></h2>
+        </div>
+
+        <div class="capability-head">
+            <p>AI 写得快，人类看得懂；一个标签一个控件，一个属性一个功能；事件直达后端，后端修改属性自动回传前端。</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="ico">🏷️</div>
+                <h3>标签式声明</h3>
+                <p>一个标签一个控件，一个属性一个功能，所写即所得——页面结构一眼可读、可维护。</p>
+            </div>
+            <div class="feature">
+                <div class="ico">🔄</div>
+                <h3>状态自动往返</h3>
+                <p>控件状态在前后端之间自动保持——后端直接读写控件属性、事件直达处理方法，像写桌面程序一样写 Web。</p>
+            </div>
+            <div class="feature">
+                <div class="ico">🤖</div>
+                <h3>AI 友好</h3>
+                <p>所有控件都遵循同一套声明式标签规范——AI 好生成，人也看得懂。</p>
+            </div>
+            <div class="feature">
+                <div class="ico">⚙️</div>
+                <h3>ASP.NET Core 全栈</h3>
+                <p>一个依赖即可接入，不碰 JavaScript、无需前后端分离；控件状态不绑定单台服务器，天然支持水平扩展。</p>
+            </div>
+        </div>
+
+        <div class="demo">
+            <div class="demo-title">— Razor 页面写标签，后端写事件方法 —</div>
+            <div class="code">
+<pre><span class="c">&lt;!-- 页面：一个标签一个控件 --&gt;</span>
+<span class="k">&lt;f:SimpleForm</span> <span class="a">ID</span>=<span class="s">"SimpleForm1"</span><span class="k">&gt;</span>
+    <span class="k">&lt;f:TextBox</span> <span class="a">ID</span>=<span class="s">"tbxUser"</span> <span class="a">Label</span>=<span class="s">"用户名"</span><span class="k">&gt;&lt;/f:TextBox&gt;</span>
+    <span class="k">&lt;f:Button</span> <span class="a">ID</span>=<span class="s">"btnLogin"</span> <span class="a">Text</span>=<span class="s">"登录"</span> <span class="a">OnClick</span>=<span class="s">"btnLogin_Click"</span><span class="k">&gt;&lt;/f:Button&gt;</span>
+    <span class="k">&lt;f:Label</span> <span class="a">ID</span>=<span class="s">"lblHi"</span><span class="k">&gt;&lt;/f:Label&gt;</span>
+<span class="k">&lt;/f:SimpleForm&gt;</span>
+
+<span class="c">// 后端：事件里直接读写控件状态，自动同步到前端</span>
+<span class="k">protected void</span> btnLogin_Click(object sender, EventArgs e) {
+    var user = tbxUser.Text;                 <span class="c">// 读控件状态</span>
+    lblHi.Text = <span class="s">"你好，"</span> + user;        <span class="c">// 写控件状态 → 自动回传前端</span>
+}</pre>
+            </div>
+            <div class="cap">状态自动往返、事件直达后端——不写一行 JavaScript。</div>
+        </div>
+
+        <div class="foot">← 从左侧菜单选择示例，将在此工作区以选项卡打开</div>
+    </div>
+}

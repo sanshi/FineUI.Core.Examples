@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.Pages.FormTable.TableStyleFileUploadModel
+@{
+    ViewBag.Title = "FormTable/TableStyleFileUpload";
+    var F = Html.F();
+}
+
+
+@section head {
+    <style>
+        .result img {
+            border: 1px solid #CCCCCC;
+            max-width: 550px;
+            padding: 3px;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true" MessageTarget="Qtip">
+        <Items>
+            <f:SimpleForm ShowBorder="false" ShowHeader="false" EnableTableStyle="true">
+                <Items>
+                    <f:TextBox Label="用户名" ID="tbxUserName" EmptyText="请输入用户名" Required="true" ShowRedStar="true">
+                    </f:TextBox>
+                    <f:FileUpload ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true" ShowRedStar="true">
+                    </f:FileUpload>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+    </f:SimpleForm>
+    <f:Button ID="btnSubmit" OnClick="btnSubmit_Click" _ValidateForms="SimpleForm1" Text="提交" MarginTop="5"></f:Button>
+    <br />
+    <f:Label ID="labResult" EncodeText="false" CssClass="result">
+    </f:Label>
+    <br>
+    <br>
+    注：由于浏览器安全限制，部分浏览器下只显示文件名（1.png）或者假路径（C:\fakepath\1.png）。
+
+
+}
+

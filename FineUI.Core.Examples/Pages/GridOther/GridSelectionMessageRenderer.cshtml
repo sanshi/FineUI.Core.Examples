@@ -1,0 +1,69 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.GridSelectionMessageRendererModel
+@{
+    ViewBag.Title = "GridOther/GridSelectionMessageRenderer";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .bold {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350" EnableCheckBoxSelect="true"
+            AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" SelectionMessageRendererFunction="selectionMessageRenderer">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="学费" DataField="Fee" />
+            <f:RenderField HeaderText="学杂费" DataField="ExtraFee" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function selectionMessageRenderer(selectedCount) {
+            var grid1 = F.ui.Grid1;
+
+            // https://fineui.com/js/api/F.Grid.html#getSelectedRows
+            // 参数为true: 返回包含行对象的数组
+            var selectedRows = grid1.getSelectedRows(true);
+            if(!selectedRows.length) {
+                return '无选中行';
+            }
+
+            var feeSum = 0, donateSum = 0;
+            $.each(selectedRows, function (index, data) {
+                feeSum += data.values['Fee'];
+                donateSum += data.values['ExtraFee'];
+            });
+
+            return F.rawHtml('已选择 <strong class="bold">{0}</strong> 行&nbsp;（学费合计：{1} &nbsp;学杂费合计：{2}）',
+                selectedRows.length,
+                F.addCommas(feeSum.toFixed(2)),
+                F.addCommas(donateSum.toFixed(2)));
+        }
+
+    </script>
+}

@@ -1,0 +1,66 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.GridEditorRadioModel
+@{
+    ViewBag.Title = "GridEditor/GridEditorRadio";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name"
+            AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" Width="150" />
+            <f:RenderCheckField HeaderText="测试列（单选）" ColumnID="TestColumn1" Width="150" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+        </Listeners>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <script>
+
+        function onGrid1AfterEdit(event, value, params) {
+            var grid1 = F.ui.Grid1;
+
+            // 如果取消复选框选中，则不做处理
+            if (value && params.columnId === 'TestColumn1') {
+                // 遍历所有的行
+                grid1.getRowEls().each(function () {
+                    var row = grid1.getRowData($(this));
+                    if (row.id !== params.rowId) {
+                        // 如果不是当前操作的行，则取消单元格选中
+                        grid1.updateCellValue(row.id, params.columnId, false);
+                    }
+                });
+
+            }
+        }
+
+
+    </script>
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

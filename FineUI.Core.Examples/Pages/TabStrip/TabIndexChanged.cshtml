@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.TabIndexChangedModel
+@{
+    ViewBag.Title = "TabStrip/TabIndexChanged";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350" ShowBorder="true" TabPosition="Top" EnableTabCloseMenu="false" ActiveTabIndex="1"
+                OnTabIndexChanged="TabStrip1_TabIndexChanged">
+        <Tabs>
+            <f:Tab Title="标签一" BodyPadding="10" Layout="Fit">
+                <Items>
+                    <f:SimpleForm ID="SimpleForm1" ShowBorder="false" ShowHeader="false" Title="SimpleForm1" LabelWidth="120">
+                        <Items>
+                            <f:Label ID="Label1" Label="文本" Text="三生石上" CssClass="highlight" />
+                            <f:NumberBox ID="NumberBox1" Label="数字输入框" Required="true" ShowRedStar="true" />
+                            <f:TextBox ID="TextBox1" Label="文本输入框" Required="true" ShowRedStar="true">
+                            </f:TextBox>
+                            <f:DatePicker ID="DatePicker1" Label="日期选择器" Required="true" ShowRedStar="true">
+                            </f:DatePicker>
+                            <f:TextArea ID="TextArea2" Label="多行文本输入框" Required="true" Height="100" ShowRedStar="true" />
+                        </Items>
+                    </f:SimpleForm>
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label2" CssClass="highlight" Text="初始文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label3" CssClass="highlight" Text="初始文本" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <br />
+
+    <f:Button ID="Button2" CssClass="marginr" _ValidateForms="SimpleForm1" Text="验证第一个标签中的表单"></f:Button>
+
+    <f:Button ID="Button3" Text="打开下一个标签" OnClick="Button3_Click"></f:Button>
+
+
+}
+

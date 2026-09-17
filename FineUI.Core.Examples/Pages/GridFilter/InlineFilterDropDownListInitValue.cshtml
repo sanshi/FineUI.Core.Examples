@@ -1,0 +1,55 @@
+@page
+@model FineUI.Core.Examples.Pages.GridFilter.InlineFilterDropDownListInitValueModel
+@{
+    ViewBag.Title = "GridFilter/InlineFilterDropDownListInitValue";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            AllowFilters="true" InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" EnableFilter="true">
+                <Filter>
+                    <Field>
+                        <f:DropDownList ID="DropDownList1" EnableEdit="false" AutoSelectFirstItem="false" EnableMultiSelect="true" MultiSelectMode="Tags">
+                            <f:ListItem Text="材料科学与工程系" Value="材料科学与工程系" />
+                            <f:ListItem Text="化学系" Value="化学系" />
+                            <f:ListItem Text="物理系" Value="物理系" />
+                            <f:ListItem Text="数学系" Value="数学系" />
+                            <f:ListItem Text="自动化系" Value="自动化系" />
+                        </f:DropDownList>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+    <f:Button ID="btnUpdateFilteredData" CssClass="marginr" Text="后台更新过滤数据" OnClick="btnUpdateFilteredData_Click">
+    </f:Button>
+    <br />
+    <br />
+            注：页面初始化时执行了服务器端过滤，因此需要为相关列定义 ColumnID 属性。
+    <br />
+    <br />
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

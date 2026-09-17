@@ -1,0 +1,101 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.SelectFromWindowEmptyRowsIFrameWindowModel
+@{
+    ViewBag.Title = "GridEditor/SelectFromWindowEmptyRowsIFrameWindow";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsViewPort="true" ShowBorder="false" ShowHeader="false" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" EnableMultiSelect="false" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowdblclick" Handler="onGridRowSelectNext"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Center">
+                <Items>
+                    <f:Button Text="选择后定位到下一行" Icon="SystemSave" ClickHandler="onGridRowSelectNext"></f:Button>
+                    <f:Button ID="btnSaveClose" Text="选择后关闭" Icon="SystemSaveClose" ClickHandler="onGridRowSelectClose"></f:Button>
+                    <f:Button ID="btnClose" Text="关闭" Icon="SystemClose" ClickHandler="onCloseWindowClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+                function onCloseWindowClick(event) {
+                    F.activeWindow.hide();
+                }
+
+
+        // 调用父页面的 updateGridRow 函数
+        function updateParentGridRow(activeWindow) {
+            // 选中行数据
+            var rowData = F.ui.Grid1.getSelectedRow(true);
+            var rowValue = rowData.values;
+
+            var selectedValues = {
+                'Name': rowValue['Name'],
+                'Gender': rowValue['Gender'],
+                'EntranceYear': rowValue['EntranceYear'],
+                'EntranceDate': rowValue['EntranceDate'],
+                'AtSchool': rowValue['AtSchool'],
+                'Major': rowValue['Major']
+            };
+
+            // 调用父页面的 updateGridRow 函数
+            activeWindow.window.updateGridRow(selectedValues);
+        }
+
+        function onGridRowSelectClose(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.getSelectedRow()) {
+                F.alert('请至少选择一行！');
+                return;
+            }
+
+            // 返回当前活动Window对象（浏览器窗口对象通过F.getActiveWindow().window获取）
+            var activeWindow = F.getActiveWindow();
+
+            // 调用父页面的 updateGridRow 函数
+            updateParentGridRow(activeWindow);
+
+            // 隐藏当前弹出窗体
+            activeWindow.hide();
+        }
+
+        function onGridRowSelectNext(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.getSelectedRow()) {
+                F.alert('请至少选择一行！');
+                return;
+            }
+
+            // 返回当前活动Window对象（浏览器窗口对象通过F.getActiveWindow().window获取）
+            var activeWindow = F.getActiveWindow();
+
+            // 调用父页面的 updateGridRow 函数
+            updateParentGridRow(activeWindow);
+
+            // 调用父页面的 moveToNextRow 函数
+            activeWindow.window.moveToNextRow();
+        }
+
+
+    </script>
+}

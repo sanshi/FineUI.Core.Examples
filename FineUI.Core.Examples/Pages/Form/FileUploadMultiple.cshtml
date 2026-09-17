@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FileUploadMultipleModel
+@{
+    ViewBag.Title = "Form/FileUploadMultiple";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style type="text/css">
+        .result img {
+            border: 1px solid #CCCCCC;
+            max-width: 550px;
+            padding: 3px;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
+        <Items>
+            <f:TextBox Label="用户名" ID="tbxUserName" EmptyText="请输入用户名" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:FileUpload ID="filePhotos" EmptyText="请选择多张照片" Label="个人照片" Required="true" ButtonIcon="Add" ShowRedStar="true" Multiple="true">
+            </f:FileUpload>
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <f:Label ID="labResult" EncodeText="false" CssClass="result">
+    </f:Label>
+    <br />
+    <br />
+    注：本示例支持的浏览器版本为：Edge、Chrome、Firefox、Safari、IE10+。
+
+
+}

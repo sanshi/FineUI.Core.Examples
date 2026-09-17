@@ -1,0 +1,98 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDelayRender.Grid500LockColumnRowHeightDelayRenderModel
+@{
+    ViewBag.Title = "GridDelayRender/Grid500LockColumnRowHeightDelayRender";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row .f-grid-cell-text {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="500行（行高固定，列锁定，延迟渲染）" DataIDField="Id" DataTextField="Name"
+            Height="500" AllowColumnLocking="true" FixedRowHeight="true" EnableDelayRender="true">
+        <Columns>
+            <f:RowNumberField Width="100" />
+            <f:RenderField HeaderText="标识" EnableLock="true" Locked="true" DataField="Id" />
+            <f:RenderField HeaderText="姓名" EnableLock="true" Locked="true" DataField="Name" Width="150" />
+            <f:RenderField HeaderText="性别" EnableLock="true" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" EnableLock="true" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" EnableLock="true" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" EnableLock="true" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="GUID" EnableLock="true" DataField="GUID" Width="300" />
+            <f:RenderField HeaderText="爱好" EnableLock="true" DataField="Hobby" RendererFunction="renderHobby" Width="200" />
+            <f:RenderField HeaderText="入学时间" EnableLock="true" DataField="EntranceDate" />
+            <f:RenderField HeaderText="语文成绩" EnableLock="true" DataField="ChineseScore" />
+            <f:RenderField HeaderText="数学成绩" EnableLock="true" DataField="MathScore" />
+            <f:RenderField HeaderText="总成绩" EnableLock="true" DataField="TotalScore" />
+            <f:RenderField HeaderText="身高" EnableLock="true" DataField="ShenGao" />
+            <f:RenderField HeaderText="体重" EnableLock="true" DataField="TiZhong" />
+            <f:RenderField HeaderText="血压（低）" EnableLock="true" DataField="XueYaDi" />
+            <f:RenderField HeaderText="血压（高）" EnableLock="true" DataField="XueYaGao" />
+            <f:RenderField HeaderText="视力（左）" EnableLock="true" DataField="ShiLiZuo" />
+            <f:RenderField HeaderText="视力（右）" EnableLock="true" DataField="ShiLiYou" />
+            <f:RenderField HeaderText="矫正视力（左）" EnableLock="true" DataField="ShiLiZuoJiaoZhen" Width="150" />
+            <f:RenderField HeaderText="矫正视力（右）" EnableLock="true" DataField="ShiLiYouJiaoZhen" Width="150" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="render" Handler="onGridRender"></f:Listener>
+        </Listeners>
+    </f:Grid>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 等所有JS资源下载完毕后开始
+        var __STARTTIME = new Date();
+
+        // 表格渲染完毕后结束
+        function onGridRender(event) {
+            this.setTitle(this.getTitle() + ' - 渲染时间：' + ((new Date() - __STARTTIME) / 1000).toFixed(2));
+        }
+
+        function renderHobby(value, params) {
+            var result = [];
+
+            // Hobby：reading,basketball,travel,movie,music
+            // 爱好：读书, 篮球, 旅游, 电影, 音乐
+            var hobbies = value.split(',');
+
+            $.each(hobbies, function (index, hobby) {
+                if (hobby == "reading") {
+                    result.push("读书");
+                }
+                else if (hobby == "basketball") {
+                    result.push("篮球");
+                }
+                else if (hobby == "travel") {
+                    result.push("旅游");
+                }
+                else if (hobby == "movie") {
+                    result.push("电影");
+                }
+                else if (hobby == "music") {
+                    result.push("音乐");
+                }
+            });
+
+            return result.join(',');
+        }
+
+    </script>
+}

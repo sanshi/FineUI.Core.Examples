@@ -1,0 +1,65 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowCommandDisableSomeModel
+@{
+    ViewBag.Title = "Grid/RowCommandDisableSome";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mybtn3 .f-icon.f-icon-remove {
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()"
+            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action1" Icon="Pencil" RendererFunction="renderAction1" />
+                    <f:Command CommandName="Action3" IconFont="Remove" ToolTip="删除" CssClass="mybtn3" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br />
+    <br />
+    注：本示例禁用入学年份等于 2008 行中 CommandName==Action1 的行命令。
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 行命令渲染函数
+        // value: 渲染后的HTML片段
+        // params: 当前行数据（和列渲染函数类似，F12查看有哪些数据）
+        // command: 当前行命令参数
+        function renderAction1(value, params, command) {
+            var entranceYear = params.rowData.values['EntranceYear'];
+
+            if (entranceYear == 2008) {
+                return $(value).addClass('f-state-disabled').attr('data-qtip', '在行命令渲染函数中禁用此命令');
+            }
+        }
+
+    </script>
+}

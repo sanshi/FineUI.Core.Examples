@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.DynamicColumnsSortingModel
+@{
+    ViewBag.Title = "GridDynamic/DynamicColumnsSorting";
+    var F = Html.F();
+}
+
+@section body {
+
+        暂不支持！
+
+    <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" Layout="VBox" IsViewPort="true" BodyPadding="20">
+        <Items>
+            <f:DropDownList ID="DropDownList1" Label="切换表格" Width="500" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <Items>
+                    <f:ListItem Text="表格一（班级）" Value="table1" Selected="true"></f:ListItem>
+                    <f:ListItem Text="表格二（学生，排序）" Value="table2"></f:ListItem>
+                </Items>
+            </f:DropDownList>
+            <f:Grid ID="Grid1" DataIDField="Id" BoxFlex="1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）" Height="500" PagingToolbarVisible="true"
+                    OnSort="Grid1_Sort" 
+                    OnPageIndexChanged="Grid1_PageIndexChanged">
+                <Toolbars>
+                    <f:Toolbar>
+                        <Items>
+                            <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+            </f:Grid>
+        </Items>
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

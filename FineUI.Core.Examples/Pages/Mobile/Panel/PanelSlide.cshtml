@@ -1,0 +1,70 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Panel.PanelSlideModel
+@{
+    ViewBag.Title = "MobilePanel/PanelSlide";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" Layout="VBox" BoxConfigChildMargin="0 0 10 0" BodyPadding="10px" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar Title="Panel1" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:ContentPanel ID="ContentPanel1" ShowBorder="false" ShowHeader="false">
+                <p>
+                    <a href="http://baike.baidu.com/view/3645.htm" target="_blank"><b>比尔·盖茨</b></a>
+                </p><p>
+                    比尔·盖茨（Bill Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
+                </p><p>
+                    比尔·盖茨1995-2007年连续13年成为《福布斯》全球富翁榜首富，连续20年成为《福布斯》美国富翁榜首富。
+                </p>
+            </f:ContentPanel>
+            <f:Button ID="Button1" Text="转到面板 2" ClickHandler="onGotoPanel2Click"></f:Button>
+        </Items>
+    </f:Panel>
+    <f:Panel ID="Panel2" ShowHeader="false" ShowBorder="false" Hidden="true" Layout="VBox" BoxConfigChildMargin="0 0 10 0" BodyPadding="10px" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="Panel2" HeaderStyle="true">
+                <Items>
+                    <f:Button ID="Button4" Size="Small" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:ContentPanel ID="ContentPanel3" ShowBorder="false" ShowHeader="false">
+                <p>
+                    <a href="http://baike.baidu.com/view/1299586.htm" target="_blank"><b>马克·扎克伯格</b></a>
+                </p><p>
+                    马克·艾略特·扎克伯格（Mark Elliot Zuckerberg），美国社交网站Facebook的创办人，被人们冠以“第二盖茨”的美誉。哈佛大学计算机和心理学专业辍学生。据《福布斯》杂志保守估计，马克·扎克伯格拥有135亿美元身家，是2008年全球最年轻的巨富，也是历来全球最年轻的自行创业亿万富豪。
+                </p><p>
+                    2014年2月10日，马克·扎克伯格及其华裔妻子普莉希拉·陈登上美国《慈善纪事报》2013年年度慈善排行榜榜首。
+                </p>
+            </f:ContentPanel>
+            <f:Button ID="Button2" Text="返回面板 1" ClickHandler="onBacktoPanel1Click"></f:Button>
+        </Items>
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onGotoPanel2Click(event) {
+            F.slideLeft('Panel1', 'Panel2');
+        }
+
+        function onBacktoPanel1Click(event) {
+            F.slideRight('Panel2', 'Panel1');
+        }
+
+    </script>
+
+}

@@ -1,0 +1,56 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.CheckBoxOnlyFolderCheckModel
+@{
+    ViewBag.Title = "GridTree/CheckBoxOnlyFolderCheck";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" TreeCheckBox="true" TreeOnlyFolderCheck="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+    <f:Button ID="btnGetCheckedValues" Text="获取选中的复选框" ClickHandler="onGetCheckedRowsClick"></f:Button>
+    <br>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+        // 读取勾选行、经自定义事件回发服务端
+        function onGetCheckedRowsClick(event) {
+            var result = [];
+
+            var checkedRows = F.ui.Grid1.getCheckedRows(true);
+            if (checkedRows.length) {
+                $.each(checkedRows, function (index, row) {
+                    result.push({
+                        id: row.id,
+                        text: row.text
+                    });
+                });
+            }
+
+            F.customEvent('GetCheckedRows', result);
+        }
+    </script>
+
+}

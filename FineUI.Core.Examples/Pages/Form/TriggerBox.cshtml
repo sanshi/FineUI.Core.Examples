@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.TriggerBoxModel
+@{
+    ViewBag.Title = "Form/TriggerBox";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
+        <Items>
+            <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Readonly="false" TriggerIcon="Search"
+                          EmptyText="打开弹出窗口" EnableClickAction="true">
+                <Listeners>
+                    <f:Listener Event="triggerclick" Handler="onTriggerBox1TriggerClick"></f:Listener>
+                </Listeners>
+            </f:TriggerBox>
+        </Items>
+    </f:SimpleForm>
+    <f:Window ID="Window1" Title="弹出窗口" BodyPadding="10" IsModal="true" Hidden="true" Target="Top" Width="450" Height="300">
+        <Items>
+            <f:Button ID="btnCloseWindow" Text="关闭当前窗口" OnClick="btnCloseWindow_Click"></f:Button>
+        </Items>
+    </f:Window>
+    <br />
+    <br />
+    注：点击输入框即可弹出窗体（EnableClickAction=true）。
+
+}
+
+@section script {
+    <script>
+
+        function onTriggerBox1TriggerClick(event) {
+            F.ui.Window1.show();
+        }
+
+    </script>
+}

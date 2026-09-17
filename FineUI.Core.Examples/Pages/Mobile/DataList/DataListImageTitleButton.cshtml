@@ -1,0 +1,89 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.DataList.DataListImageTitleButtonModel
+@{
+    ViewBag.Title = "MobileDataList/DataListImageTitleButton";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+    <style>
+        .item-table .actions {
+            width: 60px;
+            text-align: right;
+            vertical-align: middle;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1">
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+    <f:Panel ID="Panel2" ShowHeader="false" ShowBorder="false" Hidden="true" BodyPadding="10px" IsViewPort="true" Layout="Fit">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar2" Title="Panel2" HeaderStyle="true">
+                <Items>
+                    <f:Button ID="Button4" Size="Small" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Label ID="Label2" EncodeText="false"></f:Label>
+        </Items>
+    </f:Panel>
+
+}
+
+@section script {
+
+    <script>
+
+        function onBacktoPanel1Click(event) {
+            F.slideRight('Panel2', 'Panel1');
+        }
+
+        F.ready(function () {
+
+            var dataList1 = F.ui.DataList1; if (!dataList1) return;
+            dataList1.el.find('.f-datalist-item-inner .item-table .actions').each(function () {
+                F.create({
+                    type: 'Button',
+                    text: '详情',
+                    scale: 'small',
+                    cls: 'mybtn',
+                    renderTo: this
+                });
+            });
+
+            dataList1.el.on('click', '.f-datalist-item-inner .mybtn', function (event) {
+                var btnEl = $(this), innerEl = btnEl.parents('.f-datalist-item-inner');
+
+                var text = innerEl.find('.item-text').text();
+                var desc = innerEl.find('.item-desc').text();
+                var imageUrl = innerEl.find('.item-img').attr('src');
+                F.ui.Toolbar2.setTitle(text);
+                F.ui.Label2.setValue('<div style="text-align:center;margin-bottom:15px;"><img style="width:60px;" src="' + imageUrl + '"/></div>' + desc);
+
+
+                F.slideLeft('Panel1', 'Panel2');
+            });
+
+        });
+
+    </script>
+
+}

@@ -1,0 +1,75 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.SideModel
+@{
+    ViewBag.Title = "Window/Side";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        body {
+            background: url(@Url.Content("~/res/images/bg/small/3.jpg")) !important;
+            overflow: hidden;
+        }
+    </style>
+
+
+}
+
+
+@section body {
+
+    <f:Window ID="Window1" Hidden="true" PositionX="Left" Width="200" PercentHeight="100%" IsModal="true" HideOnMaskClick="true"
+              AutoScroll="true" BodyPadding="10" ShowHeader="false" EnableDefaultCorner="false" Content="PositionX=Left Width=200px PercentHeight=100% IsModal=true HideOnMaskClick=true">
+    </f:Window>
+
+    <f:Window ID="Window2" Hidden="true" PositionX="Right" Width="200" PercentHeight="100%" IsModal="true" HideOnMaskClick="true"
+              AutoScroll="true" BodyPadding="10" ShowHeader="false" EnableDefaultCorner="false" Content="PositionX=Right Width=200px PercentHeight=100% IsModal=true HideOnMaskClick=true">
+    </f:Window>
+
+    <f:Window ID="Window3" Hidden="true" PositionY="Top" Height="100" PercentWidth="100%" IsModal="true" HideOnMaskClick="true"
+              AutoScroll="true" BodyPadding="10" ShowHeader="false" EnableDefaultCorner="false" Content="PositionY=Top Height=100px PercentWidth=100% IsModal=true HideOnMaskClick=true">
+    </f:Window>
+
+
+    <f:Window ID="Window4" Hidden="true" PositionY="Bottom" Height="100" PercentWidth="100%" IsModal="true" HideOnMaskClick="true"
+              AutoScroll="true" BodyPadding="10" ShowHeader="false" EnableDefaultCorner="false" Content="PositionY=Bottom Height=100px PercentWidth=100% IsModal=true HideOnMaskClick=true">
+    </f:Window>
+
+    <f:Window ID="Window5" Width="300" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" PositionX="Center" PositionY="Center"
+              AutoScroll="true" BodyPadding="10" ShowHeader="false" IsModal="false">
+        <Items>
+            <f:Button ID="Button1" Text="左侧窗体" ClickHandler="onOpenWindow1Click"></f:Button>
+            <f:Button ID="Button2" Text="右侧窗体" ClickHandler="onOpenWindow2Click"></f:Button>
+            <f:Button ID="Button3" Text="顶部窗体" ClickHandler="onOpenWindow3Click"></f:Button>
+            <f:Button ID="Button4" Text="底部窗体" Margin="0" ClickHandler="onOpenWindow4Click"></f:Button>
+        </Items>
+    </f:Window>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onOpenWindow1Click(event) {
+            F.ui.Window1.show();
+        }
+
+        function onOpenWindow2Click(event) {
+            F.ui.Window2.show();
+        }
+
+        function onOpenWindow3Click(event) {
+            F.ui.Window3.show();
+        }
+
+        function onOpenWindow4Click(event) {
+            F.ui.Window4.show();
+        }
+
+    </script>
+}

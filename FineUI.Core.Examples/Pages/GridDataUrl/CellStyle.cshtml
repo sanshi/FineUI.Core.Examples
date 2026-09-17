@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDataUrl.CellStyleModel
+@{
+    ViewBag.SourceFiles = "~/GridDataUrl/GridDataUrlData";
+    ViewBag.Title = "GridDataUrl/CellStyle";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style type="text/css">
+        .color1 {
+            background-color: #0094ff;
+            color: #fff;
+        }
+
+        .color2 {
+            background-color: #0026ff;
+            color: #fff;
+        }
+
+        .color3 {
+            background-color: #b200ff;
+            color: #fff;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/GridDataUrlData")">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" RendererFunction="renderEntranceYear" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderGender(value, params) {
+            if (value == 1) {
+                params.cellCls = 'color1';
+            } 
+
+            return value == 1 ? '男' : '女';
+        }
+
+        function renderEntranceYear(value, params) {
+
+            var entranceYear = params.rowData.values['EntranceYear'];
+
+            if (entranceYear >= 2002 && entranceYear <= 2004) {
+                params.cellCls = 'color3';
+            } 
+
+            return value;
+        }
+
+    </script>
+}

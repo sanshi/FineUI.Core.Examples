@@ -1,0 +1,56 @@
+@page
+@model FineUI.Core.Examples.Pages.GridBigData.BigData1000Model
+@{
+    ViewBag.Title = "GridBigData/BigData1000";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（1,000行）" DataIDField="Id" DataTextField="Name" 
+            EnableCheckBoxSelect="true" Height="500" EnableBigData="true" FixedRowHeight="true"
+            EnableBigDataRowTip="true" PagingToolbarVisible="false">
+        <Columns>
+            <f:RowNumberField Width="50" />
+            <f:RenderField HeaderText="姓名" DataField="Name" Width="150" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br />
+    <br />
+    注：
+    <ul>
+        <li>
+            启用大数据表格需满足如下条件：
+            <ul>
+                <li>每行的行高相同（FixedRowHeight=true）。</li>
+                <li>表格高度固定或者位于布局中。</li>
+            </ul>
+        </li>
+        <li>
+            大数据表格一般仅用于数据展示。
+            <ul>
+                <li>不支持树表格、行分组。</li>
+                <li>不支持复杂的特性（比如单元格编辑、列锁定、单元格合并...）。</li>
+                <li>不支持模板列中放置输入字段（比如文本输入框、下拉列表、复选框列表...）。</li>
+            </ul>
+        </li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

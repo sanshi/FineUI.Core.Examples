@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.SimulateTreeModel
+@{
+    ViewBag.Title = "Grid/SimulateTree";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"
+            DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" EnableSimulateTree="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="地区" DataField="Name" DataSimulateTreeLevelField="TreeLevel" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup"></f:RenderField>
+        </Columns>
+    </f:Grid>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

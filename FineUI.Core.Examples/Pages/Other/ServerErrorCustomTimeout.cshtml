@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.ServerErrorCustomTimeoutModel
+@{
+    ViewBag.Title = "Other/ServerErrorCustomTimeout";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @{
+        // AJAX请求超时时间设为 2 秒
+        F.PageManager.AjaxTimeout(2);
+    }
+
+
+    <f:Button ID="Button5" OnClick="Button5_Click" Text="服务器异常（500）"></f:Button>
+
+}
+
+
+@section script {
+
+    <script>
+        F.beforeAjaxError(function (data, textStatus) {
+            if (textStatus === 'timeout') {
+                showCenterNotify('AJAX请求超时！', 'error');
+            }
+
+            // 需要显式的返回 false，来阻止默认的错误处理
+            return false;
+        });
+
+    </script>
+
+}

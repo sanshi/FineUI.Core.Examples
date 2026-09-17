@@ -1,0 +1,181 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormDisabledModel
+@{
+    ViewBag.Title = "Form/FormDisabled";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form IsFluid="true" LabelWidth="100" LabelSeparator="：" BodyPadding="10" EnableCollapse="false" ID="Form1" Title="表单">
+        <Rows>
+            <f:FormRow>
+                <Items>
+                    <f:Label ID="Label3" Label="电话" Text="0551-1234567" />
+                    <f:Label ID="Label16" Label="申请人" Text="admin">
+                    </f:Label>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:Label ID="Label4" Label="编号" Text="200804170006" />
+                    <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址">
+                    </f:TextBox>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:DropDownList ID="DropDownList3" Label="审批人" EmptyText="请选择审批人" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:ListItem Text="老大甲" Value="0"></f:ListItem>
+                        <f:ListItem Text="老大乙" Value="1"></f:ListItem>
+                        <f:ListItem Text="老大丙" Value="2"></f:ListItem>
+                    </f:DropDownList>
+                    <f:NumberBox ID="NumberBox1" Label="申请数量" EmptyText="请输入申请数量" NoNegative="true" NoDecimal="true" MaxValue="1000" Required="true" ShowRedStar="true" />
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:DatePicker Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1" Text="2014-07-10" ShowRedStar="true">
+                    </f:DatePicker>
+                    <f:TimePicker ID="TimePicker1" ShowRedStar="true" Label="时间" Increment="30" Required="true" Text="08:30" EmptyText="请选择时间">
+                    </f:TimePicker>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:FileUpload ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true" ShowRedStar="true">
+                    </f:FileUpload>
+                    <f:CheckBox ID="cbxAtSchool" Label="是否在读"></f:CheckBox>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:TextArea ID="TextArea1" Label="描述" ShowRedStar="true" Required="true">
+                    </f:TextArea>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:CheckBoxList ID="CheckBoxList1" Label="复选框列表" ColumnNumber="3">
+                        <f:CheckItem Text="可选项 1" Value="value1" />
+                        <f:CheckItem Text="可选项 2" Value="value2" Selected="true" />
+                        <f:CheckItem Text="可选项 3" Value="value3" Selected="true" />
+                        <f:CheckItem Text="可选项 4" Value="value4" Selected="true" />
+                        <f:CheckItem Text="可选项 5" Value="value5" Selected="true" />
+                    </f:CheckBoxList>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:RadioButtonList ID="RadioButtonList2" Label="单选框列表" Required="true" ColumnNumber="3">
+                        <f:RadioItem Text="可选项 1" Value="value1" />
+                        <f:RadioItem Text="可选项 2" Value="value2" />
+                        <f:RadioItem Text="可选项 3" Value="value3" />
+                        <f:RadioItem Text="可选项 4" Value="value4" />
+                        <f:RadioItem Text="可选项 5" Value="value5" />
+                    </f:RadioButtonList>
+                </Items>
+            </f:FormRow>
+        </Rows>
+    </f:Form>
+    <br />
+    <f:Button ID="btnDisableAll" Text="全部禁用" CssClass="marginr" ClickHandler="onDisableAllClick"></f:Button>
+    <f:Button ID="btnEnableAll" Text="全部启用" CssClass="marginr" ClickHandler="onEnableAllClick"></f:Button>
+    <f:Button ID="btnReadOnlyAll" Text="全部只读" CssClass="marginr" ClickHandler="onReadOnlyClick"></f:Button>
+    <f:Button ID="btnCancelReadOnlyAll" Text="取消只读" CssClass="marginr" ClickHandler="onCancelReadOnlyClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnMarkInvalid" Text="设置无效标识" CssClass="marginr" ClickHandler="onMarkInvalidClick"></f:Button>
+    <f:Button ID="btnClearInvalid" Text="取消无效标识" CssClass="marginr" ClickHandler="onClearInvalidClick"></f:Button>
+    <f:Button ID="Button1" _ValidateForms="Form1" Text="验证并提交表单" OnClick="Button1_Click"></f:Button>
+    <br />
+    <br />
+    <br />
+    <br />
+    <f:Button ID="btnDisablePanel" Text="禁用表单面板" CssClass="marginr" ClickHandler="onDisableFormClick"></f:Button>
+    <f:Button ID="btnEnablePanel" Text="启用表单面板" CssClass="marginr" ClickHandler="onEnableFormClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button2" Text="添加只读样式（类似禁用样式）" CssClass="marginr" ClickHandler="onAddReadonlyStyleClick"></f:Button>
+    <f:Button ID="Button3" Text="删除只读样式" CssClass="marginr" ClickHandler="onRemoveReadonlyStyleClick"></f:Button>
+
+
+    <textarea id="readonlycss_holder" style="display: none;">
+        .f-readonly {
+        opacity: .5;
+        filter: alpha(opacity=50);
+        }
+    </textarea>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+
+        function onDisableAllClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                field.disable();
+            });
+        }
+
+        function onEnableAllClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                field.enable();
+            });
+        }
+
+
+        function onReadOnlyClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                field.setReadonly(true);
+            });
+        }
+
+        function onCancelReadOnlyClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                field.setReadonly(false);
+            });
+        }
+
+
+        // 无效标识，排除 Label 控件
+        function onMarkInvalidClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                if (!field.isType('Label')) {
+                    field.markInvalid('这个字段出错了！');
+                }
+            });
+        }
+
+        // 无效标识，排除 Label 控件
+        function onClearInvalidClick(event) {
+            $.each(F.ui.Form1.getFormFields(), function (index, field) {
+                if (!field.isType('Label')) {
+                    field.clearInvalid();
+                }
+            });
+        }
+
+        function onAddReadonlyStyleClick(event) {
+            F.addCSS('readonlycss', $('#readonlycss_holder').val());
+        }
+
+        function onRemoveReadonlyStyleClick(event) {
+            $('#readonlycss').remove();
+        }
+
+        function onDisableFormClick(event) {
+            F.ui.Form1.disable();
+        }
+
+        function onEnableFormClick(event) {
+            F.ui.Form1.enable();
+        }
+
+    </script>
+}

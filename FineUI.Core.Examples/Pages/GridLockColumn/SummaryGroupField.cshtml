@@ -1,0 +1,60 @@
+@page
+@model FineUI.Core.Examples.Pages.GridLockColumn.SummaryGroupFieldModel
+@{
+    ViewBag.Title = "GridLockColumn/SummaryGroupField";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row-summary .f-grid-cell-text {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500"
+            AllowPaging="true" PageSize="5" IsDatabasePaging="true" EnableCheckBoxSelect="true"
+            OnPageIndexChanged="Grid1_PageIndexChanged"
+            EnableSummary="true" SummaryPosition="Bottom" AllowColumnLocking="true" Width="1000">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:GroupField HeaderText="花费" TextAlign="Center">
+                <Columns>
+                    <f:RenderField HeaderText="学费" DataField="Fee" EnableLock="true" />
+                    <f:RenderField HeaderText="学杂费" DataField="ExtraFee" EnableLock="true" />
+                </Columns>
+            </f:GroupField>
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="400" EnableLock="true" />
+            <f:RenderField DataField="Desc" RenderAsRowExpander="true" RendererFunction="renderExpander" EnableLock="true" Locked="true" />
+            <f:RenderField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
+            <f:RenderField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
+            <f:RenderField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
+            <f:RenderField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

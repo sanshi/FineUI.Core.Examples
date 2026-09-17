@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.DataBindDocumentCustomAttributesModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/content/tree/website.xml";
+    ViewBag.Title = "Tree/DataBindDocumentCustomAttributes";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-tree-node[data-highlight=true] .f-tree-cell-text {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（点击树节点回发）" OnNodeClick="Tree1_NodeClick">
+    </f:Tree>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    <br>
+    注：从 XmlDocument 手工创建节点列表，并将 Xml 节点属性 Highlight 转化为树节点的 Attributes 属性。
+
+}
+
+
+@section script {
+
+
+}

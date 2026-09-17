@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowExpanderModel
+@{
+    ViewBag.Title = "Grid/RowExpander";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+            <f:RenderField DataField="Desc" RenderAsRowExpander="true" RendererFunction="renderExpander"></f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="显示/隐藏行扩展列" ClickHandler="onToggleRowExpanderClick"></f:Button>
+    <br>
+    <br>
+    注：隐藏后仍然可以通过ENTER键展开折叠行扩展列的内容区域。
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script type="text/javascript">
+
+        function onToggleRowExpanderClick(event) {
+            F.ui.Grid1.rowExpander.toggleVisible();
+        }
+    </script>
+
+
+}

@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Editor.TinyMCEWindowModel
+@{
+    ViewBag.Title = "Editor/TinyMCEWindow";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        /* 通过 CSS 设置 */
+        .mce-menu {
+            z-index: 99999 !important;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Window ID="Window1" Width="900" Height="500" Layout="Fit" BodyPadding="10" EnableCollapse="false" Title="简单表单" IsModal="false" EnableResize="true">
+        <Items>
+            <f:SimpleForm ID="SimpleForm1" Layout="Fit" LabelAlign="Top" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1"
+                                  Editor="TinyMCE" BasePath="@Url.Content("~/res/third-party/tinymce/")" ToolbarSet="Full" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+                    </f:HtmlEditor>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="Button2" CssClass="marginr" Text="设置编辑器的值" OnClick="Button2_Click"></f:Button>
+                    <f:Button ID="Button1" Text="获取编辑器的值" OnClick="Button1_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+
+}
+

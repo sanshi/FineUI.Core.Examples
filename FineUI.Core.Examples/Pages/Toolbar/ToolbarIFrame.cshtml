@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.ToolbarIFrameModel
+@{
+    ViewBag.Title = "Toolbar/ToolbarIFrame";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板" Height="500" EnableIFrame="true" IFrameName="main">
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:Button ID="Button1" Text="打开页面一" ClickHandler="onOpenPage1Click"></f:Button>
+                    <f:Button ID="Button2" Text="打开页面二" ClickHandler="onOpenPage2Click"></f:Button>
+                    <f:Button ID="Button3" Text="打开页面三（服务器端）" OnClick="Button3_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function updateIFrameUrl(url) {
+            F.ui.Panel1.setIFrameUrl(url);
+        }
+
+        // updateIFrameUrl 和 updateIFrameUrl2 效果一样
+        function updateIFrameUrl2(url) {
+            window.open(url, 'main');
+        }
+
+        function onOpenPage1Click(event) {
+            updateIFrameUrl2('@Url.Content("~/Basic/Hello")');
+        }
+
+        function onOpenPage2Click(event) {
+            updateIFrameUrl2('@Url.Content("~/Config/ModifyWebConfig")');
+        }
+
+    </script>
+
+}

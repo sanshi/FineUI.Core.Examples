@@ -1,0 +1,68 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.MenuHideOnClickModel
+@{
+    ViewBag.Title = "Toolbar/MenuHideOnClick";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .my-menutext,
+        .my-menutext .f-menu-item-text {
+            cursor: default;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
+        <toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:ToolbarText Text="内联菜单">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator>
+                    </f:ToolbarSeparator>
+                    <f:Button Text="中国科学技术大学">
+                        <Menu>
+                            <f:MenuHyperLink ID="MenuHyperLink1" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
+                            </f:MenuHyperLink>
+                            <f:MenuText ID="MenuText1" CssClass="my-menutext" Text="管理学院" HideOnClick="false">
+                                <Menu>
+                                    <f:MenuHyperLink ID="MenuHyperLink3" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
+                                    </f:MenuHyperLink>
+                                    <f:MenuHyperLink ID="MenuHyperLink4" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
+                                    </f:MenuHyperLink>
+                                </Menu>
+                            </f:MenuText>
+                            <f:MenuText ID="MenuText2" CssClass="my-menutext" Text="物理学院" HideOnClick="true">
+                                <Menu>
+                                    <f:MenuHyperLink Target="_blank" NavigateUrl="http://phys.ustc.edu.cn/" Text="物理系">
+                                    </f:MenuHyperLink>
+                                    <f:MenuHyperLink Target="_blank" NavigateUrl="http://astro.ustc.edu.cn/" Text="天文学系">
+                                    </f:MenuHyperLink>
+                                </Menu>
+                            </f:MenuText>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </toolbars>
+    </f:Panel>
+
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>菜单项[管理学院]设置了HideOnClick=false，所以点击不会隐藏整个菜单；</li>
+        <li>菜单项[物理学院]设置了HideOnClick=true，所以点击会隐藏整个菜单；</li>
+    </ul>
+
+
+
+}
+

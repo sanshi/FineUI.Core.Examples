@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.ServerErrorCustomModel
+@{
+    ViewBag.Title = "Other/ServerErrorCustom";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button ID="Button5" OnClick="Button5_Click" Text="服务器异常（500）"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        F.beforeAjaxError(function (data) {
+            var errormsg = 'Unknown';
+
+            // 如果返回的数据包含<title>...</title>标签
+            var result = /<title>([^<]+)<\/title>/ig.exec(data);
+            if (result && result.length === 2) {
+                errormsg = result[1];
+            }
+
+            F.alert({
+                message: F.rawHtml('<strong>这是自定义错误处理！</strong><br/>服务器返回的错误：' + errormsg),
+                messageIcon: 'error'
+            });
+
+            // 需要显式的返回 false，来阻止默认的错误处理
+            return false;
+        });
+
+    </script>
+
+}

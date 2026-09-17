@@ -1,0 +1,120 @@
+@page
+@model FineUI.Core.Examples.Pages.GridInput.EnterKeyHModel
+@{
+    ViewBag.Title = "GridInput/EnterKeyH";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="语文" DataField="ChineseScore" RendererFunction="renderChineseScore" />
+            <f:RenderField HeaderText="数学" DataField="MathScore" RendererFunction="renderMathScore" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>Tab/Enter遍历文本框时，先遍历一行的文本框，然后再遍历下一行的文本框</li>
+    </ul>
+
+    <f:Button Text="获取用户输入的分组值" ID="Button1" ClickHandler="onGetInputsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderChineseScore(value, params) {
+            return F.formatString('<input class="myinput" value="{0}" style="width:80px;" type="text">', value);
+        }
+
+        function renderMathScore(value, params) {
+            return F.formatString('<input class="myinput" value="{0}" style="width:80px;" type="text">', value);
+        }
+
+        var inputselector = 'input.myinput';
+
+        function getUserInputs() {
+            var result = [];
+
+            var grid1 = F.ui.Grid1;
+            grid1.getRowEls().each(function () {
+                var rowEl = $(this);
+                var rowData = grid1.getRowData(rowEl);
+
+                var inputValues = [];
+                rowEl.find(inputselector).each(function () {
+                    inputValues.push($(this).val());
+                });
+
+                result.push([rowData.id, rowData.text, inputValues]);
+            });
+
+            return F.toJSON(result);
+        }
+
+        function onGetInputsClick(event) {
+            F.customEvent('GetInputs', getUserInputs());
+        }
+
+        function registerEnterEvent() {
+            var grid = F.ui.Grid1;
+
+            grid.el.on('keydown', inputselector, function (event) {
+                if (event.keyCode === F.KEY.ENTER || event.keyCode === F.KEY.TAB) {
+                    var row = $(this).closest('.f-grid-row');
+
+                    var inputs = row.find(inputselector);
+                    // 一行中有多少个输入框
+                    var inputCount = inputs.length;
+                    // 当前输入框在本行中的序号（用来标示那一列）
+                    var inputIndex = inputs.index(this);
+                    inputIndex++;
+
+                    if (inputIndex <= inputCount - 1) {
+                        // 选中本行下一列中的输入框
+                        inputs.eq(inputIndex).select();
+                    } else {
+                        var nextRow = row.next();
+                        if (nextRow.length) {
+                            // 选中下一行第一列的的输入框
+                            nextRow.find(inputselector).eq(0).select();
+                        } else {
+                            // 如果本行是最后一行，则选择第一行第一列的输入框
+                            row.prevAll(':last').find(inputselector).eq(0).select();
+                        }
+                    }
+
+                    // 阻止 Enter 或者 Tab 的默认行为
+                    event.preventDefault();
+                }
+            });
+
+            grid.el.on('click', inputselector, function (event) {
+                $(this).select();
+            });
+        }
+
+
+        F.ready(function () {
+            registerEnterEvent();
+        });
+
+
+    </script>
+}

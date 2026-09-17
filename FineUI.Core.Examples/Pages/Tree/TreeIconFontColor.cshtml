@@ -1,0 +1,76 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.TreeIconFontColorModel
+@{
+    ViewBag.Title = "Tree/TreeIconFontColor";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .tn-color-red .f-tree-folder {
+            color: red;
+        }
+
+        .tn-color-purple .f-tree-folder {
+            color: purple;
+        }
+
+        .tn-color-green .f-tree-folder {
+            color: green;
+        }
+
+        .tn-color-blue .f-tree-folder {
+            color: blue;
+        }
+
+        .tn-color-orange .f-tree-folder {
+            color: orange;
+        }
+    </style>
+
+
+}
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true" NodeID="china">
+                <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
+                    <f:TreeNode Text="驻马店市" Expanded="true" NodeID="zhumadian" IconFont="_Flag" CssClass="tn-color-red">
+                        <f:TreeNode Text="遂平县" NodeID="suiping" IconFont="_Tag" CssClass="tn-color-purple">
+                        </f:TreeNode>
+                        <f:TreeNode Text="西平县" NodeID="xiping" IconFont="_Book" CssClass="tn-color-green">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="luohe" IconFont="_Bookmark" CssClass="tn-color-blue" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui" CssClass="tn-color-orange">
+                    <f:TreeNode Text="合肥市" Expanded="true" NodeID="hefei">
+                        <f:TreeNode Text="中国科学技术大学（链接）" NavigateUrl="http://www.ustc.edu.cn/" Target="_blank" ToolTip="点击跳转到科大主页" NodeID="ustc">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="黄山市" NodeID="huangshan">
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetSelectedNode" OnClick="btnGetSelectedNode_Click" CssClass="marginr" Text="获取选中的节点"></f:Button>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+
+
+}

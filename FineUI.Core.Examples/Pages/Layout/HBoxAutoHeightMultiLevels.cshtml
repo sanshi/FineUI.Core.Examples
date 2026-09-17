@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.HBoxAutoHeightMultiLevelsModel
+@{
+    ViewBag.Title = "Layout/HBoxAutoHeightMultiLevels";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel5" IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Layout="HBox" AutoScroll="true" BodyPadding="5"
+             ShowHeader="true" Title="面板（Layout=HBox AutoScroll=true）">
+        <Items>
+            <f:Panel ID="Panel1" Title="面板1" BoxFlex="1" MarginRight="5" BodyPadding="10" ShowBorder="true" ShowHeader="false" Layout="VBox">
+                <Items>
+                    <f:TextBox Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
+                    <f:DropDownList Label="性别" ShowRedStar="true" Required="true">
+                        <f:ListItem Text="男" Value="男" Selected="true" />
+                        <f:ListItem Text="女" Value="女" />
+                    </f:DropDownList>
+                    <f:TextArea Label="个人简介" MarginBottom="0" BoxFlex="1"></f:TextArea>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel2" Title="面板2" BoxFlex="1" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label ID="Label3" EncodeText="false" Text="BoxFlex=1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>bottom line">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+

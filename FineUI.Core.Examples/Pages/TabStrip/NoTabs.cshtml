@@ -1,0 +1,105 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.NoTabsModel
+@{
+    ViewBag.Title = "TabStrip/NoTabs";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="250" EnableTabCloseMenu="true" ShowBorder="true">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="标签一" EnableClose="false" Hidden="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label5" Text="标签一中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab2" Title="标签二" BodyPadding="10" Hidden="true" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label4" Text="标签二中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab3" Title="标签三" BodyPadding="10" Hidden="true" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label3" Text="标签三中的文本" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <br>
+    <br>
+
+    <f:Button ID="btnShowTab1" Text="显示标签一" CssClass="marginr" ClickHandler="onShowTab1Click"></f:Button>
+
+    <f:Button ID="btnShowTab2" Text="显示标签二" CssClass="marginr" ClickHandler="onShowTab2Click"></f:Button>
+
+    <f:Button ID="btnShowTab3" Text="显示标签三" CssClass="marginr" ClickHandler="onShowTab3Click"></f:Button>
+
+    <br>
+    <br>
+
+    <f:Button ID="btnShowActiveTab1" Text="显示并激活标签一" CssClass="marginr" ClickHandler="onShowActiveTab1Click"></f:Button>
+
+    <f:Button ID="btnShowActiveTab2" Text="显示并激活标签二" CssClass="marginr" ClickHandler="onShowActiveTab2Click"></f:Button>
+
+    <f:Button ID="btnShowActiveTab3" Text="显示并激活标签三" CssClass="marginr" ClickHandler="onShowActiveTab3Click"></f:Button>
+    <br>
+    <br>
+
+    <f:Button ID="btnHideTab1" Text="隐藏标签一" CssClass="marginr" ClickHandler="onHideTab1Click"></f:Button>
+
+    <f:Button ID="btnHideTab2" Text="隐藏标签二" CssClass="marginr" ClickHandler="onHideTab2Click"></f:Button>
+
+    <f:Button ID="btnHideTab3" Text="隐藏标签三" CssClass="marginr" ClickHandler="onHideTab3Click"></f:Button>
+    <br>
+    <br>
+
+
+}
+
+
+
+@section script {
+    <script>
+
+        function onShowTab1Click(event) {
+            F.ui.Tab1.show();
+        }
+
+        function onShowTab2Click(event) {
+            F.ui.Tab2.show();
+        }
+
+        function onShowTab3Click(event) {
+            F.ui.Tab3.show();
+        }
+
+
+        function onShowActiveTab1Click(event) {
+            F.ui.Tab1.activate();
+        }
+
+        function onShowActiveTab2Click(event) {
+            F.ui.Tab2.activate();
+        }
+
+        function onShowActiveTab3Click(event) {
+            F.ui.Tab3.activate();
+        }
+
+
+        function onHideTab1Click(event) {
+            F.ui.Tab1.hide();
+        }
+
+        function onHideTab2Click(event) {
+            F.ui.Tab2.hide();
+        }
+
+        function onHideTab3Click(event) {
+            F.ui.Tab3.hide();
+        }
+
+    </script>
+}

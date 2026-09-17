@@ -1,0 +1,68 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.ShowTimeModel
+@{
+    ViewBag.Title = "GridEditor/ShowTime";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss" Width="200">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true" DateFormatString="yyyy/MM/dd HH:mm:ss" ShowTime="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField Width="180" ColumnID="LogTime" DataField="LogTime" FieldType="Date"
+                           Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss" HeaderText="注册日期">
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    为了正确的显示和编辑时间，请注意如下属性：
+    <ul>
+        <li>入学日期列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss"</li>
+        <li>入学日期的编辑表单字段（DatePicker）：DateFormatString="yyyy/MM/dd HH:mm:ss" ShowTime="true"</li>
+    </ul>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

@@ -1,0 +1,25 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.DataBindCompositeListModel
+@{
+    ViewBag.Title = "DropDownList/DataBindCompositeList";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉列表（绑定到复合列表）" ShowHeader="true">
+        <Items>
+            <f:DropDownList ID="DropDownList1">
+            </f:DropDownList>
+            <f:Button ID="btnSelectItem6" Text="选中[可选项6]" CssClass="marginr" OnClick="btnSelectItem6_Click"></f:Button>
+            <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+
+}
+

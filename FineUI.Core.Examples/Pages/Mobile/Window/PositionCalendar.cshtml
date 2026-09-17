@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Window.PositionCalendarModel
+@{
+    ViewBag.Title = "MobileWindow/PositionCalendar";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mybgpanel > .f-panel-bodyct > .f-panel-body {
+            background-color: #FEF3D5;
+            background-image: url(@Url.Content("~/res/images/bg/small/3.jpg"));
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+
+        .mywindow,
+        .mywindow > .f-panel-bodyct > .f-panel-body {
+            background-image: none;
+            background-color: transparent;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" CssClass="mybgpanel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px" IsViewPort="true">
+        <Items>
+            <f:Button ID="btnOpenWindow" Text="选择日期" ClickHandler="onOpenWindow1Click"></f:Button>
+        </Items>
+    </f:Panel>
+    <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true"
+              IsModal="true" BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 5px 0"
+              PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
+        <Items>
+            <f:Calendar ID="Calendar1" DateFormatString="yyyy/MM/dd" MarginBottom="10">
+                <Listeners>
+                    <f:Listener Event="select" Handler="onCalendar1Select" />
+                </Listeners>
+            </f:Calendar>
+            <f:Button ID="Button3" Text="取消" Margin="0" ClickHandler="onCloseWindow1Click"></f:Button>
+        </Items>
+    </f:Window>
+
+
+}
+
+
+@section script {
+
+
+    <script>
+
+        function onOpenWindow1Click(event) {
+            F.ui.Window1.show();
+        }
+
+        function onCloseWindow1Click(event) {
+            F.ui.Window1.hide();
+        }
+
+
+        function onCalendar1Select(event) {
+            F.ui.Window1.hide();
+            showCenterNotify('你选择的日期是：' + F.ui.Calendar1.getText());
+        }
+
+    </script>
+
+}
+
+

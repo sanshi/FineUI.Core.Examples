@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDataUrl.PagingSortingModel
+@{
+    ViewBag.SourceFiles = "~/GridDataUrl/SortingData";
+    ViewBag.Title = "GridDataUrl/PagingSorting";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/SortingData?data2=true")"
+            AllowSorting="true" SortField="EntranceYear" SortDirection="ASC"
+            AllowPaging="true" IsDatabasePaging="false" PageSize="5">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" SortField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" SortField="Group" RendererFunction="renderGroup" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}
+

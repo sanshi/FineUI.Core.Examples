@@ -1,0 +1,65 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.PositionModel
+@{
+    ViewBag.Title = "Window/Position";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+    body {
+        background: url(@Url.Content("~/res/images/bg/small/3.jpg")) !important;
+    }
+    </style>
+
+
+}
+
+@section body {
+
+
+    <div style="height: 1200px;">
+    </div>
+
+    <f:Window ID="Window1" Width="200" Height="80" PositionX="Left" PositionY="Top" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Left PositionY=Top">
+    </f:Window>
+
+    <f:Window ID="Window2" Width="200" Height="80" PositionX="Left" PositionY="Center" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Left PositionY=Center">
+    </f:Window>
+
+    <f:Window ID="Window3" Width="200" Height="80" PositionX="Left" PositionY="Bottom" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Left PositionY=Bottom">
+    </f:Window>
+
+
+    <f:Window ID="Window4" Width="200" Height="80" PositionX="Center" PositionY="Top" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Center PositionY=Top">
+    </f:Window>
+
+    <f:Window ID="Window5" Width="200" Height="80" PositionX="Center" PositionY="Center" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Center PositionY=Center">
+    </f:Window>
+
+    <f:Window ID="Window6" Width="200" Height="80" PositionX="Center" PositionY="Bottom" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Center PositionY=Bottom">
+    </f:Window>
+
+    <f:Window ID="Window7" Width="200" Height="80" PositionX="Right" PositionY="Top" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Right PositionY=Top">
+    </f:Window>
+
+    <f:Window ID="Window8" Width="200" Height="80" PositionX="Right" PositionY="Center" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Right PositionY=Center">
+    </f:Window>
+
+    <f:Window ID="Window9" Width="200" Height="80" PositionX="Right" PositionY="Bottom" DependsViewPortSize="false"
+              IsModal="false" AutoScroll="true" BodyPadding="10" ShowHeader="false" Content="DependsViewPortSize=false PositionX=Right PositionY=Bottom">
+    </f:Window>
+
+
+}
+

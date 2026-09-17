@@ -1,0 +1,91 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.IFrameCRCModel
+@{
+    ViewBag.SourceFiles = "~/Grid/IFrameWindow";
+    ViewBag.Title = "Grid/IFrameCRC";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="窗口列" RendererFunction="renderWindowField1"></f:RenderField>
+            @* <f:RenderField HeaderText="窗口列" RendererFunction="renderWindowField2"></f:RenderField>
+            <f:RenderField HeaderText="窗口列" RendererFunction="renderWindowField3"></f:RenderField> *@
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowdblclick" Handler="onGridRowDblClick"></f:Listener>
+        </Listeners>
+    </f:Grid>
+
+    <br>
+    <br>
+    注：本示例需要自行定义列渲染函数并注册行内按钮事件，实现复杂。推荐方案：表格/行命令/弹出窗体列。
+
+    <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true"
+              OnClose="Window1_Close" Target="Top" IsModal="true" Width="850" Height="500">
+    </f:Window>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+    function renderWindowField1(value, params) {
+        return '<a href="javascript:;" class="mywindowfield">编辑</a>';
+    }
+
+    // function renderWindowField2(value, params) {
+    //     return '<a href="javascript:;" class="mywindowfield"><i class="f-icon f-icon-edit f-grid-cell-iconfont"></i></a>';
+    // }
+
+    // function renderWindowField3(value, params) {
+    //     return '<a href="javascript:;" class="mywindowfield"><img class="f-grid-cell-icon" src="@Url.Content("~/res/icon/pencil.png")"></a>';
+    // }
+
+    // 打开窗体
+    function openWindow(rowData) {
+
+        // /Grid/IFrameWindow?id=104&name=刘国
+        var iframeWindowUrl = '@Url.Content("~/Grid/IFrameWindow")';
+        var iframeUrl = iframeWindowUrl + '?id=' + rowData.id + '&name=' + encodeURIComponent(rowData.text);
+
+        // 显示窗体
+        F.ui.Window1.show(iframeUrl, '详细信息 - ' + rowData.text);
+    }
+
+    // 双击行
+    function onGridRowDblClick(event, rowId) {
+        openWindow(F.ui.Grid1.getRowData(rowId));
+    }
+
+
+
+    F.ready(function () {
+
+        var grid = F.ui.Grid1;
+
+        // 点击表格行中的编辑按钮
+        grid.el.on('click', 'a.mywindowfield', function (event) {
+            var rowEl = $(this).closest('.f-grid-row');
+            var rowData = grid.getRowData(rowEl);
+
+            openWindow(rowData);
+        });
+
+    });
+
+
+    </script>
+}

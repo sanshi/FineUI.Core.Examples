@@ -1,0 +1,70 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDataUrl.RowStyleModel
+@{
+    ViewBag.SourceFiles = "~/GridDataUrl/GridDataUrlData";
+    ViewBag.Title = "GridDataUrl/RowStyle";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style type="text/css">
+        .f-grid-row.color1,
+        .f-grid-row.color1 .f-icon,
+        .f-grid-row.color1 a {
+            background-color: #0094ff;
+            color: #fff;
+        }
+
+        .f-grid-row.color3,
+        .f-grid-row.color3 .f-icon,
+        .f-grid-row.color3 a {
+            background-color: #b200ff;
+            color: #fff;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/GridDataUrlData")" RowDataBoundFunction="grid1RowDataBound">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 行渲染函数
+        function grid1RowDataBound(rowData) {
+            var entranceYear = rowData.values['EntranceYear'];
+
+            if (entranceYear >= 2002 && entranceYear <= 2004) {
+                rowData.cls = 'color1';
+            } else if (entranceYear > 2008) {
+                rowData.cls = 'color3';
+            }
+        }
+
+    </script>
+}

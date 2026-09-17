@@ -1,0 +1,87 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.LockColumnManyColumnsModel
+@{
+    ViewBag.Title = "GridOther/LockColumnManyColumns";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row .f-grid-cell-text {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（23列，36行，行高不同）" DataIDField="Id" DataTextField="Name" IsViewPort="true" AllowColumnLocking="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="标识" DataField="Id" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" Locked="true" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" EnableLock="true" />
+            <f:RenderField HeaderText="个人简介" DataField="Desc" Width="500" EnableLock="true" />
+            <f:RenderField HeaderText="GUID" DataField="GUID" Width="300" EnableLock="true" />
+            <f:RenderField HeaderText="爱好" DataField="Hobby" RendererFunction="renderHobby" Width="200" EnableLock="true" />
+            <f:RenderField HeaderText="入学时间" DataField="EntranceDate" EnableLock="true" />
+            <f:RenderField HeaderText="语文成绩" DataField="ChineseScore" EnableLock="true" />
+            <f:RenderField HeaderText="数学成绩" DataField="MathScore" EnableLock="true" />
+            <f:RenderField HeaderText="身高" DataField="ShenGao" EnableLock="true" />
+            <f:RenderField HeaderText="体重" DataField="TiZhong" EnableLock="true" />
+            <f:RenderField HeaderText="血压（低）" DataField="XueYaDi" EnableLock="true" />
+            <f:RenderField HeaderText="血压（高）" DataField="XueYaGao" EnableLock="true" />
+            <f:RenderField HeaderText="视力（左）" DataField="ShiLiZuo" EnableLock="true" />
+            <f:RenderField HeaderText="视力（右）" DataField="ShiLiYou" EnableLock="true" />
+            <f:RenderField HeaderText="矫正视力（左）" DataField="ShiLiZuoJiaoZhen" Width="150" EnableLock="true" />
+            <f:RenderField HeaderText="矫正视力（右）" DataField="ShiLiYouJiaoZhen" Width="150" EnableLock="true" />
+        </Columns>
+    </f:Grid>
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderHobby(value, params) {
+            var result = [];
+
+            // Hobby：reading,basketball,travel,movie,music
+            // 爱好：读书, 篮球, 旅游, 电影, 音乐
+            var hobbies = value.split(',');
+
+            $.each(hobbies, function (index, hobby) {
+                if (hobby == "reading") {
+                    result.push("读书");
+                }
+                else if (hobby == "basketball") {
+                    result.push("篮球");
+                }
+                else if (hobby == "travel") {
+                    result.push("旅游");
+                }
+                else if (hobby == "movie") {
+                    result.push("电影");
+                }
+                else if (hobby == "music") {
+                    result.push("音乐");
+                }
+            });
+
+            return result.join(',');
+        }
+
+    </script>
+}

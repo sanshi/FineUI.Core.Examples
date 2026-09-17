@@ -1,0 +1,110 @@
+@page
+@model FineUI.Core.Examples.Pages.GridRowHeight.GridRowDensityModel
+@{
+    ViewBag.Title = "GridRowHeight/GridRowDensity";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField ColumnID="Desc" Width="400" DataField="Desc" HeaderText="个人简介" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Tools>
+            <f:Tool ID="toolRowDensity" runat="server" IconFont="_List" Text="行密度">
+                <Menu runat="server">
+                    <f:MenuCheckBox Text="小间距" AttributeDataTag="small" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                    <f:MenuCheckBox Text="标准间距" AttributeDataTag="normal" Checked="true" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                    <f:MenuCheckBox Text="大间距" AttributeDataTag="large" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                    <f:MenuCheckBox Text="超大间距" AttributeDataTag="xlarge" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                </Menu>
+            </f:Tool>
+        </Tools>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br />
+    <br />
+            注：不同显示模式下，表格的行间距参数如下所示（行高不包含内边距）。
+    <br />
+    <br />
+    <table class="result" style="width: 850px;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>行高（px）</th>
+                <th>内边距（px）<br />行密度（Small）</th>
+				<th>内边距（px）<br />行密度（Normal）</th>
+				<th>内边距（px）<br />行密度（Large）</th>
+				<th>内边距（px）<br />行密度（XLarge）</th>
+            </tr>
+            <tr>
+                <td>紧凑模式</td>
+                <td>16</td>
+                <td>2</td>
+                <td>6</td>
+                <td>10</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>小字体模式</td>
+                <td>16</td>
+                <td>4</td>
+                <td>8</td>
+                <td>12</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>普通模式</td>
+                <td>20</td>
+                <td>4</td>
+                <td>8</td>
+                <td>12</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>大间距模式</td>
+                <td>24</td>
+                <td>6</td>
+                <td>10</td>
+                <td>14</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>大字体模式</td>
+                <td>24</td>
+                <td>8</td>
+                <td>12</td>
+                <td>16</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onRowDensityChange(event) {
+            var menuCheckBoxCmp = this;
+            var selectedRowDensity = menuCheckBoxCmp.el.attr('data-tag');
+
+            F.ui.Grid1.setRowDensity(selectedRowDensity);
+        }
+
+    </script>
+}

@@ -1,0 +1,60 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowExpanderExpandAllModel
+@{
+    ViewBag.Title = "Grid/RowExpanderExpandAll";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" ExpandAllRowExpanders="true" Height="500">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+            <f:RenderField DataField="Desc" RenderAsRowExpander="true" RendererFunction="renderExpander"></f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="显示/隐藏行扩展列" ClickHandler="onToggleRowExpanderClick"></f:Button>
+    <br>
+    <br>
+
+    <f:Button ID="Button1" Text="重新绑定表格" CssClass="marginr" OnClick="Button1_Click"></f:Button>
+    <f:Button ID="btnExpandRowExpanders" CssClass="marginr" Text="展开全部的行扩展列" ClickHandler="onExpandAllClick"></f:Button>
+    <f:Button ID="btnCollapseRowExpanders" Text="折叠全部的行扩展列" ClickHandler="onCollapseAllClick"></f:Button>
+
+
+    <br>
+    <br>
+    注：通过一个简单的属性，来控制是否展开所有行扩展列（即使在重新绑定数据后，依然能够保持所有扩展列的展开状态）。
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script type="text/javascript">
+
+        function onToggleRowExpanderClick(event) {
+            F.ui.Grid1.rowExpander.toggleVisible();
+        }
+
+        function onExpandAllClick(event) {
+            F.ui.Grid1.expandRowExpanders();
+        }
+
+        function onCollapseAllClick(event) {
+            F.ui.Grid1.collapseRowExpanders();
+        }
+    </script>
+
+
+}

@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.ToolTipPositionModel
+@{
+    ViewBag.Title = "Form/ToolTipPosition";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <div style="padding: 50px 150px; width: 900px;">
+        <table style="width: 100%; border-spacing: 20px;">
+            <tr>
+                <td></td>
+                <td style="text-align: center;">
+                    <f:Button Text="TopStart" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopStart" Width="100"></f:Button>
+                    <f:Button Text="Top" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Top" Width="100"></f:Button>
+                    <f:Button Text="TopEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopEnd" Width="100"></f:Button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    <f:Button Text="LeftStart" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="LeftStart" Width="100"></f:Button>
+                </td>
+                <td></td>
+                <td style="text-align: left;">
+                    <f:Button Text="RightStart" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="RightStart" Width="100"></f:Button>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    <f:Button Text="Left" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Left" Width="100"></f:Button>
+                </td>
+                <td></td>
+                <td style="text-align: left;">
+                    <f:Button Text="Right" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Right" Width="100"></f:Button>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    <f:Button Text="LeftEnd" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="LeftEnd" Width="100"></f:Button>
+                </td>
+                <td></td>
+                <td style="text-align: left;">
+                    <f:Button Text="RightEnd" _ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="RightEnd" Width="100"></f:Button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: center;">
+                    <f:Button Text="BottomStart" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomStart" Width="100"></f:Button>
+                    <f:Button Text="Bottom" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Bottom" Width="100"></f:Button>
+                    <f:Button Text="BottomEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomEnd" Width="100"></f:Button>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+}
+

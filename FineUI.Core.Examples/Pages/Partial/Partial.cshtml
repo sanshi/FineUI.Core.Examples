@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Partial.PartialModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Partial/PartialView.cshtml";
+    ViewBag.Title = "Partial/Partial";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @{
+        var PartialViewIndex = 0;
+    }
+
+    <f:ContentPanel ID="Panel1" IsFluid="true" EnableCollapse="false" BodyPadding="10" Height="200" Title="面板一（Panel->PartialView）">
+        @(await Html.PartialAsync("PartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" } }))
+    </f:ContentPanel>
+
+    <br />
+    <f:Panel ID="Panel2" IsFluid="true" EnableCollapse="false" BodyPadding="10" Height="200" Title="面板二（Panel->PartialConnector->PartialView）">
+        <Items>
+            <f:PartialConnector Content="@(await Html.PartialAsync("PartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" } }))">
+            </f:PartialConnector>
+        </Items>
+    </f:Panel>
+
+    <br />
+    <f:Panel ID="Panel3" IsFluid="true" EnableCollapse="false" BodyPadding="10" Height="200" Layout="Fit" Title="面板三（Layout=Fit, Panel->PartialConnector->PartialView）">
+        <Items>
+            <f:PartialConnector Content="@(await Html.PartialAsync("PartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" } }))">
+            </f:PartialConnector>
+        </Items>
+    </f:Panel>
+
+}
+

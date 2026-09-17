@@ -1,0 +1,21 @@
+﻿@page
+@{
+    ViewBag.Title = "Config/IPMAC";
+    var F = Html.F();
+}
+
+@section body {
+
+    @{
+        var ipmac = F.PageManager.Source.GetRequestIPMAC();
+    }
+
+    <f:SimpleForm IsFluid="true" LabelWidth="50" BodyPadding="10" Title="服务器的 IP+MAC 地址">
+        <Items>
+            <f:TextBox Label="IP" ID="tbxIP" ReadOnly="true" Text="@ipmac[0]"></f:TextBox>
+            <f:TextBox Label="MAC" ID="tbxMAC" ReadOnly="true" Text="@ipmac[1]"></f:TextBox>
+        </Items>
+    </f:SimpleForm>
+
+}
+

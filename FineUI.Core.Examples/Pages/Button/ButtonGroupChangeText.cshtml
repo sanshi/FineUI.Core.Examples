@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonGroupChangeTextModel
+@{
+    ViewBag.Title = "Button/ButtonGroupChangeText";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板">
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:ButtonGroup ID="ButtonGroup1">
+                        <f:Button ID="Button1" Text="按钮一" IconAlign="Top" Icon="Email"  />
+                        <f:Button ID="Button2" Text="按钮二" IconAlign="Bottom" Icon="Star"  />
+                        <f:Button ID="Button3" Text="按钮三" IconAlign="Top" IconFont="_Camera"  />
+                        <f:Button ID="Button4" Text="按钮四" IconAlign="Bottom" IconFont="_Phone"  />
+                    </f:ButtonGroup>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Button CssClass="marginr" ID="btnChangeButtonText" Text="修改[按钮四]的文本" OnClick="btnChangeButtonText_Click"></f:Button>
+            <f:Button ID="btnShowHideButton" Text="显示隐藏[按钮四]" OnClick="btnShowHideButton_Click"></f:Button>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:ButtonGroup ID="ButtonGroup2">
+        <f:Button ID="Button5" Text="按钮五" IconAlign="Top" Icon="Email"  />
+        <f:Button ID="Button6" Text="按钮六" IconAlign="Bottom" Icon="Star"  />
+        <f:Button ID="Button7" Text="按钮七" IconAlign="Top" IconFont="_Camera"  />
+        <f:Button ID="Button8" Text="按钮八" IconAlign="Bottom" IconFont="_Phone"  />
+    </f:ButtonGroup>
+    <br />
+    <f:Button CssClass="marginr" ID="btnChangeButtonText2" Text="修改[按钮八]的文本" OnClick="btnChangeButtonText2_Click"></f:Button>
+    <f:Button ID="btnShowHideButton2" Text="显示隐藏[按钮八]" OnClick="btnShowHideButton2_Click"></f:Button>
+
+}
+

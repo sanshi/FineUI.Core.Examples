@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.Pages.DatePicker.DatePickerDayRangeMinDateModel
+@{
+    ViewBag.Title = "DatePicker/DatePickerDayRangeMinDate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
+        <Items>
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy/MM/dd"
+                          Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true" DisplayType="DayRange">
+            </f:DatePicker>
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
+    </f:Label>
+
+}
+

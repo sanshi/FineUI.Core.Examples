@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.CSP.HtmlEditorModel
+@{
+    ViewBag.Title = "CSP/HtmlEditor";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @{
+        F.PageManager.CspScripts(true).CspScriptsAllowNonce(false).CspScriptsAllowUnsafeInline(true);
+    }
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="表单">
+        <Items>
+            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1" Editor="UEditor" BasePath="~/res/third-party/ueditor/" Height="250">
+            </f:HtmlEditor>
+            <f:TextArea ID="TextArea1" Label="多行文本框" Height="150" Text="FineUI的使命是创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序">
+            </f:TextArea>
+            <f:Button ID="Button1" Text="获取 HTML 编辑器的内容" CssClass="marginr" OnClick="Button1_Click"></f:Button>
+            <f:Button ID="Button2" Text="设置 HTML 编辑器的内容" OnClick="Button2_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    
+    <br />
+    <br />
+    注：
+    <ul>
+        <li>由于第三方类库（UEditor）使用了内联脚本，因此需要启用CspScriptsAllowUnsafeInline，允许所有的内联脚本执行。</li>
+        <li>一般情况下推荐启用CspScriptsAllowNonce属性，这样更加安全。</li>
+        <li>文章：<a target="_blank" href="https://fineui.com/docs/#/Questions/5000_CSP_unsafe_inline">https://fineui.com/docs/#/Questions/5000_CSP_unsafe_inline</a></li>
+    </ul>
+    
+
+}
+
+
+@section script {
+
+    <script type="text/javascript">
+
+        console.log('Hello world!');
+
+    </script>
+
+}

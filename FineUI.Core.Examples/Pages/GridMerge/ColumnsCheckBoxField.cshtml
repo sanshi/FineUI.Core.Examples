@@ -1,0 +1,106 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMerge.ColumnsCheckBoxFieldModel
+@{
+    ViewBag.Title = "GridMerge/ColumnsCheckBoxField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="ID" DataField="ID" />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组B" DataField="GroupB" RendererFunction="renderGroup" />
+            <f:RenderCheckField ColumnID="CheckBoxField1" RenderAsStaticField="false" HeaderText="是否激活" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="onGridDataLoad"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+    注：同一分组的复选框只能选中一个。
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+        function onGridDataLoad(event) {
+            this.mergeColumns(['GroupB']);
+        }
+
+        F.ready(function () {
+
+            var grid = F.ui.Grid1;
+            var checkboxSelector = '.f-grid-cell-CheckBoxField1 .f-grid-checkbox';
+
+            // 注册复选框的点击事件
+            grid.el.on('click', checkboxSelector, function (event) {
+                var targetEl = $(this), checked = targetEl.hasClass('f-checked');
+
+                // 如果取消复选框选中，则不做处理
+                if (checked) {
+                    var rowEl = targetEl.closest('.f-grid-row');
+                    var rowData = grid.getRowData(rowEl);
+
+                    // 参考行的 GroupB 的值
+                    var rowGroupB = rowData.values['GroupB'];
+
+                    // 下一个要检查的行元素
+                    var nextRowEl;
+
+                    // 取消选中行中的复选框，返回 false 表明本行和参考行不属于同一个分组
+                    function uncheckRow() {
+                        var nextRowData = grid.getRowData(nextRowEl);
+                        var nextRowGroupB = nextRowData.values['GroupB'];
+
+                        if (nextRowGroupB == rowGroupB) {
+                            nextRowEl.find(checkboxSelector).removeClass('f-checked');
+                            return true;
+                        } else {
+                            // 不属于同一个分组
+                            return false;
+                        }
+                    }
+
+
+                    // 向上查找相同 GroupB 的行，并取消选中复选框
+                    nextRowEl = rowEl;
+                    while ((nextRowEl = nextRowEl.prev()).length) {
+                        if (!uncheckRow()) {
+                            break;
+                        }
+                    }
+
+                    // 向下查找相同 GroupB 的行，并取消选中复选框
+                    nextRowEl = rowEl;
+                    while ((nextRowEl = nextRowEl.next()).length) {
+                        if (!uncheckRow()) {
+                            break;
+                        }
+                    }
+
+                }
+
+            });
+        });
+
+    </script>
+
+
+}

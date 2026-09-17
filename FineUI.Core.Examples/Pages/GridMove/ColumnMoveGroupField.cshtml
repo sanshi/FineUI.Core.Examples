@@ -1,0 +1,94 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.ColumnMoveGroupFieldModel
+@{
+    ViewBag.Title = "GridMove/ColumnMoveGroupField";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" EnableColumnMove="true" EnableSameGroupColumnMove="true">
+        <Columns>
+            <f:RenderField ColumnID="Year" DataField="Year" HeaderText="统计年份" />
+            <f:GroupField ColumnID="anhui" HeaderText="安徽省" TextAlign="Center">
+                <Columns>
+                    <f:GroupField ColumnID="hefei" HeaderText="合肥市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField ColumnID="AHData1" DataField="AHData1" HeaderText="数据一" />
+                            <f:RenderField ColumnID="AHData2" DataField="AHData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                </Columns>
+            </f:GroupField>
+            <f:GroupField ColumnID="henan" HeaderText="河南省" TextAlign="Center">
+                <Columns>
+                    <f:GroupField ColumnID="zhumadian" HeaderText="驻马店市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField ColumnID="HZData1" DataField="HZData1" HeaderText="数据一" />
+                            <f:RenderField ColumnID="HZData2" DataField="HZData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                    <f:GroupField ColumnID="luohe" HeaderText="漯河市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField ColumnID="HLData1" DataField="HLData1" HeaderText="数据一" />
+                            <f:RenderField ColumnID="HLData2" DataField="HLData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                </Columns>
+            </f:GroupField>
+            <f:RenderField BoxFlex="1" TextAlign="Center" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="记录时间" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnmove" Handler="onGridColumnMove"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列顺序）" ClickHandler="onRefreshClick"></f:Button>
+    <br>
+    <br>
+    注：表格启用 EnableColumnMove 和 EnableSameGroupColumnMove，确保列只能在同一分组内移动（比如驻马店下面的数据一不能移动到合肥市的下面）！
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+
+    <script>
+
+        function onRefreshClick(event) {
+            window.location.reload();
+        }
+
+
+        function onGridColumnMove(event, targetColumnId, sourceColumnId, operation) {
+            var grid = this;
+
+            function getColumnIds(columns) {
+                return $.map(columns, function (item, index) {
+                    var itemObj = {
+                        columnId: item.columnId
+                    };
+                    if (item.columns) {
+                        itemObj['columns'] = getColumnIds(item.columns);
+                    }
+                    return itemObj;
+                });
+            }
+
+            // 列拖拽排序后的列顺序数组
+            var columnIds = getColumnIds(grid.columns);
+
+            // 触发后台事件
+            F.customEvent('Grid1_ColumnMove', {
+                columnIds: columnIds
+            });
+        }
+
+
+    </script>
+}

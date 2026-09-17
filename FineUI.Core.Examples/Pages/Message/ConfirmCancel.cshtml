@@ -1,0 +1,54 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.ConfirmCancelModel
+@{
+    ViewBag.Title = "Message/ConfirmCancel";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button Text="操作一（ConfirmText）" ID="btnOperation1" ConfirmText="确认执行操作一？" ConfirmTarget="Top" OnClick="btnOperation1_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button Text="操作二（ClickHandler）" ID="btnOperation2" ClickHandler="onOperation2Click"></f:Button>
+    <br />
+    <br />
+    <f:Button Text="操作三（ClickHandler，点击取消按钮也回发）" ID="btnOperation3" ClickHandler="onOperation3Click"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onOperation2Click(event) {
+            F.confirm({
+                message: '确认执行操作二？',
+                messageIcon: 'question',
+                ok: function () {
+                    // 触发后台事件
+                    F.customEvent('Operation2');
+                }
+            });
+        }
+
+        function onOperation3Click(event) {
+            F.confirm({
+                message: '确认执行操作三？',
+                messageIcon: 'question',
+                ok: function () {
+                    // 触发后台事件
+                    F.customEvent('Operation3_ok');
+                },
+                cancel: function () {
+                    // 触发后台事件
+                    F.customEvent('Operation3_cancel');
+                }
+            });
+        }
+
+    </script>
+}

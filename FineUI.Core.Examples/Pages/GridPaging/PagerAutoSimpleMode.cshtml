@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.PagerAutoSimpleModeModel
+@{
+    ViewBag.Title = "GridPaging/PagerAutoSimpleMode";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @* 在 PageManager 级别开启“窄屏自动简洁分页”（与其它示例一致，用流式写法配置全局 PageManager） *@
+    @{
+        F.PageManager.GridPagerAutoSimpleMode(true);
+    }
+
+    <f:Grid ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
+            AllowPaging="true" IsDatabasePaging="true" PageSize="10" ShowPageSizeSelector="true" DataIDField="Id"
+            OnPageIndexChanged="Grid1_PageIndexChanged">
+        <Columns>
+            <f:RowNumberField EnablePagingNumber="true" Width="60" />
+            <f:RenderField DataField="Id" HeaderText="ID" Width="150" />
+            <f:RenderField ExpandUnusedSpace="true" MinWidth="150" DataField="EntranceTime" HeaderText="时间" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <div class="f-help-block" style="line-height: 1.8;">
+        本页已在 PageManager 级别开启 GridPagerAutoSimpleMode。请缩小浏览器宽度（或在移动端/窄屏查看）：当分页栏放不下时，完整分页器会自动降级为简洁形态（上一页 + 当前/总页 + 下一页）；拉宽后自动还原。
+    </div>
+
+}

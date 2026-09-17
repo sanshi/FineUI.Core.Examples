@@ -1,0 +1,73 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.GridLayoutModel
+@{
+    ViewBag.Title = "DropDownBox/GridLayout";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
+                  ShowBorder="true" Title="下拉表格（复杂布局）" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" DataControlID="Grid1" EnableMultiSelect="true" MatchFieldWidth="false">
+                <PopPanel>
+                    <f:Panel ID="Panel7" BodyPadding="10px" Width="650" Height="300" Hidden="true"
+                             ShowBorder="true" ShowHeader="false" Layout="VBox" BoxConfigSpace="5">
+                        <Items>
+                            <f:Form ShowBorder="false" ShowHeader="false" RemoveLastFieldsMargin="true">
+                                <Rows>
+                                    <f:FormRow>
+                                        <Items>
+                                            <f:TwinTriggerBox Width="300" EmptyText="在姓名中查找" ShowLabel="false" ID="ttbSearch"
+                                                              ShowTrigger1="false" OnTrigger1Click="ttbSearch_Trigger1Click" OnTrigger2Click="ttbSearch_Trigger2Click"
+                                                              Trigger1Icon="Clear" Trigger2Icon="Search">
+                                            </f:TwinTriggerBox>
+                                            <f:RadioButtonList ID="rblAtSchool" Label="是否在校" 
+                                                               OnSelectedIndexChanged="rblAtSchool_SelectedIndexChanged">
+                                                <f:RadioItem Text="全部" Value="-1" Selected="true" />
+                                                <f:RadioItem Text="在校" Value="1" />
+                                                <f:RadioItem Text="离校" Value="0" />
+                                            </f:RadioButtonList>
+                                        </Items>
+                                    </f:FormRow>
+                                </Rows>
+                            </f:Form>
+                            <f:Grid ID="Grid1" BoxFlex="1"
+                                    DataIDField="Id" DataTextField="Name" EnableMultiSelect="true" KeepCurrentSelection="true"
+                                    PageSize="10" ShowBorder="true" ShowHeader="false"
+                                    AllowPaging="true" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
+                                    EnableCheckBoxSelect="true" 
+                                    AllowSorting="true" SortField="Name" SortDirection="ASC" OnSort="Grid1_Sort">
+                                <Columns>
+                                    <f:RowNumberField />
+                                    <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
+                                    <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                                    <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" />
+                                    <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+                                    <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+                                    <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                                </Columns>
+                            </f:Grid>
+                        </Items>
+                    </f:Panel>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" OnClick="btnGetSelection_Click">
+            </f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult">
+    </f:Label>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}
+
+

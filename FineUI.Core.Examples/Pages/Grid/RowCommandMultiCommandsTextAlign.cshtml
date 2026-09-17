@@ -1,0 +1,48 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowCommandMultiCommandsTextAlignModel
+@{
+    ViewBag.Title = "Grid/RowCommandMultiCommandsTextAlign";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mybtn3 .f-icon.f-icon-remove {
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()"
+            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name" EnableColumnLines="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="居中显示" TextAlign="Center" Width="200">
+                <Commands>
+                    <f:Command CommandName="Action1" IconFont="Pencil" ToolTip="编辑" />
+                    <f:Command CommandName="Action3" IconFont="Remove" ToolTip="删除" CssClass="mybtn3" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

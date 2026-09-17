@@ -1,0 +1,48 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.TreeNodeHyperLinkModel
+@{
+    ViewBag.Title = "Tree/TreeNodeHyperLink";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .lefttree {
+            border-top-width: 0;
+            border-left-width: 0;
+            border-bottom-width: 0;
+        }
+    </style>
+
+
+}
+
+
+@section body {
+
+    <f:Panel ID="RegionPanel1" IsFluid="true" Layout="Region" Height="500" ShowHeader="true" Title="将树节点渲染为超链接（点击节点空白处也能打开链接）" ShowBorder="true">
+        <Items>
+            <f:Tree ID="Tree1" RegionSplit="false" RegionPosition="Left" Width="200" CssClass="lefttree" ShowHeader="false" ShowBorder="true" EnableNodeHyperLink="true">
+                <Nodes>
+                    <f:TreeNode Text="基本用法" Expanded="true">
+                        <f:TreeNode Text="你好 FineUI" NavigateUrl="~/Basic/Hello" Target="treemainframe">
+                        </f:TreeNode>
+                        <f:TreeNode Text="登陆页面" NavigateUrl="~/Basic/Login" Target="treemainframe">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="表单控件" Expanded="true">
+                        <f:TreeNode Text="简单按钮" NavigateUrl="~/Button/Button" Target="treemainframe">
+                        </f:TreeNode>
+                        <f:TreeNode Text="文本输入框" NavigateUrl="~/Form/TextBox" Target="treemainframe">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                </Nodes>
+            </f:Tree>
+            <f:Panel ID="Panel1" IFrameName="treemainframe" ShowHeader="false" EnableIFrame="true" ShowBorder="false" RegionPosition="Center">
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

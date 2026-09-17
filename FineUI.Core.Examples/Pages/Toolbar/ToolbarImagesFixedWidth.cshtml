@@ -1,0 +1,60 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.ToolbarImagesFixedWidthModel
+@{
+    ViewBag.Title = "Toolbar/ToolbarImagesFixedWidth";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板" Height="250" EnableCollapse="false">
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:Image ID="Image1" ImageWidth="16" Icon="ArrowRight">
+                    </f:Image>
+                    <f:LinkButton ID="Button1" Text="按钮一"  ClickHandler="onButton1Click">
+                    </f:LinkButton>
+                    <f:Image ID="Image2" ImageWidth="16" Icon="World">
+                    </f:Image>
+                    <f:LinkButton ID="Button2" Text="按钮二" ClickHandler="onButton2Click">
+                    </f:LinkButton>
+                    <f:Image ID="Image3" ImageWidth="16" Icon="Cake">
+                    </f:Image>
+                    <f:LinkButton ID="Button3" Text="按钮三" ClickHandler="onButton3Click">
+                    </f:LinkButton>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>由于页面布局时图片尚未加载，所以会造成布局错乱</li>
+        <li>可以为 Image 控件设置固定宽度来解决</li>
+    </ul>
+
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onButton1Click(event) {
+            alert('Button1');
+        }
+
+        function onButton2Click(event) {
+            alert('Button2');
+        }
+
+        function onButton3Click(event) {
+            alert('Button3');
+        }
+
+    </script>
+}

@@ -1,0 +1,72 @@
+@page
+@model FineUI.Core.Examples.Pages.FormLayout.LayoutCenterLabelModel
+@{
+    ViewBag.Title = "FormLayout/LayoutCenterLabel";
+    var F = Html.F();
+}
+
+
+@section head {
+    <style>
+        .formtitle .f-field-body {
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.2em;
+            margin: 10px 0;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Form IsFluid="true" BodyPadding="10" ID="Form1" LabelWidth="100" EnableCollapse="false" ShowHeader="false" Title="表单">
+        <Rows>
+            <f:FormRow>
+                <Items>
+                    <f:Label ID="Label2" CssClass="formtitle f-widget-header" Text="这是表单标题">
+                    </f:Label>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ColumnWidths="40% 60%">
+                <Items>
+                    <f:Label ID="Label1" Label="标签" Text="标签的值">
+                    </f:Label>
+                    <f:CheckBox ID="CheckBox1" Text="复选框" Label="复选框">
+                    </f:CheckBox>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ColumnWidths="40% 60%">
+                <Items>
+                    <f:DropDownList ID="DropDownList1" Label="下拉列表" EmptyText="请选择一项" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
+                        <f:ListItem Text="可选项 2" Value="1"></f:ListItem>
+                    </f:DropDownList>
+                    <f:TextBox ID="TextBox1" ShowRedStar="true" Label="文本框" Required="true" Text="">
+                    </f:TextBox>
+                </Items>
+            </f:FormRow>
+        </Rows>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Center">
+                <Items>
+                    <f:Button Text="验证此表单并提交" _ValidateForms="Form1" ID="btnSubmit" OnClick="btnSubmit_Click"></f:Button>
+                    <f:Button ID="btnResetForm1" Text="重置表单" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Form>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onResetClick(event) {
+            F.ui.Form1.reset();
+        }
+
+    </script>
+}

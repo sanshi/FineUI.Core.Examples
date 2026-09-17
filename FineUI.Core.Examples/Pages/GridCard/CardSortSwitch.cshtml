@@ -1,0 +1,128 @@
+@page
+@model FineUI.Core.Examples.Pages.GridCard.CardSortSwitchModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/res/js/gridcard.js";
+    ViewBag.Title = "GridCard/CardSortSwitch";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            Height="500" DisplayType="Card" CardRendererFunction="renderCard"
+            AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" SortField="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" SortField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" SortField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" SortField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="sorting" Handler="onGrid1Sorting"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button IconFont="_Sort" ID="btnSort" ShowMenuIcon="false">
+                        <Menu>
+                            <Items>
+                                <f:MenuCheckBox Text="姓名" AttributeDataTag="Name" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="性别" AttributeDataTag="Gender" Checked="true" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="入学年份" AttributeDataTag="EntranceYear" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="入学日期" AttributeDataTag="EntranceDate" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="是否在校" AttributeDataTag="AtSchool" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="所学专业" AttributeDataTag="Major" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuSeparator></f:MenuSeparator>
+                                <f:MenuCheckBox Text="升序" AttributeDataTag="ASC" Checked="true" IconFont="_Ascend" GroupName="MenuSortDirection">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="降序" AttributeDataTag="DESC" IconFont="_Descend" GroupName="MenuSortDirection">
+                                </f:MenuCheckBox>
+                            </Items>
+                            <Listeners>
+                                <f:Listener Event="checkchange" Handler="onSortMenuCheckChange" />
+                            </Listeners>
+                        </Menu>
+                    </f:Button>
+                    <f:Button IconFont="_Gallery" ID="btnDisplayType" ClickHandler="onDisplayTypeClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+    <br />
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script src="~/res/js/gridcard.js"></script>
+
+    <script>
+
+        var Grid1ClientID = 'Grid1';
+        var btnSortClientID = 'btnSort';
+        var btnDisplayTypeClientID = 'btnDisplayType';
+
+        // https://fineui.com/js/api/F.Grid.html#event:sorting
+        // 表格模式下点击列标题栏排序时，同步更新下拉菜单
+        function onGrid1Sorting(event, sortField, sortDirection) {
+            var menu = F(btnSortClientID).menu;
+
+            $.each(menu.items, function (index, item) {
+                if (item.group === 'MenuColumnName' && item.getAttr('data-tag') === sortField) {
+                    item.setChecked(true);
+                } else if (item.group === 'MenuSortDirection' && item.getAttr('data-tag') === sortDirection) {
+                    item.setChecked(true);
+                }
+            });
+        }
+
+        function onDisplayTypeClick(event) {
+            var btn = this;
+            if (btn.iconFont.indexOf('gallery') >= 0) {
+                btn.setIconFont('f-iconfont-table');
+
+                F(Grid1ClientID).setDisplayType('default');
+            } else {
+                btn.setIconFont('f-iconfont-gallery');
+
+                F(Grid1ClientID).setDisplayType('card');
+            }
+        }
+
+        // https://fineui.com/js/api/F.Menu.html#event:checkchange
+        function onSortMenuCheckChange(event, item, checked) {
+            var menu = F(btnSortClientID).menu;
+            var grid = F(Grid1ClientID);
+
+            var sortFieldMenuItem = menu.getCheckedItem('MenuColumnName');
+            var sortDirectionMenuItem = menu.getCheckedItem('MenuSortDirection');
+
+            var sortField = sortFieldMenuItem.getAttr('data-tag');
+            var sortDirection = sortDirectionMenuItem.getAttr('data-tag');
+
+            // 更新表格的排序状态
+            grid.setSortField(sortField, sortDirection);
+            // 触发表格的排序行为（触发表格默认的排序回发事件）
+            grid.trigger('sorting', [event, sortField, sortDirection]);
+        }
+
+
+
+    </script>
+
+}

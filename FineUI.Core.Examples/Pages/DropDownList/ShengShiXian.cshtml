@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.ShengShiXianModel
+@{
+    ViewBag.Title = "DropDownList/ShengShiXian";
+    var F = Html.F();
+}
+
+
+@section body {
+    
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="中国省市县联动">
+        <Items>
+            <f:DropDownList ID="ddlSheng" PersistItems="false" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择省份！" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
+            </f:DropDownList>
+            <f:DropDownList ID="ddlShi" PersistItems="false" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="ddlShi_SelectedIndexChanged">
+                <f:ListItem Text="选择地区市" Value="-1"></f:ListItem>
+            </f:DropDownList>
+            <f:DropDownList ID="ddlXian" PersistItems="false" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！" Label="县区市" Enabled="false">
+                <f:ListItem Text="选择县区市" Value="-1"></f:ListItem>
+            </f:DropDownList>
+            <f:Button ID="btnSubmit" Text="获取选中的省市县" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false" ShowLabel="false" CssStyle="font-weight:bold;">
+    </f:Label>
+    <br />
+
+    注：本示例无需在后台维持Items属性的状态，所以设置下拉列表的PersistItems=false。
+
+
+}
+

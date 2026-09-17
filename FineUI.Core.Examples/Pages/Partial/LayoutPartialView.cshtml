@@ -1,0 +1,33 @@
+﻿@{
+    var F = Html.F();
+}
+
+@{
+    @* 确保控件ID不重复，因为页面上可能会多次渲染此分部视图 *@
+    var __Prefix = "PartialView" + ViewData["PartialViewIndex"].ToString() + "_";
+    var UserName = ViewData["UserName"].ToString();
+    var UserAge = Convert.ToInt32(ViewData["UserAge"]);
+    var UserCountry = ViewData["UserCountry"].ToString();
+
+}
+
+
+<f:Panel ID="@(__Prefix + "Panel1")" BodyPadding="10" Title="分部视图">
+    <Items>
+        <f:Label ID="@(__Prefix + "labUserInfo")" Text="@String.Format("{0}今年{1}岁，住在{2}。", UserName, UserAge, UserCountry)"></f:Label>
+    </Items>
+</f:Panel>
+
+@{
+    var Panel1 = F.GetControl<Panel>(__Prefix + "Panel1");
+    if (ViewData["BoxFlex"] != null)
+    {
+        Panel1.BoxFlex = Convert.ToInt32(ViewData["BoxFlex"]);
+    }
+
+    if (ViewData["Margin"] != null)
+    {
+        Panel1.Margin = ViewData["Margin"].ToString();
+    }
+}
+

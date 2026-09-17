@@ -1,0 +1,81 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.DropDownListMultiModel
+@{
+    ViewBag.Title = "GridEditor/DropDownListMulti";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="兴趣爱好" ColumnID="Hobby" DataField="Hobby" ExpandUnusedSpace="true" MinWidth="150" RendererFunction="renderHobby">
+                <Editor>
+                    <f:DropDownList ID="ddlHobby" EnableMultiSelect="true" TopSpaceFirst="true">
+                        <f:ListItem Text="读书" Value="reading"></f:ListItem>
+                        <f:ListItem Text="篮球" Value="basketball"></f:ListItem>
+                        <f:ListItem Text="旅游" Value="travel"></f:ListItem>
+                        <f:ListItem Text="电影" Value="movie"></f:ListItem>
+                        <f:ListItem Text="音乐" Value="music"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    注：[兴趣爱好]列的编辑器属性TopSpaceFirst=true，优先在上部空间显示弹出框。
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderHobby(value) {
+            // 兴趣爱好下拉列表的实例
+            var ddlHobby = F.ui.ddlHobby;
+
+            var hobbies = value.split(',');
+
+            return $.map(hobbies, function (hobby, index) {
+                return ddlHobby.getTextByValue(hobby);
+            }).join(', ');
+        }
+
+    </script>
+}

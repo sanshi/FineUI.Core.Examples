@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.VBoxAutoHeightModel
+@{
+    ViewBag.Title = "Layout/VBoxAutoHeight";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel5" IsFluid="true" ShowBorder="true" EnableCollapse="true"
+             Layout="VBox" ShowHeader="true" Title="面板（Layout=VBox）（默认值：BoxConfigAlign=Stretch）"
+             BoxConfigChildMargin="0 0 5 0" BodyPadding="5">
+        <Items>
+            <f:Panel ID="Panel1" Title="面板1" Height="100"
+                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label ID="Label1" Text="Height=100">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel2" Title="面板2" Margin="0"
+                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label ID="Label3" EncodeText="false" Text="Margin=0<br><br><br><br><br><br>bottom line">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+

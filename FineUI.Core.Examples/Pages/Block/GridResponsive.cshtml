@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.Block.GridResponsiveModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/res/css/responsive_card.css;~/wwwroot/res/js/grid.js;~/wwwroot/res/js/responsive_card.js";
+    ViewBag.Title = "Block/GridResponsive";
+    var F = Html.F();
+}
+
+@section head {
+
+    <link href="~/res/css/responsive_card.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" CssClass="responsive-card-grid" ShowBorder="true" ShowHeader="true" Title="表格"
+            EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
+            DataIDField="Id" DataTextField="Name" _DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc"
+            Height="600" ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard"
+            DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RenderField ColumnID="UserProfile" Width="250" RendererFunction="renderUserProfile" HeaderText="基本信息"></f:RenderField>
+            <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
+            <f:RenderField Width="150" ColumnID="Rate1" DataField="Rate1" FieldType="Int" HeaderText="评分" RendererFunction="renderRate1" />
+            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" HeaderText="所学专业"></f:RenderField>
+            <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <div style="padding: 0 10px; line-height: 1.8;">
+        注：缩放浏览器窗口（或在手机/平板上打开）：屏幕宽度小于 992px（中屏以下）时，表格自动切换为卡片模式；否则显示为普通表格。通过 ResponsiveCardSize 实现，由屏幕尺寸主导显示模式。
+    </div>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script src="~/res/js/responsive_card.js"></script>
+
+}

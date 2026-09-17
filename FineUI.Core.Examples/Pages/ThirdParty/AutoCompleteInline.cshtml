@@ -1,0 +1,66 @@
+@page
+@model FineUI.Core.Examples.Pages.ThirdParty.AutoCompleteInlineModel
+@{
+    ViewBag.Title = "ThirdParty/AutoCompleteInline";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link rel="stylesheet" href="~/res/third-party/jqueryuiautocomplete/jquery-ui.css" />
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
+        <Items>
+            <f:TextBox ID="TextBox1" ShowLabel="false" EmptyText="输入字母 a 试试">
+            </f:TextBox>
+        </Items>
+    </f:SimpleForm>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/third-party/jqueryuiautocomplete/jquery-ui.js" type="text/javascript"></script>
+    <script>
+
+        F.ready(function () {
+
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"];
+
+            $('#TextBox1 input').autocomplete({
+                source: availableTags
+            });
+
+        });
+
+    </script>
+
+}

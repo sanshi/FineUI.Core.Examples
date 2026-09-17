@@ -1,0 +1,169 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.NavModel
+@{
+    ViewBag.Title = "Other/Nav";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mytable {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            .mytable td {
+                padding: 10px;
+                text-align: center;
+                position: relative;
+            }
+
+            .mytable .f-btn {
+                width: 100px;
+            }
+
+            .mytable .f-btn-icon {
+                width: 50px !important;
+                height: 50px !important;
+                padding: 5px !important;
+                margin: 0 !important;
+            }
+
+            .mytable .myicon {
+                width: 40px;
+                font-size: 30px;
+                opacity: .5;
+                filter: alpha(opacity=50);
+                text-align: center;
+            }
+
+            .mytable .td-icon-down {
+                height: 60px;
+            }
+
+                .mytable .td-icon-down .myicon {
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -20px;
+                    top: 40px;
+                }
+    </style>
+
+}
+
+@section body {
+
+
+    <table class="mytable">
+        <tbody>
+            <tr>
+                <td>
+                    <f:Button ID="Button1" ClickHandler="onNavLoginClick" IconAlign="Top" Icon="User" Text="登陆页面"></f:Button>
+                </td>
+                <td>
+                    <i class="f-icon f-icon-long-arrow-right myicon"></i>
+                </td>
+                <td>
+                    <f:Button ClickHandler="onNavFormCompareClick" IconAlign="Top" Icon="ApplicationForm" Text="表单验证"></f:Button>
+                </td>
+                <td>
+                    <i class="f-icon f-icon-long-arrow-right myicon"></i>
+                </td>
+                <td>
+                    <f:Button ClickHandler="onNavRowExpanderClick" IconAlign="Top" Icon="Table" Text="行扩展列"></f:Button>
+                </td>
+                <td>
+                    <i class="f-icon f-icon-long-arrow-right myicon"></i>
+                </td>
+                <td>
+                    <f:Button ClickHandler="onNavLargeDataClick" IconAlign="Top" Icon="TableLightning" Text="大数据表格"></f:Button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td class="td-icon-down">
+                    <i class="f-icon f-icon-long-arrow-down myicon"></i>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <f:Button ClickHandler="onNavRegionClick" IconAlign="Top" Icon="LayoutContent" Text="区域布局"></f:Button>
+                </td>
+                <td rowspan="2">
+                    <i class="f-icon f-icon-long-arrow-left myicon"></i>
+                </td>
+                <td>
+                    <f:Button ClickHandler="onNavGroupPanelClick" IconAlign="Top" Icon="Group" Text="分组面板"></f:Button>
+                </td>
+                <td rowspan="2">
+                    <i class="f-icon f-icon-long-arrow-left myicon"></i>
+                </td>
+                <td rowspan="2">
+                    <f:Button ClickHandler="onNavTabStripClick" IconAlign="Top" Icon="Tab" Text="选项卡控件"></f:Button>
+                </td>
+                <td rowspan="2">
+                    <i class="f-icon f-icon-long-arrow-left myicon"></i>
+                </td>
+                <td rowspan="2">
+                    <f:Button ClickHandler="onNavTreeSmartClick" IconAlign="Top" Icon="ApplicationSideTree" Text="智能树控件"></f:Button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <f:Button ClickHandler="onNavWindowClick" IconAlign="Top" Icon="Application" Text="窗体控件"></f:Button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    注：本示例新增的选项卡和手工点击右侧菜单新增的选项卡是同一个！
+
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onNavLoginClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Basic/Login")');
+        }
+
+        function onNavFormCompareClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Form/FormCompare")');
+        }
+
+        function onNavRowExpanderClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Grid/RowExpander")');
+        }
+
+        function onNavLargeDataClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/GridDataUrl/LargeData1000")');
+        }
+
+        function onNavRegionClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Layout/Region")');
+        }
+
+        function onNavGroupPanelClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Panel/Group")');
+        }
+
+        function onNavTabStripClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/TabStrip/TabStrip")');
+        }
+
+        function onNavTreeSmartClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Tree/TreeSmart")');
+        }
+
+        function onNavWindowClick(event) {
+            top.addExampleTabByHref('@Url.Content("~/Window/Window")');
+        }
+
+    </script>
+}

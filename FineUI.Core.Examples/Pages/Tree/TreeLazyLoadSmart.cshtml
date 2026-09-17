@@ -1,0 +1,87 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.TreeLazyLoadSmartModel
+@{
+    ViewBag.Title = "Tree/TreeLazyLoadSmart";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" Width="300" Height="400" EnableCollapse="false" ShowHeader="false" AutoLeafIdentification="false" EnableSingleClickExpand="true"
+            OnNodeLazyLoad="Tree1_NodeLazyLoad">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true" IconFont="_Home">
+                <f:TreeNode Text="河南省" Expanded="true">
+                    <f:TreeNode Text="驻马店市（延迟加载）" NodeID="zhumadian">
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河" NodeID="luohe" Leaf="true" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui">
+                    <f:TreeNode Text="合肥市" NodeID="hefei">
+                        <f:TreeNode Text="金色池塘小区" NodeID="golden" Leaf="true">
+                        </f:TreeNode>
+                        <f:TreeNode Text="中国科学技术大学" NodeID="ustc" Leaf="true">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+            <f:TreeNode Text="美国" Expanded="true" NodeID="mg" IconFont="_Plane" Icon="Cake">
+                <f:TreeNode Text="加利福尼亚州" Leaf="true" NodeID="mg-jlfny">
+                </f:TreeNode>
+                <f:TreeNode Text="马萨诸塞州" Leaf="true" NodeID="mg-mszs">
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br>
+
+    <f:CheckBox ID="cbxMiniMode" ShowLabel="false" Text="启用微型模式">
+        <Listeners>
+            <f:Listener Event="change" Handler="onMiniModeCheckChanged"></f:Listener>
+        </Listeners>
+    </f:CheckBox>
+
+    <br>
+    <br>
+    <f:Button ID="btnGetSelectedNode" OnClick="btnGetSelectedNode_Click" CssClass="marginr" Text="获取选中的节点"></f:Button>
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onMiniModeCheckChanged(event, checked) {
+            var tree1 = F.ui.Tree1;
+
+            tree1.miniMode = checked;
+
+            // 如果启用微型模式，则强制启用其他属性（建议微型模式的最小宽度为60px）
+            if (checked) {
+                tree1.width = 60;
+
+                tree1.hideHScrollbar = true;
+                tree1.hideVScrollbar = true;
+                tree1.expanderToRight = true;
+                tree1.headerStyle = true;
+            } else {
+                tree1.width = 300;
+
+                tree1.hideHScrollbar = false;
+                tree1.hideVScrollbar = false;
+                tree1.expanderToRight = false;
+                tree1.headerStyle = false;
+            }
+
+            // 重新加载树控件
+            tree1.loadData();
+        }
+    </script>
+
+
+}

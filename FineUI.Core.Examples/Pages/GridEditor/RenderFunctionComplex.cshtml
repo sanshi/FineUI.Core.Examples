@@ -1,0 +1,93 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.RenderFunctionComplexModel
+@{
+    ViewBag.Title = "GridEditor/RenderFunctionComplex";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" RendererFunction="renderName">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    注：这个示例高亮所有[入学年份]大于等于 2003 的姓名，并在入学年份改变时更新姓名的高亮显示。
+    <ul>
+        <li>
+            如何在 RendererFunction 中获取其他列的值
+        </li>
+        <li>
+            如何注册表格的 afteredit 事件，并通过 ColumnID 相关的 CSS 类来获取列
+        </li>
+    </ul>
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderName(value, params) {
+            if (params.rowValue["EntranceYear"] >= 2003) {
+                params.cellCls = 'highlight';
+            }
+
+            return value;
+        }
+
+        function onGrid1AfterEdit(event, value, params) {
+            var grid = this, rowId = params.rowId, columnId = params.columnId;
+
+            if (columnId === 'EntranceYear') {
+                if (value >= 2003) {
+                    grid.updateCellValue(rowId, 'Name.cls', 'highlight');
+                } else {
+                    grid.updateCellValue(rowId, 'Name.cls', '');
+                }
+            }
+        }
+
+    </script>
+}

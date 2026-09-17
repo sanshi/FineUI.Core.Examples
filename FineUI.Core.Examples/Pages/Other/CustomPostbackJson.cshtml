@@ -1,0 +1,56 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.CustomPostbackJsonModel
+@{
+    ViewBag.Title = "Other/CustomPostbackJson";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
+        <Items>
+            <f:TextBox ID="TextBox1" ShowLabel="false" EmptyText="输入一些文字并按 ENTER 键">
+                <Listeners>
+                    <f:Listener Event="enter" Handler="onTextBoxEnter" />
+                </Listeners>
+            </f:TextBox>
+            <f:TextBox ID="TextBox2" ShowLabel="false">
+            </f:TextBox>
+        </Items>
+    </f:SimpleForm>
+
+    <br />
+    <br />
+    注：需要后台返回 JSON 的时候，请直接调用 jQuery.ajax 函数（不推荐使用 F.doPostBack 函数)！
+}
+
+@section script {
+
+    <script>
+
+        function onTextBoxEnter(event) {
+            var me = this;
+
+            // 触发后台事件
+            F.doPostBack({
+                url: '@Url.Handler("TextBox1_ENTER")',
+                params: {
+                    text1: me.getValue()
+                },
+                complete: function (data) {
+                    var json = JSON.parse(data);
+
+                    F.ui.TextBox2.setValue(json.text);
+                    F.ui.TextBox2.focus();
+
+                    // 阻止FineUI将返回的内容当做脚本解析
+                    return false;
+                }
+            });
+
+        }
+
+    </script>
+
+}

@@ -1,0 +1,266 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.SelectFromWindowEmptyRowsModel
+@{
+    ViewBag.SourceFiles = "~/GridEditor/SelectFromWindowEmptyRowsIFrameWindow";
+    ViewBag.Title = "GridEditor/SelectFromWindowEmptyRows";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从弹出窗体中选择用户）" Height="500" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TriggerBox ID="tbxEditorName" TriggerIcon="Search">
+                        <Listeners>
+                            <f:Listener Event="triggerclick" Handler="onNameSearchTriggerClick"></f:Listener>
+                        </Listeners>
+                    </f:TriggerBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField ColumnID="AtSchool" DataField="AtSchool" FieldType="Boolean" RendererFunction="renderAtSchool" HeaderText="是否在校">
+                <Editor>
+                    <f:DropDownList Required="true">
+                        <f:ListItem Text="在校" Value="true" />
+                        <f:ListItem Text="离校" Value="false" />
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="onGrid1DataLoad"></f:Listener>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnReset" Text="重置表格数据" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" ClickHandler="onSubmitClick"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    <f:Window ID="Window1" Hidden="true" EnableIFrame="true" EnableMaximize="true" EnableResize="true" Target="Top" Height="500" Width="700" Title="选择用户">
+    </f:Window>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderGender(value) {
+            // value === '', 表示空数据
+            if (value === '') {
+                return '';
+            } else {
+                return value == 1 ? '男' : '女';
+            }
+        }
+
+        function renderAtSchool(value) {
+            // value === '', 表示空数据
+            if (value === '') {
+                return '';
+            } else {
+                return value ? '在校' : '离校';
+            }
+        }
+
+        function moveToNextRow() {
+            var grid1 = F.ui.Grid1;
+
+            function selectNextRow() {
+                // 当前选中行
+                var selectedRowEl = grid1.getSelectedRowEl();
+                var nextSelectedRowEl = selectedRowEl.next();
+
+                if (nextSelectedRowEl.length) {
+                    // 如果下一行存在
+                    grid1.selectRow(nextSelectedRowEl);
+                    grid1.startEdit(nextSelectedRowEl, "Name");
+
+                    return true;
+                }
+
+                return false;
+            }
+
+            // 如果下一行不存在，需要新增一行
+            if (!selectNextRow()) {
+                var newRowData = {
+                    'Name': '',
+                    'Gender': '',  // Gender的列类型是整型，这里的空字符串表示未定义（对应于服务器断的DBNull.Value）
+                    'EntranceYear': '',
+                    'EntranceDate': '',
+                    'AtSchool': '',  // AtSchool的列类型是布尔型，这里的空字符串表示未定义（对应于服务器断的DBNull.Value）
+                    'Major': ''
+                };
+                // 此过程禁止触发事件 - dataload
+                F.noEvent(function () {
+                    grid1.addNewRecord(newRowData, true, false);
+                });
+
+                selectNextRow();
+            }
+        }
+
+        function onGrid1DataLoad(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 最少 1 个空白行，最多 10 个空白行
+            var emptyRowCount = 10 - grid1.data.length;
+            if (emptyRowCount < 1) {
+                emptyRowCount = 1;
+            }
+
+            // 初始空白行
+            var records = [];
+            for (var i = 0; i < emptyRowCount; i++) {
+                records.push({
+                    'Name': '',
+                    'Gender': '',  // Gender的列类型是整型，这里的空字符串表示未定义（对应于服务器断的DBNull.Value）
+                    'EntranceYear': '',
+                    'EntranceDate': '',
+                    'AtSchool': '',  // AtSchool的列类型是布尔型，这里的空字符串表示未定义（对应于服务器断的DBNull.Value）
+                    'Major': ''
+                });
+            }
+            // 此过程禁止触发事件，防止 dataload 事件死循环
+            F.noEvent(function () {
+                grid1.addNewRecords(records, true);
+            });
+        }
+
+
+        function updateGridRow(values) {
+            var grid1 = F.ui.Grid1;
+
+            var selectedRow = grid1.getSelectedRow();
+
+            // cancelEdit用来取消编辑
+            grid1.cancelEdit();
+            grid1.updateCellValue(selectedRow, values);
+        }
+
+
+        function onNameSearchTriggerClick(event) {
+            var grid1 = F.ui.Grid1;
+            var selectedCell = grid1.getSelectedCell();
+            if (selectedCell) {
+                var iframeWindowUrl = '@Url.Content("~/GridEditor/SelectFromWindowEmptyRowsIFrameWindow")';
+                F.ui.Window1.show(iframeWindowUrl + '?rowid=' + selectedCell[0]);
+            }
+        }
+
+
+        function onSubmitClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 触发后台事件
+            F.customEvent('Submit_Click', {
+                mergedData: grid1.getMergedData()
+            });
+        }
+
+        function onNewClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 此过程禁止触发事件，防止 dataload 事件死循环
+            F.noEvent(function () {
+                // 新增一行（返回新增行的ID）
+                var addedRowId = grid1.addNewRecord({
+                    'Name': '',
+                    'Gender': '',
+                    'EntranceYear': '',
+                    'EntranceDate': '',
+                    'AtSchool': '',
+                    'Major': ''
+                }, true);
+
+                // 选中新增的那一行
+                grid1.selectRow(addedRowId);
+            });
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function () {
+                    F.ui.Grid1.rejectChanges();
+                }
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var selectedRows = grid1.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;行数据吗？'),
+                target: '_top',
+                ok: function () {
+                    grid1.deleteRows(selectedRows);
+                }
+            });
+        }
+
+
+
+        // 行命令
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+    </script>
+}

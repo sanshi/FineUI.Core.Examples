@@ -1,0 +1,182 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.DropDownBoxEditGetterModel
+@{
+    ViewBag.Title = "GridEditor/DropDownBoxEditGetter";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从下拉表格中选择用户）" Height="350" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" EditGetterFunction="editGetterName" EditSetterFunction="editSetterName">
+                <Editor>
+                    <f:DropDownBox ID="DropDownBox1" EmptyText="请选择" MatchFieldWidth="false" EnableMultiSelect="false">
+                        <PopPanel>
+                            <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" Hidden="true" Width="650" Height="300" EnableMultiSelect="false" DataSource="@DataSourceUtil.GetDataTable()">
+                                <Columns>
+                                    <f:RowNumberField />
+                                    <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" />
+                                    <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
+                                    </f:RenderField>
+                                    <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
+                                    <f:RenderField ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期" />
+                                    <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
+                                    <f:RenderField ColumnID="Major" DataField="Major" HeaderText="所学专业" ExpandUnusedSpace="true" />
+                                </Columns>
+                                <Listeners>
+                                    <f:Listener Event="rowclick" Handler="onGrid2RowClick" />
+                                </Listeners>
+                            </f:Grid>
+                        </PopPanel>
+                    </f:DropDownBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="编码" ColumnID="Code" DataField="Code"></f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnReset" Text="重置表格数据" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    <br>
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 自定义编辑器获取函数（从Editor返回单元格）
+        function editGetterName(editor) {
+            return editor.getText();
+        }
+
+        // 自定义编辑器设置函数（从单元格进入Editor）
+        function editSetterName(editor, val, columnId, rowId) {
+            var grid1 = F.ui.Grid1;
+            var rowValue = grid1.getRowValue(rowId);
+            var rowCode = rowValue['Code'];
+
+            editor.setValue(rowCode, val);
+        }
+
+
+        function onGrid2RowClick(event, grid2RowId) {
+            var grid1 = F.ui.Grid1;
+            var grid1RowId = grid1.getSelectedCell()[0];
+            var rowValue = this.getRowValue(grid2RowId);
+
+            grid1.updateCellValue(grid1RowId, {
+                'Code': grid2RowId,
+                'Name': rowValue.Name,
+                'Gender': rowValue.Gender,
+                'EntranceYear': rowValue.EntranceYear,
+                'EntranceDate': rowValue.EntranceDate,
+                'AtSchool': rowValue.AtSchool,
+                'Major': rowValue.Major
+            });
+        }
+
+
+
+        function onNewClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 新增一行（返回新增行的ID）
+            var addedRowId = grid1.addNewRecord({
+                'Name': '新用户',
+                'Gender': '1',
+                'EntranceYear': '2015',
+                'EntranceDate': '2016-11-15',
+                'AtSchool': false,
+                'Major': '化学系'
+            }, true);
+
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function () {
+                    F.ui.Grid1.rejectChanges();
+                }
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var selectedRows = grid1.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;行数据吗？'),
+                target: '_top',
+                ok: function () {
+                    grid1.deleteRows(selectedRows);
+                }
+            });
+        }
+
+
+        // 行命令
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+    </script>
+}

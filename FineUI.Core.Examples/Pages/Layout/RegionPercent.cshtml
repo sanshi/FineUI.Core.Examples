@@ -1,0 +1,58 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.RegionPercentModel
+@{
+    ViewBag.Title = "Layout/RegionPercent";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" Margin="24" ShowBorder="false" ShowHeader="false" Layout="Region" IsViewPort="true">
+        <Items>
+            <f:Panel ID="panelTopRegion" RegionPosition="Top" RegionSplit="true" EnableCollapse="true" RegionPercent="20%"
+                     Title="顶部面板" ShowBorder="true" ShowHeader="false" BodyPadding="10" IconFont="_PullUp">
+                <Items>
+                    <f:Label ID="Label1" Text="顶部面板的内容（RegionPercent=20%）">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
+                     RegionPercent="30%" Title="左侧面板（有提示信息）" TitleToolTip="左侧面板（有提示信息）" ShowBorder="true" ShowHeader="false"
+                     BodyPadding="10" IconFont="_PullLeft">
+                <Items>
+                    <f:Label ID="Label2" EncodeText="false" Text="左侧面板的内容<br>（RegionPercent=30%）">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelCenterRegion" RegionPosition="Center"
+                     Title="中间面板" ShowBorder="true" ShowHeader="false" BodyPadding="10" IconFont="_RoundPlus">
+                <Items>
+                    <f:Label ID="Label3" Text="中间面板的内容">
+                    </f:Label>
+                    <f:Label ID="Label6">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelRightRegion" RegionPosition="Right" RegionSplit="true" EnableCollapse="true"
+                     RegionPercent="30%" Title="右侧面板" ShowBorder="true" ShowHeader="false" BodyPadding="10" IconFont="_PullRight">
+                <Items>
+                    <f:Label ID="Label4" EncodeText="false" Text="右侧面板的内容<br>（RegionPercent=30%）">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelBottomRegion" RegionPosition="Bottom" RegionSplit="true" EnableCollapse="true" RegionPercent="20%"
+                     Title="底部面板" ShowBorder="true" ShowHeader="false" BodyPadding="10" IconFont="_PullDown">
+                <Items>
+                    <f:Label ID="Label5" Text="底部面板的内容（RegionPercent=20%）">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+

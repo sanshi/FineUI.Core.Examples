@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.GridEnumModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/Student.cs;~/Pages/DataModel/Models/Status.cs;~/Pages/DataModel/Models/StudentHelper.cs";
+    ViewBag.Title = "DataModel/GridEnum";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField For="Students.First().Name" />
+            <f:RenderField For="Students.First().Gender" RendererFunction="renderGender" />
+            <f:RenderField For="Students.First().EntranceYear" />
+            <f:RenderCheckField For="Students.First().AtSchool" RenderAsStaticField="true" />
+            <f:RenderField For="Students.First().Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField For="Students.First().Group" RendererFunction="renderGroup" />
+            <f:RenderField For="Students.First().EntranceDate" />
+            <f:RenderField For="Students.First().CurrentStatus" />
+            <f:RenderField For="Students.First().CurrentStatusDisplay" />
+        </Columns>
+    </f:Grid>
+
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

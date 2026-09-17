@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.VBoxScrollBarModel
+@{
+    ViewBag.Title = "Layout/VBoxScrollBar";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel5" IsFluid="true" ShowBorder="true" EnableCollapse="true"
+             Layout="VBox" AutoScroll="true" Margin="24px"
+             ShowHeader="true" Title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条"
+             BoxConfigChildMargin="0 0 5 0" BodyPadding="5" IsViewPort="true">
+        <Items>
+            <f:Panel ID="Panel1" Title="面板1" Height="300"
+                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label ID="Label1" Text="Height=300">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel2" Title="面板2" BoxFlex="1" MinHeight="300" Margin="0"
+                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label ID="Label3" Text="BoxFlex=1 Margin=0 MinHeight=300">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+

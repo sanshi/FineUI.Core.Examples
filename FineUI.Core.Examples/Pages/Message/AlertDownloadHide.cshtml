@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.AlertDownloadHideModel
+@{
+    ViewBag.SourceFiles = "~/Message/AlertDownloadTextFile";
+    ViewBag.Title = "Message/AlertDownloadHide";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true" EnableCollapse="false" EnableResize="true" IsModal="false" BodyPadding="10">
+        <Items>
+            <f:Button Text="操作（先弹出提示框，点击确定后先关闭弹出窗体，然后下载文件）" ID="btnOperation" OnClick="btnOperation_Click"></f:Button>
+        </Items>
+    </f:Window>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function confirmOKCallback() {
+            window.location.href = '@Url.Content("~/Message/AlertDownloadTextFile")';
+        }
+
+        function confirmCancelCallback() {
+            // 触发后台事件
+            F.customEvent('ConfirmCancel');
+        }
+
+    </script>
+
+}

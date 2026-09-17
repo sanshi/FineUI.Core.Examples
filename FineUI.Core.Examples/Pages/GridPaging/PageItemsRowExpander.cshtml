@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.PageItemsRowExpanderModel
+@{
+    ViewBag.Title = "GridPaging/PageItemsRowExpander";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（内存分页）" Height="350" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            AllowPaging="true" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" ExpandAllRowExpanders="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField DataField="Desc" RendererFunction="renderExpander" RenderAsRowExpander="true" />
+        </Columns>
+        <PageItems>
+            <f:Button Text="显示隐藏描述信息" EnablePress="true" Pressed="true" ID="btnShowRowExpanders" OnClick="btnShowRowExpanders_Click"></f:Button>
+        </PageItems>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

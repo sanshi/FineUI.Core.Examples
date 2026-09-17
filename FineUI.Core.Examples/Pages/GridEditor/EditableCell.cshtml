@@ -1,0 +1,84 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.EditableCellModel
+@{
+    ViewBag.Title = "GridEditor/EditableCell";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" RendererFunction="renderEntranceYear">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" RendererFunction="renderEntranceDate">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+
+    <br>
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    注：
+    <ul>
+        <li>入学日期列删除Renderer=Date属性，增加自定义渲染函数RendererFunction=renderEntranceDate。</li>
+        <li>本例子禁止[入学年份小于等于2002]行中[入学年份]和[入学日期]的单元格编辑。</li>
+    </ul>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderEntranceYear(value, params) {
+            if (value <= 2002) {
+                params.cellCls = 'f-grid-cell-uneditable';
+            }
+
+            return value;
+        }
+
+        function renderEntranceDate(value, params) {
+            if (params.rowData.values.EntranceYear <= 2002) {
+                params.cellCls = 'f-grid-cell-uneditable';
+            }
+
+            return F.formatDate(params.column.fieldFormat, value);
+        }
+
+    </script>
+}

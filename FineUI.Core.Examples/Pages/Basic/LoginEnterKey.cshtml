@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.Basic.LoginEnterKeyModel
+@{
+    ViewBag.Title = "Basic/LoginEnterKey";
+}
+
+
+@section body {
+
+    <div>
+        用户名：admin
+        <br>
+        密码：admin
+        <br>
+        <br>
+        <br>
+        注意：在表单内按回车键会导航到下一个控件。
+    </div>
+
+    <f:Window ID="Window1" Title="登录表单" IsModal="false" EnableClose="false" WindowPosition="GoldenSection" Width="350">
+        <Items>
+            <f:SimpleForm ID="SimpleForm1" ShowBorder="false" BodyPadding="10" RemoveLastFieldsMargin="true" ShowHeader="false">
+                <Items>
+                    <f:TextBox ID="tbxUserName" Label="用户名" Required="true" ShowRedStar="true" NextFocusControl="tbxPassword"></f:TextBox>
+                    <f:TextBox ID="tbxPassword" Label="密码" TextMode="Password" Required="true" ShowRedStar="true" NextFocusControl="btnLogin"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="btnLogin" ButtonColor="Primary" Text="登录" Type="Button" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnLogin_Click"></f:Button>
+                    <f:Button ID="btnReset" Text="重置" Type="Reset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+}
+
+
+

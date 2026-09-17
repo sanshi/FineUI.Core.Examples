@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormDynamicModel
+@{
+    ViewBag.Title = "Form/FormDynamic";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form BodyPadding="10" ID="Form2" IsFluid="true" EnableCollapse="false" Title="表单" LabelWidth="120" LabelAlign="Top" >
+        <Rows>
+            <f:FormRow>
+                <Items>
+                    <f:Label ID="Label1"  ShowLabel="false" Text="这是一个标签">
+                    </f:Label>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow1">
+            </f:FormRow>
+        </Rows>
+    </f:Form>
+    <br />
+    注：用户名和性别两个控件是动态创建的。
+    <br />
+    <br />
+    <f:Button ID="Button1"  _ValidateForms="Form2" ValidateTarget="Top" Text="验证表单并提交" OnClick="Button1_Click"></f:Button>
+}
+

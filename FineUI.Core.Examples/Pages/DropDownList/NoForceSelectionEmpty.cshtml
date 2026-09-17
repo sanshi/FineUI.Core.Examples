@@ -1,0 +1,34 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.NoForceSelectionEmptyModel
+@{
+    ViewBag.Title = "DropDownList/NoForceSelectionEmpty";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉列表（用户输入值，初始值，下拉选项为空）" ShowHeader="true">
+        <Items>
+            <f:DropDownList ID="DropDownList1" EnableEdit="true" AutoSelectFirstItem="false" ForceSelection="false" Text="初始自定义值">
+            </f:DropDownList>
+
+            <f:Button ID="btnRebindData" Text="重新绑定数据" CssClass="marginr" OnClick="btnRebindData_Click"></f:Button>
+            <f:Button ID="btnSetText" Text="更新为[用户输入值]" CssClass="marginr" OnClick="btnSetText_Click"></f:Button>
+            <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+    <br>
+    下拉列表的属性设置为：
+    <ul>
+        <li>AutoSelectFirstItem="false"：初始不强制选中第一项</li>
+        <li>EnableEdit="true"：可以手工编辑</li>
+        <li>ForceSelection="false"：用户输入值</li>
+    </ul>
+
+
+}
+

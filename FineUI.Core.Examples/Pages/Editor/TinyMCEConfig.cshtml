@@ -1,0 +1,35 @@
+@page
+@model FineUI.Core.Examples.Pages.Editor.TinyMCEConfigModel
+@{
+    ViewBag.Title = "Editor/TinyMCEConfig";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="表单">
+        <Items>
+            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1"
+                          Editor="TinyMCE" BasePath="@Url.Content("~/res/third-party/tinymce/")" ToolbarSet="Full" Height="350" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+                <Options>
+                    <f:OptionItem Key="menubar" Value="false" PersistOriginal="true" />
+                    <f:OptionItem Key="plugins" Value="['link','code','textcolor colorpicker']" PersistOriginal="true" />
+                    <f:OptionItem Key="toolbar1"
+                                  Value="bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright | link unlink | code"
+                                  PersistOriginal="false" />
+                </Options>
+            </f:HtmlEditor>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Button ID="Button2" CssClass="marginr" Text="设置编辑器的值" OnClick="Button2_Click"></f:Button>
+    <f:Button ID="Button1" Text="获取编辑器的值" OnClick="Button1_Click"></f:Button>
+
+    <br>
+    <br>
+    注：本示例通过 Options 属性设置 TinyMCE 的菜单栏（无）和工具栏（自定义）。参考文档：http://www.tinymce.com/wiki.php/Configuration
+
+
+}
+

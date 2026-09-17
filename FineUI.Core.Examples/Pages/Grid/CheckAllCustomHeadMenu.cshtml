@@ -1,0 +1,131 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.CheckAllCustomHeadMenuModel
+@{
+    ViewBag.Title = "Grid/CheckAllCustomHeadMenu";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .custom-arrow-down {
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" CheckBoxSelectWidth="60">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+    <f:Menu ID="Menu1">
+        <Items>
+            <f:MenuButton ID="btnSelectInverse" Text="反选" ClickHandler="onSelectInverse"></f:MenuButton>
+            <f:MenuSeparator></f:MenuSeparator>
+            <f:MenuButton ID="btnSelectOdd" Text="选中奇数行" ClickHandler="onSelectOdd"></f:MenuButton>
+            <f:MenuButton ID="btnSelectEven" Text="选中偶数行" ClickHandler="onSelectEven"></f:MenuButton>
+            <f:MenuSeparator></f:MenuSeparator>
+            <f:MenuButton ID="btnSelectAtSchool" Text="选中在校的行" ClickHandler="onSelectAtSchool"></f:MenuButton>
+            <f:MenuButton ID="btnSelectLargeThan2004" Text="选中入学年份大于2004的行" ClickHandler="onSelectLargeThan2004"></f:MenuButton>
+        </Items>
+    </f:Menu>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onSelectInverse(event) {
+            var grid1 = F.ui.Grid1, rows = [];
+            var currentSelectedRows = grid1.getSelectedRows();
+            grid1.resolveRow(function (rowData) {
+                if ($.inArray(rowData.id, currentSelectedRows) < 0) {
+                    rows.push(rowData.id);
+                }
+            });
+            grid1.selectRows(rows);
+        }
+
+        function onSelectOdd(event) {
+            var grid1 = F.ui.Grid1, rows = [];
+            var rowIndex = 0;
+            grid1.resolveRow(function (rowData) {
+                if (rowIndex % 2 === 0) {
+                    rows.push(rowData.id);
+                }
+                rowIndex++;
+            });
+            grid1.selectRows(rows);
+        }
+
+        function onSelectEven(event) {
+            var grid1 = F.ui.Grid1, rows = [];
+            var rowIndex = 0;
+            grid1.resolveRow(function (rowData) {
+                if (rowIndex % 2 !== 0) {
+                    rows.push(rowData.id);
+                }
+                rowIndex++;
+            });
+            grid1.selectRows(rows);
+        }
+
+        function onSelectLargeThan2004(event) {
+            var grid1 = F.ui.Grid1, rows = [];
+            grid1.resolveRow(function (rowData) {
+                var entranceYear = rowData.values['EntranceYear'];
+                if (entranceYear > 2004) {
+                    rows.push(rowData.id);
+                }
+            });
+            grid1.selectRows(rows);
+        }
+
+        function onSelectAtSchool(event) {
+            var grid1 = F.ui.Grid1, rows = [];
+            grid1.resolveRow(function (rowData) {
+                if (rowData.values['AtSchool']) {
+                    rows.push(rowData.id);
+                }
+            });
+            grid1.selectRows(rows);
+        }
+
+
+        F.ready(function () {
+
+            var grid1 = F.ui.Grid1;
+
+            grid1.el.on('click', '.f-grid-colheader .custom-arrow-down', function (event) {
+                F.ui.Menu1.show();
+
+                // 阻止事件传播（不执行表头复选框的选中/反选事件）
+                event.stopPropagation();
+            });
+
+        });
+
+    </script>
+}

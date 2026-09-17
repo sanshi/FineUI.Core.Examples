@@ -1,0 +1,25 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.HtmlEditorModel
+@{
+    ViewBag.Title = "Form/HtmlEditor";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="表单">
+        <Items>
+            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1" Editor="UMEditor" BasePath="~/res/third-party/umeditor/" Height="250">
+            </f:HtmlEditor>
+            <f:TextArea ID="TextArea1" Label="多行文本框" Height="150" Text="FineUI的使命是创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序">
+            </f:TextArea>
+            <f:Button ID="Button1" Text="获取 HTML 编辑器的内容" CssClass="marginr" OnClick="Button1_Click"></f:Button>
+            <f:Button ID="Button2" Text="设置 HTML 编辑器的内容" OnClick="Button2_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    注：FineUI中使用的富文本编辑器可以在UMEditor、UEditor、CKEditor、TinyMCE中间选择，通过控件属性就能简单切换。
+
+}
+

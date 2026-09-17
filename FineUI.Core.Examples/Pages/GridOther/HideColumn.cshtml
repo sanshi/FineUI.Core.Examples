@@ -1,0 +1,61 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.HideColumnModel
+@{
+    ViewBag.Title = "GridOther/HideColumn";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Hidden="true" EnableColumnHide="false" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button ID="Button3" Text="显示/隐藏性别列" CssClass="marginr" OnClick="Button3_Click"></f:Button>
+
+    <f:Button ID="Button4" Text="获得隐藏列列表" ClickHandler="onButton4Click"></f:Button>
+    <br>
+    <br>
+    注：性别列设置了EnableColumnHide=false，所以不能通过标题栏菜单隐藏，但仍然可以通过后台代码隐藏。
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onButton4Click(event) {
+            var grid1 = F.ui.Grid1;
+
+            var result = [];
+            grid1.resolveColumn(function (column) {
+                if (column.hidden) {
+                    result.push(column.text);
+                }
+            });
+
+            if (result.length) {
+                F.notify({
+                    message: '隐藏列：' + result.join(', '),
+                    positionX: 'center',
+                    positionY: 'center'
+                });
+            } else {
+                F.alert('没有隐藏列！');
+            }
+        }
+
+    </script>
+}

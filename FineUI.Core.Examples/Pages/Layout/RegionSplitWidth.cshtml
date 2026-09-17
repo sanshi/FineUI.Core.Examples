@@ -1,0 +1,54 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.RegionSplitWidthModel
+@{
+    ViewBag.Title = "Layout/RegionSplitWidth";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" Margin="24" ShowBorder="false" ShowHeader="false" Layout="Region" IsViewPort="true">
+        <Items>
+            <f:Panel ID="panelTopRegion" RegionPosition="Top" RegionSplit="true" RegionSplitWidth="3" EnableCollapse="true" Height="100"
+                     Title="顶部面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label1" Text="顶部面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" RegionSplitWidth="3" EnableCollapse="true"
+                     Width="200" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label2" Text="左侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelCenterRegion" RegionPosition="Center"
+                     Title="中间面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label3" Text="中间面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelRightRegion" RegionPosition="Right" RegionSplit="true" RegionSplitWidth="3" EnableCollapse="true"
+                     Width="200" Title="右侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label4" Text="右侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelBottomRegion" RegionPosition="Bottom" RegionSplit="true" RegionSplitWidth="3" EnableCollapse="true" Height="100"
+                     Title="底部面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label5" Text="底部面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

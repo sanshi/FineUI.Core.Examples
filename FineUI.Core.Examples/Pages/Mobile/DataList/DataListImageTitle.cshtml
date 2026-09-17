@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.DataList.DataListImageTitleModel
+@{
+    ViewBag.Title = "MobileDataList/DataListImageTitle";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+    <style>
+        .item-desc {
+            word-break: break-all;
+            white-space: normal;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1">
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+
+}
+

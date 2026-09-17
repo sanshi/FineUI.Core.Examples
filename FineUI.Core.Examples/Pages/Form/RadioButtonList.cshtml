@@ -1,0 +1,78 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.RadioButtonListModel
+@{
+    ViewBag.Title = "Form/RadioButtonList";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="简单表单">
+        <Items>
+            <f:RadioButtonList ID="RadioButtonList1" Label="列表一">
+                <f:RadioItem Text="可选项 1" Value="value1" />
+                <f:RadioItem Text="可选项 2" Value="value2" />
+                <f:RadioItem Text="可选项 3" Value="value3" />
+            </f:RadioButtonList>
+            <f:Button ID="btnServerSetSelectedValue" CssClass="marginr" Text="选中上面列表中的第一项" OnClick="btnServerSetSelectedValue_Click"></f:Button>
+            <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="btnServerGetSelectedValue_Click"></f:Button>
+            <f:Button ID="btnClientGetSelectedValue" Text="获取上面列表的选中项（JavaScript 脚本）" ClickHandler="onAlertSelectedValueClick"></f:Button>
+            <f:Label>
+            </f:Label>
+            <f:RadioButtonList ID="RadioButtonList2" Label="列表二（一列）" ColumnNumber="1">
+            </f:RadioButtonList>
+            <f:Label>
+            </f:Label>
+            <f:RadioButtonList ID="rblAutoPostBack" Label="列表三（选中改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="rblAutoPostBack_SelectedIndexChanged">
+                <f:RadioItem Text="可选项 1（很长很长很长很长很长很长的可选项）" Value="value1" />
+                <f:RadioItem Text="可选项 2" Value="value2" />
+                <f:RadioItem Text="可选项 3" Value="value3" />
+                <f:RadioItem Text="可选项 4" Value="value4" />
+                <f:RadioItem Text="可选项 5" Value="value5" />
+                <f:RadioItem Text="可选项 6" Value="value6" />
+                <f:RadioItem Text="可选项 7" Value="value7" />
+                <f:RadioItem Text="可选项 8" Value="value8" />
+            </f:RadioButtonList>
+            <f:Label>
+            </f:Label>
+            <f:RadioButtonList ID="CheckBoxList4" Label="列表四（竖排）" ColumnNumber="3" ColumnVertical="true" ShowRedStar="true" Required="true">
+                <f:RadioItem Text="可选项 1" Value="value1" />
+                <f:RadioItem Text="可选项 2" Value="value2" />
+                <f:RadioItem Text="可选项 3" Value="value3" />
+                <f:RadioItem Text="可选项 4" Value="value4" />
+                <f:RadioItem Text="可选项 5" Value="value5" />
+                <f:RadioItem Text="可选项 6" Value="value6" />
+                <f:RadioItem Text="可选项 7" Value="value7" />
+                <f:RadioItem Text="可选项 8" Value="value8" />
+            </f:RadioButtonList>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+}
+
+
+@section script {
+    <script type="text/javascript">
+
+        function onAlertSelectedValueClick(event) {
+            var list1 = F.ui.RadioButtonList1;
+
+            var checkedValue = list1.getValue();
+            if (checkedValue) {
+                top.F.alert("列表一的选中项：" + checkedValue);
+            } else {
+                top.F.alert("列表一没有选中项！");
+            }
+        }
+
+
+    </script>
+}

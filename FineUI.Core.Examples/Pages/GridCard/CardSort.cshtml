@@ -1,0 +1,113 @@
+@page
+@model FineUI.Core.Examples.Pages.GridCard.CardSortModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/res/js/gridcard.js";
+    ViewBag.Title = "GridCard/CardSort";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            Height="500" DisplayType="Card" CardRendererFunction="renderCard"
+            AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" SortField="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" SortField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" SortField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" SortField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:ToolbarText ID="btnSortLabel" EncodeText="false"></f:ToolbarText>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button IconFont="_Sort" ID="btnSort" ShowMenuIcon="false">
+                        <Menu>
+                            <Items>
+                                <f:MenuCheckBox Text="姓名" AttributeDataTag="Name" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="性别" AttributeDataTag="Gender" Checked="true" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="入学年份" AttributeDataTag="EntranceYear" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="入学日期" AttributeDataTag="EntranceDate" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="是否在校" AttributeDataTag="AtSchool" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="所学专业" AttributeDataTag="Major" GroupName="MenuColumnName">
+                                </f:MenuCheckBox>
+                                <f:MenuSeparator></f:MenuSeparator>
+                                <f:MenuCheckBox Text="升序" AttributeDataTag="ASC" Checked="true" IconFont="_Ascend" GroupName="MenuSortDirection">
+                                </f:MenuCheckBox>
+                                <f:MenuCheckBox Text="降序" AttributeDataTag="DESC" IconFont="_Descend" GroupName="MenuSortDirection">
+                                </f:MenuCheckBox>
+                            </Items>
+                            <Listeners>
+                                <f:Listener Event="checkchange" Handler="onSortMenuCheckChange" />
+                            </Listeners>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+    <br />
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script src="~/res/js/gridcard.js"></script>
+
+    <script>
+
+        var Grid1ClientID = 'Grid1';
+        var btnSortClientID = 'btnSort';
+        var btnSortLabelClientID = 'btnSortLabel';
+
+        // https://fineui.com/js/api/F.Menu.html#event:checkchange
+        function onSortMenuCheckChange(event, item, checked) {
+            var menu = F(btnSortClientID).menu;
+            var grid = F(Grid1ClientID);
+
+            var sortFieldMenuItem = menu.getCheckedItem('MenuColumnName');
+            var sortDirectionMenuItem = menu.getCheckedItem('MenuSortDirection');
+
+            var sortField = sortFieldMenuItem.getAttr('data-tag');
+            var sortDirection = sortDirectionMenuItem.getAttr('data-tag');
+
+            // 更新当前排序提示文字
+            updateSortLabel();
+            // 更新表格的排序状态
+            grid.setSortField(sortField, sortDirection);
+            // 触发表格的排序行为（触发表格默认的排序回发事件）
+            grid.trigger('sorting', [event, sortField, sortDirection]);
+        }
+
+
+        // 更新当前排序提示文字
+        function updateSortLabel() {
+            var menu = F(btnSortClientID).menu;
+
+            var sortFieldMenuItem = menu.getCheckedItem('MenuColumnName');
+            var sortDirectionMenuItem = menu.getCheckedItem('MenuSortDirection');
+
+            F(btnSortLabelClientID).setText(F.formatString('排序字段：<strong>{0}</strong>  排序方向：<strong>{1}</strong>', sortFieldMenuItem.getText(), sortDirectionMenuItem.getText()));
+        }
+
+        F.ready(function () {
+            updateSortLabel();
+        });
+
+    </script>
+
+}

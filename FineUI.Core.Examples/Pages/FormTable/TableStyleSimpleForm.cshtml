@@ -1,0 +1,25 @@
+@page
+@model FineUI.Core.Examples.Pages.FormTable.TableStyleSimpleFormModel
+@{
+    ViewBag.Title = "FormTable/TableStyleSimpleForm";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" ShowHeader="false" ShowBorder="false" EnableTableStyle="true" MessageTarget="Qtip">
+        <Items>
+            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" TextMode="Password">
+            </f:TextBox>
+        </Items>
+    </f:SimpleForm>
+    <f:Button ID="btnSubmit" Text="注册" OnClick="btnSubmit_Click" _ValidateForms="SimpleForm1" ValidateTarget="Top" MarginTop="5"></f:Button>
+    <br>
+    <br>
+    注：<strong>启用EnableTableStyle时，必须去除BodyPadding属性</strong>，并建议设置MessageTarget=Qtip。
+
+}
+

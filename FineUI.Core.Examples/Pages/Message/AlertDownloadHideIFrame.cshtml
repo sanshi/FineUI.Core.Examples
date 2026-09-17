@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.AlertDownloadHideIFrameModel
+@{
+    ViewBag.SourceFiles = "~/Message/AlertDownloadHideIFrame/IFrameWindow;~/Message/AlertDownloadTextFile";
+    ViewBag.Title = "Message/AlertDownloadHideIFrame";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Window ID="Window2" Width="650" Height="300" Icon="TagBlue" Title="窗体（EnableIFrame=true）"
+              EnableMaximize="true" EnableCollapse="false" EnableResize="true" BodyPadding="10"
+              IsModal="false" EnableIFrame="true" IFrameUrl="@Url.Content("~/Message/AlertDownloadHideIFrame/IFrameWindow")">
+    </f:Window>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function showConfirm() {
+            F.confirm({
+                message: '操作成功！点击确定按钮开始下载文件，点取消按钮弹出对话框',
+                ok: function () {
+                    window.location.href = '@Url.Content("~/Message/AlertDownloadTextFile")';
+                },
+                cancel: function () {
+                    // 触发后台事件
+                    F.customEvent('ConfirmCancel');
+                }
+            });
+        }
+
+
+    </script>
+
+}

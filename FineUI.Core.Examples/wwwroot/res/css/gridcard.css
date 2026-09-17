@@ -1,0 +1,127 @@
+/* 表格卡片 - 基本信息 */
+.f-grid-card .f-grid-card-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 1行5列 */
+    gap: 30px;
+    padding: 30px;
+}
+
+    .f-grid-card .f-grid-card-list .f-grid-card-row {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+    }
+
+        .f-grid-card .f-grid-card-list .f-grid-card-row .f-grid-checkselectionfield {
+            top: 6px;
+            left: 6px;
+        }
+
+        .f-grid-card .f-grid-card-list .f-grid-card-row .user-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+/* 用户基本信息 */
+.f-grid-card-row .user-profile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px 20px;
+}
+
+
+    .f-grid-card-row .user-profile .avatar {
+        position: relative;
+    }
+
+        .f-grid-card-row .user-profile .avatar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .f-grid-card-row .user-profile .avatar .f-badge-ct {
+            top: auto;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 50%);
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+            .f-grid-card-row .user-profile .avatar .f-badge-ct .f-badge {
+                width: 12px;
+                height: 12px;
+                border: solid 2px #fff;
+            }
+
+    .f-grid-card-row .user-profile .name {
+        font-weight: bold;
+    }
+
+    .f-grid-card-row .user-profile .desc {
+        font-size: 0.9em;
+    }
+
+
+
+
+
+
+/* 考试分数 */
+.f-grid-card-row .score {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.f-grid-card-row .score-item {
+    padding: 4px 16px;
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+    .f-grid-card-row .score-item .score-value {
+        font-size: 1.2em;
+    }
+
+    .f-grid-card-row .score-item .score-title {
+        font-size: 0.8em;
+    }
+
+
+/* 操作按钮 */
+.f-grid-card-row .user-actions {
+    padding: 12px;
+    font-size: 0.9em;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+    .f-grid-card-row .user-actions a {
+        text-decoration: none;
+    }
+
+
+
+/* 暗色主题 - 调整卡片内的边框颜色 */
+body.f-theme-darkbg .f-grid-card-row .score-item {
+    border-color: rgba(255, 255,255, 0.3);
+}
+
+body.f-theme-darkbg .f-grid-card-row .user-actions {
+    border-top-color: rgba(255, 255,255, 0.2);
+}

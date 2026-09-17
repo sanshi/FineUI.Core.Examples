@@ -1,0 +1,70 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Form.LoginModel
+@{
+    ViewBag.Title = "MobileForm/Login";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mypic {
+            text-align: center;
+        }
+
+            .mypic img {
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+            }
+
+        .myhyperlinkcontainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .myhyperlink {
+            display: inline-block !important;
+            margin-right: 5px;
+        }
+
+            .myhyperlink a {
+                font-size: 0.8em;
+            }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="Fit" BodyPadding="20px" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="系统登录" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:SimpleForm ID="SimpleForm1" ShowBorder="false" ShowHeader="false" Layout="VBox" MessageTarget="None">
+                <Items>
+                    <f:Image CssClass="mypic" ImageUrl="@Url.Content("~/res/images/my_face_80.jpg")"></f:Image>
+                    <f:TextBox ID="tbxUserName" Label="用户名" ShowLabel="false" EmptyText="请输入用户名" Required="true">
+                    </f:TextBox>
+                    <f:TextBox ID="tbxPassword" Label="密码" ShowLabel="false" TextMode="Password" EmptyText="请输入密码" Required="true">
+                    </f:TextBox>
+                    <f:Button ID="btnLogin" Text="登录" Type="Submit" _ValidateForms="SimpleForm1" OnClick="btnLogin_Click">
+                    </f:Button>
+                    <f:Panel CssClass="myhyperlinkcontainer" ShowBorder="false" ShowHeader="false">
+                        <Items>
+                            <f:HyperLink ID="HyperLink1" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="新用户注册"></f:HyperLink>
+                            <f:HyperLink ID="HyperLink2" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="忘记密码？"></f:HyperLink>
+                        </Items>
+                    </f:Panel>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+    </f:Panel>
+
+
+}
+

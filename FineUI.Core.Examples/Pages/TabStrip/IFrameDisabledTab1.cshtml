@@ -1,0 +1,34 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.IFrameDisabledTab1Model
+@{
+    ViewData["Title"] = "IFrameDisabledTab1";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button ID="btnEnableTabs" Text="启用后面的两个标签" ClickHandler="onEnableTabsClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnDisableTabs" Text="禁用后面的两个标签" ClickHandler="onDisableTabsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onEnableTabsClick(event) {
+            parent.enableTabs();
+        }
+
+        function onDisableTabsClick(event) {
+            parent.disableTabs();
+        }
+
+    </script>
+
+}

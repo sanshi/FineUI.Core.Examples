@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.Pages.Accordion.FillModel
+@{
+    ViewBag.Title = "Accordion/Fill";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Accordion ID="Accordion1" IsFluid="true" Title="手风琴控件" ShowHeader="false" Height="500" ShowBorder="true" ActivePaneIndex="1" EnableCollapse="false" EnableFill="false">
+        <Panes>
+            <f:AccordionPane ID="AccordionPane1" Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px">
+                <Items>
+                    <f:Label ID="Label1" Text="面板一中的文本">
+                    </f:Label>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane2" Title="面板二" IconUrl="@Url.Content("~/res/images/16/4.png")" BodyPadding="2px 5px">
+                <Items>
+                    <f:Label ID="Label2" Text="面板二中的文本<br/>balabala<br/>balabala<br/>balabala<br/>balabala" EncodeText="false">
+                    </f:Label>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane3" Title="面板三" IconUrl="@Url.Content("~/res/images/16/7.png")" BodyPadding="2px 5px">
+                <Items>
+                    <f:Label ID="Label3" Text="面板三中的文本">
+                    </f:Label>
+                </Items>
+            </f:AccordionPane>
+        </Panes>
+    </f:Accordion>
+    <br>
+
+    <f:Button ID="Button1" Text="获取当前展开的面板" OnClick="Button1_Click"></f:Button>
+    <br>
+    <br>
+
+    <f:Button ID="Button2" Text="展开下一个面板" OnClick="Button2_Click"></f:Button>
+    <br>
+
+
+}
+

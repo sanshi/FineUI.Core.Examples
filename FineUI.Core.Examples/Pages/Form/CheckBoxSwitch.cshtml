@@ -1,0 +1,61 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.CheckBoxSwitchModel
+@{
+    ViewBag.Title = "Form/CheckBoxSwitch";
+    var F = Html.F();
+}
+
+@section head {
+    <style>
+        .mycheckbox .f-field-checkbox-switch .f-field-checkbox-switch-text {
+            min-width: 40px;
+        }
+    </style>
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单" LabelWidth="200">
+        <Items>
+            <f:CheckBox ID="CheckBox1" ShowLabel="false" Text="复选框" Checked="true" DisplayType="Switch">
+            </f:CheckBox>
+            <f:Button ID="btnSelectCheckBox" CssClass="marginr" Text="选择/反选复选框" OnClick="btnSelectCheckBox_Click"></f:Button>
+            <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选复选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
+            <f:Button ID="btnChangeEnabled" CssClass="marginr" Text="禁用/启用复选框（客户端脚本）" ClickHandler="onChangeEnabledClick"></f:Button>
+            <f:Button ID="btnDisable" CssClass="marginr" Text="启用/禁用复选框" OnClick="btnDisableCheckBox_Click"></f:Button>
+            <f:Label>
+            </f:Label>
+            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" DisplayType="Switch" Text="复选框（OnCheckedChanged）" OnCheckedChanged="CheckBox2_CheckedChanged">
+            </f:CheckBox>
+            <f:Label>
+            </f:Label>
+            <f:CheckBox ID="CheckBox3" Label="开关文本" Checked="true" DisplayType="Switch" SwitchTextVisible="true">
+            </f:CheckBox>
+            <f:CheckBox ID="CheckBox4" Label="开关文本（自定义）" DisplayType="Switch" SwitchTextVisible="true" SwitchOnText="1" SwitchOffText="0">
+            </f:CheckBox>
+            <f:CheckBox ID="CheckBox5" Label="开关文本（图标字体）" DisplayType="Switch" SwitchTextVisible="true">
+            </f:CheckBox>
+            <f:CheckBox ID="CheckBox6" CssClass="mycheckbox" Label="开关文本（自定义）" DisplayType="Switch" SwitchTextVisible="true" SwitchOnText="开启" SwitchOffText="关闭">
+            </f:CheckBox>
+        </Items>
+    </f:SimpleForm>
+
+}
+
+
+@section script {
+    <script>
+
+        function onChangeCheckStatusClick(event) {
+            var checkbox = F.ui.CheckBox1;
+            checkbox.setValue(!checkbox.getValue());
+        }
+
+        function onChangeEnabledClick(event) {
+            var checkbox = F.ui.CheckBox1;
+            checkbox.setDisabled(!checkbox.isDisabled());
+        }
+
+    </script>
+}

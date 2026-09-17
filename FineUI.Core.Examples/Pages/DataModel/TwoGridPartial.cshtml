@@ -1,0 +1,30 @@
+@{
+    var F = Html.F();
+}
+
+@model IList<FineUI.Core.Examples.Pages.DataModel.Models.Student>
+
+
+@{
+    var __GridId = ViewData["__GridId"].ToString();
+    var __Title = ViewData["__Title"].ToString();
+    var __IsFluid = ViewData["__IsFluid"] != null && Convert.ToBoolean(ViewData["__IsFluid"]);
+    var __MarginBottom = ViewData["__MarginBottom"] == null ? (int?)null : Convert.ToInt32(ViewData["__MarginBottom"]);
+    var __BoxFlex = ViewData["__BoxFlex"] == null ? 0 : Convert.ToInt32(ViewData["__BoxFlex"]);
+}
+
+@* Grid 的 ID 由调用方显式传入（多次渲染此分部视图时，调用方须保证传入的 ID 不重复）；
+   布局属性（IsFluid/BoxFlex/MarginBottom）按调用方是否传入决定输出——平铺传 IsFluid，布局传 BoxFlex/MarginBottom。 *@
+<f:Grid ID="@__GridId" IsFluid="@__IsFluid" BoxFlex="@__BoxFlex" MarginBottom="@__MarginBottom" Title="@__Title" ShowBorder="true" ShowHeader="true" DataIDField="Id" DataTextField="Name" DataSource="@Model">
+    <Columns>
+        <f:RowNumberField />
+        <f:RenderField For="First().Name" />
+        <f:RenderField For="First().Gender" RendererFunction="renderGender" />
+        <f:RenderField For="First().EntranceYear" />
+        <f:RenderCheckField For="First().AtSchool" RenderAsStaticField="true" />
+        <f:RenderField For="First().Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        <f:RenderField For="First().Group" RendererFunction="renderGroup" />
+        <f:RenderField For="First().EntranceDate" />
+    </Columns>
+</f:Grid>
+

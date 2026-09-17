@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.ThirdParty.EChartsDynamicBarModel
+@{
+    ViewBag.SourceFiles = "~/ThirdParty/EChartsDynamicBarIFrame";
+    ViewBag.Title = "ThirdParty/EChartsDynamicBar";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsViewPort="true" Title="当前生产销售情况" ShowBorder="true" Margin="10px"
+             ShowHeader="false" EnableIFrame="true" IFrameUrl="@Url.Content("~/ThirdParty/EChartsDynamicBarIFrame")">
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:RadioButtonList ID="rblChartType" Label="选择图表类型" LabelWidth="150">
+                        <Items>
+                            <f:RadioItem Text="销售" Value="sales" Selected="true" />
+                            <f:RadioItem Text="产量" Value="output" />
+                        </Items>
+                        <Listeners>
+                            <f:Listener Event="change" Handler="onChartTypeChange" />
+                        </Listeners>
+                    </f:RadioButtonList>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onChartTypeChange(event) {
+
+            var chartType = this.getValue();
+            var newUrl = F.resolveUrl('/ThirdParty/EChartsDynamicBarIFrame?type=' + encodeURIComponent(chartType));
+
+            F.ui.Panel1.setIFrameUrl(newUrl);
+        }
+
+    </script>
+
+}

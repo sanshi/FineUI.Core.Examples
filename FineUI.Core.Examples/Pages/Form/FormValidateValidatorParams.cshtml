@@ -1,0 +1,57 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormValidateValidatorParamsModel
+@{
+    ViewBag.Title = "Form/FormValidateValidatorParams";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="用户注册表单">
+        <Items>
+            <f:TextBox ID="TextBox1" Label="输入框一" Required="true" ShowRedStar="true" ValidatorFunction="inputValidator">
+                <Attributes>
+                    <f:Attribute Key="data-maxlength" Value="3"></f:Attribute>
+                </Attributes>
+            </f:TextBox>
+            <f:TextBox ID="TextBox2" Label="输入框二" Required="true" ShowRedStar="true" ValidatorFunction="inputValidator">
+                <Attributes>
+                    <f:Attribute Key="data-maxlength" Value="6"></f:Attribute>
+                </Attributes>
+            </f:TextBox>
+            <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" OnClick="btnRegister_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>
+            [输入框一]的最大长度为 3 个字符。
+        </li>
+        <li>
+            [输入框二]的最大长度为 6 个字符。
+        </li>
+    </ul>
+
+
+}
+
+@section script {
+
+    <script>
+        function inputValidator() {
+            var inputCmp = this;
+            var value = $.trim(inputCmp.getValue());
+            var maxLength = parseInt(inputCmp.getAttr('data-maxlength'), 10);
+
+            if (value.length <= maxLength) {
+                return true;
+            } else {
+                return '最多只能输入 ' + maxLength + ' 个字符！';
+            }
+        }
+    </script>
+
+}

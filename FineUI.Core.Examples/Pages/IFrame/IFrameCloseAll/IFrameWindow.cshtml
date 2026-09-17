@@ -1,0 +1,54 @@
+@page
+@model FineUI.Core.Examples.Pages.IFrame.IFrameCloseAll.IFrameWindowModel
+@{
+    ViewData["Title"] = "IFrameWindow";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="formPanel" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnPostBackClose" ClickHandler="onCloseActiveWindowPostBackClick" Text="回发弹出窗体"></f:Button>
+                    <f:Button ID="Button1" Text="本页面弹出窗体" ClickHandler="onOpenWindow3Click"></f:Button>
+                    <f:Button ID="Button2" Text="父页面弹出窗体" ClickHandler="onOpenWindow4Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Label ID="labResult" EncodeText="false" CssStyle="font-weight:bold;" Text="@("页面加载时间：" + DateTime.Now.ToLongTimeString())">
+            </f:Label>
+        </Items>
+    </f:Panel>
+
+    <f:Window ID="Window3" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow2")"
+              EnableMaximize="true" EnableResize="true" Height="300" Width="600" OnClose="Window3_Close" Title="窗体三">
+    </f:Window>
+    <f:Window ID="Window4" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow2")"
+              EnableMaximize="true" EnableResize="true" Target="Parent" Height="300" Width="600" OnClose="Window4_Close" CloseAction="HidePostBack" Title="窗体四">
+    </f:Window>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onCloseActiveWindowPostBackClick(event) {
+            F.activeWindow.hidePostBack();
+        }
+
+        function onOpenWindow3Click(event) {
+            F.ui.Window3.show();
+        }
+
+        function onOpenWindow4Click(event) {
+            F.ui.Window4.show();
+        }
+
+    </script>
+}

@@ -1,0 +1,25 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.TwoGridModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/Student.cs;~/Pages/DataModel/Models/StudentHelper.cs;~/Pages/DataModel/TwoGridPartial.cshtml";
+    ViewBag.Title = "DataModel/TwoGridLayout";
+    var F = Html.F();
+
+    // NoRazorForms
+    F.PageManager.EnableRazorForms(false);
+}
+
+@section body {
+
+    @(await Html.PartialAsync("TwoGridPartial", Model.Students1, new ViewDataDictionary(ViewData) { { "__GridId", "Grid1" }, { "__Title", "表格一（在校生）" }, { "__IsFluid", true } }))
+    <br />
+    @(await Html.PartialAsync("TwoGridPartial", Model.Students2, new ViewDataDictionary(ViewData) { { "__GridId", "Grid2" }, { "__Title", "表格二（毕业生）" }, { "__IsFluid", true } }))
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

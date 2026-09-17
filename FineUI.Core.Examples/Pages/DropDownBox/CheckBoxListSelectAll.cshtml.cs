@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data;
+using Newtonsoft.Json.Linq;
+
+
+namespace FineUI.Core.Examples.Pages.DropDownBox
+{
+    public partial class CheckBoxListSelectAllModel : BaseModel
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
+        protected void btnGetSelection_Click(object sender, EventArgs e)
+        {
+            
+            if (!String.IsNullOrEmpty(DropDownBox1.Text))
+            {
+                labResult.Text = String.Format("下拉框文本：{0}（值：{1}）", DropDownBox1.Text, String.Join(", ", DropDownBox1.Values));
+            }
+            else
+            {
+                labResult.Text = "下拉框为空";
+            }
+        }
+
+
+        protected void btnSelectItem6_Click(object sender, EventArgs e)
+        {
+            // 后台更新下拉框的值，需要同时设置Text和Value
+            DropDownBox1.Texts = new string[] { "PHP", "Basic" };
+            DropDownBox1.Values = new string[] { "php", "basic" };
+        }
+
+    }
+}

@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.WidthForceFitMinWidthModel
+@{
+    ViewBag.Title = "Grid/WidthForceFitMinWidth";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" IsViewPort="true" Margin="24" ForceFit="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" MinWidth="100" MaxWidth="150" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" MinWidth="100" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" MinWidth="100" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="200" MinWidth="100" />
+            <f:RenderField HeaderText="个人简介" DataField="Desc" Width="600" MinWidth="200" />
+        </Columns>
+    </f:Grid>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

@@ -1,0 +1,94 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .phonebg {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .myiframe {
+            border-width: 10px;
+            border-style: solid;
+            border-radius: 10px;
+            width: 320px;
+            height: 568px;
+            box-shadow: 0px 0px 8px #ccc;
+            margin-bottom: 20px;
+        }
+
+        body.f-theme-darkbg .myiframe {
+            box-shadow: 0px 0px 8px #333;
+        }
+
+        .qrcode {
+            position: absolute;
+            bottom: 0;
+            left: 400px;
+            margin-bottom: 20px;
+        }
+
+            .qrcode img {
+                width: 180px;
+                height: 180px;
+                border: solid 1px #eee;
+            }
+            .qrcode .desc {
+                font-size: 12px;
+                text-align: center;
+                padding-top: 5px;
+            }
+    </style>
+
+}
+
+@section body {
+
+    @{
+        string file = HttpContext.Request.Query["file"];
+
+        // 如果不带参数访问此页面，则转到main.aspx
+        if (String.IsNullOrEmpty(file))
+        {
+            HttpContext.Response.Redirect(Url.Content("~/Mobile/Main"));
+            return;
+        }
+
+        /*
+        if (!file.StartsWith("~/"))
+        {
+            file = "~/" + file;
+        }
+        */
+
+        string resolvedUrl = Url.Content(file);
+        if (HttpContext.Request.Headers["User-Agent"].Contains("Mobi"))
+        {
+            HttpContext.Response.Redirect(resolvedUrl);
+        }
+    }
+
+
+    <div class="phonebg">
+        <iframe class="f-iframe myiframe f-widget-content" id="myiframe" src="@resolvedUrl"></iframe>
+
+
+        <div class="qrcode">
+            <img src="@Url.Content("~/res/images/fineuicore_mobile_pages.png")" />
+            <div class="desc">
+                请打开手机，扫描二维码
+                <br />
+                移动示例支持 iOS、Android 系统
+            </div>
+        </div>
+    </div>
+
+}

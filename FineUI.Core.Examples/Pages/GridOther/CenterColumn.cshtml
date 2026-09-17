@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.CenterColumnModel
+@{
+    ViewBag.Title = "GridOther/CenterColumn";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校（居中）" DataField="AtSchool" RenderAsStaticField="true" TextAlign="Center" />
+            <f:RenderField HeaderText="所学专业（居中）" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" TextAlign="Center" />
+            <f:RenderField HeaderText="分组（内容靠右，标题靠左）" DataField="Group" RendererFunction="renderGroup" Width="250" TextAlign="Right" HeaderTextAlign="Left" />
+        </Columns>
+    </f:Grid>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+
+}

@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Partial.LayoutModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Partial/LayoutPartialView.cshtml";
+    ViewBag.Title = "Partial/Layout";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @{
+        var PartialViewIndex = 0;
+    }
+
+    <f:Panel ID="Panel1" IsFluid="true" EnableCollapse="false" Height="300" Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BodyPadding="10" BoxConfigChildMargin="0 0 5 0" Title="面板一">
+        <Items>
+            <f:PartialConnector Content="@(await Html.PartialAsync("LayoutPartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" } }))"></f:PartialConnector>
+            <f:Panel BodyPadding="10" BoxFlex="1" Margin="0" Title="面板二">
+                <Items>
+                    <f:Label Text="胡斐今年22岁，住在驻马店。"></f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br>
+
+    <f:Panel ID="Panel2" IsFluid="true" EnableCollapse="false" Height="300" Layout="VBox" BodyPadding="10" BoxConfigChildMargin="0 0 5 0" Title="面板三">
+        <Items>
+            <f:PartialConnector Content="@(await Html.PartialAsync("LayoutPartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" }, { "BoxFlex", 1 } }))"></f:PartialConnector>
+            <f:PartialConnector Content="@(await Html.PartialAsync("LayoutPartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "胡斐" }, { "UserAge", 22 }, { "UserCountry", "驻马店" }, { "BoxFlex", 1 }, { "Margin", 0 } }))"></f:PartialConnector>
+        </Items>
+    </f:Panel>
+    <br>
+
+    <f:Panel ID="Panel4" IsFluid="true" EnableCollapse="false" Height="300" Layout="HBox" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" Title="面板四">
+        <Items>
+            <f:PartialConnector Content="@(await Html.PartialAsync("LayoutPartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" }, { "BoxFlex", 1 } }))"></f:PartialConnector>
+            <f:PartialConnector Content="@(await Html.PartialAsync("LayoutPartialView", new ViewDataDictionary(ViewData) { { "PartialViewIndex", PartialViewIndex++ }, { "UserName", "陈萍萍" }, { "UserAge", 20 }, { "UserCountry", "合肥" }, { "BoxFlex", 1 }, { "Margin", 0 } }))"></f:PartialConnector>
+        </Items>
+    </f:Panel>
+
+
+}
+

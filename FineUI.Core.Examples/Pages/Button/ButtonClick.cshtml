@@ -1,0 +1,43 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonClickModel
+@{
+    ViewBag.Title = "Button/ButtonClick";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Button ID="btnServerClick" Text="服务器端事件" OnClick="btnServerClick_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnClientClick" Text="客户端事件" ClickHandler="onClientEventClick" CssClass="marginr"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnClientClick2" Text="客户端事件（可被服务端改变）" ClickHandler="onOriginalClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnChangeClientClick2" Text="改变上个按钮的客户端事件" OnClick="btnChangeClientClick2_Click"></f:Button>
+    <br />
+    <br />
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onClientEventClick(event) {
+            alert('这是客户端事件');
+        }
+
+        // 页面标签里用 ClickHandler 声明的客户端点击回调（属性里填的是函数名，不是一段脚本）
+        function onOriginalClick(event) {
+            F.alert({ message: '这是原来的客户端事件', messageIcon: 'information', target: '_top' });
+        }
+
+        // 服务端在回发中把上面那个按钮的回调换成了这个
+        function onChangedClick(event) {
+            F.alert({ message: '客户端事件已改变！', messageIcon: 'information', target: '_top' });
+        }
+
+    </script>
+}

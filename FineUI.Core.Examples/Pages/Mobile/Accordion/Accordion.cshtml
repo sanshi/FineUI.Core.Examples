@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Accordion.AccordionModel
+@{
+    ViewBag.Title = "MobileAccordion/Accordion";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Accordion ID="Accordion1" ShowHeader="false" ShowBorder="false" ActivePaneIndex="1" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="手风琴控件" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Panes>
+            <f:AccordionPane ID="AccordionPane1" Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px">
+                <Items>
+                    <f:Label ID="Label1" Text="面板一中的文本">
+                    </f:Label>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane2" Title="面板二（列表）" IconUrl="@Url.Content("~/res/images/16/4.png")" Layout="Fit">
+                <Items>
+                    <f:DataList ID="DataList1">
+                        <f:DataListItem Text="列表项1" />
+                        <f:DataListItem Text="列表项2" />
+                        <f:DataListItem Text="列表项3" />
+                        <f:DataListItem Text="列表项4" />
+                        <f:DataListItem Text="列表项5" />
+                    </f:DataList>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane3" Title="面板三（IFrame）" IconUrl="@Url.Content("~/res/images/16/7.png")"
+                             EnableIFrame="true" IFrameUrl="@Url.Content("~/Mobile/Button/Button")">
+            </f:AccordionPane>
+        </Panes>
+    </f:Accordion>
+}
+

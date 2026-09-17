@@ -1,0 +1,63 @@
+@page
+@model FineUI.Core.Examples.Pages.GridFilter.InlineFilterNumberModel
+@{
+    ViewBag.Title = "GridFilter/InlineFilterNumber";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            AllowFilters="true" InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" Width="200" EnableFilter="true">
+                <Filter EnableMultiConditions="true">
+                    <Operator>
+                        <f:DropDownList ID="DropDownList1">
+                            <f:ListItem Text="大于" Value="greater" Selected="true" />
+                            <f:ListItem Text="小于" Value="less" />
+                            <f:ListItem Text="等于" Value="equal" />
+                        </f:DropDownList>
+                    </Operator>
+                    <Field>
+                        <f:NumberBox ID="NumberBox1" NoDecimal="true" NoNegative="true"></f:NumberBox>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="200" EnableFilter="true">
+                <Filter EnableMultiConditions="true">
+                    <Operator>
+                        <f:DropDownList ID="DropDownList2">
+                            <f:ListItem Text="大于" Value="greater" Selected="true" />
+                            <f:ListItem Text="小于" Value="less" />
+                            <f:ListItem Text="等于" Value="equal" />
+                        </f:DropDownList>
+                    </Operator>
+                    <Field>
+                        <f:DatePicker ID="DatePicker1"></f:DatePicker>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

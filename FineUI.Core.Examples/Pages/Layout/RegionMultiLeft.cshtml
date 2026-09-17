@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.RegionMultiLeftModel
+@{
+    ViewBag.Title = "Layout/RegionMultiLeft";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" Margin="24" ShowBorder="false" ShowHeader="false" Layout="Region" IsViewPort="true">
+        <Items>
+            <f:Panel ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
+                     Width="200" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label2" Text="左侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panel2" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
+                     Width="200" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label6" Text="左侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panel3" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
+                     Width="200" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label7" Text="左侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelCenterRegion" RegionPosition="Center" Title="中间面板" ShowBorder="true" ShowHeader="true" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label3" Text="中间面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

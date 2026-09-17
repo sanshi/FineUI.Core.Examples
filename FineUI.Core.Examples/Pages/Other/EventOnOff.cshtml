@@ -1,0 +1,83 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.EventOnOffModel
+@{
+    ViewBag.Title = "Other/EventOnOff";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Button ID="btnTest" Text="测试按钮" Size="Large" ClickHandler="onTestClick"></f:Button>
+    <br />
+    <br />
+    <hr />
+    <f:Button ID="btnCustomEvent" Text="注册点击事件（1）" ClickHandler="onCustomEventClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnSpecialEvent" Text="注册特殊点击事件" ClickHandler="onSpecialEventClick"></f:Button>
+    <f:Button ID="btnDeleteSpecialEvent" Text="删除特殊点击事件" Enabled="false" ClickHandler="onDeleteSpecialEventClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnDeleteAll" Text="删除全部点击事件" ClickHandler="onDeleteAllClick"></f:Button>
+    <br>
+    <br>
+    触发的事件列表（<a id="clearResult" href="javascript:;">clear</a>）：
+    <ul id="result"></ul>
+    <br>
+    <br>
+
+}
+
+
+@section script {
+
+    <script>
+        var customEventNumber = 1;
+        var theSpecialEventCallback = function (event) {
+            $('#result').append('<li>特殊点击事件</li>');
+        };
+
+        function onClearResultClick(event) {
+            event.preventDefault();
+            $('#result').empty();
+        }
+
+        function onTestClick(event) {
+            $('#result').append('<li>点击事件（default）</li>');
+        }
+
+        function onCustomEventClick(event) {
+            (function (number) {
+                F.ui.btnTest.on('click', function () {
+                    $('#result').append('<li>点击事件（' + number + '）</li>');
+                });
+            })(customEventNumber);
+
+            customEventNumber++;
+            F.ui.btnCustomEvent.setText('注册点击事件（' + customEventNumber + '）');
+        }
+
+        function onSpecialEventClick(event) {
+            F.ui.btnTest.on('click', theSpecialEventCallback);
+            F.ui.btnSpecialEvent.disable();
+            F.ui.btnDeleteSpecialEvent.enable();
+        }
+
+        function onDeleteSpecialEventClick(event) {
+            F.ui.btnTest.off('click', theSpecialEventCallback);
+            F.ui.btnSpecialEvent.enable();
+            F.ui.btnDeleteSpecialEvent.disable();
+        }
+
+        function onDeleteAllClick(event) {
+            F.ui.btnTest.off('click');
+            F.ui.btnSpecialEvent.enable();
+            F.ui.btnDeleteSpecialEvent.disable();
+        }
+
+        F.ready(function () {
+            $('#clearResult').on('click', onClearResultClick);
+        });
+    </script>
+
+}

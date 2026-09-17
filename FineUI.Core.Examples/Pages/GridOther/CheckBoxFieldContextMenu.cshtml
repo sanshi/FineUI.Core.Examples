@@ -1,0 +1,100 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.CheckBoxFieldContextMenuModel
+@{
+    ViewBag.Title = "GridOther/CheckBoxFieldContextMenu";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校1" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderCheckField HeaderText="是否在校1" ColumnID="CheckBoxField1" DataField="AtSchool" />
+            <f:RenderCheckField HeaderText="是否在校2" ColumnID="CheckBoxField2" DataField="AtSchool" />
+            <f:RenderCheckField HeaderText="是否在校3" ColumnID="CheckBoxField3" DataField="AtSchool" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="beforerowcontextmenu" Handler="onRowContextMenu"></f:Listener>
+        </Listeners>
+    </f:Grid>
+
+    <f:Menu ID="Menu1">
+        <f:MenuButton ID="btnSelectRows" Text="全选行" ClickHandler="onSelectRows"></f:MenuButton>
+        <f:MenuButton ID="btnUnselectRows" Text="取消行" ClickHandler="onUnselectRows"></f:MenuButton>
+    </f:Menu>
+
+    <br>
+    选中一些行，然后点击鼠标右键。
+    <br>
+    <br>
+
+    <f:Button ID="Button1" Text="选中行复选框的状态" ClickHandler="onButton1Click"></f:Button>
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 返回false，来阻止浏览器右键菜单
+        function onRowContextMenu(event, rowId) {
+            F.ui.Menu1.show();  //showAt(event.pageX, event.pageY);
+            return false;
+        }
+
+        function onSelectRows(event) {
+            $('.f-grid-row-selected .f-grid-checkbox').addClass('f-checked');
+        }
+
+        function onUnselectRows(event) {
+            $('.f-grid-row-selected .f-grid-checkbox').removeClass('f-checked');
+        }
+
+
+        function onButton1Click(event) {
+            var grid1 = F.ui.Grid1;
+            var selectedRowEls = grid1.getSelectedRowEls();
+
+            var result = [];
+            result.push(F.formatString('共选中了 {0} 行：', selectedRowEls.length));
+            result.push('<table class="result">');
+            result.push('<tr><th>姓名</th><th>是否在校1</th><th>是否在校2</th><th>是否在校3</th></tr>');
+            selectedRowEls.each(function () {
+                var rowEl = $(this);
+                var rowData = grid1.getRowData(rowEl);
+
+                result.push('<tr>');
+                result.push(F.formatString('<td>{0}</td>', rowData.text));
+
+                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox')
+                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+
+                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField2 .f-grid-checkbox')
+                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+
+                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField3 .f-grid-checkbox')
+                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+
+                result.push('</tr>');
+            });
+            result.push('</table>');
+
+            F.notify({
+                message: F.rawHtml(result.join('')),
+                messageIcon: '',
+                positionX: 'center',
+                positionY: 'top'
+            });
+        }
+
+    </script>
+}

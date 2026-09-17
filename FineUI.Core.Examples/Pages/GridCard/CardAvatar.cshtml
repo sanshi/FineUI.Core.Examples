@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.GridCard.CardAvatarModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/res/js/gridcard.js";
+    ViewBag.Title = "GridCard/CardAvatar";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link type="text/css" rel="stylesheet" href="~/res/css/gridcard.css" />
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()"
+            DisplayType="Card" CardRendererFunction="renderCardWithAvatar" _DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="UserProfile" Width="250" RendererFunction="renderUserProfile" HeaderText="基本信息"></f:RenderField>
+            <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
+            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" HeaderText="所学专业" />
+            <f:RenderField ColumnID="ChineseScore" DataField="ChineseScore" HeaderText="语文成绩" />
+            <f:RenderField ColumnID="MathScore" DataField="MathScore" HeaderText="数学成绩" />
+            <f:RenderField ColumnID="TotalScore" DataField="TotalScore" HeaderText="总成绩" />
+            <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
+        </Columns>
+    </f:Grid>
+    <br />
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script src="~/res/js/gridcard.js"></script>
+
+}

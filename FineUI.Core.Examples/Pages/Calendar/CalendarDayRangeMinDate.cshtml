@@ -1,0 +1,21 @@
+@page
+@model FineUI.Core.Examples.Pages.Calendar.CalendarDayRangeMinDateModel
+@{
+    ViewBag.Title = "Calendar/CalendarDayRangeMinDate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Calendar ID="Calendar1" OnDateSelect="Calendar1_DateSelect" DisplayType="DayRange">
+    </f:Calendar>
+    <br />
+    <br />
+    <f:Button ID="Button1" OnClick="Button1_Click"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+}
+

@@ -1,0 +1,90 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.MenuCheckBoxModel
+@{
+    ViewBag.Title = "Toolbar/MenuCheckBox";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnLangMenu" Text="系统语言">
+                        <Menu>
+                            <f:MenuCheckBox Text="English" ID="MenuLangEnglish" GroupName="MenuLang"
+                                            OnCheckedChanged="MenuLang_CheckedChanged" Checked="true">
+                            </f:MenuCheckBox>
+                            <f:MenuCheckBox Text="简体中文" ID="MenuLangZHCN" GroupName="MenuLang"
+                                            OnCheckedChanged="MenuLang_CheckedChanged">
+                            </f:MenuCheckBox>
+                            <f:MenuCheckBox Text="繁體中文" ID="MenuLangZHTW" GroupName="MenuLang"
+                                            OnCheckedChanged="MenuLang_CheckedChanged">
+                            </f:MenuCheckBox>
+                        </Menu>
+                    </f:Button>
+                    <f:Button ID="btnSiteMenu" Text="喜欢的站点">
+                        <Menu>
+                            <f:MenuCheckBox Text="baidu.com" ID="MenuSiteBaidu" Checked="true"
+                                            OnCheckedChanged="MenuSite_CheckedChanged">
+                            </f:MenuCheckBox>
+                            <f:MenuCheckBox Text="google.com" ID="MenuSiteGoogle" Checked="true"
+                                            OnCheckedChanged="MenuSite_CheckedChanged">
+                            </f:MenuCheckBox>
+                            <f:MenuCheckBox Text="microsoft.com" ID="MenuSiteMicrosoft"
+                                            OnCheckedChanged="MenuSite_CheckedChanged">
+                            </f:MenuCheckBox>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Label ID="labLangResult">
+            </f:Label>
+            <f:Label ID="labSiteResult">
+            </f:Label>
+            <f:Button Text="获取喜欢的站点（客户端脚本）" ClickHandler="onGetSiteMenuChecked"></f:Button>
+        </Items>
+    </f:Panel>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onGetSiteMenuChecked(event) {
+            var result = [];
+            var checkedItems = F.ui.btnSiteMenu.menu.getCheckedItems();
+            $.each(checkedItems, function (index, item) {
+                result.push(item.getText());
+            });
+
+            F.alert('喜欢的站点：' + result.join(', '));
+        }
+
+
+        function getMenuCheckBoxChecked(type) {
+            var result = [];
+            var btnContainer = type === 'lang' ? F.ui.btnLangMenu : F.ui.btnSiteMenu;
+            $.each(btnContainer.menu.items, function (index, item) {
+                if (item.isChecked()) {
+                    result.push(item.getText());
+                }
+            });
+
+            return result.join(', ');
+        }
+
+
+        F.ready(function () {
+            F.ui.labLangResult.setText('你选择的语言：' + getMenuCheckBoxChecked('lang'));
+            F.ui.labSiteResult.setText('你选择的站点：' + getMenuCheckBoxChecked('site'));
+        });
+
+    </script>
+}

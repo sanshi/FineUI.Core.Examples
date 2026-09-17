@@ -1,0 +1,102 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.TabStrip.ButtonIconModel
+@{
+    ViewBag.Title = "MobileTabStrip/ButtonIcon";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" ShowBorder="false" ActiveTabIndex="0" ShowTabHeader="false" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ToolbarAlign="Center" CssClass="f-widget-header mytoolbar">
+                <Items>
+                    <f:Button ID="Button1" Text="one" Icon="Cake" EnablePress="true" Pressed="true">
+                    </f:Button>
+                    <f:Button ID="Button2" Text="two" IconFont="_Bank" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button3" Text="three" IconFont="_Group" EnablePress="true">
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Tabs>
+            <f:Tab ID="Tab1" BodyPadding="10px" Layout="Fit">
+                <Items>
+                    <f:ContentPanel ID="ContentPanel3" ShowBorder="false" ShowHeader="false">
+                        <p>
+                            <a href="http://baike.baidu.com/view/1299586.htm" target="_blank"><b>马克·扎克伯格</b></a>
+                        </p><p>
+                            马克·艾略特·扎克伯格（Mark Elliot Zuckerberg），美国社交网站Facebook的创办人，被人们冠以“第二盖茨”的美誉。哈佛大学计算机和心理学专业辍学生。据《福布斯》杂志保守估计，马克·扎克伯格拥有135亿美元身家，是2008年全球最年轻的巨富，也是历来全球最年轻的自行创业亿万富豪。
+                        </p><p>
+                            2014年2月10日，马克·扎克伯格及其华裔妻子普莉希拉·陈登上美国《慈善纪事报》2013年年度慈善排行榜榜首。
+                        </p>
+                    </f:ContentPanel>
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab2" BodyPadding="10px" Layout="Fit">
+                <Items>
+                    <f:ContentPanel ID="ContentPanel2" ShowBorder="false" ShowHeader="false">
+                        <p>
+                            <a href="http://baike.baidu.com/view/3645.htm" target="_blank"><b>比尔·盖茨</b></a>
+                        </p><p>
+                            比尔·盖茨（Bill Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
+                        </p><p>
+                            比尔·盖茨1995-2007年连续13年成为《福布斯》全球富翁榜首富，连续20年成为《福布斯》美国富翁榜首富。
+                        </p>
+                    </f:ContentPanel>
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab3" BodyPadding="10px" Layout="Fit">
+                <Items>
+                    <f:ContentPanel ID="ContentPanel1" ShowBorder="false" ShowHeader="false">
+                        <p>
+                            <a href="http://tech.163.com/special/jobsdead/" target="_blank"><b>乔布斯</b></a>
+                        </p><p>
+                            乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
+                        </p><p>
+                            遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone 4S后的第二天与世长辞。
+                        </p>
+                    </f:ContentPanel>
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+
+
+}
+
+@section script {
+
+    <script>
+
+        F.ready(function () {
+
+            $('.mytoolbar').on('click', '.f-btn', function (event) {
+                var btnEl = $(this), btnCmp = F(btnEl.attr('id')), btnIndex = btnEl.index('.f-btn');
+
+                // 必须有一个按钮处于按下状态
+                if (!btnCmp.isPressed()) {
+                    btnCmp.setPressed(true);
+                    return;
+                }
+
+                // 清空兄弟按钮的按下状态
+                btnEl.siblings('.f-btn').each(function () {
+                    F($(this).attr('id')).setPressed(false);
+                });
+
+                // 激活相应的选项卡
+                F.ui.TabStrip1.getItem(btnIndex).activate();
+
+            });
+
+        });
+
+
+    </script>
+
+}

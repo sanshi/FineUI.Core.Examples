@@ -1,0 +1,48 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.NotifyAddTabModel
+@{
+    ViewBag.Title = "Message/NotifyAddTab";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .addtabcontainer {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Button Text="弹出通知对话框" ID="btnOperation1" OnClick="btnOperation1_Click"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script type="text/javascript">
+
+        function openExampleHello(notifyId) {
+            parent.addExampleTab({
+                iframeUrl: '@Url.Content("~/Basic/Hello")',
+                title: '你好 FineUI.Core',
+                icon: '@Url.Content("~/res/images/filetype/vs_aspx.png")',
+                refreshWhenExist: true
+            });
+
+            // 关闭通知对话框
+            F(notifyId).hide();
+        }
+
+    </script>
+}

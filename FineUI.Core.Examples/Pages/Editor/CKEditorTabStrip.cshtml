@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Editor.CKEditorTabStripModel
+@{
+    ViewBag.Title = "Editor/CKEditorTabStrip";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" ShowBorder="true" TabPosition="Top" EnableTabCloseMenu="false" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="选项卡一" BodyPadding="10" Layout="Anchor">
+                <Items>
+                    <f:HtmlEditor Label="编辑器一" ID="HtmlEditor1"
+                                  Editor="CKEditor" BasePath="@Url.Content("~/res/third-party/ckeditor/")" ToolbarSet="Full" Height="300" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+                    </f:HtmlEditor>
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab2" Title="选项卡二" BodyPadding="10" Layout="Fit">
+                <Items>
+                    <f:HtmlEditor Label="编辑器二" ID="HtmlEditor2"
+                                  Editor="CKEditor" BasePath="@Url.Content("~/res/third-party/ckeditor/")" ToolbarSet="Basic" Text="<p>这是编辑器二的值</p>">
+                    </f:HtmlEditor>
+                </Items>
+            </f:Tab>
+        </Tabs>
+        <Toolbars>
+            <f:Toolbar Position="Bottom">
+                <Items>
+                    <f:Button Text="获取编辑器的值" ID="Button1" OnClick="Button1_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:TabStrip>
+
+
+}
+

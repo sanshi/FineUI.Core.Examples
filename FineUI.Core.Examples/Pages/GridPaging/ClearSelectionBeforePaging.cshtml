@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.ClearSelectionBeforePagingModel
+@{
+    ViewBag.Title = "GridPaging/ClearSelectionBeforePaging";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedRowIdsClick"></f:Button>
+    <br>
+    <br>
+    注意设置属性：
+    <ul>
+        <li>DataIDField=Id：行标识符字段</li>
+        <li>ClearSelectionBeforePaging=false：分页前清空选中项（客户端）</li>
+        <li>KeepCurrentSelection=true：多选时保持当前已选中行（客户端）</li>
+        <li>KeepPagedSelection=true：多选时保持分页中已选中行（客户端）</li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onShowSelectedRowIdsClick(event) {
+            F.alert('选中行的ID列表为：' + F.ui.Grid1.getSelectedRows().join(', '));
+        }
+
+    </script>
+}

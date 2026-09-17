@@ -1,0 +1,69 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.ExcelRowCommandDownloadModel
+@{
+    ViewBag.Title = "Grid/ExcelRowCommandDownload";
+    var F = Html.F();
+}
+
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action3" IconFont="Download" CssClass="mybtn3" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowdblclick" Handler="onGrid1RowDblclick"></f:Listener>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+    注：双击行时，同样可以下载文件。
+
+
+    <!-- 隐藏表单，用于自定义POST请求 -->
+    <form id="myform" asp-page-handler="ExportToExcel" method="post">
+        <input type="hidden" id="content" name="content" />
+    </form>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function doCustomPost(rowId) {
+            var rowData = F.ui.Grid1.getRowData(rowId);
+            // 自定义POST请求
+            $('#content').val(F.toJSON(rowData));
+            $('#myform')[0].submit();
+        }
+
+        function onGrid1RowDblclick(event, rowId) {
+            doCustomPost(rowId);
+        }
+
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Action3') {
+                doCustomPost(rowId);
+            }
+        }
+
+    </script>
+}

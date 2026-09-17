@@ -1,0 +1,85 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.ColumnMoveOrderWidthHiddenModel
+@{
+    ViewBag.Title = "GridMove/ColumnMoveOrderWidthHidden";
+    var F = Html.F();
+}
+
+
+@using Newtonsoft.Json.Linq;
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            EnableColumnMove="true">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnmove" Handler="onGrid1ColumnMove"></f:Listener>
+            <f:Listener Event="columnresize" Handler="onGrid1ColumnResize"></f:Listener>
+            <f:Listener Event="columnhide" Handler="onGrid1ColumnHide"></f:Listener>
+            <f:Listener Event="columnshow" Handler="onGrid1ColumnShow"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列顺序+宽度+隐藏）" ClickHandler="onRefreshClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onRefreshClick(event) {
+            window.location.reload();
+        }
+
+        function saveToDB(grid) {
+            // 列顺序数组
+            var columnIds = $.map(grid.columns, function (item, index) {
+                return {
+                    'columnId': item.columnId,
+                    'hidden': item.hidden,
+                    'width': item.width,
+                    'flex': item.flex
+                };
+            });
+
+            // 触发后台事件
+            F.customEvent('Grid1_ColumnMove', {
+                columnIds: columnIds,
+            });
+        }
+
+        function onGrid1ColumnMove(event, targetColumnId, sourceColumnId, operation) {
+            saveToDB(this);
+        }
+
+        function onGrid1ColumnResize(event, columnId, newColumnWidth) {
+            saveToDB(this);
+        }
+
+        function onGrid1ColumnHide(event, columnId) {
+            saveToDB(this);
+        }
+
+        function onGrid1ColumnShow(event, columnId) {
+            saveToDB(this);
+        }
+
+    </script>
+}

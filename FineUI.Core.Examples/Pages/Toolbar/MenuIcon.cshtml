@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.MenuIconModel
+@{
+    ViewBag.Title = "Toolbar/MenuIcon";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
+        <toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:ToolbarText Text="内联菜单">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator>
+                    </f:ToolbarSeparator>
+                    <f:Button Text="中国科学技术大学">
+                        <Menu>
+                            <f:MenuHyperLink ID="MenuHyperLink1" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院" Icon="Accept">
+                            </f:MenuHyperLink>
+                            <f:MenuHyperLink ID="MenuHyperLink2" Target="_blank" NavigateUrl="http://business.ustc.edu.cn/zh_CN/" Text="管理学院" Icon="Accept">
+                                <Menu>
+                                    <f:MenuHyperLink ID="MenuHyperLink3" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
+                                    </f:MenuHyperLink>
+                                    <f:MenuHyperLink ID="MenuHyperLink4" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
+                                    </f:MenuHyperLink>
+                                </Menu>
+                            </f:MenuHyperLink>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </toolbars>
+        <Items>
+            <f:Button Text="删除[化学与材料科学学院]菜单项的图标" CssClass="marginr" ID="Button1" OnClick="Button1_Click"></f:Button>
+            <f:Button Text="修改[管理学院]菜单项的图标" ID="Button2" OnClick="Button2_Click"></f:Button>
+        </Items>
+    </f:Panel>
+
+
+
+}
+

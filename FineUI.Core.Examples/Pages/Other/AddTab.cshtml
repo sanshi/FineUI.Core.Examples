@@ -1,0 +1,58 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.AddTabModel
+@{
+    ViewBag.Title = "Other/AddTab";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button ID="Button1" ClickHandler="onOpenHelloFineUIClick"
+              Text="向父页面添加选项卡"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button4" ClickHandler="onOpenHelloFineUI2Click"
+              Text="向父页面添加选项卡（图标字体，与上个按钮添加的选项卡为同一个）"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button2" ClickHandler="onCloseActiveTabClick" Text="关闭当前选项卡"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button3" OnClick="Button3_Click" Text="关闭当前选项卡（服务器端注册脚本）"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onOpenHelloFineUIClick(event) {
+            parent.addExampleTab({
+                id: 'hello_fineui_tab',
+                iframeUrl: '@Url.Content("~/Basic/Hello")',
+                title: '你好 FineUI.Core',
+                icon: '@Url.Content("~/res/images/filetype/vs_aspx.png")',
+                refreshWhenExist: true
+            });
+        }
+
+        function onOpenHelloFineUI2Click(event) {
+            // 这里的 id 和上面的相同，所以会使用同一个选项卡
+            parent.addExampleTab({
+                id: 'hello_fineui_tab',
+                iframeUrl: '@Url.Content("~/Basic/Login")',
+                title: '登陆页面',
+                iconFont: 'sign-in',
+                refreshWhenExist: true
+            });
+        }
+
+        function onCloseActiveTabClick(event) {
+            parent.removeActiveTab();
+        }
+
+    </script>
+}

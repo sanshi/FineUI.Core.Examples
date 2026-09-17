@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.NumberBoxPrefixModel
+@{
+    ViewBag.Title = "Form/NumberBoxPrefix";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="简单表单" LabelWidth="120">
+        <Items>
+            <f:NumberBox Label="人民币" ID="NumberBox1" NoDecimal="true" NoNegative="true" Text="3000000" EnableCommas="true"
+                         Required="true" ShowRedStar="true" NumberPrefix="￥" />
+            <f:NumberBox Label="美元" ID="NumberBox2" NoDecimal="true" NoNegative="true" Text="100000" EnableCommas="true"
+                         Required="true" ShowRedStar="true" NumberPrefix="$" />
+            <f:NumberBox Label="百分比" ID="NumberBox3" NoNegative="true" Text="42.567" DecimalPrecision="2"
+                         Required="true" ShowRedStar="true" NumberSuffix="%" />
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单"  OnClick="btnSubmit_Click">
+            </f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+

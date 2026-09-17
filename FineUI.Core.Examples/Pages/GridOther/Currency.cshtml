@@ -1,0 +1,108 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.CurrencyModel
+@{
+    ViewBag.Title = "GridOther/Currency";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-grid-cell-Salary .f-grid-cell-text {
+            padding: 0;
+        }
+        .currency {
+            border-collapse: separate;
+            table-layout: fixed;
+            width: 100%;
+            border-spacing: 0px;
+        }
+        .currency td {
+            border-right-width:1px;
+            border-right-style: solid;
+            border-right-color: #ddd;
+            text-align: center;
+        }
+        .currency td:last-child {
+            border-right-color: transparent;
+        }
+        .currency td.separator {
+            border-right-color: green;
+        }
+        .currency td.separator.lastone {
+            border-right-color: red;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="工资" ColumnID="Salary" DataField="Salary" FieldType="Float" Width="200" RendererFunction="renderSalary" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+        // 单元格总数（8, 11, 14）
+        var CELL_COUNT = 11;
+
+        function renderSalary(value) {
+            var result = '', html = [];
+
+            var items = (value + '').split('.');
+            var integerPart = items[0];
+            var decimalPart = items[1];
+            result += integerPart;
+            if (decimalPart) {
+                result += decimalPart.charAt(0) || '0';
+                result += decimalPart.charAt(1) || '0';
+            } else {
+                result += '00';
+            }
+            var prefixCount = CELL_COUNT - result.length;
+            if (prefixCount > 0) {
+                for (var i = 0; i < prefixCount; i++) {
+                    result = '_' + result;
+                }
+            }
+
+            html.push('<table class="currency"><tbody><tr>');
+            for (var i = 0; i < CELL_COUNT; i++) {
+                var cellCls = '';
+                if ((i + 1) % 3 === 0) {
+                    cellCls = 'separator';
+
+                    if (i + 1 + 3 > CELL_COUNT) {
+                        cellCls += ' lastone';
+                    }
+                }
+                var cellValue = result.charAt(i);
+                html.push(F.formatString('<td class="{0}">{1}</td>',
+                    cellCls,
+                    cellValue === '_' ? '&nbsp;' : cellValue));
+            }
+            html.push('</tr></tbody></table>');
+            return html.join('');
+        }
+
+    </script>
+
+}

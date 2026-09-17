@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.FormLayout.LayoutContactUsModel
+@{
+    ViewBag.Title = "FormLayout/LayoutContactUs";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Window ID="Window1" Title="联系我们" IsModal="false" EnableClose="false" EnableResize="true" Width="550" AutoScroll="true">
+        <Items>
+            <f:Form ID="Form1" LabelAlign="Top" BodyPadding="10" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Panel ID="Panel2" Layout="Column" ShowHeader="false" ShowBorder="false">
+                        <Items>
+                            <f:TextBox ID="TextBox2" Label="姓" Margin="0 5 0 0" Required="true" ShowRedStar="true" ColumnWidth="50%">
+                            </f:TextBox>
+                            <f:TextBox ID="TextBox4" Label="名" Required="true" ShowRedStar="true" ColumnWidth="50%">
+                            </f:TextBox>
+                        </Items>
+                    </f:Panel>
+                    <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址">
+                    </f:TextBox>
+                    <f:TextBox ID="TextBox3" Required="true" ShowRedStar="true" Label="主题">
+                    </f:TextBox>
+                    <f:TextArea ID="TextArea1" Height="120" Required="true" ShowRedStar="true" Label="消息正文">
+                    </f:TextArea>
+                </Items>
+            </f:Form>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="Button1" Text="发送" IconFont="_Send" _ValidateForms="Form1"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+}
+

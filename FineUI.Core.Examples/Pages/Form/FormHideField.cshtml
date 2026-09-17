@@ -1,0 +1,103 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormHideFieldModel
+@{
+    ViewBag.Title = "Form/FormHideField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form LabelWidth="100" BodyPadding="10" EnableCollapse="false" ID="Form1" IsFluid="true" Title="表单">
+        <Rows>
+            <f:FormRow>
+                <Items>
+                    <f:Label ID="labTitle" HideMode="Visibility" Label="标题" Text="申请单" />
+                    <f:Label ID="labLiuShuiHao" Label="流水号" Text="123456789" />
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow2">
+                <Items>
+                    <f:Label ID="labPhone" Label="电话" Text="0551-1234567" />
+                    <f:Label ID="Label16" Label="申请人" Text="admin">
+                    </f:Label>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow3" HideMode="Visibility">
+                <Items>
+                    <f:Label ID="Label4" Label="编号" Text="200804170006" />
+                    <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址">
+                    </f:TextBox>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:DropDownList ID="DropDownList3" Label="审批人" Required="true" EmptyText="请选择审批人" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:ListItem Text="老大甲" Value="0"></f:ListItem>
+                        <f:ListItem Text="老大乙" Value="1"></f:ListItem>
+                        <f:ListItem Text="老大丙" Value="2"></f:ListItem>
+                    </f:DropDownList>
+                    <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true" ShowRedStar="true" />
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:TextArea ID="TextArea1" Label="描述" ShowRedStar="true" Required="true">
+                    </f:TextArea>
+                </Items>
+            </f:FormRow>
+            <f:FormRow>
+                <Items>
+                    <f:Panel ID="Panel2" ShowBorder="false" ShowHeader="false">
+                        <Items>
+                            <f:Button ID="btnSubmitForm2" Text="验证表单并提交" CssClass="marginr" OnClick="btnSubmit_Click"></f:Button>
+                        </Items>
+                    </f:Panel>
+                </Items>
+            </f:FormRow>
+        </Rows>
+    </f:Form>
+    <br />
+    <f:Button ID="btnShowHideTitle" Text="显示隐藏[标题]" CssClass="marginr" ClickHandler="onToggleTitleClick"></f:Button>
+    <f:Button ID="btnShowHidePhone" Text="显示隐藏[电话]" ClickHandler="onTogglePhoneClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnShowHideFormRow2" Text="显示隐藏第二行" CssClass="marginr" ClickHandler="onToggleFormRow2Click"></f:Button>
+    <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" ClickHandler="onToggleFormRow3Click"></f:Button>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>
+            对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility）
+        </li>
+        <li>
+            对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility）
+        </li>
+    </ul>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onToggleTitleClick(event) {
+            F.ui.labTitle.toggleVisible();
+        }
+
+        function onTogglePhoneClick(event) {
+            F.ui.labPhone.toggleVisible();
+        }
+
+        function onToggleFormRow2Click(event) {
+            F.ui.FormRow2.toggleVisible();
+        }
+
+        function onToggleFormRow3Click(event) {
+            F.ui.FormRow3.toggleVisible();
+        }
+
+    </script>
+}

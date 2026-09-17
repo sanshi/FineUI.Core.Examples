@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Panel.PanelIFrameModel
+@{
+    ViewBag.Title = "MobilePanel/PanelIFrame";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" EnableIFrame="true" IFrameUrl="@Url.Content("~/Mobile/Button/Button")" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar2" Title="面板（IFrame）" HeaderStyle="true">
+            </f:Toolbar>
+            <f:Toolbar ID="Toolbar1" Position="Bottom" CssClass="f-state-default">
+                <Items>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button Text="转到其他页面" Size="Small" EnableDefaultState="false" ShowMenuIcon="false">
+                        <Menu>
+                            <f:MenuButton Text="首页" AttributeDataTag="@Url.Content("~/Mobile/Button/Button")" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
+                            <f:MenuButton Text="按钮分组" AttributeDataTag="@Url.Content("~/Mobile/Button/ButtonGroup")" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
+                            <f:MenuButton Text="按钮分组（垂直）" AttributeDataTag="@Url.Content("~/Mobile/Button/ButtonGroupVertical")" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
+                            <f:MenuButton Text="按钮分组（与选项卡交互）" AttributeDataTag="@Url.Content("~/Mobile/Button/ButtonGroupTabStrip")" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+}
+
+
+@section script {
+
+    <script>
+
+        function onMyMenuButtonClick(event) {
+            var iframeUrl = this.getAttr('data-tag');
+            F.ui.Panel1.setIFrameUrl(iframeUrl);
+        }
+
+    </script>
+
+}

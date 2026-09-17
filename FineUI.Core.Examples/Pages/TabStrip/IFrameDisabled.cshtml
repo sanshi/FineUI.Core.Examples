@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.IFrameDisabledModel
+@{
+    ViewBag.SourceFiles = "~/TabStrip/IFrameDisabledTab1";
+    ViewBag.Title = "TabStrip/IFrameDisabled";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" ShowBorder="true" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="标签一" EnableIFrame="true" IFrameUrl="@Url.Content("~/TabStrip/IFrameDisabledTab1")">
+            </f:Tab>
+            <f:Tab ID="Tab2" EnableIFrame="true" BodyPadding="10" Enabled="false" IFrameUrl="@Url.Content("~/Panel/Group")" Title="标签二">
+            </f:Tab>
+            <f:Tab ID="Tab3" EnableIFrame="true" BodyPadding="10" Enabled="false" IFrameUrl="@Url.Content("~/Panel/Panel")" Title="标签三">
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function enableTabs() {
+            F.ui.Tab2.enable();
+            F.ui.Tab3.enable();
+        }
+
+        function disableTabs() {
+            F.ui.Tab2.disable();
+            F.ui.Tab3.disable();
+        }
+
+    </script>
+
+}

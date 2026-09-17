@@ -1,0 +1,51 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.TagsGridPagingDatabaseUpdateValueModel
+@{
+    ViewBag.Title = "DropDownBox/TagsGridPagingDatabaseUpdateValue";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" ShowBorder="true" Title="下拉表格（数据库分页）" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false" MultiSelectMode="Tags">
+                <PopPanel>
+                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+                            AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true"
+                            OnPageIndexChanged="Grid1_PageIndexChanged">
+                        <Columns>
+                            <f:RowNumberField />
+                            <f:RenderField HeaderText="姓名" DataField="Name" />
+                            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+                            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+                            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+                            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+                        </Columns>
+                    </f:Grid>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Panel CssClass="f-field" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Button ID="btnUpdateValue" Text="更新下拉框的值为[张娟娟,叶鹏]" CssClass="marginr" OnClick="btnUpdateValue_Click"></f:Button>
+                    <f:Button ID="btnClearValue" Text="清空下拉框的值" CssClass="marginr" OnClick="btnClearValue_Click"></f:Button>
+                    <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" CssClass="marginr" OnClick="btnGetSelection_Click"></f:Button>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:SimpleForm>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

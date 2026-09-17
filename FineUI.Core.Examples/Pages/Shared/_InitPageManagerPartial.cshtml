@@ -1,0 +1,108 @@
+@{
+    var F = Html.F();
+}
+
+@functions {
+
+
+    private bool IsSystemTheme(string themeName)
+    {
+        themeName = themeName.ToLower();
+        string[] themes = Enum.GetNames(typeof(Theme));
+        foreach (string theme in themes)
+        {
+            if (theme.ToLower() == themeName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
+
+@{
+    var pm = F.PageManager;
+
+    // 主题
+    var themeCookie = Context.Request.Cookies["Theme"];
+    if (!String.IsNullOrEmpty(themeCookie))
+    {
+        // 是否为内置主题
+        if (IsSystemTheme(themeCookie))
+        {
+            // 先清空CustomTheme，再设置Theme
+            pm.CustomTheme(String.Empty);
+            pm.Theme((Theme)Enum.Parse(typeof(Theme), themeCookie, true));
+        }
+        else
+        {
+            pm.CustomTheme(themeCookie);
+        }
+    }
+
+    // 语言
+    var langCookie = Context.Request.Cookies["Language"];
+    if (!String.IsNullOrEmpty(langCookie))
+    {
+        Language lang;
+        if (Enum.TryParse<Language>(langCookie, true, out lang))
+        {
+            pm.Language(lang);
+        }
+        else
+        {
+            pm.CustomLanguage(langCookie);
+        }
+    }
+
+
+    var loadingCookie = Context.Request.Cookies["Loading"];
+    if (!String.IsNullOrEmpty(loadingCookie))
+    {
+        int loadingNumber = Convert.ToInt32(loadingCookie);
+        pm.LoadingImageNumber(loadingNumber);
+        // 使用GIF加载动画时，需要先禁用页面加载动画（CSS）
+        pm.LoadingCSSNumber(0);
+    }
+
+    // 优先使用页面加载动画（CSS）
+    var loadingCSSCookie = Context.Request.Cookies["Loading_CSS"];
+    if (!String.IsNullOrEmpty(loadingCSSCookie))
+    {
+        int loadingCSSNumber = Convert.ToInt32(loadingCSSCookie);
+        pm.LoadingCSSNumber(loadingCSSNumber);
+    }
+
+
+    // 1. 仅显示社区版示例， 2. 社区版
+    // 上述两种情况都要禁用EnableAnimation、DisplayMode、MobileAdaption
+    bool showOnlyCommunity = false;
+    var showOnlyCommunityCookie = Context.Request.Cookies["ShowOnlyCommunity"];
+    if (!String.IsNullOrEmpty(showOnlyCommunityCookie))
+    {
+        showOnlyCommunity = Convert.ToBoolean(showOnlyCommunityCookie);
+    }
+
+    if (showOnlyCommunity || Constants.IS_COMMUNITY_EDITION)
+    {
+        pm.MobileAdaption(false);
+        pm.EnableAnimation(false);
+    }
+
+    // 显示模式
+    var modeCookie = Context.Request.Cookies["DisplayMode"];
+    if (!String.IsNullOrEmpty(modeCookie))
+    {
+        try
+        {
+            pm.DisplayMode((DisplayMode)Enum.Parse(typeof(DisplayMode), modeCookie, true));
+        }
+        catch (Exception)
+        {
+            pm.DisplayMode(DisplayMode.Normal);
+        }
+    }
+
+
+}

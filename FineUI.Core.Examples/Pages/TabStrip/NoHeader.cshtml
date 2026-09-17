@@ -1,0 +1,77 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.NoHeaderModel
+@{
+    ViewBag.Title = "TabStrip/NoHeader";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350" EnableTabCloseMenu="true" ShowBorder="true" ShowTabHeader="false" ActiveTabIndex="1">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="标签一" EnableClose="false" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label5" Text="标签一中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab2" Title="标签二" BodyPadding="10" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label4" Text="标签二中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab3" Title="标签三" BodyPadding="10" EnableClose="true" Layout="VBox">
+                <Items>
+                    <f:Label ID="Label3" Text="标签三中的文本" />
+                    <f:TabStrip ID="TabStrip2" BoxFlex="1" EnableTabCloseMenu="true" ShowBorder="true" ActiveTabIndex="1">
+                        <Tabs>
+                            <f:Tab ID="Tab4" Title="标签四" EnableClose="false" BodyPadding="10">
+                                <Items>
+                                    <f:Label ID="Label1" Text="标签四中的文本" />
+                                </Items>
+                            </f:Tab>
+                            <f:Tab ID="Tab5" Title="标签五" EnableClose="false" BodyPadding="10">
+                                <Items>
+                                    <f:Label ID="Label2" Text="标签五中的文本" />
+                                </Items>
+                            </f:Tab>
+                        </Tabs>
+                    </f:TabStrip>
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <br>
+
+    <f:Button ID="btnShowActiveTab1" Text="激活标签一" CssClass="marginr" ClickHandler="onShowActiveTab1Click"></f:Button>
+
+    <f:Button ID="btnShowActiveTab2" Text="激活标签二" CssClass="marginr" ClickHandler="onShowActiveTab2Click"></f:Button>
+
+    <f:Button ID="btnShowActiveTab3" Text="激活标签三" CssClass="marginr" ClickHandler="onShowActiveTab3Click"></f:Button>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onShowActiveTab1Click(event) {
+            F.ui.Tab1.activate();
+        }
+
+        function onShowActiveTab2Click(event) {
+            F.ui.Tab2.activate();
+        }
+
+        function onShowActiveTab3Click(event) {
+            F.ui.Tab3.activate();
+        }
+
+    </script>
+}

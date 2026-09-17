@@ -1,0 +1,58 @@
+@page
+@model FineUI.Core.Examples.Pages.Block.CustomBlocksModel
+@{
+    ViewBag.Title = "Block/CustomBlocks";
+
+    ViewBag.IsDarkerBG = true;
+
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        body.f-body {
+            overflow-x: hidden;
+        }
+
+        .custompanel {
+            min-height: 200px;
+        }
+    </style>
+
+}
+
+@section body {
+
+
+    <f:Panel IsFluid="true" Layout="Block" BlockConfigSpace="20" BlockConfigBlockCount="20" ShowBorder="false" ShowHeader="false">
+        <Items>
+            <f:Panel CssClass="custompanel" BlockSM="10" BlockMD="4"
+                     ShowBorder="true" ShowHeader="true" Title="4">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="5" BlockMD="4"
+                     ShowBorder="true" ShowHeader="true" Title="4">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="5" BlockMD="4"
+                     ShowBorder="true" ShowHeader="true" Title="4">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="10" BlockMD="4"
+                     ShowBorder="true" ShowHeader="true" Title="4">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="10" BlockMD="4"
+                     ShowBorder="true" ShowHeader="true" Title="4">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="20" BlockMD="10"
+                     ShowBorder="true" ShowHeader="true" Title="10">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="10" BlockMD="10"
+                     ShowBorder="true" ShowHeader="true" Title="10">
+            </f:Panel>
+            <f:Panel CssClass="custompanel" BlockSM="10" BlockMD="20"
+                     ShowBorder="true" ShowHeader="true" Title="20">
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}

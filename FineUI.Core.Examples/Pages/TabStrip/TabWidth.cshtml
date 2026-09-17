@@ -1,0 +1,43 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.TabWidthModel
+@{
+    ViewBag.Title = "TabStrip/TabWidth";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-tab-header.tab-maxwidth {
+            max-width: 150px;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350" ShowBorder="true" TabPosition="Top" EnableTabCloseMenu="false" ActiveTabIndex="1">
+        <Tabs>
+            <f:Tab CssClass="tab-maxwidth" Title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）"
+                   TitleToolTip="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label1" Text="第一个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二，这个标题也很长，但是没有截断" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label2" Text="第二个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label3" Text="第三个标签的内容" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+
+
+}
+

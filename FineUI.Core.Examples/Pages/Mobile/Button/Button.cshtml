@@ -1,0 +1,35 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Button.ButtonModel
+@{
+    ViewBag.Title = "MobileButton/Button";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px" AutoScroll="true" IsViewPort="true">
+        <Items>
+            <f:Button ID="Button1" Text="普通按钮" />
+            <f:Button ID="Button2" Text="按下按钮" EnablePress="true" Pressed="true" />
+            <f:Button ID="Button3" Text="禁用按钮" Enabled="false" MarginBottom="30" />
+            <f:Panel ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigChildMargin="0 5px 0 0" MarginBottom="30">
+                <Items>
+                    <f:Button ID="Button4" Text="普通按钮" BoxFlex="1" />
+                    <f:Button ID="Button5" Text="按下按钮" BoxFlex="1" EnablePress="true" Pressed="true" />
+                    <f:Button ID="Button6" Text="禁用按钮" BoxFlex="1" Enabled="false" Margin="0" />
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel2" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigChildMargin="0 5px 0 0" MarginBottom="30">
+                <Items>
+                    <f:Button ID="Button7" Text="普通按钮" BoxFlex="1" Icon="Star" IconAlign="Top" />
+                    <f:Button ID="Button8" Text="按下按钮" BoxFlex="1" IconFont="_Mail" IconAlign="Top" EnablePress="true" Pressed="true" />
+                    <f:Button ID="Button9" Text="禁用按钮" BoxFlex="1" IconFont="_Refresh" IconAlign="Top" Enabled="false" Margin="0" />
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

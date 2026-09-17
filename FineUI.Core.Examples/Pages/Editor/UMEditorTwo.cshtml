@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.Editor.UMEditorTwoModel
+@{
+    ViewBag.Title = "Editor/UMEditorTwo";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="Form1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="添加文章">
+        <Items>
+            <f:TextBox ID="tbxTitle" Label="文章标题" Required="true">
+            </f:TextBox>
+            <f:HtmlEditor Label="文章正文" ID="HtmlEditor1"
+                          Editor="UMEditor" BasePath="@Url.Content("~/res/third-party/umeditor/")" ToolbarSet="Full" Height="400" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+            </f:HtmlEditor>
+            <f:HtmlEditor Label="文章摘要" ID="HtmlEditor2"
+                          Editor="UMEditor" BasePath="@Url.Content("~/res/third-party/umeditor/")" ToolbarSet="Basic" Height="200">
+            </f:HtmlEditor>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="Button1" _ValidateForms="Form1" Text="获取文章内容" OnClick="Button1_Click"></f:Button>
+                    <f:Button ID="Button2" Text="更新文章摘要" OnClick="Button2_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+}
+

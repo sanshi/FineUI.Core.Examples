@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.RedStarPositionModel
+@{
+    ViewBag.Title = "Form/RedStarPosition";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" Title="表单" ShowBorder="true" BodyPadding="10" ShowHeader="true">
+        <Items>
+            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox ID="tbxPassword" Label="密码" TextMode="Password" Required="true" ShowRedStar="true">
+            </f:TextBox>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="btnLogin" Text="登录" Type="Button" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnLogin_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+    <br />
+    <br />
+    <f:SimpleForm ID="SimpleForm2" IsFluid="true" Title="表单(RedStarPosition=BeforeText LabelAlign=Right)" ShowBorder="true" BodyPadding="10" ShowHeader="true" RedStarPosition="BeforeText" LabelAlign="Right">
+        <Items>
+            <f:TextBox ID="TextBox1" Label="用户名" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox ID="TextBox2" Label="密码" TextMode="Password" Required="true" ShowRedStar="true">
+            </f:TextBox>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar2" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="btnLogin2" Text="登录" Type="Button" _ValidateForms="SimpleForm2" ValidateTarget="Top" OnClick="btnLogin2_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+    <br />
+    <br />
+    <f:SimpleForm ID="SimpleForm3" IsFluid="true" Title="表单(RedStarPosition=AfterSeparator LabelAlign=Top)" ShowBorder="true" BodyPadding="10" ShowHeader="true" RedStarPosition="AfterSeparator" LabelAlign="Top">
+        <Items>
+            <f:TextBox ID="TextBox3" Label="用户名" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox ID="TextBox4" Label="密码" TextMode="Password" Required="true" ShowRedStar="true">
+            </f:TextBox>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar3" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="btnLogin3" Text="登录" Type="Button" _ValidateForms="SimpleForm3" ValidateTarget="Top" OnClick="btnLogin3_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+}
+

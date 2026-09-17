@@ -1,0 +1,20 @@
+@page
+@model FineUI.Core.Examples.Pages.Calendar.CalendarTimeStackModel
+@{
+    ViewBag.Title = "Calendar/CalendarTimeStack";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Calendar ID="Calendar1" OnDateSelect="Calendar1_DateSelect" ShowTime="true" StackDateTime="true">
+    </f:Calendar>
+    <br />
+    <br />
+    <f:Button ID="Button1" OnClick="Button1_Click"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+}

@@ -1,0 +1,21 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.DataBindDocumentModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/content/tree/website.xml";
+    ViewBag.Title = "Tree/DataBindDocument";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（绑定到 XmlDocument）">
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnClear" Text="清空树" CssClass="marginr" OnClick="btnClear_Click"></f:Button>
+
+    <f:Button ID="btnReBind" Text="重新绑定树" CssClass="marginr" OnClick="btnReBind_Click"></f:Button>
+
+}
+

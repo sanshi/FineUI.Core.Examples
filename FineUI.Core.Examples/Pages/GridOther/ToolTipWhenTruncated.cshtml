@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.ToolTipWhenTruncatedModel
+@{
+    ViewBag.Title = "GridOther/ToolTipWhenTruncated";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="所学专业（仅截断时显示）" DataField="Major" Width="140" ShowToolTip="true" ShowTooltipWhenTruncated="true"></f:RenderField>
+            <f:RenderField HeaderText="所学专业（永远显示）" DataField="Major" Width="140" ShowToolTip="true"></f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <div>
+        <b>两列的区别（把鼠标依次移到两列的各行上对比）：</b>
+        <ul>
+            <li><b>所学专业（仅截断时显示）</b>：<code>ShowToolTip="true" ShowTooltipWhenTruncated="true"</code>。只有当专业名过长、被列宽截断出现省略号时才弹出提示；短名鼠标悬停<b>不弹</b>提示。</li>
+            <li><b>所学专业（永远显示）</b>：<code>ShowToolTip="true"</code>。无论内容长短，鼠标悬停<b>都会</b>弹出完整内容的提示——这是默认行为。</li>
+        </ul>
+    </div>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

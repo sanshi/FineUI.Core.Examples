@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.StudentEditModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/Student.cs;~/Pages/DataModel/Models/StudentHelper.cs;~/Pages/DataModel/Models/StudentStore.cs";
+    ViewBag.Title = "DataModel/StudentEdit";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:SimpleForm IsFluid="true" ID="SimpleForm1" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="编辑学生">
+        <Items>
+            @* 编辑目标的主键：随回发一起提交，供保存时按主键重新读出实体 *@
+            <f:HiddenField For="Student.Id"></f:HiddenField>
+            @* 只读展示：Label 是展示型控件，不参与回发绑定。首屏由 OnGet 加载的实体填值；
+               保存时事件处理器不覆盖分组，故数据源里的原值保持不变 *@
+            <f:Label For="Student.Group"></f:Label>
+            <f:TextBox For="Student.Name"></f:TextBox>
+            <f:RadioButtonList For="Student.Gender" ColumnNumber="3">
+                <f:RadioItem Text="男" Value="1"></f:RadioItem>
+                <f:RadioItem Text="女" Value="0"></f:RadioItem>
+            </f:RadioButtonList>
+            <f:NumberBox For="Student.EntranceYear"></f:NumberBox>
+            <f:CheckBox For="Student.AtSchool"></f:CheckBox>
+            <f:TextBox For="Student.Major"></f:TextBox>
+            <f:DatePicker For="Student.EntranceDate"></f:DatePicker>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom">
+                <Items>
+                    <f:Button ID="btnSave" Text="保存" _ValidateForms="SimpleForm1" OnClick="btnSave_Click" OnClickFields="SimpleForm1"></f:Button>
+                    <f:Button ID="btnReset" Type="Reset" Text="重置表单"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+}

@@ -1,0 +1,96 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.CheckBoxFieldModel
+@{
+    ViewBag.Title = "GridTree/CheckBoxField";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-cell.hidethis .f-grid-checkbox {
+            display: none;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId">
+        <Columns>
+            <f:RowNumberField EnableTreeNumber="true" />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderCheckField ColumnID="FollowFolder" HeaderText="关注目录" RenderAsStaticField="false" RendererFunction="renderFollowFolder" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <f:Button ID="Button2" Text="关注的目录列表" ClickHandler="onNotifyCheckedFollowFolderClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderFollowFolder(value, params) {
+            var rowData = params.rowData;
+
+            // 类型
+            var type = rowData.values.Type;
+            if (type !== '文件夹') {
+                params.cellCls = 'hidethis';
+            }
+
+            return value;
+        }
+
+        function onNotifyCheckedFollowFolderClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            var rowEls = grid1.getRowEls();
+
+            var result = ['<table class="result">'];
+            result.push('<tr>');
+            result.push('<th>行号</th>');
+            result.push('<th>ID</th>');
+            result.push('<th>名称</th>');
+            result.push('</tr>');
+            rowEls.each(function () {
+                var cnode = $(this);
+                var rowData = grid1.getRowData(cnode);
+                var followFolderEl = cnode.find('.f-grid-cell-FollowFolder .f-grid-checkbox');
+                var isChecked = followFolderEl.hasClass('f-checked');
+
+                if (isChecked) {
+                    result.push('<tr>');
+                    result.push('<td>' + (rowData.index + 1) + '</td>');
+                    result.push('<td>' + rowData.id + '</td>');
+                    result.push('<td>' + rowData.text + '</td>');
+                    result.push('</tr>');
+                }
+            });
+            result.push('</table>');
+
+            F.notify({
+                message: F.rawHtml(result.join('')),
+                target: '_top',
+                header: false,
+                messageIcon: '',
+                positionX: 'center',
+                positionY: 'top'
+            });
+        }
+
+    </script>
+}

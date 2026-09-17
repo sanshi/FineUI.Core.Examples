@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.FormLayout.LayoutPanelModel
+@{
+    ViewBag.Title = "FormLayout/LayoutPanel";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form ID="SimpleForm1" IsFluid="true" BodyPadding="10" RemoveLastFieldsMargin="true" LabelAlign="Left" Title="表单">
+        <Rows>
+            <f:FormRow ID="FormRow5">
+                <Items>
+                    <f:TextBox ID="TextBox1" Label="文本一">
+                    </f:TextBox>
+                    <f:Button ID="Button4" CssClass="btn-in-form" Text="按钮一"></f:Button>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow6">
+                <Items>
+                    <f:TextBox ID="TextBox2" Label="文本二">
+                    </f:TextBox>
+                    <f:Button ID="Button3" CssClass="btn-in-form" Text="按钮二"></f:Button>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow7">
+                <Items>
+                    <f:TextBox ID="TextBox3" Label="文本三">
+                    </f:TextBox>
+                    <f:Button ID="Button1" CssClass="btn-in-form" Text="按钮三"></f:Button>
+                </Items>
+            </f:FormRow>
+            <f:FormRow ID="FormRow8">
+                <Items>
+                    <f:TextBox ID="TextBox4" Label="文本四">
+                    </f:TextBox>
+                    <f:Button ID="Button2" CssClass="btn-in-form" Text="按钮四"></f:Button>
+                </Items>
+            </f:FormRow>
+        </Rows>
+    </f:Form>
+    <br>
+    <br />
+    注：为表单设置 RemoveLastFieldsMargin="true" 来移除最后一行表单字段的底部外边距。
+
+
+}
+

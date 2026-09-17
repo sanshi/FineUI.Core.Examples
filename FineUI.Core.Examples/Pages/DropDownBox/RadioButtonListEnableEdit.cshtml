@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.RadioButtonListEnableEditModel
+@{
+    ViewBag.Title = "DropDownBox/RadioButtonListEnableEdit";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉单选框列表" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" DataControlID="RadioButtonList1" Value="js" EnableMultiSelect="false" EnableEdit="true">
+                <PopPanel>
+                    <f:SimpleForm ID="SimpleForm2" BodyPadding="10" AutoScroll="true" ShowBorder="true" ShowHeader="false" Hidden="true">
+                        <Items>
+                            <f:Label ID="Label1" Text="请选择一种编程语言："></f:Label>
+                            <f:RadioButtonList ID="RadioButtonList1" ColumnNumber="1">
+                                <f:RadioItem Text="C#" Value="csharp" />
+                                <f:RadioItem Text="JavaScript" Value="js" />
+                                <f:RadioItem Text="JAVA" Value="java" />
+                                <f:RadioItem Text="Ruby" Value="ruby" />
+                            </f:RadioButtonList>
+                        </Items>
+                    </f:SimpleForm>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+

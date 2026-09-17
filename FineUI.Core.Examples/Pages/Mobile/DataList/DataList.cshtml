@@ -1,0 +1,34 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.DataList.DataListModel
+@{
+    ViewBag.Title = "MobileDataList/DataList";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1">
+                <f:DataListItem Text="列表项1" />
+                <f:DataListItem Text="列表项2" />
+                <f:DataListItem Text="列表项3" />
+                <f:DataListItem Text="列表项4" />
+                <f:DataListItem Text="列表项5" />
+                <f:DataListItem Text="列表项6" />
+                <f:DataListItem Text="列表项7" />
+                <f:DataListItem Text="列表项8" />
+                <f:DataListItem Text="一个很长很长很长很长很长很长很长很长很长很长很长很长很长很的列表项" />
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+}
+

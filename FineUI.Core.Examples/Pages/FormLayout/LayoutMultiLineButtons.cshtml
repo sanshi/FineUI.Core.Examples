@@ -1,0 +1,53 @@
+@page
+@model FineUI.Core.Examples.Pages.FormLayout.LayoutMultiLineButtonsModel
+@{
+    ViewBag.Title = "FormLayout/LayoutMultiLineButtons";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm IsFluid="true" BodyPadding="10" ID="Form1" LabelWidth="100" EnableCollapse="false" Title="表单">
+        <Items>
+            <f:Label ID="Label1" Label="标签" Text="标签的值">
+            </f:Label>
+            <f:CheckBox ID="CheckBox1" Text="复选框" Label="复选框">
+            </f:CheckBox>
+            <f:DropDownList ID="DropDownList1" Label="下拉列表" EmptyText="请选择一项" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
+                <f:ListItem Text="可选项 2" Value="1"></f:ListItem>
+            </f:DropDownList>
+            <f:TextBox ID="TextBox1" ShowRedStar="true" Label="文本框" Required="true" Text="">
+            </f:TextBox>
+            <f:Panel ID="Panel1" CssClass="f-field" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Button CssClass="marginr" Text="按钮一" ></f:Button>
+                    <f:Button ID="Button3" CssClass="marginr" Text="按钮二" ></f:Button>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel2" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Button Text="验证此表单并提交" CssClass="marginr" _ValidateForms="Form1" ID="btnSubmit" OnClick="btnSubmit_Click"></f:Button>
+                    <f:Button ID="btnResetForm1" CssClass="marginr" Text="重置表单" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <br />
+    注：第一行按钮所在的面板设置了样式：CssClass="f-field"。
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onResetClick(event) {
+            F.ui.Form1.reset();
+        }
+
+    </script>
+}

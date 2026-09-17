@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.SortingClientMultiModel
+@{
+    ViewBag.Title = "Grid/SortingClientMulti";
+    var F = Html.F();
+}
+
+
+@section body {
+
+<f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
+        AllowSorting="true" SortingCancel="true" SortingToolTip="true" SortingMulti="true" _SortFieldArray="Gender,ASC">
+    <Columns>
+        <f:RowNumberField />
+        <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" Width="150" />
+        <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" Width="150" />
+        <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" Width="150" />
+        <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" Width="150" />
+        <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+    </Columns>
+</f:Grid>
+<br />
+<f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+<br />
+<br />
+    注：不定义 OnSort 服务器端事件，即为客户端排序。
+
+}
+
+
+@section script {
+
+<script src="~/res/js/grid.js"></script>
+
+}

@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonMenuModel
+@{
+    ViewBag.Title = "Button/ButtonMenu";
+    var F = Html.F();
+}
+
+@section body {
+
+
+    <f:Button ID="btnMenu" Text="中国科学技术大学" IconFont="_Bicycle">
+        <Menu>
+            <f:MenuHyperLink ID="MenuHyperLink3" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
+            </f:MenuHyperLink>
+            <f:MenuButton ID="MenuButton1" Icon="TagBlue" Text="管理学院">
+                <Menu>
+                    <f:MenuHyperLink ID="MenuHyperLink1" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
+                    </f:MenuHyperLink>
+                    <f:MenuHyperLink ID="MenuHyperLink2" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
+                    </f:MenuHyperLink>
+                </Menu>
+            </f:MenuButton>
+        </Menu>
+    </f:Button>
+
+
+}

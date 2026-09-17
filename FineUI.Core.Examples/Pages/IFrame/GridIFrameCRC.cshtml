@@ -1,0 +1,143 @@
+@page
+@model FineUI.Core.Examples.Pages.IFrame.GridIFrameCRCModel
+@{
+    ViewBag.SourceFiles = "~/Grid/IFrameWindow";
+    ViewBag.Title = "IFrame/GridIFrameCRC";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel7" BodyPadding="20" Title="Panel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigAlign="Stretch" IsViewPort="true">
+        <Items>
+            <f:Form ID="Form5" ShowBorder="false" ShowHeader="false">
+                <Rows>
+                    <f:FormRow>
+                        <Items>
+                            <f:TwinTriggerBox EmptyText="输入要搜索的关键词" ShowLabel="false" ID="ttbSearch"
+                                              ShowTrigger1="false" OnTrigger1Click="ttbSearch_Trigger1Click" OnTrigger2Click="ttbSearch_Trigger2Click"
+                                              Trigger1Icon="Clear" Trigger2Icon="Search">
+                            </f:TwinTriggerBox>
+                            <f:DropDownList ID="DropDownList1" ShowLabel="false" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                <f:ListItem Text="过滤条件一" Value="filter1" />
+                                <f:ListItem Text="过滤条件二" Value="filter2" />
+                                <f:ListItem Text="过滤条件三" Value="filter3" />
+                            </f:DropDownList>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+            <f:Grid ID="Grid1" Title="Grid1" PageSize="10" ShowBorder="true" BoxFlex="1" AllowPaging="true" IsDatabasePaging="false"
+                    ShowHeader="false" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" OnSort="Grid1_Sort">
+                <Toolbars>
+                    <f:Toolbar ID="Toolbar2">
+                        <Items>
+                            <f:Button ID="btnPopupWindow" Text="弹出对话框" ClickHandler="onPopupWindowClick">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator1">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnCheckSelection" Text="检查选中项状态" ClickHandler="onCheckSelectionClick">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator2">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnConfirmButton" Text="删除选中行" ClickHandler="onConfirmButtonClick"></f:Button>
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+                <Columns>
+                    <f:RowNumberField />
+                    <f:RenderField HeaderText="姓名" DataField="Name" />
+                    <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                    <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+                    <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+                    <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+                    <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                    <f:RenderField HeaderText="" EnableHeaderMenu="false" RendererFunction="renderActionField" />
+                </Columns>
+            </f:Grid>
+        </Items>
+    </f:Panel>
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="850" Height="500" CloseAction="HidePostBack" OnClose="Window1_Close">
+    </f:Window>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+
+        // 完整流程：先判断有没有选中 → 提示要删除多少项 → 用户点确定后回发 → 服务端处理并反馈。
+        // 客户端已经拿着选中行的标识，用自定义事件直接送到服务端，不必让服务端再从回发状态里反推。
+        // （确认框是异步的，没法在这个函数里等用户点完，所以点确定后由 ok 回调发起回发。
+        //   自定义事件不带表单验证、回发前禁用按钮这些按钮内置回发才有的特性，需要的话在这里自己写。）
+        function onConfirmButtonClick(event) {
+            var grid = F.ui.Grid1;
+            if (!grid.hasSelection()) { F.alert('请至少选择一项！'); return false; }
+
+            var selectedRows = grid.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;项吗？'),
+                // 与迁移前 ConfirmIcon 的默认值（Warning）保持一致
+                messageIcon: 'warning',
+                ok: function () {
+                    F.customEvent('Grid1_DeleteRows', { rowIDs: selectedRows });
+                }
+            });
+            return false;
+        }
+
+        function renderActionField(value, params) {
+            return '<a href="javascript:;" class="editfield"><img class="f-grid-cell-icon" src="@Url.Content("~/res/icon/pencil.png")"></a>' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="deletefield"><img class="f-grid-cell-icon" src="@Url.Content("~/res/icon/delete.png")"></a>';
+        }
+
+        // 打开窗体
+        function openWindow(rowData) {
+
+            // Grid/IFrameWindow?id=104&name=刘国
+            var iframeWindowUrl = '@Url.Content("~/Grid/IFrameWindow")';
+            var iframeUrl = iframeWindowUrl + '?id=' + rowData.id + '&name=' + encodeURIComponent(rowData.text);
+
+            // 显示窗体
+            F.ui.Window1.show(iframeUrl, '详细信息 - ' + rowData.text);
+        }
+
+        F.ready(function () {
+
+            var grid = F.ui.Grid1;
+
+            // 点击表格行中的编辑按钮
+            grid.el.on('click', 'a.editfield', function (event) {
+                var rowEl = $(this).closest('.f-grid-row');
+                var rowData = grid.getRowData(rowEl);
+
+                openWindow(rowData);
+            });
+
+            // 点击表格行中的删除按钮
+            grid.el.on('click', 'a.deletefield', function (event) {
+                F.alert('尚未实现！');
+            });
+
+        });
+
+
+        function onCheckSelectionClick(event) {
+            if (!F.ui.Grid1.hasSelection()) {
+                F.alert('请至少选择一项！');
+                return false;
+            }
+        }
+
+        function onPopupWindowClick(event) {
+            F.ui.Window1.show('@Url.Content("~/Grid/IFrameWindow")');
+            return false;
+        }
+
+    </script>
+}

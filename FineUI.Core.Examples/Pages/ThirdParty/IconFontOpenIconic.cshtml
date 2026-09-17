@@ -1,0 +1,98 @@
+@page
+@model FineUI.Core.Examples.Pages.ThirdParty.IconFontOpenIconicModel
+@{
+    ViewBag.Title = "ThirdParty/IconFontOpenIconic";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link rel="stylesheet" href="~/res/third-party/openiconic/fonts.css" />
+}
+
+@section body {
+
+    <f:Button ID="btnIcon1" Text="图标在左侧" IconFontClass="oi oi-tags" CssClass="marginr" />
+    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFontClass="oi oi-star" />
+    <br />
+    <br />
+    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFontClass="oi oi-cart" CssClass="marginr" />
+    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFontClass="oi oi-cloud" />
+    <br />
+    <br />
+    只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button1" IconFontClass="oi oi-share" CssClass="marginr" />
+    <f:Button ID="Button2" IconFontClass="oi oi-key" CssClass="marginr" />
+    <f:Button ID="Button7" IconFontClass="oi oi-lock-locked" CssClass="marginr" />
+    <f:Button ID="Button8" IconFontClass="oi oi-trash" CssClass="marginr" />
+    <br />
+    <br />
+    <f:Panel ID="Panel1" Width="500" Title="面板" Height="250" BodyPadding="10" EnableCollapse="true" IconFontClass="oi oi-list">
+        <Items>
+            <f:Label Text="面板内容"></f:Label>
+        </Items>
+        <Tools>
+            <f:Tool IconFontClass="oi oi-cog" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool IconFontClass="oi oi-cloud-download" ToolTip="下载" ClickHandler="onToolIconClick"></f:Tool>
+        </Tools>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnMenu" Text="操作" IconFontClass="oi oi-pencil">
+                        <Menu>
+                            <f:MenuButton IconFontClass="oi oi-trash" Text="删除选中项">
+                            </f:MenuButton>
+                            <f:MenuButton IconFontClass="oi oi-ban" Text="禁用选中项">
+                            </f:MenuButton>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+    <br />
+    <f:Tree ID="Tree1" Width="500" ShowHeader="true" Title="树控件" EnableCollapse="false">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true">
+                <f:TreeNode Text="河南省" Expanded="true">
+                    <f:TreeNode Text="驻马店市" Expanded="true" IconFontClass="oi oi-flag" NodeID="Zhumadian">
+                        <f:TreeNode Text="遂平县" IconFontClass="oi oi-tag" NodeID="Suiping">
+                        </f:TreeNode>
+                        <f:TreeNode Text="西平县" IconFontClass="oi oi-book" NodeID="Xiping">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="Luohe" IconFontClass="oi oi-bookmark" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" NodeID="Anhui">
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+
+    <br />
+    <br />
+    <a href="https://useiconic.com/open/" target="_blank">https://useiconic.com/open/</a>
+}
+
+
+@section script {
+
+    <script>
+        function onToolIconClick(event) {
+            // 当前点击的图标字体
+            var iconFontCls = this.iconFontCls;
+
+            F.notify({
+                message: '你点击了标题栏工具图标：' + iconFontCls,
+                messageIconFontCls: iconFontCls,
+                displayMilliseconds: 300000,
+                positionX: 'center',
+                positionY: 'center'
+            });
+        }
+    </script>
+
+}

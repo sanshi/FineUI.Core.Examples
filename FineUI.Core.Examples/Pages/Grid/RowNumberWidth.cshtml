@@ -1,0 +1,28 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowNumberWidthModel
+@{
+    ViewBag.Title = "Grid/RowNumberWidth";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（数据库分页，切换分页时序号连续）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            AllowPaging="true" PageSize="10" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged">
+        <Columns>
+            <f:RowNumberField EnablePagingNumber="true" Width="60" />
+            <f:RenderField HeaderText="ID" DataField="Id" Width="150" />
+            <f:RenderField HeaderText="时间" DataField="EntranceTime" ExpandUnusedSpace="true" MinWidth="150" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

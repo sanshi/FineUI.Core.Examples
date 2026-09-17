@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.IFrameAddTabModel
+@{
+    ViewBag.Title = "TabStrip/IFrameAddTab";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" ShowBorder="true" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab Title="FineUI官网" EnableIFrame="true" IFrameUrl="https://fineui.com/">
+            </f:Tab>
+        </Tabs>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="Button1" Text="打开DeepSeek官网（tab1_iframe）" OnClick="Button1_Click"></f:Button>
+                    <f:Button ID="Button2" Text="打开ASP.NET官网（tab1_iframe）" OnClick="Button2_Click"></f:Button>
+                    <f:Button ID="Button3" Text="打开FineUI官网（tab2_iframe）" OnClick="Button3_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:TabStrip>
+    <br>
+    <br>
+    注：由于设置了相同的tabID，专业版示例和开源版示例在同一个选项卡中打开。
+    <br>
+
+
+}
+

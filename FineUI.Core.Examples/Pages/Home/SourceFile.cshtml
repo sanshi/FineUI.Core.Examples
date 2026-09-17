@@ -1,0 +1,199 @@
+@page
+@model FineUI.Core.Examples.Pages.Home.SourceFileModel
+@{
+    ViewBag.Title = "SourceFile";
+    var F = Html.F();
+}
+
+@section head {
+
+    @*<link href="~/res/google-code-prettify/prettify.css" rel="stylesheet" />*@
+    @{
+        if (F.PageManager.Source.Theme == Theme.Dark_Hive)
+        {
+            <link href="~/res/google-code-prettify/themes/tomorrow-night.min.css" rel="stylesheet" />
+
+        }
+        else
+        {
+            <link href="~/res/google-code-prettify/themes/tomorrow.min.css" rel="stylesheet" />
+        }
+    }
+
+    <style type="text/css">
+        body.f-body {
+            padding: 10px;
+        }
+
+        body {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        pre.prettyprint {
+            border: none;
+            margin: 0;
+            color: #666;
+            font-family: Consolas, Courier New, monospace;
+            -webkit-font-smoothing: subpixel-antialiased;
+            /* 使用主题背景色 */
+            background-color: transparent;
+        }
+
+        li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+            /* 使用主题背景色 */
+            background-color: transparent;
+        }
+    </style>
+
+}
+
+@functions {
+
+// 部署在子路径下时（例如反向代理把 /demo 转发过来），Source 页传来的 file 是含应用根路径的网址；
+// 映射成物理路径之前要先去掉应用根前缀，否则会到「应用目录\demo\...」这种不存在的位置找文件。
+private string StripPathBase(string fileName)
+{
+    string pathBase = HttpContext.Request.PathBase.Value;
+    if (!String.IsNullOrEmpty(pathBase) && !String.IsNullOrEmpty(fileName)
+        && fileName.StartsWith(pathBase, StringComparison.OrdinalIgnoreCase))
+    {
+        fileName = fileName.Substring(pathBase.Length);
+    }
+
+    return fileName;
+}
+
+private string GetRootPath()
+{
+    string rootPath = System.IO.Path.GetFullPath(FineUI.Core.PageContext.MapPath("~/"));
+    if (!rootPath.EndsWith(System.IO.Path.DirectorySeparatorChar.ToString()))
+    {
+        rootPath += System.IO.Path.DirectorySeparatorChar;
+    }
+
+    return rootPath;
+}
+
+// 先把路径归一化再比较，才能挡住用 ../ 跳出应用根目录的写法（Path.Combine 不解析 ..）；
+// 根路径带上结尾的分隔符，避免同级的 xxx2 目录也被判成在根目录之内。
+private bool UnderRootPath(string fileName)
+{
+    try
+    {
+        string filePath = System.IO.Path.GetFullPath(FineUI.Core.PageContext.MapPath(fileName));
+        return filePath.StartsWith(GetRootPath(), StringComparison.OrdinalIgnoreCase);
+    }
+    catch (Exception)
+    {
+        return false;
+    }
+}
+
+// 取相对应用根的第一级目录名，供下面的目录黑名单判断。
+// 根路径必须带结尾分隔符：否则截出来的首字符是分隔符，这里会永远返回空串、黑名单从不生效。
+private string GetBasePath(string fileName)
+{
+    string rootPath = GetRootPath();
+    string filePath = System.IO.Path.GetFullPath(FineUI.Core.PageContext.MapPath(fileName));
+
+    string basePath = filePath.Substring(rootPath.Length);
+    int slashIndex = basePath.IndexOf(System.IO.Path.DirectorySeparatorChar);
+    if (slashIndex >= 0)
+    {
+        basePath = basePath.Substring(0, slashIndex);
+    }
+
+    return basePath;
+}
+
+private string GetFileType(string fileName)
+{
+    string fileType = String.Empty;
+
+    int lastDotIndex = fileName.ToLower().LastIndexOf(".");
+    if (lastDotIndex >= 0)
+    {
+        fileType = fileName.Substring(lastDotIndex + 1);
+    }
+
+    return fileType;
+}
+
+private string GetOutputHTML(string file)
+{
+    if (String.IsNullOrEmpty(file))
+    {
+        return "Error!";
+    }
+
+    if (file.StartsWith("http://") || file.StartsWith("https://"))
+    {
+        // file 来自查询串，必须编码后再拼进 HTML——这段最终经 @Html.Raw 原样输出，
+        // 不编码就是一个反射型 XSS（构造 file=https://x"><img src=1 onerror=... 即可注入）
+        return String.Format("<br/><br/><a href=\"{0}\" target=\"_blank\">在新窗口打开</a>", System.Net.WebUtility.HtmlEncode(file));
+    }
+
+    // 不是网站根目录下的文件
+    if (!UnderRootPath(file))
+    {
+        return "Error!";
+    }
+
+    // 不允许下载文件的目录
+    string basePath = GetBasePath(file);
+    List<string> disallowPaths = new List<string> { "bin", "obj", "upload", "Properties", "App_Data" };
+    // Windows 下路径不区分大小写，比对也必须不区分——否则 /BIN/x.js 就绕过去了
+        if (disallowPaths.Contains(basePath, StringComparer.OrdinalIgnoreCase))
+    {
+        return "Error!";
+    }
+
+
+    // 只能下载指定类型文件
+    string fileType = GetFileType(file);
+    List<string> allowFileTypes = new List<string> { "cs", "cshtml", "xml", "css", "js" };
+    if (!allowFileTypes.Contains(fileType))
+    {
+        return "Error!";
+    }
+
+    // 读取文件内容（文件不存在就照常返回 Error!，不要抛异常变成 500 错误页）
+    string filePath = FineUI.Core.PageContext.MapPath(file);
+    if (!System.IO.File.Exists(filePath))
+    {
+        return "Error!";
+    }
+
+    // 读取文件内容
+    string content = System.IO.File.ReadAllText(filePath, System.Text.Encoding.UTF8);
+    return "<pre class=\"prettyprint linenums\">" + System.Net.WebUtility.HtmlEncode(content) + "</pre>"; // linenums
+}
+}
+
+
+@section body {
+
+    @{
+        string outputHTML = GetOutputHTML(StripPathBase(HttpContext.Request.Query["file"]));
+    }
+
+    @Html.Raw(outputHTML)
+
+}
+
+@section script {
+
+    <script src="~/res/google-code-prettify/prettify.js"></script>
+    <script src="~/res/google-code-prettify/lang-basic.js"></script>
+
+    <script>
+
+        F.ready(function () {
+
+            prettyPrint();
+
+        });
+
+    </script>
+}

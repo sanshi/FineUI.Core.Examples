@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.DataList.DataListLinkModel
+@{
+    ViewBag.Title = "MobileDataList/DataListLink";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+
+}
+
+@section body {
+
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1">
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+}
+

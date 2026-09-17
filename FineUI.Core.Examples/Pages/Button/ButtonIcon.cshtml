@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonIconModel
+
+@{
+    ViewBag.Title = "Button/ButtonIcon";
+}
+
+@section body {
+
+    <f:Button ID="btnIcon1" Text="图标在左侧" Icon="Email" CssClass="marginr"></f:Button>
+    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" Icon="Star"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" Icon="Email" CssClass="marginr"></f:Button>
+    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" Icon="Star"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnCustomIcon" Text="自定义图标（点击修改图标）" IconUrl="~/res/images/16/1.png" OnClick="btnCustomIcon_Click"></f:Button>
+    <br />
+    <br />
+    只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button1" IconUrl="~/res/images/16/1.png" CssClass="marginr"></f:Button>
+    <f:Button ID="Button2" IconUrl="~/res/images/16/8.png"></f:Button>
+    <br />
+    <br />
+    大按钮：
+    <br />
+    <br />
+    <f:Button ID="Button3" Size="Large" Text="图标在左侧" Icon="Email" CssClass="marginr"></f:Button>
+    <f:Button ID="Button4" Size="Large" Text="图标在右侧" IconAlign="Right" Icon="Star"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" Icon="Email" CssClass="marginr"></f:Button>
+    <f:Button ID="Button6" Size="Large" Text="图标在下面" IconAlign="Bottom" Icon="Email"></f:Button>
+    <br />
+    <br />
+}
+

@@ -1,0 +1,99 @@
+@page
+@model FineUI.Core.Examples.Pages.ThirdParty.IconFontFontAwesomeModel
+@{
+    ViewBag.Title = "ThirdParty/IconFontFontAwesome";
+    var F = Html.F();
+}
+
+
+@section head {
+
+
+}
+
+@section body {
+
+    <f:Button ID="btnIcon1" Text="图标在左侧" IconFont="Tags" CssClass="marginr" />
+    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFont="Star" />
+    <br />
+    <br />
+    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="ShoppingCart" CssClass="marginr" />
+    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFont="Cloud" />
+    <br />
+    <br />
+    只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button1" IconFont="Share" CssClass="marginr" />
+    <f:Button ID="Button2" IconFont="Key" CssClass="marginr" />
+    <f:Button ID="Button7" IconFont="Lock" CssClass="marginr" />
+    <f:Button ID="Button8" IconFont="Trash" CssClass="marginr" />
+    <br />
+    <br />
+    <f:Panel ID="Panel1" Width="500" Title="面板" Height="250" BodyPadding="10" EnableCollapse="true" IconFont="List">
+        <Items>
+            <f:Label Text="面板内容"></f:Label>
+        </Items>
+        <Tools>
+            <f:Tool IconFont="Cog" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool IconFont="CloudDownload" ToolTip="下载" ClickHandler="onToolIconClick"></f:Tool>
+        </Tools>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnMenu" Text="操作" IconFont="Pencil">
+                        <Menu>
+                            <f:MenuButton IconFont="Trash" Text="删除选中项">
+                            </f:MenuButton>
+                            <f:MenuButton IconFont="Ban" Text="禁用选中项">
+                            </f:MenuButton>
+                        </Menu>
+                    </f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Panel>
+    <br />
+    <f:Tree ID="Tree1" Width="500" ShowHeader="true" Title="树控件" EnableCollapse="false">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true">
+                <f:TreeNode Text="河南省" Expanded="true">
+                    <f:TreeNode Text="驻马店市" Expanded="true" IconFont="Flag" NodeID="Zhumadian">
+                        <f:TreeNode Text="遂平县" IconFont="Tag" NodeID="Suiping">
+                        </f:TreeNode>
+                        <f:TreeNode Text="西平县" IconFont="Book" NodeID="Xiping">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="Luohe" IconFont="Bookmark" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" NodeID="Anhui">
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+
+    <br />
+    <br />
+    <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a>
+
+}
+
+
+@section script {
+
+    <script>
+        function onToolIconClick(event) {
+            // 当前点击的图标字体
+            var iconFont = this.iconFont;
+
+            F.notify({
+                message: '你点击了标题栏工具图标：' + iconFont,
+                messageIconFont: iconFont,
+                displayMilliseconds: 300000,
+                positionX: 'center',
+                positionY: 'center'
+            });
+        }
+    </script>
+
+}

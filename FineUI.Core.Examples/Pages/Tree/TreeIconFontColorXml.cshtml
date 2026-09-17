@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.TreeIconFontColorXmlModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/content/tree/tree_iconfont_randomcolor.xml";
+    ViewBag.Title = "Tree/TreeIconFontColorXml";
+    var F = Html.F();
+}
+
+@section head {
+
+    
+
+}
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false">
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetSelectedNode" OnClick="btnGetSelectedNode_Click" CssClass="marginr" Text="获取选中的节点"></f:Button>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+@section script {
+
+    
+
+}

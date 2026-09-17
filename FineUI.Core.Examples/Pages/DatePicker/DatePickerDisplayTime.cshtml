@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.Pages.DatePicker.DatePickerDisplayTimeModel
+@{
+    ViewBag.Title = "DatePicker/DatePickerDisplayTime";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
+        <Items>
+            <f:DatePicker Required="true" DateFormatString="HH:mm:ss" Label="开始时间" EmptyText="请选择开始时间"
+                          ID="DatePicker1" ShowRedStar="true" DisplayType="Time" ShowTodayButton="false" SelectedDate="DateTime.Now">
+            </f:DatePicker>
+            <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="HH:mm:ss"
+                          CompareOperator="GreaterThan" CompareMessage="结束时间应该大于开始时间" Label="结束时间"
+                          ShowRedStar="true" DisplayType="Time" ShowTodayButton="false">
+            </f:DatePicker>
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
+    </f:Label>
+
+
+}
+

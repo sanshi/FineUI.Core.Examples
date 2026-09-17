@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.VBoxFormModel
+@{
+    ViewBag.Title = "Layout/VBoxForm";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form ID="Panel1" IsFluid="true" Title="表单（Layout=VBox）" Height="400" LabelAlign="Right"
+            BodyPadding="10" ShowBorder="true" ShowHeader="true"
+            Layout="VBox" BoxConfigChildMargin="0 0 5 0" BoxConfigLastChildMargin="0" RemoveFieldsMargin="true">
+        <Items>
+            <f:TextBox ID="TextBox1" Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
+            <f:DropDownList ID="DropDownList1" Label="性别" ShowRedStar="true" Required="true">
+                <f:ListItem Text="男" Value="男" Selected="true" />
+                <f:ListItem Text="女" Value="女" />
+            </f:DropDownList>
+            <f:TextArea ID="TextArea1" Label="个人简介" BoxFlex="1"></f:TextArea>
+        </Items>
+    </f:Form>
+    <br>
+    <br>
+    注：为表单设置 RemoveFieldsMargin="true" 来移除表单字段的底部外边距。
+
+
+
+}
+

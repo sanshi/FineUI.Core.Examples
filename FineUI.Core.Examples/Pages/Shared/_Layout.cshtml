@@ -1,0 +1,39 @@
+﻿@{
+    var F = Html.F();
+
+    bool isDarkerBG = (ViewBag.IsDarkerBG != null ? (bool)ViewBag.IsDarkerBG : false);
+}
+
+@Html.Partial("_InitPageManagerPartial")
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Html.Raw(ViewBag.Title)</title>
+    @if (ViewBag.SourceFiles != null)
+    {
+        <meta name="sourcefiles" content="@ViewBag.SourceFiles" />
+    }
+
+    @F.RenderCss()
+
+    <link rel="stylesheet" type="text/css" href="~/res/css/common.css?v@(GlobalConfig.ProductVersion)" />
+
+    @RenderSection("head", false)
+</head>
+<body class="@(isDarkerBG ? "f-body-darkerbg" : "")">
+    @Html.AntiForgeryToken()
+
+    @F.PageManager
+
+    @RenderSection("body", true)
+
+    @F.RenderScript()
+
+    <script type="text/javascript" src="~/res/js/common.js?v@(GlobalConfig.ProductVersion)"></script>
+
+    @RenderSection("script", false)
+
+</body>
+</html>

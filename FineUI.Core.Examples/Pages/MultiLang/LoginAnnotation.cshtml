@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.MultiLang.LoginAnnotationModel
+@{
+    ViewBag.SourceFiles = "~/Pages/MultiLang/Models/User.cs";
+    ViewBag.Title = "MultiLang/LoginAnnotation";
+    var F = Html.F();
+}
+
+@functions {
+    ParamsFunc<string, object, string> _R => Model.GetResource;
+}
+
+@section body {
+    
+    <div>
+        @Html.Raw(_R("Notice"))
+    </div>
+
+
+    <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="@_R("登录表单")" ID="Window1">
+        <Items>
+            <f:SimpleForm ShowHeader="false" BodyPadding="10" ShowBorder="false" ID="SimpleForm1">
+                <Items>
+                    <f:TextBox For="CurrentUser.UserName"></f:TextBox>
+                    <f:TextBox For="CurrentUser.Password"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
+                <Items>
+                    <f:Button OnClick="btnLogin_Click" OnClickFields="SimpleForm1" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="@_R("登录")" ID="btnLogin"></f:Button>
+                    <f:Button Type="Reset" Text="@_R("重置")" ID="btnReset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+   @* <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="CurrentUser.UserName" class="control-label"></label>
+            <input asp-for="CurrentUser.UserName" class="form-control" />
+            <span asp-validation-for="CurrentUser.UserName" class="text-danger"></span>
+        </div>
+    </form> *@
+}
+

@@ -1,0 +1,26 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.SimulateTreeModel
+@{
+    ViewBag.Title = "DropDownList/SimulateTree";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="模拟树的下拉列表" ShowHeader="true">
+        <Items>
+            <f:DropDownList Required="true" EnableSimulateTree="true" ShowRedStar="true" ID="DropDownList1">
+            </f:DropDownList>
+
+            <f:Button ID="btnGetSelection" Text="获取选中项" CssClass="marginr" OnClick="btnGetSelection_Click"></f:Button>
+            <f:Button ID="btnDataBind" Text="重新绑定数据" CssClass="marginr" OnClick="btnDataBind_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+
+}
+

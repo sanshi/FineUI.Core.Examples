@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.TriggerBoxIconUrlModel
+@{
+    ViewBag.Title = "Form/TriggerBoxIconUrl";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="表单" ShowHeader="true" LabelWidth="150">
+        <Items>
+            <f:TriggerBox ID="TriggerBox1" Label="TriggerBox" TriggerIconUrl="~/res/icon/application_edit.png" EmptyText="打开弹出窗口">
+                <Listeners>
+                    <f:Listener Event="triggerclick" Handler="onTriggerBox1TriggerClick"></f:Listener>
+                </Listeners>
+            </f:TriggerBox>
+            <f:TwinTriggerBox ID="TwinTriggerBox1" Label="TwinTriggerBox" OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click" 
+                ShowTrigger1="false" EmptyText="搜索用户名" Trigger1IconUrl="~/res/icon/bullet_cross.png" Trigger2IconUrl="~/res/icon/zoom.png">
+            </f:TwinTriggerBox>
+        </Items>
+    </f:SimpleForm>
+
+    <f:Window ID="Window1" Title="弹出窗口" BodyPadding="10" IsModal="true" Hidden="true" Target="Top" Width="450" Height="300">
+        <Items>
+            <f:Button ID="btnCloseWindow" Text="关闭当前窗口" OnClick="btnCloseWindow_Click"></f:Button>
+        </Items>
+    </f:Window>
+
+}
+
+@section script {
+    <script>
+
+        function onTriggerBox1TriggerClick(event) {
+            F.ui.Window1.show();
+        }
+
+    </script>
+}

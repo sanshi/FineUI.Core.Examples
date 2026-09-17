@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.GroupFieldSortModel
+@{
+    ViewBag.Title = "Grid/GroupFieldSort";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" AllowSorting="true">
+        <Columns>
+            <f:RenderField DataField="Year" HeaderText="统计年份" />
+            <f:GroupField HeaderText="安徽省" TextAlign="Center">
+                <Columns>
+                    <f:GroupField HeaderText="合肥市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField DataField="AHData1" SortField="AHData1" HeaderText="数据一" />
+                            <f:RenderField DataField="AHData2" SortField="AHData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                </Columns>
+            </f:GroupField>
+            <f:GroupField HeaderText="河南省" TextAlign="Center">
+                <Columns>
+                    <f:GroupField HeaderText="驻马店市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField DataField="HZData1" SortField="HZData1" HeaderText="数据一" />
+                            <f:RenderField DataField="HZData2" SortField="HZData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                    <f:GroupField HeaderText="漯河市" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField DataField="HLData1" SortField="HLData1" HeaderText="数据一" />
+                            <f:RenderField DataField="HLData2" SortField="HLData2" HeaderText="数据二" />
+                        </Columns>
+                    </f:GroupField>
+                </Columns>
+            </f:GroupField>
+            <f:RenderField BoxFlex="1" TextAlign="Center" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="记录时间" />
+        </Columns>
+    </f:Grid>
+
+
+}

@@ -1,0 +1,64 @@
+@page
+@model FineUI.Core.Examples.Pages.GridInput.DropDownListModel
+@{
+    ViewBag.Title = "GridInput/DropDownList";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="获取用户输入的分组值" ID="Button1" ClickHandler="onGetInputsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderGender(value, params) {
+            var selectedHtml = ' selected="selected" ';
+            var manHtml = F.formatString('<option {0}value="男">男</option>', value === 1 ? selectedHtml : '');
+            var womanHtml = F.formatString('<option {0}value="女">女</option>', value !== 1 ? selectedHtml : '');
+            return F.formatString('<select class="myselect">{0}{1}</select>', manHtml, womanHtml);
+        }
+
+        var inputselector = 'select.myselect';
+
+        function getUserInputs() {
+            var result = [];
+
+            var grid1 = F.ui.Grid1;
+            grid1.getRowEls().each(function () {
+                var rowEl = $(this);
+                var rowData = grid1.getRowData(rowEl);
+
+                result.push([rowData.id, rowData.text, rowEl.find(inputselector).val()]);
+            });
+
+            return F.toJSON(result);
+        }
+
+        function onGetInputsClick(event) {
+            F.customEvent('GetInputs', getUserInputs());
+        }
+
+    </script>
+}

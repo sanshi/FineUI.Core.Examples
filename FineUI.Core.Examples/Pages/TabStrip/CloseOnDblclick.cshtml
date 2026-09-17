@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.CloseOnDblclickModel
+@{
+    ViewBag.Title = "TabStrip/CloseOnDblclick";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" EnableTabCloseMenu="true" ShowBorder="true" ActiveTabIndex="1" CloseOnDblClick="true">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="标签一" EnableClose="false" BodyPadding="10">
+                <Items>
+                    <f:Label ID="Label5" Text="标签一中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab2" Title="标签二" BodyPadding="10" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label4" Text="标签二中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab3" Title="标签三" Hidden="true" BodyPadding="10" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label3" Text="标签三中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab4" Title="标签四" BodyPadding="10" EnableClose="true">
+                <Items>
+                    <f:Label ID="Label2" Text="标签四中的文本" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="Tab5" EnableClose="true" Title="标签五（不支持双击关闭）" BodyPadding="10" CloseOnDblClick="false">
+                <Items>
+                    <f:Label ID="Label1" Text="标签五中的文本" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <br />
+    <br />
+    <f:Button ID="btnShowInClient" Text="显示标签三（客户端代码）" CssClass="marginr" ClickHandler="onShowInClientClick"></f:Button>
+    <f:Button ID="btnShowActiveInClient" Text="显示并激活标签三（客户端代码）" CssClass="marginr" ClickHandler="onShowActiveInClientClick"></f:Button>
+    <f:Button ID="btnHideInClient" Text="隐藏标签三（客户端代码）" ClickHandler="onHideClientClick"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnShowInServer" Text="显示标签三（服务端代码）" CssClass="marginr" OnClick="btnShowInServer_Click"></f:Button>
+    <f:Button ID="btnShowActiveInServer" Text="显示并激活标签三（服务端代码）" CssClass="marginr" OnClick="btnShowActiveInServer_Click"></f:Button>
+    <f:Button ID="btnHideInServer" Text="隐藏标签三（服务端代码）" OnClick="btnHideInServer_Click"></f:Button>
+    
+    <br>
+    <br>
+    <br>
+    注：Tab 定义的 CloseOnDblclick 属性会覆盖 TabStrip 的同名属性。
+
+}
+
+
+
+@section script {
+
+    <script>
+
+        function onShowInClientClick(event) {
+            F.ui.Tab3.show();
+        }
+
+        function onShowActiveInClientClick(event) {
+            F.ui.Tab3.activate();
+        }
+
+        function onHideClientClick(event) {
+            F.ui.Tab3.hide();
+        }
+
+    </script>
+
+}
+

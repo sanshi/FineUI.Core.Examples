@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.KeydownModel
+@{
+    ViewBag.Title = "Other/Keydown";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
+        <Items>
+            <f:TextBox ID="TextBox1" ShowLabel="false" EmptyText="输入一些文字，下面的文本框会随之改变">
+                <Listeners>
+                    <f:Listener Event="change" Handler="onTextBoxChange" />
+                </Listeners>
+            </f:TextBox>
+            <f:TextBox ID="TextBox2" ShowLabel="false">
+            </f:TextBox>
+        </Items>
+    </f:SimpleForm>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onTextBoxChange(event) {
+            F.ui.TextBox2.setValue(this.getValue());
+        }
+
+    </script>
+
+}

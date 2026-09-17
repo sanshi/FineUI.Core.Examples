@@ -1,0 +1,165 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.UpdateSummaryModel
+@{
+    ViewBag.Title = "GridEditor/UpdateSummary";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row-summary .f-grid-cell-text {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true" EnableSummary="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="语文成绩" ColumnID="ChineseScore" DataField="ChineseScore" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbChineseScore" NoDecimal="true" NoNegative="true" Required="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="数学成绩" ColumnID="MathScore" DataField="MathScore" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="nbMathScore" NoDecimal="true" NoNegative="true" Required="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+            <f:Listener Event="dataload" Handler="onGrid1DataLoad"></f:Listener>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnReset" Text="重置表格数据" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    注：编辑[语文成绩]或者[数学成绩]时会更新合计行数据。
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function updateSummary() {
+            var grid1 = F.ui.Grid1, chineseTotal = 0, mathTotal = 0, allTotal = 0;
+            grid1.getRowEls().each(function (index, tr) {
+                chineseTotal += grid1.getCellValue(tr, 'ChineseScore');
+                mathTotal += grid1.getCellValue(tr, 'MathScore');
+            });
+
+            // 第三个参数 true，强制更新，不显示左上角的更改标识
+            grid1.updateSummaryCellValue('ChineseScore', chineseTotal, true);
+            grid1.updateSummaryCellValue('MathScore', mathTotal, true);
+        }
+
+        // 表格数据加载后，重现计算合计行（这样就不必要在删除行时更新合计行）
+        function onGrid1DataLoad(event) {
+            updateSummary();
+        }
+
+        function onGrid1AfterEdit(event, value, params) {
+            updateSummary();
+        }
+
+
+        function onNewClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 新增一行（返回新增行的ID）
+            var addedRowId = grid1.addNewRecord({
+                'Name': '新用户',
+                'Gender': '1',
+                'Major': '化学系',
+                'ChineseScore': 0,
+                'MathScore': 0
+            }, true);
+
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function () {
+                    F.ui.Grid1.rejectChanges();
+                }
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var selectedRows = grid1.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;行数据吗？'),
+                target: '_top',
+                ok: function () {
+                    grid1.deleteRows(selectedRows);
+                }
+            });
+        }
+
+
+
+        // 行命令
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+    </script>
+}

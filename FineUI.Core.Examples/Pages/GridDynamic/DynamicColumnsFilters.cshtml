@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.DynamicColumnsFiltersModel
+@{
+    ViewBag.Title = "GridDynamic/DynamicColumnsFilters";
+    var F = Html.F();
+}
+
+@section body {
+
+    暂不支持！
+
+    <f:DropDownList ID="DropDownList1" Label="切换表格" Width="500" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <Items>
+            <f:ListItem Text="表格一" Value="table1" Selected="true"></f:ListItem>
+            <f:ListItem Text="表格二（表头过滤）" Value="table2"></f:ListItem>
+        </Items>
+    </f:DropDownList>
+    <br>
+    <br>
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格一" Height="500" 
+        DataIDField="Id" DataTextField="Name" OnFilterChanged="Grid1_FilterChanged">
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <br>
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

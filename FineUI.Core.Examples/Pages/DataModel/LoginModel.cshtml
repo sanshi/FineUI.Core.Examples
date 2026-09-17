@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.LoginModelModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/User.cs";
+    ViewBag.Title = "DataModel/LoginModel";
+    var F = Html.F();
+}
+
+@section body {
+
+    <div>
+        用户名：admin
+        <br>
+        密码：admin888
+        <br>
+        <br>
+        <br>
+        注意：在任意输入框内按回车键都会触发表单的提交（相当于点击【登陆】按钮）。
+    </div>
+
+    <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="登录表单" ID="Window1">
+        <Items>
+            <f:SimpleForm ShowHeader="false" BodyPadding="10" ShowBorder="false" ID="SimpleForm1">
+                <Items>
+                    <f:TextBox For="CurrentUser.UserName"></f:TextBox>
+                    <f:TextBox For="CurrentUser.Password"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
+                <Items>
+                    <f:Button OnClick="btnLogin_Click" OnClickFields="SimpleForm1" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="登录" ID="btnLogin"></f:Button>
+                    <f:Button Type="Reset" Text="重置" ID="btnReset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+    @* <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="CurrentUser.UserName" class="control-label"></label>
+            <input asp-for="CurrentUser.UserName" class="form-control" />
+            <span asp-validation-for="CurrentUser.UserName" class="text-danger"></span>
+        </div>
+    </form> *@
+}
+

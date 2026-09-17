@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.DateOnlyModel
+@{
+    ViewBag.SourceFiles = "~/Code/DataSourceUtil.cs;~/Code/GridSelectionMessage.cs";
+    ViewBag.Title = "GridOther/DateOnly";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            DataSource="@DataSourceUtil.GetSimpleDataTable()" _DataKeyNames="Id,Name,Gender,Major,DateOnly1,TimeOnly1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="仅日期" DataField="DateOnly1" Width="150" />
+            <f:RenderField HeaderText="仅时间" DataField="TimeOnly1"  Width="150" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button Text="选中了哪些行（服务端）" ID="Button1" OnClick="Button1_Click"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

@@ -1,0 +1,102 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.ShengShiModel
+@{
+    ViewBag.Title = "GridEditor/ShengShi";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="所在省" ColumnID="Sheng" DataField="Sheng" Width="150">
+                <Editor>
+                    <f:DropDownList ID="ddlSheng" Required="true" DataSource="@DataSourceUtil.SHENG_JSON"></f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="所在市" ColumnID="Shi" DataField="Shi" Width="150">
+                <Editor>
+                    <f:DropDownList ID="ddlShi" Required="true"></f:DropDownList>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="beforeedit" Handler="onGrid1BeforeEdit"></f:Listener>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+        </Listeners>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>
+            如果未设置省份，则所在市下拉列表禁用，并且显示提示信息 - 请先选择省！
+        </li>
+        <li>
+            选择省份后，所在市下拉列表数据动态加载
+        </li>
+        <li>
+            更改省份后，如果所在所在市不属于当前省份，则清空所在市
+        </li>
+    </ul>
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1BeforeEdit(event, value, params) {
+            var grid1 = F.ui.Grid1;
+
+            if (params.columnId === 'Shi') {
+                var ddlShi = F.ui.ddlShi;
+
+                var sheng = grid1.getCellValue(params.rowId, 'Sheng');
+
+                var shidata = window._SHI[sheng];
+                if (shidata) {
+                    ddlShi.enable();
+                    ddlShi.setEmptyText('');
+                    ddlShi.loadData(shidata);
+                } else {
+                    ddlShi.setEmptyText('请先选择省！');
+                    ddlShi.disable();
+                }
+            }
+        }
+
+
+        function onGrid1AfterEdit(event, value, params) {
+            var grid1 = F.ui.Grid1;
+
+            if (params.columnId === 'Sheng') {
+                var shidata = window._SHI[value];
+                if (shidata) {
+                    var shi = grid1.getCellValue(params.rowId, 'Shi');
+                    // 如果结束编辑时，市 不属于 当前 省，则清空 市
+                    if ($.inArray(shi, shidata) < 0) {
+                        grid1.updateCellValue(params.rowId, 'Shi', '');
+                    }
+                }
+            }
+        }
+
+    </script>
+}

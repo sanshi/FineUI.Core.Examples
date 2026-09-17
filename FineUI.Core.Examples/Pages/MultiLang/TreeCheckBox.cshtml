@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.Pages.MultiLang.TreeCheckBoxModel
+@{
+    ViewBag.Title = "MultiLang/TreeCheckBox";
+    var F = Html.F();
+}
+
+@functions {
+    ParamsFunc<string, object, string> _R => Model.GetResource;
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="@_R("树控件")" EnableCheckBox="true">
+        <Nodes>
+            <f:TreeNode Text="@_R("中国")" Expanded="true" NodeID="china">
+                <f:TreeNode Text="@_R("河南省")" Expanded="true" NodeID="henan" Checked="true">
+                    <f:TreeNode Text="@_R("驻马店市")" NodeID="zhumadian">
+                        <f:TreeNode Text="@_R("遂平县")" NodeID="suiping">
+                        </f:TreeNode>
+                        <f:TreeNode Text="@_R("西平县")" NodeID="xiping">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="@_R("漯河市")" NodeID="luohe" />
+                </f:TreeNode>
+                <f:TreeNode Text="@_R("安徽省")" Expanded="true" NodeID="anhui">
+                    <f:TreeNode Text="@_R("合肥市")" NodeID="hefei">
+                    </f:TreeNode>
+                    <f:TreeNode Text="@_R("黄山市")" NodeID="huangshan">
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetCheckedValues" Text="@_R("获取选中的复选框")" OnClick="btnGetCheckedValues_Click"></f:Button>
+<br>
+
+<f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+
+}

@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.SummaryClientArgumentModel
+@{
+    ViewBag.Title = "Grid/SummaryClientArgument";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row-summary .f-grid-cell-Major .f-grid-cell-text {
+            text-align: right;
+        }
+
+        .f-grid-row-summary .f-grid-cell-text {
+            font-weight: bold;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500"
+            AllowPaging="true" PageSize="15" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
+            EnableSummary="true" SummaryPosition="Bottom">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ColumnID="Major" RendererFunction="renderMajor" MinWidth="150" ExpandUnusedSpace="true" SummaryText="平均值：" />
+            <f:RenderField DataField="Fee" FieldType="Float" ColumnID="Fee" HeaderText="学费" SummaryType="Avg" SummaryTypeArgument="N2" />
+            <f:RenderField DataField="GPA" FieldType="Float" ColumnID="GPA" HeaderText="GPA" SummaryType="Avg" SummaryTypeArgument="F3" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

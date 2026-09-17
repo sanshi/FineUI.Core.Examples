@@ -1,0 +1,95 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.PagingTypeModel
+@{
+    ViewBag.Title = "GridPaging/PagingType";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
+            AllowPaging="true" PageSize="10" IsDatabasePaging="true" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
+            OnPageIndexChanged="Grid1_PageIndexChanged">
+        <Columns>
+            <f:RowNumberField EnablePagingNumber="true" Width="60" />
+            <f:RenderField DataField="Id" HeaderText="ID" Width="150" />
+            <f:RenderField ExpandUnusedSpace="true" MinWidth="150" DataField="EntranceTime" HeaderText="时间" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:CheckBox ID="cbxShowPagingMessage" Text="显示分页信息">
+        <Listeners>
+            <f:Listener Event="change" Handler="OnCheckBoxChange" />
+        </Listeners>
+    </f:CheckBox>
+    <br />
+    <br />
+        分页工具栏的类型：
+    <br />
+    <br />
+    <f:ButtonGroup ID="bgPagingType" EnablePressGroup="true">
+        <Items>
+            <f:Button Text="Arrow" EnablePress="true" />
+            <f:Button Text="NumberBox" EnablePress="true" />
+            <f:Button Text="ArrowNumberBox" EnablePress="true" />
+            <f:Button Text="NumberButton" EnablePress="true" />
+            <f:Button Text="ArrowNumberButton" EnablePress="true" />
+        </Items>
+        <Listeners>
+            <f:Listener Event="presschange" Handler="onButtonGroupPressChange" />
+        </Listeners>
+    </f:ButtonGroup>
+    <br />
+        数字分页按钮的个数：
+    <br />
+    <br />
+    <f:DropDownList ID="ddlMaxPagingNumberButton" Width="120">
+        <Items>
+            <f:ListItem Text="5" Value="5" Selected="true" />
+            <f:ListItem Text="8" Value="8" />
+            <f:ListItem Text="10" Value="10" />
+        </Items>
+        <Listeners>
+            <f:Listener Event="change" Handler="onDropDownListChange" />
+        </Listeners>
+    </f:DropDownList>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function getPressedPaingType() {
+            var pressedPaingType = '';
+            $.each(F.ui.bgPagingType.items, function (index, item) {
+                if (item.isPressed()) {
+                    pressedPaingType = item.getText();
+                    return false; // break
+                }
+            });
+            return pressedPaingType;
+        }
+
+        function reloadPage() {
+            var pressedPaingType = getPressedPaingType();
+            window.location.href = '@Url.Content("~/GridPaging/PagingType")?type=' + pressedPaingType + '&message=' + F.ui.cbxShowPagingMessage.isChecked() + '&maxnumberbutton=' + F.ui.ddlMaxPagingNumberButton.getValue();
+        }
+
+        function OnCheckBoxChange(event, checked) {
+            reloadPage();
+        }
+
+        function onButtonGroupPressChange(event, btnObj, btnChecked) {
+            reloadPage();
+        }
+
+        function onDropDownListChange(event) {
+            reloadPage();
+        }
+
+    </script>
+}

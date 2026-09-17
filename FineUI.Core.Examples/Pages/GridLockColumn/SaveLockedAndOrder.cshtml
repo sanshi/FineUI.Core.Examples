@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.GridLockColumn.SaveLockedAndOrderModel
+@{
+    ViewBag.Title = "GridLockColumn/SaveLockedAndOrder";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            Width="1000" AllowColumnLocking="true" Width="1000">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="400" EnableLock="true" />
+            <f:RenderField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
+            <f:RenderField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
+            <f:RenderField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
+            <f:RenderField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnlock" Handler="onGridColumnLock"></f:Listener>
+            <f:Listener Event="columnunlock" Handler="onGridColumnUnlock"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列锁定状态和列顺序）" ClickHandler="onReloadPageClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function saveToDB(grid) {
+
+            // 列锁定和列顺序
+            var configedColumns = $.map(grid.columns, function (column, index) {
+                return {
+                    ColumnID: column.columnId,
+                    Locked: column.locked
+                };
+            });
+
+
+            // 触发后台事件
+            F.customEvent('Grid1_ColumnLockUnlock', {
+                configedColumns: configedColumns
+            });
+        }
+
+
+        function onGridColumnLock(event, columnId) {
+            saveToDB(this);
+        }
+
+        function onGridColumnUnlock(event, columnId) {
+            saveToDB(this);
+        }
+
+        function onReloadPageClick(event) {
+            window.location.reload();
+        }
+
+    </script>
+}

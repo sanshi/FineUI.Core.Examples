@@ -1,0 +1,67 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.ColumnMoveModel
+@{
+    ViewBag.Title = "GridMove/ColumnMove";
+    var F = Html.F();
+}
+
+@using Newtonsoft.Json.Linq;
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableColumnMove="true">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnmove" Handler="onGrid1ColumnMove"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列顺序）" ClickHandler="onRefreshClick"></f:Button>
+
+
+    <br />
+    <br />
+    <f:Button Text="清空数据" ID="btnClearData" OnClick="btnClearData_Click" CssClass="marginr"></f:Button>
+    <f:Button Text="重新绑定数据" ID="btnRebind" Icon="Reload" OnClick="btnRebindData_Click"></f:Button>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onRefreshClick(event) {
+            window.location.reload();
+        }
+
+
+        function onGrid1ColumnMove(event, targetColumnId, sourceColumnId, operation) {
+            var grid = this;
+
+            // 列顺序数组
+            var columnIds = $.map(grid.columns, function (item, index) {
+                return item.columnId;
+            });
+
+            // 触发后台事件
+            F.customEvent('Grid1_ColumnMove', {
+                columnIds: columnIds
+            });
+        }
+
+
+    </script>
+}

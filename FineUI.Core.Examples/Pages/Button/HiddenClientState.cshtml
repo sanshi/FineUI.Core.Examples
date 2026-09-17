@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.HiddenClientStateModel
+@{
+    ViewBag.Title = "Button/HiddenClientState";
+}
+
+@section body {
+    <f:Button ID="btnShowOnClient" Text="客户端显示隐藏按钮" ClickHandler="onShowTargetButtonClick" CssClass="marginr" />
+    <f:Button ID="btnReadOnServer" Text="服务端读取隐藏状态" OnClick="btnReadOnServer_Click" />
+    <br />
+    <br />
+    <f:Button ID="TargetButton" Text="服务端初始隐藏的按钮" Hidden="true" />
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onShowTargetButtonClick(event) {
+            F.ui.TargetButton.show();
+        }
+
+    </script>
+}

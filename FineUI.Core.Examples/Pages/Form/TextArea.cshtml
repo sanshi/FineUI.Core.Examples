@@ -1,0 +1,22 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.TextAreaModel
+@{
+    ViewBag.Title = "Form/TextArea";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单" LabelAlign="Top" ShowHeader="true">
+        <Items>
+            <f:TextArea ID="TextArea1" EmptyText="文本框的高度会自动扩展" Label="自动扩展高度的文本输入框"
+                        AutoGrowHeight="true" AutoGrowHeightMin="100" AutoGrowHeightMax="600">
+            </f:TextArea>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+}
+

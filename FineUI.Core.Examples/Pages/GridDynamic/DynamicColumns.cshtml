@@ -1,0 +1,26 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.DynamicColumnsModel
+@{
+    ViewBag.Title = "GridDynamic/DynamicColumns";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）"
+            DataIDField="Id" DataTextField="Name">
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

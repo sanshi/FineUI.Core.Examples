@@ -1,0 +1,267 @@
+@page
+@model FineUI.Core.Examples.Pages.IndexModel
+@{
+    ViewBag.Title = "FineUI.Core 在线示例 - .NET 企业级全栈 UI 框架";
+    var F = Html.F();
+
+    // 左侧侧边栏宽度常量
+    var SIDEBAR_WIDTH_CONSTANT = 320;
+
+    // 左侧侧边栏微型模式宽度
+    var SIDEBAR_MINIMODE_WIDTH_CONSTANT = 70;
+}
+
+@section head {
+
+    <style>
+        :root {
+            --sidebar-width: @(SIDEBAR_WIDTH_CONSTANT.ToString() + "px");
+            --sidebar-minimode-width: @(SIDEBAR_MINIMODE_WIDTH_CONSTANT.ToString() + "px");
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="~/res/css/index.css?v@(GlobalConfig.ProductVersion)" />
+    <link type="text/css" rel="stylesheet" href="~/res/css/mobileview.css?v@(GlobalConfig.ProductVersion)" />
+
+}
+
+@section body {
+
+
+    <f:Panel ID="mainPanel" Layout="Region" CssClass="mainpanel" ShowBorder="false" ShowHeader="false" IsViewPort="true">
+        <Items>
+            <f:Panel ID="sidebarRegion" CssClass="sidebarregion" RegionPosition="Left" ShowBorder="false" Width="@SIDEBAR_WIDTH_CONSTANT" ShowHeader="false"
+                     EnableCollapse="false" Collapsed="false" Layout="VBox" RegionSplit="true" RegionSplitIcon="false" RegionSplitWidth="3" RegionSplitTransparent="true">
+                <Items>
+                    <f:ContentPanel ID="sideheaderTopPanel" CssClass="topregion" ShowBorder="false" ShowHeader="false">
+                        <div id="sideheader" class="f-widget-header f-mainheader">
+                            <a class="logo-img f-widget-header" href="./">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                    <path fill="currentColor" opacity="0.9" fill-rule="evenodd" d="M498.526 215.579h-4.58c-22.829-0.196-42.295-14.382-50.262-34.394l-0.13-0.369-1.617-4.042c-2.978-6.535-4.714-14.172-4.714-22.214 0-14.908 5.964-28.424 15.636-38.291l3.225-3.225c2.421-2.436 3.918-5.792 3.918-9.499s-1.497-7.064-3.919-9.5l0 0.001-38.4-38.13c-2.436-2.421-5.792-3.919-9.5-3.919s-7.063 1.497-9.5 3.919l-3.233 3.233c-9.859 9.663-23.373 15.627-38.282 15.627-8.043 0-15.68-1.736-22.558-4.853l0.344 0.14-4.043-1.617c-20.268-8.177-34.341-27.621-34.492-50.373v-4.6c0-7.441-6.032-13.473-13.474-13.473v0h-53.894c-7.441 0-13.474 6.032-13.474 13.473v0 4.58c-0.196 22.828-14.382 42.295-34.394 50.262l-0.369 0.129-4.042 1.617c-6.535 2.978-14.172 4.713-22.214 4.713-14.908 0-28.424-5.964-38.291-15.636l-3.225-3.225c-2.436-2.421-5.792-3.919-9.499-3.919s-7.064 1.497-9.5 3.919l0.001-0.001-38.13 38.4c-2.421 2.436-3.919 5.792-3.919 9.499s1.497 7.064 3.919 9.5l3.233 3.233c9.663 9.859 15.627 23.373 15.627 38.282 0 8.043-1.736 15.68-4.853 22.559l0.14-0.344-1.617 4.042c-8.177 20.268-27.621 34.341-50.373 34.492h-4.6c-7.441 0-13.473 6.032-13.473 13.474v0 53.894c0 7.442 6.032 13.474 13.473 13.474v0h4.58c22.828 0.197 42.295 14.382 50.262 34.394l0.129 0.369 1.617 4.043c2.978 6.534 4.713 14.172 4.713 22.214 0 14.908-5.964 28.425-15.636 38.291l-3.225 3.225c-2.421 2.436-3.919 5.792-3.919 9.5s1.497 7.063 3.919 9.5l-0.001-0 38.4 38.13c2.436 2.421 5.792 3.918 9.499 3.918s7.064-1.497 9.5-3.919l3.233-3.233c9.859-9.663 23.373-15.627 38.282-15.627 8.043 0 15.68 1.736 22.559 4.853l-0.344-0.14 4.042 1.617c20.268 8.177 34.341 27.622 34.492 50.373v4.6c0 7.442 6.032 13.474 13.474 13.474h53.894c7.442 0 13.474-6.032 13.474-13.474v0-4.58c0.197-22.829 14.382-42.295 34.394-50.262l0.369-0.13 4.043-1.617c6.534-2.978 14.172-4.714 22.214-4.714 14.908 0 28.425 5.964 38.291 15.636l3.225 3.225c2.436 2.421 5.792 3.918 9.5 3.918s7.063-1.497 9.5-3.919l-0 0 38.13-38.4c2.421-2.436 3.918-5.792 3.918-9.5s-1.497-7.063-3.919-9.5l-3.233-3.233c-9.663-9.859-15.627-23.373-15.627-38.282 0-8.043 1.736-15.68 4.853-22.558l-0.14 0.344 1.617-4.043c8.177-20.268 27.622-34.341 50.373-34.492h4.6c7.442 0 13.473-6.032 13.473-13.474v0-53.894c0-7.441-6.032-13.474-13.474-13.474v0z M256 107.79c81.854 0 148.21 66.356 148.21 148.21s-66.356 148.21-148.21 148.21S107.79 337.854 107.79 256 174.146 107.79 256 107.79z">
+                                    </path>
+                                    <path fill="currentColor" opacity="0.6" fill-rule="evenodd" d="M256.002 107.79c-81.854 0-148.21 66.356-148.21 148.21s66.356 148.21 148.21 148.21c81.854 0 148.21-66.356 148.21-148.21v0c0-81.854-66.356-148.21-148.21-148.21v0z M256.002 323.369c-37.206 0-67.369-30.161-67.369-67.369s30.161-67.369 67.369-67.369c37.206 0 67.369 30.161 67.369 67.369v0c0 37.206-30.161 67.369-67.369 67.369v0z"></path>
+                                </svg>
+                            </a>
+                            <a class="logo f-widget-header" href="@Url.Content("~/")" title="FineUI.Core" id="logoTitle">FineUI.Core</a>
+                            <div class="logo-subtitle">RazorForms</div>
+                        </div>
+                    </f:ContentPanel>
+                    <f:Panel ID="leftPanel" CssClass="leftregion" BoxFlex="1" ShowBorder="false" ShowHeader="false" Layout="Fit">
+                        <Items>
+                            <f:Tree ID="treeMenu" ShowBorder="false" ShowHeader="false" EnableSingleClickExpand="true"
+                                    HideHScrollbar="true" HideVScrollbar="true" ExpanderToRight="true" HeaderStyle="true" AllHeaderStyle="true"></f:Tree>
+                        </Items>
+                    </f:Panel>
+                </Items>
+                <Listeners>
+                    <f:Listener Event="splitdrag" Handler="onSidebarSplitDrag" />
+                </Listeners>
+            </f:Panel>
+            <f:Panel ID="bodyRegion" CssClass="bodyregion" RegionPosition="Center" ShowBorder="false" ShowHeader="false" Layout="VBox">
+                <Items>
+                    <f:ContentPanel ID="topPanel" CssClass="topregion" ShowBorder="false" ShowHeader="false">
+                        <div id="header" class="f-widget-header f-mainheader">
+                            <div class="header-left">
+                                <f:Button ID="btnCollapseSidebar" CssClass="icononlyaction" ToolTip="折叠/展开侧边栏" IconAlign="Top" IconFont="_Fold" EnableDefaultState="false" TabIndex="-1" ClickHandler="onFoldClick"></f:Button>
+                                <div id="breadcrumb">
+                                    <div class="breadcrumb-inner">
+                                        <span class="breadcrumb-last">首页</span>
+                                    </div>
+                                    <div class="breadcrumb-icons">
+                                        <a data-qtip="查看源代码" href="javascript:onToolSourceCodeClick();"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
+                                        <a data-qtip="刷新本页" href="javascript:onToolRefreshClick();"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
+                                        <a data-qtip="在新标签页中打开" href="javascript:onToolNewWindowClick();"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-right">
+                                <f:TwinTriggerBox ID="ttbxSearch" CssClass="searchbox collapsed" ShowLabel="false" Trigger1Icon="Clear" ShowTrigger1="false" EmptyText="搜索示例" Trigger2Icon="Search" Width="24">
+                                    <Listeners>
+                                        <f:Listener Event="trigger1click" Handler="onSearchTrigger1Click" />
+                                        <f:Listener Event="trigger2click" Handler="onSearchTrigger2Click" />
+                                        <f:Listener Event="blur" Handler="onSearchBlur" />
+                                    </Listeners>
+                                </f:TwinTriggerBox>
+                                <f:Button ID="btnDownload" CssClass="icononlyaction btn-apply-trial" ToolTip="社区版下载" IconAlign="Top" IconFont="_Download" EnableDefaultState="false" TabIndex="-1"
+                                          BadgeType="Warning" BadgeAnimationType="Processing" ClickHandler="onBaseDownloadClick"></f:Button>
+                                <f:Button CssClass="icononlyaction" ID="btnThemeSelect" ToolTip="主题仓库" IconAlign="Top" IconFont="_Skin" EnableDefaultState="false" TabIndex="-1" ClickHandler="onThemeSelectClick"></f:Button>
+
+                                <f:Button CssClass="userpicaction" ID="btnUserAvatar" Text="三生石上" IconUrl="@Url.Content("~/res/images/my_face_80.jpg")" IconAlign="Left" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <Menu ID="menuSettings">
+                                        <f:MenuCheckBox ID="cbxShowOnlyCommunity" Text="仅显示社区版示例" ClickHandler="onShowOnlyCommunityClick"></f:MenuCheckBox>
+                                        <f:MenuButton CssClass="icononlyaction" Text="企业版试用" IconFont="_Enterprise" ClickHandler="onApplyTrialClick"></f:MenuButton>
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                        <f:MenuButton ID="MenuFramePageStyle" Text="框架页风格">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="暗色侧栏" ID="MenuFramePageStyleDarkLeft" AttributeDataTag="f-dark-left" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="暗色顶栏" ID="MenuFramePageStyleDarkTop" AttributeDataTag="f-dark-top" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="暗色顶栏和侧栏" ID="MenuFramePageStyleDarkTopLeft" AttributeDataTag="f-dark-top-left" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuFramePageStyleCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton ID="MenuDisplayMode" Text="显示模式">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="紧凑模式" ID="MenuDisplayModeCompact" AttributeDataTag="compact" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="小字体模式" ID="MenuDisplayModeSmall" AttributeDataTag="small" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="普通模式" ID="MenuDisplayModeNormal" AttributeDataTag="normal" Checked="true" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="大间距模式" ID="MenuDisplayModeLargeSpace" AttributeDataTag="largeSpace" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="大字体模式" ID="MenuDisplayModeLarge" AttributeDataTag="large" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuDisplayModeCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="主选项卡标签" ID="MenuMainTabs">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="多标签页" ID="MenuMainTabsMulti" AttributeDataTag="multi" Checked="true" GroupName="MenuMainTabs">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="单标签页" ID="MenuMainTabsSingle" AttributeDataTag="single" GroupName="MenuMainTabs">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuMainTabsCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="语言" ID="MenuLang">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="简体中文" ID="MenuLangZHCN" AttributeDataTag="zh_CN" Checked="true" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="繁體中文" ID="MenuLangZHTW" AttributeDataTag="zh_TW" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="English" ID="MenuLangEN" AttributeDataTag="en" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="ئۇيغۇر تىلى" ID="MenuLangZHUEY" AttributeDataTag="zh_UEY" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuLangCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="页面加载动画（CSS）" ClickHandler="onLoadingSelectClick"></f:MenuButton>
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                        <f:MenuButton Text="在线示例" ID="MenuExamples">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuHyperLink _TextRawHtml="FineUI.Pro <div class='online-examples-subtitle'>ASP.NET WebForms 控件库，经典始于 2008 年</div>" NavigateUrl="https://fineui.com/pro/demo/" Target="_blank">
+                                                    </f:MenuHyperLink>
+                                                    <f:MenuHyperLink _TextRawHtml="FineUI.Core <div class='online-examples-subtitle'>ASP.NET Core 控件库，创新 RazorForms 开发模式，信创产品适用</div>" NavigateUrl="https://fineui.com/core/demo/" Target="_blank">
+                                                    </f:MenuHyperLink>
+                                                    <f:MenuHyperLink _TextRawHtml="FineUI.Java <div class='online-examples-subtitle'>Java 生态「AI 友好 · 标签式 · 有状态」企业级全栈 UI 框架</div>" NavigateUrl="https://fineui.com/java/demo/" Target="_blank">
+                                                    </f:MenuHyperLink>
+                                                </Items>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                        <f:MenuText ID="menuTextCopyright" HideOnClick="false" CssClass="copyright-menutext"
+                                                    _TextRawHtml="@("<div class=\"copyright\">" +
+                                                        "<div class=\"version\"><a target=\"_blank\" href=\"http://fineui.com/core/\"><img src=\"" + Url.Content("~/res/images/newlogo/fineui.png") + "\" alt=\"logo\"/></a>" +
+                                                        "<br/><span>FineUI.Core v" + GlobalConfig.ProductVersion + "</span></div>" +
+                                                        "<div class=\"actions\"><a target=\"_blank\" href=\"http://fineui.com/fans/\">免费社区</a>" +
+                                                        "&nbsp;&nbsp;&nbsp;&nbsp;<a target=\"_blank\" href=\"http://fineui.com/versions/\">更新记录</a></div>" +
+                                                        "</div>")">
+                                        </f:MenuText>
+                                    </Menu>
+                                </f:Button>
+                            </div>
+                        </div>
+                    </f:ContentPanel>
+                    <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" InkBarPosition="Bottom" BoxFlex="1" ShowBorder="true" EnableTabCloseMenu="true">
+                        <Tabs>
+                            <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="@Url.Content("~/Basic/Main")">
+                            </f:Tab>
+                        </Tabs>
+                        <Tools>
+                            <f:Tool IconFont="_Code" CssClass="tabtool viewcode" ToolTip="查看源代码" ID="toolSourceCode" ClickHandler="onToolSourceCodeClick"></f:Tool>
+                            <f:Tool IconFont="_Refresh" CssClass="tabtool" ToolTip="刷新本页" ID="toolRefresh" ClickHandler="onToolRefreshClick"></f:Tool>
+                            <f:Tool IconFont="_NewTab" CssClass="tabtool" ToolTip="在新标签页中打开" ID="toolNewWindow" ClickHandler="onToolNewWindowClick"></f:Tool>
+                        </Tools>
+                    </f:TabStrip>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+    <f:Window ID="windowSourceCode" IconFont="_Code" Title="源代码" Hidden="true" EnableIFrame="true"
+              IsModal="true" Width="1000" Height="600" EnableClose="true" EnableMaximize="true" EnableResize="true">
+    </f:Window>
+    <f:Window ID="windowThemeRoller" Title="主题仓库" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/Home/Themes")" ClearIFrameAfterClose="false"
+              IsModal="true" Width="850" Height="600" EnableClose="true" EnableMaximize="true" EnableResize="true" WindowPosition="Center">
+    </f:Window>
+    <f:Window ID="windowLoadingSelector" Title="页面加载动画（CSS）" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/Home/LoadingCSS")" ClearIFrameAfterClose="false"
+              IsModal="true" Width="500" Height="400" EnableClose="true" EnableMaximize="true" EnableResize="true">
+    </f:Window>
+
+    <f:Window ID="windowApplyTrial" Title="企业版试用" Hidden="true"
+              IsModal="true" Width="450" EnableClose="true" EnableMaximize="false" BodyPadding="15" IconFont="_Mail">
+        <Content>
+            <div>
+                请填写如下资料发送到邮箱：2877408506@qq.com
+            </div>
+            <ul class="applytrial">
+                <li>产品名称：FineUI.Core（企业版）</li>
+                <li>单位全称：XXX单位</li>
+                <li>申请人邮箱：XXX</li>
+                <li>申请人QQ：XXX</li>
+                <li>申请人姓名：XXX</li>
+                <li>申请人地址：XX省XX市</li>
+            </ul>
+        </Content>
+    </f:Window>
+
+    <f:HiddenField ID="hfExamplesCount"></f:HiddenField>
+
+}
+
+
+
+
+
+@section script {
+
+    <script type="text/javascript">
+        var PARAMS = {
+            mainPanel: 'mainPanel',
+            mainTabStrip: 'mainTabStrip',
+            treeMenu: 'treeMenu',
+            sidebarRegion: 'sidebarRegion',
+            btnCollapseSidebar: 'btnCollapseSidebar',
+            tabHomepage: 'tabHomepage',
+            windowSourceCode: 'windowSourceCode',
+            windowThemeRoller: 'windowThemeRoller',
+            windowLoadingSelector: 'windowLoadingSelector',
+            windowApplyTrial: 'windowApplyTrial',
+            hfExamplesCount: 'hfExamplesCount',
+            sourceUrl: '@Url.Content("~/Home/Source")',
+            dashboardUrl: '@Url.Content("~/Block/Dashboard")',
+            mainUrl: '@Url.Content("~/Basic/Main")',
+            processNewWindowUrl: function (url) {
+                return url.replace(/\/Mobile\/\?file=/ig, '/Mobile/');
+            }
+        };
+    </script>
+
+    <script src="~/res/js/index.js?v@(GlobalConfig.ProductVersion)"></script>
+    <script src="~/res/js/mobileview.js?v@(GlobalConfig.ProductVersion)"></script>
+
+}

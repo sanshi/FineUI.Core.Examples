@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.GridMultiSelectEnableEditModel
+@{
+    ViewBag.Title = "DropDownBox/GridMultiSelectEnableEdit";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉表格（多选）" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" MatchFieldWidth="false" EnableMultiSelect="true" _Values="105,108" EnableEdit="true">
+                <PopPanel>
+                    <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+                            Hidden="true" Width="550" Height="300" EnableMultiSelect="true" KeepCurrentSelection="true" DataSource="@DataSourceUtil.GetDataTable()">
+                        <Columns>
+                            <f:RenderField HeaderText="姓名" DataField="Name" />
+                            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                            <f:RenderField HeaderText="所学专业" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+                        </Columns>
+                    </f:Grid>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" CssClass="marginr" OnClick="btnGetSelection_Click"></f:Button>
+            <f:Button ID="btnReset" Text="重置表单" ClickHandler="onResetClick"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+    <script type="text/javascript">
+
+        function onResetClick(event) {
+            F.ui.SimpleForm1.reset();
+        }
+    </script>
+
+
+}

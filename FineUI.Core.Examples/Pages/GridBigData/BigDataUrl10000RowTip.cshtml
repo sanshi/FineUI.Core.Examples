@@ -1,0 +1,67 @@
+@page
+@model FineUI.Core.Examples.Pages.GridBigData.BigDataUrl10000RowTipModel
+@{
+    ViewBag.SourceFiles = "~/GridBigData/BigDataUrlData";
+    ViewBag.Title = "GridBigData/BigDataUrl10000RowTip";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（网址数据源，10,000行）" DataIDField="Id" DataTextField="Name"
+            DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=10000&type=simple")"
+            EnableCheckBoxSelect="true" Height="500" EnableBigData="true" EnableBigDataRowTip="false" FixedRowHeight="true"
+            EnableBigDataRowTip="false" PagingToolbarVisible="false">
+        <Columns>
+            <f:RowNumberField Width="50" />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+        </Columns>
+        <Toolbars>
+            <f:Toolbar Position="Bottom">
+                <Items>
+                    <f:Label Text="转到行："></f:Label>
+                    <f:NumberBox ID="nbRowNumber" MinValue="1" MaxValue="10000" Text="1000" Increment="100" EnableCommas="true">
+                    </f:NumberBox>
+                    <f:Button Text="Go" ClickHandler="onGotoRow"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Label ID="labRowTip"></f:Label>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Listeners>
+            <f:Listener Event="bigdatarowtip" Handler="onGrid1BigDataRowTip"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 转到行
+        function onGotoRow(event) {
+            // scrollToRow的参数是行索引，而 nbRowNumber 取得的是行序号
+            F.ui.Grid1.scrollToRow(F.ui.nbRowNumber.getValue() - 1);
+        }
+
+        // 大数据模式下的行数提示
+        function onGrid1BigDataRowTip(event, startRowNumber, endRowNumber, rowCount) {
+            F.ui.labRowTip.setValue(F.formatString('显示 {0} - {1} 条，共 {2} 条', startRowNumber, endRowNumber, rowCount));
+        }
+
+    </script>
+}

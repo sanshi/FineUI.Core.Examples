@@ -1,0 +1,100 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.NumberBoxEmptyModel
+@{
+    ViewBag.Title = "GridEditor/NumberBoxEmpty";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="年份" ColumnID="Year" DataField="Year" FieldType="Int" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:NumberBox NoDecimal="true" NoNegative="true" MinValue="2000" Required="true" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="学费" ColumnID="XueFei" DataField="XueFei" FieldType="Int">
+                <Editor>
+                    <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="住宿费" ColumnID="ZhusuFei" DataField="ZhusuFei" FieldType="Int">
+                <Editor>
+                    <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="伙食费" ColumnID="HuoshiFei" DataField="HuoshiFei" FieldType="Int">
+                <Editor>
+                    <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="书本费" ColumnID="ShubenFei" DataField="ShubenFei" FieldType="Int">
+                <Editor>
+                    <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="合计" ColumnID="Heji" FieldType="Int" RendererFunction="renderHeji">
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br>
+    注：
+    <ul>
+        <li>
+            年份[2017]和[2018]的初始费用都为空（DBNull.Value）。
+        </li>
+        <li>
+            也可以将某个现有数字更新为空。
+        </li>
+    </ul>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function calculateHejiValue(rowValue) {
+            var total = 0;
+
+            function addColumnValue(columnName) {
+                var columnValue = rowValue[columnName];
+                if (typeof (columnValue) === 'number') {
+                    total += columnValue;
+                }
+            }
+
+            addColumnValue('XueFei');
+            addColumnValue('HuoshiFei');
+            addColumnValue('ShubenFei');
+            addColumnValue('ZhusuFei');
+
+            return total;
+        }
+
+        // 渲染合计列
+        function renderHeji(value, params) {
+            return calculateHejiValue(params.rowValue);
+        }
+
+        function onGrid1AfterEdit(event, value, params) {
+            this.updateCellValue(params.rowId, 'Heji', calculateHejiValue(params.rowValue));
+        }
+
+    </script>
+}

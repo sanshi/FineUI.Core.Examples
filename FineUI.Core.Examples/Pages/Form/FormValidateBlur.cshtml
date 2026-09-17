@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormValidateBlurModel
+@{
+    ViewBag.Title = "Form/FormValidateBlur";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="用户注册表单">
+        <Items>
+            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin" OnBlur="tbxUserName_Blur">
+            </f:TextBox>
+            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextFocusControl="btnRegister" TextMode="Password">
+            </f:TextBox>
+            <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnRegister_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>
+            [用户名]失去焦点，如果为 admin，则标记为无效；否则去除无效标记
+        </li>
+        <li>
+            [用户名]按下 Enter 键，如果为 admin，则标记为无效；否则去除无效标记，并跳转到[密码]
+        </li>
+        <li>
+            [密码]按下 Enter 键，提交表单
+        </li>
+    </ul>
+
+
+}
+

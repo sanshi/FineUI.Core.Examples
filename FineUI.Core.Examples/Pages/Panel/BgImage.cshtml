@@ -1,0 +1,102 @@
+@page
+@model FineUI.Core.Examples.Pages.Panel.BgImageModel
+@{
+    ViewBag.Title = "Panel/BgImage";
+    var F = Html.F();
+}
+
+
+@section head {
+    <style>
+        .mybgpanel > .f-panel-bodyct > .f-panel-body {
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+
+        .mybgpanel.bg1 > .f-panel-bodyct > .f-panel-body {
+            background-color: #B1EEEF;
+            background-image: url(@Url.Content("~/res/images/bg/1.jpg"));
+        }
+
+        .mybgpanel.bg2 > .f-panel-bodyct > .f-panel-body {
+            background-color: #D9CAB5;
+            background-image: url(@Url.Content("~/res/images/bg/2.jpg"));
+        }
+
+        .mybgpanel.bg3 > .f-panel-bodyct > .f-panel-body {
+            background-color: #FEF3D5;
+            background-image: url(@Url.Content("~/res/images/bg/3.jpg"));
+        }
+
+        .mybgpanel.bg4 > .f-panel-bodyct > .f-panel-body {
+            background-color: #E4ECA1;
+            background-image: url(@Url.Content("~/res/images/bg/4.jpg"));
+        }
+
+        .mybgpanel.bg5 > .f-panel-bodyct > .f-panel-body {
+            background-color: #7FC1C0;
+            background-image: url(@Url.Content("~/res/images/bg/5.jpg"));
+        }
+
+        .mybgpanel.bg6 > .f-panel-bodyct > .f-panel-body {
+            background-color: #9BD1DB;
+            background-image: url(@Url.Content("~/res/images/bg/6.jpg"));
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" CssClass="mybgpanel bg1" AutoScroll="true" ShowBorder="false" EnableCollapse="false" BodyPadding="20px" Layout="Column" ShowHeader="false" IsViewPort="true">
+        <Items>
+            <f:Panel ID="Panel24" ColumnWidth="50%" ShowBorder="false" ShowHeader="false" MarginRight="5">
+                <Items>
+                    <f:Panel ID="Panel25" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="本页面背景图片每 5 秒更换一次！<br><br><br><br><br><br>">
+                    </f:Panel>
+                    <f:Panel ID="Panel26" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="我的面板<br><br><br><br><br><br>">
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="Panel28" ColumnWidth="50%" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Panel ID="Panel29" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="我的面板<br><br><br><br><br><br>">
+                    </f:Panel>
+                    <f:Panel ID="Panel30" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="我的面板<br><br><br><br><br><br>">
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        F.ready(function () {
+
+            var panel1El = F.ui.Panel1.el;
+
+            window.setInterval(function () {
+                var bgClsExec = /\bbg(\d+)\b/ig.exec(panel1El.attr('class'));
+                if (bgClsExec && bgClsExec.length === 2) {
+                    var bgNumber = parseInt(bgClsExec[1], 10);
+
+                    panel1El.removeClass('bg' + bgNumber);
+
+                    bgNumber++;
+                    if (bgNumber > 6) {
+                        bgNumber = 1;
+                    }
+                    panel1El.addClass('bg' + bgNumber);
+                }
+            }, 5000);
+
+        });
+
+    </script>
+}

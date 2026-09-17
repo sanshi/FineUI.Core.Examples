@@ -1,0 +1,61 @@
+@page
+@model FineUI.Core.Examples.Pages.IFrame.GridIFrameAlertScriptModel
+@{
+    ViewBag.SourceFiles = "~/IFrame/GridIFrameAlertScript/IFrameWindow";
+    ViewBag.Title = "IFrame/GridIFrameAlertScript";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" Title="表格" IsFluid="true" PageSize="10" ShowBorder="true" AllowPaging="true" IsDatabasePaging="false"
+            ShowHeader="true" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" Height="550">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar2">
+                <Items>
+                    <f:Button ID="btnDeleteRows" Text="删除选中行"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnAddUser" Text="新增用户"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="窗口列" EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Action1" Icon="Pencil" ToolTip="编辑" CssClass="mywindowfield"
+                               WindowID="Window1"
+                               WindowIFrameUrlFormatString="@Url.Content("~/IFrame/GridIFrameAlertScript/IFrameWindow?id={0}&name={1}")" _WindowIFrameUrlFields="Id,Name"
+                               WindowTitleFormatString="编辑 - {0}" _WindowTitleFields="Name" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="800" Height="550"
+              CloseAction="HidePostBack" OnClose="Window1_Close">
+    </f:Window>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function closeWindow1(closeArgument) {
+            F.customEvent('CloseWindow1', closeArgument);
+        }
+
+    </script>
+}

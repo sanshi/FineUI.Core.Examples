@@ -1,0 +1,18 @@
+//------------------------------------------------------------------------------
+// 此文件由 FineUI.Core 设计时工具自动生成。
+// 重新生成会覆盖手工修改。
+// 在 .cshtml 中加入 //NoRazorForms 可禁止生成此文件。
+//------------------------------------------------------------------------------
+
+namespace FineUI.Core.Examples.Pages.Window
+{
+	public partial class KeepLastPositionModel
+	{
+		protected FineUI.Core.Button btnShowWindowMax;
+		protected FineUI.Core.Button btnShowWindow900;
+		protected FineUI.Core.Button btnShowWindowLargeHeight;
+		protected FineUI.Core.Button btnShowWindow;
+		protected FineUI.Core.Button btnCloseWindow;
+		protected FineUI.Core.Window Window1;
+	}
+}

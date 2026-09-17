@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.PercentModel
+@{
+    ViewBag.Title = "Window/Percent";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button ID="btnShowWindow" Text="显示窗体" ClickHandler="onOpenWindow1Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="btnCloseWindow" Text="关闭窗体" ClickHandler="onCloseWindow1Click"></f:Button>
+    <br />
+    <br />
+
+    <f:Window ID="Window1" Icon="TagBlue" Title="窗体（PercentWidth=50% PercentHeight=50%）"
+              IsModal="false" AutoScroll="true" BodyPadding="10" PercentWidth="50%" PercentHeight="50%">
+        <Content>
+            <p>
+                <a href="http://tech.163.com/special/jobsdead/" target="_blank"><b>乔布斯</b></a>
+            </p>
+            <p>
+                乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
+            </p>
+        </Content>
+    </f:Window>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onOpenWindow1Click(event) {
+            F.ui.Window1.show();
+        }
+
+        function onCloseWindow1Click(event) {
+            F.ui.Window1.hide();
+        }
+
+    </script>
+}

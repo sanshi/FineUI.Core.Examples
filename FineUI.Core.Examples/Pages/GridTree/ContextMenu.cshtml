@@ -1,0 +1,105 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.ContextMenuModel
+@{
+    ViewBag.Title = "GridTree/ContextMenu";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound">
+        <Columns>
+            <f:RowNumberField EnableTreeNumber="true" />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="beforerowcontextmenu" Handler="onRowContextMenu"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <f:Menu ID="Menu1">
+        <Items>
+            <f:MenuButton ID="btnExpandRows" Text="展开全部" ClickHandler="onExpandRows"></f:MenuButton>
+            <f:MenuButton ID="btnCollapseRows" Text="折叠全部" ClickHandler="onCollapseRows"></f:MenuButton>
+        </Items>
+        <Listeners>
+            <f:Listener Event="show" Handler="onMenuShow" />
+        </Listeners>
+    </f:Menu>
+
+
+    <br />
+    <br />
+    注：在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowDataBound(rowData) {
+            var rowId = rowData.id;
+
+            // 默认展开的节点
+            if (rowId === '50' || rowId === '60') {
+                rowData.expanded = true;
+            }
+        }
+
+        // 保存当前菜单对应的树节点ID
+        var currentRowId;
+
+        // 返回false，来阻止浏览器右键菜单
+        function onRowContextMenu(event, rowId) {
+            currentRowId = rowId;
+            F.ui.Menu1.show();
+            return false;
+        }
+
+        // 设置所有菜单项的禁用状态
+        function setMenuItemsDisabled(disabled) {
+            var menu = F.ui.Menu1;
+            $.each(menu.items, function (index, item) {
+                item.setDisabled(disabled);
+            });
+        }
+
+        // 显示菜单后，检查是否禁用菜单项
+        function onMenuShow(event) {
+            if (currentRowId) {
+                var grid = F.ui.Grid1;
+                var rowData = grid.getRowData(currentRowId);
+                if (rowData.leaf) {
+                    setMenuItemsDisabled(true);
+                } else {
+                    setMenuItemsDisabled(false);
+                }
+            }
+        }
+
+        function onExpandRows(event) {
+            if (currentRowId) {
+                F.ui.Grid1.expandRow(currentRowId, true);
+            }
+        }
+
+        function onCollapseRows(event) {
+            if (currentRowId) {
+                F.ui.Grid1.collapseRow(currentRowId, true);
+            }
+        }
+
+
+    </script>
+}

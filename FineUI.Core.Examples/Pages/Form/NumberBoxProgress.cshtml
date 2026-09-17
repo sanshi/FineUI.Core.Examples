@@ -1,0 +1,94 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.NumberBoxProgressModel
+@{
+    ViewBag.Title = "Form/NumberBoxProgress";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:NumberBox ID="NumberBox1" Width="500" Text="25" DisplayType="Progress">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox2" Width="500" Text="50" DisplayType="Progress">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox3" Width="500" Text="75" DisplayType="Progress" ProgressTextVisible="true">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox4" Width="500" Text="95" DisplayType="Progress" ProgressTextVisible="true" ProgressHeight="15">
+    </f:NumberBox>
+    <br />
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox5" Width="500" Text="25" DisplayType="Progress" ProgressTextVisible="true" ProgressTextInside="true" ProgressHeight="15">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox6" Width="500" Text="50" DisplayType="Progress" ProgressTextVisible="true" ProgressTextInside="true" ProgressHeight="15">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox7" Width="500" Text="75" DisplayType="Progress" ProgressTextVisible="true" ProgressTextInside="true" ProgressHeight="15">
+    </f:NumberBox>
+    <br />
+    <br />
+    <f:NumberBox ID="NumberBox8" Width="500" Text="95" DisplayType="Progress" ProgressTextVisible="true" ProgressTextInside="true" ProgressHeight="15">
+    </f:NumberBox>
+    <br />
+    <br />
+    <br />
+    <f:Button Text="0%" ClickHandler="onChangeTo0Click" MarginRight="5"></f:Button>
+    <f:Button Text="25%" ClickHandler="onChangeTo25Click" MarginRight="5"></f:Button>
+    <f:Button Text="50%" ClickHandler="onChangeTo50Click" MarginRight="5"></f:Button>
+    <f:Button Text="75%" ClickHandler="onChangeTo75Click" MarginRight="5"></f:Button>
+    <f:Button Text="100%" ClickHandler="onChangeTo100Click" MarginRight="5"></f:Button>
+    <br />
+    <br />
+
+}
+
+
+
+@section script {
+
+    <script>
+
+        function changeTo(num) {
+            F.ui.NumberBox1.setValue(num);
+            F.ui.NumberBox2.setValue(num);
+            F.ui.NumberBox3.setValue(num);
+            F.ui.NumberBox4.setValue(num);
+            F.ui.NumberBox5.setValue(num);
+            F.ui.NumberBox6.setValue(num);
+            F.ui.NumberBox7.setValue(num);
+            F.ui.NumberBox8.setValue(num);
+        }
+
+        function onChangeTo0Click(event) {
+            changeTo(0);
+        }
+
+        function onChangeTo25Click(event) {
+            changeTo(25);
+        }
+
+        function onChangeTo50Click(event) {
+            changeTo(50);
+        }
+
+        function onChangeTo75Click(event) {
+            changeTo(75);
+        }
+
+        function onChangeTo100Click(event) {
+            changeTo(100);
+        }
+
+    </script>
+
+}

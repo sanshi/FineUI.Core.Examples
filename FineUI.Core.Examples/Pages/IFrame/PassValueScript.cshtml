@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.IFrame.PassValueScriptModel
+@{
+    ViewBag.SourceFiles = "~/IFrame/PassValueScript/IFrameWindow";
+    ViewBag.Title = "IFrame/PassValueScript";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" Title="表单" BodyPadding="10" EnableCollapse="false">
+        <Items>
+            <f:TextBox ID="tbxProvince" Label="你所在的省份" Text="安徽">
+            </f:TextBox>
+            <f:Button ID="Button1" Text="从列表中选择" ClickHandler="onButton1Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+
+    <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true"
+              EnableMaximize="true" EnableResize="true" Target="Parent" IsModal="true"
+              Width="562" Height="470" OnClose="Window1_Close">
+    </f:Window>
+
+
+
+}
+
+@section script {
+
+    <script>
+
+        function onButton1Click(event) {
+            var url = '@Url.Content("~/IFrame/PassValueScript/IFrameWindow")';
+            var openUrl = F.formatString("{0}?selected={1}", url, F.urlEncode(F.ui.tbxProvince.getValue()));
+
+            F.ui.Window1.show(openUrl);
+        }
+
+        function updateProvince(val) {
+            F.ui.tbxProvince.setValue(val);
+        }
+
+    </script>
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "auditStatus": "complete",
+  "productVersion": "16.0.0-beta.1",
+  "targetPath": "FineUI.Core.Examples/wwwroot/res",
+  "resourceTreeSha256": "7a27e897d1bbe9c8b220537c82b50088c5a64a7e5cdef7aaf6f22a55144b9f84",
+  "thirdPartyAssets": [
+    {
+      "name": "FamFamFam Silk Icons",
+      "version": "Silk 1.3（上游仓库包版本 1.0.0）",
+      "license": "CC-BY-2.5",
+      "source": "https://github.com/legacy-icons/famfamfam-silk/tree/d6056f5c28e46c28403888ab7c013aced3928ec8/src",
+      "fileCount": 1001,
+      "treeSha256": "f0ba3dd6cf9b81c8472b7c6246bb379042b597195c3f90ab5f39c8ea69b34868",
+      "notice": "作者为 Mark James；再分发和使用时须保留作者署名，并链接至 http://www.famfamfam.com/lab/icons/silk/。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/icon"
+    },
+    {
+      "name": "Silk Icons Companion #1",
+      "version": "0.2.3",
+      "license": "CC-BY-2.5 OR CC-BY-3.0",
+      "source": "https://github.com/damieng/silk-companion/tree/a59a108079d41aac004152d6eccc5f7c637215b9/src",
+      "fileCount": 463,
+      "treeSha256": "c3d2b969840cb40ff2da03320ec22ba7d8226ab59da486066a719f896ef108f6",
+      "notice": "作者为 Damien Guard。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/icon"
+    },
+    {
+      "name": "FamFamFam Flag Icons",
+      "version": "上游提交 1047b3e5c4f84ef56837595aedc66a1c6f01834d",
+      "license": "Public Domain",
+      "source": "https://github.com/tkrotoff/famfamfam_flags/tree/1047b3e5c4f84ef56837595aedc66a1c6f01834d",
+      "fileCount": 248,
+      "treeSha256": "190edb64f82f32adfcf82877a0d5dfdd517b28c504b01c4c062dd29c2ca8313d",
+      "notice": "作者为 Mark James；允许任意用途使用，不要求署名。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/icon"
+    },
+    {
+      "name": "Google Code Prettify 与配色主题",
+      "version": "归档版本（无独立发行号）",
+      "license": "Apache-2.0（核心） AND MIT（配色主题）",
+      "source": "https://github.com/googlearchive/code-prettify；https://github.com/jmblog/color-themes-for-google-code-prettify",
+      "fileCount": 39,
+      "treeSha256": "347cd4337662cec433f8ec2816ffb03491f7780b94077998f4e2c60e1ee3fc32",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/google-code-prettify"
+    },
+    {
+      "name": "CKEditor",
+      "version": "4.4.2",
+      "license": "GPL-2.0-or-later OR LGPL-2.1-or-later OR MPL-1.1-or-later",
+      "source": "https://github.com/ckeditor/ckeditor4",
+      "fileCount": 314,
+      "treeSha256": "817f607d4e47b65f0f0af4ca296fab29517be2cdcb306f141af49ac6906587b2",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/ckeditor"
+    },
+    {
+      "name": "ECharts",
+      "version": "4.0.1",
+      "license": "Apache-2.0",
+      "source": "https://www.npmjs.com/package/echarts/v/4.0.1",
+      "fileCount": 1,
+      "treeSha256": "4f66f20930c5605e10f5bb0cba6761019d83ff16b48a965097d30f515c13e225",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/echarts"
+    },
+    {
+      "name": "Ionicons",
+      "version": "4.1.2",
+      "license": "MIT",
+      "source": "https://github.com/ionic-team/ionicons",
+      "fileCount": 6,
+      "treeSha256": "338b1d02b49f720b59f9280345df66cffa0e30f0b1cc29ca1e1cd3652c2302b5",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/ionicons"
+    },
+    {
+      "name": "iScroll",
+      "version": "4.1.9",
+      "license": "MIT",
+      "source": "https://github.com/cubiq/iscroll",
+      "fileCount": 1,
+      "treeSha256": "da6f3ce8fb8bc1dcf735b99c92c3e3c3155cb3c0b70b83dd7f16efd56c433f97",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/iscroll"
+    },
+    {
+      "name": "jQuery UI Autocomplete",
+      "version": "1.11.4",
+      "license": "MIT",
+      "source": "https://github.com/jquery/jquery-ui",
+      "fileCount": 8,
+      "treeSha256": "31e0ef59dd2ee048b891ab7568fe533a0afc761716a707c8eb224abfcc402862",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/jqueryuiautocomplete"
+    },
+    {
+      "name": "Open Iconic",
+      "version": "1.1.0",
+      "license": "MIT（图标与代码） AND OFL-1.1（字体）",
+      "source": "https://github.com/iconic/open-iconic",
+      "fileCount": 6,
+      "treeSha256": "1d83b8ca3a21c18117e1b6df070947398a619ba1b27223ce00774edf0e8f10c8",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/openiconic"
+    },
+    {
+      "name": "OpenLayers",
+      "version": "5.3.0",
+      "license": "BSD-2-Clause",
+      "source": "https://github.com/openlayers/openlayers",
+      "fileCount": 2,
+      "treeSha256": "f46310979f6dd87bd4cc2fbf2ea86e9bc5677bb81ee9078ad29988af8408b9c0",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/openlayers"
+    },
+    {
+      "name": "Spectrum",
+      "version": "1.8.1",
+      "license": "MIT",
+      "source": "https://github.com/bgrins/spectrum",
+      "fileCount": 29,
+      "treeSha256": "59708502b958ae45f43cdf7e1d3505bbc42f89dff553f9babf7d70052152f152",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/spectrum"
+    },
+    {
+      "name": "TinyMCE",
+      "version": "4.5.3",
+      "license": "LGPL-2.1",
+      "source": "https://github.com/tinymce/tinymce",
+      "fileCount": 85,
+      "treeSha256": "c18442b036e373e3ccf1febfdf033adeebe9fc09e68c61c1c489c658d004e2df",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/tinymce"
+    },
+    {
+      "name": "UEditor",
+      "version": "1.4.3（2016-08-10 构建）",
+      "license": "MIT",
+      "source": "https://github.com/fex-team/ueditor",
+      "fileCount": 107,
+      "treeSha256": "d828fa12cdcb3e475131412fa1a221be0b18e2ec8f6b3601538e5c1b43d25301",
+      "notice": "只保留当前示例使用的基础富文本能力。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/ueditor"
+    },
+    {
+      "name": "UMEditor",
+      "version": "1.2.2",
+      "license": "MIT",
+      "source": "https://github.com/fex-team/umeditor",
+      "fileCount": 49,
+      "treeSha256": "94ffc765e5551a8507f3a79e5d94122eaa344acb7fc2fc336addb83f01bbbbef",
+      "notice": "只保留当前示例使用的基础富文本能力。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/umeditor"
+    },
+    {
+      "name": "WebUploader",
+      "version": "0.1.5",
+      "license": "BSD-3-Clause",
+      "source": "https://github.com/fex-team/webuploader",
+      "fileCount": 2,
+      "treeSha256": "b530378a400268b6df6908384c9e6eaf8254d51b44cada0a352ade4a96f44dcf",
+      "notice": "只保留 HTML5 运行时，不分发 Flash SWF。",
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/third-party/webuploader"
+    }
+  ],
+  "firstPartyAssets": [
+    {
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/icon/blank.png, FineUI.Core.Examples/wwwroot/res/icon/system_close.gif, FineUI.Core.Examples/wwwroot/res/icon/system_new.gif, FineUI.Core.Examples/wwwroot/res/icon/system_save.gif, FineUI.Core.Examples/wwwroot/res/icon/system_saveclose.gif, FineUI.Core.Examples/wwwroot/res/icon/system_savenew.gif, FineUI.Core.Examples/wwwroot/res/icon/system_search.gif",
+      "fileCount": 7,
+      "treeSha256": "4e00a8834a0ed3521470a69d27bb0e86ed350318750aad96226a1ae2d0eb6243",
+      "description": "FineUI 空白图标及系统操作图标"
+    },
+    {
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/images/themes/image_blue_sky.png, FineUI.Core.Examples/wwwroot/res/images/themes/image_green_lotus.png, FineUI.Core.Examples/wwwroot/res/images/themes/image_green_rain.png, FineUI.Core.Examples/wwwroot/res/images/themes/image_purple_fog.png, FineUI.Core.Examples/wwwroot/res/themes/image_blue_sky/sky.jpg, FineUI.Core.Examples/wwwroot/res/themes/image_green_lotus/lotus.jpg, FineUI.Core.Examples/wwwroot/res/themes/image_green_rain/rain.jpg, FineUI.Core.Examples/wwwroot/res/themes/image_purple_fog/fog.jpg",
+      "fileCount": 8,
+      "treeSha256": "f570e3f54a8ff4637e44aa8691f849ce7cfb61604d5819471854492353ae6ee2",
+      "description": "合肥三生石上软件有限公司自有的四套主题背景及其预览图"
+    },
+    {
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/images/my_face_80.jpg",
+      "fileCount": 1,
+      "treeSha256": "e7e71e0f4dc9389d9599dbf53a51857e8d3ac3e2142abc99aeb2a17aea94deae",
+      "description": "合肥三生石上软件有限公司自有的人物照片"
+    },
+    {
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res/images/avatars/female/1.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/10.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/11.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/12.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/2.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/3.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/4.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/5.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/6.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/7.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/8.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/female/9.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/1.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/10.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/11.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/12.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/2.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/3.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/4.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/5.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/6.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/7.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/8.jpg, FineUI.Core.Examples/wwwroot/res/images/avatars/male/9.jpg",
+      "fileCount": 24,
+      "treeSha256": "3ca9b778fe522c0627090f763f6b2c85cd531a96bd3ff524bc0e6e0b3f2ae17d",
+      "description": "合肥三生石上软件有限公司自有的男女示例头像"
+    },
+    {
+      "retainedPath": "FineUI.Core.Examples/wwwroot/res",
+      "description": "除第三方清单明确列出的路径外，其余内容为 FineUI 项目维护的代码、样式、主题、语言和品牌资源。"
+    }
+  ],
+  "unresolvedAssets": []
+}

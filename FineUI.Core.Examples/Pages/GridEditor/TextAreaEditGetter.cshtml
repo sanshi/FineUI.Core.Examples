@@ -1,0 +1,92 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.TextAreaEditGetterModel
+@{
+    ViewBag.Title = "GridEditor/TextAreaEditGetter";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-grid-row .f-grid-cell-text {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1" Height="500">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" Hidden="true">
+                <Editor>
+                    <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" Hidden="true">
+                <Editor>
+                    <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
+                </Editor>
+            </f:RenderField>
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" Hidden="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" Width="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="个人简介" ColumnID="Desc" DataField="Desc" ExpandUnusedSpace="true" MinWidth="150" EditGetterFunction="editGetterDesc" EditSetterFunction="editSetterDesc">
+                <Editor>
+                    <f:TextArea ID="TextArea1" Required="true"></f:TextArea>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    注：进入[个人简介]的编辑框时，用换行符替换 &lt;br /&gt; 标签。
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 自定义编辑器获取函数（从Editor返回单元格）
+        function editGetterDesc(editor) {
+            return editor.getText().replace(/\n/g, '<br/>');
+        }
+
+        // 自定义编辑器设置函数（从单元格进入Editor）
+        function editSetterDesc(editor, val, columnId, rowId) {
+            editor.setText(val.replace(/<br\/>/g, '<br>').replace(/<br>/g, '\n'));
+        }
+
+    </script>
+
+}
+

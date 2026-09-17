@@ -1,0 +1,61 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.ImageResizeModel
+@{
+    ViewBag.Title = "Window/ImageResize";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        #mylogo {
+            position: absolute;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Window ID="Window2" Width="650" Height="300" Icon="TagBlue" Title="窗体（观察图片随着窗体大小的变化）" EnableClose="false" EnableMaximize="true" EnableCollapse="false" EnableResize="true"
+              IsModal="false" AutoScroll="true" BodyPadding="10" Content="@("<img id=\"mylogo\" src=\"" + Url.Content("~/res/images/newlogo/fineui_500.png") + "\" alt=\"Logo\">")">
+        <Listeners>
+            <f:Listener Event="resize" Handler="onWindowResize" />
+            <f:Listener Event="render" Handler="onWindowResize" />
+        </Listeners>
+    </f:Window>
+
+}
+
+@section script {
+
+    <script>
+
+        // 保持图片的长宽比
+        var LOGO_WIDTH = 500, LOGO_HEIGHT = 500;
+
+        // resize，render
+        function onWindowResize(event) {
+            var bodyWidth = this.bodyEl.width();
+            var bodyHeight = this.bodyEl.height();
+
+            var logoWidth = bodyWidth;
+            var logoHeight = Math.floor(bodyWidth * LOGO_HEIGHT / LOGO_WIDTH);
+            if (logoHeight > bodyHeight) {
+                logoHeight = bodyHeight;
+                logoWidth = Math.floor(bodyHeight * LOGO_WIDTH / LOGO_HEIGHT);
+            }
+
+            $('#mylogo').css({
+                top: Math.floor((bodyHeight - logoHeight) / 2),
+                left: Math.floor((bodyWidth - logoWidth) / 2),
+                width: logoWidth,
+                height: logoHeight
+            });
+
+        }
+
+    </script>
+
+}

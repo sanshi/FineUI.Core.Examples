@@ -1,0 +1,53 @@
+@page
+@model FineUI.Core.Examples.Pages.GridFilter.MultiModel
+@{
+    ViewBag.Title = "GridFilter/Multi";
+    var F = Html.F();
+}
+
+@section head {
+    <style>
+        
+    </style>
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()"
+            AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" EnableFilter="true">
+                <Filter EnableMultiConditions="true" MatcherDefault="any">
+                    <Operator>
+                        <f:DropDownList>
+                            <f:ListItem Text="等于" Value="equal" />
+                            <f:ListItem Text="包含" Value="contain" Selected="true" />
+                            <f:ListItem Text="开始于" Value="start" />
+                            <f:ListItem Text="结束于" Value="end" />
+                        </f:DropDownList>
+                    </Operator>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

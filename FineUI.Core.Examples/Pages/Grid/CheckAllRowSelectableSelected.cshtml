@@ -1,0 +1,71 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.CheckAllRowSelectableSelectedModel
+@{
+    ViewBag.Title = "Grid/CheckAllRowSelectableSelected";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" RowDataBoundFunction="onGrid1RowDataBound" DisableUnselectableRows="true"
+            _SelectedRowIDArray="103,105">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <br />
+    <br />
+        注：
+    <ul>
+        <li>
+            禁止选择入学年份大于等于 2008 的行；
+        </li>
+        <li>
+            默认选中[董婷婷]和[彭博]所在的行；
+        </li>
+        <li>
+            禁用行的[所学专业]列为文本，其他为超链接。
+        </li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowDataBound(rowData) {
+            if (rowData.values.EntranceYear >= 2008) {
+                rowData.unselectable = true;
+            }
+        }
+
+        // 覆盖 grid.js 中定义的 renderMajor 函数
+        function renderMajor(value, params) {
+            var text = F.htmlEncode(value);
+            // 如果本行禁用，则不显示[所学专业]的超链接
+            if (params.rowData.unselectable) {
+                return text;
+            } else {
+                var url = 'http://gsa.ustc.edu.cn/search?q=' + F.urlEncode(value);
+                return F.formatString('<a href="{0}" data-qtip="{1}" target="_blank">{1}</a>', url, text);
+            }
+        }
+
+    </script>
+}

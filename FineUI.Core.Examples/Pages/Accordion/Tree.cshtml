@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Accordion.TreeModel
+@{
+    ViewBag.SourceFiles = "~/Accordion/TreeDefaultPage";
+    ViewBag.Title = "Accordion/Tree";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:RegionPanel ID="RegionPanel1" IsViewPort="true" ShowBorder="false" Margin="24">
+        <Regions>
+            <f:Region ID="Region2" RegionSplit="true" RegionSplitHeaderClass="false" RegionPosition="Left" Width="200" ShowHeader="false" Title="目录" EnableCollapse="false" Layout="Fit">
+                <Items>
+                    <f:Accordion ShowBorder="false" ShowHeader="false" ShowCollapseTool="true">
+                        <Panes>
+                            <f:AccordionPane Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px" Layout="Fit">
+                                <Items>
+                                    <f:Tree ShowBorder="false" ShowHeader="false" ID="treeMenu">
+                                    </f:Tree>
+                                </Items>
+                            </f:AccordionPane>
+                            <f:AccordionPane Title="面板二" IconUrl="@Url.Content("~/res/images/16/4.png")" BodyPadding="2px 5px">
+                                <Items>
+                                    <f:Label Text="面板二中的文本">
+                                    </f:Label>
+                                </Items>
+                            </f:AccordionPane>
+                        </Panes>
+                    </f:Accordion>
+                </Items>
+            </f:Region>
+            <f:Region ID="Region3" ShowHeader="false" EnableIFrame="true" IFrameUrl="@Url.Content("~/Accordion/TreeDefaultPage")" IFrameName="accordionmainframe" Position="Center">
+            </f:Region>
+        </Regions>
+    </f:RegionPanel>
+
+}
+

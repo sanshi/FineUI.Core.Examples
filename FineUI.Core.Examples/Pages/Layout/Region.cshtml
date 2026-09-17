@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.RegionModel
+@{
+    ViewBag.Title = "Layout/Region";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" Margin="24" ShowBorder="false" ShowHeader="false" Layout="Region" IsViewPort="true">
+        <Items>
+            <f:Panel ID="panelTopRegion" RegionPosition="Top" RegionSplit="true" EnableCollapse="true"
+                     Title="顶部面板" ShowBorder="true" ShowHeader="true" BodyPadding="10" IconFont="_PullUp" Collapsed="true">
+                <Items>
+                    <f:Label ID="Label1" Text="顶部面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
+                     Width="250" Title="左侧面板（有提示信息）" TitleToolTip="左侧面板（有提示信息）" ShowBorder="true" ShowHeader="true"
+                     BodyPadding="10" IconFont="_PullLeft" Collapsed="true">
+                <Items>
+                    <f:Label ID="Label2" Text="左侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelCenterRegion" RegionPosition="Center" AutoScroll="true"
+                     Title="中间面板" ShowBorder="true" ShowHeader="true" BodyPadding="10" IconFont="_RoundPlus">
+                <Items>
+                    <f:Label ID="Label3" Text="中间面板的内容">
+                    </f:Label>
+                    <f:Label ID="Label6">
+                    </f:Label>
+                    <f:Button ID="Button4" Text="更新左侧面板的标题" OnClick="Button4_Click"></f:Button>
+                    <f:Label ID="Label7">
+                    </f:Label>
+                    <f:Button ID="btnHideBottomRegion" Text="隐藏/显示底部面板" OnClick="btnHideBottomRegion_Click"></f:Button>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelRightRegion" RegionPosition="Right" RegionSplit="true" EnableCollapse="true"
+                     Width="200" Title="右侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10" IconFont="_PullRight">
+                <Items>
+                    <f:Label ID="Label4" Text="右侧面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="panelBottomRegion" RegionPosition="Bottom" RegionSplit="true" EnableCollapse="true" Height="100"
+                     Title="底部面板" ShowBorder="true" ShowHeader="true" BodyPadding="10" IconFont="_PullDown">
+                <Items>
+                    <f:Label ID="Label5" Text="底部面板的内容">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}
+

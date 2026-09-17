@@ -1,0 +1,87 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.CellEditorModel
+@{
+    ViewBag.Title = "GridTree/CellEditor";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name"
+            EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound"
+            AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true">
+                    </f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="类型" ColumnID="Type" DataField="Type" RendererFunction="renderType">
+                <Editor>
+                    <f:DropDownList ID="ddlType" Required="true">
+                        <f:ListItem Text="文件夹" Value="文件夹"></f:ListItem>
+                        <f:ListItem Text="CS文件" Value="CS文件"></f:ListItem>
+                        <f:ListItem Text="CONFIG文件" Value="CONFIG文件"></f:ListItem>
+                        <f:ListItem Text="ASPX文件" Value="ASPX文件"></f:ListItem>
+                        <f:ListItem Text="CSS文件" Value="CSS文件"></f:ListItem>
+                        <f:ListItem Text="PNG文件" Value="PNG文件"></f:ListItem>
+                        <f:ListItem Text="ICO文件" Value="ICO文件"></f:ListItem>
+                        <f:ListItem Text="GIF文件" Value="GIF文件"></f:ListItem>
+                        <f:ListItem Text="XML文件" Value="XML文件"></f:ListItem>
+                        <f:ListItem Text="ASHX文件" Value="ASHX文件"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="大小" ColumnID="Size" DataField="Size" FieldType="Int">
+                <Editor>
+                    <f:NumberBox ID="tbxSize" NoDecimal="true" NoNegative="true" MinValue="0">
+                    </f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="修改日期" ColumnID="ModifyDate" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+                <Editor>
+                    <f:DatePicker ID="DatePicker1" Required="true">
+                    </f:DatePicker>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    <br />
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowDataBound(rowData) {
+            var rowId = rowData.id;
+
+            // 默认展开的节点
+            if (rowId === '50' || rowId === '60') {
+                rowData.expanded = true;
+            }
+        }
+
+
+        function renderType(value) {
+            return F.ui.ddlType.getTextByValue(value);
+        }
+
+
+    </script>
+}

@@ -1,0 +1,55 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.DatabaseMoreModel
+@{
+    ViewBag.Title = "GridPaging/DatabaseMore";
+    var F = Html.F();
+}
+
+@section head  {
+
+    <style>
+        .morebutton {
+            width: 100%;
+            text-align: center;
+            margin: 8px 0;
+        }
+    </style>
+
+}
+
+
+@section body {
+    <f:Panel IsFluid="true" Title="面板" Height="350" AutoScroll="true">
+        <Items>
+            <f:Grid ID="Grid1" ShowBorder="false" ShowHeader="false" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+                    DataSource="@ViewBag.Grid1DataSource" PagingToolbarVisible="false">
+                <Columns>
+                    <f:RowNumberField />
+                    <f:RenderField HeaderText="姓名" DataField="Name" />
+                    <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                    <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+                    <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+                    <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+                    <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                    <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+                </Columns>
+                <Attributes>
+                    <f:Attribute Key="data-index" Value="0"></f:Attribute>
+                </Attributes>
+            </f:Grid>
+            <f:LinkButton CssClass="morebutton" Text="加载更多..." ID="btnMore" OnClick="btnMore_Click"></f:LinkButton>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br>
+    <br>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

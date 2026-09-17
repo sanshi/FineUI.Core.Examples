@@ -1,0 +1,82 @@
+
+/* 响应式卡片样式：表格在小屏切换为卡片模式时使用（dashboard / grid_responsive 共用） */
+/* 表格根元素需添加 CssClass="responsive-card-grid" */
+
+/* 每张卡片占满一行：去掉边框/圆角/外边距，仅用底部分割线分隔上下卡片 */
+.responsive-card-grid .f-grid-card .f-grid-card-row {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-radius: 0;
+}
+    /* 卡片模式下隐藏行选择复选框 */
+    .responsive-card-grid .f-grid-card .f-grid-card-row .f-grid-checkselectionfield {
+        top: 5px;
+        left: 5px;
+        display: none;
+    }
+
+.responsive-card {
+    padding: 0;
+}
+
+/* 顶部：头像信息 + 状态徽章，一行排列 */
+.responsive-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* 头像与姓名/描述横向排列（头像在左、文字在右） */
+.responsive-card .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.responsive-card .user-profile .name-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-card .user-profile .avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 字段区：一行一项 */
+.responsive-card-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.responsive-card-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.responsive-card-label {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.responsive-card-value {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* 离校状态：删除线 + 警告色（FineUI Warning 语义色 #faad14，固定不随主题） */
+.responsive-card-leaveschool {
+    text-decoration: line-through;
+    color: #faad14;
+}

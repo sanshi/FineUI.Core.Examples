@@ -1,0 +1,86 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Accordion.AccordionToolsModel
+@{
+    ViewBag.Title = "MobileAccordion/AccordionTools";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-tool.mybadge {
+            opacity: 1.0;
+            filter: alpha(opacity=100);
+        }
+
+            .f-tool.mybadge .f-tool-text {
+                padding: 0 4px;
+                color: #fff;
+                text-align: center;
+                white-space: nowrap;
+                background-color: #d15b47;
+                font-size: 14px;
+                border-radius: 12px;
+                min-width: 24px;
+            }
+
+
+        .f-tool.mybadge-sub {
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+        }
+
+            .f-tool.mybadge-sub .f-tool-text {
+                font-size: 14px;
+            }
+    </style>
+
+
+}
+
+@section body {
+
+
+    <f:Accordion ID="Accordion1" ShowHeader="false" ShowBorder="false" ActivePaneIndex="1" ShowCollapseTool="false" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="手风琴控件" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Panes>
+            <f:AccordionPane ID="AccordionPane1" Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px">
+                <Tools>
+                    <f:Tool CssClass="mybadge" Text="30"></f:Tool>
+                </Tools>
+                <Items>
+                    <f:Label ID="Label1" Text="面板一中的文本">
+                    </f:Label>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane2" Title="面板二（列表）" IconUrl="@Url.Content("~/res/images/16/4.png")" Layout="Fit">
+                <Tools>
+                    <f:Tool ID="Tool1" CssClass="mybadge" Text="30/260"></f:Tool>
+                </Tools>
+                <Items>
+                    <f:DataList ID="DataList1">
+                        <f:DataListItem Text="列表项1" />
+                        <f:DataListItem Text="列表项2" />
+                        <f:DataListItem Text="列表项3" />
+                        <f:DataListItem Text="列表项4" />
+                        <f:DataListItem Text="列表项5" />
+                    </f:DataList>
+                </Items>
+            </f:AccordionPane>
+            <f:AccordionPane ID="AccordionPane3" Title="面板三（IFrame）" IconUrl="@Url.Content("~/res/images/16/7.png")"
+                             EnableIFrame="true" IFrameUrl="@Url.Content("~/Mobile/Button/Button")">
+                <Tools>
+                    <f:Tool ID="Tool3" CssClass="mybadge-sub" Text="简单的文字描述"></f:Tool>
+                    <f:Tool ID="Tool2" CssClass="mybadge" Text="30/150"></f:Tool>
+                </Tools>
+            </f:AccordionPane>
+        </Panes>
+    </f:Accordion>
+
+}
+

@@ -1,0 +1,65 @@
+@page
+@model FineUI.Core.Examples.Pages.Panel.ToolsModel
+@{
+    ViewBag.Title = "Panel/Tools";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板" Height="350" BodyPadding="10" EnableCollapse="true" IconUrl="@Url.Content("~/res/images/16/8.png")">
+        <Items>
+            <f:Label Text="面板内容"></f:Label>
+        </Items>
+        <Tools>
+            <f:Tool IconFont="_Gear" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool13" IconFont="_Wrench" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool1" IconFont="_Download" ToolTip="下载" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool3" IconFont="_Upload" ToolTip="上传" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool2" IconFont="_Print" ToolTip="打印" ClickHandler="onToolIconClick"></f:Tool>
+
+            <f:Tool ID="Tool4" IconFont="_Save" ToolTip="保存" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool18" IconFont="_Plus" ToolTip="新增" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool10" IconFont="_Edit" ToolTip="编辑" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool5" IconFont="_Minus" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool14" IconFont="_Trash" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool15" IconFont="_Close" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool6" IconFont="_SignIn" ToolTip="登陆" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool11" IconFont="_PowerOff" ToolTip="退出" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool9" IconFont="_Question" ToolTip="帮助" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool20" IconFont="_Info" ToolTip="详细" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool12" IconFont="_Search" ToolTip="搜索" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool17" IconFont="_Key" ToolTip="授权" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool7" IconFont="_User" ToolTip="用户" ClickHandler="onToolIconClick"></f:Tool>
+            <f:Tool ID="Tool19" IconFont="_Group" ToolTip="分组" ClickHandler="onToolIconClick"></f:Tool>
+        </Tools>
+    </f:Panel>
+    <br />
+
+    <f:Button ID="Button2" CssClass="marginr" Text="检查面板的折叠状态" OnClick="Button2_Click"></f:Button>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onToolIconClick(event) {
+            // 当前点击的图标字体
+            var iconFont = this.iconFont;
+
+            F.notify({
+                message: '你点击了标题栏工具图标：' + iconFont,
+                messageIconFont: iconFont,
+                displayMilliseconds: 3000,
+                positionX: 'center',
+                positionY: 'center'
+            });
+        }
+
+    </script>
+
+}
+

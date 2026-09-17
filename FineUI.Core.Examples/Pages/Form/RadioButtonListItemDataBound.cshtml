@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.RadioButtonListItemDataBoundModel
+@{
+    ViewBag.Title = "Form/RadioButtonListItemDataBound";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="简单表单">
+        <Items>
+            <f:RadioButtonList ID="RadioButtonList1" Label="列表一">
+                <f:RadioItem Text="可选项 1" Value="value1" />
+                <f:RadioItem Text="可选项 2" Value="value2" />
+                <f:RadioItem Text="可选项 3" Value="value3" />
+            </f:RadioButtonList>
+            <f:RadioButtonList ID="RadioButtonList2" Label="列表二（一列）" ColumnNumber="1" OnItemDataBound="RadioButtonList2_ItemDataBound">
+            </f:RadioButtonList>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+    <br />
+    注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。
+}
+

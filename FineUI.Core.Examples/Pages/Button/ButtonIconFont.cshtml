@@ -1,0 +1,42 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonIconFontModel
+
+@{
+    ViewBag.Title = "Button/ButtonIconFont";
+}
+
+@section body {
+
+    <f:Button ID="btnIcon1" Text="图标在左侧" IconFont="_Home" CssClass="marginr" />
+    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFont="_Car" />
+    <br />
+    <br />
+    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="_Camera" CssClass="marginr" />
+    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" />
+    <br />
+    <br />
+    <f:Button ID="btnCustomIconFont" Text="点击修改图标（在三个图标之前切换）" IconFont="_VolumeUp" OnClick="btnCustomIconFont_Click" />
+    <br />
+    <br />
+        只有图片的按钮：
+    <br />
+    <br />
+    <f:Button ID="Button1" IconFont="_Android" CssClass="marginr" />
+    <f:Button ID="Button2" IconFont="_Apple" CssClass="marginr" />
+    <f:Button ID="Button7" IconFont="_Car" CssClass="marginr" />
+    <f:Button ID="Button8" IconFont="_Card" CssClass="marginr" />
+    <br />
+    <br />
+        大按钮：
+    <br />
+    <br />
+    <f:Button ID="Button3" Size="Large" Text="图标在左侧" IconFont="_Home" CssClass="marginr" />
+    <f:Button ID="Button4" Size="Large" Text="图标在右侧" IconAlign="Right" IconFont="_Car" />
+    <br />
+    <br />
+    <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" IconFont="_Camera" CssClass="marginr" />
+    <f:Button ID="Button6" Size="Large" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" />
+    <br />
+    <br />
+}
+

@@ -1,0 +1,99 @@
+@page
+@model FineUI.Core.Examples.Pages.GridRowHeight.GridFixedRowHeightRowHeightLinesLineWrapModel
+@{
+    ViewBag.Title = "GridRowHeight/GridFixedRowHeightRowHeightLinesLineWrap";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .f-grid-row .f-grid-cell-text {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()"
+            FixedRowHeight="true" RowHeightLines="3">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField ColumnID="Desc" Width="400" DataField="Desc" HeaderText="个人简介" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br />
+    <br />
+        手工设置行高时：
+    <ul>
+        <li>尽量将行高设置为默认行高的整数倍，防止文字换行时被部分遮挡的问题。</li>
+        <li>使用 RowHeightLines 属性可以快速设置所有显示模式下的行高（容纳几行文字）。</li>
+    </ul>
+    <br />
+    <br />
+    <table class="result" style="width: 850px;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>默认行高（px）</th>
+                <th>
+                    设置的行高可以容纳 3 行文字<br />
+                    RowHeightLines=3
+                </th>
+                <th>计算的行高（px）</th>
+            </tr>
+            <tr>
+                <td>紧凑模式</td>
+                <td>16</td>
+                <td>-</td>
+                <td>16 * 3 = 48</td>
+            </tr>
+            <tr>
+                <td>小字体模式</td>
+                <td>16</td>
+                <td>-</td>
+                <td>16 * 3 = 48</td>
+            </tr>
+            <tr>
+                <td>普通模式</td>
+                <td>20</td>
+                <td>-</td>
+                <td>20 * 3 = 60</td>
+            </tr>
+            <tr>
+                <td>大间距模式</td>
+                <td>24</td>
+                <td>-</td>
+                <td>24 * 3 = 72</td>
+            </tr>
+            <tr>
+                <td>大字体模式</td>
+                <td>24</td>
+                <td>-</td>
+                <td>24 * 3 = 72</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

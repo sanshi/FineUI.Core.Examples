@@ -1,0 +1,82 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.FormModel
+@{
+    ViewBag.Title = "Window/Form";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true"
+              EnableCollapse="false" EnableResize="true" BodyPadding="10" Layout="Fit" IsModal="false">
+        <Items>
+            <f:Form BodyPadding="10" ID="Form2" LabelWidth="100" ShowBorder="false" ShowHeader="false" Title="表单 1">
+                <Rows>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:Label ID="Label1" Label="标签" Text="标签的值">
+                            </f:Label>
+                            <f:CheckBox ID="CheckBox1" Text="复选框" Label="复选框">
+                            </f:CheckBox>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:DropDownList ID="DropDownList1" Label="下拉列表" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                                <f:ListItem Text="可选项1" Value="Value1" />
+                                <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
+                                <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
+                                <f:ListItem Text="可选项4" Value="Value4" />
+                                <f:ListItem Text="可选项5" Value="Value5" />
+                                <f:ListItem Text="可选项6" Value="Value6" />
+                                <f:ListItem Text="可选择项7" Value="Value7" />
+                                <f:ListItem Text="可选择项8" Value="Value8" />
+                            </f:DropDownList>
+                            <f:TextBox ID="TextBox1" ShowRedStar="true" Label="文本框" Required="true" Text="">
+                            </f:TextBox>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar3" Position="Top">
+                <Items>
+                    <f:ToolbarText Text="工具条文本一" ID="ToolbarText3">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator ID="ToolbarSeparator2">
+                    </f:ToolbarSeparator>
+                    <f:ToolbarText Text="工具条文本二" ID="ToolbarText4">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator ID="ToolbarSeparator1">
+                    </f:ToolbarSeparator>
+                    <f:Button ID="Button1" Text="工具栏按钮" ClickHandler="onToolbarButtonClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button Text="验证此表单并提交" _ValidateForms="Form2" ID="btnSubmit" OnClick="btnSubmit_Click"></f:Button>
+                    <f:Button ID="btnClose" ClickHandler="onCloseWindow1Click" Text="关闭窗体"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onToolbarButtonClick(event) {
+            F.alert('你点击了工具栏按钮。');
+        }
+
+        function onCloseWindow1Click(event) {
+            F.ui.Window1.hide();
+        }
+
+    </script>
+}

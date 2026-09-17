@@ -1,0 +1,59 @@
+@page
+@model FineUI.Core.Examples.Pages.CSP.GridModel
+@{
+    ViewBag.Title = "CSP/Grid";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    @{
+        F.PageManager.CspScripts(true).CspScriptsAllowNonce(true).CspScriptsAllowUrls(new string[] { "cdn.jsdelivr.net", "unpkg.com" });
+    }
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/underscore@1.13.7/underscore-umd-min.js"></script>
+
+
+    <script nonce="@PageManager.Instance.CspScriptsNonceValue" type="text/javascript">
+
+        function renderGender(value, params) {
+            return value == 1 ? '男' : '女';
+        }
+
+        function onShowSelectedNamesClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+            } else {
+                var selectedRowTexts = _.map(grid1.getSelectedRows(true), function(rowData, index) {
+                    return rowData.text;
+                });
+                F.alert(F.formatString('选中的项：{0}', selectedRowTexts.join(', ')));
+            }
+        }
+
+    </script>
+}

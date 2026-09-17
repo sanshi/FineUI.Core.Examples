@@ -1,0 +1,53 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.HeaderChangeTextWidthModel
+@{
+    ViewBag.Title = "Grid/HeaderChangeTextWidth";
+    var F = Html.F();
+}
+
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+
+    <f:Button ID="Button1" CssClass="marginr" Text="修改[入学年份]的标题文本和宽度" OnClick="Button1_Click"></f:Button>
+    <f:Button ID="Button2" Text="还原[入学年份]" OnClick="Button2_Click"></f:Button>
+    <br>
+    <br>
+    注：后台通过注册 JavaScript 代码来改变列的宽度和标题文本。
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 改变列的标题文本和宽度
+        function changeColumnTitleAndWidth(title, width) {
+            var grid1 = F.ui.Grid1;
+
+            var entranceYearColumn = grid1.getColumn('EntranceYear');
+            entranceYearColumn.text = title;
+            entranceYearColumn.width = width;
+
+            grid1.loadData();
+        }
+
+    </script>
+}

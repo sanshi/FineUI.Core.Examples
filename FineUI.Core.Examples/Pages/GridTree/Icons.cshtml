@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.IconsModel
+@{
+    ViewBag.Title = "GridTree/Icons";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <br />
+    <br />
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowDataBound(rowData) {
+            var rowId = rowData.id;
+
+            // 默认展开的节点
+            if (rowId === '50' || rowId === '60' || rowId === '63' || rowId === '64') {
+                rowData.expanded = true;
+            }
+
+            var name = rowData.values.Name;
+            var lastDotIndex = name.lastIndexOf('.');
+            if (lastDotIndex >= 0)
+            {
+                var fileType = name.substr(lastDotIndex + 1).toLowerCase();
+
+                if (fileType === 'png' || fileType === 'ico' || fileType === 'gif')
+                {
+                    rowData.iconFont = 'f-iconfont-pic';
+                }
+                else
+                {
+                    rowData.icon = F.formatString('@Url.Content("~/res/images/filetype/vs_{0}.png")', fileType);
+                }
+            }
+        }
+
+    </script>
+}

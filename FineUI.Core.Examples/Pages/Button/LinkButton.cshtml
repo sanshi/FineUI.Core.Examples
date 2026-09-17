@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.LinkButtonModel
+@{
+    ViewBag.Title = "Button/LinkButton";
+    var F = Html.F();
+}
+
+@section body {
+    <f:LinkButton ID="LinkButton2" Text="客户端事件" ClickHandler="onClientEventClick">
+    </f:LinkButton>
+    <br />
+    <f:LinkButton ID="LinkButton3" Text="服务器端事件" OnClick="LinkButton3_Click">
+    </f:LinkButton>
+    <br />
+    <br />
+    <f:LinkButton ID="LinkButton1" Enabled="false" Text="客户端事件（初始禁用）" ClickHandler="onLinkButtonClick">
+    </f:LinkButton>
+    <br />
+    <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个链接按钮" OnClick="btnChangeEnable_Click" />
+
+}
+
+@section script {
+    <script>
+        function onLinkButtonClick(event) {
+            top.F.alert("这是初始禁用的链接按钮的客户端事件！");
+        }
+
+        function onClientEventClick(event) {
+            F.alert({ message: '这是客户端事件', messageIcon: 'information', target: '_top' });
+        }
+    </script>
+}

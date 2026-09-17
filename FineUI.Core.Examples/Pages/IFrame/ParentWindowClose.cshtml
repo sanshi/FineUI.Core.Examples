@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.IFrame.ParentWindowCloseModel
+@{
+    ViewBag.SourceFiles = "~/IFrame/ParentWindowClose/IFrameWindow1;~/IFrame/ParentWindowClose/IFrameWindow2";
+    ViewBag.Title = "IFrame/ParentWindowClose";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    页面一：IFrame/ParentWindowClose/Index
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false" Text="@DateTime.Now.ToLongTimeString()">
+    </f:Label>
+    <br />
+    <f:Button ID="Button2" Text="刷新面板一中的IFrame" ClickHandler="onRefreshIFrameClick"></f:Button>
+    <br />
+    <br />
+    <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Height="500" EnableIFrame="true" IFrameUrl="@Url.Content("~/IFrame/ParentWindowClose/IFrameWindow1")"
+             ShowHeader="true" Title="面板一">
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function updateLabelResult() {
+
+            F.ui.labResult.setValue(F.formatDate('HH:mm:ss', new Date));
+
+        }
+
+        function onRefreshIFrameClick(event) {
+            F.ui.Panel1.refreshIFrame();
+        }
+
+    </script>
+
+}

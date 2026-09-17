@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.Pages.Editor.UEditorModel
+@{
+    ViewBag.Title = "Editor/UEditor";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="表单">
+        <Items>
+            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1" Readonly="true"
+                          Editor="UEditor" BasePath="@Url.Content("~/res/third-party/ueditor/")" ToolbarSet="Full" Height="350" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+            </f:HtmlEditor>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Button ID="Button2" CssClass="marginr" Text="设置编辑器的值" OnClick="Button2_Click"></f:Button>
+    <f:Button ID="Button1" Text="获取编辑器的值" OnClick="Button1_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button3" CssClass="marginr" Text="设置编辑器只读" ClickHandler="onSetReadonlyClick"></f:Button>
+    <f:Button ID="Button4" Text="取消编辑器只读" ClickHandler="onCancelReadonlyClick"></f:Button>
+
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>默认编辑器处于只读状态。</li>
+        <li>本示例不支持文件上传，请根据UEditor官网文档自行配置。</li>
+    </ul>
+
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onSetReadonlyClick(event) {
+            F.ui.HtmlEditor1.setReadonly(true);
+        }
+
+        function onCancelReadonlyClick(event) {
+            F.ui.HtmlEditor1.setReadonly(false);
+        }
+
+    </script>
+}

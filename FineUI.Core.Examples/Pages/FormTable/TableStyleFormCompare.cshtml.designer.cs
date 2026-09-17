@@ -1,0 +1,27 @@
+//------------------------------------------------------------------------------
+// 此文件由 FineUI.Core 设计时工具自动生成。
+// 重新生成会覆盖手工修改。
+// 在 .cshtml 中加入 //NoRazorForms 可禁止生成此文件。
+//------------------------------------------------------------------------------
+
+namespace FineUI.Core.Examples.Pages.FormTable
+{
+	public partial class TableStyleFormCompareModel
+	{
+		protected FineUI.Core.SimpleForm SimpleForm1;
+		protected FineUI.Core.SimpleForm SimpleForm3;
+		protected FineUI.Core.DatePicker DatePicker1;
+		protected FineUI.Core.DatePicker DatePicker2;
+		protected FineUI.Core.SimpleForm SimpleForm2;
+		protected FineUI.Core.TextBox TextBox1;
+		protected FineUI.Core.TextBox TextBox2;
+		protected FineUI.Core.SimpleForm SimpleForm4;
+		protected FineUI.Core.NumberBox NumberBox1;
+		protected FineUI.Core.NumberBox NumberBox2;
+		protected FineUI.Core.SimpleForm SimpleForm5;
+		protected FineUI.Core.Label Label1;
+		protected FineUI.Core.NumberBox NumberBox3;
+		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Button btnReset;
+	}
+}

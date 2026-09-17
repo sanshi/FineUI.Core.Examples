@@ -1,0 +1,211 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.UpdateCellValueTaxUpdateSummaryModel
+@{
+    ViewBag.Title = "GridEditor/UpdateCellValueTaxUpdateSummary";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-grid-row-summary .f-grid-cell-text {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true" Height="350" EnableSummary="true" SummaryPosition="Bottom">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" DataField="Name" HeaderText="应税名称" ExpandUnusedSpace="true">
+                <Editor>
+                    <f:TextBox ID="tbxEditorName">
+                    </f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField Width="150" ColumnID="Price" DataField="Price" FieldType="Float" HeaderText="金额（不含税）">
+                <Editor>
+                    <f:NumberBox ID="TextBox1" NoDecimal="false" NoNegative="true" Required="true">
+                    </f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField Width="150" ColumnID="PriceWithTax" DataField="PriceWithTax" FieldType="Float" HeaderText="金额（含税）">
+                <Editor>
+                    <f:NumberBox ID="NumberBox1" NoDecimal="false" NoNegative="true" Required="true">
+                    </f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField ColumnID="TaxPercent" DataField="TaxPercent" FieldType="Float" HeaderText="征收率">
+            </f:RenderField>
+            <f:RenderField Width="150" ColumnID="Tax" DataField="Tax" FieldType="Float" HeaderText="税额">
+                <Editor>
+                    <f:NumberBox ID="NumberBox2" NoDecimal="false" NoNegative="true" Required="true">
+                    </f:NumberBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="afteredit" Handler="onGrid1AfterEdit"></f:Listener>
+            <f:Listener Event="dataload" Handler="onGrid1DataLoad"></f:Listener>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                    <f:ToolbarFill></f:ToolbarFill>
+                    <f:Button ID="btnReset" Text="重置表格数据" ClickHandler="onResetClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+    <br>
+    <f:Button ID="btnSubmit" Text="保存数据" ClickHandler="onSubmitClick"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+    <br />
+    注：编辑[金额（不含税）]、[金额（含税）]、[税额]中的任一列，其他两列的值都会相应的改变。
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function updateSummary() {
+            var grid1 = F.ui.Grid1, priceTotal = 0, priceWithTaxTotal = 0, taxTotal = 0;
+            grid1.getRowEls().each(function (index, tr) {
+                var price = grid1.getCellValue(tr, 'Price');
+                var priceWithTax = grid1.getCellValue(tr, 'PriceWithTax');
+                var tax = grid1.getCellValue(tr, 'Tax');
+
+                price = isNaN(price) ? 0 : price;
+                priceWithTax = isNaN(priceWithTax) ? 0 : priceWithTax;
+                tax = isNaN(tax) ? 0 : tax;
+
+                priceTotal += price;
+                priceWithTaxTotal += priceWithTax;
+                taxTotal += tax;
+            });
+
+            // 第三个参数 true，强制更新，不显示左上角的更改标识
+            grid1.updateSummaryCellValue('Price', priceTotal.toFixed(2), true);
+            grid1.updateSummaryCellValue('PriceWithTax', priceWithTaxTotal.toFixed(2), true);
+            grid1.updateSummaryCellValue('Tax', taxTotal.toFixed(2), true);
+        }
+
+
+        // 表格数据加载后，重新计算合计行
+        function onGrid1DataLoad(event) {
+            updateSummary();
+        }
+
+        function onGrid1AfterEdit(event, value, params) {
+            var grid1 = this, columnId = params.columnId, rowId = params.rowId;
+
+            // 本次操作过程中禁止触发事件（防止循环事件）
+            F.noEvent(function () {
+                if (columnId === 'Price') {
+                    var priceWithTax = (value * 1.03).toFixed(2);
+                    var tax = (parseFloat(priceWithTax) - value).toFixed(2);
+
+                    grid1.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
+                    grid1.updateCellValue(rowId, 'Tax', tax);
+                } else if (columnId === 'PriceWithTax') {
+                    var price = (value / 1.03).toFixed(2);
+                    var tax = (value - parseFloat(price)).toFixed(2);
+
+                    grid1.updateCellValue(rowId, 'Price', price);
+                    grid1.updateCellValue(rowId, 'Tax', tax);
+                } else if (columnId === 'Tax') {
+                    var price = (value / 0.03).toFixed(2);
+                    var priceWithTax = (value + parseFloat(price)).toFixed(2);
+
+                    grid1.updateCellValue(rowId, 'Price', price);
+                    grid1.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
+                }
+
+                // 更新合计行
+                updateSummary();
+            });
+        }
+
+
+        function onSubmitClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 触发后台事件
+            F.customEvent('Submit_Click', {
+                mergedData: grid1.getMergedData()
+            });
+        }
+
+        function onNewClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            // 新增一行（返回新增行的ID）
+            var addedRowId = grid1.addNewRecord({
+                'Name': '技术服务',
+                'TaxPercent': 0.03,
+            }, true);
+
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function () {
+                    F.ui.Grid1.rejectChanges();
+                }
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+            if (!grid1.hasSelection()) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var selectedRows = grid1.getSelectedRows();
+            F.confirm({
+                message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;行数据吗？'),
+                target: '_top',
+                ok: function () {
+                    grid1.deleteRows(selectedRows);
+                }
+            });
+        }
+
+
+        // 行命令
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+        F.ready(function () {
+
+            // 初始增加一个空白行
+            onNewClick();
+
+        });
+
+    </script>
+}

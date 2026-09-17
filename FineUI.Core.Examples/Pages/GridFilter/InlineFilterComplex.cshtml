@@ -1,0 +1,110 @@
+@page
+@model FineUI.Core.Examples.Pages.GridFilter.InlineFilterComplexModel
+@{
+    ViewBag.Title = "GridFilter/InlineFilterComplex";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            AllowFilters="true" InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" Width="200" EnableFilter="true">
+                <Filter EnableMultiConditions="true" MatcherDefault="any">
+                    <Operator>
+                        <f:DropDownList>
+                            <f:ListItem Text="等于" Value="equal" />
+                            <f:ListItem Text="包含" Value="contain" Selected="true" />
+                            <f:ListItem Text="开始于" Value="start" />
+                            <f:ListItem Text="结束于" Value="end" />
+                        </f:DropDownList>
+                    </Operator>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Width="200" EnableFilter="true">
+                <Filter>
+                    <Field>
+                        <f:DropDownList AutoSelectFirstItem="false">
+                            <f:ListItem Text="男" Value="1" />
+                            <f:ListItem Text="女" Value="0" />
+                        </f:DropDownList>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" Width="200" EnableFilter="true">
+                <Filter EnableMultiConditions="true">
+                    <Operator>
+                        <f:DropDownList>
+                            <f:ListItem Text="大于" Value="greater" Selected="true" />
+                            <f:ListItem Text="小于" Value="less" />
+                            <f:ListItem Text="等于" Value="equal" />
+                        </f:DropDownList>
+                    </Operator>
+                    <Field>
+                        <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderCheckField ColumnID="AtSchool" HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" Width="200" EnableFilter="true">
+                <Filter>
+                    <Field>
+                        <f:DropDownList AutoSelectFirstItem="false">
+                            <f:ListItem Text="在校" Value="true" />
+                            <f:ListItem Text="已离校" Value="false" />
+                        </f:DropDownList>
+                    </Field>
+                </Filter>
+            </f:RenderCheckField>
+            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="200" EnableFilter="true">
+                <Filter>
+                    <Field>
+                        <f:DropDownList AutoSelectFirstItem="false" EnableMultiSelect="true" MultiSelectMode="Tags">
+                            <f:ListItem Text="材料科学与工程系" Value="材料科学与工程系" />
+                            <f:ListItem Text="化学系" Value="化学系" />
+                            <f:ListItem Text="物理系" Value="物理系" />
+                            <f:ListItem Text="数学系" Value="数学系" />
+                            <f:ListItem Text="自动化系" Value="自动化系" />
+                        </f:DropDownList>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" Width="260" EnableFilter="true">
+                <Filter>
+                    <Field>
+                        <f:DropDownList ID="groupList" EnableMultiSelect="true" AutoSelectFirstItem="false" MultiSelectMode="Tags">
+                        </f:DropDownList>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+            <f:RenderField ColumnID="LogTime" HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="200" EnableFilter="true">
+                <Filter EnableMultiConditions="true">
+                    <Operator>
+                        <f:DropDownList>
+                            <f:ListItem Text="大于" Value="greater" Selected="true" />
+                            <f:ListItem Text="小于" Value="less" />
+                            <f:ListItem Text="等于" Value="equal" />
+                        </f:DropDownList>
+                    </Operator>
+                    <Field>
+                        <f:DatePicker DateFormatString="yyyy/MM/dd"></f:DatePicker>
+                    </Field>
+                </Filter>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

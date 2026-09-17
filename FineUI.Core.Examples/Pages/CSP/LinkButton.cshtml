@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.CSP.LinkButtonModel
+@{
+    ViewBag.Title = "CSP/LinkButton";
+    var F = Html.F();
+}
+
+@section body {
+
+    @{
+        F.PageManager.CspScripts(true).CspScriptsAllowNonce(true);
+    }
+
+    @* 严格 CSP（script-src 去 'unsafe-inline'、仅 nonce）下，LinkButton / HyperLink 的点击脚本
+       由服务端下发的 handler 函数在 click 监听里执行（随 nonce 脚本解析），不再拼客户端内联 onclick，
+       故不会触发 CSP violation。 *@
+
+    <f:LinkButton ID="lbServer" Text="链接按钮 - 服务器端事件" OnClick="lbServer_Click" />
+    <br />
+    <br />
+    <f:LinkButton ID="lbConfirm" Text="链接按钮 - 确认后回发" OnClick="lbConfirm_Click" ConfirmText="确定要继续吗？" />
+    <br />
+    <br />
+    <f:LinkButton ID="lbClient" Text="链接按钮 - 客户端脚本" ClickHandler="onShowClientMsgClick" />
+    <br />
+    <br />
+    <f:HyperLink ID="hlNav" Text="超链接 - 新窗口导航" NavigateUrl="https://www.fineui.com/" Target="_blank" />
+
+}
+
+@section script {
+
+    <script nonce="@PageManager.Instance.CspScriptsNonceValue" type="text/javascript">
+
+        function onShowClientMsgClick(event) {
+            top.F.alert('链接控件客户端脚本已执行');
+        }
+
+    </script>
+
+}

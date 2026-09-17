@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.CheckFieldModel
+@{
+    ViewBag.Title = "Grid/CheckField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool2" DataField="AtSchool" RenderAsStaticField="false" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" MarginRight="5" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button Text="选中行复选框的状态" ClickHandler="onNotifyCheckFieldStatusClick"></f:Button>
+    
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onNotifyCheckFieldStatusClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            var rowEls = grid1.getSelectedRowEls();
+            if (!rowEls.length) {
+                F.alert('没有选中项！');
+                return;
+            }
+
+            var result = ['<table class="result">'];
+            result.push('<tr>');
+            result.push('<th>ID</th>');
+            result.push('<th>姓名</th>');
+            result.push('<th>是否在校</th>');
+            result.push('</tr>');
+            rowEls.each(function () {
+                var cnode = $(this);
+                var rowData = grid1.getRowData(cnode);
+                var atSchoolEl = cnode.find('.f-grid-cell-AtSchool2 .f-grid-checkbox');
+                var isChecked = atSchoolEl.hasClass('f-checked');
+
+                result.push('<tr>');
+                result.push('<td>' + rowData.id + '</td>');
+                result.push('<td>' + rowData.text + '</td>');
+                result.push('<td>' + (isChecked ? '在校' : '不在校') + '</td>');
+                result.push('</tr>');
+            });
+            result.push('</table>');
+
+            F.notify({
+                message: F.rawHtml(result.join('')),
+                target: '_top',
+                header: false,
+                messageIcon: '',
+                positionX: 'center',
+                positionY: 'top'
+            });
+        }
+
+    </script>
+}

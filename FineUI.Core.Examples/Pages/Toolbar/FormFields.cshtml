@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Toolbar.FormFieldsModel
+@{
+    ViewBag.Title = "Toolbar/FormFields";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" DataIDField="Id" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" Height="500" EnableCollapse="false">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" ToolbarAlign="Right">
+                <Items>
+                    <f:DatePicker Width="300" Required="true" DateFormatString="yyyy/MM/dd"
+                                  LabelWidth="120" LabelAlign="LabelAlign.Right" Label="销毁统计时间段" EmptyText="请选择开始日期" ID="dpStartDate" EnableEdit="false">
+                    </f:DatePicker>
+                    <f:DatePicker ID="dpEndDate" Width="180" Required="true" Readonly="false"
+                                  CompareControl="dpStartDate" DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
+                                  ShowLabel="false" Label="销毁统计时间段" EnableEdit="false">
+                    </f:DatePicker>
+                    <f:Button ID="btnClearDate" Text="重置起止时间" OnClick="btnClearDate_Click"></f:Button>
+                    <f:ToolbarSeparator></f:ToolbarSeparator>
+                    <f:Button ID="btnSearch" Text="查询" _ValidateForms="Toolbar1" OnClick="btnSearch_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

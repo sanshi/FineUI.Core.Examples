@@ -1,0 +1,112 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.NotifyModel
+@{
+    ViewBag.Title = "Message/Notify";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Form ID="SimpleForm1" IsFluid="true" Title="创建通知对话框" LabelWidth="200" BodyPadding="10">
+        <Items>
+            <f:GroupPanel ID="GroupPanel2" Layout="Anchor" Title="常用属性">
+                <Items>
+                    <f:TextBox ID="tbxMessage" Required="true" ShowRedStar="true" Label="消息提示" Text="数据保存成功！">
+                    </f:TextBox>
+                    <f:NumberBox ID="nbDisplayMilliseconds" Label="显示的毫秒数（0不消失）" Required="true"
+                                 ShowRedStar="true" NoDecimal="true" NoNegative="true" MaxValue="60000" Text="5000"></f:NumberBox>
+                    <f:CheckBox ID="cbxDisplayProgress" Checked="true" Label="是否显示倒计时进度条"></f:CheckBox>
+                    <f:CheckBox ID="cbxShowLoading" Checked="false" Label="是否显示正在加载图片"></f:CheckBox>
+                    <f:CheckBox ID="cbxIsModal" Checked="false" Label="是否模式对话框"></f:CheckBox>
+                </Items>
+            </f:GroupPanel>
+            <f:GroupPanel ID="GroupPanel4" Layout="Anchor" Title="位置与排列">
+                <Items>
+                    <f:TextBox ID="tbxBodyPadding" Label="正文区域内边距" Text="10px">
+                    </f:TextBox>
+                    <f:DropDownList ID="ddlPositionX" Label="横向显示位置">
+                        <f:ListItem Value="Left" Text="左侧" />
+                        <f:ListItem Value="Center" Text="中间" />
+                        <f:ListItem Value="Right" Text="右侧" Selected="true" />
+                    </f:DropDownList>
+                    <f:DropDownList ID="ddlPositionY" Label="纵向显示位置">
+                        <f:ListItem Value="Top" Text="顶部" />
+                        <f:ListItem Value="Center" Text="中间" />
+                        <f:ListItem Value="Bottom" Text="底部" Selected="true" />
+                    </f:DropDownList>
+                    <f:DropDownList ID="ddlMessageAlign" Label="正文排列位置">
+                        <f:ListItem Value="Left" Text="靠左" Selected="true" />
+                        <f:ListItem Value="Center" Text="居中" />
+                        <f:ListItem Value="Right" Text="靠右" />
+                    </f:DropDownList>
+                </Items>
+            </f:GroupPanel>
+
+            <f:GroupPanel ID="GroupPanel1" Layout="Anchor" Title="标题栏设置">
+                <Items>
+                    <f:CheckBox ID="cbxShowHeader" Checked="true" Label="是否显示标题栏">
+                        <Listeners>
+                            <f:Listener Event="change" Handler="onShowHeaderChange"></f:Listener>
+                        </Listeners>
+                    </f:CheckBox>
+                    <f:TextBox ID="tbxTitle" Label="对话框标题" Text="">
+                    </f:TextBox>
+                    <f:CheckBox ID="cbxEnableDrag" Checked="true" Label="是否可移动"></f:CheckBox>
+                    <f:CheckBox ID="cbxEnableClose" Checked="true" Label="是否可关闭"></f:CheckBox>
+                </Items>
+            </f:GroupPanel>
+
+            <f:GroupPanel ID="GroupPanel3" Layout="Anchor" Title="其它属性">
+                <Items>
+                    <f:TextBox ID="tbxID" Label="对话框ID"></f:TextBox>
+                    <f:NumberBox ID="nbWidth" NoDecimal="true" NoNegative="true" Label="对话框宽度" MinValue="200" MaxValue="900"></f:NumberBox>
+                    <f:NumberBox ID="nbMinWidth" NoDecimal="true" NoNegative="true" Label="对话框最小宽度"></f:NumberBox>
+                    <f:NumberBox ID="nbMaxWidth" NoDecimal="true" NoNegative="true" Label="对话框最大宽度"></f:NumberBox>
+                    <f:DropDownList ID="ddlMessageBoxIcon" Label="消息图标">
+                        <f:ListItem Value="None" Text="无图标" Selected="true" />
+                        <f:ListItem Value="Information" Text="消息" />
+                        <f:ListItem Value="Warning" Text="警告" />
+                        <f:ListItem Value="Question" Text="问题" />
+                        <f:ListItem Value="Error" Text="错误" />
+                        <f:ListItem Value="Success" Text="成功" />
+                    </f:DropDownList>
+                    <f:DropDownList ID="ddlTarget" Label="弹出位置">
+                        <f:ListItem Value="Self" Text="当前页面" Selected="true" />
+                        <f:ListItem Value="Parent" Text="父页面" />
+                        <f:ListItem Value="Top" Text="顶层页面" />
+                    </f:DropDownList>
+                </Items>
+            </f:GroupPanel>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button Text="点击弹出通知对话框" ID="btnHello" _ValidateForms="SimpleForm1" OnClick="btnSubmit_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Form>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onShowHeaderChange(event) {
+            var checked = this.getValue();
+
+            F.ui.tbxTitle.setHidden(!checked);
+            F.ui.cbxEnableDrag.setHidden(!checked);
+            F.ui.cbxEnableClose.setHidden(!checked);
+        }
+
+        function notifyHideCallback() {
+            F.notify('通知框消失了！');
+        }
+
+    </script>
+}

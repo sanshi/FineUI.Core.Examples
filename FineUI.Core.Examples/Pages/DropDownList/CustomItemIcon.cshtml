@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.CustomItemIconModel
+@{
+    ViewBag.Title = "DropDownList/CustomItemIcon";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        ul.f-field-dropdownlist-pop img {
+            vertical-align: middle;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="列表项图标" ShowHeader="true">
+        <Items>
+            <f:DropDownList ID="DropDownList1">
+                <f:ListItem Text="中国" Value="cn" Selected="true" />
+                <f:ListItem Text="法国" Value="fr" />
+                <f:ListItem Text="美国" Value="us" />
+                <f:ListItem Text="英国" Value="england" />
+                <f:ListItem Text="澳大利亚" Value="au" />
+                <f:ListItem Text="意大利" Value="it" />
+                <f:ListItem Text="加拿大" Value="ca" />
+            </f:DropDownList>
+
+            <f:Button ID="btnSelectItem6" Text="选中“澳大利亚”" CssClass="marginr" OnClick="btnSelectItem6_Click"></f:Button>
+            <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+    <br />
+    <br />
+
+}
+
+

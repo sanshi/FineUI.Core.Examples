@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.TreeShowSelectedNodeModel
+@{
+    ViewBag.Title = "Tree/TreeShowSelectedNode";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false"
+            ShowSelectedNode="false" EnableNodeHoverState="false">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true" NodeID="china">
+                <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
+                    <f:TreeNode Text="驻马店市" NodeID="zhumadian">
+                        <f:TreeNode Text="遂平县" Leaf="false" NodeID="suiping">
+                            <f:TreeNode Text="槐树乡" Leaf="false" NodeID="huaishu">
+                                <f:TreeNode Text="陈庄村" NodeID="chenzhuang">
+                                </f:TreeNode>
+                            </f:TreeNode>
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="luohe" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui">
+                    <f:TreeNode Text="合肥市" Expanded="true" NodeID="hefei">
+                        <f:TreeNode Text="金色池塘小区" NodeID="golden">
+                        </f:TreeNode>
+                        <f:TreeNode Text="中国科学技术大学" NodeID="ustc">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+
+}
+

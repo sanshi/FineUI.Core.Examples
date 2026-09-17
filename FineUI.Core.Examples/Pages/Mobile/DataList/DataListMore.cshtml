@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.DataList.DataListMoreModel
+@{
+    ViewBag.Title = "MobileDataList/DataListMore";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+    <style>
+        .item-desc {
+            word-break: break-all;
+            white-space: normal;
+        }
+
+        .morebutton {
+            width: 100%;
+            text-align: center;
+            margin: 8px 0;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1">
+            </f:DataList>
+            <f:LinkButton CssClass="morebutton" Text="加载更多..." ID="btnMore" OnClick="btnMore_Click"></f:LinkButton>
+        </Items>
+    </f:Panel>
+
+
+}
+

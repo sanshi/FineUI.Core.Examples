@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.GridNav.VerticalTabModel
+@{
+    ViewBag.Title = "GridNav/VerticalTab";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableCheckBoxSelect="true"
+            ShowSelectedCell="true" ShowSelectedRow="false" EnableRowHoverState="false" TabVerticalNavigate="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br>
+    <br>
+    快捷键说明：
+    <ul>
+        <li>方向键在单元格之间导航</li>
+        <li>
+            设置 TabVerticalNavigate=true 之后，Tab键在垂直方向上导航：
+            <ul>
+                <li>Tab键转到当前列的下一个单元格（如果当前位于某一列的最后一个单元格，则会跳转到下一列的第一个单元格）</li>
+                <li>Shift+Tab键回退到当前列的上一个单元格（如果当前位于某一列的第一个单元格，则会跳转到上一列的最后一个单元格）</li>
+            </ul>
+        </li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

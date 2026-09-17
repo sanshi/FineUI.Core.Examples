@@ -1,0 +1,83 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.ExcelGroupFieldModel
+@{
+    ViewBag.Title = "Grid/ExcelGroupField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:GroupField HeaderText="分组一" TextAlign="Center">
+                <Columns>
+                    <f:RenderField HeaderText="姓名" DataField="Name" />
+                    <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                    <f:GroupField HeaderText="考试成绩" TextAlign="Center">
+                        <Columns>
+                            <f:RenderField HeaderText="语文成绩" DataField="ChineseScore" TextAlign="Center" />
+                            <f:RenderField HeaderText="数学成绩" DataField="MathScore" TextAlign="Center" />
+                            <f:RenderField HeaderText="总成绩" DataField="TotalScore" TextAlign="Center" />
+                        </Columns>
+                    </f:GroupField>
+                </Columns>
+            </f:GroupField>
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="导出为Excel文件" ClickHandler="onButton1Click"></f:Button>
+
+
+    <!-- 隐藏表单，用于自定义POST请求 -->
+    <form id="myform" asp-page-handler="ExportToExcel" method="post">
+        <input type="hidden" id="content" name="content" />
+    </form>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function getResolvedColumns(columns) {
+            var result = [];
+            for (var i = 0, count = columns.length; i < count; i++) {
+                var column = columns[i];
+
+                var columnResult = {
+                    text: column.text
+                    //columnType: column.columnType,
+                    //columnId: column.columnId
+                };
+
+                if (column.columns) {
+                    columnResult.columns = getResolvedColumns(column.columns);
+                }
+
+                result.push(columnResult);
+            }
+            return result;
+        }
+
+        function getColumns() {
+            return getResolvedColumns(F.ui.Grid1.columns);
+        }
+
+
+        function onButton1Click(event) {
+            // 自定义POST请求
+            $('#content').val(F.toJSON(getColumns()));
+            $('#myform')[0].submit();
+        }
+
+    </script>
+}

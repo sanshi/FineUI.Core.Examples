@@ -1,0 +1,181 @@
+@page
+@model FineUI.Core.Examples.Pages.Home.SourceModel
+@{
+    ViewBag.Title = "Source";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        iframe {
+            padding: 0px;
+            margin: 0px;
+        }
+		.f-tab-header .f-panel-title-text {
+            font-family: Consolas, Courier New, monospace;
+        }
+    </style>
+}
+
+
+@functions{
+
+    private string GetShortFileName(string fileName)
+    {
+        int index = fileName.LastIndexOf("/");
+
+        if (index >= 0)
+        {
+            return fileName.Substring(index + 1);
+        }
+
+        return fileName;
+    }
+
+
+    private string GetIconUrl(string url)
+    {
+        string suffix = url.Substring(url.LastIndexOf('.') + 1);
+        return Url.Content("~/res/images/filetype/vs_" + suffix + ".png");
+    }
+
+    // 当前页面的网址会带应用根路径；拆成 Pages/目录/页面.cshtml 前先把这段前缀去掉，
+    // 否则 /core/demo/Block/Dashboard 会被拼成 Pages/core/demo/Block/Dashboard.cshtml。
+    private string StripPathBase(string fileName)
+    {
+        string pathBase = HttpContext.Request.PathBase.Value;
+        if (!String.IsNullOrEmpty(pathBase) && !String.IsNullOrEmpty(fileName)
+            && fileName.StartsWith(pathBase, StringComparison.OrdinalIgnoreCase)
+            && (fileName.Length == pathBase.Length || fileName[pathBase.Length] == '/'))
+        {
+            fileName = fileName.Substring(pathBase.Length);
+        }
+
+        return fileName;
+    }
+
+}
+
+
+@section body {
+
+    <f:TabStrip TabPosition="Top" ShowBorder="false" ID="TabStrip1" IsViewPort="true" ShowInkBar="true" InkBarPosition="Bottom"></f:TabStrip>
+
+    @{
+        string files = HttpContext.Request.Query["files"];
+
+        if (String.IsNullOrEmpty(files))
+        {
+            return;
+        }
+
+        if (!String.IsNullOrEmpty(files))
+        {
+            string[] fileNames = files.Split(';');
+
+            for (int i = 0; i < fileNames.Length; i++)
+            {
+                string fileName = fileNames[i].Trim();
+                if (String.IsNullOrEmpty(fileName))
+                {
+                    continue;
+                }
+
+                fileName = StripPathBase(fileName);
+
+                if (fileName.StartsWith("~"))
+                {
+                    fileName = fileName.Substring(1);
+                }
+
+
+                //// /demo_core/Mobile/?file=Mobile/Main
+                //string MOBILE_PREFIX = "/Mobile/?file=";
+                //if (fileName.Contains(MOBILE_PREFIX))
+                //{
+                //    var mobilePrefixIndex = fileName.IndexOf(MOBILE_PREFIX);
+                //    fileName = fileName.Substring(mobilePrefixIndex + MOBILE_PREFIX.Length);
+                //}
+
+                if (fileName.Contains("/Mobile/?file="))
+                {
+                    fileName = fileName.Replace("/Mobile/?file=", "/Mobile/");
+                }
+
+                // 处理编辑页面，类似 /demo_pro/grid/grid_newtab_window.aspx?id=101&name=张三
+                int lastQuestionMaskPosition = fileName.IndexOf("?");
+                if (lastQuestionMaskPosition >= 0)
+                {
+                    fileName = fileName.Substring(0, lastQuestionMaskPosition);
+                }
+
+
+
+                var TabStrip1 = F.GetControl<TabStrip>("TabStrip1");
+                Tab tab;
+
+
+                if (fileName.EndsWith(".xml") || fileName.EndsWith(".cs") || fileName.EndsWith(".cshtml") ||
+                    fileName.EndsWith(".js") || fileName.EndsWith(".css"))
+                {
+                    string filePath = Url.Content(fileName);
+                    string fileUrl = Url.Content("~/Home/SourceFile?file=" + filePath);
+
+                    tab = new Tab();
+                    tab.Title = GetShortFileName(fileName);
+                    tab.TitleToolTip = filePath;
+                    tab.EnableIFrame = true;
+                    tab.IFrameUrl = fileUrl;
+                    tab.IconUrl = GetIconUrl(fileUrl);
+                    TabStrip1.Tabs.Add(tab);
+                }
+                else
+                {
+                    // 支持子目录（Mobile也做同样处理）：
+                    // 1. /IFrame/Window
+                    // 2. /IFrame/Window/IFrameWindow
+                    // 3. /Mobile/Button/Button
+                    string[] fileNameParts = fileName.Trim('/').Split('/');
+                    if (fileNameParts.Length >= 2)
+                    {
+                        string folderName = String.Join('/', fileNameParts, 0, fileNameParts.Length - 1);
+                        string pageName = fileNameParts[fileNameParts.Length - 1];
+
+
+                        // 容错处理
+                        if (pageName.Contains("."))
+                        {
+                            continue;
+                        }
+
+
+                        string viewFilePath = Url.Content(String.Format("~/Pages/{0}/{1}.cshtml", folderName, pageName));
+                        string viewUrl = Url.Content("~/Home/SourceFile?file=" + viewFilePath);
+
+                        tab = new Tab();
+                        tab.Title = String.Format("{0}.cshtml", pageName);
+                        tab.TitleToolTip = viewFilePath;
+                        tab.EnableIFrame = true;
+                        tab.IFrameUrl = viewUrl;
+                        tab.IconUrl = GetIconUrl(viewUrl);
+                        TabStrip1.Tabs.Add(tab);
+
+
+                        string modelFilePath = Url.Content(String.Format("~/Pages/{0}/{1}.cshtml.cs", folderName, pageName));
+                        string controllerUrl = Url.Content("~/Home/SourceFile?file=" + modelFilePath);
+
+                        tab = new Tab();
+                        tab.Title = String.Format("{0}.cshtml.cs", pageName);
+                        tab.TitleToolTip = modelFilePath;
+                        tab.EnableIFrame = true;
+                        tab.IFrameUrl = controllerUrl;
+                        tab.IconUrl = GetIconUrl(controllerUrl);
+                        TabStrip1.Tabs.Add(tab);
+                    }
+                }
+            }
+        }
+
+    }
+}

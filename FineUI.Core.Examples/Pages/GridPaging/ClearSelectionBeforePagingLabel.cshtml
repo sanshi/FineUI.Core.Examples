@@ -1,0 +1,91 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.ClearSelectionBeforePagingLabelModel
+@{
+    ViewBag.Title = "GridPaging/ClearSelectionBeforePagingLabel";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="onGrid1DataLoad"></f:Listener>
+            <f:Listener Event="selectionchange" Handler="onGrid1SelectionChange"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+    <br>
+    <br>
+    注意设置属性：
+    <ul>
+        <li>DataIDField=Id：行标识符字段</li>
+        <li>ClearSelectionBeforePaging=false：分页前清空选中项（客户端）</li>
+        <li>KeepCurrentSelection=true：多选时保持当前已选中行（客户端）</li>
+        <li>KeepPagedSelection=true：多选时保持分页中已选中行（客户端）</li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 缓存的行数据
+        var cachedRows = {};
+
+        function updateLabelResult() {
+            var selectedRowIds = F.ui.Grid1.getSelectedRows();
+
+            if (!selectedRowIds.length) {
+                F.ui.labResult.setText('尚未选中行');
+            } else {
+                var result = [];
+                $.each(selectedRowIds, function (index, item) {
+                    var rowId = item, rowData = cachedRows[rowId];
+                    result.push(`${rowData.text}（${rowId}，${rowData.values['Major']}）`);
+                });
+                F.ui.labResult.setText(`选中了 <strong>${result.length}</strong> 行：${result.join(', ')}`);
+            }
+        }
+
+        // 缓存当前页选中行的数据
+        function cacheCurrentPage() {
+            // 数据库分页，并且启用了跨页保持选中行，注意如下区别：
+            // getSelectedRows()：返回所有分页选中行标识符数组，例如：['104', '108', '113']
+            // getSelectedRows(true)：返回当前页选中行数据数组，例如：[{"id":"113","text":"曹飞","values":{"Name":"曹飞","Gender":1,"EntranceYear":2008,"Major":"信息工程"}}]
+            $.each(F.ui.Grid1.getSelectedRows(true), function (index, item) {
+                var rowId = item.id;
+                if (!cachedRows[rowId]) {
+                    cachedRows[rowId] = item;
+                }
+            });
+        }
+
+        function onGrid1SelectionChange(event) {
+            cacheCurrentPage();
+            updateLabelResult();
+        }
+
+        function onGrid1DataLoad(event) {
+            cacheCurrentPage();
+            updateLabelResult();
+        }
+        
+
+    </script>
+}

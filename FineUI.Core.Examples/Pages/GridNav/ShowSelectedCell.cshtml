@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.GridNav.ShowSelectedCellModel
+@{
+    ViewBag.Title = "GridNav/ShowSelectedCell";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" 
+        ShowSelectedCell="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>方向键改变选中的单元格</li>
+        <li>Tab键转到当前行的下一个单元格（如果当前位于某一行的最后一个单元格，则会跳转到下一行的第一个单元格）</li>
+        <li>Shift+Tab键回退到当前行的上一个单元格（如果当前位于某一行的第一个单元格，则会跳转到上一行的最后一个单元格）</li>
+        <li>ShowSelectedCell：显式选中单元格样式</li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

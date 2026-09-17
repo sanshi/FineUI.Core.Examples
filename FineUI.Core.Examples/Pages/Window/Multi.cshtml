@@ -1,0 +1,150 @@
+@page
+@model FineUI.Core.Examples.Pages.Window.MultiModel
+@{
+    ViewBag.Title = "Window/Multi";
+    var F = Html.F();
+}
+
+
+@section body {
+
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <f:DropDownList ID="DropDownList1">
+                        <f:ListItem Text="窗体一" Value="1" />
+                        <f:ListItem Text="窗体二" Value="2" />
+                        <f:ListItem Text="窗体三" Value="3" />
+                    </f:DropDownList>
+                </td>
+                <td>
+                    <f:Button ID="btnShowWindow" Text="显示窗体" ClickHandler="onShowWindowClick"></f:Button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <br>
+    <br>
+    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体一" Hidden="true"
+              EnableMaximize="true" EnableCollapse="false" EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10">
+        <Items>
+            <f:Form BodyPadding="10" ID="Form2" LabelWidth="100" ShowBorder="false" ShowHeader="false" Title="表单 1">
+                <Rows>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:Label ID="Label1" Label="标签" Text="标签的值">
+                            </f:Label>
+                            <f:CheckBox ID="CheckBox1" Text="复选框" Label="复选框">
+                            </f:CheckBox>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:DropDownList ID="DropDownList2" Label="下拉列表" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                                <f:ListItem Text="可选项1" Value="Value1" />
+                                <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
+                                <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
+                                <f:ListItem Text="可选项4" Value="Value4" />
+                                <f:ListItem Text="可选项5" Value="Value5" />
+                                <f:ListItem Text="可选项6" Value="Value6" />
+                                <f:ListItem Text="可选择项7" Value="Value7" />
+                                <f:ListItem Text="可选择项8" Value="Value8" />
+                            </f:DropDownList>
+                            <f:TextBox ID="TextBox1" ShowRedStar="true" Label="文本框" Required="true" Text="">
+                            </f:TextBox>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+    </f:Window>
+    <f:Window ID="Window2" Width="650" Height="300" Icon="TagBlue" Title="窗体二" Hidden="true"
+              EnableMaximize="true" EnableCollapse="false" EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10">
+        <Items>
+            <f:Form BodyPadding="10" ID="Form3" LabelWidth="100" ShowBorder="false" ShowHeader="false" Title="表单 2">
+                <Rows>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:Label ID="Label2" Label="标签" Text="标签的值">
+                            </f:Label>
+                            <f:CheckBox ID="CheckBox2" Text="复选框" Label="复选框">
+                            </f:CheckBox>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:DropDownList ID="DropDownList3" Label="下拉列表" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                                <f:ListItem Text="可选项1" Value="Value1" />
+                                <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
+                                <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
+                                <f:ListItem Text="可选项4" Value="Value4" />
+                                <f:ListItem Text="可选项5" Value="Value5" />
+                                <f:ListItem Text="可选项6" Value="Value6" />
+                                <f:ListItem Text="可选择项7" Value="Value7" />
+                                <f:ListItem Text="可选择项8" Value="Value8" />
+                            </f:DropDownList>
+                            <f:TextBox ID="TextBox2" ShowRedStar="true" Label="文本框" Required="true" Text="">
+                            </f:TextBox>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+    </f:Window>
+    <f:Window ID="Window3" Width="650" Height="300" Icon="TagBlue" Title="窗体三"
+              EnableMaximize="true" EnableCollapse="false" EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10">
+        <Items>
+            <f:Form BodyPadding="10" ID="Form4" LabelWidth="100" ShowBorder="false" ShowHeader="false" Title="表单 3">
+                <Rows>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:Label ID="Label3" Label="标签" Text="标签的值">
+                            </f:Label>
+                            <f:CheckBox ID="CheckBox3" Text="复选框" Label="复选框">
+                            </f:CheckBox>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow ColumnWidths="50% 50%">
+                        <Items>
+                            <f:DropDownList ID="DropDownList4" Label="下拉列表" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                                <f:ListItem Text="可选项1" Value="Value1" />
+                                <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
+                                <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
+                                <f:ListItem Text="可选项4" Value="Value4" />
+                                <f:ListItem Text="可选项5" Value="Value5" />
+                                <f:ListItem Text="可选项6" Value="Value6" />
+                                <f:ListItem Text="可选择项7" Value="Value7" />
+                                <f:ListItem Text="可选择项8" Value="Value8" />
+                            </f:DropDownList>
+                            <f:TextBox ID="TextBox3" ShowRedStar="true" Label="文本框" Required="true" Text="">
+                            </f:TextBox>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+    </f:Window>
+
+
+}
+
+
+
+@section script {
+
+    <script>
+
+        function onShowWindowClick(event) {
+            var ddlValue = F.ui.DropDownList1.getValue();
+            // 显示相应的窗体
+            F.ui['Window' + ddlValue].show();
+        }
+
+    </script>
+
+}

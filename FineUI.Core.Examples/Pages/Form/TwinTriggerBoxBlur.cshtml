@@ -1,0 +1,56 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.TwinTriggerBoxBlurModel
+@{
+    ViewBag.Title = "Form/TwinTriggerBoxBlur";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="表单" ShowHeader="true">
+        <Items>
+            <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" ShowTrigger1="false" EmptyText="搜索用户名" Trigger2Icon="Search"
+                              OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click">
+                <Listeners>
+                    <f:Listener Event="blur" Handler="onTwinTriggerBox1Blur" />
+                </Listeners>
+            </f:TwinTriggerBox>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <br />
+    注：文本输入框失去焦点时，触发后台搜索事件。
+
+}
+
+@section script {
+    <script>
+
+        // 记录上一次 TwinTriggerBox1 的值
+        var __lastTriggerBoxValue;
+
+        function onTwinTriggerBox1Blur(event) {
+            var value = this.getValue();
+
+            // 值改变时才回发
+            if (value !== __lastTriggerBoxValue) {
+                __lastTriggerBoxValue = value;
+
+                F.customEvent('TwinTriggerBox1_Blur');
+            }
+        }
+
+        function updateLastTriggerBoxValue(text) {
+            __lastTriggerBoxValue = text;
+        }
+
+        // 设置 __lastTriggerBoxValue 初始值
+        F.ready(function () {
+            // 设置 TwinTriggerBox1 初始值
+            __lastTriggerBoxValue = F.ui.TwinTriggerBox1.getValue();
+        });
+
+    </script>
+}
+

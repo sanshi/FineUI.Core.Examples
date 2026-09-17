@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.NumberBoxTriggerTypeModel
+@{
+    ViewBag.Title = "Form/NumberBoxTriggerType";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .text-align-center input {
+            text-align: center;
+        }
+
+        .text-align-right input {
+            text-align: right;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" LabelAlign="Right" EnableCollapse="false" Title="简单表单" LabelWidth="100">
+        <Items>
+            <f:NumberBox Label="Stack" ID="NumberBox1" NoDecimal="true" NoNegative="true" TriggerType="Stack" Text="100" />
+            <f:NumberBox Label="Tile" ID="NumberBox2" NoDecimal="true" NoNegative="true" TriggerType="Tile" Text="20" />
+            <f:NumberBox Label="None" ID="NumberBox3" NoDecimal="true" NoNegative="true" ShowTrigger="false" Text="20" />
+            <f:NumberBox Label="Separate" ID="NumberBox4" CssClass="text-align-center" NoDecimal="true" NoNegative="true" TriggerType="Separate" Width="180" Text="1" />
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
+            </f:Button>
+        </Items>
+    </f:SimpleForm>
+
+}
+

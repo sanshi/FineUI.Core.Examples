@@ -1,0 +1,138 @@
+@page
+@model FineUI.Core.Examples.Pages.GridRowGroup.SummaryMultiModel
+@{
+    ViewBag.Title = "GridRowGroup/SummaryMulti";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .f-grid-rowgroup-summary .f-grid-cell-Major .f-grid-cell-text {
+            text-align: right;
+        }
+
+        .f-grid-rowgroup-summary .f-grid-cell-text {
+            font-style: italic;
+        }
+
+        .f-grid-row-summary .f-grid-cell-Major .f-grid-cell-text {
+            text-align: right;
+        }
+
+        .f-grid-row-summary .f-grid-cell-text {
+            font-weight: bold;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()"
+            EnableRowGroup="true" DataRowGroupField="EntranceYear" RowGroupSummary="true" RowGroupSummaryRowCount="3"
+            EnableSummary="true" SummaryPosition="Bottom" SummaryRowCount="3">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ColumnID="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" SummaryRendererFunction="majorSummaryRenderer" RowGroupSummaryRendererFunction="majorRowGroupSummaryRenderer" />
+            <f:RenderField HeaderText="语文成绩" DataField="ChineseScore" ColumnID="ChineseScore" FieldType="Int" SummaryRendererFunction="chineseScoreSummaryRenderer" RowGroupSummaryRendererFunction="chineseScoreRowGroupSummaryRenderer" />
+            <f:RenderField HeaderText="数学成绩" DataField="MathScore" ColumnID="MathScore" FieldType="Int" SummaryRendererFunction="mathScoreSummaryRenderer" RowGroupSummaryRendererFunction="mathScoreRowGroupSummaryRenderer" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function majorSummaryRenderer(summaryRowIndex) {
+            if (summaryRowIndex == 0) {
+                return "最小值：";
+            } else if (summaryRowIndex == 1) {
+                return "最大值：";
+            } else if (summaryRowIndex == 2) {
+                return "平均值：";
+            }
+        }
+
+        function chineseScoreSummaryRenderer(summaryRowIndex) {
+            var grid1 = this, result;
+
+            if (summaryRowIndex == 0) {
+                result = grid1.calcSummaryValue('ChineseScore', 'min');
+            } else if (summaryRowIndex == 1) {
+                result = grid1.calcSummaryValue('ChineseScore', 'max');
+            } else if (summaryRowIndex == 2) {
+                result = grid1.calcSummaryValue('ChineseScore', 'avg');
+            }
+            return result;
+        }
+
+        function mathScoreSummaryRenderer(summaryRowIndex) {
+            var grid1 = this, result;
+
+            if (summaryRowIndex == 0) {
+                result = grid1.calcSummaryValue('MathScore', 'min');
+            } else if (summaryRowIndex == 1) {
+                result = grid1.calcSummaryValue('MathScore', 'max');
+            } else if (summaryRowIndex == 2) {
+                result = grid1.calcSummaryValue('MathScore', 'avg');
+            }
+            return result;
+        }
+
+
+
+
+
+
+        function majorRowGroupSummaryRenderer(summaryRowIndex) {
+            if (summaryRowIndex == 0) {
+                return "最小值：";
+            } else if (summaryRowIndex == 1) {
+                return "最大值：";
+            } else if (summaryRowIndex == 2) {
+                return "平均值：";
+            }
+        }
+
+        function chineseScoreRowGroupSummaryRenderer(summaryRowIndex, cellValue, params) {
+            var grid1 = this, result;
+
+            if (summaryRowIndex == 0) {
+                result = grid1.calcSummaryValue('ChineseScore', 'min', params.rowGroupData);
+            } else if (summaryRowIndex == 1) {
+                result = grid1.calcSummaryValue('ChineseScore', 'max', params.rowGroupData);
+            } else if (summaryRowIndex == 2) {
+                result = grid1.calcSummaryValue('ChineseScore', 'avg', params.rowGroupData);
+            }
+            return result;
+        }
+
+        function mathScoreRowGroupSummaryRenderer(summaryRowIndex, cellValue, params) {
+            var grid1 = this, result;
+
+            if (summaryRowIndex == 0) {
+                result = grid1.calcSummaryValue('MathScore', 'min', params.rowGroupData);
+            } else if (summaryRowIndex == 1) {
+                result = grid1.calcSummaryValue('MathScore', 'max', params.rowGroupData);
+            } else if (summaryRowIndex == 2) {
+                result = grid1.calcSummaryValue('MathScore', 'avg', params.rowGroupData);
+            }
+            return result;
+        }
+
+    </script>
+
+}

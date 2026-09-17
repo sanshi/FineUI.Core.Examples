@@ -1,0 +1,103 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.NewTabSameTabModel
+@{
+    ViewBag.SourceFiles = "~/GridOther/NewTabWindow";
+    ViewBag.Title = "GridOther/NewTabSameTab";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableCheckBoxSelect="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" BoxFlex="1" MinWidth="150" />
+            <f:RenderField HeaderText="新标签页打开">
+                <Commands>
+                    <f:Command CommandName="Action1" Text="编辑" CssClass="opennewtab" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnNew" Text="新增数据" Icon="Add" ClickHandler="onNewClick"></f:Button>
+                    <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ClickHandler="onDeleteClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Grid>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onNewClick(event) {
+            // addExampleTab 函数定义在 /Home/Index
+            var newTabUrl = '@Url.Content("~/GridOther/NewTabWindow")';
+            parent.addExampleTab({
+                id: 'grid_newsametab_addnew',
+                title: '新增人员',
+                iframeUrl: newTabUrl,
+                refreshWhenExist: true,
+                iconFont: 'plus'
+            });
+        }
+
+        function onDeleteClick(event) {
+            var grid1 = F.ui.Grid1;
+
+            if (!grid1.hasSelection()) {
+                F.alert('请至少选择一项！');
+                return;
+            }
+
+
+            var selectedRows = grid1.getSelectedRows(true);
+
+            var selectedRowTexts = $.map(selectedRows, function (item, index) {
+                return item.text;
+            }).join(',');
+
+            F.alert('删除行：' + selectedRowTexts);
+        }
+
+        function openNewTab(rowId) {
+            var rowData = F.ui.Grid1.getRowData(rowId);
+            var id = rowData.id;
+            var name = rowData.text;
+
+            // addExampleTab 函数定义在 /Home/Index
+            var newTabUrl = '@Url.Content("~/GridOther/NewTabWindow")';
+            parent.addExampleTab({
+                id: 'grid_newsametab_edit',
+                title: '编辑 - ' + name,
+                iframeUrl: F.formatString('{0}?id={1}&name={2}', newTabUrl, id, F.urlEncode(name)),
+                refreshWhenExist: true,
+                iconFont: 'pencil'
+            });
+        }
+
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === "Action1") {
+                // 点击表格行中的编辑按钮
+                openNewTab(rowId);
+            }
+        }
+
+    </script>
+
+}

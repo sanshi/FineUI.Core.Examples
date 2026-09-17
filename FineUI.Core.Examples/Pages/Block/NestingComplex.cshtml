@@ -1,0 +1,74 @@
+@page
+@model FineUI.Core.Examples.Pages.Block.NestingComplexModel
+@{
+    ViewBag.Title = "Block/NestingComplex";
+
+    ViewBag.IsDarkerBG = true;
+
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        body.f-body {
+            overflow-x: hidden;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel IsFluid="true" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+        <Items>
+            <f:Panel BlockMD="12" BlockLG="4" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Panel BlockMD="6" BlockLG="12" Height="200"
+                             ShowBorder="true" ShowHeader="true" Title="1">
+                    </f:Panel>
+                    <f:Panel BlockMD="6" BlockLG="12" Height="200"
+                             ShowBorder="true" ShowHeader="true" Title="2">
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+            <f:Panel BlockMD="12" BlockLG="8" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Panel BlockSM="6" BlockMD="3" Height="150"
+                             ShowBorder="true" ShowHeader="true" Title="3">
+                    </f:Panel>
+                    <f:Panel BlockSM="6" BlockMD="3" Height="150"
+                             ShowBorder="true" ShowHeader="true" Title="4">
+                    </f:Panel>
+                    <f:Panel BlockSM="6" BlockMD="3" Height="150"
+                             ShowBorder="true" ShowHeader="true" Title="5">
+                    </f:Panel>
+                    <f:Panel BlockSM="6" BlockMD="3" Height="150"
+                             ShowBorder="true" ShowHeader="true" Title="6">
+                    </f:Panel>
+                    <f:Panel Block="12" Height="250"
+                             ShowBorder="true" ShowHeader="true" Title="7">
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+            <f:Panel BlockMD="12" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Panel BlockMD="4" Height="200"
+                             ShowBorder="true" ShowHeader="true" Title="8">
+                    </f:Panel>
+                    <f:Panel BlockMD="4" Height="200"
+                             ShowBorder="true" ShowHeader="true" Title="9">
+                    </f:Panel>
+                    <f:Panel BlockMD="4" Height="200"
+                             ShowBorder="true" ShowHeader="true" Title="10">
+                    </f:Panel>
+                    <f:Panel Block="12" Height="300"
+                             ShowBorder="true" ShowHeader="true" Title="11">
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+
+}

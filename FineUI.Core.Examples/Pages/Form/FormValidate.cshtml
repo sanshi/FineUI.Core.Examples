@@ -1,0 +1,31 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormValidateModel
+@{
+    ViewBag.Title = "Form/FormValidate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="用户注册表单">
+        <Items>
+            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin">
+            </f:TextBox>
+            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextFocusControl="btnRegister" TextMode="Password">
+            </f:TextBox>
+            <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnRegister_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+    <br>
+    注：
+    <ul>
+        <li>
+            提交表单时验证[用户名]不能为 admin，否则标记为无效
+        </li>
+    </ul>
+
+
+}
+

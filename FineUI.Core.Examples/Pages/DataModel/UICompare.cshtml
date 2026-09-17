@@ -1,0 +1,60 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.UICompareModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/TheUICompareModel.cs";
+    ViewBag.Title = "DataModel/UICompare";
+    var F = Html.F();
+}
+
+
+
+@section body {
+
+    <f:SimpleForm IsFluid="true" ID="SimpleForm1" BodyPadding="10" LabelWidth="200" ShowBorder="true" ShowHeader="true" Title="简单表单">
+        <Items>
+            <f:DatePicker For="TheModel.StartDate"></f:DatePicker>
+            <f:DatePicker For="TheModel.EndDate"></f:DatePicker>
+            <f:Label></f:Label>
+            <f:TextBox For="TheModel.Password"></f:TextBox>
+            <f:TextBox For="TheModel.ConfirmPassword"></f:TextBox>
+            <f:Label></f:Label>
+            <f:NumberBox For="TheModel.Number1"></f:NumberBox>
+            <f:NumberBox For="TheModel.Number2"></f:NumberBox>
+            <f:Label></f:Label>
+            <f:Button ID="btnSubmit" CssClass="marginr" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click" OnClickFields="SimpleForm1"></f:Button>
+            <f:Button ID="btnReset" Text="重置表单" ClickHandler="onResetClick"></f:Button>
+        </Items>
+    </f:SimpleForm>
+
+
+    @* <form id="commentForm" method="post" action="">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="TheModel.Password" class="control-label"></label>
+            <input asp-for="TheModel.Password" class="form-control" />
+            <span asp-validation-for="TheModel.Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TheModel.ConfirmPassword" class="control-label"></label>
+            <input asp-for="TheModel.ConfirmPassword" class="form-control" />
+            <span asp-validation-for="TheModel.ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <input type="submit" value="提交" />
+    </form> *@
+
+   
+}
+
+@section script {
+
+    <script type="text/javascript">
+
+        function onResetClick(event) {
+            F.ui.SimpleForm1.reset();
+        }
+
+    </script>
+}

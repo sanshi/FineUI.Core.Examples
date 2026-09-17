@@ -1,0 +1,75 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.StyleCellRowDataBoundModel
+@{
+    ViewBag.Title = "Grid/StyleCellRowDataBound";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        
+        .color1 {
+            color: red;
+            font-weight: bold;
+        }
+
+        .color3 {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" RowDataBoundFunction="grid1RowDataBound">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <f:Button Text="重新绑定表格" OnClick="Button1_Click"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 在 RowDataBound 中改变单元格CSS类
+        function grid1RowDataBound(rowData) {
+            var rowValues = rowData.values;
+
+            var entranceYear = rowValues['EntranceYear'];
+            if (entranceYear >= 2000 && entranceYear <= 2004) {
+                rowValues['EntranceYear.cls'] = 'color3';
+            }
+
+
+            var gender = rowValues['Gender'];
+            if (gender == 1) {
+                rowValues['Gender.cls'] = 'color1';
+            }
+        }
+
+    </script>
+}

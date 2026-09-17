@@ -1,0 +1,116 @@
+@page
+@model FineUI.Core.Examples.Pages.FormLayout.LayoutCheckOutModel
+@{
+    ViewBag.Title = "FormLayout/LayoutCheckOut";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Window ID="Window1" Title="账单信息" IsModal="false" EnableClose="false" EnableResize="true" Width="650" BodyPadding="10" AutoScroll="true">
+        <Items>
+            <f:Form ID="Form1" LabelAlign="Right" MessageTarget="Qtip" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:GroupPanel ID="GroupPanel1" Layout="Anchor" Title="联系人信息">
+                        <Items>
+                            <f:Panel ID="Panel2" Layout="HBox" ShowHeader="false" ShowBorder="false">
+                                <Items>
+                                    <f:Label ID="Label1" ShowRedStar="true" Label="姓名"></f:Label>
+                                    <f:TextBox ID="TextBox2" ShowLabel="false" CssClass="marginr" Required="true" ShowRedStar="true" BoxFlex="2">
+                                    </f:TextBox>
+                                    <f:TextBox ID="TextBox4" ShowLabel="false" Required="true" ShowRedStar="true" BoxFlex="3">
+                                    </f:TextBox>
+                                </Items>
+                            </f:Panel>
+                            <f:Panel ID="Panel1" Layout="HBox" BoxConfigAlign="Stretch" ShowHeader="false" ShowBorder="false">
+                                <Items>
+                                    <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" BoxFlex="1">
+                                    </f:TextBox>
+                                    <f:TextBox ID="TextBox6" Label="电话号码" Width="200" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                </Items>
+                            </f:Panel>
+                        </Items>
+                    </f:GroupPanel>
+                    <f:GroupPanel ID="GroupPanel2" Layout="Anchor" Title="联系人地址">
+                        <Items>
+                            <f:TextBox ID="TextBox7" Label="详细地址" Required="true" ShowRedStar="true">
+                            </f:TextBox>
+                            <f:Panel ID="Panel4" Layout="HBox" BoxConfigAlign="Stretch" ShowHeader="false" ShowBorder="false">
+                                <Items>
+                                    <f:TextBox ID="TextBox9" Label="省" BoxFlex="1" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                    <f:TextBox ID="TextBox5" Label="市" BoxFlex="1" LabelWidth="50" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                    <f:TextBox ID="TextBox8" Label="邮政编码" Width="200" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                </Items>
+                            </f:Panel>
+                        </Items>
+                    </f:GroupPanel>
+                    <f:GroupPanel ID="GroupPanel3" Layout="Anchor" Title="账单地址">
+                        <Items>
+                            <f:CheckBox Checked="true" ID="cbxSameAsContactAddress" Text="和联系人地址相同" OnCheckedChanged="cbxSameAsContactAddress_CheckedChanged"></f:CheckBox>
+                            <f:TextBox ID="tbxBillingAddress" Enabled="false" Label="详细地址" Required="true" ShowRedStar="true">
+                            </f:TextBox>
+                            <f:Panel ID="Panel3" Layout="HBox" BoxConfigAlign="Stretch" ShowHeader="false" ShowBorder="false">
+                                <Items>
+                                    <f:TextBox ID="tbxBillingProvince" Enabled="false" Label="省" BoxFlex="1" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                    <f:TextBox ID="tbxBillingCity" Enabled="false" Label="市" BoxFlex="1" LabelWidth="50" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                    <f:TextBox ID="tbxBillingPostCode" Enabled="false" Label="邮政编码" Width="200" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                </Items>
+                            </f:Panel>
+                        </Items>
+                    </f:GroupPanel>
+                    <f:GroupPanel ID="GroupPanel4" Layout="Anchor" Title="付款方式">
+                        <Items>
+                            <f:RadioButtonList ID="RadioButtonList1" ColumnNumber="5" ShowLabel="false">
+                                <f:RadioItem Text="银联" Value="yinlian" Selected="true" />
+                                <f:RadioItem Text="VISA" Value="visa" />
+                                <f:RadioItem Text="MasteCard" Value="mastercard" />
+                            </f:RadioButtonList>
+                            <f:TextBox ID="TextBox3" Label="卡上的名字" Required="true" ShowRedStar="true">
+                            </f:TextBox>
+                            <f:Panel ID="Panel5" Layout="HBox" BoxConfigAlign="Stretch" ShowHeader="false" ShowBorder="false">
+                                <Items>
+                                    <f:TextBox ID="TextBox14" Label="卡号" BoxFlex="1" Required="true" ShowRedStar="true">
+                                    </f:TextBox>
+                                    <f:DropDownList ID="DropDownList1" Label="过期时间" Width="180" CssClass="marginr" Required="true" ShowRedStar="true">
+                                        <f:ListItem Text="一月" Value="1" />
+                                        <f:ListItem Text="二月" Value="2" />
+                                        <f:ListItem Text="三月" Value="3" />
+                                        <f:ListItem Text="四月" Value="4" />
+                                        <f:ListItem Text="五月" Value="5" />
+                                        <f:ListItem Text="六月" Value="6" />
+                                        <f:ListItem Text="七月" Value="7" />
+                                        <f:ListItem Text="八月" Value="8" />
+                                        <f:ListItem Text="九月" Value="9" />
+                                        <f:ListItem Text="十月" Value="10" />
+                                        <f:ListItem Text="十一月" Value="11" />
+                                        <f:ListItem Text="十二月" Value="12" />
+                                    </f:DropDownList>
+                                    <f:NumberBox ID="TextBox16" ShowLabel="false" NoDecimal="true" NoNegative="true" Text="2014" Width="100" Required="true" ShowRedStar="true">
+                                    </f:NumberBox>
+                                </Items>
+                            </f:Panel>
+                        </Items>
+                    </f:GroupPanel>
+                </Items>
+            </f:Form>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="Button1" IconFont="_Save" Text="提交账单" _ValidateForms="Form1" ValidateMessageBox="false"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+}
+

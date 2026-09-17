@@ -1,0 +1,85 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowCommandModel
+@{
+    ViewBag.Title = "Grid/RowCommand";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mybtn3 .f-icon.f-icon-remove {
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action1" Text="按钮" />
+                </Commands>
+            </f:RenderField>
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action2" Icon="Delete" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action3" IconFont="Remove" CssClass="mybtn3" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
+    </f:Label>
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function doAction(cnode) {
+            var grid1 = F.ui.Grid1;
+            var rowEl = cnode.closest('.f-grid-row');
+            var rowData = grid1.getRowData(rowEl);
+            var column = grid1.getColumn(cnode.parents('.f-grid-cell'));
+
+            var message = '你点击了第 ' + (rowEl.index() + 1) + ' 行，第 ' + (column.index + 1) + ' 列，行ID：' + rowData.id + '，姓名：' + rowData.text;
+
+            F.notify({
+                message: message,
+                target: '_top',
+                header: false,
+                positionX: 'center',
+                positionY: 'top'
+            });
+        }
+
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            doAction($(event.target));
+        }
+
+    </script>
+}

@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.MultiLang.LoginModel
+@{
+    ViewBag.Title = "MultiLang/Login";
+    var F = Html.F();
+}
+
+@functions {
+   ParamsFunc<string, object, string> _R => Model.GetResource;
+}
+
+
+@section body {
+
+    <div>
+        @Html.Raw(_R("Notice"))
+    </div>
+    
+
+    <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="@_R("登录表单")" ID="Window1">
+        <Items>
+            <f:SimpleForm ShowHeader="false" BodyPadding="10" ShowBorder="false" ID="SimpleForm1">
+                <Items>
+                    <f:TextBox ShowRedStar="true" Required="true" Label="@_R("用户名")" MaxLength="20" ID="tbxUserName"></f:TextBox>
+                    <f:TextBox ShowRedStar="true" Required="true" TextMode="Password" RequiredMessage="@_R("密码不能为空！")" EnableValidateTrim="false"
+                               Label="@_R("密码")" ID="tbxPassword"
+                               MaxLength="9" MaxLengthMessage="@_R("密码最大为 9 个字符！")"
+                               MinLength="3" MinLengthMessage="@_R("密码最小为 3 个字符！")"
+                               Regex="^(?:[0-9]+[a-zA-Z]|[a-zA-Z]+[0-9])[a-zA-Z0-9]*$" RegexMessage="@_R("密码至少包含一个字母和数字！")"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
+                <Items>
+                    <f:Button OnClick="btnLogin_Click" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="@_R("登录")" ID="btnLogin"></f:Button>
+                    <f:Button Type="Reset" Text="@_R("重置")" ID="btnReset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+}
+

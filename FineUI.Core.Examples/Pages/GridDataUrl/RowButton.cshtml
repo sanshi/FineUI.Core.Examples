@@ -1,0 +1,93 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDataUrl.RowButtonModel
+@{
+    ViewBag.SourceFiles = "~/GridDataUrl/GridDataUrlData";
+    ViewBag.Title = "GridDataUrl/RowButton";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/GridDataUrlData")">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField ColumnID="Actions" RendererFunction="renderActions" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderActions(value, params) {
+            return '<a class="action editit" href="javascript:;">' +
+                '<img class="f-grid-imagefield" src="' + F.resolveUrl('/res/icon/pencil.png') + '">' +
+                '</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<a class="action deleteit" href="javascript:;">' +
+                '<img class="f-grid-imagefield" src="' + F.resolveUrl('/res/icon/delete.png') + '">' +
+                '</a>';
+        }
+
+
+        F.ready(function () {
+
+            var grid1 = F.ui.Grid1; if (!grid1) return;
+
+            grid1.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                var targetEl = $(this);
+                var rowEl = targetEl.closest('.f-grid-row');
+                var rowData = grid1.getRowData(rowEl);
+
+                // 触发后台事件
+                F.customEvent('Grid1_CustomEvent', {
+                    eventType: 'edit',
+                    rowIndex: rowEl.index(),
+                    rowId: rowData.id,
+                    rowText: rowData.text
+                });
+            });
+
+
+            grid1.el.on('click', '.f-grid-cell-Actions .action.deleteit', function (event) {
+                var targetEl = $(this);
+                var rowEl = targetEl.closest('.f-grid-row');
+                var rowData = grid1.getRowData(rowEl);
+
+                F.confirm({
+                    message: '删除选中行？',
+                    messageIcon: 'warning',
+                    target: '_top',
+                    ok: function () {
+                        // 触发后台事件
+                        F.customEvent('Grid1_CustomEvent', {
+                            eventType: 'delete',
+                            rowIndex: rowEl.index(),
+                            rowId: rowData.id,
+                            rowText: rowData.text
+                        });
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+}

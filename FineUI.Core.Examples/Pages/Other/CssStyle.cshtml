@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.CssStyleModel
+@{
+    ViewBag.Title = "Other/CssStyle";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .red {
+            font-weight: bold;
+            color: Red;
+        }
+
+        .green {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.5em;
+            color: Green;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Label ID="Label1" Text="文本一，注意观察文本的样式">
+    </f:Label>
+    <br />
+    <f:Button ID="Button1" OnClick="Button1_Click" Text="通过 CssStyle 修改文本的样式"></f:Button>
+    <f:Button ID="Button3" OnClick="Button3_Click" Text="清空 CssStyle 设置的样式"></f:Button>
+
+    <br />
+    <br />
+
+    <f:Label ID="Label2" Text="文本二，注意观察文本的样式">
+    </f:Label>
+    <br />
+    <f:Button ID="Button2" OnClick="Button2_Click" Text="通过 CssClass 修改文本的样式"></f:Button>
+    <f:Button ID="Button4" OnClick="Button4_Click" Text="清空 CssClass 设置的样式"></f:Button>
+
+
+
+}
+

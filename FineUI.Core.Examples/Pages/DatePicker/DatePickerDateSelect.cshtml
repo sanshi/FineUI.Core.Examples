@@ -1,0 +1,43 @@
+@page
+@model FineUI.Core.Examples.Pages.DatePicker.DatePickerDateSelectModel
+@{
+    ViewBag.Title = "DatePicker/DatePickerDateSelect";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单（OnTextChanged）">
+        <Items>
+            <f:DatePicker Required="true" Label="开始日期" EmptyText="请选择开始日期" ID="DatePicker1" ShowRedStar="true" OnTextChanged="DatePicker1_TextChanged"
+                          DateFormatString="yyyy/MM/dd">
+            </f:DatePicker>
+            <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1"
+                          DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" ShowRedStar="true">
+            </f:DatePicker>
+            <f:Button ID="Button1" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="Button1_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult1" ShowLabel="false">
+    </f:Label>
+    <br />
+    <f:SimpleForm ID="SimpleForm2" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单（OnDateSelect）">
+        <Items>
+            <f:DatePicker Required="true" Label="开始日期" EmptyText="请选择开始日期" ID="DatePicker3" ShowRedStar="true" OnDateSelect="DatePicker3_DateSelect"
+                          DateFormatString="yyyy/MM/dd">
+            </f:DatePicker>
+            <f:DatePicker ID="DatePicker4" Required="true" Readonly="false" CompareControl="DatePicker3"
+                          DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" ShowRedStar="true">
+            </f:DatePicker>
+            <f:Button ID="Button2" _ValidateForms="SimpleForm2" Text="提交表单" OnClick="Button2_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult2" ShowLabel="false">
+    </f:Label>
+    <br />
+
+}
+

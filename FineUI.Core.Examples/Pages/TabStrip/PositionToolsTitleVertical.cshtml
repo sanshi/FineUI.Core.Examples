@@ -1,0 +1,202 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.PositionToolsTitleVerticalModel
+@{
+    ViewBag.Title = "TabStrip/PositionToolsTitleVertical";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="150" ShowBorder="true" TabPosition="Top" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab Title="标签一" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第一个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第二个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第三个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签四" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第四个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签五" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第五个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签六" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第六个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签七" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第七个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签八" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第八个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签九" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第九个标签的内容" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+        <Tools>
+            <f:Tool IconFont="_Gear" ToolTip="设置图标一"></f:Tool>
+            <f:Tool IconFont="_Wrench" ToolTip="设置图标二"></f:Tool>
+        </Tools>
+    </f:TabStrip>
+    <br />
+    <f:TabStrip ID="TabStrip2" IsFluid="true" Height="150" ShowBorder="true" TabPosition="Bottom" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab Title="标签一" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第一个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第二个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第三个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签四" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第四个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签五" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第五个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签六" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第六个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签七" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第七个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签八" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第八个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签九" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第九个标签的内容" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+        <Tools>
+            <f:Tool IconFont="_Gear" ToolTip="设置图标一"></f:Tool>
+            <f:Tool IconFont="_Wrench" ToolTip="设置图标二"></f:Tool>
+        </Tools>
+    </f:TabStrip>
+    <br />
+    <f:TabStrip ID="TabStrip3" IsFluid="true" Height="250" ShowBorder="true" TabPosition="Left" ActiveTabIndex="0" TabTitleVertical="true">
+        <Tabs>
+            <f:Tab Title="标签一" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第一个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第二个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第三个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签四" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第四个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签五" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第五个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签六" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第六个标签的内容" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+        <Tools>
+            <f:Tool IconFont="_Gear" ToolTip="设置图标一"></f:Tool>
+            <f:Tool IconFont="_Wrench" ToolTip="设置图标二"></f:Tool>
+        </Tools>
+    </f:TabStrip>
+    <br />
+    <f:TabStrip ID="TabStrip4" IsFluid="true" Height="250" ShowBorder="true" TabPosition="Right" ActiveTabIndex="0" TabTitleVertical="true">
+        <Tabs>
+            <f:Tab Title="标签一" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第一个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签二" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第二个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签三" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第三个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签四" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第四个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签五" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第五个标签的内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab Title="标签六" EnableClose="true" BodyPadding="10">
+                <Items>
+                    <f:Label Text="第六个标签的内容" />
+                </Items>
+            </f:Tab>
+        </Tabs>
+        <Tools>
+            <f:Tool IconFont="_Gear" ToolTip="设置图标一"></f:Tool>
+            <f:Tool IconFont="_Wrench" ToolTip="设置图标二"></f:Tool>
+        </Tools>
+    </f:TabStrip>
+
+    <br>
+    <br>
+    <br>
+
+
+}

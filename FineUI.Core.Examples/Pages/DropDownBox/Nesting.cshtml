@@ -1,0 +1,73 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownBox.NestingModel
+@{
+    ViewBag.Title = "DropDownBox/Nesting";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉框嵌套" ShowHeader="true">
+        <Items>
+            <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" DataControlID="Grid1" MatchFieldWidth="false">
+                <PopPanel>
+                    <f:Panel ID="Panel1" Width="550" Height="300" ShowHeader="false" BodyPadding="5" Layout="VBox" Hidden="true">
+                        <Items>
+                            <f:Form ID="Form1" LabelWidth="50" LabelAlign="Right" ShowBorder="false" ShowHeader="false">
+                                <Rows>
+                                    <f:FormRow ColumnWidths="150 100%">
+                                        <Items>
+                                            <f:DropDownList Label="性别" EmptyText="请选择" ID="ddlGender" AutoSelectFirstItem="false" AutoShowClearIcon="true"
+                                                            OnSelectedIndexChanged="ddlGender_SelectedIndexChanged">
+                                                <f:ListItem Text="男" Value="1" />
+                                                <f:ListItem Text="女" Value="0" />
+                                            </f:DropDownList>
+                                            <f:DropDownBox Label="专业" EmptyText="请选择" ID="ddbMajor" DataControlID="CheckBoxList1" MatchFieldWidth="true" EnableMultiSelect="true" AutoShowClearIcon="true"
+                                                           OnTextChanged="ddbMajor_TextChanged">
+                                                <PopPanel>
+                                                    <f:SimpleForm ID="SimpleForm2" BodyPadding="10" AutoScroll="true" ShowBorder="true" ShowHeader="false" Hidden="true">
+                                                        <Items>
+                                                            <f:Label ID="Label1" Text="请选择专业："></f:Label>
+                                                            <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="2">
+                                                                <f:CheckItem Text="化学系" Value="化学系" />
+                                                                <f:CheckItem Text="数学系" Value="数学系" />
+                                                                <f:CheckItem Text="物理系" Value="物理系" />
+                                                                <f:CheckItem Text="自动化系" Value="自动化系" />
+                                                                <f:CheckItem Text="材料科学与工程系" Value="材料科学与工程系" />
+                                                            </f:CheckBoxList>
+                                                        </Items>
+                                                    </f:SimpleForm>
+                                                </PopPanel>
+                                            </f:DropDownBox>
+                                        </Items>
+                                    </f:FormRow>
+                                </Rows>
+                            </f:Form>
+                            <f:Grid ID="Grid1" BoxFlex="1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableMultiSelect="false">
+                                <Columns>
+                                    <f:RenderField HeaderText="姓名" DataField="Name" />
+                                    <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                                    <f:RenderField HeaderText="所学专业" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+                                </Columns>
+                            </f:Grid>
+                        </Items>
+                    </f:Panel>
+                </PopPanel>
+            </f:DropDownBox>
+            <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" CssClass="marginr" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

@@ -1,0 +1,105 @@
+@page
+@model FineUI.Core.Examples.Pages.GridEditor.GridEditorRateModel
+@{
+    ViewBag.Title = "GridEditor/GridEditorRate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
+                <Editor>
+                    <f:TextBox ID="tbxName" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender">
+                <Editor>
+                    <f:DropDownList ID="ddlGender" Required="true">
+                        <f:ListItem Text="男" Value="1"></f:ListItem>
+                        <f:ListItem Text="女" Value="0"></f:ListItem>
+                    </f:DropDownList>
+                </Editor>
+            </f:RenderField>
+            <f:RenderField Width="150" ColumnID="Rate1" DataField="Rate1" FieldType="Int" HeaderText="只读评分" RendererFunction="renderRate1" />
+            <f:RenderField Width="200" ColumnID="Rate2" DataField="Rate2" FieldType="Int" HeaderText="五星评分" RendererFunction="renderRate2" />
+            <f:RenderField Width="200" ColumnID="Rate3" DataField="Rate3" FieldType="Float" HeaderText="自定义评分" RendererFunction="renderRate3" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150">
+                <Editor>
+                    <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
+                </Editor>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button ID="btnSubmit" Text="保存数据" OnClick="btnSubmit_Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+
+}
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        var desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+        function renderRate2Text(val) {
+            var rateText = '-';
+            if (val > 0) {
+                rateText = desc[val - 1];
+            }
+            return rateText;
+        }
+
+
+        function renderRate1(value) {
+            return F.rateHtml(value, {
+                readonly: true
+            });
+        }
+
+        function renderRate2(value) {
+            return F.rateHtml(value, {
+                textVisible: true,
+                textRenderer: renderRate2Text
+            });
+        }
+
+        function renderRate3(value) {
+            return F.rateHtml(value, {
+                allowHalf: true,
+                iconFont: 'f-iconfont-trophy',
+                textVisible: true
+            });
+        }
+
+
+        F.ready(function () {
+
+            var grid1 = F.ui.Grid1;
+
+            // 注册评分事件
+            F.rateEvents(grid1.el, function (event, value) {
+                var target = $(event.target);
+                var cellEl = target.closest('.f-grid-cell');
+
+                var rowId = grid1.getRowId(cellEl);
+                var columnId = grid1.getColumnId(cellEl);
+
+                // 更新单元格的值
+                grid1.updateCellValue(rowId, columnId, value);
+            });
+
+        });
+
+    </script>
+
+}

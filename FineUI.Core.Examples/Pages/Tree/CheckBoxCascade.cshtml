@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Tree.CheckBoxCascadeModel
+@{
+    ViewBag.Title = "Tree/CheckBoxCascade";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCheckBox="true" CascadeCheck="true">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true" NodeID="china">
+                <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
+                    <f:TreeNode Text="驻马店市" NodeID="zhumadian">
+                        <f:TreeNode Text="遂平县" NodeID="suiping">
+                        </f:TreeNode>
+                        <f:TreeNode Text="西平县" NodeID="xiping">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="luohe" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui">
+                    <f:TreeNode Text="合肥市" NodeID="hefei">
+                    </f:TreeNode>
+                    <f:TreeNode Text="黄山市" NodeID="huangshan">
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetCheckedValues" Text="获取选中的复选框" OnClick="btnGetCheckedValues_Click"></f:Button>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+
+}

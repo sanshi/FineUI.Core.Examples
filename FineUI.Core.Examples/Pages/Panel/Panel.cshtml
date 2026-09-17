@@ -1,0 +1,74 @@
+@page
+@model FineUI.Core.Examples.Pages.Panel.PanelModel
+@{
+    ViewBag.Title = "Panel/Panel";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板" BodyPadding="10" EnableCollapse="true" IconFont="_VolumeUp">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Position="Top">
+                <Items>
+                    <f:ToolbarText Text="工具条文本一" ID="ToolbarText1">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator ID="ToolbarSeparator1">
+                    </f:ToolbarSeparator>
+                    <f:ToolbarText Text="工具条文本二" ID="ToolbarText2">
+                    </f:ToolbarText>
+                    <f:ToolbarSeparator ID="ToolbarSeparator2">
+                    </f:ToolbarSeparator>
+                    <f:Button ID="btnToolbarButton" Text="工具条按钮" ClickHandler="onToolbarButtonClick"></f:Button>
+                    <f:ToolbarFill ID="ToolbarFill1">
+                    </f:ToolbarFill>
+                    <f:ToolbarText Text="工具条文本四" ID="ToolbarText4">
+                    </f:ToolbarText>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Panel ID="Panel2" Title="内容面板" ShowBorder="true" Height="200" Icon="TagBlue"
+                     BodyPadding="10" EnableCollapse="true" ShowHeader="true" AutoScroll="true">
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br>
+
+    <f:Button ID="Button2" CssClass="marginr" Text="检查面板的折叠状态" OnClick="Button2_Click"></f:Button>
+    <f:Button ID="Button4" Text="更新面板的标题" OnClick="Button4_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button3" Text="展开/折叠内容面板" OnClick="Button3_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button5" CssClass="marginr" Text="更新工具条文本一的值" OnClick="Button5_Click"></f:Button>
+    <f:Button ID="Button6" Text="显示/隐藏工具条文本一" OnClick="Button6_Click"></f:Button>
+    <br />
+    <br />
+
+
+    <f:Button ID="Button7" Text="隐藏工具栏" CssClass="marginr" OnClick="Button7_Click"></f:Button>
+    <f:Button ID="Button8" Text="显示工具栏" OnClick="Button8_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button9" Text="点击修改面板图标（在三个图标之前切换）" CssClass="marginr" OnClick="Button9_Click"></f:Button>
+    <f:Button ID="Button10" Text="清空面板图标" CssClass="marginr" OnClick="Button10_Click"></f:Button>
+
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onToolbarButtonClick(event) {
+            F.alert('你点击了工具栏按钮');
+        }
+
+    </script>
+
+}

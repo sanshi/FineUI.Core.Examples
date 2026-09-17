@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.DropDownList.ItemDataBoundDisplayModel
+@{
+    ViewBag.Title = "DropDownList/ItemDataBoundDisplay";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .item-text {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .item-desc {
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="自定义列表项（列表项绑定事件）" ShowHeader="true">
+        <Items>
+            <f:DropDownList ID="DropDownList1" OnItemDataBound="DropDownList1_ItemDataBound">
+            </f:DropDownList>
+            <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+}

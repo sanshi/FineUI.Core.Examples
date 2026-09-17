@@ -1,0 +1,101 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.ColumnMoveLockColumnModel
+@{
+    ViewBag.Title = "GridMove/ColumnMoveLockColumn";
+    var F = Html.F();
+}
+
+@using Newtonsoft.Json.Linq;
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+            EnableColumnMove="true" AllowColumnLocking="true">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" Locked="true" EnableLock="false" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Locked="true" EnableLock="true" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" Width="300" EnableLock="true" />
+            <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnmove" Handler="onGrid1ColumnMove"></f:Listener>
+            <f:Listener Event="columnlock" Handler="onGrid1ColumnLock"></f:Listener>
+            <f:Listener Event="columnunlock" Handler="onGrid1ColumnUnlock"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列顺序和列锁定状态）" ClickHandler="onRefreshClick"></f:Button>
+    <br>
+    <br>
+    注：[姓名]列锁定后无法通过表头菜单解锁；[性别]列锁定后仍可通过表头菜单解锁。
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onRefreshClick(event) {
+            window.location.reload();
+        }
+
+
+        function saveToDB(grid) {
+            // 列顺序数组
+            var columnIds = $.map(grid.columns, function (item, index) {
+                return item.columnId;
+            });
+
+            // 锁定列数组
+            var lockedColumnIds = [];
+            $.each(grid.columns, function (index, item) {
+                if (item.locked) {
+                    lockedColumnIds.push(item.columnId);
+                }
+            });
+
+
+            // 触发后台事件
+            F.customEvent('Grid1_ColumnMoveOrLock', {
+                columnIds: columnIds,
+                lockedColumnIds: lockedColumnIds
+            });
+        }
+
+
+        function onGrid1ColumnLock(event, columnId) {
+            saveToDB(this);
+        }
+
+        function onGrid1ColumnUnlock(event, columnId) {
+            saveToDB(this);
+        }
+
+        function onGrid1ColumnMove(event, targetColumnId, sourceColumnId, operation) {
+            var grid = this;
+
+            // 如果目标列和源列的锁定状态不同，则随后会触发 columnlock 或者 columnunlock 事件
+            // 因此直接返回，不要调用 saveToDB 函数，否则会重复保存
+            var targetColumn = grid.getColumn(targetColumnId);
+            var sourceColumn = grid.getColumn(sourceColumnId);
+
+            // 有可能 locked 属性是 undefined，所以这里要先通过 !! 转为布尔值
+            if (!!targetColumn.locked != !!sourceColumn.locked) {
+                return;
+            }
+
+            saveToDB(this);
+        }
+
+    </script>
+}

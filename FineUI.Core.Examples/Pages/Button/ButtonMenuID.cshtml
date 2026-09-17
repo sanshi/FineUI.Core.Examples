@@ -1,0 +1,28 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonMenuIDModel
+@{
+    ViewBag.Title = "Button/ButtonMenuID";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Menu ID="Menu1">
+        <f:MenuHyperLink ID="MenuHyperLink1" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
+        </f:MenuHyperLink>
+        <f:MenuButton ID="MenuButton1" Icon="TagBlue" Text="管理学院">
+            <Menu>
+                <f:MenuHyperLink ID="MenuHyperLink3" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
+                </f:MenuHyperLink>
+                <f:MenuHyperLink ID="MenuHyperLink4" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
+                </f:MenuHyperLink>
+            </Menu>
+        </f:MenuButton>
+    </f:Menu>
+
+    <f:Button ID="btnMenu" Text="中国科学技术大学" MenuID="Menu1"></f:Button>
+    <br />
+    <br />
+    <f:Button ID="Button1" Text="中国科学技术大学（和上一个按钮共享同一个菜单）" MenuID="Menu1"></f:Button>
+
+}

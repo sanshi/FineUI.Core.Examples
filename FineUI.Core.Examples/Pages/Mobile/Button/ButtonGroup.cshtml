@@ -1,0 +1,59 @@
+@page
+@model FineUI.Core.Examples.Pages.Mobile.Button.ButtonGroupModel
+@{
+    ViewBag.Title = "MobileButton/ButtonGroup";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 30px 0" BodyPadding="10px" AutoScroll="true" IsViewPort="true">
+        <Items>
+            <f:ButtonGroup ID="ButtonGroup1" EnablePressGroup="true">
+                <Items>
+                    <f:Button ID="Button1" Text="按钮一" EnablePress="true" Pressed="true">
+                    </f:Button>
+                    <f:Button ID="Button2" Text="按钮二" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button3" Text="按钮三" EnablePress="true">
+                    </f:Button>
+                </Items>
+            </f:ButtonGroup>
+            <f:ButtonGroup ID="ButtonGroup4" Layout="HBox" BoxConfigPosition="Center" EnablePressGroup="true">
+                <Items>
+                    <f:Button ID="Button10" Text="按钮一" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button11" Text="按钮二" EnablePress="true" Pressed="true">
+                    </f:Button>
+                    <f:Button ID="Button12" Text="按钮三" EnablePress="true">
+                    </f:Button>
+                </Items>
+            </f:ButtonGroup>
+            <f:ButtonGroup ID="ButtonGroup5" Layout="HBox" BoxConfigPosition="End" EnablePressGroup="true">
+                <Items>
+                    <f:Button ID="Button13" Text="按钮一" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button14" Text="按钮二" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button15" Text="按钮三" EnablePress="true" Pressed="true">
+                    </f:Button>
+                </Items>
+            </f:ButtonGroup>
+            <f:ButtonGroup ID="ButtonGroup3" Layout="HBox" EnablePressGroup="true">
+                <Items>
+                    <f:Button ID="Button7" BoxFlex="1" Text="按钮一" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button8" BoxFlex="1" Text="按钮二" EnablePress="true" Pressed="true">
+                    </f:Button>
+                    <f:Button ID="Button9" BoxFlex="1" Text="按钮三" EnablePress="true">
+                    </f:Button>
+                </Items>
+            </f:ButtonGroup>
+        </Items>
+    </f:Panel>
+
+
+}
+

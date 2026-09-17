@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.LoginModel
+@{
+    ViewBag.Title = "DataModel/Login";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <div>
+        用户名：admin
+        <br>
+        密码：admin888
+        <br>
+        <br>
+        <br>
+        注意：在任意输入框内按回车键都会触发表单的提交（相当于点击【登陆】按钮）。
+    </div>
+
+
+    <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="登录表单" ID="Window1">
+        <Items>
+            <f:SimpleForm ShowHeader="false" BodyPadding="10" ShowBorder="false" ID="SimpleForm1">
+                <Items>
+                    <f:TextBox ShowRedStar="true" Required="true" Label="用户名" MaxLength="20" ID="tbxUserName"></f:TextBox>
+                    <f:TextBox ShowRedStar="true" Required="true" TextMode="Password" RequiredMessage="密码不能为空！" EnableValidateTrim="false" Label="密码" ID="tbxPassword"
+                               MaxLength="9" MaxLengthMessage="密码最大为 9 个字符！" MinLength="3" MinLengthMessage="密码最小为 3 个字符！" Regex="^(?:[0-9]+[a-zA-Z]|[a-zA-Z]+[0-9])[a-zA-Z0-9]*$" RegexMessage="密码至少包含一个字母和数字！"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
+                <Items>
+                    <f:Button OnClick="btnLogin_Click" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="登录" ID="btnLogin"></f:Button>
+                    <f:Button Type="Reset" Text="重置" ID="btnReset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+}
+

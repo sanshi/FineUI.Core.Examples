@@ -1,0 +1,56 @@
+@page
+@model FineUI.Core.Examples.Pages.GridTree.GridTreeCustomPostBackModel
+@{
+    ViewBag.Title = "GridTree/GridTreeCustomPostBack";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onButton1Click"></f:Button>
+
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onButton1Click(event) {
+            var grid1 = F.ui.Grid1;
+
+            var result = [];
+            var selections = grid1.getSelectedRows(true);
+            for (const selection of selections) {
+                result.push({
+                    'id': selection.id,
+                    'text': selection.text,
+                    'leaf': selection.leaf,
+                    'expanded': selection.expanded
+                });
+            }
+
+            // 自定义回发
+            F.customEvent('Button1Click', result);
+        }
+
+    </script>
+
+}

@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonGroupPressModel
+@{
+    ViewBag.Title = "Button/ButtonGroupPress";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:ButtonGroup EnablePressGroup="true">
+        <f:Button ID="btnIcon1" Text="图标在左侧" EnablePress="true" Pressed="true" Icon="Email" />
+        <f:Button ID="btnIcon2" Text="图标在右侧" EnablePress="true" IconAlign="Right" Icon="Star" />
+        <f:Button ID="Button7" Text="图标在左侧" EnablePress="true" IconFont="_Home" />
+        <f:Button ID="Button8" Text="图标在右侧" EnablePress="true" IconAlign="Right" IconFont="_Car" />
+    </f:ButtonGroup>
+    <br />
+    <f:ButtonGroup ID="ButtonGroup1" EnablePressGroup="true">
+        <f:Button ID="btnIcon3" Text="图标在上面" EnablePress="true" IconAlign="Top" Icon="Email" />
+        <f:Button ID="btnIcon4" Text="图标在下面" EnablePress="true" Pressed="true" IconAlign="Bottom" Icon="Star" />
+        <f:Button ID="Button9" Text="图标在上面" EnablePress="true" IconAlign="Top" IconFont="_Camera" />
+        <f:Button ID="Button10" Text="图标在下面" EnablePress="true" IconAlign="Bottom" IconFont="_Phone" />
+    </f:ButtonGroup>
+    <br />
+    <f:Label Text="只有图片的按钮："></f:Label>
+    <f:ButtonGroup ID="ButtonGroup2" EnablePressGroup="true">
+        <f:Button ID="Button1" EnablePress="true" IconUrl="~/res/images/16/1.png" />
+        <f:Button ID="Button2" EnablePress="true" IconUrl="~/res/images/16/8.png" />
+        <f:Button ID="Button11" EnablePress="true" Pressed="true" IconFont="_Android" />
+        <f:Button ID="Button12" EnablePress="true" IconFont="_Apple" />
+        <f:Button ID="Button13" EnablePress="true" IconFont="_Car" />
+        <f:Button ID="Button14" EnablePress="true" IconFont="_Card" />
+    </f:ButtonGroup>
+    <br />
+    <f:Label Text="下面的按钮分组的按下状态改变时，会触发自定义回发事件："></f:Label>
+    <f:ButtonGroup ID="ButtonGroup3" EnablePressGroup="true" OnPressChanged="ButtonGroup3_PressChanged">
+        <Items>
+            <f:Button ID="Button3" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
+            <f:Button ID="Button4" Text="按钮二" EnablePress="true" Pressed="true" Size="Large" IconAlign="Bottom" Icon="Star" />
+            <f:Button ID="Button5" Text="按钮三" EnablePress="true" Size="Large" IconAlign="Top" IconFont="_Camera" />
+            <f:Button ID="Button6" Text="按钮四" EnablePress="true" Size="Large" IconAlign="Bottom" IconFont="_Phone" />
+        </Items>
+    </f:ButtonGroup>
+    <br />
+    <f:Label Text="可以不选（AllowNonePress=true）："></f:Label>
+    <f:ButtonGroup ID="ButtonGroup4" EnablePressGroup="true" AllowNonePress="true" OnPressChanged="ButtonGroup4_PressChanged">
+        <f:Button ID="Button15" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
+        <f:Button ID="Button16" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
+        <f:Button ID="Button17" Text="按钮三" EnablePress="true" Pressed="true" Size="Large" IconAlign="Top" IconFont="_Camera" />
+        <f:Button ID="Button18" Text="按钮四" EnablePress="true" Size="Large" IconAlign="Bottom" IconFont="_Phone" />
+    </f:ButtonGroup>
+    <br />
+    <f:Label Text="可以多选（AllowMultiPress=true）："></f:Label>
+    <f:ButtonGroup ID="ButtonGroup5" EnablePressGroup="true" AllowMultiPress="true" OnPressChanged="ButtonGroup5_PressChanged">
+        <f:Button ID="Button19" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
+        <f:Button ID="Button20" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
+        <f:Button ID="Button21" Text="按钮三" EnablePress="true" Size="Large" IconAlign="Top" IconFont="_Camera" />
+        <f:Button ID="Button22" Text="按钮四" EnablePress="true" Pressed="true" Size="Large" IconAlign="Bottom" IconFont="_Phone" />
+    </f:ButtonGroup>
+
+}
+
+

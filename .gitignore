@@ -1,0 +1,37 @@
+# 本机编译产物
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+
+# 本地依赖覆盖与包还原目录
+Directory.Build.local.props
+.local/
+packages/
+
+# 操作系统文件
+Thumbs.db
+Desktop.ini
+NuGet.Config
+
+# FineUI 公共仓库本地文件
+[Bb]in/
+[Oo]bj/
+target/
+[Pp]ackages/
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.iml
+*.nupkg
+*.snupkg
+*.mv.db
+*.trace.db
+Directory.Build.local.props
+NuGet.Config
+.local/
+FineUI*.lic*.config
+FineUI.Enterprise.props

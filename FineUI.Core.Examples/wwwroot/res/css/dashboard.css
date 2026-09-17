@@ -1,0 +1,164 @@
+body.f-body {
+    overflow-x: hidden;
+}
+
+
+.mycard {
+    margin: 20px;
+}
+
+    .mycard .title {
+        position: relative;
+        font-size: 0.9em;
+        opacity: 0.8;
+        margin-bottom: 10px;
+    }
+
+        .mycard .title .infoicon {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+        }
+
+    .mycard .desc {
+        height: 155px;
+        font-size: 0.95em;
+        line-height: 1.5em;
+    }
+
+    .mycard .number {
+        font-size: 30px;
+        line-height: 40px;
+        height: 40px;
+    }
+
+    .mycard .number-subtext {
+        font-size: 16px;
+    }
+
+    .mycard .chart {
+        height: 60px;
+        position: relative;
+    }
+
+        .mycard .chart .f-progressbar {
+            position: absolute;
+            top: 50%;
+            height: 8px;
+            margin-top: -4px;
+            width: 100%;
+        }
+
+    .mycard .footer {
+        border-top-width: 1px;
+        border-top-style: solid;
+        margin-top: 20px;
+        padding-top: 10px;
+        height: 35px;
+        line-height: 24px;
+    }
+
+    .mycard .f-icon.f-iconfont-triangle-up {
+        vertical-align: middle;
+        color: red;
+    }
+
+    .mycard .f-icon.f-iconfont-triangle-down {
+        vertical-align: middle;
+        color: green;
+    }
+
+    .mycard.rank {
+        background: url(../images/up.png) no-repeat;
+        padding-left: 80px;
+    }
+
+.f-theme-dark_hive .mycard.rank,
+.f-theme-cupertino .mycard.rank,
+.f-theme-south_street .mycard.rank {
+    background-image: none;
+    padding: 0;
+}
+
+.mytabstrip > .f-panel-header > .f-panel-title {
+    margin-left: 20px;
+}
+
+    .mytabstrip > .f-panel-header > .f-panel-title .f-tab-header {
+        margin-right: 10px;
+    }
+
+        .mytabstrip > .f-panel-header > .f-panel-title .f-tab-header.f-state-active {
+            background-color: transparent;
+            background-image: none;
+        }
+
+.mytabstrip .tabstrip-chart {
+    height: 350px;
+}
+
+.mytable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .mytable th {
+        font-weight: normal;
+        border-bottom: solid 1px #ddd;
+    }
+
+    .mytable td,
+    .mytable th {
+        padding: 10px;
+        text-align: left;
+    }
+
+.myform .f-panel-body .f-field {
+    margin: 0;
+}
+
+.mychart-pie {
+    min-height: 300px;
+}
+
+.mysitestats {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 14px;
+    margin-left: -10px;
+}
+
+    .mysitestats li {
+        display: inline-block;
+        padding: 10px;
+        border-width: 1px;
+        border-style: solid;
+        margin: 0 10px 20px 10px;
+        min-width: 85px;
+    }
+
+        .mysitestats li .title {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .mysitestats li .content {
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+.mynumber {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+    .mynumber.round {
+        border-radius: 20px;
+    }
+
+

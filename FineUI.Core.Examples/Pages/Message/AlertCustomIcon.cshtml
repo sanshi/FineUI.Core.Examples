@@ -1,0 +1,21 @@
+@page
+@model FineUI.Core.Examples.Pages.Message.AlertCustomIconModel
+@{
+    ViewBag.Title = "Message/AlertCustomIcon";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Button Text="点击弹出对话框（Icon）" ID="btnHello" OnClick="btnHello_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button Text="在顶层窗口弹出对话框（IconUrl）" ID="btnHello2" OnClick="btnHello2_Click"></f:Button>
+    <br />
+    <br />
+    <f:Button Text="在顶层窗口弹出对话框（IconFont）" ID="btnHello3" OnClick="btnHello3_Click"></f:Button>
+
+
+}
+

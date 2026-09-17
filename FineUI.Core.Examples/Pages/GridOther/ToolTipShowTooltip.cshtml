@@ -1,0 +1,47 @@
+@page
+@model FineUI.Core.Examples.Pages.GridOther.ToolTipShowToolTipModel
+@{
+    ViewBag.Title = "GridOther/ToolTipShowToolTip";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ShowToolTip="true" ToolTipPosition="TopStart" Width="150" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ShowToolTip="true" ToolTipPosition="TopStart" RendererFunction="renderMajorLink" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function renderMajorLink(value) {
+            //var url = 'http://gsa.ustc.edu.cn/search?q=' + F.urlEncode(value);
+            //return F.formatString('<a href="{0}" target="_blank">{1}</a>', url, F.htmlEncode(value));
+            var encodedValue = F.htmlEncode(value);
+            return $('<a>', {
+                'target': '_blank',
+                'href': 'http://gsa.ustc.edu.cn/search?q=' + F.urlEncode(value),
+                'html': encodedValue
+            });
+        }
+
+    </script>
+
+}

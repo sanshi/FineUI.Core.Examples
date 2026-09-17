@@ -1,0 +1,74 @@
+@page
+@model FineUI.Core.Examples.Pages.DataModel.TreeNodeInfoModel
+@{
+    ViewBag.SourceFiles = "~/Pages/DataModel/Models/TreeNodeInfo.cs";
+    ViewBag.Title = "DataModel/TreeNodeInfo";
+    var F = Html.F();
+
+}
+
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCheckBox="true">
+        <Nodes>
+            <f:TreeNode Text="中国" Expanded="true" NodeID="china">
+                <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
+                    <f:TreeNode Text="驻马店市" NodeID="zhumadian">
+                        <f:TreeNode Text="遂平县" NodeID="suiping">
+                        </f:TreeNode>
+                        <f:TreeNode Text="西平县" NodeID="xiping">
+                        </f:TreeNode>
+                    </f:TreeNode>
+                    <f:TreeNode Text="漯河市" NodeID="luohe" />
+                </f:TreeNode>
+                <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui">
+                    <f:TreeNode Text="合肥市" NodeID="hefei">
+                    </f:TreeNode>
+                    <f:TreeNode Text="黄山市" NodeID="huangshan">
+                    </f:TreeNode>
+                </f:TreeNode>
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetCheckedValues" ClickHandler="onGetCheckedValuesClick" Text="获取选中的项"></f:Button>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+
+@section script {
+
+    <script>
+        function getCheckedNodes() {
+            var result = [];
+
+            var checkedNodes = F.ui.Tree1.getCheckedNodes(true);
+            if (checkedNodes.length) {
+                $.each(checkedNodes, function (index, node) {
+                    result.push({
+                        NodeId: node.id,
+                        NodeText: node.text
+                    });
+                });
+            }
+
+            return result;
+        }
+
+        // 自定义回发：不传 eventTarget 即进入服务端 Page_CustomEvent；
+        // params 里的键值会作为命名表单字段发出，由服务端 [BindProperty] CheckedNodes 接收
+        function onGetCheckedValuesClick(event) {
+            F.doPostBack({
+                eventName: 'GetCheckedNodes',
+                params: { CheckedNodes: getCheckedNodes() }
+            });
+        }
+    </script>
+
+}

@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowDataBoundServerModel
+@{
+    ViewBag.Title = "Grid/RowDataBoundServer";
+    var F = Html.F();
+}
+
+
+@section head {
+
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            DataSource="@DataSourceUtil.GetDataTable()" OnRowDataBound="Grid1_RowDataBound">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别（服务端格式化）" ColumnID="rfGender" DataField="Gender" Width="200" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期（服务端格式化）" ColumnID="rfLogTime" DataField="LogTime" Width="200" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br />
+    <br />
+    <f:Button Text="清空数据" ID="btnClearData" OnClick="btnClearData_Click" CssClass="marginr"></f:Button>
+    <f:Button Text="重新绑定数据" ID="btnRebind" Icon="Reload" OnClick="btnRebindData_Click"></f:Button>
+    <br />
+    <br />
+    注：
+    <ul>
+        <li>本实例使用行绑定事件对 “LogTime” 数据字段进行服务器端的格式化。</li>
+        <li>FineUI.Core的服务端行绑定事件中，无法修改列的值，只能修改数据字段的值（数据字段包含但不限于每一列的DataField属性，以及表格的DataIDField、DataTextField、DataAttributeFields、DataKeyNames等属性）。</li>
+    </ul>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

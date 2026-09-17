@@ -1,0 +1,120 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.HBoxAutoHeightStretchModel
+@{
+    ViewBag.Title = "Layout/HBoxAutoHeightStretch";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Layout="HBox" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true"
+             Title="面板（Layout=HBox）（默认值：BoxConfigAlign=Stretch）">
+        <Items>   
+            <f:Panel Title="面板1" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items> 
+                    <f:Label EncodeText="false" Text="Width=200">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板2" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200<br><br><br><br><br><br><br><br>bottom line">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板3" BoxFlex="1" BodyPadding="10" Margin="0" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="BoxFlex=1">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br />
+    <br />
+    <f:Panel IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Layout="HBox" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true"
+             Title="面板（Layout=HBox）（默认值：BoxConfigAlign=Stretch）">
+        <Items>
+            <f:Panel Title="面板1" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板2" Width="200" Height="250" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200 Height=250">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板3" BoxFlex="1" BodyPadding="10" Margin="0" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="BoxFlex=1">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br />
+    <br />
+
+
+    <f:Panel IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Layout="HBox" BoxConfigAlign="Start" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true"
+             Title="面板（Layout=HBox BoxConfigAlign=Start）">
+        <Items>
+            <f:Panel Title="面板1" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板2" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200<br><br><br><br><br><br><br><br>bottom line">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板3" BoxFlex="1" BodyPadding="10" Margin="0" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="BoxFlex=1">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br />
+    <br />
+    <f:Panel IsFluid="true" ShowBorder="true" EnableCollapse="false"
+             Layout="HBox" BoxConfigAlign="Start" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true"
+             Title="面板（Layout=HBox BoxConfigAlign=Start）">
+        <Items>
+            <f:Panel Title="面板1" Width="200" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板2" Width="200" Height="250" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="Width=200 Height=250">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+            <f:Panel Title="面板3" BoxFlex="1" BodyPadding="10" Margin="0" ShowBorder="true" ShowHeader="false">
+                <Items>
+                    <f:Label EncodeText="false" Text="BoxFlex=1">
+                    </f:Label>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <br />
+    <br />
+}
+

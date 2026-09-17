@@ -1,0 +1,43 @@
+@page
+@model FineUI.Core.Examples.Pages.Basic.LoginModel
+@{
+    ViewBag.Title = "Basic/Login";
+}
+
+@section body {
+
+    <div>
+        用户名：admin
+        <br />
+        密码：admin
+        <br />
+        <br />
+        <br />
+        注意：在任意输入框内按回车键都会触发表单的提交（相当于点击【登陆】按钮）。
+    </div>
+
+    <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="登录表单" ID="Window1">
+        <Items>
+            <f:SimpleForm ShowHeader="false" BodyPadding="10" RemoveLastFieldsMargin="true" ShowBorder="false" ID="SimpleForm1">
+                <Items>
+                    <f:TextBox ShowRedStar="true" Required="true" Label="用户名" ID="tbxUserName"></f:TextBox>
+                    <f:TextBox ShowRedStar="true" Required="true" TextMode="Password" Label="密码" ID="tbxPassword"></f:TextBox>
+                </Items>
+            </f:SimpleForm>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
+                <Items>
+                    <f:Button Type="Submit" ID="btnLogin" Text="登录" ValidateTarget="Top" _ValidateForms="SimpleForm1" ButtonColor="Primary"
+                              OnClick="btnLogin_Click"></f:Button>
+                    <f:Button Type="Reset" Text="重置" ID="btnReset"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:Window>
+
+
+}
+
+
+

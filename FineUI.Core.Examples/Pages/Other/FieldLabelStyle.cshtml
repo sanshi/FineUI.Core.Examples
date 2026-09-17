@@ -1,0 +1,46 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.FieldLabelStyleModel
+@{
+    ViewBag.Title = "Other/FieldLabelStyle";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .red .f-field-fieldlabel {
+            color: Red;
+            font-weight: bold;
+        }
+
+        .blue .f-field-fieldlabel {
+            color: Blue;
+            font-weight: normal;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" LabelAlign="Right" Title="简单表单">
+        <Items>
+            <f:TextBox Label="用户名" EmptyText="输入用户名" Text="张三" ID="tbxUserName" CssClass="red">
+            </f:TextBox>
+            <f:TextBox Label="密码" TextMode="Password" ID="tbxPassword" CssClass="red">
+            </f:TextBox>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="btnSwitchClass" Text="改变 Label 的样式" OnClick="btnSwitchClass_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+
+
+}
+

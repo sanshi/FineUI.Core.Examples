@@ -1,0 +1,21 @@
+@page
+@model FineUI.Core.Examples.Pages.Panel.CollapseModel
+@{
+    ViewBag.Title = "Panel/Collapse";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板一" BodyPadding="10" EnableCollapse="true" IconUrl="@Url.Content("~/res/images/16/8.png")"
+             OnCollapse="Panel1_CollapseExpand" OnExpand="Panel1_CollapseExpand">
+        <Items>
+            <f:Panel ID="Panel2" Title="面板二" ShowBorder="true" Height="200" BodyPadding="10" EnableCollapse="true" ShowHeader="true" Content="展开折叠这两个面板。"
+                     OnCollapse="Panel2_CollapseExpand" OnExpand="Panel2_CollapseExpand">
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

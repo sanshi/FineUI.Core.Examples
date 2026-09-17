@@ -1,0 +1,79 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.AddTabModel
+@{
+    ViewBag.Title = "TabStrip/AddTab";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500" ShowBorder="true" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab Title="FineUI官网" EnableIFrame="true" IFrameUrl="https://fineui.com/">
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <br>
+
+    <f:Button ID="btnAddTab1" Text="DeepSeek官网（客户端代码）" ClickHandler="onAddTab1Click"></f:Button>
+
+    <f:Button ID="btnAddTab2" Text="ASP.NET官网（客户端代码）" ClickHandler="onAddTab2Click"></f:Button>
+
+    <f:Button ID="btnRemoveTab1" Text="删除DeepSeek官网（客户端代码）" ClickHandler="onRemoveTab1Click"></f:Button>
+
+    <f:Button ID="btnRemoveTab2" Text="删除ASP.NET官网（客户端代码）" ClickHandler="onRemoveTab2Click"></f:Button>
+    <br>
+    <br>
+
+    <f:Button ID="btnAddTab3" Text="DeepSeek官网（服务端代码）" OnClick="btnAddTab3_Click"></f:Button>
+
+    <f:Button ID="btnAddTab4" Text="ASP.NET官网（服务端代码）" OnClick="btnAddTab4_Click"></f:Button>
+
+    <f:Button ID="btnRemoveTab3" Text="删除DeepSeek官网（服务端代码）" OnClick="btnRemoveTab3_Click"></f:Button>
+
+    <f:Button ID="btnRemoveTab4" Text="删除ASP.NET官网（服务端代码）" OnClick="btnRemoveTab4_Click"></f:Button>
+    <br>
+    <br>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onAddTab1Click(event) {
+            F.ui.TabStrip1.addTab({
+                id: 'dynamic_tab1',
+                iframe: true,
+                iframeUrl: 'https://deepseek.com/',
+                title: 'DeepSeek官网',
+                closable: true,
+                icon: '@Url.Content("~/res/icon/application.png")'
+            });
+        }
+
+        function onAddTab2Click(event) {
+            F.ui.TabStrip1.addTab({
+                id: 'dynamic_tab2',
+                iframe: true,
+                iframeUrl: 'https://asp.net/',
+                title: 'ASP.NET官网',
+                closable: true,
+                icon: '@Url.Content("~/res/icon/application_add.png")'
+            });
+
+        }
+
+        function onRemoveTab1Click(event) {
+            F.ui.TabStrip1.closeTab('dynamic_tab1');
+        }
+
+        function onRemoveTab2Click(event) {
+            F.ui.TabStrip1.closeTab('dynamic_tab2');
+        }
+
+    </script>
+}

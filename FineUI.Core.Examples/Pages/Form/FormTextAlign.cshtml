@@ -1,0 +1,39 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormTextAlignModel
+@{
+    ViewBag.Title = "Form/FormTextAlign";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .text-align-center input {
+            text-align: center;
+        }
+
+        .text-align-right input {
+            text-align: right;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelWidth="180" LabelAlign=Right EnableCollapse="false" Title="简单表单">
+        <Items>
+            <f:TextBox Label="文本输入框" ID="TextBox1" Required="true" Text="文本居左" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox Label="文本输入框（居中）" ID="TextBox2" CssClass="text-align-center" Text="文本居中" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:TextBox Label="文本输入框（居右）" ID="TextBox3" CssClass="text-align-right" Text="文本居右" Required="true" ShowRedStar="true">
+            </f:TextBox>
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
+        </Items>
+    </f:SimpleForm>
+
+
+}
+

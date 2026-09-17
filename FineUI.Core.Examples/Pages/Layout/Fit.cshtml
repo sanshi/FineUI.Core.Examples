@@ -1,0 +1,88 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.FitModel
+@{
+    ViewBag.Title = "Layout/Fit";
+
+
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel3" IsFluid="true" Title="面板一（未设置Layout属性）" Height="300" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+        <Items>
+            <f:Form ID="Form3" ShowBorder="true" BodyPadding="10" ShowHeader="false" Title="表单">
+                <Rows>
+                    <f:FormRow>
+                        <Items>
+                            <f:Label ID="Label2" Label="文本" Text="文本内容">
+                            </f:Label>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow>
+                        <Items>
+                            <f:TextBox ID="TextBox2" Label="输入框">
+                            </f:TextBox>
+                            <f:Button ID="Button2" Text="按钮"></f:Button>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板二（Layout=Fit）" Layout="Fit" Height="300" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+        <Items>
+            <f:Form ID="Form2" ShowBorder="true" BodyPadding="10" ShowHeader="false" Title="表单">
+                <Rows>
+                    <f:FormRow>
+                        <Items>
+                            <f:Label ID="Label1" Label="文本" Text="文本内容">
+                            </f:Label>
+                        </Items>
+                    </f:FormRow>
+                    <f:FormRow>
+                        <Items>
+                            <f:TextBox ID="TextBox1" Label="输入框">
+                            </f:TextBox>
+                            <f:Button ID="Button1" Text="按钮"></f:Button>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Panel ID="Panel2" IsFluid="true" Title="面板三（Layout=Fit）" Layout="Fit" Height="300" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1">
+                <Items>
+                    <f:Button ID="Button4" Text="按钮一"></f:Button>
+                    <f:Button ID="Button5" Text="按钮二"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Grid ID="Grid1" Title="表格" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()">
+                <Columns>
+                    <f:RowNumberField />
+                    <f:RenderField HeaderText="姓名" DataField="Name" />
+                    <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+                    <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+                    <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+                    <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+                    <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                </Columns>
+            </f:Grid>
+        </Items>
+    </f:Panel>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

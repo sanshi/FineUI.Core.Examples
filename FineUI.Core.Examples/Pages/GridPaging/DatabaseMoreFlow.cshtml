@@ -1,0 +1,90 @@
+@page
+@model FineUI.Core.Examples.Pages.GridPaging.DatabaseMoreFlowModel
+@{
+    ViewBag.Title = "GridPaging/DatabaseMoreFlow";
+    var F = Html.F();
+}
+
+@section head  {
+
+    <style>
+        .morebutton {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+            .morebutton a[disabled] {
+                cursor: not-allowed !important;
+                text-decoration: none;
+                opacity: .5;
+                filter: alpha(opacity=50);
+            }
+    </style>
+
+}
+
+
+@section body {
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            DataSource="@ViewBag.Grid1DataSource" Height="350">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Attributes>
+            <f:Attribute Key="data-index" Value="0"></f:Attribute>
+        </Attributes>
+    </f:Grid>
+
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <br>
+    <br>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        var morebuttonSelector = '.f-grid-bodyct >.morebutton a';
+
+        function disableMoreButton() {
+            var grid1 = F.ui.Grid1;
+
+            // 禁用链接
+            var morebuttonEl = grid1.el.find(morebuttonSelector);
+            morebuttonEl.attr('disabled', true).removeAttr('href').text('全部加载完毕');
+        }
+
+        F.ready(function () {
+            var grid1 = F.ui.Grid1;
+
+            var tableEl = grid1.el.find('.f-grid-bodyct .f-grid-table');
+            tableEl.after('<div class="morebutton"><a href="javascript:;">加载更多...</a></div>');
+
+
+            grid1.el.on('click', morebuttonSelector, function () {
+                var morebuttonEl = $(this);
+                if (morebuttonEl.attr('disabled')) {
+                    return;
+                }
+
+                // 自定义回发
+                F.customEvent('MoreClick');
+            });
+
+        });
+
+    </script>
+
+}

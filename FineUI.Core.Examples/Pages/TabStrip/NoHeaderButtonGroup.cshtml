@@ -1,0 +1,96 @@
+@page
+@model FineUI.Core.Examples.Pages.TabStrip.NoHeaderButtonGroupModel
+@{
+    ViewBag.Title = "TabStrip/NoHeaderButtonGroup";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .mybuttongroup .f-btn {
+            border-width: 0;
+            border-radius: 0;
+            margin-bottom: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .mytabstrip {
+            border-left-width: 1px;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="true" IsFluid="true" Height="500" Layout="HBox">
+        <Items>
+            <f:ButtonGroup ID="ButtonGroup1" CssClass="mybuttongroup f-state-default" EnablePressGroup="true" Layout="VBox" Vertical="true" Width="200">
+                <Items>
+                    <f:Button ID="Button1" Text="标签一" Icon="Cake" EnablePress="true">
+                    </f:Button>
+                    <f:Button ID="Button2" Text="标签二" IconFont="_Bank" EnablePress="true" Pressed="true">
+                    </f:Button>
+                    <f:Button ID="Button3" Text="标签三" IconFont="_Group" EnablePress="true">
+                    </f:Button>
+                </Items>
+                <Listeners>
+                    <f:Listener Event="presschange" Handler="onButtonGroupPressChange" />
+                </Listeners>
+            </f:ButtonGroup>
+            <f:TabStrip ID="TabStrip1" CssClass="mytabstrip" EnableTabCloseMenu="true" BoxFlex="1" ShowBorder="false" ShowTabHeader="false" ActiveTabIndex="1" AnimationType="Fade">
+                <Tabs>
+                    <f:Tab ID="Tab1" Title="标签一" EnableClose="false" BodyPadding="10px">
+                        <Items>
+                            <f:Label ID="Label5" Text="标签一中的文本" />
+                        </Items>
+                    </f:Tab>
+                    <f:Tab ID="Tab2" Title="标签二" BodyPadding="10px" EnableClose="true">
+                        <Items>
+                            <f:Label ID="Label4" Text="标签二中的文本" />
+                        </Items>
+                    </f:Tab>
+                    <f:Tab ID="Tab3" Title="标签三" BodyPadding="10px" EnableClose="true" Layout="VBox">
+                        <Items>
+                            <f:Label ID="Label3" Text="标签三中的文本" />
+                            <f:TabStrip ID="TabStrip2" BoxFlex="1" EnableTabCloseMenu="true" ShowBorder="true" ActiveTabIndex="1">
+                                <Tabs>
+                                    <f:Tab ID="Tab4" Title="标签四" EnableClose="false" BodyPadding="10px">
+                                        <Items>
+                                            <f:Label ID="Label1" Text="标签四中的文本" />
+                                        </Items>
+                                    </f:Tab>
+                                    <f:Tab ID="Tab5" Title="标签五" EnableClose="false" BodyPadding="10px">
+                                        <Items>
+                                            <f:Label ID="Label2" Text="标签五中的文本" />
+                                        </Items>
+                                    </f:Tab>
+                                </Tabs>
+                            </f:TabStrip>
+                        </Items>
+                    </f:Tab>
+                </Tabs>
+            </f:TabStrip>
+        </Items>
+    </f:Panel>
+
+
+}
+
+
+@section script {
+
+    <script>
+
+        function onButtonGroupPressChange(event, btn) {
+            var btnIndex = btn.el.index('.f-btn');
+
+            // 激活相应的选项卡
+            F.ui.TabStrip1.getItem(btnIndex).activate();
+        }
+
+
+    </script>
+}

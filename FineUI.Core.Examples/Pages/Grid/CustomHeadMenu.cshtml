@@ -1,0 +1,118 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.CustomHeadMenuModel
+@{
+    ViewBag.Title = "Grid/CustomHeadMenu";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .custom-filter {
+            position: absolute;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        .f-grid-colheader.custom-filtered .f-grid-colheader-text {
+            /* font-style: italic; */
+            font-weight: bold;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableHeaderMenu="false">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField _HeaderTextRawHtml="@("入学年份<i class=\"f-icon f-iconfont f-iconfont-filter custom-filter\"></i>")" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField _HeaderTextRawHtml="@("是否在校<i class=\"f-icon f-iconfont f-iconfont-filter custom-filter\"></i>")" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="dataload" Handler="checkGridColheaderStyle"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+    <f:Menu ID="Menu1">
+        <Items>
+            <f:MenuCheckBox ID="btnSelectAll" GroupName="AtSchool" Checked="true" Text="全部" OnCheckedChanged="btnAtSchool_CheckedChanged">
+            </f:MenuCheckBox>
+            <f:MenuCheckBox ID="btnSelectAtSchool" GroupName="AtSchool" Text="在校" OnCheckedChanged="btnAtSchool_CheckedChanged">
+            </f:MenuCheckBox>
+            <f:MenuCheckBox ID="btnSelectNotAtSchool" GroupName="AtSchool" Text="离校" OnCheckedChanged="btnAtSchool_CheckedChanged">
+            </f:MenuCheckBox>
+        </Items>
+    </f:Menu>
+    <f:Menu ID="Menu2">
+        <Items>
+            <f:MenuCheckBox ID="btnEntranceYearAll" GroupName="EntranceYear" Checked="true" Text="全部" OnCheckedChanged="btnEntranceYear_CheckedChanged">
+            </f:MenuCheckBox>
+            <f:MenuCheckBox ID="btnEntranceYearGreatThan2002" GroupName="EntranceYear" Text="入学年份大于2002" OnCheckedChanged="btnEntranceYear_CheckedChanged">
+            </f:MenuCheckBox>
+        </Items>
+    </f:Menu>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function checkGridColheaderStyle(event) {
+            var grid1El = F.ui.Grid1.el;
+            var colheaderEntranceYearEl = grid1El.find('.f-grid-colheader-EntranceYear');
+            var colheaderAtSchoolEl = grid1El.find('.f-grid-colheader-AtSchool');
+
+            var btnSelectAll = F.ui.btnSelectAll;
+            var btnEntranceYearAll = F.ui.btnEntranceYearAll;
+
+
+            if (btnSelectAll.isChecked()) {
+                colheaderAtSchoolEl.removeClass('custom-filtered');
+            } else {
+                colheaderAtSchoolEl.addClass('custom-filtered');
+            }
+
+            if (btnEntranceYearAll.isChecked()) {
+                colheaderEntranceYearEl.removeClass('custom-filtered');
+            } else {
+                colheaderEntranceYearEl.addClass('custom-filtered');
+            }
+        }
+
+        function onGridDataLoad(event) {
+            checkGridColheaderStyle();
+        }
+
+        F.ready(function () {
+
+            F.ui.Grid1.el.on('click', '.f-grid-colheader .custom-filter', function (event) {
+                var colHeaderEl = $(this).parents('.f-grid-colheader');
+                if (colHeaderEl.hasClass('f-grid-colheader-AtSchool')) {
+                    F.ui.Menu1.show();
+                } else if (colHeaderEl.hasClass('f-grid-colheader-EntranceYear')) {
+                    F.ui.Menu2.show();
+                }
+            });
+
+        });
+
+    </script>
+}

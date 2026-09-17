@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Button.ButtonGroupLayoutModel
+@{
+    ViewBag.Title = "Button/ButtonGroupLayout";
+    var F = Html.F();
+}
+
+@section body {
+
+    <f:Panel ID="Panel1" Margin="24" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" AutoScroll="true"
+             Layout="VBox" BoxConfigAlign="Start" BoxConfigChildMargin="0 0 10px 0" BodyPadding="10" IsViewPort="true">
+        <Items>
+            <f:ButtonGroup Layout="HBox" Width="600">
+                <f:Button ID="btnIcon1" Text="图标在左侧" BoxFlex="1" Icon="Email" />
+                <f:Button ID="btnIcon2" Text="图标在右侧" BoxFlex="1" IconAlign="Right" Icon="Star" />
+                <f:Button ID="Button7" Text="图标在左侧" BoxFlex="1" IconFont="_Home" />
+                <f:Button ID="Button8" Text="图标在右侧" BoxFlex="1" IconAlign="Right" IconFont="_Car" />
+            </f:ButtonGroup>
+            <f:ButtonGroup Layout="HBox" Width="600">
+                <f:Button ID="btnIcon3" Text="图标在上面" BoxFlex="1" IconAlign="Top" Icon="Email" />
+                <f:Button ID="btnIcon4" Text="图标在下面" BoxFlex="1" IconAlign="Bottom" Icon="Star" />
+                <f:Button ID="Button9" Text="图标在上面" BoxFlex="1" IconAlign="Top" IconFont="_Camera" />
+                <f:Button ID="Button10" Text="图标在下面" BoxFlex="1" IconAlign="Bottom" IconFont="_Phone" />
+            </f:ButtonGroup>
+            <f:ButtonGroup Layout="VBox" Vertical="true" Width="200" MarginTop="50">
+                <f:Button ID="Button1" Text="图标在左侧" Icon="Email" />
+                <f:Button ID="Button2" Text="图标在右侧" IconAlign="Right" Icon="Star" />
+                <f:Button ID="Button3" Text="图标在左侧" IconFont="_Home" />
+                <f:Button ID="Button4" Text="图标在右侧" IconAlign="Right" IconFont="_Car" />
+            </f:ButtonGroup>
+            <f:ButtonGroup Layout="VBox" Vertical="true" Width="200">
+                <f:Button ID="Button5" Text="图标在上面" IconAlign="Top" Icon="Email" />
+                <f:Button ID="Button6" Text="图标在下面" IconAlign="Bottom" Icon="Star" />
+                <f:Button ID="Button11" Text="图标在上面" IconAlign="Top" IconFont="_Camera" />
+                <f:Button ID="Button12" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" />
+            </f:ButtonGroup>
+        </Items>
+    </f:Panel>
+
+}

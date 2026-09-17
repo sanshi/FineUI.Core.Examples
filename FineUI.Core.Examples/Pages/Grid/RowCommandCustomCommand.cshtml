@@ -1,0 +1,66 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.RowCommandCustomCommandModel
+@{
+    ViewBag.Title = "Grid/RowCommandCustomCommand";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+        .mybtn3 .f-icon.f-icon-remove {
+            color: red;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()"
+            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="">
+                <Commands>
+                    <f:Command CommandName="Action0" IconFont="Info" ToolTip="弹出客户端提示信息" />
+                    <f:Command CommandName="Action1" IconFont="Pencil" ToolTip="编辑" />
+                    <f:Command CommandName="Action3" IconFont="Remove" ToolTip="删除" CssClass="mybtn3" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Action0') {
+
+                F.alert('这是客户端提示信息（已阻止后台事件执行）！');
+
+                // 阻止服务器端事件的执行
+                return false;
+            }
+        }
+
+    </script>
+
+}

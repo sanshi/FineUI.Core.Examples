@@ -1,0 +1,75 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.StyleRowDataBoundEmptyCellModel
+@{
+    ViewBag.Title = "Grid/StyleRowDataBoundEmptyCell";
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <style>
+
+        .f-grid-row.color1 .f-grid-cell-Name,
+        .f-grid-row.color1 .f-grid-cell-Gender,
+        .f-grid-row.color1 .f-grid-cell-EntranceYear {
+            color: red;
+            font-weight: bold;
+        }
+
+        .f-grid-row.color3 .f-grid-cell-Name,
+        .f-grid-row.color3 .f-grid-cell-Gender,
+        .f-grid-row.color3 .f-grid-cell-EntranceYear {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" RowDataBoundFunction="grid1RowDataBound">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+    <f:Button Text="重新绑定表格" OnClick="Button1_Click"></f:Button>
+
+    <br />
+    <br />
+    注：当[入学年份]为2008年时，清空[是否在校]和[分组]两列的单元格。
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        // 在客户端的行绑定事件中改变单元格的值
+        function grid1RowDataBound(rowData) {
+            var entranceYear = rowData.values['EntranceYear'];
+
+            if (entranceYear == 2008) {
+                rowData.values['AtSchool'] = '';
+                rowData.values['Group'] = '';
+            }
+        }
+
+    </script>
+}

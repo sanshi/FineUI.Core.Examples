@@ -1,0 +1,65 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.CheckFieldPostBackModel
+@{
+    ViewBag.Title = "Grid/CheckFieldPostBack";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool2" DataField="AtSchool" RenderAsStaticField="false" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="选中了哪些行" MarginRight="5" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        var checkboxSelector = '.f-grid-cell-AtSchool2 .f-grid-checkbox';
+
+        F.ready(function () {
+
+            var grid1 = F.ui.Grid1;
+
+            grid1.el.on('click', checkboxSelector, function (event) {
+                var cnode = $(this);
+                var rowData = grid1.getRowData(cnode.closest('.f-grid-row'));
+                var isChecked = cnode.hasClass('f-checked');
+
+                // 触发后台事件（演示 F.doPostBack 的完整形式：eventName 即事件名，
+                // eventArgument 给对象即可，框架自动序列化为 JSON 并编码）
+                F.doPostBack({
+                    eventName: 'Grid1_CheckFieldChanged',
+                    eventArgument: {
+                        rowId: rowData.id,
+                        rowText: rowData.text,
+                        isChecked: isChecked
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+}

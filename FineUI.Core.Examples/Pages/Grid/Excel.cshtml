@@ -1,0 +1,48 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.ExcelModel
+@{
+    ViewBag.Title = "Grid/Excel";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button Text="导出为Excel文件" ClickHandler="onButton1Click"></f:Button>
+
+    <!-- 隐藏表单，用于自定义POST请求 -->
+    <form id="myform" asp-page-handler="ExportToExcel" method="post"></form>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onButton1Click(event) {
+            //window.location.href = '@Url.Content("~/Grid/ExportToExcel")';
+
+            // 自定义POST请求
+            $('#myform')[0].submit();
+        }
+
+    </script>
+}
