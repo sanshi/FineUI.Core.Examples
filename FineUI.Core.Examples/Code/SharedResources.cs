@@ -1,4 +1,4 @@
-// Dummy class to group shared resources
+// 用来归组共享资源的占位类
 
 namespace FineUI.Core.Examples
 {

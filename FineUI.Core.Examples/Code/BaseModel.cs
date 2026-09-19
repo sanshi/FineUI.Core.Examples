@@ -51,7 +51,7 @@ namespace FineUI.Core.Examples
         private DynamicViewData _viewBag;
 
         /// <summary>
-        /// Add ViewBag to PageModel
+        /// 给 PageModel 加 ViewBag
         /// https://forums.asp.net/t/2128012.aspx?Razor+Pages+ViewBag+has+gone+
         /// https://github.com/aspnet/Mvc/issues/6754
         /// </summary>
@@ -296,7 +296,6 @@ namespace FineUI.Core.Examples
                     ShowNotify("身份验证失败！");
 
                     // https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.filters.pagehandlerexecutingcontext?view=aspnetcore-8.0
-                    // Setting Result to a non-null value inside a page filter will short-circuit the page and any remaining page filters.
                     // 设置context.Result=UIHelper.Result()，可以中断页面继续执行（跳过接下来的 Page_Load 和回发事件）。
                     context.Result = UIHelper.Result();
                 }

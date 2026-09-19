@@ -16,13 +16,13 @@ namespace FineUI.Core.Examples.Pages.Grid
 
         public Task<IActionResult> OnPostExportToExcel()
         {
-            //Build the File Path.
+            //拼出文件路径。
             string path = FineUI.Core.PageContext.MapPath("~/wwwroot/res/menu.xml");
 
             //方案一
-            //Read the File data into FileStream.
+            //把文件内容读进 FileStream。
             FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            //Send the File to Download.
+            //把文件交给浏览器下载。
             return Task.FromResult<IActionResult>(new FileStreamResult(fileStream, "text/xml"));
 
             //// 方案一

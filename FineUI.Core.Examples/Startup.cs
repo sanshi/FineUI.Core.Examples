@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples
             Configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // 运行时调用此方法；在这里把服务注册进容器。
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDistributedMemoryCache();
@@ -95,7 +95,7 @@ namespace FineUI.Core.Examples
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // 运行时调用此方法；在这里配置 HTTP 请求管道。
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // 部署在反向代理的子路径下时（例如把 https://站点/demo/ 的请求转发到本应用），
