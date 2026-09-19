@@ -1225,6 +1225,16 @@
 			<TreeNode Text="合并列（列锁定）" NavigateUrl="~/GridMerge/ColumnsLockColumn" IsEnterprise="true">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="表格与表单">
+			<TreeNode Text="表格与表单" NavigateUrl="~/Grid/Form">
+			</TreeNode>
+			<TreeNode Text="表格与表单（弹出窗体，表单中保存）" NavigateUrl="~/Grid/FormWindow">
+			</TreeNode>
+			<TreeNode Text="表格与表单（弹出窗体，表格中保存）" NavigateUrl="~/Grid/FormWindowCellEdit">
+			</TreeNode>
+			<TreeNode Text="表格与表单（弹出窗体，表格中保存，省市联动）" NavigateUrl="~/Grid/FormWindowCellEditShengShi">
+			</TreeNode>
+		</TreeNode>
 		<TreeNode Text="树表格">
 			<TreeNode Text="树表格" NavigateUrl="~/GridTree/GridTree">
 			</TreeNode>

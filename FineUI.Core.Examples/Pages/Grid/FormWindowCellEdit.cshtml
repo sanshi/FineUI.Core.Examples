@@ -8,8 +8,185 @@
 
 @section body {
 
-    
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" EnableCollapse="false" Title="表格与表单"
+            DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar2" Position="Top">
+                <Items>
+                    <f:Button ID="btnNew" Text="新增" Icon="Add" ClickHandler="onNewButtonClick"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Columns>
+            <f:RowNumberField Width="60" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Hidden="true" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
+                           Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" Hidden="true" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" EnableColumnEdit="false" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField ColumnID="Edit" Width="50" TextAlign="Center" EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Edit" Icon="Pencil" />
+                </Commands>
+            </f:RenderField>
+            <f:RenderField ColumnID="Delete" Width="50" TextAlign="Center" EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
+    </f:Grid>
 
+    <br>
+
+    <f:Button ID="btnSaveAll" Text="全部保存" Icon="DatabaseSave" OnClick="btnSaveAll_Click"></f:Button>
+
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="false" EnableMaximize="true" EnableResize="true" IsModal="true" Width="600">
+        <Items>
+            <f:SimpleForm ID="SimpleForm1" ShowBorder="false" ShowHeader="false" BodyPadding="10">
+                <Items>
+                    <f:HiddenField ID="hfFormID"></f:HiddenField>
+                    <f:TextBox ID="tbxFormUserName" Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
+                    <f:RadioButtonList ID="rblFormGender" Label="性别" ShowRedStar="true" Required="true">
+                        <f:RadioItem Text="男" Value="1" />
+                        <f:RadioItem Text="女" Value="0" />
+                    </f:RadioButtonList>
+                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true"
+                                 MinValue="2000" MaxValue="2025" ShowRedStar="true" Required="true"></f:NumberBox>
+                    <f:DatePicker ID="dpFormEntranceDate" Label="入学日期" ShowRedStar="true" Required="true" EnableEdit="false"></f:DatePicker>
+                    <f:CheckBox ID="cbFormAtSchool" Label="是否在校"></f:CheckBox>
+                    <f:DropDownList ID="ddlFormMajor" Label="所学专业" ShowRedStar="true" Required="true" AutoSelectFirstItem="false">
+                        <f:ListItem Text="材料科学与工程系" Value="材料科学与工程系" />
+                        <f:ListItem Text="化学系" Value="化学系" />
+                        <f:ListItem Text="数学系" Value="数学系" />
+                        <f:ListItem Text="物理系" Value="物理系" />
+                        <f:ListItem Text="自动化系" Value="自动化系" />
+                        <f:ListItem Text="计算机科学与工程系" Value="计算机科学与工程系" />
+                    </f:DropDownList>
+                </Items>
+                <Toolbars>
+                    <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right">
+                        <Items>
+                            <f:Button ID="btnSave" Icon="TableSave" Text="保存到表格" _ValidateForms="SimpleForm1" ClickHandler="onSaveToTableClick"></f:Button>
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+            </f:SimpleForm>
+        </Items>
+    </f:Window>
+
+    <br>
+    <br>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+    <br>
+    <br>
+    注：初始[性别]和[入学日期]列处于隐藏状态。
 
 }
 
+@section script {
+
+    <script>
+
+        function renderGender(value) {
+            return value == 1 ? '男' : '女';
+        }
+
+
+        // 新增：清空表单字段后弹出窗体
+        function onNewButtonClick(event) {
+            // 重置表单字段
+            F.ui.SimpleForm1.reset();
+
+            // 弹出窗体
+            F.ui.Window1.show();
+            F.ui.Window1.setTitle('新增数据');
+        }
+
+
+        // 行命令：编辑和删除都只改客户端的表格数据，等点击【全部保存】才一次性回发
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Edit') {
+                showEditWindow(rowId);
+            } else if (commandName === 'Delete') {
+                // 确认框由行命令的 ConfirmText 负责弹出，这里只处理用户点确定之后的删除
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
+
+
+        // 弹出编辑窗体，并把当前行数据灌进表单字段
+        function showEditWindow(rowId) {
+            var grid1 = F.ui.Grid1;
+
+            // 如果传入参数为空，则获取当前选中行
+            if (!rowId) {
+                var selectedRowIds = grid1.getSelectedRows();
+                if (!selectedRowIds.length) {
+                    F.alert('请至少选择一项！');
+                    return;
+                }
+
+                rowId = selectedRowIds[0];
+            }
+
+            F.ui.Window1.setTitle('编辑数据');
+
+            // 当前行数据
+            var rowValue = grid1.getRowValue(rowId);
+
+            // 使用当前行数据填充表单字段
+            F.ui.hfFormID.setValue(rowId);
+            F.ui.tbxFormUserName.setValue(rowValue['Name']);
+            F.ui.rblFormGender.setValue(rowValue['Gender']);
+            F.ui.nbFormEntranceYear.setValue(rowValue['EntranceYear']);
+            F.ui.dpFormEntranceDate.setValue(rowValue['EntranceDate']);
+            F.ui.cbFormAtSchool.setValue(rowValue['AtSchool']);
+            F.ui.ddlFormMajor.setValue(rowValue['Major']);
+
+            // 弹出窗体
+            F.ui.Window1.show();
+        }
+
+
+        // 把表单数据写进表格：带行标识就是改已有行，不带就是新增一行
+        function saveToTable() {
+            var grid1 = F.ui.Grid1;
+            var rowId = F.ui.hfFormID.getValue();
+
+            if (rowId) {
+                grid1.updateCellValue(rowId, {
+                    'Name': F.ui.tbxFormUserName.getValue(),
+                    'Gender': F.ui.rblFormGender.getValue(),
+                    'EntranceYear': F.ui.nbFormEntranceYear.getValue(),
+                    'EntranceDate': F.ui.dpFormEntranceDate.getValue(),
+                    'AtSchool': F.ui.cbFormAtSchool.getValue(),
+                    'Major': F.ui.ddlFormMajor.getValue()
+                });
+            } else {
+                grid1.addNewRecord({
+                    'Name': F.ui.tbxFormUserName.getValue(),
+                    'Gender': F.ui.rblFormGender.getValue(),
+                    'EntranceYear': F.ui.nbFormEntranceYear.getValue(),
+                    'EntranceDate': F.ui.dpFormEntranceDate.getValue(),
+                    'AtSchool': F.ui.cbFormAtSchool.getValue(),
+                    'Major': F.ui.ddlFormMajor.getValue()
+                }, true);
+            }
+
+            F.ui.Window1.hide();
+        }
+
+
+        function onSaveToTableClick(event) {
+            saveToTable();
+        }
+
+    </script>
+
+}

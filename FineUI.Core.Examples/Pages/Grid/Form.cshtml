@@ -6,10 +6,122 @@
 }
 
 
-@section body {
+@section head {
 
-    
-
+    <style>
+        /* 表格与表单左右分栏，给表格右侧留一条分隔线 */
+        .maingrid {
+            border-width: 0 1px 0 0;
+        }
+    </style>
 
 }
 
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格与表单" Layout="HBox" Height="500">
+        <Items>
+            <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" EnableCollapse="false" BoxFlex="1" CssClass="maingrid"
+                    DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2">
+                <Columns>
+                    <f:RowNumberField Width="60" />
+                    <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+                    <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Hidden="true" />
+                    <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+                    <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
+                                   Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150" Hidden="true" />
+                    <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" EnableColumnEdit="false" />
+                    <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
+                </Columns>
+                <Listeners>
+                    <f:Listener Event="rowselect" Handler="onGridRowSelect"></f:Listener>
+                </Listeners>
+            </f:Grid>
+            <f:SimpleForm ID="SimpleForm1" ShowBorder="false" ShowHeader="false" BodyPadding="10" Width="300">
+                <Items>
+                    <f:HiddenField ID="hfFormID"></f:HiddenField>
+                    <f:TextBox ID="tbxFormUserName" Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
+                    <f:RadioButtonList ID="rblFormGender" Label="性别" ShowRedStar="true" Required="true">
+                        <f:RadioItem Text="男" Value="1" />
+                        <f:RadioItem Text="女" Value="0" />
+                    </f:RadioButtonList>
+                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true"
+                                 MinValue="2000" MaxValue="2025" ShowRedStar="true" Required="true"></f:NumberBox>
+                    <f:DatePicker ID="dpFormEntranceDate" Label="入学日期" ShowRedStar="true" Required="true"></f:DatePicker>
+                    <f:CheckBox ID="cbFormAtSchool" Label="是否在校"></f:CheckBox>
+                    <f:DropDownList ID="ddlFormMajor" Label="所学专业" ShowRedStar="true" Required="true" AutoSelectFirstItem="false">
+                        <f:ListItem Text="材料科学与工程系" Value="材料科学与工程系" />
+                        <f:ListItem Text="化学系" Value="化学系" />
+                        <f:ListItem Text="数学系" Value="数学系" />
+                        <f:ListItem Text="物理系" Value="物理系" />
+                        <f:ListItem Text="自动化系" Value="自动化系" />
+                        <f:ListItem Text="计算机科学与工程系" Value="计算机科学与工程系" />
+                    </f:DropDownList>
+                </Items>
+                <Toolbars>
+                    <f:Toolbar Position="Bottom">
+                        <Items>
+                            <f:Button ID="btnNew" Icon="Add" ClickHandler="onNewButtonClick"></f:Button>
+                            <f:Button ID="btnDelete" Enabled="false" Icon="Delete" ConfirmText="确定删除当前数据？" OnClick="btnDelete_Click"></f:Button>
+                            <f:ToolbarFill></f:ToolbarFill>
+                            <f:Button ID="btnSave" Icon="SystemSave" Text="保存数据（新增）" _ValidateForms="SimpleForm1" OnClick="btnSave_Click"></f:Button>
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+            </f:SimpleForm>
+        </Items>
+    </f:Panel>
+
+}
+
+
+@section script {
+
+    <script>
+
+        function renderGender(value) {
+            return value == 1 ? '男' : '女';
+        }
+
+
+        // 表格选中行变化：把当前行数据灌进右侧表单，并切成「编辑」状态
+        function onGridRowSelect(event, rowId) {
+            var grid1 = F.ui.Grid1;
+
+            // 有选中行才允许删除
+            F.ui.btnDelete.enable();
+
+            // 当前行数据
+            var rowValue = grid1.getRowValue(rowId);
+
+            // 使用当前行数据填充表单字段
+            F.ui.hfFormID.setValue(rowId);
+            F.ui.tbxFormUserName.setValue(rowValue['Name']);
+            F.ui.rblFormGender.setValue(rowValue['Gender']);
+            F.ui.nbFormEntranceYear.setValue(rowValue['EntranceYear']);
+            F.ui.dpFormEntranceDate.setValue(rowValue['EntranceDate']);
+            F.ui.cbFormAtSchool.setValue(rowValue['AtSchool']);
+            F.ui.ddlFormMajor.setValue(rowValue['Major']);
+
+            // 更新保存按钮文本
+            F.ui.btnSave.setText('保存数据（编辑）');
+        }
+
+
+        // 新增：清空表单与表格选中行，回到「新增」状态
+        function onNewButtonClick(event) {
+            // 重置表单字段
+            F.ui.SimpleForm1.reset();
+            // 清空表格选中行
+            F.ui.Grid1.clearSelection();
+            // 禁用删除按钮
+            F.ui.btnDelete.disable();
+
+            // 更新保存按钮文本
+            F.ui.btnSave.setText('保存数据（新增）');
+        }
+
+    </script>
+
+}
