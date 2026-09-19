@@ -15,6 +15,25 @@ dotnet restore FineUI.Core.Examples.sln
 dotnet build FineUI.Core.Examples.sln -c Release --no-restore
 ```
 
+## 运行
+
+在仓库根目录启动（首次会先还原 NuGet 包并编译）：
+
+```powershell
+dotnet run --project FineUI.Core.Examples/FineUI.Core.Examples.csproj
+```
+
+启动后打开 **http://localhost:5000/** —— 地址来自 `FineUI.Core.Examples/Properties/launchSettings.json` 里的 `FineUI.Core.Examples` 配置。
+
+也可以用 Visual Studio 2022 打开 `FineUI.Core.Examples.sln`：
+
+- 按 F5 / Ctrl+F5 默认走上面那个 `FineUI.Core.Examples` 配置；
+- 想用 IIS Express，就在工具栏把启动配置切成 `IIS Express`，地址是 **http://localhost:61517/**。
+
+端口被占用时，改 `Properties/launchSettings.json` 里对应配置的 `applicationUrl` 即可。
+
+**不需要授权文件**：本仓库引用的是公共 NuGet 包 `FineUI.Core`（社区版），社区版不做授权校验，克隆下来就能直接跑。
+
 ## 许可边界
 
 本仓库中由合肥三生石上软件有限公司拥有著作权的示例或应用项目源代码采用 [MIT 许可证](LICENSE)。FineUI 各端框架源码、二进制软件包、内嵌的 FineUI.js 运行时以及 FineUI 名称、标识和商标不属于 MIT 授权范围，仍适用各自的商业或社区版许可。具体边界见 [NOTICE.md](NOTICE.md)。
