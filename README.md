@@ -23,12 +23,9 @@ dotnet build FineUI.Core.Examples.sln -c Release --no-restore
 dotnet run --project FineUI.Core.Examples/FineUI.Core.Examples.csproj
 ```
 
-启动后打开 **http://localhost:5000/** —— 地址来自 `FineUI.Core.Examples/Properties/launchSettings.json` 里的 `FineUI.Core.Examples` 配置。
+启动后打开 <http://localhost:5000/> —— 地址来自 `FineUI.Core.Examples/Properties/launchSettings.json` 里的 `FineUI.Core.Examples` 配置。
 
-也可以用 Visual Studio 2022 打开 `FineUI.Core.Examples.sln`：
-
-- 按 F5 / Ctrl+F5 默认走上面那个 `FineUI.Core.Examples` 配置；
-- 想用 IIS Express，就在工具栏把启动配置切成 `IIS Express`，地址是 **http://localhost:61517/**。
+也可以用 Visual Studio 打开 `FineUI.Core.Examples.sln`，把启动配置切成 `IIS Express`（<http://localhost:61517/>）。
 
 端口被占用时，改 `Properties/launchSettings.json` 里对应配置的 `applicationUrl` 即可。
 
