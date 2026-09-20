@@ -8,6 +8,7 @@
 # 本地依赖覆盖与包还原目录
 Directory.Build.local.props
 .local/
+*.local.sln
 packages/
 
 # 操作系统文件
@@ -33,5 +34,6 @@ target/
 Directory.Build.local.props
 NuGet.Config
 .local/
+*.local.sln
 FineUI*.lic*.config
 FineUI.Enterprise.props
