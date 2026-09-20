@@ -1,11 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using static FineUI.Core.Examples.Pages.GridOther.ComplexPropertyModel;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
@@ -15,44 +9,22 @@ namespace FineUI.Core.Examples.Pages.GridOther
         {
             if (!IsPostBack)
             {
-                Grid1.DataSource = GetSimpleDataTable();
+                DataTable table = GetSimpleDataTable();
+
+                // 表格一：使用默认配置，数据绑定时长整型的 Id 自动转为字符串下发，客户端原样显示
+                Grid1.DataSource = table;
                 Grid1.DataBind();
 
-
-                //var dataTable = GetSimpleDataTable();
-                //// 表达式转换
-                //dataTable.Columns.Add("IdString", typeof(string), "Convert(Id, 'System.String')");
-
-                //var dataTable = GetSimpleDataTable();
-                //dataTable.Columns.Add("IdString", typeof(string));
-
-                //foreach(DataRow row in dataTable.Rows)
-                //{
-                //    row["IdString"] = row["Id"].ToString();
-                //}
-
-                //Grid1.DataSource = dataTable;
-                //Grid1.DataBind();
-
-                //var dataList = GetSimpleDataList();
-                //List<ExtendedStudent> wrappedList = dataList.Select(x => new ExtendedStudent
-                //{
-                //    Id = x.Id,
-                //    Name = x.Name,
-                //    EntranceYear = x.EntranceYear,
-                //    AtSchool = x.AtSchool,
-                //    Major = x.Major,
-                //    Gender = x.Gender,
-                //    EntranceDate = x.EntranceDate
-                //}).ToList();
-
-                //Grid1.DataSource = wrappedList;
-                //Grid1.DataBind();
+                // 表格二：显式关闭转换，长整型的 Id 以 JSON 数字下发；超过 2^53 - 1 的值会被 JavaScript 舍入，
+                // 页面上看到的就是被改写后的数字（21956392701267968 显示为 21956392701267970）
+                Grid2.DataSource = table;
+                Grid2.DataBind();
             }
         }
 
-        #region GetSimpleDataTable
-
+        /// <summary>
+        /// 构造演示数据：第一行的 Id 是超过 JavaScript 安全整数范围的 17 位长整型
+        /// </summary>
         public static DataTable GetSimpleDataTable()
         {
             DataTable table = new DataTable();
@@ -97,45 +69,5 @@ namespace FineUI.Core.Examples.Pages.GridOther
 
             return table;
         }
-
-
-
-        #endregion
-
-        #region Student
-
-        // 直接继承并添加新属性
-        public class ExtendedStudent : Student
-        {
-            public string IdString => Id.ToString();
-        }
-
-        public class Student
-        {
-            public long Id { get; set; }
-            public string Name { get; set; }
-            public int EntranceYear { get; set; }
-            public bool AtSchool { get; set; }
-            public string Major { get; set; }
-            public int Gender { get; set; }
-            public string EntranceDate { get; set; }
-        }
-
-        public List<Student> GetSimpleDataList()
-        {
-            return GetSimpleDataTable().AsEnumerable().Select(row => new Student
-            {
-                Id = row.Field<long>("Id"),
-                Name = row.Field<string>("Name"),
-                EntranceYear = row.Field<int>("EntranceYear"),
-                AtSchool = row.Field<bool>("AtSchool"),
-                Major = row.Field<string>("Major"),
-                Gender = row.Field<int>("Gender"),
-                EntranceDate = row.Field<string>("EntranceDate")
-            }).ToList();
-        }
-
-        #endregion
-
     }
 }
