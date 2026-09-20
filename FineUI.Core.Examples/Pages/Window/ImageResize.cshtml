@@ -19,7 +19,7 @@
 @section body {
 
     <f:Window ID="Window2" Width="650" Height="300" Icon="TagBlue" Title="窗体（观察图片随着窗体大小的变化）" EnableClose="false" EnableMaximize="true" EnableCollapse="false" EnableResize="true"
-              IsModal="false" AutoScroll="true" BodyPadding="10" Content="@("<img id=\"mylogo\" src=\"" + Url.Content("~/res/images/newlogo/fineui_500.png") + "\" alt=\"Logo\">")">
+              IsModal="false" AutoScroll="true" BodyPadding="10" Content="@("<img id=\"mylogo\" src=\"" + Url.Content("~/res/images/logo/fineui_500.png") + "\" alt=\"Logo\">")">
         <Listeners>
             <f:Listener Event="resize" Handler="onWindowResize" />
             <f:Listener Event="render" Handler="onWindowResize" />
