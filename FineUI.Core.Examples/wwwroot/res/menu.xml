@@ -916,6 +916,8 @@
 			</TreeNode>
 			<TreeNode Text="多表头（复杂）" NavigateUrl="~/Grid/GroupFieldComplex">
 			</TreeNode>
+			<TreeNode Text="多表头（大量列，列线对齐）" NavigateUrl="~/Grid/GroupFieldManyColumns">
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="合计行">
 			<TreeNode Text="合计行" NavigateUrl="~/Grid/Summary">
