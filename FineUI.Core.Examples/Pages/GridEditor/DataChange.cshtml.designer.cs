@@ -18,6 +18,8 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 		protected FineUI.Core.Button btnDelete;
 		protected FineUI.Core.Button btnReset;
 		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Button btnRejectChanges;
+		protected FineUI.Core.Button btnReadChanges;
 		protected FineUI.Core.Label labResult;
 	}
 }

@@ -27,6 +27,18 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             Grid1.DataBind();
         }
 
+        protected void btnRejectChanges_Click(object sender, EventArgs e)
+        {
+            // 只撤销浏览器里未保存的编辑，不重绑，也不修改会话数据源。
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetRejectChangesReference());
+        }
+
+        protected void btnReadChanges_Click(object sender, EventArgs e)
+        {
+            // 再次回发读取，验证浏览器撤销后不再提交旧修改。
+            labResult.Text = "未保存的修改记录数：" + Grid1.GetModifiedData().Count;
+        }
+
 
 
 
