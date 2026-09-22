@@ -11,5 +11,6 @@ namespace FineUI.Core.Examples.Pages.IFrame
 		protected FineUI.Core.Label labResult;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Panel Panel1;
+		protected FineUI.Core.Button btnServerRefresh;
 	}
 }

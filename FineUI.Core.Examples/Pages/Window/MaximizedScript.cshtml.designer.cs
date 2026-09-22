@@ -14,5 +14,10 @@ namespace FineUI.Core.Examples.Pages.Window
 		protected FineUI.Core.Button btnShowWindow;
 		protected FineUI.Core.Button btnCloseWindow;
 		protected FineUI.Core.Window Window1;
+        protected FineUI.Core.Button btnServerMaximize;
+        protected FineUI.Core.Button btnServerRestore;
+        protected FineUI.Core.Button btnServerClose;
+        protected FineUI.Core.CheckBox cbBlockClose;
+        protected FineUI.Core.Label labWindowEvent;
 	}
 }

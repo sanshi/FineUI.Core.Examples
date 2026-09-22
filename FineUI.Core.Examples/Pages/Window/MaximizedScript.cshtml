@@ -48,7 +48,22 @@
                 </li>
             </ul>
         </Content>
+        <Toolbars>
+            <f:Toolbar>
+                <Items>
+                    <f:Button ID="btnServerMaximize" Text="服务端最大化" OnClick="btnServerMaximize_Click" />
+                    <f:Button ID="btnServerRestore" Text="服务端还原" OnClick="btnServerRestore_Click" />
+                    <f:Button ID="btnServerClose" Text="服务端关闭" OnClick="btnServerClose_Click" />
+                    <f:CheckBox ID="cbBlockClose" Text="阻止关闭" />
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Listeners>
+            <f:Listener Event="beforeclose" Handler="onBeforeServerWindowClose" />
+            <f:Listener Event="close" Handler="onServerWindowClose" />
+        </Listeners>
     </f:Window>
+    <f:Label ID="labWindowEvent" />
 
 
 
@@ -58,6 +73,18 @@
 @section script {
 
     <script>
+        // 关闭命令遵守 beforeclose 取消；close 回调在窗体隐藏完成后才执行。
+        function onBeforeServerWindowClose(event) {
+            if (F.ui.cbBlockClose.getValue()) {
+                F.ui.labWindowEvent.setText('关闭已取消');
+                return false;
+            }
+        }
+
+        function onServerWindowClose(event) {
+            F.ui.labWindowEvent.setText('窗体已关闭');
+        }
+
 
         F.ready(function () {
 
