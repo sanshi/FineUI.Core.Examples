@@ -10,6 +10,8 @@ namespace FineUI.Core.Examples.Pages.Grid
 {
     public partial class GroupFieldManyColumnsModel : BaseModel
     {
+        // 分组内部使用混合列宽，覆盖跨列分配时的累积舍入。
+        private static readonly int[] LEAF_WIDTHS = { 70, 100, 110, 150 };
         // 叶子列的表头文本（发货分组用全部 18 个，开票分组用前 17 个）
         private static readonly string[] SUB_LEAF_NAMES = new string[]
         {
@@ -52,7 +54,7 @@ namespace FineUI.Core.Examples.Pages.Grid
                 fhGroup.TextAlign = TextAlign.Center;
                 for (int i = 0; i < 18; i++)
                 {
-                    fhGroup.Columns.Add(CreateLeafField(SUB_LEAF_NAMES[i], String.Format("m{0}_fh_{1}", mo, i)));
+                    fhGroup.Columns.Add(CreateLeafField(SUB_LEAF_NAMES[i], String.Format("m{0}_fh_{1}", mo, i), i));
                 }
 
                 GroupField kpGroup = new GroupField();
@@ -60,7 +62,7 @@ namespace FineUI.Core.Examples.Pages.Grid
                 kpGroup.TextAlign = TextAlign.Center;
                 for (int i = 0; i < 17; i++)
                 {
-                    kpGroup.Columns.Add(CreateLeafField(SUB_LEAF_NAMES[i], String.Format("m{0}_kp_{1}", mo, i)));
+                    kpGroup.Columns.Add(CreateLeafField(SUB_LEAF_NAMES[i], String.Format("m{0}_kp_{1}", mo, i), i));
                 }
 
                 GroupField monthGroup = new GroupField();
@@ -84,12 +86,12 @@ namespace FineUI.Core.Examples.Pages.Grid
             Grid1.Columns.Add(field);
         }
 
-        private RenderField CreateLeafField(string headerText, string dataField)
+        private RenderField CreateLeafField(string headerText, string dataField, int leafIndex)
         {
             RenderField field = new RenderField();
             field.HeaderText = headerText;
             field.DataField = dataField;
-            field.Width = 90;
+            field.Width = LEAF_WIDTHS[leafIndex % LEAF_WIDTHS.Length];
             field.TextAlign = TextAlign.Right;
             return field;
         }
