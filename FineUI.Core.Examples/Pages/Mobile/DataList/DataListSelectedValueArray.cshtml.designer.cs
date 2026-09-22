@@ -11,6 +11,10 @@ namespace FineUI.Core.Examples.Pages.Mobile.DataList
 		protected FineUI.Core.Panel Panel1;
 		protected FineUI.Core.Toolbar Toolbar1;
 		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Toolbar ToolbarActions;
+		protected FineUI.Core.Button btnSetSelection;
+		protected FineUI.Core.Button btnClearSelection;
+		protected FineUI.Core.Button btnRebindSelection;
 		protected FineUI.Core.DataList DataList1;
 	}
 }
