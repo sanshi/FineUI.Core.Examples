@@ -21,6 +21,12 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 		protected FineUI.Core.Button btnRejectChanges;
 		protected FineUI.Core.Button btnReadChanges;
 		protected FineUI.Core.Button btnCommitChanges;
+		protected FineUI.Core.Button btnUpdateCells;
+		protected FineUI.Core.Button btnAddRecord;
+		protected FineUI.Core.Button btnAppendRecord;
+		protected FineUI.Core.Button btnDeleteRow;
+		protected FineUI.Core.Button btnForceDeleteRow;
+		protected FineUI.Core.Button btnDeleteSelected;
 		protected FineUI.Core.Label labResult;
 	}
 }

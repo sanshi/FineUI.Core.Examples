@@ -45,6 +45,49 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetCommitChangesReference());
         }
 
+        protected void btnUpdateCells_Click(object sender, EventArgs e)
+        {
+            // 使用稳定行 ID，单列和多列修改均保留编辑记录，不重绑数据。
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", "Name", "服务端修改"));
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", new JObject
+            {
+                { "Gender", 0 }, { "Major", "服务端专业" }
+            }));
+        }
+
+        protected void btnAddRecord_Click(object sender, EventArgs e)
+        {
+            // 每次使用新 ID，避免重复点击产生重号；插入到第二行并编辑姓名。
+            var record = new JObject
+            {
+                { "id", "server-" + Guid.NewGuid() },
+                { "values", new JObject { { "Name", "服务端新增" }, { "Gender", 1 }, { "Major", "新专业" } } }
+            };
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetAddNewRecordReference(record, 1, "Name"));
+        }
+
+        protected void btnAppendRecord_Click(object sender, EventArgs e)
+        {
+            var values = new JObject { { "Name", "末尾新增" }, { "Gender", 0 }, { "Major", "新专业" } };
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetAddNewRecordReference(values, true));
+        }
+
+        protected void btnDeleteRow_Click(object sender, EventArgs e)
+        {
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteRowReference("101"));
+        }
+
+        protected void btnForceDeleteRow_Click(object sender, EventArgs e)
+        {
+            // 强制删除只移除客户端行，撤销不能恢复；刷新仍可从原数据源加载。
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteRowReference("102", true));
+        }
+
+        protected void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteSelectedRowsReference());
+        }
+
 
 
 
