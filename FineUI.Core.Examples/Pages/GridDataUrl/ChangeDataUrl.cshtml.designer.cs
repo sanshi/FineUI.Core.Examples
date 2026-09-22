@@ -10,5 +10,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
 	{
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.Button Button1;
+        protected FineUI.Core.Button Button2;
+        protected FineUI.Core.Button btnReload;
 	}
 }
