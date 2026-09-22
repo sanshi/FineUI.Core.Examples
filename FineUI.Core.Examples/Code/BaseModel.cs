@@ -264,7 +264,7 @@ namespace FineUI.Core.Examples
 
         /// <summary>
         /// 将 JSON 数据（如 Grid 的 ModifiedData/FilteredData/MergedData）格式化为缩进字符串并 HTML 编码，
-        /// 安全输出到页面。典型用法：String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData))
+        /// 安全输出到页面。处理表格改动时先保存 GetModifiedData() 的结果，后续遍历和输出都使用这份快照。
         /// </summary>
         protected string EncodeJson(Newtonsoft.Json.Linq.JToken data)
         {

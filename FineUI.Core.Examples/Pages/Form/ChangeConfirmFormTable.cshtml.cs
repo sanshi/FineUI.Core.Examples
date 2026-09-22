@@ -31,12 +31,14 @@ namespace FineUI.Core.Examples.Pages.Form
 
         protected void btnClosePostBack_Click(object sender, EventArgs e)
         {
+            JArray modifiedData = Grid1.GetModifiedData();
+
             // 保存数据后，清空面板内表单字段的改变状态
             SimpleForm1.ClearDirty();
 
             // 保存表格数据，并重新绑定
             DataTable source = GetSourceData();
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
                 int rowId = Convert.ToInt32(modifiedRow.Value<string>("id"));

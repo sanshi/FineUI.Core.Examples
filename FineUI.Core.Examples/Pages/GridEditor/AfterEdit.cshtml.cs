@@ -31,9 +31,11 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
         protected void Grid1_AfterEdit(object sender, EventArgs e)
         {
+            JArray modifiedData = Grid1.GetModifiedData();
+
             DataTable source = GetSourceData();
 
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
                 int rowId = Convert.ToInt32(modifiedRow.Value<string>("id"));
@@ -47,7 +49,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             Grid1.DataSource = source;
             Grid1.DataBind();
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(modifiedData));
 
             HttpContext.Session.SetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION, source);
 

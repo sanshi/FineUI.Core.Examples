@@ -31,12 +31,14 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
         protected void Grid1_AfterEdit(object sender, EventArgs e)
         {
+            JArray modifiedData = Grid1.GetModifiedData();
+
             // 先将选中的单元格备份一下（DataBind时会清空选中行和选中单元格）
             var selectedCell = Grid1.SelectedCell;
 
             DataTable source = GetSourceData();
 
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
                 int rowId = Convert.ToInt32(modifiedRow.Value<string>("id"));
@@ -50,7 +52,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             Grid1.DataSource = source;
             Grid1.DataBind();
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(modifiedData));
 
             // 重新选中之前的单元格
             Grid1.SelectedCell = selectedCell;

@@ -25,7 +25,9 @@ namespace FineUI.Core.Examples.Pages.Grid
         // 保存数据：客户端的改动一次性提交上来，按行状态分别处理
         protected void btnSaveAll_Click(object sender, EventArgs e)
         {
-            if (Grid1.ModifiedData.Count == 0)
+            JArray modifiedData = Grid1.GetModifiedData();
+
+            if (modifiedData.Count == 0)
             {
                 labResult.Text = "";
                 ShowNotify("表格数据没有变化！");
@@ -35,7 +37,7 @@ namespace FineUI.Core.Examples.Pages.Grid
             DataTable table = GetSourceData();
 
             // 修改与删除先处理；新增行要等删除处理完，行序才与客户端一致
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
 
@@ -55,7 +57,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 
             // 新增行：客户端把它放在第几行，回发数据的 index 就是几，服务端照着插
             // （前提是表格不分页、也没在客户端排过序，否则 index 与数据源的行序对不上）
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 if (modifiedRow.Value<string>("status") == "newadded")
                 {
@@ -63,7 +65,7 @@ namespace FineUI.Core.Examples.Pages.Grid
                 }
             }
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(modifiedData));
 
             // 把改过的数据写回Session
             HttpContext.Session.SetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION, table);

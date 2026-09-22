@@ -30,12 +30,14 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            JArray mergedData = Grid1.GetMergedData();
+
             int rowIndex = 0;
             // 复制原始表格的结构
             DataTable newTable = GetSourceData().Clone();
             DataRow newRow;
-            // 需要先启用表格的IncludeMergedData属性，才能在页面回发时使用MergedData属性
-            foreach (JObject mergedRow in Grid1.MergedData)
+            // 需要先启用表格的IncludeMergedData属性，才能在页面回发时调用GetMergedData()方法
+            foreach (JObject mergedRow in mergedData)
             {
                 JObject values = mergedRow.Value<JObject>("values");
 
@@ -57,7 +59,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             Grid1.DataSource = newTable;
             Grid1.DataBind();
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.MergedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(mergedData));
 
             HttpContext.Session.SetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION, newTable);
 

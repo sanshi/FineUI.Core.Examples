@@ -31,9 +31,11 @@ namespace FineUI.Core.Examples.Pages.GridTree
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            JArray modifiedData = Grid1.GetModifiedData();
+
             DataTable source = GetSourceData();
 
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
                 string rowId = modifiedRow.Value<string>("id");
@@ -51,7 +53,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             Grid1.DataSource = source;
             Grid1.DataBind();
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(modifiedData));
 
             HttpContext.Session.SetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION, source);
 

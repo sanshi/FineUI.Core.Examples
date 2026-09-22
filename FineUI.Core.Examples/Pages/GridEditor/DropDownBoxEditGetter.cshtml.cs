@@ -32,9 +32,11 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            JArray modifiedData = Grid1.GetModifiedData();
+
             DataTable source = GetSourceData();
 
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 string status = modifiedRow.Value<string>("status");
                 string rowId = modifiedRow.Value<string>("id");
@@ -50,7 +52,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             }
             // 新增行：客户端把它放在第几行，回发数据的 index 就是几，服务端照着插
             // （前提是表格不分页、也没在客户端排过序，否则 index 与数据源的行序对不上）
-            foreach (JObject modifiedRow in Grid1.ModifiedData)
+            foreach (JObject modifiedRow in modifiedData)
             {
                 if (modifiedRow.Value<string>("status") == "newadded")
                 {
@@ -61,7 +63,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             Grid1.DataSource = source;
             Grid1.DataBind();
 
-            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1.ModifiedData));
+            labResult.Text = String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(modifiedData));
 
             HttpContext.Session.SetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION, source);
 
