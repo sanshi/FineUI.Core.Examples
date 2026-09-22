@@ -13,26 +13,46 @@ body.f-body {
     }
 }
 
+/* 左上角：第一行产品名（折叠后只剩前面的旋转图标），第二行项目身份。
+   两行堆叠靠 flex-wrap + 副标题 flex-basis:100% 实现，不改任何页面的 DOM 结构。
+   align-content 让两行整体垂直居中——只写 align-items 在换行容器里管的是行内对齐、不是行与行之间。 */
 #sideheader {
     height: 58px;
     overflow: hidden;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    align-content: center;
+    column-gap: 5px;
 }
 
+    /* 页面里的内联 SVG 带 width="512" height="512" 两个属性，只覆盖 width 的话高度仍是 512px——
+       靠外层 overflow:hidden 裁成一个 30px 的切片，单行 flex 布局下看着"正常"，一旦换行就把整块撑爆。
+       所以宽高都要钉死。 */
     #sideheader .logo-img svg {
         width: 30px;
+        height: 30px;
         animation: rotate 30s linear infinite;
     }
 
     #sideheader .logo {
         font-size: 28px;
         text-decoration: none;
-        line-height: 58px;
+        line-height: 1.15;
     }
 
+    /* 副标题在文档流里换到第二行，不再是右上角的绝对定位角标——那样会压在 logo 文字上，
+       而且 #sideheader 没有 position:relative，全靠外层 .f-panel 碰巧当定位祖先才落得住。 */
+    #sideheader .logo-subtitle {
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.25;
+        opacity: 0.7;
+    }
+
+    /* 折叠后只留旋转图标 */
     #sideheader.minimode .logo,
     #sideheader.minimode .logo-subtitle {
         display: none;
@@ -196,14 +216,6 @@ ul.applytrial {
 
 
 /* 特殊样式 */
-.logo-subtitle {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 12px;
-    opacity: 0.5;
-}
-
 .online-examples-subtitle {
     line-height: 16px;
     font-size: 12px;

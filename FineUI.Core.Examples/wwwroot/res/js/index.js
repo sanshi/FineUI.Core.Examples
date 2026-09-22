@@ -518,17 +518,22 @@ F.ready(function () {
 
 
     // 如果地址哈希值不存在，则添加响应式首页
-    var hashFragment = window.location.hash.substr(1);
-    // mainUrl 是内嵌页面的完整应用内地址；启用 compactHash 后 Hash 不含 F.baseUrl。
-    var mainHashUrl = PARAMS.mainUrl;
-    if (initOptions.compactHash) {
-        var baseUrl = (F.baseUrl || '').replace(/\/+$/, '');
-        if (baseUrl && baseUrl !== '/' && mainHashUrl.indexOf(baseUrl + '/') === 0) {
-            mainHashUrl = mainHashUrl.substring(baseUrl.length);
+    //:: 只有示例工程（Examples）有"响应式首页"这个选项卡，它靠 PARAMS.mainUrl / dashboardUrl 定位。
+    //:: 空项目与 QuickStart 的 PARAMS 里没有这两个参数，必须跳过——否则下一行 mainHashUrl.indexOf
+    //:: 会在 undefined 上抛错，而且 addExampleTabByHref(undefined) 会去开一个没有地址的选项卡。
+    if (PARAMS.mainUrl) {
+        var hashFragment = window.location.hash.substr(1);
+        // mainUrl 是内嵌页面的完整应用内地址；启用 compactHash 后 Hash 不含 F.baseUrl。
+        var mainHashUrl = PARAMS.mainUrl;
+        if (initOptions.compactHash) {
+            var baseUrl = (F.baseUrl || '').replace(/\/+$/, '');
+            if (baseUrl && baseUrl !== '/' && mainHashUrl.indexOf(baseUrl + '/') === 0) {
+                mainHashUrl = mainHashUrl.substring(baseUrl.length);
+            }
         }
-    }
-    if (!hashFragment || hashFragment.indexOf(mainHashUrl) >= 0) {
-        addExampleTabByHref(PARAMS.dashboardUrl);
+        if (!hashFragment || hashFragment.indexOf(mainHashUrl) >= 0) {
+            addExampleTabByHref(PARAMS.dashboardUrl);
+        }
     }
 
     //addExampleTabByHref("url");
