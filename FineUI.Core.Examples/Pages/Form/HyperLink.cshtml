@@ -26,9 +26,10 @@
 @section script {
     <script>
 
-        // 超链接的客户端点击回调（返回 false 可阻止默认导航）
+        // 本示例只弹出提示，返回 false 可阻止占位地址 # 改写当前页面地址。
         function onHyperLink2Click(event) {
             F.alert({ message: '这是链接的客户端提示', messageIcon: 'information', target: '_parent' });
+            return false;
         }
 
     </script>
