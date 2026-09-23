@@ -46,6 +46,9 @@
                 </Commands>
             </f:RenderField>
         </Columns>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand"></f:Listener>
+        </Listeners>
         <Toolbars>
             <f:Toolbar>
                 <Items>
@@ -139,23 +142,12 @@
         }
 
 
-        F.ready(function () {
-
-            var grid1 = F.ui.Grid1;
-            grid1.el.on('click', 'a.action-btn.delete', function (event) {
-                var cnode = $(this);
-                var rowData = grid1.getRowData(cnode.closest('.f-grid-row'));
-
-                F.confirm({
-                    message: '删除选中行？',
-                    target: '_top',
-                    ok: function () {
-                        grid1.deleteRow(rowData);
-                    }
-                });
-            });
-
-        });
+        // Grid 在确认后触发行命令；删除当前行会计入尚未保存的更改。
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F.ui.Grid1.deleteRow(rowId);
+            }
+        }
 
     </script>
 }
