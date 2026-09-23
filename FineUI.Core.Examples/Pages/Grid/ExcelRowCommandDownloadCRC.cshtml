@@ -44,7 +44,7 @@
     <script>
 
         function renderDownLoadLink(value, params) {
-            return '<a class="action-btn mybtn3" href="javascript:;"><i class="f-icon f-grid-cell-iconfont f-icon-download"></i></a>';
+            return '<a class="action-btn mybtn3" href="#"><i class="f-icon f-grid-cell-iconfont f-icon-download"></i></a>';
         }
 
 
@@ -63,6 +63,7 @@
 
             var grid1 = F.ui.Grid1;
             grid1.el.on('click', 'a.action-btn', function (event) {
+                event.preventDefault();
                 var cnode = $(this);
 
                 var rowData = grid1.getRowData(cnode.closest('.f-grid-row'));

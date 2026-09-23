@@ -35,7 +35,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.DataList
                     HttpUtility.HtmlEncode(row["Name"]),
                     HttpUtility.HtmlEncode(row["Desc"]));
 
-                listItem.NavigateUrl = "javascript:;";
+                listItem.NavigateUrl = "#";
                 listItem.ShowArrow = true;
 
 

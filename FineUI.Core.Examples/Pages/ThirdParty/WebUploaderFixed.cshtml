@@ -73,7 +73,7 @@
             }
 
 
-            var html = '<a href="javascript:;" class="theuploadbutton">上传</a>';
+            var html = '<a href="#" class="theuploadbutton">上传</a>';
 
             // 状态、保存到服务器的文件名、
             var fileId = params.rowId;
@@ -85,7 +85,7 @@
                 var downloadUrl = '@Url.Page("/Home/Download")' + "?file=" + encodeURIComponent(savedName);
                 html += '&nbsp;&nbsp;<a href="' + downloadUrl + '" target="_blank" class="thedownloadbutton">下载</a>';
 
-                html += '&nbsp;&nbsp;<a href="javascript:;" class="thedeletebutton">删除</a>';
+                html += '&nbsp;&nbsp;<a href="#" class="thedeletebutton">删除</a>';
             }
 
             return html;
@@ -222,6 +222,7 @@
             var grid1 = F.ui.Grid1;
 
             grid1.el.on('click', 'a.thedeletebutton', function (event) {
+                event.preventDefault();
                 var cnode = $(this);
 
                 F.confirm({

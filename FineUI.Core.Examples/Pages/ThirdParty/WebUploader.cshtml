@@ -90,7 +90,7 @@
             var grid1 = F.ui.Grid1;
 
             grid1.el.on('click', 'a.action-btn.delete', function (event) {
-                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                // 删除链接是按钮型占位地址，先取消默认导航，避免改写页面 hash。
                 event.preventDefault();
 
                 var cnode = $(this);

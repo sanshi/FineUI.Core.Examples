@@ -43,15 +43,15 @@
     <script>
 
     function renderWindowField1(value, params) {
-        return '<a href="javascript:;" class="mywindowfield">编辑</a>';
+        return '<a href="#" class="mywindowfield">编辑</a>';
     }
 
     // function renderWindowField2(value, params) {
-    //     return '<a href="javascript:;" class="mywindowfield"><i class="f-icon f-icon-edit f-grid-cell-iconfont"></i></a>';
+    //     return '<a href="#" class="mywindowfield"><i class="f-icon f-icon-edit f-grid-cell-iconfont"></i></a>';
     // }
 
     // function renderWindowField3(value, params) {
-    //     return '<a href="javascript:;" class="mywindowfield"><img class="f-grid-cell-icon" src="@Url.Content("~/res/icon/pencil.png")"></a>';
+    //     return '<a href="#" class="mywindowfield"><img class="f-grid-cell-icon" src="@Url.Content("~/res/icon/pencil.png")"></a>';
     // }
 
     // 打开窗体
@@ -78,6 +78,7 @@
 
         // 点击表格行中的编辑按钮
         grid.el.on('click', 'a.mywindowfield', function (event) {
+            event.preventDefault();
             var rowEl = $(this).closest('.f-grid-row');
             var rowData = grid.getRowData(rowEl);
 

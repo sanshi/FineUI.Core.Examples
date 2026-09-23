@@ -54,11 +54,11 @@
     <script>
 
         function renderActions(value, params) {
-            return '<a class="action editit" href="javascript:;">' +
+            return '<a class="action editit" href="#">' +
                 '<img class="f-grid-imagefield" src="' + F.resolveUrl('/res/icon/pencil.png') + '">' +
                 '</a>' +
                 '&nbsp;&nbsp;' +
-                '<a class="action deleteit" href="javascript:;">' +
+                '<a class="action deleteit" href="#">' +
                 '<img class="f-grid-imagefield" src="' + F.resolveUrl('/res/icon/delete.png') + '">' +
                 '</a>' +
                 '&nbsp;&nbsp;&nbsp;&nbsp;' +
@@ -91,6 +91,7 @@
             var wnd = F.ui.Window1;
 
             grid.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.closest('.f-grid-row');
                 var rowData = grid.getRowData(rowEl);
@@ -105,6 +106,7 @@
 
 
             grid.el.on('click', '.f-grid-cell-Actions .action.deleteit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.closest('.f-grid-row');
                 var rowData = grid.getRowData(rowEl);
@@ -127,6 +129,7 @@
 
 
             grid.el.on('click', '.f-grid-cell-Actions .action.btncontainer', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.closest('.f-grid-row');
                 var rowData = grid.getRowData(rowEl);

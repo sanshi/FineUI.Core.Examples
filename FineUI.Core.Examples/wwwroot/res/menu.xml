@@ -2441,7 +2441,7 @@
 		</TreeNode>
 		<TreeNode Text="客户端验证" NavigateUrl="~/Other/ClientValidate">
 		</TreeNode>
-		<TreeNode Text="主题仓库（beforeNodeClick）" NavigateUrl="javascript:;" IconFont="_Skin" AttributeDataTag="pop-window1">
+		<TreeNode Text="主题仓库（beforeNodeClick）" NavigateUrl="#" IconFont="_Skin" AttributeDataTag="pop-window1">
 		</TreeNode>
 		<TreeNode Text="更新记录（beforeNodeClick，新标签页中打开）" NavigateUrl="http://fineui.com/versions/" IconFont="History" AttributeDataTag="newtab">
 		</TreeNode>

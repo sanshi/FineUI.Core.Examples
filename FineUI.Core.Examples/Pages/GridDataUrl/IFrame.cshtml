@@ -40,7 +40,7 @@
 
 
         function renderEditAction(value, params) {
-            return $('<a>').addClass('action editit').attr('href', 'javascript:;')
+            return $('<a>').addClass('action editit').attr('href', '#')
                 .append($('<img>').addClass('f-grid-imagefield').attr('src', '/res/icon/pencil.png'));
         }
 
@@ -51,6 +51,9 @@
             var baseUrl = '@Url.Content("~/Grid/IFrameWindow")';
 
             grid1.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                // 编辑图标使用 # 占位，打开窗口前先取消默认导航，避免改写页面 hash。
+                event.preventDefault();
+
                 var targetEl = $(this);
                 var rowEl = targetEl.closest('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

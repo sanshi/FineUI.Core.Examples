@@ -137,31 +137,31 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/pure_black.png" alt="Pure Black" data-value="Pure_Black" />
                             </a>
                             <div class="title">Pure Black</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/pure_green.png" alt="Pure Green" data-value="Pure_Green" />
                             </a>
                             <div class="title">Pure Green</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/pure_blue.png" alt="Pure Blue" data-value="Pure_Blue" />
                             </a>
                             <div class="title">Pure Blue</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/pure_purple.png" alt="Pure Purple" data-value="Pure_Purple" />
                             </a>
                             <div class="title">Pure Purple</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/pure_orange.png" alt="Pure Orange" data-value="Pure_Orange" />
                             </a>
                             <div class="title">Pure Orange</div>
@@ -172,31 +172,31 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/cupertino.png" alt="Cupertino" data-value="Cupertino" />
                             </a>
                             <div class="title">Cupertino</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/start.png" alt="Start" data-value="Start" />
                             </a>
                             <div class="title">Start</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/dark_hive.png" alt="Dark Hive" data-value="Dark_Hive" />
                             </a>
                             <div class="title">Dark Hive</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/flick.png" alt="Flick" data-value="Flick" />
                             </a>
                             <div class="title">Flick</div>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="#">
                                 <img src="../res/images/themes/south_street.png" alt="South Street" data-value="South_Street" />
                             </a>
                             <div class="title">South Street</div>
@@ -329,6 +329,7 @@
 
             // 点击一级菜单和二级菜单
             $('.mydatalist').on('click', '.f-datalist-item', function (event) {
+                event.preventDefault();
                 var itemEl = $(this), datalist = F(itemEl.closest('.f-datalist').attr('id'));
                 var itemData = datalist.getItemData(itemEl);
 
@@ -358,6 +359,7 @@
 
             // 选中某个主题
             $('#themecontainer li').on('click', function (event) {
+                event.preventDefault();
                 var imgNode = $(this).find('img');
 
                 var themeName = imgNode.attr('data-value');

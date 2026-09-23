@@ -118,7 +118,7 @@ function renderExpander(value, params) {
 
 // 超链接标签 - 删除图标
 function renderDeleteAction(value, params) {
-    return $('<a>').addClass('action-btn delete').attr('href', 'javascript:;')
+    return $('<a>').addClass('action-btn delete').attr('href', '#')
         .append($('<img>').addClass('f-grid-cell-icon').attr('src', F.resolveUrl('/res/icon/delete.png')).attr('alt', 'Delete'));
 }
 
