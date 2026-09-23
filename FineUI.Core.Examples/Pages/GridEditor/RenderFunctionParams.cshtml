@@ -46,12 +46,12 @@
                     </f:DropDownList>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="工资（整数）" ColumnID="Salary" DataField="Salary" FieldType="Int" RendererFunction="renderSalary(0)" TextAlign="Right" Width="150">
+            <f:RenderField HeaderText="工资（整数）" ColumnID="SalaryInteger" DataField="Salary" FieldType="Int" RendererFunction="renderSalary(0)" TextAlign="Right" Width="150">
                 <Editor>
                     <f:NumberBox EnableCommas="true" NoDecimal="true" Required="true"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="工资（两位小数）" ColumnID="Salary" DataField="Salary" FieldType="Int" RendererFunction="renderSalary(2)" TextAlign="Right" Width="150">
+            <f:RenderField HeaderText="工资（两位小数）" ColumnID="SalaryDecimal" DataField="Salary" FieldType="Float" RendererFunction="renderSalary(2)" TextAlign="Right" Width="150">
                 <Editor>
                     <f:NumberBox EnableCommas="true" DecimalPrecision="2" TrimEndZero="false" Required="true"></f:NumberBox>
                 </Editor>
