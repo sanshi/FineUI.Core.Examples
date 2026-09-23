@@ -98,6 +98,9 @@
             var grid1 = F.ui.Grid1;
 
             grid1.el.on('click', 'a.action-btn.delete', function (event) {
+                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                event.preventDefault();
+
                 var cnode = $(this);
 
                 F.confirm({
@@ -234,6 +237,9 @@
 
             // 表格中的 取消上传 按钮
             grid1.el.on('click', 'a.thecanceluploadbutton', function (event) {
+                // 取消上传也是按钮型链接，先阻止占位地址的默认导航。
+                event.preventDefault();
+
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

@@ -93,9 +93,11 @@ function renderCardWithAvatar(params) {
             .append(createScoreEl(rowValues['MathScore'], 'math'))
             .append(createScoreEl(rowValues['TotalScore'], 'total')));
 
-    // 创建用户操作元素
+    // 示例只展示携带用户编号的详情链接，不提供对应页面。
+    var detailsUrl = F.resolveUrl('/user-details?id=' + encodeURIComponent(rowId));
+    var detailsLinkEl = $('<a>').addClass('user-details-link').attr('href', detailsUrl).text('查看详情');
     var userActionsEl = $('<div>').addClass('user-actions')
-        .append($('<a>').addClass('').attr('href', 'javascript:;').text('查看详情'));
+        .append(detailsLinkEl);
 
     return $('<div>')
         .addClass('user-card')

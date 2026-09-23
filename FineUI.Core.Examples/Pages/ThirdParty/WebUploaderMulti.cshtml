@@ -40,7 +40,7 @@
                     <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150" />
                     <f:RenderField ColumnID="FileSize" DataField="size" HeaderText="大小" Renderer="FileSize" />
                     <f:RenderField ColumnID='FileStatus' DataField="status" HeaderText="状态" RendererFunction="renderFileStatus" />
-                    <f:RenderField RendererFunction="renderDelete" />
+                    <f:RenderField RendererFunction="renderDeleteAction" />
                 </Columns>
             </f:Grid>
             <f:Grid ID="Grid2" ShowHeader="true" ShowBorder="true" Title="" BoxFlex="1"
@@ -52,7 +52,7 @@
                     <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150" />
                     <f:RenderField ColumnID="FileSize" DataField="size" HeaderText="大小" Renderer="FileSize" />
                     <f:RenderField ColumnID='FileStatus' DataField="status" HeaderText="状态" RendererFunction="renderFileStatus" />
-                    <f:RenderField RendererFunction="renderDelete" />
+                    <f:RenderField RendererFunction="renderDeleteAction" />
                 </Columns>
             </f:Grid>
         </Items>
@@ -70,6 +70,7 @@
 @section script {
 
     <script src="~/res/third-party/webuploader/webuploader.nolog.js" type="text/javascript"></script>
+    <script src="~/res/js/grid.js"></script>
     <script type="text/javascript">
 
         function renderFileStatus(value, params) {
@@ -78,12 +79,6 @@
             }
             return value;
         }
-
-        function renderDelete(value, params) {
-            var deleteImageUrl = '@Url.Content("~/res/icon/delete.png")';
-            return '<a class="action-btn delete" href="javascript:;"><img class="f-grid-cell-icon" src="' + deleteImageUrl + '"></a>';
-        }
-
 
         // sizeLimit： 单个文件大小限制，单位为MB
         function initUploader(gridId, pickerId, ownerId, accept, sizeLimit, success) {
@@ -219,6 +214,9 @@
             var grid1 = F.ui.Grid1;
             var grid2 = F.ui.Grid2;
             grid1.el.on('click', 'a.action-btn.delete', function (event) {
+                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                event.preventDefault();
+
                 var cnode = $(this);
 
                 F.confirm({
@@ -235,6 +233,9 @@
             });
 
             grid2.el.on('click', 'a.action-btn.delete', function (event) {
+                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                event.preventDefault();
+
                 var cnode = $(this);
 
                 F.confirm({
