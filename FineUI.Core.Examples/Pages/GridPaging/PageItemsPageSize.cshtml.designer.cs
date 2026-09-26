@@ -9,8 +9,8 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 	public partial class PageItemsPageSizeModel
 	{
 		protected FineUI.Core.Grid Grid1;
-        protected FineUI.Core.Button btnServerPage;
-        protected FineUI.Core.Button btnServerSort;
 		protected FineUI.Core.DropDownList ddlPageSize;
+		protected FineUI.Core.Button btnServerPage;
+		protected FineUI.Core.Button btnServerSort;
 	}
 }

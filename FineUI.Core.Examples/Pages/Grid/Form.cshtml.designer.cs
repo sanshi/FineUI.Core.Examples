@@ -18,7 +18,6 @@ namespace FineUI.Core.Examples.Pages.Grid
 		protected FineUI.Core.DatePicker dpFormEntranceDate;
 		protected FineUI.Core.CheckBox cbFormAtSchool;
 		protected FineUI.Core.DropDownList ddlFormMajor;
-		protected FineUI.Core.Toolbar Toolbar1;
 		protected FineUI.Core.Button btnNew;
 		protected FineUI.Core.Button btnDelete;
 		protected FineUI.Core.Button btnSave;
