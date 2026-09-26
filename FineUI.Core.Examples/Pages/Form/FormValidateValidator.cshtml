@@ -12,7 +12,7 @@
         <Items>
             <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin">
             </f:TextBox>
-            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextFocusControl="btnRegister" TextMode="Password" ValidatorFunction="passwordValidator">
+            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister" TextMode="Password" ValidatorFunction="passwordValidator">
             </f:TextBox>
             <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnRegister_Click"></f:Button>
         </Items>
