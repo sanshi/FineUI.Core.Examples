@@ -10,10 +10,19 @@
 @section body {
 
     <f:Button ID="Button1" Text="弹出窗体" ClickHandler="onOpenWindow1Click"></f:Button>
+    <f:Button ID="btnUpdateIFrameTitle" Text="服务端更新 IFrame 标题" OnClick="btnUpdateIFrameTitle_Click"></f:Button>
     <f:Window ID="Window1" Hidden="true" EnableIFrame="true" Target="Top" IFrameUrl="@Url.Content("~/IFrame/Window/IFrameWindow")"
               EnableMaximize="true" EnableResize="true" Height="500" Width="800" Title="窗体一">
+        <IFrameAttributes>
+            <f:IFrameAttribute Key="title" Value="窗体内的编辑页面"></f:IFrameAttribute>
+            <f:IFrameAttribute Key="sandbox" Value="allow-scripts allow-forms allow-modals"></f:IFrameAttribute>
+            <f:IFrameAttribute Key="referrerpolicy" Value="no-referrer"></f:IFrameAttribute>
+        </IFrameAttributes>
     </f:Window>
     <br />
+
+    注：title、sandbox 和 referrerpolicy 设置在窗体内部的 iframe 元素上，不改变页面外观。打开浏览器开发者工具查看 Window1 下的 iframe；点击服务端更新按钮后，title 会由“窗体内的编辑页面”变为“服务端已更新标题”，其他属性保留。
+    <br /><br />
 
     页面加载时间：@DateTime.Now.ToLongTimeString()
 

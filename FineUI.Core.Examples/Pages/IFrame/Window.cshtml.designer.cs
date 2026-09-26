@@ -9,6 +9,7 @@ namespace FineUI.Core.Examples.Pages.IFrame
 	public partial class WindowModel
 	{
 		protected FineUI.Core.Button Button1;
+		protected FineUI.Core.Button btnUpdateIFrameTitle;
 		protected FineUI.Core.Window Window1;
 	}
 }
