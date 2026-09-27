@@ -32,6 +32,7 @@ target/
 *.mv.db
 *.trace.db
 Directory.Build.local.props
+Directory.Build.targets
 NuGet.Config
 .local/
 *.local.sln
