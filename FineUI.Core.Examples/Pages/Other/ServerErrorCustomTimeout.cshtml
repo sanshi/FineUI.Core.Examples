@@ -22,7 +22,7 @@
 @section script {
 
     <script>
-        F.beforeAjaxError(function (data, textStatus) {
+        F.beforeAjaxError(function (data, textStatus, xhr) {
             if (textStatus === 'timeout') {
                 showCenterNotify('AJAX请求超时！', 'error');
             }

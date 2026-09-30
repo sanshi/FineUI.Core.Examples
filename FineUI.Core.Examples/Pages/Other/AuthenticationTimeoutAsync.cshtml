@@ -41,7 +41,7 @@
 
 
         function onRegisterHookClick(event) {
-            F.beforeAjaxSuccess(function (data) {
+            F.beforeAjaxSuccess(function (data, textStatus, xhr) {
 
                 // 通过返回的字符串，判断当前是否登陆超时，执行跳转
                 if (data.indexOf('window.location.href=') === 0) {

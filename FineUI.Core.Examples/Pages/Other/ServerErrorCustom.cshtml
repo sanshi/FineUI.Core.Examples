@@ -18,17 +18,11 @@
 
     <script>
 
-        F.beforeAjaxError(function (data) {
-            var errormsg = 'Unknown';
-
-            // 如果返回的数据包含<title>...</title>标签
-            var result = /<title>([^<]+)<\/title>/ig.exec(data);
-            if (result && result.length === 2) {
-                errormsg = result[1];
-            }
-
+        F.beforeAjaxError(function (data, textStatus, xhr) {
+            // 错误正文格式由服务端决定，这里只展示稳定的状态信息。
+            var errorStatus = xhr.status ? 'HTTP ' + xhr.status : textStatus;
             F.alert({
-                message: F.rawHtml('<strong>这是自定义错误处理！</strong><br/>服务器返回的错误：' + errormsg),
+                message: '这是自定义错误处理！服务器返回的状态：' + errorStatus,
                 messageIcon: 'error'
             });
 
