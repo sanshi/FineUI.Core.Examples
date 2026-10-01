@@ -38,13 +38,18 @@
                 params: {
                     text1: me.getValue()
                 },
-                complete: function (data) {
+                complete: function (data, textStatus, xhr) {
+                    // 失败响应仍交给 FineUI 的默认错误处理，不尝试解析为业务 JSON。
+                    if (textStatus !== 'success') {
+                        return;
+                    }
+
                     var json = JSON.parse(data);
 
                     F.ui.TextBox2.setValue(json.text);
                     F.ui.TextBox2.focus();
 
-                    // 阻止FineUI将返回的内容当做脚本解析
+                    // 已自行处理原始 JSON；阻止 FineUI 将它当作响应脚本执行。
                     return false;
                 }
             });

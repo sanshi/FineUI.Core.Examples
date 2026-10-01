@@ -79,8 +79,8 @@
                 eventName: 'Form1_Submit',
                 // 不显示页面加载动画
                 enableAjaxLoading: false,
-                complete: function (data) {
-                    // AJAX回发结束时隐藏面板加载动画
+                complete: function (data, textStatus, xhr) {
+                    // 传输结束后、响应脚本执行前隐藏表单加载动画；错误和超时也会执行。
                     form1.hideLoading();
                 }
             });
