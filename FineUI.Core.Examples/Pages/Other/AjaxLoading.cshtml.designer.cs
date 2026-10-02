@@ -14,5 +14,6 @@ namespace FineUI.Core.Examples.Pages.Other
 		protected FineUI.Core.Button Button4;
 		protected FineUI.Core.Button Button5;
 		protected FineUI.Core.Button Button6;
+		protected FineUI.Core.Button Button7;
 	}
 }
