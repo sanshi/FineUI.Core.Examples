@@ -9,6 +9,11 @@ namespace FineUI.Core.Examples.Pages.Other
 {
     public partial class ServerErrorCustomTimeoutModel : BaseModel
     {
+        public void OnGet()
+        {
+            PageManager.Instance.AjaxTimeout = 2;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

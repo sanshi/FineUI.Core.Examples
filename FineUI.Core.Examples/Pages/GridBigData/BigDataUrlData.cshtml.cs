@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridBigData
 {
-    public partial class BigDataUrlDataModel : BaseModel
+    public partial class BigDataUrlDataModel : PageModel
     {
         // GET: GridBigData/BigDataUrlData
         public IActionResult OnGet(int total, string resultType)

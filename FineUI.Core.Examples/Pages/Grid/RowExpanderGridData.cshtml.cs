@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class RowExpanderGridDataModel : BaseModel
+    public partial class RowExpanderGridDataModel : PageModel
     {
         // GET: Grid/RowExpanderGridData
         public IActionResult OnGet(int rowId)

@@ -7,9 +7,6 @@
 
 @section body {
 
-    @{
-        F.PageManager.CspScripts(true).CspScriptsAllowNonce(true);
-    }
 
     @* 严格 CSP（script-src 去 'unsafe-inline'、仅 nonce）下，LinkButton / HyperLink 的点击脚本
        由服务端下发的 handler 函数在 click 监听里执行（随 nonce 脚本解析），不再拼客户端内联 onclick，

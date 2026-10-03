@@ -8,10 +8,6 @@
 
 @section body {
 
-    @* 在 PageManager 级别开启“窄屏自动简洁分页”（与其它示例一致，用流式写法配置全局 PageManager） *@
-    @{
-        F.PageManager.GridPagerAutoSimpleMode(true);
-    }
 
     <f:Grid ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
             AllowPaging="true" IsDatabasePaging="true" PageSize="10" ShowPageSizeSelector="true" DataIDField="Id"

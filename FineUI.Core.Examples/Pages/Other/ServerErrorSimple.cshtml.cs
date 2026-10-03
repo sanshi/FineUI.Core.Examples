@@ -9,12 +9,9 @@ namespace FineUI.Core.Examples.Pages.Other
 {
     public partial class ServerErrorSimpleModel : BaseModel
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public void OnGet()
         {
-            if(!IsPostBack)
-            {
-                PageManager.Instance.SimpleError = true;
-            }
+            PageManager.Instance.SimpleError = true;
         }
 
 

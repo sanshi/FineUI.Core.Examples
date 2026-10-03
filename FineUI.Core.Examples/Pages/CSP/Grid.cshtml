@@ -8,9 +8,6 @@
 
 @section body {
 
-    @{
-        F.PageManager.CspScripts(true).CspScriptsAllowNonce(true).CspScriptsAllowUrls(new string[] { "cdn.jsdelivr.net", "unpkg.com" });
-    }
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
         <Columns>

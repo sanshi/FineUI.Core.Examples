@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class IFrameReLoadFirstEmptyPageModel : PageModel
+    public partial class IFrameReLoadFirstEmptyPageModel : BaseModel
     {
         protected void Page_Load(object sender, EventArgs e)
         {

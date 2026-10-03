@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ namespace FineUI.Core.Examples.Pages.Grid
 {
     public partial class ExcelInputModel : BaseModel
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override bool ShouldInitializePageManager(PageHandlerExecutingContext context)
         {
-
+            // 数据和下载请求不需要页面主题、语言等配置。
+            return context.HandlerMethod?.MethodInfo.Name != nameof(OnGetExportToExcel);
         }
 
-        // https://www.mikesdotnetting.com/article/318/working-with-json-in-razor-pages
 
         // GET: Grid/ExcelInput/ExportToExcel
         public IActionResult OnGetExportToExcel(JObject content)

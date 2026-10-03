@@ -10,6 +10,13 @@ namespace FineUI.Core.Examples.Pages.CSP
 {
     public partial class ButtonModel : BaseModel
     {
+        public void OnGet()
+        {
+            var pm = PageManager.Instance;
+            pm.CspScripts = true;
+            pm.CspScriptsAllowNonce = true;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

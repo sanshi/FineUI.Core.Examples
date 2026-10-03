@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridDataUrl
 {
-    public partial class TreeGridLazyLoadDataModel : BaseModel
+    public partial class TreeGridLazyLoadDataModel : PageModel
     {
         // GET: GridDataUrl/TreeGridLazyLoadData
         public IActionResult OnGet(string lazyrowid)

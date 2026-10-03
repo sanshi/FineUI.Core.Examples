@@ -17,6 +17,14 @@ namespace FineUI.Core.Examples
 {
     public class BaseModel : PageModel
     {
+        /// <summary>
+        /// 页面同时提供界面和数据处理时，可按本次处理方法决定是否初始化页面配置。
+        /// </summary>
+        protected virtual bool ShouldInitializePageManager(PageHandlerExecutingContext context)
+        {
+            return true;
+        }
+
 
         #region IsPostBack
 
@@ -287,6 +295,14 @@ namespace FineUI.Core.Examples
         public override void OnPageHandlerExecuting(PageHandlerExecutingContext context)
         {
             base.OnPageHandlerExecuting(context);
+
+            if (HttpMethods.IsGet(Request.Method) && context.Result == null
+                && ShouldInitializePageManager(context))
+            {
+                // 公共偏好先于单页设置；AJAX 回发继续使用恢复后的页面配置。
+                AppPageManagerInitializer.Initialize(PageManager.Instance, Request);
+            }
+
 
             if (IsPostBack)
             {
