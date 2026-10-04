@@ -1,6 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.GridDataUrl.FilterModel
 @{
+    ViewBag.SourceFiles = "~/Pages/GridDataUrl/FilterData.cshtml;~/Pages/GridDataUrl/FilterData.cshtml.cs";
     ViewBag.Title = "GridDataUrl/Filter";
     var F = Html.F();
 }
@@ -9,7 +10,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true"
-            DataIDField="Id" DataUrl="@Url.Content("~/GridDataUrl/Filter?handler=FilterData")" DataMethod="POST" AllowFilters="true">
+            DataIDField="Id" DataUrl="@Url.Content("~/GridDataUrl/FilterData")" DataMethod="POST" AllowFilters="true">
         <Columns>
             <f:RowNumberField></f:RowNumberField>
             <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" EnableFilter="true">

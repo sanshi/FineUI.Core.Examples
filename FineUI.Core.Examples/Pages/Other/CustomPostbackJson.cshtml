@@ -1,6 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Other.CustomPostbackJsonModel
 @{
+    ViewBag.SourceFiles = "~/Pages/Other/CustomPostbackJsonData.cshtml;~/Pages/Other/CustomPostbackJsonData.cshtml.cs";
     ViewBag.Title = "Other/CustomPostbackJson";
     var F = Html.F();
 }
@@ -32,9 +33,9 @@
         function onTextBoxEnter(event) {
             var me = this;
 
-            // 触发后台事件
+            // 显式指定 handler，使 RazorForms 将它识别为独立页面地址。
             F.doPostBack({
-                url: '@Url.Handler("TextBox1_ENTER")',
+                url: '@Url.Page("/Other/CustomPostbackJsonData", "Process")',
                 params: {
                     text1: me.getValue()
                 },

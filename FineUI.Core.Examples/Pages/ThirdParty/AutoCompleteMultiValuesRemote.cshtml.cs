@@ -1,78 +1,7 @@
-using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace FineUI.Core.Examples.Pages.ThirdParty
 {
     public partial class AutoCompleteMultiValuesRemoteModel : BaseModel
     {
-        protected override bool ShouldInitializePageManager(PageHandlerExecutingContext context)
-        {
-            // 数据和下载请求不需要页面主题、语言等配置。
-            return context.HandlerMethod?.MethodInfo.Name != nameof(OnGetSearchResult);
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        
-        private static readonly string[] LANGUAGES = new string[]{
-                "ActionScript",
-                "AppleScript",
-                "Asp",
-                "BASIC",
-                "C",
-                "C++",
-                "Clojure",
-                "COBOL",
-                "ColdFusion",
-                "Erlang",
-                "Fortran",
-                "Groovy",
-                "Haskell",
-                "Java",
-                "JavaScript",
-                "Lisp",
-                "Perl",
-                "PHP",
-                "Python",
-                "Ruby",
-                "Scala",
-                "Scheme"
-        };
-
-
-        // GET: ThirdParty/AutoCompleteMultiValuesRemote/SearchResult
-        public IActionResult OnGetSearchResult(string term)
-        {
-            string result = String.Empty;
-
-            if (!String.IsNullOrEmpty(term))
-            {
-                term = term.ToLower();
-
-                JArray ja = new JArray();
-                foreach (string lang in LANGUAGES)
-                {
-                    if (lang.ToLower().Contains(term))
-                    {
-                        ja.Add(lang);
-                    }
-                }
-
-                result = ja.ToString();
-            }
-
-            return Content(result);
-        }
-
+        // 本页负责界面与控件，独立文件或数据响应由对应服务入口处理。
     }
 }

@@ -1,6 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Grid.ExcelModel
 @{
+    ViewBag.SourceFiles = "~/Pages/Grid/ExcelExport.cshtml;~/Pages/Grid/ExcelExport.cshtml.cs;~/Code/UrlUtil.cs";
     ViewBag.Title = "Grid/Excel";
     var F = Html.F();
 }
@@ -26,7 +27,7 @@
     <f:Button Text="导出为Excel文件" ClickHandler="onButton1Click"></f:Button>
 
     <!-- 隐藏表单，用于自定义POST请求 -->
-    <form id="myform" asp-page-handler="ExportToExcel" method="post"></form>
+    <form id="myform" asp-page="/Grid/ExcelExport" method="post"></form>
 
 }
 

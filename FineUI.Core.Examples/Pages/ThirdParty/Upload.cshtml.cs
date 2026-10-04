@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
@@ -23,10 +24,9 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
     // 注意：Razor Pages 的过滤器只在页面模型这一级生效，加在处理方法上不起作用。
     [RequestSizeLimit(100L * 1024 * 1024)]
     [RequestFormLimits(MultipartBodyLengthLimit = 100L * 1024 * 1024)]
-    public partial class UploadModel : BaseUploadModel
+    public class UploadModel : PageModel
     {
         private static readonly string WEBUPLOADER_FIXED_SESSION_NAME = "webuploader.webuploader_fixed";
-
 
         public IActionResult OnPostProcess(IFormFile file, string owner)
         {
@@ -66,7 +66,11 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
             // 文件名完整路径
             string fileName = postedFile.FileName;
             // 保存到 App_Data/upload（wwwroot 之外），返回保存后的文件名
-            string savedFileName = SaveUploadFile(postedFile);
+            string savedFileName;
+            using (var stream = postedFile.OpenReadStream())
+            {
+                savedFileName = UploadStorage.Save(postedFile.FileName, stream);
+            }
 
             string shortFileName = GetFileName(fileName);
             string fileType = GetFileType(fileName);
@@ -114,8 +118,6 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
 
             }
 
-
-
             return Content("Success");
         }
 
@@ -147,7 +149,6 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
             return null;
         }
 
-
         // 模拟在服务器端保存数据
         // 特别注意：在真实的开发环境中，不要在Session放置大量数据，否则会严重影响服务器性能
         private void SaveToDatabase(string sessionName, JObject fileObj)
@@ -162,7 +163,6 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
 
             HttpContext.Session.SetObject<JArray>(sessionName, source);
         }
-
 
         private string GetFileType(string fileName)
         {
@@ -187,6 +187,5 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
 
             return shortFileName;
         }
-
     }
 }

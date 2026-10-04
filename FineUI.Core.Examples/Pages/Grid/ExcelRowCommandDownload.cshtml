@@ -1,6 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Grid.ExcelRowCommandDownloadModel
 @{
+    ViewBag.SourceFiles = "~/Pages/Grid/ExcelRowCommandDownloadExport.cshtml;~/Pages/Grid/ExcelRowCommandDownloadExport.cshtml.cs";
     ViewBag.Title = "Grid/ExcelRowCommandDownload";
     var F = Html.F();
 }
@@ -35,7 +36,7 @@
 
 
     <!-- 隐藏表单，用于自定义POST请求 -->
-    <form id="myform" asp-page-handler="ExportToExcel" method="post">
+    <form id="myform" asp-page="/Grid/ExcelRowCommandDownloadExport" method="post">
         <input type="hidden" id="content" name="content" />
     </form>
 

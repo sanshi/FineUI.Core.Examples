@@ -1,6 +1,7 @@
-@page "{handler?}"
+@page
 @model FineUI.Core.Examples.Pages.Grid.ExcelInputModel
 @{
+    ViewBag.SourceFiles = "~/Pages/Grid/ExcelInputExport.cshtml;~/Pages/Grid/ExcelInputExport.cshtml.cs;~/Code/UrlUtil.cs";
     ViewBag.Title = "Grid/ExcelInput";
     var F = Html.F();
 }
@@ -28,7 +29,7 @@
 
 
     <!-- 隐藏表单，用于自定义POST请求 -->
-    <form id="myform" asp-page-handler="ExportToExcel" method="post">
+    <form id="myform" asp-page="/Grid/ExcelInputExport" method="post">
         <input type="hidden" id="content" name="content" />
     </form>
 

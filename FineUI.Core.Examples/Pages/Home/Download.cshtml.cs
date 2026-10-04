@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Home
 {
@@ -13,7 +14,7 @@ namespace FineUI.Core.Examples.Pages.Home
     // 白名单外（.html / .svg 等）降级为附件下载。
     //
     // 于是“能被内联渲染的集合”恒为那 5 种位图，与谁来请求、请求方怎么写参数无关。
-    public partial class DownloadModel : BaseModel
+    public class DownloadModel : PageModel
     {
         // GET: /Home/Download?file=xxx[&inline=1]
         public IActionResult OnGet(string file, string inline)

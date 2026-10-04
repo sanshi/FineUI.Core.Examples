@@ -1,7 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Grid.ExcelSelectColumnsModel
 @{
-    ViewBag.SourceFiles = "~/Grid/ExcelSelectColumnsIFrame";
+    ViewBag.SourceFiles = "~/Grid/ExcelSelectColumnsIFrame;~/Pages/Grid/ExcelSelectColumnsExport.cshtml;~/Pages/Grid/ExcelSelectColumnsExport.cshtml.cs;~/Code/UrlUtil.cs";
     ViewBag.Title = "Grid/ExcelSelectColumns";
     var F = Html.F();
 }
@@ -32,7 +32,7 @@
     </f:Window>
 
     <!-- 隐藏表单，用于自定义POST请求 -->
-    <form id="myform" asp-page-handler="ExportToExcel" method="post">
+    <form id="myform" asp-page="/Grid/ExcelSelectColumnsExport" method="post">
         <input type="hidden" id="columns" name="columns" />
     </form>
 }

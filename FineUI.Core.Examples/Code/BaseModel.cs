@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -17,15 +16,6 @@ namespace FineUI.Core.Examples
 {
     public class BaseModel : PageModel
     {
-        /// <summary>
-        /// 页面同时提供界面和数据处理时，可按本次处理方法决定是否初始化页面配置。
-        /// </summary>
-        protected virtual bool ShouldInitializePageManager(PageHandlerExecutingContext context)
-        {
-            return true;
-        }
-
-
         #region IsPostBack
 
         /// <summary>
@@ -172,14 +162,7 @@ namespace FineUI.Core.Examples
         /// <returns></returns>
         public string GetAbsoluteUrl(string virtualPath)
         {
-            // http://benjii.me/2015/05/get-the-absolute-uri-from-asp-net-mvc-content-or-action/
-            var urlBuilder = new System.UriBuilder(Request.GetDisplayUrl())
-            {
-                Path = Url.Content(virtualPath),
-                Query = null,
-            };
-
-            return urlBuilder.ToString();
+            return UrlUtil.GetAbsoluteUrl(Request, Url, virtualPath);
         }
 
         #endregion
@@ -296,13 +279,11 @@ namespace FineUI.Core.Examples
         {
             base.OnPageHandlerExecuting(context);
 
-            if (HttpMethods.IsGet(Request.Method) && context.Result == null
-                && ShouldInitializePageManager(context))
+            if (HttpMethods.IsGet(Request.Method) && context.Result == null)
             {
                 // 公共偏好先于单页设置；AJAX 回发继续使用恢复后的页面配置。
                 AppPageManagerInitializer.Initialize(PageManager.Instance, Request);
             }
-
 
             if (IsPostBack)
             {
