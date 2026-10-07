@@ -43,7 +43,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             basicInfo.Name = "basic";
             basicInfo.Type = "文件夹";
             basicInfo.Size = null;
-            basicInfo.ModifyDate = DateTime.Parse("2014/11/3 11:20");
+            basicInfo.ModifyDate = DateTime.Parse("2014-11-03 11:20");
             infos.Add(basicInfo);
 
 
@@ -54,7 +54,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             captchaInfo.Name = "Captcha";
             captchaInfo.Type = "文件夹";
             captchaInfo.Size = null;
-            captchaInfo.ModifyDate = DateTime.Parse("2014/8/17 20:22");
+            captchaInfo.ModifyDate = DateTime.Parse("2014-08-17 20:22");
             infos.Add(captchaInfo);
 
 
@@ -64,7 +64,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "captcha.ashx";
             info.Type = "ASHX文件";
             info.Size = 1;
-            info.ModifyDate = DateTime.Parse("2014/7/5 16:31");
+            info.ModifyDate = DateTime.Parse("2014-07-05 16:31");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -73,7 +73,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "captcha.ashx.cs";
             info.Type = "CS文件";
             info.Size = 2;
-            info.ModifyDate = DateTime.Parse("2014/7/5 16:31");
+            info.ModifyDate = DateTime.Parse("2014-07-05 16:31");
             infos.Add(info);
 
 
@@ -84,7 +84,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "hello.aspx";
             info.Type = "ASPX文件";
             info.Size = 1;
-            info.ModifyDate = DateTime.Parse("2014/7/5 16:31");
+            info.ModifyDate = DateTime.Parse("2014-07-05 16:31");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -93,7 +93,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "hello.aspx.cs";
             info.Type = "CS文件";
             info.Size = 1;
-            info.ModifyDate = DateTime.Parse("2014/8/24 11:08");
+            info.ModifyDate = DateTime.Parse("2014-08-24 11:08");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -102,7 +102,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "hello.aspx.designer.cs";
             info.Type = "CS文件";
             info.Size = 2;
-            info.ModifyDate = DateTime.Parse("2014/7/5 16:31");
+            info.ModifyDate = DateTime.Parse("2014-07-05 16:31");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -111,7 +111,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "default.aspx";
             info.Type = "ASPX文件";
             info.Size = 31;
-            info.ModifyDate = DateTime.Parse("2014/11/15 18:44");
+            info.ModifyDate = DateTime.Parse("2014-11-15 18:44");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -120,7 +120,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "default.aspx.cs";
             info.Type = "CS文件";
             info.Size = 13;
-            info.ModifyDate = DateTime.Parse("2014/10/27 18:44");
+            info.ModifyDate = DateTime.Parse("2014-10-27 18:44");
             infos.Add(info);
 
             info = new TheFileInfo();
@@ -129,7 +129,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "default.aspx.designer.cs";
             info.Type = "CS文件";
             info.Size = 12;
-            info.ModifyDate = DateTime.Parse("2014/10/12 20:57");
+            info.ModifyDate = DateTime.Parse("2014-10-12 20:57");
             infos.Add(info);
 
 
@@ -139,7 +139,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
             info.Name = "Web.config";
             info.Type = "CONFIG文件";
             info.Size = 3;
-            info.ModifyDate = DateTime.Parse("2014/11/6 20:59");
+            info.ModifyDate = DateTime.Parse("2014-11-06 20:59");
             infos.Add(info);
 
 

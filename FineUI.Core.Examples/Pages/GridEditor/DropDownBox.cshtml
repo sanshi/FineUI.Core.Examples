@@ -24,7 +24,7 @@
                                     <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                                     </f:RenderField>
                                     <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
-                                    <f:RenderField ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期" />
+                                    <f:RenderField ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期" />
                                     <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
                                     <f:RenderField ColumnID="Major" DataField="Major" HeaderText="所学专业" ExpandUnusedSpace="true" />
                                 </Columns>
@@ -50,7 +50,7 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>

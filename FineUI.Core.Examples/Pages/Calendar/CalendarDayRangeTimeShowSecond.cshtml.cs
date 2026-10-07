@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
             return new DateTime(date.Year, date.Month, date.Day, 11, 50, 0);
         }
 
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd HH:mm";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd HH:mm";
 
         protected void Page_Load(object sender, EventArgs e)
         {

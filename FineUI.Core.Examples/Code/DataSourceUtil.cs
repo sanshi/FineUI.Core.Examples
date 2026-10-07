@@ -630,7 +630,7 @@ namespace FineUI.Core.Examples
             table.Columns.Add(new DataColumn("DateOnly1", typeof(DateOnly)));
             table.Columns.Add(new DataColumn("TimeOnly1", typeof(TimeOnly)));
 
-            var nowDate = DateOnly.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
+            var nowDate = DateOnly.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
             var nowTime = TimeOnly.Parse(DateTime.Now.ToString("HH:mm:ss"));
 
             DataRow row = table.NewRow();
@@ -1723,7 +1723,7 @@ namespace FineUI.Core.Examples
             row[2] = "basic";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/11/3 11:20");
+            row[5] = DateTime.Parse("2014-11-03 11:20");
             table.Rows.Add(row);
 
 
@@ -1734,7 +1734,7 @@ namespace FineUI.Core.Examples
             row[2] = "Captcha";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:22");
+            row[5] = DateTime.Parse("2014-08-17 20:22");
             table.Rows.Add(row);
 
 
@@ -1744,7 +1744,7 @@ namespace FineUI.Core.Examples
             row[2] = "captcha.ashx";
             row[3] = "ASHX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1753,7 +1753,7 @@ namespace FineUI.Core.Examples
             row[2] = "captcha.ashx.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -1764,7 +1764,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx";
             row[3] = "ASPX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1773,7 +1773,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx.cs";
             row[3] = "CS文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/8/24 11:08");
+            row[5] = DateTime.Parse("2014-08-24 11:08");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1782,7 +1782,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -1793,7 +1793,7 @@ namespace FineUI.Core.Examples
             row[2] = "common";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:22");
+            row[5] = DateTime.Parse("2014-08-17 20:22");
             table.Rows.Add(row);
 
 
@@ -1804,7 +1804,7 @@ namespace FineUI.Core.Examples
             row[2] = "menu.xml";
             row[3] = "XML文件";
             row[4] = 44;
-            row[5] = DateTime.Parse("2014/11/27 17:10");
+            row[5] = DateTime.Parse("2014-11-27 17:10");
             table.Rows.Add(row);
 
 
@@ -1815,7 +1815,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx";
             row[3] = "ASPX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1824,7 +1824,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx.cs";
             row[3] = "CS文件";
             row[4] = 3;
-            row[5] = DateTime.Parse("2014/8/30 16:31");
+            row[5] = DateTime.Parse("2014-08-30 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1833,7 +1833,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -1844,7 +1844,7 @@ namespace FineUI.Core.Examples
             row[2] = "res";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:30");
+            row[5] = DateTime.Parse("2014-08-17 20:30");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1853,7 +1853,7 @@ namespace FineUI.Core.Examples
             row[2] = "css";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/11/16 17:54");
+            row[5] = DateTime.Parse("2014-11-16 17:54");
             table.Rows.Add(row);
 
 
@@ -1863,7 +1863,7 @@ namespace FineUI.Core.Examples
             row[2] = "common.css";
             row[3] = "CSS文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/10/30 11:35");
+            row[5] = DateTime.Parse("2014-10-30 11:35");
             table.Rows.Add(row);
 
 
@@ -1873,7 +1873,7 @@ namespace FineUI.Core.Examples
             row[2] = "images";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/10/9 15:45");
+            row[5] = DateTime.Parse("2014-10-09 15:45");
             table.Rows.Add(row);
 
 
@@ -1883,7 +1883,7 @@ namespace FineUI.Core.Examples
             row[2] = "logo";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/4/26 11:29");
+            row[5] = DateTime.Parse("2014-04-26 11:29");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1892,7 +1892,7 @@ namespace FineUI.Core.Examples
             row[2] = "logo.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1901,7 +1901,7 @@ namespace FineUI.Core.Examples
             row[2] = "favicon.ico";
             row[3] = "ICO文件";
             row[4] = 18;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1910,7 +1910,7 @@ namespace FineUI.Core.Examples
             row[2] = "favicon.gif";
             row[3] = "GIF文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
 
@@ -1920,7 +1920,7 @@ namespace FineUI.Core.Examples
             row[2] = "themes";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/7/10 11:52");
+            row[5] = DateTime.Parse("2014-07-10 11:52");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1929,7 +1929,7 @@ namespace FineUI.Core.Examples
             row[2] = "metro_blue.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:42");
+            row[5] = DateTime.Parse("2014-10-10 11:42");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1938,7 +1938,7 @@ namespace FineUI.Core.Examples
             row[2] = "metro_orange.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:43");
+            row[5] = DateTime.Parse("2014-10-10 11:43");
             table.Rows.Add(row);
 
 
@@ -1948,7 +1948,7 @@ namespace FineUI.Core.Examples
             row[2] = "ui_darkness.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:41");
+            row[5] = DateTime.Parse("2014-10-10 11:41");
             table.Rows.Add(row);
 
 
@@ -1958,7 +1958,7 @@ namespace FineUI.Core.Examples
             row[2] = "blank.png";
             row[3] = "PNG文件";
             row[4] = 4;
-            row[5] = DateTime.Parse("2013/9/11 12:12");
+            row[5] = DateTime.Parse("2013-09-11 12:12");
             table.Rows.Add(row);
 
 
@@ -1968,7 +1968,7 @@ namespace FineUI.Core.Examples
             row[2] = "code.gif";
             row[3] = "GIF文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2013/9/11 12:12");
+            row[5] = DateTime.Parse("2013-09-11 12:12");
             table.Rows.Add(row);
 
 
@@ -1978,7 +1978,7 @@ namespace FineUI.Core.Examples
             row[2] = "toolbox.png";
             row[3] = "PNG文件";
             row[4] = 39;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
 
@@ -1989,7 +1989,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx";
             row[3] = "ASPX文件";
             row[4] = 31;
-            row[5] = DateTime.Parse("2014/11/15 18:44");
+            row[5] = DateTime.Parse("2014-11-15 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -1998,7 +1998,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx.cs";
             row[3] = "CS文件";
             row[4] = 13;
-            row[5] = DateTime.Parse("2014/10/27 18:44");
+            row[5] = DateTime.Parse("2014-10-27 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2007,7 +2007,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 12;
-            row[5] = DateTime.Parse("2014/10/12 20:57");
+            row[5] = DateTime.Parse("2014-10-12 20:57");
             table.Rows.Add(row);
 
 
@@ -2017,7 +2017,7 @@ namespace FineUI.Core.Examples
             row[2] = "Web.config";
             row[3] = "CONFIG文件";
             row[4] = 3;
-            row[5] = DateTime.Parse("2014/11/6 20:59");
+            row[5] = DateTime.Parse("2014-11-06 20:59");
             table.Rows.Add(row);
 
 
@@ -2054,7 +2054,7 @@ namespace FineUI.Core.Examples
             row[2] = "basic";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/11/3 11:20");
+            row[5] = DateTime.Parse("2014-11-03 11:20");
             table.Rows.Add(row);
 
 
@@ -2065,7 +2065,7 @@ namespace FineUI.Core.Examples
             row[2] = "Captcha";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:22");
+            row[5] = DateTime.Parse("2014-08-17 20:22");
             table.Rows.Add(row);
 
             for (int i = 0; i < 500; i++)
@@ -2076,7 +2076,7 @@ namespace FineUI.Core.Examples
                 row[2] = "Captcha-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2089,7 +2089,7 @@ namespace FineUI.Core.Examples
                 row[2] = "basic-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2099,7 +2099,7 @@ namespace FineUI.Core.Examples
             row[2] = "captcha.ashx";
             row[3] = "ASHX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2108,7 +2108,7 @@ namespace FineUI.Core.Examples
             row[2] = "captcha.ashx.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -2119,7 +2119,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx";
             row[3] = "ASPX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2128,7 +2128,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx.cs";
             row[3] = "CS文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/8/24 11:08");
+            row[5] = DateTime.Parse("2014-08-24 11:08");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2137,7 +2137,7 @@ namespace FineUI.Core.Examples
             row[2] = "hello.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -2148,7 +2148,7 @@ namespace FineUI.Core.Examples
             row[2] = "common";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:22");
+            row[5] = DateTime.Parse("2014-08-17 20:22");
             table.Rows.Add(row);
 
            
@@ -2160,7 +2160,7 @@ namespace FineUI.Core.Examples
             row[2] = "menu.xml";
             row[3] = "XML文件";
             row[4] = 44;
-            row[5] = DateTime.Parse("2014/11/27 17:10");
+            row[5] = DateTime.Parse("2014-11-27 17:10");
             table.Rows.Add(row);
 
 
@@ -2171,7 +2171,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx";
             row[3] = "ASPX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2180,7 +2180,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx.cs";
             row[3] = "CS文件";
             row[4] = 3;
-            row[5] = DateTime.Parse("2014/8/30 16:31");
+            row[5] = DateTime.Parse("2014-08-30 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2189,7 +2189,7 @@ namespace FineUI.Core.Examples
             row[2] = "source.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
 
@@ -2201,7 +2201,7 @@ namespace FineUI.Core.Examples
                 row[2] = "common-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2214,7 +2214,7 @@ namespace FineUI.Core.Examples
             row[2] = "res";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:30");
+            row[5] = DateTime.Parse("2014-08-17 20:30");
             table.Rows.Add(row);
 
 
@@ -2224,7 +2224,7 @@ namespace FineUI.Core.Examples
             row[2] = "css";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/11/16 17:54");
+            row[5] = DateTime.Parse("2014-11-16 17:54");
             table.Rows.Add(row);
 
             for (int i = 0; i < 500; i++)
@@ -2235,7 +2235,7 @@ namespace FineUI.Core.Examples
                 row[2] = "css-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2246,7 +2246,7 @@ namespace FineUI.Core.Examples
             row[2] = "common.css";
             row[3] = "CSS文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/10/30 11:35");
+            row[5] = DateTime.Parse("2014-10-30 11:35");
             table.Rows.Add(row);
 
 
@@ -2256,7 +2256,7 @@ namespace FineUI.Core.Examples
             row[2] = "images";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/10/9 15:45");
+            row[5] = DateTime.Parse("2014-10-09 15:45");
             table.Rows.Add(row);
 
             for (int i = 0; i < 500; i++)
@@ -2267,7 +2267,7 @@ namespace FineUI.Core.Examples
                 row[2] = "images-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2278,7 +2278,7 @@ namespace FineUI.Core.Examples
             row[2] = "logo";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/4/26 11:29");
+            row[5] = DateTime.Parse("2014-04-26 11:29");
             table.Rows.Add(row);
 
             for (int i = 0; i < 500; i++)
@@ -2289,7 +2289,7 @@ namespace FineUI.Core.Examples
                 row[2] = "logo-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2301,7 +2301,7 @@ namespace FineUI.Core.Examples
             row[2] = "logo.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2310,7 +2310,7 @@ namespace FineUI.Core.Examples
             row[2] = "favicon.ico";
             row[3] = "ICO文件";
             row[4] = 18;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2319,7 +2319,7 @@ namespace FineUI.Core.Examples
             row[2] = "favicon.gif";
             row[3] = "GIF文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
 
@@ -2329,7 +2329,7 @@ namespace FineUI.Core.Examples
             row[2] = "themes";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/7/10 11:52");
+            row[5] = DateTime.Parse("2014-07-10 11:52");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2338,7 +2338,7 @@ namespace FineUI.Core.Examples
             row[2] = "metro_blue.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:42");
+            row[5] = DateTime.Parse("2014-10-10 11:42");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2347,7 +2347,7 @@ namespace FineUI.Core.Examples
             row[2] = "metro_orange.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:43");
+            row[5] = DateTime.Parse("2014-10-10 11:43");
             table.Rows.Add(row);
 
 
@@ -2357,7 +2357,7 @@ namespace FineUI.Core.Examples
             row[2] = "ui_darkness.png";
             row[3] = "PNG文件";
             row[4] = 5;
-            row[5] = DateTime.Parse("2014/10/10 11:41");
+            row[5] = DateTime.Parse("2014-10-10 11:41");
             table.Rows.Add(row);
 
 
@@ -2367,7 +2367,7 @@ namespace FineUI.Core.Examples
             row[2] = "blank.png";
             row[3] = "PNG文件";
             row[4] = 4;
-            row[5] = DateTime.Parse("2013/9/11 12:12");
+            row[5] = DateTime.Parse("2013-09-11 12:12");
             table.Rows.Add(row);
 
 
@@ -2377,7 +2377,7 @@ namespace FineUI.Core.Examples
             row[2] = "code.gif";
             row[3] = "GIF文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2013/9/11 12:12");
+            row[5] = DateTime.Parse("2013-09-11 12:12");
             table.Rows.Add(row);
 
 
@@ -2387,7 +2387,7 @@ namespace FineUI.Core.Examples
             row[2] = "toolbox.png";
             row[3] = "PNG文件";
             row[4] = 39;
-            row[5] = DateTime.Parse("2013/9/11 12:13");
+            row[5] = DateTime.Parse("2013-09-11 12:13");
             table.Rows.Add(row);
 
 
@@ -2399,7 +2399,7 @@ namespace FineUI.Core.Examples
                 row[2] = "res-" + rowIdSeed;
                 row[3] = "文件夹";
                 row[4] = DBNull.Value;
-                row[5] = DateTime.Parse("2014/8/17 20:22");
+                row[5] = DateTime.Parse("2014-08-17 20:22");
                 table.Rows.Add(row);
             }
 
@@ -2412,7 +2412,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx";
             row[3] = "ASPX文件";
             row[4] = 31;
-            row[5] = DateTime.Parse("2014/11/15 18:44");
+            row[5] = DateTime.Parse("2014-11-15 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2421,7 +2421,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx.cs";
             row[3] = "CS文件";
             row[4] = 13;
-            row[5] = DateTime.Parse("2014/10/27 18:44");
+            row[5] = DateTime.Parse("2014-10-27 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -2430,7 +2430,7 @@ namespace FineUI.Core.Examples
             row[2] = "default.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 12;
-            row[5] = DateTime.Parse("2014/10/12 20:57");
+            row[5] = DateTime.Parse("2014-10-12 20:57");
             table.Rows.Add(row);
 
 
@@ -2440,7 +2440,7 @@ namespace FineUI.Core.Examples
             row[2] = "Web.config";
             row[3] = "CONFIG文件";
             row[4] = 3;
-            row[5] = DateTime.Parse("2014/11/6 20:59");
+            row[5] = DateTime.Parse("2014-11-06 20:59");
             table.Rows.Add(row);
 
 

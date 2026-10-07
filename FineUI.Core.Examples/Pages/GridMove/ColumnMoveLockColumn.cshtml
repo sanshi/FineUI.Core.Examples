@@ -19,7 +19,7 @@
             <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
             <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" Width="300" EnableLock="true" />
             <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" ExpandUnusedSpace="true" MinWidth="150" />
-            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
         </Columns>
         <Listeners>
             <f:Listener Event="columnmove" Handler="onGrid1ColumnMove"></f:Listener>

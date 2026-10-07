@@ -25,13 +25,13 @@ namespace FineUI.Core.Examples.Pages.MultiLang.Models
 
         [Required(ErrorMessage = "ErrorMessage_Required")]
         [Display(Name = "Display_StartDate")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? StartDate { get; set; }
 
 
         [Required(ErrorMessage = "ErrorMessage_Required")]
         [Display(Name = "Display_EndDate")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [UICompare("StartDate", Operator.GreaterThan, ErrorMessage = "ErrorMessage_UICompare_GreaterThan")]
         public DateTime? EndDate { get; set; }
 

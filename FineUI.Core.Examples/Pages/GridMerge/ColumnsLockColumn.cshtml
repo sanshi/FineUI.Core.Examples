@@ -19,7 +19,7 @@
             <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="300" EnableLock="true" />
             <f:RenderField HeaderText="分组A" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
             <f:RenderField HeaderText="分组B" DataField="GroupB" RendererFunction="renderGroup" EnableLock="true" />
-            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" EnableLock="true" />
         </Columns>
         <Listeners>
             <f:Listener Event="dataload" Handler="onGridDataLoad"></f:Listener>

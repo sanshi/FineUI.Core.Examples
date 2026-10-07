@@ -110,7 +110,7 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
             field.DataField = "LogTime";
             field.FieldType = FieldType.Date;
             field.Renderer = Renderer.Date;
-            field.RendererArgument = "yyyy/MM/dd";
+            field.RendererArgument = "yyyy-MM-dd";
             field.Width = 100;
             columns.Add(field);
 
@@ -217,7 +217,7 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
             field.TextAlign = TextAlign.Center;
             field.FieldType = FieldType.Date;
             field.Renderer = Renderer.Date;
-            field.RendererArgument = "yyyy/MM/dd";
+            field.RendererArgument = "yyyy-MM-dd";
 
             // 回发时动态创建的列 - 默认不显示[记录时间]列
             field.Hidden = true;

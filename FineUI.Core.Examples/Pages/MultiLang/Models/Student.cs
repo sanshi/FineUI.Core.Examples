@@ -39,7 +39,7 @@ namespace FineUI.Core.Examples.Pages.MultiLang.Models
 
 
         [Display(Name = "Display_Student_EntranceDate")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? EntranceDate { get; set; }
 
 

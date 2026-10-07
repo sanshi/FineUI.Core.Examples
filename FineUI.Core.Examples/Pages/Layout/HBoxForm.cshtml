@@ -27,11 +27,11 @@
                           Layout="HBox" BoxConfigChildMargin="0 5 0 0" BoxConfigLastChildMargin="0" RemoveFieldsMargin="true">
                 <Items>
                     <f:Label Text="销毁统计时间段："></f:Label>
-                    <f:DatePicker Width="150" Required="true" DateFormatString="yyyy/MM/dd" EmptyText="请选择开始日期"
+                    <f:DatePicker Width="150" Required="true" DateFormatString="yyyy-MM-dd" EmptyText="请选择开始日期"
                                   ShowLabel="false" Label="销毁统计开始时间" ID="dpStartDate" EnableEdit="false">
                     </f:DatePicker>
                     <f:DatePicker ID="dpEndDate" Width="150" Required="true" Readonly="false"
-                                  CompareControl="dpStartDate" DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
+                                  CompareControl="dpStartDate" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
                                   ShowLabel="false" Label="销毁统计结束时间" EnableEdit="false">
                     </f:DatePicker>
                     <f:Button ID="btnClearDate" Text="重置起止时间" ClickHandler="onClearDateClick"></f:Button>
@@ -57,11 +57,11 @@
                           Layout="Column" RemoveFieldsMargin="true">
                 <Items>
                     <f:Label ID="Label1" Text="销毁统计时间段："></f:Label>
-                    <f:DatePicker Width="150" CssClass="marginr" Required="true" DateFormatString="yyyy/MM/dd" EmptyText="请选择开始日期"
+                    <f:DatePicker Width="150" CssClass="marginr" Required="true" DateFormatString="yyyy-MM-dd" EmptyText="请选择开始日期"
                                   ShowLabel="false" Label="销毁统计开始时间" ID="DatePicker1" EnableEdit="false">
                     </f:DatePicker>
                     <f:DatePicker ID="DatePicker2" Width="150" CssClass="marginr" Required="true" Readonly="false"
-                                  CompareControl="DatePicker1" DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
+                                  CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
                                   ShowLabel="false" Label="销毁统计结束时间" EnableEdit="false">
                     </f:DatePicker>
                     <f:Button ID="Button1" CssClass="marginr" Text="重置起止时间" ClickHandler="onClearDateClick"></f:Button>

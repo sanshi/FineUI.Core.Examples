@@ -25,13 +25,13 @@ namespace FineUI.Core.Examples.Pages.DataModel.Models
 
         [Required]
         [Display(Name = "开始日期")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? StartDate { get; set; }
 
 
         [Required]
         [Display(Name = "结束日期")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [UICompare("StartDate", Operator.GreaterThan, ErrorMessage = "{0}应该大于{1}！")]
         public DateTime? EndDate { get; set; }
 

@@ -40,7 +40,7 @@ namespace FineUI.Core.Examples.Pages.DataModel.Models
 
 
         [Display(Name = "注册日期")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? EntranceDate { get; set; }
 
 

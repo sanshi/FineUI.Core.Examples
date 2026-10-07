@@ -5,7 +5,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
 {
     public partial class CalendarTimeShowSecondModel : BaseModel
     {
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd HH:mm";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd HH:mm";
 
         protected void Page_Load(object sender, EventArgs e)
         {

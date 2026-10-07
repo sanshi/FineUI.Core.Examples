@@ -29,7 +29,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
         }
 
 
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd";
 
         
 

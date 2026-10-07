@@ -50,7 +50,7 @@ namespace FineUI.Core.Examples.Pages.Grid
                 sb.AppendFormat(TD_HTML, (bool)row["AtSchool"] ? "√" : "×");
                 sb.AppendFormat(TD_HTML, row["Major"]);
                 sb.AppendFormat(TD_IMAGE_HTML, UrlUtil.GetAbsoluteUrl(Request, Url, String.Format("~/res/images/16/{0}.png", row["Group"])));
-                sb.AppendFormat(TD_HTML, ((DateTime)row["LogTime"]).ToString("yyyy/MM/dd"));
+                sb.AppendFormat(TD_HTML, ((DateTime)row["LogTime"]).ToString("yyyy-MM-dd"));
                 sb.Append("</tr>");
             }
             sb.Append("</table>");

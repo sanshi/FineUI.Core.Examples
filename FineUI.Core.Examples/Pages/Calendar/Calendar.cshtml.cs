@@ -25,7 +25,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
             Button1.Text = String.Format("选中{0}", DateTime.Now.AddDays(2).ToString(Calendar1DateFormatString));
         }
 
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd";
 
         
         protected void Calendar1_DateSelect(object sender, EventArgs e)

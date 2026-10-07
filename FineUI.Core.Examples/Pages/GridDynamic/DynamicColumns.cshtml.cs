@@ -93,7 +93,7 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
             field.DataField = "LogTime";
             field.FieldType = FieldType.Date;
             field.Renderer = Renderer.Date;
-            field.RendererArgument = "yyyy/MM/dd";
+            field.RendererArgument = "yyyy-MM-dd";
             field.Width = 100;
             columns.Add(field);
 

@@ -78,7 +78,7 @@
                     </Field>
                 </Filter>
             </f:RenderField>
-            <f:RenderField ColumnID="LogTime" HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableFilter="true">
+            <f:RenderField ColumnID="LogTime" HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" EnableFilter="true">
                 <Filter EnableMultiConditions="true">
                     <Operator>
                         <f:DropDownList>
@@ -88,7 +88,7 @@
                         </f:DropDownList>
                     </Operator>
                     <Field>
-                        <f:DatePicker DateFormatString="yyyy/MM/dd"></f:DatePicker>
+                        <f:DatePicker DateFormatString="yyyy-MM-dd"></f:DatePicker>
                     </Field>
                 </Filter>
             </f:RenderField>

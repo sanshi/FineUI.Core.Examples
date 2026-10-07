@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
         private DateTime startDate = DateTime.Now.AddDays(2);
         private DateTime endDate = DateTime.Now.AddDays(20);
 
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd";
 
         protected void Page_Load(object sender, EventArgs e)
         {
