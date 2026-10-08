@@ -21,10 +21,10 @@
 @section body {
 
     <f:Panel ID="Panel1" IsFluid="true" Height="350" ShowBorder="true" EnableCollapse="false"
-             Layout="VBox" BodyPadding="10" BoxConfigChildMargin="0 0 5 0" ShowHeader="true" Title="面板（SimpleForm - Layout=HBox）">
+             Layout="VBox" BodyPadding="10" BoxConfigSpace="5" ShowHeader="true" Title="面板（SimpleForm - Layout=HBox）">
         <Items>
             <f:SimpleForm ID="SimpleForm1" ShowBorder="false" EnableCollapse="true" ShowHeader="false"
-                          Layout="HBox" BoxConfigChildMargin="0 5 0 0" BoxConfigLastChildMargin="0" RemoveFieldsMargin="true">
+                          Layout="HBox" BoxConfigSpace="5" RemoveFieldsMargin="true">
                 <Items>
                     <f:Label Text="销毁统计时间段："></f:Label>
                     <f:DatePicker Width="150" Required="true" DateFormatString="yyyy-MM-dd" EmptyText="请选择开始日期"
@@ -38,7 +38,7 @@
                     <f:Button ID="btnSearch" Text="查询" _ValidateForms="SimpleForm1"></f:Button>
                 </Items>
             </f:SimpleForm>
-            <f:Panel ID="Panel3" BoxFlex="1" Margin="0" ShowBorder="true" ShowHeader="false">
+            <f:Panel ID="Panel3" BoxFlex="1" ShowBorder="true" ShowHeader="false">
                 <Items>
                 </Items>
             </f:Panel>
@@ -51,7 +51,7 @@
     下面使用 Column 布局实现相同的效果：
     <br />
     <f:Panel ID="Panel2" IsFluid="true" Height="350" ShowBorder="true" EnableCollapse="false"
-             Layout="VBox" BodyPadding="10" BoxConfigChildMargin="0 0 5 0" ShowHeader="true" Title="面板（SimpleForm - Layout=Column）">
+             Layout="VBox" BodyPadding="10" BoxConfigSpace="5" ShowHeader="true" Title="面板（SimpleForm - Layout=Column）">
         <Items>
             <f:SimpleForm ID="SimpleForm2" ShowBorder="false" EnableCollapse="true" ShowHeader="false"
                           Layout="Column" RemoveFieldsMargin="true">
@@ -68,7 +68,7 @@
                     <f:Button ID="Button2" Text="查询" _ValidateForms="SimpleForm2"></f:Button>
                 </Items>
             </f:SimpleForm>
-            <f:Panel BoxFlex="1" Margin="0" ShowBorder="true" ShowHeader="false">
+            <f:Panel BoxFlex="1" ShowBorder="true" ShowHeader="false">
                 <Items>
                 </Items>
             </f:Panel>

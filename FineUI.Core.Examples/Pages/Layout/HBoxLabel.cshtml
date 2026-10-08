@@ -34,7 +34,7 @@
 
 
     <f:Panel ID="Panel2" IsFluid="true" Height="200" ShowBorder="true" EnableCollapse="true"
-             Layout="HBox" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true" Title="面板（Panel）">
+             Layout="HBox" BodyPadding="10" BoxConfigSpace="5" ShowHeader="true" Title="面板（Panel）">
         <Items>
             <f:ContentPanel ID="Panel1" ShowBorder="true" ShowHeader="false" AutoScroll="true" BoxFlex="1">
                 <div class="zuckerberg">
@@ -49,9 +49,9 @@
                     </p>
                 </div>
             </f:ContentPanel>
-            <f:Panel ID="Panel4" BoxFlex="2" Margin="0" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+            <f:Panel ID="Panel4" BoxFlex="2" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
-                    <f:Label ID="Label3" Text="BoxFlex=2 Margin=0">
+                    <f:Label ID="Label3" Text="BoxFlex=2 末项无额外间隔">
                     </f:Label>
                 </Items>
             </f:Panel>
@@ -59,13 +59,13 @@
     </f:Panel>
     <br />
     <f:Panel ID="Panel5" IsFluid="true" Height="200" ShowBorder="true" EnableCollapse="true"
-             Layout="HBox" BodyPadding="10" BoxConfigChildMargin="0 5 0 0" ShowHeader="true" Title="面板（Label）">
+             Layout="HBox" BodyPadding="10" BoxConfigSpace="5" ShowHeader="true" Title="面板（Label）">
         <Items>
             <f:Label ID="Label1" CssClass="mylabel f-widget-content" EncodeText="false" AutoScroll="true" BoxFlex="1">
             </f:Label>
-            <f:Panel ID="Panel8" BoxFlex="2" Margin="0" BodyPadding="10" ShowBorder="true" ShowHeader="false">
+            <f:Panel ID="Panel8" BoxFlex="2" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
-                    <f:Label ID="Label6" Text="BoxFlex=2 Margin=0">
+                    <f:Label ID="Label6" Text="BoxFlex=2 末项无额外间隔">
                     </f:Label>
                 </Items>
             </f:Panel>

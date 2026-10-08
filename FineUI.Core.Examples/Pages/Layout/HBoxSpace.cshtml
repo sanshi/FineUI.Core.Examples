@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Layout.HBoxSpaceModel
+@{
+    ViewBag.Title = "Layout/HBoxSpace";
+}
+
+@section body {
+    @* 两个容器使用相同尺寸和内边距，便于直接比较两种间隔配置的结果。 *@
+    <f:Panel ID="PanelSpace" IsFluid="true" Layout="HBox" Height="120"
+             BodyPadding="10" BoxConfigSpace="10" Title='推荐写法：BoxConfigSpace="10"'>
+        <Items>
+            <f:Panel ID="SpaceItem1" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项一" />
+            <f:Panel ID="SpaceItem2" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项二" />
+            <f:Panel ID="SpaceItem3" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项三" />
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Panel ID="PanelMargins" IsFluid="true" Layout="HBox" Height="120"
+             BodyPadding="10" BoxConfigChildMargin="0 10 0 0" BoxConfigLastChildMargin="0" Title='等效写法：普通子项边距 + 末项边距'>
+        <Items>
+            <f:Panel ID="MarginsItem1" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项一" />
+            <f:Panel ID="MarginsItem2" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项二" />
+            <f:Panel ID="MarginsItem3" BoxFlex="1" ShowHeader="false" BodyPadding="8" Content="子项三" />
+        </Items>
+    </f:Panel>
+    <p>HBox 中的子项横向间隔为 10px，最后一个可见子项不留尾部间隔。父容器的 BodyPadding 负责四周留白，子项自身的 Margin 仍可覆盖布局边距。</p>
+}

@@ -31,13 +31,13 @@
 
 @section body {
 
-    <f:Panel ID="Panel1" CssClass="mybgpanel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px" IsViewPort="true">
+    <f:Panel ID="Panel1" CssClass="mybgpanel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigSpace="5" BodyPadding="10px" IsViewPort="true">
         <Items>
             <f:Button ID="btnOpenWindow" Text="选择日期" ClickHandler="onOpenWindow1Click"></f:Button>
         </Items>
     </f:Panel>
     <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true"
-              IsModal="true" BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 5px 0"
+              IsModal="true" BodyPadding="10px" Layout="VBox" BoxConfigSpace="5"
               PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
         <Items>
             <f:Calendar ID="Calendar1" DateFormatString="yyyy-MM-dd" MarginBottom="10">
@@ -45,7 +45,7 @@
                     <f:Listener Event="select" Handler="onCalendar1Select" />
                 </Listeners>
             </f:Calendar>
-            <f:Button ID="Button3" Text="取消" Margin="0" ClickHandler="onCloseWindow1Click"></f:Button>
+            <f:Button ID="Button3" Text="取消" ClickHandler="onCloseWindow1Click"></f:Button>
         </Items>
     </f:Window>
 

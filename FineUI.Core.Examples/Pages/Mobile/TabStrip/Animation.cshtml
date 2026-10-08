@@ -11,7 +11,7 @@
 
     <f:TabStrip ID="TabStrip1" ShowBorder="false" ActiveTabIndex="0" ShowTabHeader="false" IsViewPort="true">
         <Toolbars>
-            <f:Toolbar HeaderStyle="true" Layout="HBox" BoxConfigChildMargin="0 5 0 0">
+            <f:Toolbar HeaderStyle="true" Layout="HBox" BoxConfigSpace="5">
                 <Items>
                     <f:ButtonGroup ID="ButtonGroup1" EnablePressGroup="true" BoxFlex="1" Layout="HBox">
                         <Items>
@@ -26,7 +26,7 @@
                             <f:Listener Event="presschange" Handler="onButtonGroupPressChange" />
                         </Listeners>
                     </f:ButtonGroup>
-                    <f:Button ID="Button4" Margin="0" IconFont="_List" ShowMenuIcon="false">
+                    <f:Button ID="Button4" IconFont="_List" ShowMenuIcon="false">
                         <Menu>
                             <Items>
                                 <f:MenuCheckBox ID="cbxNone" Text="无动画" AttributeDataTag="none" GroupName="Animation">
@@ -51,7 +51,7 @@
             </f:Toolbar>
         </Toolbars>
         <Tabs>
-            <f:Tab ID="Tab1" BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 10 0">
+            <f:Tab ID="Tab1" BodyPadding="10px" Layout="VBox" BoxConfigSpace="10">
                 <Items>
                     <f:ContentPanel ID="ContentPanel3" ShowBorder="false" ShowHeader="false">
                         <p>
@@ -65,7 +65,7 @@
                     <f:Button ID="Button5" Text="按钮一" />
                 </Items>
             </f:Tab>
-            <f:Tab ID="Tab2" BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 10 0">
+            <f:Tab ID="Tab2" BodyPadding="10px" Layout="VBox" BoxConfigSpace="10">
                 <Items>
                     <f:ContentPanel ID="ContentPanel2" ShowBorder="false" ShowHeader="false">
                         <p>
@@ -79,7 +79,7 @@
                     <f:Button ID="Button6" Text="按钮二" />
                 </Items>
             </f:Tab>
-            <f:Tab ID="Tab3" BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 10 0">
+            <f:Tab ID="Tab3" BodyPadding="10px" Layout="VBox" BoxConfigSpace="10">
                 <Items>
                     <f:ContentPanel ID="ContentPanel1" ShowBorder="false" ShowHeader="false">
                         <p>

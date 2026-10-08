@@ -2101,6 +2101,8 @@
 		<TreeNode Text="Box">
 			<TreeNode Text="HBox" NavigateUrl="~/Layout/HBox">
 			</TreeNode>
+			<TreeNode Text="HBox（子项间隔）" Version="16.0" NavigateUrl="~/Layout/HBoxSpace">
+			</TreeNode>
 			<TreeNode Text="HBox（横向滚动条）" NavigateUrl="~/Layout/HBoxScrollBar">
 			</TreeNode>
 			<TreeNode Text="HBox（横向滚动条，自动高度）" NavigateUrl="~/Layout/HBoxScrollBarAutoHeight">
@@ -2116,6 +2118,8 @@
 			<TreeNode Text="HBox（标签）" NavigateUrl="~/Layout/HBoxLabel">
 			</TreeNode>
 			<TreeNode Text="VBox" NavigateUrl="~/Layout/VBox">
+			</TreeNode>
+			<TreeNode Text="VBox（子项间隔）" Version="16.0" NavigateUrl="~/Layout/VBoxSpace">
 			</TreeNode>
 			<TreeNode Text="VBox（纵向滚动条）" NavigateUrl="~/Layout/VBoxScrollBar">
 			</TreeNode>
