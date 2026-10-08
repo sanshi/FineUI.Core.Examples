@@ -124,7 +124,7 @@
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
-注意：在任意输入框内按回车键都会触发表单的提交（相当于点击【登陆】按钮）。</value>
+注意：在任意输入框内按回车键都会触发表单的提交（相当于点击【登录】按钮）。</value>
   </data>
   <data name="登录" xml:space="preserve">
     <value>登录</value>
