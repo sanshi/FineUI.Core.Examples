@@ -1930,6 +1930,7 @@
 			</TreeNode>
 			<TreeNode Text="工具栏子项间隔" NavigateUrl="~/Toolbar/ToolbarItemSpace">
 			</TreeNode>
+			<TreeNode Text="工具栏主体内边距" NavigateUrl="~/Toolbar/ToolbarBodyPadding" Version="16.0.0" />
 			<TreeNode Text="工具栏布局（左中右）" NavigateUrl="~/Toolbar/ToolbarFill">
 			</TreeNode>
 			<TreeNode Text="自定义工具栏背景色" NavigateUrl="~/Toolbar/ToolbarCustomBg">
