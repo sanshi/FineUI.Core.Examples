@@ -60,7 +60,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.Message
             Notify notify = new Notify();
             notify.CssClass = "mynotify";
             notify.MessageRawHtml = new RawHtml("<div class=\"f-loading\"><div class=\"f-loading-img\"><img src=\"{0}\"/></div></div><div class=\"f-loading-message\">正在加载</div>",
-                FineUI.Core.PageContext.ResolveUrl("~/res/images/loading/loading_32.gif"));
+                FineUI.Core.PageContext.ResolveUrl("~/res/images/loading/loading-32.gif"));
             notify.MessageBoxIcon = MessageBoxIcon.None;
             notify.ShowHeader = false;
             notify.PositionX = Position.Center;

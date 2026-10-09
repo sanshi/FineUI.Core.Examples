@@ -1,14 +1,14 @@
 @page
 @model FineUI.Core.Examples.Pages.Block.GridResponsiveModel
 @{
-    ViewBag.SourceFiles = "~/wwwroot/res/css/responsive_card.css;~/wwwroot/res/js/grid.js;~/wwwroot/res/js/responsive_card.js";
+    ViewBag.SourceFiles = "~/wwwroot/res/css/responsive-card.css;~/wwwroot/res/js/grid.js;~/wwwroot/res/js/responsive-card.js";
     ViewBag.Title = "Block/GridResponsive";
     var F = Html.F();
 }
 
 @section head {
 
-    <link href="~/res/css/responsive_card.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
+    <link href="~/res/css/responsive-card.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
 
 }
 
@@ -37,6 +37,6 @@
 @section script {
 
     <script src="~/res/js/grid.js"></script>
-    <script src="~/res/js/responsive_card.js"></script>
+    <script src="~/res/js/responsive-card.js"></script>
 
 }

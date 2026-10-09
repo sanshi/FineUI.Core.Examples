@@ -1,7 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Block.DashboardModel
 @{
-    ViewBag.SourceFiles = "~/wwwroot/res/css/dashboard.css;~/wwwroot/res/css/responsive_card.css;~/wwwroot/res/js/dashboard_chart.js;~/wwwroot/res/js/grid.js;~/wwwroot/res/js/responsive_card.js";
+    ViewBag.SourceFiles = "~/wwwroot/res/css/dashboard.css;~/wwwroot/res/css/responsive-card.css;~/wwwroot/res/js/dashboard-chart.js;~/wwwroot/res/js/grid.js;~/wwwroot/res/js/responsive-card.js";
     ViewBag.Title = "Block/Dashboard";
 
     ViewBag.IsDarkerBG = true;
@@ -12,7 +12,7 @@
 @section head {
 
     <link href="~/res/css/dashboard.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
-    <link href="~/res/css/responsive_card.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
+    <link href="~/res/css/responsive-card.css?v@(GlobalConfig.ProductVersion)" rel="stylesheet" />
 
 }
 
@@ -330,9 +330,9 @@
 @section script {
 
     <script src="~/res/third-party/echarts/echarts.min.js"></script>
-    <script src="~/res/js/dashboard_chart.js?v@(GlobalConfig.ProductVersion)"></script>
+    <script src="~/res/js/dashboard-chart.js?v@(GlobalConfig.ProductVersion)"></script>
     <script src="~/res/js/grid.js?v@(GlobalConfig.ProductVersion)"></script>
-    <script src="~/res/js/responsive_card.js?v@(GlobalConfig.ProductVersion)"></script>
+    <script src="~/res/js/responsive-card.js?v@(GlobalConfig.ProductVersion)"></script>
     <script type="text/javascript">
 
         function onTabstripToolClick(event) {

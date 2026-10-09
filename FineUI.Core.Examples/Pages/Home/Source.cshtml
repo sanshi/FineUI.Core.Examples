@@ -37,7 +37,7 @@
     private string GetIconUrl(string url)
     {
         string suffix = url.Substring(url.LastIndexOf('.') + 1);
-        return Url.Content("~/res/images/filetype/vs_" + suffix + ".png");
+        return Url.Content("~/res/images/filetype/vs-" + suffix + ".png");
     }
 
     // 当前页面的网址会带应用根路径；拆成 Pages/目录/页面.cshtml 前先把这段前缀去掉，
