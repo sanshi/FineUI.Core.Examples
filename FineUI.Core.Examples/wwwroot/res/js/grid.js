@@ -1,6 +1,7 @@
 
 // 多语言支持
 window._R = F.getResource;
+
 // 初始化多语言资源
 F.setResources({
     "Male": "男",
@@ -188,18 +189,18 @@ function notifySelectedRows(gridId) {
         if (genderColumn) {
             // 单元格值键 = 列 columnId（Java 数据注解版为小写字段名，Core/Pro 版为 PascalCase 字段名）
             var genderValue = row.values[genderColumn.columnId] !== undefined ? row.values[genderColumn.columnId] : row.values['Gender'];
-            // 兼容单元格值为HTML片段的情况（FineUI.Pro） 
-            if (F.product == 'FineUI.Pro') {
+            // 专属示例仍可能保存旧模板的 HTML；普通渲染列保存 0/1，直接转换成男/女。
+            if (typeof genderValue === 'string' && /^\s*</.test(genderValue)) {
                 genderValue = $(genderValue).text();
             } else {
-                genderValue = genderValue == 1 ? _R('Male') : _R('Female');
+                genderValue = renderGender(genderValue);
             }
             tr.append($('<td>').text(genderValue));
         }
         if (majorColumn) {
             var majorValue = row.values[majorColumn.columnId] !== undefined ? row.values[majorColumn.columnId] : row.values['Major'];
-            // 兼容单元格值为HTML片段的情况（FineUI.Pro） 
-            if (F.product == 'FineUI.Pro') {
+            // 仅解析旧列生成的 HTML，专业名称本身不能当作 jQuery 选择器。
+            if (typeof majorValue === 'string' && /^\s*</.test(majorValue)) {
                 majorValue = $(majorValue).text();
             }
             tr.append($('<td>').text(majorValue));
