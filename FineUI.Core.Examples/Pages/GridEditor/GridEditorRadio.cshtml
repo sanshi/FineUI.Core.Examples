@@ -48,7 +48,9 @@
                     var row = grid1.getRowData($(this));
                     if (row.id !== params.rowId) {
                         // 如果不是当前操作的行，则取消单元格选中
-                        grid1.updateCellValue(row.id, params.columnId, false);
+                        // 列名在运行时确定，用实际 ColumnID 作为对象的键更新对应单元格。
+                        // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                        grid1.updateCellValue(row.id, { [params.columnId]: false });
                     }
                 });
 

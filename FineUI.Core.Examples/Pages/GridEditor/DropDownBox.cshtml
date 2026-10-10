@@ -118,6 +118,8 @@
             var grid1RowId = grid1.getSelectedCell()[0];
             var rowValue = this.getRowValue(grid2RowId);
 
+            // 多列更新通过对象传入各列的新值，列名使用 ColumnID。
+            // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
             grid1.updateCellValue(grid1RowId, {
                 'Code2': grid2RowId,
                 'Code': grid2RowId,

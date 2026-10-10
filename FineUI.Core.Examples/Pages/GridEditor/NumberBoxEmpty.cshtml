@@ -93,7 +93,9 @@
         }
 
         function onGrid1AfterEdit(event, value, params) {
-            this.updateCellValue(params.rowId, 'Heji', calculateHejiValue(params.rowValue));
+            // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+            // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            this.updateCellValue(params.rowId, { Heji: calculateHejiValue(params.rowValue) });
         }
 
     </script>

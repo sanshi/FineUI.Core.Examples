@@ -95,7 +95,9 @@
                 var columnId = grid1.getColumnId(cellEl);
 
                 // 更新单元格的值
-                grid1.updateCellValue(rowId, columnId, value);
+                // 列名在运行时确定，用实际 ColumnID 作为对象的键更新对应单元格。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue(rowId, { [columnId]: value });
             });
 
         });

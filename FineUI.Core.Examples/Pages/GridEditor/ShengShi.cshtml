@@ -92,7 +92,9 @@
                     var shi = grid1.getCellValue(params.rowId, 'Shi');
                     // 如果结束编辑时，市 不属于 当前 省，则清空 市
                     if ($.inArray(shi, shidata) < 0) {
-                        grid1.updateCellValue(params.rowId, 'Shi', '');
+                        // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                        // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                        grid1.updateCellValue(params.rowId, { Shi: '' });
                     }
                 }
             }

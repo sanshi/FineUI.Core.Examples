@@ -84,20 +84,22 @@
                     var priceWithTax = (value * 1.03).toFixed(2);
                     var tax = (parseFloat(priceWithTax) - value).toFixed(2);
 
-                    grid1.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
-                    grid1.updateCellValue(rowId, 'Tax', tax);
+                    // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                    // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue(rowId, { PriceWithTax: priceWithTax });
+                    grid1.updateCellValue(rowId, { Tax: tax });
                 } else if (columnId === 'PriceWithTax') {
                     var price = (value / 1.03).toFixed(2);
                     var tax = (value - parseFloat(price)).toFixed(2);
 
-                    grid1.updateCellValue(rowId, 'Price', price);
-                    grid1.updateCellValue(rowId, 'Tax', tax);
+                    grid1.updateCellValue(rowId, { Price: price });
+                    grid1.updateCellValue(rowId, { Tax: tax });
                 } else if (columnId === 'Tax') {
                     var price = (value / 0.03).toFixed(2);
                     var priceWithTax = (value + parseFloat(price)).toFixed(2);
 
-                    grid1.updateCellValue(rowId, 'Price', price);
-                    grid1.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
+                    grid1.updateCellValue(rowId, { Price: price });
+                    grid1.updateCellValue(rowId, { PriceWithTax: priceWithTax });
                 }
             });
         }

@@ -152,8 +152,9 @@ function onNotifySelectedRowsClick(event) {
 
 // 公共方法 - 通过消息框展示表格选中的行
 // 参数 gridId 是表格的客户端 id：各端页面上写什么 id 就是什么；FineUI.Pro 在命名容器里要传 ClientID。
-function notifySelectedRows(gridId) {
+function notifySelectedRows(gridId, additionalColumns) {
     var grid = F(gridId);
+    additionalColumns = additionalColumns || [];
 
     if (!grid.hasSelection()) {
         F.alert(_R('NoSelectionMessage'));
@@ -177,6 +178,9 @@ function notifySelectedRows(gridId) {
     if (majorColumn) {
         tr.append('<th>' + _R('GridMajor') + '</th>');
     }
+    additionalColumns.forEach(function (column) {
+        tr.append($('<th>').text(column.text));
+    });
 
     $.each(grid.getSelectedRows(true), function (index, row) {
         tr = $('<tr>').appendTo(table);
@@ -205,6 +209,11 @@ function notifySelectedRows(gridId) {
             }
             tr.append($('<td>').text(majorValue));
         }
+        // 复选框示例可以附加自己的列；读取当前数据，勾选与取消后的结果都及时显示。
+        additionalColumns.forEach(function (column) {
+            var value = row.values[column.columnId];
+            tr.append($('<td>').text(value == null ? '' : String(value)));
+        });
     });
 
     showNotify(F.rawHtml(table[0].outerHTML));

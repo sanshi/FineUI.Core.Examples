@@ -69,8 +69,7 @@
             rowEls.each(function () {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode);
-                var followFolderEl = cnode.find('.f-grid-cell-FollowFolder .f-grid-checkbox');
-                var isChecked = followFolderEl.hasClass('f-checked');
+                var isChecked = rowData.values['FollowFolder'];
 
                 if (isChecked) {
                     result.push('<tr>');

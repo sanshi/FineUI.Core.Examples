@@ -9,7 +9,7 @@
 @section head {
 
     <style>
-        
+
     </style>
 
 }
@@ -75,8 +75,7 @@
             rowEls.each(function () {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode);
-                var atSchoolEl = cnode.find('.f-grid-cell-AtSchool2 .f-grid-checkbox');
-                var isChecked = atSchoolEl.hasClass('f-checked');
+                var isChecked = rowData.values['AtSchool2'];
 
                 result.push('<tr>');
                 result.push('<td>' + rowData.id + '</td>');

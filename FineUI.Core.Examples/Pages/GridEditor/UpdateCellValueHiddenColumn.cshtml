@@ -75,7 +75,9 @@
                 var entranceYear = grid1.getCellValue(rowEl, 'EntranceYear');
                 var userName = grid1.getCellValue(rowEl, 'Name');
 
-                grid1.updateCellValue(rowEl, 'EntranceYear', entranceYear + 1);
+                // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue(rowEl, { EntranceYear: entranceYear + 1 });
 
                 msg.push('[' + userName + ']的入学年份：' + entranceYear + ' -> ' + (entranceYear + 1));
             });

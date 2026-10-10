@@ -85,7 +85,9 @@
                     progressValue = 0;
                 }
 
-                grid1.updateCellValue(rowEl, 'Progress1', progressValue);
+                // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue(rowEl, { Progress1: progressValue });
             });
         }
 

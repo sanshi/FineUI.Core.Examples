@@ -160,6 +160,8 @@
             var rowId = F.ui.hfFormID.getValue();
 
             if (rowId) {
+                // 多列更新通过对象传入各列的新值，列名使用 ColumnID。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
                 grid1.updateCellValue(rowId, {
                     'Name': F.ui.tbxFormUserName.getValue(),
                     'Gender': F.ui.rblFormGender.getValue(),

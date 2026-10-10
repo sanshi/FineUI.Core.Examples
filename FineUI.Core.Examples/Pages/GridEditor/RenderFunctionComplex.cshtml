@@ -82,9 +82,11 @@
 
             if (columnId === 'EntranceYear') {
                 if (value >= 2003) {
-                    grid.updateCellValue(rowId, 'Name.cls', 'highlight');
+                    // 使用 'ColumnID.cls' 更新单元格样式，例如 'Name.cls' 表示这一列的样式。
+                    // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid.updateCellValue(rowId, { 'Name.cls': 'highlight' });
                 } else {
-                    grid.updateCellValue(rowId, 'Name.cls', '');
+                    grid.updateCellValue(rowId, { 'Name.cls': '' });
                 }
             }
         }

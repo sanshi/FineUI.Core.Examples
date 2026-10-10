@@ -62,13 +62,15 @@
             grid.el.on('click', checkboxSelector, function (event) {
                 var rowEl = $(this).closest('.f-grid-row');
                 var rowLevel = getRowLevel(rowEl);
-                var rowChecked = rowEl.find(checkboxSelector).hasClass('f-checked');
+                var rowChecked = grid.getRowData(rowEl).values['IsChecked'];
 
                 var nextRowEl = rowEl;
                 while ((nextRowEl = nextRowEl.next()).length) {
                     if (getRowLevel(nextRowEl) > rowLevel) {
-                        var checkboxEl = nextRowEl.find(checkboxSelector);
-                        rowChecked ? checkboxEl.addClass('f-checked') : checkboxEl.removeClass('f-checked');
+                        // 包括折叠后隐藏的子行，保持原有父子级联范围。
+                        // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                        // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                        grid.updateCellValue(nextRowEl, { IsChecked: rowChecked }, true);
                     } else {
                         break;
                     }

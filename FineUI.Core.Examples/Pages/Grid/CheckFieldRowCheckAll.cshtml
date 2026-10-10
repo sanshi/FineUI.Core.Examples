@@ -43,18 +43,36 @@
     <script>
 
         function onSelectRows(event) {
-            var selectedRows = $('.f-grid-row-selected');
+            var grid1 = F.ui.Grid1;
+            var selectedRows = grid1.getSelectedRowEls();
             if (selectedRows.length) {
-                selectedRows.find('.f-grid-checkbox').addClass('f-checked');
+                // 同步选中行的三个独立复选框列。
+                selectedRows.each(function () {
+                    // 多列更新通过对象传入各列的新值，列名使用 ColumnID。
+                    // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue($(this), {
+                        AtSchool2: true,
+                        AtSchool3: true,
+                        AtSchool4: true
+                    }, true);
+                });
             } else {
                 F.alert("请至少选择一项！");
             }
         }
 
         function onUnselectRows(event) {
-            var selectedRows = $('.f-grid-row-selected');
+            var grid1 = F.ui.Grid1;
+            var selectedRows = grid1.getSelectedRowEls();
             if (selectedRows.length) {
-                selectedRows.find('.f-grid-checkbox').removeClass('f-checked');
+                // 同步选中行的三个独立复选框列。
+                selectedRows.each(function () {
+                    grid1.updateCellValue($(this), {
+                        AtSchool2: false,
+                        AtSchool3: false,
+                        AtSchool4: false
+                    }, true);
+                });
             } else {
                 F.alert("请至少选择一项！");
             }
@@ -80,9 +98,9 @@
             rowEls.each(function () {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode);
-                var isChecked2 = cnode.find('.f-grid-cell-AtSchool2 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked3 = cnode.find('.f-grid-cell-AtSchool3 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked4 = cnode.find('.f-grid-cell-AtSchool4 .f-grid-checkbox').hasClass('f-checked');
+                var isChecked2 = rowData.values['AtSchool2'];
+                var isChecked3 = rowData.values['AtSchool3'];
+                var isChecked4 = rowData.values['AtSchool4'];
 
                 result.push('<tr>');
                 result.push('<td>' + rowData.id + '</td>');

@@ -52,11 +52,29 @@
         }
 
         function onSelectRows(event) {
-            $('.f-grid-row-selected .f-grid-checkbox').addClass('f-checked');
+            var grid1 = F.ui.Grid1;
+            // 只修改本表格选中行的正文列，保留当前行选择。
+            grid1.getSelectedRowEls().each(function () {
+                // 多列更新通过对象传入各列的新值，列名使用 ColumnID。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue($(this), {
+                    CheckBoxField1: true,
+                    CheckBoxField2: true,
+                    CheckBoxField3: true
+                }, true);
+            });
         }
 
         function onUnselectRows(event) {
-            $('.f-grid-row-selected .f-grid-checkbox').removeClass('f-checked');
+            var grid1 = F.ui.Grid1;
+            // 只修改本表格选中行的正文列，保留当前行选择。
+            grid1.getSelectedRowEls().each(function () {
+                grid1.updateCellValue($(this), {
+                    CheckBoxField1: false,
+                    CheckBoxField2: false,
+                    CheckBoxField3: false
+                }, true);
+            });
         }
 
 
@@ -75,14 +93,11 @@
                 result.push('<tr>');
                 result.push(F.formatString('<td>{0}</td>', rowData.text));
 
-                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox')
-                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+                result.push(F.formatString('<td>{0}</td>', rowData.values['CheckBoxField1'] ? '是' : '否'));
 
-                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField2 .f-grid-checkbox')
-                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+                result.push(F.formatString('<td>{0}</td>', rowData.values['CheckBoxField2'] ? '是' : '否'));
 
-                var checkField1 = rowEl.find('.f-grid-cell-CheckBoxField3 .f-grid-checkbox')
-                result.push(F.formatString('<td>{0}</td>', checkField1.hasClass('f-checked') ? '是' : '否'));
+                result.push(F.formatString('<td>{0}</td>', rowData.values['CheckBoxField3'] ? '是' : '否'));
 
                 result.push('</tr>');
             });

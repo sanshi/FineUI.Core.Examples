@@ -141,7 +141,9 @@
             var rowId = rowData.id;
 
             var toggledShow = !rowData.values['Hidden'];
-            gridConfig.updateCellValue(rowData, 'Hidden', toggledShow, true);
+            // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+            // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            gridConfig.updateCellValue(rowData, { Hidden: toggledShow }, true);
 
 
             updateMainGridColumnConfig();
@@ -193,7 +195,7 @@
                     message: '请输入新的列标题',
                     defaultValue: rowData.values['HeaderText'],
                     ok: function (userInputValue) {
-                        gridConfig.updateCellValue(rowData, 'HeaderText', userInputValue, true);
+                        gridConfig.updateCellValue(rowData, { HeaderText: userInputValue }, true);
 
                         updateMainGridColumnConfig();
                     }

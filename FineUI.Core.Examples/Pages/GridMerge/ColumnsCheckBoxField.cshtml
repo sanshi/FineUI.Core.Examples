@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
+    <f:Grid ID="Grid1" RowDataBoundFunction="onGridRowDataBound" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="ID" DataField="ID" />
@@ -40,6 +40,12 @@
     <script src="~/res/js/grid.js"></script>
 
     <script>
+
+        function onGridRowDataBound(rowData) {
+            // 同一组初始没有激活项；空值会渲染为空白单元格。
+            rowData.values['CheckBoxField1'] = false;
+        }
+
         function onGridDataLoad(event) {
             this.mergeColumns(['GroupB']);
         }
@@ -51,12 +57,11 @@
 
             // 注册复选框的点击事件
             grid.el.on('click', checkboxSelector, function (event) {
-                var targetEl = $(this), checked = targetEl.hasClass('f-checked');
+                var rowEl = $(this).closest('.f-grid-row');
+                var rowData = grid.getRowData(rowEl);
 
-                // 如果取消复选框选中，则不做处理
-                if (checked) {
-                    var rowEl = targetEl.closest('.f-grid-row');
-                    var rowData = grid.getRowData(rowEl);
+                // 仅在当前行被选中时，取消同一合并组内其它行的选中状态。
+                if (rowData.values['CheckBoxField1']) {
 
                     // 参考行的 GroupB 的值
                     var rowGroupB = rowData.values['GroupB'];
@@ -70,7 +75,9 @@
                         var nextRowGroupB = nextRowData.values['GroupB'];
 
                         if (nextRowGroupB == rowGroupB) {
-                            nextRowEl.find(checkboxSelector).removeClass('f-checked');
+                            // 用 ColumnID 到新值的对象更新单元格，单列和多列采用同一种写法。
+                            // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                            grid.updateCellValue(nextRowData.id, { CheckBoxField1: false }, true);
                             return true;
                         } else {
                             // 不属于同一个分组

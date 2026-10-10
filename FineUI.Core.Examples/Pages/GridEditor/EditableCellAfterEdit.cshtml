@@ -82,9 +82,11 @@
 
             if (columnId === 'AtSchool') {
                 if (!value) {
-                    grid1.updateCellValue(rowId, 'Major.cls', 'f-grid-cell-uneditable');
+                    // 使用 'ColumnID.cls' 更新单元格样式，例如 'Major.cls' 表示这一列的样式。
+                    // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue(rowId, { 'Major.cls': 'f-grid-cell-uneditable' });
                 } else {
-                    grid1.updateCellValue(rowId, 'Major.cls', '');
+                    grid1.updateCellValue(rowId, { 'Major.cls': '' });
                 }
             }
         }

@@ -44,7 +44,7 @@
             grid1.el.on('click', checkboxSelector, function (event) {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode.closest('.f-grid-row'));
-                var isChecked = cnode.hasClass('f-checked');
+                var isChecked = rowData.values['AtSchool2'];
 
                 // 触发后台事件
                 F.customEvent('Grid1_CheckFieldChanged', {

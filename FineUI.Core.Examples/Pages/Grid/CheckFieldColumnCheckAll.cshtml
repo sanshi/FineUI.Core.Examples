@@ -69,8 +69,12 @@
             var grid1 = F.ui.Grid1;
             var checkboxFieldID = this.getAttr('data-tag'), checked = this.getValue();
 
-            var checkboxEls = grid1.el.find('.f-grid-cell-' + checkboxFieldID + ' .f-grid-checkbox');
-            checkboxEls.toggleClass('f-checked', checked);
+            // 通过数据接口更新指定列，让当前值、复选框和开关文字保持一致。
+            grid1.getRowEls().each(function () {
+                // 列名在运行时确定，用实际 ColumnID 作为对象的键更新对应单元格。
+                // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue($(this), { [checkboxFieldID]: checked }, true);
+            });
         }
 
         function onNotifyCheckFieldStatusClick(event) {
@@ -93,9 +97,9 @@
             rowEls.each(function () {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode);
-                var isChecked2 = cnode.find('.f-grid-cell-AtSchool2 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked3 = cnode.find('.f-grid-cell-AtSchool3 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked4 = cnode.find('.f-grid-cell-AtSchool4 .f-grid-checkbox').hasClass('f-checked');
+                var isChecked2 = rowData.values['AtSchool2'];
+                var isChecked3 = rowData.values['AtSchool3'];
+                var isChecked4 = rowData.values['AtSchool4'];
 
                 result.push('<tr>');
                 result.push('<td>' + rowData.id + '</td>');

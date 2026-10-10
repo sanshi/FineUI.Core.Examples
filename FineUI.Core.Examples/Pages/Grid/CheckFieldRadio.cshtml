@@ -17,7 +17,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+    <f:Grid ID="Grid1" RowDataBoundFunction="onGridRowDataBound" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -43,6 +43,14 @@
 
     <script>
 
+        function onGridRowDataBound(rowData) {
+            // 这些列用于单选互斥，初始全部未选中；空值会渲染为空白单元格。
+            rowData.values['AtSchool2'] = false;
+            rowData.values['AtSchool3'] = false;
+            rowData.values['AtSchool4'] = false;
+        }
+
+
 
         function onNotifyCheckFieldStatusClick(event) {
             var grid1 = F.ui.Grid1;
@@ -64,9 +72,9 @@
             rowEls.each(function () {
                 var cnode = $(this);
                 var rowData = grid1.getRowData(cnode);
-                var isChecked2 = cnode.find('.f-grid-cell-AtSchool2 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked3 = cnode.find('.f-grid-cell-AtSchool3 .f-grid-checkbox').hasClass('f-checked');
-                var isChecked4 = cnode.find('.f-grid-cell-AtSchool4 .f-grid-checkbox').hasClass('f-checked');
+                var isChecked2 = rowData.values['AtSchool2'];
+                var isChecked3 = rowData.values['AtSchool3'];
+                var isChecked4 = rowData.values['AtSchool4'];
 
                 result.push('<tr>');
                 result.push('<td>' + rowData.id + '</td>');
@@ -93,22 +101,23 @@
             var grid1 = F.ui.Grid1;
             var checkboxSelector = '.f-grid-cell .f-grid-checkbox';
 
-            // 注册复选框的点击事件
+            // 同一列只保留一个选中项；数据更新不会再次触发点击，避免互斥处理循环。
             grid1.el.on('click', checkboxSelector, function (event) {
-                var targetEl = $(this), checked = targetEl.hasClass('f-checked');
+                var cellEl = $(this).closest('.f-grid-cell');
+                var rowEl = cellEl.closest('.f-grid-row');
+                var columnId = cellEl.attr('data-columnid');
+                var rowData = grid1.getRowData(rowEl);
 
-                // 如果取消复选框选中，则不做处理
-                if (checked) {
-                    var cellEl = targetEl.closest('.f-grid-cell');
-                    var rowEl = cellEl.closest('.f-grid-row');
-
-                    var columnId = cellEl.attr('data-columnid');
-
-                    // 当前列的复选框的CSS选择器
-                    var columnCheckboxSelector = '.f-grid-cell-' + columnId + checkboxSelector;
-
-                    rowEl.siblings().find(columnCheckboxSelector).removeClass('f-checked');
+                // 框架已同步本次点击的当前值，取消选中时无需修改其它行。
+                if (!rowData.values[columnId]) {
+                    return;
                 }
+
+                rowEl.siblings('.f-grid-row').each(function () {
+                    // 列名在运行时确定，用实际 ColumnID 作为对象的键更新对应单元格。
+                    // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue($(this), { [columnId]: false }, true);
+                });
             });
         });
 
