@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" RowDataBoundFunction="onGridRowDataBound" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableColumnLines="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="ID" DataField="ID" />
@@ -40,11 +40,6 @@
     <script src="~/res/js/grid.js"></script>
 
     <script>
-
-        function onGridRowDataBound(rowData) {
-            // 同一组初始没有激活项；空值会渲染为空白单元格。
-            rowData.values['CheckBoxField1'] = false;
-        }
 
         function onGridDataLoad(event) {
             this.mergeColumns(['GroupB']);

@@ -17,7 +17,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" RowDataBoundFunction="onGridRowDataBound" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -42,13 +42,6 @@
     <script src="~/res/js/grid.js"></script>
 
     <script>
-
-        function onGridRowDataBound(rowData) {
-            // 这些列用于单选互斥，初始全部未选中；空值会渲染为空白单元格。
-            rowData.values['AtSchool2'] = false;
-            rowData.values['AtSchool3'] = false;
-            rowData.values['AtSchool4'] = false;
-        }
 
 
 
