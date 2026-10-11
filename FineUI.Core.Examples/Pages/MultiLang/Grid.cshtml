@@ -3,6 +3,15 @@
 @{
     ViewBag.Title = "MultiLang/Grid";
     var F = Html.F();
+    var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings
+    {
+        StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+    };
+    var resources = new Newtonsoft.Json.Linq.JObject();
+    foreach (var resource in global::FineUI.Core.PageContext.GetLocalizer<SharedJavaScriptResources>().GetAllStrings(includeParentCultures: true))
+    {
+        resources[resource.Name] = resource.Value;
+    }
 }
 
 @functions {
@@ -34,8 +43,10 @@
     <script src="~/res/js/grid.js"></script>
 
     <!-- 输出多语言资源 -->
+    <script id="grid-resources" type="application/json">@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(resources, jsonSettings))</script>
     <script type="text/javascript">
-        @Html.Raw(FineUI.Core.PageContext.GetJavaScriptResourcesReference<SharedJavaScriptResources>())
+        // 资源内容只作为 JSON 数据解析，翻译中的引号或 HTML 不会变成可执行脚本。
+        F.setResources(JSON.parse(document.getElementById('grid-resources').textContent));
     </script>
 
 }

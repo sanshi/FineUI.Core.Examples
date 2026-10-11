@@ -65,9 +65,14 @@
 
 @section script {
 
+    <script type="application/json" id="defaultColumnConfig">@Html.Raw(Model.DefaultColumnConfigJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
+
+        // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
+        window.GRID_COLUMNCONFIG_DEFAULT = JSON.parse(document.getElementById('defaultColumnConfig').textContent);
 
         function onRefreshClick(event) {
             window.location.reload();
@@ -87,7 +92,7 @@
                 };
             });
 
-            
+
             // 更新主表格
             var newcolumns = [];
             $.each(configedColumns, function (index, item) {

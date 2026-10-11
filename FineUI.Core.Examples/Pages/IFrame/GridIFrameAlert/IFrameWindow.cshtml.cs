@@ -19,7 +19,13 @@ namespace FineUI.Core.Examples.Pages.IFrame.GridIFrameAlert
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 先弹出提示对话框，再回发父窗体
-            Alert.ShowInTop("保存成功！", String.Empty, MessageBoxIcon.Success, ActiveWindow.GetHidePostBackReference("参数 - " + DateTime.Now.Millisecond));
+            new Alert
+            {
+                Message = "保存成功！",
+                MessageBoxIcon = MessageBoxIcon.Success,
+                Target = Target.Top,
+                OkCommand = ClientCommand.HideActiveWindowPostBack("参数 - " + DateTime.Now.Millisecond)
+            }.Show();
 
         }
 

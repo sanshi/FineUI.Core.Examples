@@ -12,6 +12,14 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 {
     public partial class ShengShiModel : BaseModel
     {
+        /// <summary>
+        /// 按省名称分组的城市列表。模板执行早于 Page_Load，直接读取固定的省市数据，保证首次编辑时就能加载城市。
+        /// </summary>
+        public string CityDataJson => Newtonsoft.Json.JsonConvert.SerializeObject(DataSourceUtil.SHI_JSON, new Newtonsoft.Json.JsonSerializerSettings
+            {
+                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+            });
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,12 +33,10 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         {
             Grid1.DataSource = GetSourceData();
             Grid1.DataBind();
-
-            RegisterStartupScript(String.Format("window._SHI={0};", DataSourceUtil.SHI_JSON.ToString()));
         }
 
 
-        
+
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {

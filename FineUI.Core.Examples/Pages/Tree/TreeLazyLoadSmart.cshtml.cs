@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.Tree
         {
             List<TreeNode> nodes = DynamicAppendNode(e.NodeID);
 
-            RegisterStartupScript(Tree1.GetLoadDataReference(e.NodeID, nodes));
+            new TreeAjaxHelper(Tree1).LoadData(e.NodeID, nodes);
         }
 
         protected void btnGetSelectedNode_Click(object sender, EventArgs e)

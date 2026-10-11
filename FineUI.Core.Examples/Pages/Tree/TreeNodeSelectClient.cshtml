@@ -39,7 +39,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
     <br>
     <br />
-        事件列表（<a href="javascript:$('#result').html('');">clear</a>）：
+        事件列表（<a href="#" id="clearEvents">clear</a>）：
     <ul id="result"></ul>
 
 
@@ -50,6 +50,11 @@
 @section script {
 
     <script>
+
+        $(document).on('click', '#clearEvents', function (event) {
+            event.preventDefault();
+            $('#result').empty();
+        });
 
         function onTree1NodeSelect(event, nodeId) {
             var date = new Date();

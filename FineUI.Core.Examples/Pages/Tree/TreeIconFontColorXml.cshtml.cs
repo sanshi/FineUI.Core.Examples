@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.Tree
             }
         }
 
-        
+
         // 需要添加到页面上的CSS
         Dictionary<string, string> dynamicCssDic = new Dictionary<string, string>();
 
@@ -46,8 +46,8 @@ namespace FineUI.Core.Examples.Pages.Tree
             {
                 cssSB.AppendFormat("{0}", dynamicCssDic[css]);
             }
-            // 注册CSS样式
-            RegisterStartupScript(String.Format("F.addCSS('dynamicCSSStyles','{0}');", cssSB.ToString()));
+            // 样式作为字符串数据下发，由页面中预先定义的函数应用，不把颜色数据拼成 JavaScript。
+            FineUI.Core.PageContext.InvokeFunction("applyTreeColors", cssSB.ToString());
         }
 
 
@@ -70,7 +70,7 @@ namespace FineUI.Core.Examples.Pages.Tree
                         {
                             // 规范化后的 CSS 名称
                             string normalizedCssName = "tn_color_" + value.Replace('#', '_');
-                            
+
                             // 动态添加 CSS
                             if (!dynamicCssDic.ContainsKey(normalizedCssName))
                             {

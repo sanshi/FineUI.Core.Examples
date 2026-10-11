@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.Other
         
         protected void Button4_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript("test();");
+            global::FineUI.Core.PageContext.InvokeFunction("test");
         }
 
     }

@@ -13,6 +13,11 @@ namespace FineUI.Core.Examples.Pages.Grid
 {
     public partial class FormWindowCellEditShengShiModel : BaseModel
     {
+        /// <summary>
+        /// 省代码、名称及各省城市列表，由模板的数据块输出。模板执行早于 Page_Load，读取属性时直接准备固定数据，保证首次渲染就能显示名称。
+        /// </summary>
+        public string ProvinceCityDataJson => CreateProvinceCityData();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,15 +30,13 @@ namespace FineUI.Core.Examples.Pages.Grid
         private void LoadData()
         {
             BindGrid();
-
-            RegisterShengShiScript();
         }
 
 
         // 省和市都用代码：省下拉列表的数据在这里下发，市下拉列表的数据按省代码分组，等前台选中省份后再换一批
-        private void RegisterShengShiScript()
+        private string CreateProvinceCityData()
         {
-            // 注册脚本（省数据）
+            // 准备省代码与名称数据。
             JArray shengData = new JArray();
             shengData.Add(new JArray("001", "北京"));
             shengData.Add(new JArray("002", "河南"));
@@ -42,9 +45,9 @@ namespace FineUI.Core.Examples.Pages.Grid
             shengData.Add(new JArray("005", "湖北"));
             shengData.Add(new JArray("006", "广西"));
             shengData.Add(new JArray("007", "安徽"));
-            string shengScript = String.Format("window._SHENG={0};", shengData.ToString(Newtonsoft.Json.Formatting.None));
 
-            // 注册脚本（市数据）：市代码 = 省代码 + 三位序号，名称沿用公共的省市数据
+
+            // 市代码 = 省代码 + 三位序号，名称沿用公共的省市数据。
             JObject shiData = new JObject();
             foreach (JArray item in shengData)
             {
@@ -66,9 +69,15 @@ namespace FineUI.Core.Examples.Pages.Grid
 
                 shiData[shengValue] = newSheng;
             }
-            string shiScript = String.Format("window._SHI={0};", shiData.ToString(Newtonsoft.Json.Formatting.None));
-
-            FineUI.Core.PageContext.RegisterPreStartupScript(shengScript + shiScript);
+            // 作为纯 JSON 数据输出，不能把省市名称拼入可执行脚本。
+            return Newtonsoft.Json.JsonConvert.SerializeObject(new JObject
+            {
+                ["provinces"] = shengData,
+                ["cities"] = shiData
+            }, new Newtonsoft.Json.JsonSerializerSettings
+            {
+                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+            });
         }
 
 

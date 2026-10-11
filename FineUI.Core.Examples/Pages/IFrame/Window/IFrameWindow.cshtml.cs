@@ -25,7 +25,8 @@ namespace FineUI.Core.Examples.Pages.IFrame.Window
 
             // 然后关闭本窗体
             
-            RegisterStartupScript(Panel1.GetClearDirtyReference() + ActiveWindow.GetHideReference());
+            Panel1.ClearDirty();
+            ActiveWindow.Hide();
         }
 
     }

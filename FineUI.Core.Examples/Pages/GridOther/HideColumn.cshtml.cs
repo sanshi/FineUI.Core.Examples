@@ -18,22 +18,19 @@ namespace FineUI.Core.Examples.Pages.GridOther
         }
 
 
-        
+
         protected void Button3_Click(object sender, EventArgs e)
         {
-            var scripts = String.Empty;
-
             var genderColumn = Grid1.FindColumn("Gender");
             if (genderColumn.Hidden)
             {
-                scripts = genderColumn.GetShowReference();
+                genderColumn.Hidden = false;
             }
             else
             {
-                scripts = genderColumn.GetHideReference();
+                genderColumn.Hidden = true;
             }
 
-            RegisterStartupScript(scripts);
         }
 
     }

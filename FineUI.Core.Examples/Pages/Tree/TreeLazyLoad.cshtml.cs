@@ -16,12 +16,12 @@ namespace FineUI.Core.Examples.Pages.Tree
         }
 
 
-        
+
         protected void Tree1_NodeLazyLoad(object sender, TreeNodeEventArgs e)
         {
             List<TreeNode> nodes = DynamicAppendNode(e.NodeID);
 
-            RegisterStartupScript(Tree1.GetLoadDataReference(e.NodeID, nodes));
+            new TreeAjaxHelper(Tree1).LoadData(e.NodeID, nodes);
         }
 
         protected void btnGetSelectedNode_Click(object sender, EventArgs e)

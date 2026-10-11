@@ -60,9 +60,16 @@
 
 @section script {
 
+    <script type="application/json" id="provinceCityData">@Html.Raw(Model.ProvinceCityDataJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
+
+        // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+        window._SHENG = provinceCityData.provinces;
+        window._SHI = provinceCityData.cities;
 
         // 省市的数据输出到前台，类似如下结构
         /*

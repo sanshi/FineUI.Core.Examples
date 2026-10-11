@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.Other
         
         protected void Button3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript("onCloseActiveTabClick();");
+            global::FineUI.Core.PageContext.InvokeFunction("onCloseActiveTabClick");
         }
 
     }

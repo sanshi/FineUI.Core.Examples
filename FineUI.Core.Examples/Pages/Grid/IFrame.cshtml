@@ -43,4 +43,11 @@
 
     <script src="~/res/js/grid.js"></script>
 
+    <script>
+        // 弹窗关闭后先回到打开它的本页，再通知外层首页移除当前选项卡。
+        function closeOwnerTab() {
+            parent.removeActiveTab();
+        }
+    </script>
+
 }

@@ -15,13 +15,13 @@ namespace FineUI.Core.Examples.Pages.Grid
         }
 
 
-        
+
         protected void btnSaveClose_Click(object sender, EventArgs e)
         {
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 关闭本窗体（触发窗体的关闭事件）
-            RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
+            ActiveWindow.HidePostBack();
         }
 
         protected void btnSaveHideRefresh_Click(object sender, EventArgs e)
@@ -29,15 +29,15 @@ namespace FineUI.Core.Examples.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 隐藏本窗体，然后刷新父窗体
-            RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+            ActiveWindow.HideRefresh();
         }
 
         protected void btnSaveCloseTab_Click(object sender, EventArgs e)
         {
             // 1. 这里放置保存窗体中数据的逻辑
 
-            // 2. 隐藏本窗体，然后执行JavaScript脚本（关闭当前激活的选项卡）
-            RegisterStartupScript(ActiveWindow.GetHideExecuteScriptReference("parent.removeActiveTab();"));
+            // 2. 等本窗体隐藏完成后，调用父页函数关闭当前激活的选项卡。
+            ActiveWindow.HideCallParentFunction("closeOwnerTab");
         }
 
 

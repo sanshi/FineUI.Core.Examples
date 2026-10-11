@@ -11,7 +11,7 @@ namespace FineUI.Core.Examples.Pages.IFrame
     {
         protected void btnServerRefresh_Click(object sender, EventArgs e)
         {
-            FineUI.Core.PageContext.RegisterStartupScript(Panel1.GetRefreshIFrameReference());
+            Panel1.RefreshIFrame();
         }
 
         protected void Page_Load(object sender, EventArgs e)

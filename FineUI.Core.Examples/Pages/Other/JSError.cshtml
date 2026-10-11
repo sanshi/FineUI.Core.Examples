@@ -24,6 +24,14 @@
             var i = a[0];
         }
 
+        function test() {
+            // 服务端只请求调用本页函数；在浏览器事件中抛错，让下方全局错误处理器显示详细信息。
+            // 不在回发响应应用过程中抛错，避免异常只变成 Promise 拒绝而绕过 window.onerror。
+            window.setTimeout(function () {
+                throw new Error('服务器请求的客户端错误示例');
+            }, 0);
+        }
+
 
         // 参考：http://stackoverflow.com/questions/951791/javascript-global-error-handling/10556743#10556743
         window.onerror = function (msg, url, line, col, error) {

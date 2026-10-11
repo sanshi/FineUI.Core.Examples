@@ -12,6 +12,18 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 {
     public partial class DynamicModel : BaseModel
     {
+        /// <summary>
+        /// 动态年份列使用的最小年份和最大年份。模板执行早于 Page_Load，直接读取本页固定范围，保证首次编辑时就能更新其余年份。
+        /// </summary>
+        public string YearRangeJson => Newtonsoft.Json.JsonConvert.SerializeObject(new JObject
+            {
+                ["minYear"] = _minYear,
+                ["maxYear"] = _maxYear
+            }, new Newtonsoft.Json.JsonSerializerSettings
+            {
+                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+            });
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -80,8 +92,6 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
             Grid1.DataSource = GetSourceData();
             Grid1.DataBind();
-
-            RegisterStartupScript(String.Format("window._MINYEAR={0};window._MAXYEAR={1};", _minYear, _maxYear));
         }
 
 

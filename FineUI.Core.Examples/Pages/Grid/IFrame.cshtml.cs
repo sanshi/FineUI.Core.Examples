@@ -22,17 +22,17 @@ namespace FineUI.Core.Examples.Pages.Grid
             Alert.Show("触发了窗体的关闭事件！");
         }
 
-        protected string GetEditUrl(object id, object name)
+        private void ShowEditWindow(object id, object name)
         {
             var iframeUrl = String.Format(Url.Content("~/Grid/IFrameWindow?id={0}&name={1}"), id, HttpUtility.UrlEncode(name.ToString()));
-            return Window1.GetShowReference(iframeUrl, "编辑 - " + name);
+            new WindowAjaxHelper(Window1).Show(iframeUrl, "编辑 - " + name);
         }
 
         protected void Grid1_RowDoubleClick(object sender, GridRowEventArgs e)
         {
             object[] dataKeys = Grid1.DataKeys[e.RowIndex];
 
-            RegisterStartupScript(GetEditUrl(dataKeys[0], dataKeys[1]));
+            ShowEditWindow(dataKeys[0], dataKeys[1]);
         }
 
     }

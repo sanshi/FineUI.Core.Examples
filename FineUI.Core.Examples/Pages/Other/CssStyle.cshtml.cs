@@ -27,8 +27,8 @@ namespace FineUI.Core.Examples.Pages.Other
         protected void Button3_Click(object sender, EventArgs e)
         {
             // 不能直接设置 CssStyle=String.Empty，客户端只会覆盖相同CSS属性的样式，而不会清空元素的 style 属性
-            // 需要注册JavaScript脚本来清空元素的 style 属性
-            RegisterStartupScript("F.ui.Label1.el.attr('style','');");
+            // 调用页面具名函数，把元素现有的 style 属性完整清空。
+            global::FineUI.Core.PageContext.InvokeFunction("clearLabelStyle");
         }
 
         

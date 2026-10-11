@@ -24,7 +24,7 @@
     <br />
     注：
     <ul>
-        <li>由于第三方类库（UEditor）使用了内联脚本，因此需要启用CspScriptsAllowUnsafeInline，允许所有的内联脚本执行。</li>
+        <li>第三方类库（UEditor）会使用内联脚本和动态编译脚本，本兼容页显式启用 CspScriptsAllowUnsafeInline 和 CspScriptsAllowUnsafeEval。</li>
         <li>一般情况下推荐启用CspScriptsAllowNonce属性，这样更加安全。</li>
         <li>文章：<a target="_blank" href="https://fineui.com/docs/#/Questions/5000_CSP_unsafe_inline">https://fineui.com/docs/#/Questions/5000_CSP_unsafe_inline</a></li>
     </ul>

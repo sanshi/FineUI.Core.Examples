@@ -33,7 +33,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 
             // 重新绑定表格，并回到「新增」状态（等同于模拟点击新增按钮）
             BindGrid();
-            RegisterStartupScript("onNewButtonClick();");
+            FineUI.Core.PageContext.InvokeFunction("onNewButtonClick");
         }
 
 
@@ -74,7 +74,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 
             // 重新绑定表格，并选中刚保存的那一行
             BindGrid();
-            RegisterStartupScript(String.Format("F.ui.Grid1.selectRow('{0}');", rowData["Id"]));
+            Grid1.SelectedRowID = rowData["Id"].ToString();
         }
 
 

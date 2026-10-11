@@ -19,8 +19,8 @@ namespace FineUI.Core.Examples.Pages.IFrame.GridIFrameReload
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 不关闭窗体，直接回发父窗体
-            string scripts = String.Format("F.getActiveWindow().window.closeWindow1('{0}');", "参数 - " + DateTime.Now.Millisecond);
-            RegisterStartupScript(scripts);
+            // 窗体可能在顶层以幻影形式显示；函数仍属于最初打开窗体的页面。
+            ActiveWindow.CallParentFunction("closeWindow1", "参数 - " + DateTime.Now.Millisecond);
 
         }
 

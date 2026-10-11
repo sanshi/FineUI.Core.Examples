@@ -17,8 +17,8 @@ namespace FineUI.Core.Examples.Pages.Message.AlertDownloadHideIFrame
 
         protected void btnOperation_Click(object sender, EventArgs e)
         {
-            // 不要在这里调用F.confirm，因为当前页面要被关闭，因此F.confirm的回调函数不能正确执行
-            RegisterStartupScript(ActiveWindow.GetHideReference() + "parent.showConfirm();");
+            // 当前页会随窗体隐藏而关闭，确认框和下载回调必须留在打开窗体的页面执行。
+            ActiveWindow.HideCallParentFunction("showConfirm");
         }
 
     }

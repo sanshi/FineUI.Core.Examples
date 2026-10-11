@@ -15,7 +15,7 @@ namespace FineUI.Core.Examples.Pages.Window
         }
 
 
-        
+
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Window1.Hidden = true;
@@ -23,9 +23,9 @@ namespace FineUI.Core.Examples.Pages.Window
 
         protected void btnChangeText_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(String.Format("$('#mylabel').html('{0}')", "这是修改后的值！" + DateTime.Now.ToLongTimeString()));
+            FineUI.Core.PageContext.InvokeFunction("updateWindowLabel", "这是修改后的值！" + DateTime.Now.ToLongTimeString());
         }
 
-        
+
     }
 }

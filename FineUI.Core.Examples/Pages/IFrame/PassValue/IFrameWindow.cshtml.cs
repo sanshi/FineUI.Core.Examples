@@ -17,7 +17,8 @@ namespace FineUI.Core.Examples.Pages.IFrame.PassValue
 
         protected void ddlSheng_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(ddlSheng.SelectedValue) + ActiveWindow.GetHideReference());
+            ActiveWindow.WriteBackValue(ddlSheng.SelectedValue);
+            ActiveWindow.Hide();
         }
     }
 }

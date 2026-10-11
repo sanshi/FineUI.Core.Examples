@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void btnAddTab3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference(new TabOptions()
+            new TabStripAjaxHelper(TabStrip1).AddTab(new TabOptions()
             {
                 ID = "dynamic_tab3",
                 IFrameUrl = "https://deepseek.com/",
@@ -26,12 +26,12 @@ namespace FineUI.Core.Examples.Pages.TabStrip
                 IconUrl = IconHelper.GetIconUrl(Icon.Application),
                 EnableClose = true,
                 RemoveOnClose = true
-            }));
+            });
         }
 
         protected void btnAddTab4_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference(new TabOptions()
+            new TabStripAjaxHelper(TabStrip1).AddTab(new TabOptions()
             {
                 ID = "dynamic_tab4",
                 IFrameUrl = "https://asp.net/",
@@ -39,17 +39,17 @@ namespace FineUI.Core.Examples.Pages.TabStrip
                 IconUrl = IconHelper.GetIconUrl(Icon.ApplicationAdd),
                 EnableClose = true,
                 RemoveOnClose = true
-            }));
+            });
         }
 
         protected void btnRemoveTab3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetCloseTabReference("dynamic_tab3"));
+            new TabStripAjaxHelper(TabStrip1).CloseTab("dynamic_tab3");
         }
 
         protected void btnRemoveTab4_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetCloseTabReference("dynamic_tab4"));
+            new TabStripAjaxHelper(TabStrip1).CloseTab("dynamic_tab4");
         }
 
     }

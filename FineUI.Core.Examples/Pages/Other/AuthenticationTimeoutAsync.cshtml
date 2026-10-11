@@ -43,15 +43,20 @@
         function onRegisterHookClick(event) {
             F.beforeAjaxSuccess(function (data, textStatus, xhr) {
 
-                // 通过返回的字符串，判断当前是否登录超时，执行跳转
-                if (data.indexOf('window.location.href=') === 0) {
+                // 回发原文是 JSON；只读取跳转命令的网址，不执行响应正文。
+                var commands = JSON.parse(data).commands || [];
+                var redirect = commands.find(function (command) {
+                    return command.type === 'page.redirect';
+                });
+                if (redirect) {
+                    var url = redirect.url;
 
                     // F.confirm是异步函数，直接返回
                     F.confirm({
                         message: '登录超时，是否跳转到首页？',
                         ok: function () {
-                            // 重新执行返回的脚本
-                            new Function(data)();
+                            // 用户确认后直接导航到服务端下发的网址。
+                            window.location.assign(url);
                         },
                         cancel: function () {
                             // 继续留在当前页面，啥也不做
@@ -59,7 +64,7 @@
                     });
 
 
-                    // 需要显式的返回 false，来阻止执行返回的脚本
+                    // 确认框是异步的，先阻止整份响应应用，等待用户选择。
                     return false;
                 }
 

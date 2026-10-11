@@ -8,9 +8,7 @@
 @section body {
 
 
-    @* 严格 CSP（script-src 去 'unsafe-inline'、仅 nonce）下，LinkButton / HyperLink 的点击脚本
-       由服务端下发的 handler 函数在 click 监听里执行（随 nonce 脚本解析），不再拼客户端内联 onclick，
-       故不会触发 CSP violation。 *@
+    @* 点击函数按名称从页面脚本中取得；回发命令是 JSON，链接无需内联事件属性。 *@
 
     <f:LinkButton ID="lbServer" Text="链接按钮 - 服务器端事件" OnClick="lbServer_Click" />
     <br />
@@ -27,7 +25,7 @@
 
 @section script {
 
-    <script nonce="@PageManager.Instance.CspScriptsNonceValue" type="text/javascript">
+    <script type="text/javascript">
 
         function onShowClientMsgClick(event) {
             top.F.alert('链接控件客户端脚本已执行');

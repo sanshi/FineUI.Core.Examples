@@ -11,12 +11,16 @@ namespace FineUI.Core.Examples.Pages.Mobile
 {
     public partial class MainModel : BaseMobileModel
     {
-        protected void Page_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 首屏的移动菜单数据。模板输出为 JSON，客户端只解析数据，不拼接执行脚本。
+        /// </summary>
+        public JArray MenuSource { get; private set; } = new JArray();
+
+        public void OnGet()
         {
-            if(!IsPostBack)
-            {
-                LoadData();
-            }
+            // 页面中的 JSON 数据标签在 Razor 渲染时读取 MenuSource，必须在渲染前准备菜单。
+            // 控件字段在这里尚未绑定；只读取菜单 XML，回发不再次加载它。
+            LoadData();
         }
 
         private void LoadData()
@@ -44,8 +48,7 @@ namespace FineUI.Core.Examples.Pages.Mobile
             }
 
 
-            // 移动菜单数据源
-            RegisterStartupScript(String.Format("window.MENUSOURCE = {0};", menuSource.ToString()));
+            MenuSource = menuSource;
         }
 
         private void ResolveXmlNode(XmlNode node, JObject parentMenu)

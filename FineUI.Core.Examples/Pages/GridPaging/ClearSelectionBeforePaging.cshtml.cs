@@ -12,12 +12,12 @@ namespace FineUI.Core.Examples.Pages.GridPaging
         protected void btnSelectCell_Click(object sender, EventArgs e)
         {
             // 106 行在第二页；选择当前客户端渲染页中的单元格。
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetSelectCellReference("106", "Name"));
+            new GridAjaxHelper(Grid1).SelectedCell("106", "Name");
         }
 
         protected void btnClearSelections_Click(object sender, EventArgs e)
         {
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetClearSelectionsReference());
+            FineUI.Core.PageContext.InvokeFunction("clearGridSelections");
         }
 
         protected void btnReadSelection_Click(object sender, EventArgs e)

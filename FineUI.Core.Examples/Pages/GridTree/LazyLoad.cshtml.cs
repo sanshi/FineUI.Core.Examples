@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.GridTree
         }
 
 
-        
+
         private void LoadData()
         {
             Grid1.DataSource = GetTreeDataTable();
@@ -201,12 +201,12 @@ namespace FineUI.Core.Examples.Pages.GridTree
             if (e.RowID == "50")
             {
                 // basic文件夹
-                RegisterStartupScript(Grid1.GetLoadDataReference(e.RowID, GetBasicFolderDataTable()));
+                new GridAjaxHelper(Grid1).LoadData(e.RowID, GetBasicFolderDataTable());
             }
             else if (e.RowID == "54")
             {
                 // Captcha文件夹
-                RegisterStartupScript(Grid1.GetLoadDataReference(e.RowID, GetCaptchaFolderDataTable()));
+                new GridAjaxHelper(Grid1).LoadData(e.RowID, GetCaptchaFolderDataTable());
             }
         }
 

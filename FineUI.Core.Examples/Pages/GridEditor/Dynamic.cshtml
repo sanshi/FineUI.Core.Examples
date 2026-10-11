@@ -32,9 +32,16 @@
 
 @section script {
 
+    <script type="application/json" id="yearRange">@Html.Raw(Model.YearRangeJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
+
+        // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
+        var yearRange = JSON.parse(document.getElementById('yearRange').textContent);
+        window._MINYEAR = yearRange.minYear;
+        window._MAXYEAR = yearRange.maxYear;
 
         function updateTotalCell(grid, rowId) {
             var me = grid, total = 0;

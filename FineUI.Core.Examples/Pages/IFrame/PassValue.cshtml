@@ -23,3 +23,15 @@
     </f:Window>
 
 }
+
+@section script {
+
+    <script>
+        function showProvinceWindow(url) {
+            // 先登记回写目标再打开窗体，子页选省份后会把值写回 tbxProvince。
+            F.ui.Window1.setSaveStateControlIds(['tbxProvince']);
+            F.ui.Window1.show(url);
+        }
+    </script>
+
+}

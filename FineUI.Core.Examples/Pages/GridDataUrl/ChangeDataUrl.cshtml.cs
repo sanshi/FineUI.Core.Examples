@@ -15,8 +15,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
         protected void btnReload_Click(object sender, EventArgs e)
         {
             // 不传地址，沿用客户端当前地址；避免覆盖页面脚本已经切换的数据源。
-            string gridId = Newtonsoft.Json.JsonConvert.SerializeObject(Grid1.ID);
-            FineUI.Core.PageContext.RegisterStartupScript("F(" + gridId + ").loadDataUrl();");
+            FineUI.Core.PageContext.InvokeFunction("reloadCurrentDataUrl");
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -41,7 +40,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
                 Grid1.DataUrl = Url.Content("~/GridDataUrl/GridDataUrlData?data2=true");
             }
         }
-        
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             LoadData();

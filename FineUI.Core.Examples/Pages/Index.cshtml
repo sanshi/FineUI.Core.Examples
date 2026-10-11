@@ -72,9 +72,9 @@
                                         <span class="breadcrumb-last">首页</span>
                                     </div>
                                     <div class="breadcrumb-icons">
-                                        <a data-qtip="查看源代码" href="javascript:onToolSourceCodeClick();"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
-                                        <a data-qtip="刷新本页" href="javascript:onToolRefreshClick();"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
-                                        <a data-qtip="在新标签页中打开" href="javascript:onToolNewWindowClick();"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
+                                        <a data-qtip="查看源代码" href="#" data-breadcrumb-action="source"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
+                                        <a data-qtip="刷新本页" href="#" data-breadcrumb-action="refresh"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
+                                        <a data-qtip="在新标签页中打开" href="#" data-breadcrumb-action="new-window"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -244,6 +244,22 @@
 @section script {
 
     <script type="text/javascript">
+        F.ready(function () {
+            $('.breadcrumb-icons').on('click', 'a[data-breadcrumb-action]', onBreadcrumbActionClick);
+        });
+
+        function onBreadcrumbActionClick(event) {
+            event.preventDefault();
+            var action = $(this).attr('data-breadcrumb-action');
+            if (action === 'source') {
+                onToolSourceCodeClick(event);
+            } else if (action === 'refresh') {
+                onToolRefreshClick(event);
+            } else if (action === 'new-window') {
+                onToolNewWindowClick(event);
+            }
+        }
+
         var PARAMS = {
             mainPanel: 'mainPanel',
             mainTabStrip: 'mainTabStrip',

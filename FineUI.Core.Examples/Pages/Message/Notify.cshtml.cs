@@ -81,7 +81,7 @@ namespace FineUI.Core.Examples.Pages.Message
             }
 
 
-            notify.HideScript = "notifyHideCallback();";
+            notify.HideFunction = "notifyHideCallback";
 
 
             notify.Show();

@@ -99,7 +99,14 @@
 
 @section script {
 
+    <script type="application/json" id="provinceCityData">@Html.Raw(Model.ProvinceCityDataJson)</script>
+
     <script>
+
+        // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+        window._SHENG = provinceCityData.provinces;
+        window._SHI = provinceCityData.cities;
 
         function renderGender(value) {
             return value == 1 ? '男' : '女';

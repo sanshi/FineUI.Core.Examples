@@ -4,6 +4,10 @@
     ViewData["Title"] = "Mobile/Main";
     ViewBag.BodyBGColor = false;
     var F = Html.F();
+    var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings
+    {
+        StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+    };
 }
 
 
@@ -212,20 +216,23 @@
 
 @section script {
 
+    <script id="mobile-menu-data" type="application/json">@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MenuSource, jsonSettings))</script>
+
     <script>
 
-        @Html.Raw(ViewBag.StartupScript)
+        // 先解析菜单数据，再登记 ready；控件创建完成后，列表即可读取这份首屏数据。
+        var MENUSOURCE = JSON.parse(document.getElementById('mobile-menu-data').textContent);
 
-            // 从二级菜单返回
-            function onBacktoPanel1Click(event) {
-                // 改变网址的HASH值（hashchange驱动页面变化）
-                window.location.hash = '';
+        // 从二级菜单返回
+        function onBacktoPanel1Click(event) {
+            // 改变网址的HASH值（hashchange驱动页面变化）
+            window.location.hash = '';
 
-                // 仅在桌面版Chrome出现的问题：改变当前页的哈希值为空时，父页面的滚动条会改变
-                if (F.isChrome()) {
-                    parent && parent.$('body').scrollTop(0);
-                }
+            // 仅在桌面版Chrome出现的问题：改变当前页的哈希值为空时，父页面的滚动条会改变
+            if (F.isChrome()) {
+                parent && parent.$('body').scrollTop(0);
             }
+        }
 
         // 从三级菜单返回
         function onBacktoPanel2Click(event) {

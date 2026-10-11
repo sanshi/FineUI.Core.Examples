@@ -58,9 +58,14 @@
 
 @section script {
 
+    <script type="application/json" id="cityData">@Html.Raw(Model.CityDataJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
+
+        // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
+        window._SHI = JSON.parse(document.getElementById('cityData').textContent);
 
         function onGrid1BeforeEdit(event, value, params) {
             var grid1 = F.ui.Grid1;

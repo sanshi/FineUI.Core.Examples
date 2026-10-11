@@ -4,6 +4,15 @@
     ViewBag.SourceFiles = "~/Pages/MultiLang/Models/Student.cs;~/Pages/MultiLang/Models/StudentHelper.cs";
     ViewBag.Title = "MultiLang/GridAnnotation";
     var F = Html.F();
+    var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings
+    {
+        StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+    };
+    var resources = new Newtonsoft.Json.Linq.JObject();
+    foreach (var resource in global::FineUI.Core.PageContext.GetLocalizer<SharedJavaScriptResources>().GetAllStrings(includeParentCultures: true))
+    {
+        resources[resource.Name] = resource.Value;
+    }
 }
 
 @functions {
@@ -38,8 +47,10 @@
     <script src="~/res/js/grid.js"></script>
 
     <!-- 输出多语言资源 -->
+    <script id="grid-resources" type="application/json">@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(resources, jsonSettings))</script>
     <script type="text/javascript">
-        @Html.Raw(FineUI.Core.PageContext.GetJavaScriptResourcesReference<SharedJavaScriptResources>())
+        // 首屏创建表格前先加载资源，让 renderer 和按钮事件都读到当前语言。
+        F.setResources(JSON.parse(document.getElementById('grid-resources').textContent));
     </script>
 
 }

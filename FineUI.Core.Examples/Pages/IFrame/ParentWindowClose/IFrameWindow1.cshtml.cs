@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.ParentWindowClose
             labResult.Text = DateTime.Now.ToLongTimeString();
 
             // 调用父页面定义的函数 updateLabelResult
-            RegisterStartupScript("parent.updateLabelResult();");
+            global::FineUI.Core.PageContext.InvokeParentFunction("updateLabelResult");
         }
 
     }

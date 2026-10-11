@@ -94,6 +94,31 @@
 
     <script>
 
+        // 服务端只发送动作名称和 JSON 参数；具体操作由本页预先定义的函数执行。
+        function rejectGridChanges() {
+            F.ui.Grid1.rejectChanges();
+        }
+
+        function commitGridChanges() {
+            F.ui.Grid1.commitChanges();
+        }
+
+        function updateGridCells(rowId, values) {
+            F.ui.Grid1.updateCellValue(rowId, values);
+        }
+
+        function addGridRecord(record, position, editColumn) {
+            F.ui.Grid1.addNewRecord(record, position, editColumn);
+        }
+
+        function deleteGridRow(rowId, forceUpdate) {
+            F.ui.Grid1.deleteRow(rowId, forceUpdate);
+        }
+
+        function deleteSelectedGridRows() {
+            F.ui.Grid1.deleteSelectedRows();
+        }
+
         function onGrid1DataChange(event) {
             var grid1 = F.ui.Grid1;
             var btnSubmit = F.ui.btnSubmit;

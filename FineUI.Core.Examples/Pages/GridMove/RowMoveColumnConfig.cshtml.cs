@@ -52,6 +52,15 @@ namespace FineUI.Core.Examples.Pages.GridMove
             }
         };
 
+        /// <summary>
+        /// 还原列配置时使用的默认顺序、标题及隐藏状态，取自本页固定的列配置。
+        /// </summary>
+        public string DefaultColumnConfigJson => Newtonsoft.Json.JsonConvert.SerializeObject(
+            GRID_COLUMNCONFIG_DEFAULT, new Newtonsoft.Json.JsonSerializerSettings
+            {
+                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+            });
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -89,7 +98,6 @@ namespace FineUI.Core.Examples.Pages.GridMove
                 }
             }
 
-            RegisterStartupScript(String.Format("window.GRID_COLUMNCONFIG_DEFAULT={0};", GRID_COLUMNCONFIG_DEFAULT.ToString(Newtonsoft.Json.Formatting.Indented)));
         }
 
 

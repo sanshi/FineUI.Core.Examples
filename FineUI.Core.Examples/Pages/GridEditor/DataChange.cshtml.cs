@@ -30,7 +30,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         protected void btnRejectChanges_Click(object sender, EventArgs e)
         {
             // 只撤销浏览器里未保存的编辑，不重绑，也不修改会话数据源。
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetRejectChangesReference());
+            FineUI.Core.PageContext.InvokeFunction("rejectGridChanges");
         }
 
         protected void btnReadChanges_Click(object sender, EventArgs e)
@@ -42,18 +42,18 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         protected void btnCommitChanges_Click(object sender, EventArgs e)
         {
             // 只接受当前客户端编辑结果；故意不写入会话，以便刷新核对数据源仍未变化。
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetCommitChangesReference());
+            FineUI.Core.PageContext.InvokeFunction("commitGridChanges");
         }
 
         protected void btnUpdateCells_Click(object sender, EventArgs e)
         {
             // 使用稳定行 ID，单列和多列修改均保留编辑记录，不重绑数据。
             // https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", new JObject { { "Name", "服务端修改" } }));
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", new JObject
+            FineUI.Core.PageContext.InvokeFunction("updateGridCells", "101", new JObject { { "Name", "服务端修改" } });
+            FineUI.Core.PageContext.InvokeFunction("updateGridCells", "101", new JObject
             {
                 { "Gender", 0 }, { "Major", "服务端专业" }
-            }));
+            });
         }
 
         protected void btnAddRecord_Click(object sender, EventArgs e)
@@ -64,29 +64,29 @@ namespace FineUI.Core.Examples.Pages.GridEditor
                 { "id", "server-" + Guid.NewGuid() },
                 { "values", new JObject { { "Name", "服务端新增" }, { "Gender", 1 }, { "Major", "新专业" } } }
             };
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetAddNewRecordReference(record, 1, "Name"));
+            FineUI.Core.PageContext.InvokeFunction("addGridRecord", record, 1, "Name");
         }
 
         protected void btnAppendRecord_Click(object sender, EventArgs e)
         {
             var values = new JObject { { "Name", "末尾新增" }, { "Gender", 0 }, { "Major", "新专业" } };
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetAddNewRecordReference(values, true));
+            FineUI.Core.PageContext.InvokeFunction("addGridRecord", values, true);
         }
 
         protected void btnDeleteRow_Click(object sender, EventArgs e)
         {
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteRowReference("101"));
+            FineUI.Core.PageContext.InvokeFunction("deleteGridRow", "101", false);
         }
 
         protected void btnForceDeleteRow_Click(object sender, EventArgs e)
         {
             // 强制删除只移除客户端行，撤销不能恢复；刷新仍可从原数据源加载。
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteRowReference("102", true));
+            FineUI.Core.PageContext.InvokeFunction("deleteGridRow", "102", true);
         }
 
         protected void btnDeleteSelected_Click(object sender, EventArgs e)
         {
-            FineUI.Core.PageContext.RegisterStartupScript(Grid1.GetDeleteSelectedRowsReference());
+            FineUI.Core.PageContext.InvokeFunction("deleteSelectedGridRows");
         }
 
 

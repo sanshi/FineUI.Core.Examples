@@ -15,16 +15,16 @@ namespace FineUI.Core.Examples.Pages.TabStrip
         }
 
 
-        
+
         protected void btnShowInServer_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(Tab3.GetShowReference());
+            new TabAjaxHelper(Tab3).Show();
         }
 
 
         protected void btnHideInServer_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(Tab3.GetHideReference());
+            new TabAjaxHelper(Tab3).Hide();
         }
 
     }

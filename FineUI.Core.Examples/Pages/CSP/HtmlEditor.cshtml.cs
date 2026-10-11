@@ -16,6 +16,8 @@ namespace FineUI.Core.Examples.Pages.CSP
             pm.CspScripts = true;
             pm.CspScriptsAllowNonce = false;
             pm.CspScriptsAllowUnsafeInline = true;
+            // UEditor 自身会动态编译脚本；本第三方兼容页单独放宽，不能将此设置推广到普通业务页。
+            pm.CspScriptsAllowUnsafeEval = true;
         }
 
         protected void Page_Load(object sender, EventArgs e)

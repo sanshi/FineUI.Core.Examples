@@ -18,17 +18,17 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference("tab1_iframe", "https://deepseek.com/", "DeepSeek官网", true));
+            new TabStripAjaxHelper(TabStrip1).AddTab("tab1_iframe", "https://deepseek.com/", "DeepSeek官网", true);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference("tab1_iframe", "https://asp.net/", "ASP.NET官网", true));
+            new TabStripAjaxHelper(TabStrip1).AddTab("tab1_iframe", "https://asp.net/", "ASP.NET官网", true);
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference("tab2_iframe", "https://fineui.com/", "FineUI官网", true));
+            new TabStripAjaxHelper(TabStrip1).AddTab("tab2_iframe", "https://fineui.com/", "FineUI官网", true);
         }
 
     }

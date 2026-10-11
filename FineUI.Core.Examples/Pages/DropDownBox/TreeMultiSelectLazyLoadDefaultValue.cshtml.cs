@@ -18,10 +18,10 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
         }
 
 
-        
+
         protected void btnGetSelection_Click(object sender, EventArgs e)
         {
-            
+
             if (!String.IsNullOrEmpty(DropDownBox1.Text))
             {
                 labResult.Text = String.Format("下拉框文本：{0}（值：{1}）", DropDownBox1.Text, String.Join(", ", DropDownBox1.Values));
@@ -36,7 +36,7 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
         {
             List<TreeNode> nodes = DynamicAppendNode(e.NodeID);
 
-            RegisterStartupScript(Tree1.GetLoadDataReference(e.NodeID, nodes));
+            new TreeAjaxHelper(Tree1).LoadData(e.NodeID, nodes);
         }
 
         private List<TreeNode> DynamicAppendNode(string nodeId)

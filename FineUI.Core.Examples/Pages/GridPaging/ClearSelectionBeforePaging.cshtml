@@ -45,6 +45,10 @@
 
     <script>
 
+        function clearGridSelections() {
+            F.ui.Grid1.clearSelections();
+        }
+
         function onShowSelectedRowIdsClick(event) {
             F.alert('选中行的ID列表为：' + F.ui.Grid1.getSelectedRows().join(', '));
         }

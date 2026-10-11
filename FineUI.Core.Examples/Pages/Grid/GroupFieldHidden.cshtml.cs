@@ -69,37 +69,31 @@ namespace FineUI.Core.Examples.Pages.Grid
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            var scripts = String.Empty;
-
             var genderColumn = Grid1.FindColumn("anhui");
             if (genderColumn.Hidden)
             {
-                scripts = genderColumn.GetShowReference();
+                genderColumn.Hidden = false;
             }
             else
             {
-                scripts = genderColumn.GetHideReference();
+                genderColumn.Hidden = true;
             }
 
-            RegisterStartupScript(scripts);
         }
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var scripts = String.Empty;
-
             var genderColumn = Grid1.FindColumn("zhumadian");
             if (genderColumn.Hidden)
             {
-                scripts = genderColumn.GetShowReference();
+                genderColumn.Hidden = false;
             }
             else
             {
-                scripts = genderColumn.GetHideReference();
+                genderColumn.Hidden = true;
             }
 
-            RegisterStartupScript(scripts);
         }
 
     }

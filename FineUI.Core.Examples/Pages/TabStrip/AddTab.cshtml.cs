@@ -15,25 +15,25 @@ namespace FineUI.Core.Examples.Pages.TabStrip
         }
 
 
-        
+
         protected void btnAddTab3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference("dynamic_tab3", "https://deepseek.com/", "DeepSeek官网（服务端代码）", IconHelper.GetIconUrl(Icon.Application), true));
+            new TabStripAjaxHelper(TabStrip1).AddTab("dynamic_tab3", "https://deepseek.com/", "DeepSeek官网（服务端代码）", IconHelper.GetIconUrl(Icon.Application), true);
         }
 
         protected void btnAddTab4_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetAddTabReference("dynamic_tab4", "https://asp.net/", "ASP.NET官网（服务端代码）", IconHelper.GetIconUrl(Icon.ApplicationAdd), true));
+            new TabStripAjaxHelper(TabStrip1).AddTab("dynamic_tab4", "https://asp.net/", "ASP.NET官网（服务端代码）", IconHelper.GetIconUrl(Icon.ApplicationAdd), true);
         }
 
         protected void btnRemoveTab3_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetHideTabReference("dynamic_tab3"));
+            new TabStripAjaxHelper(TabStrip1).HideTab("dynamic_tab3");
         }
 
         protected void btnRemoveTab4_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(TabStrip1.GetHideTabReference("dynamic_tab4"));
+            new TabStripAjaxHelper(TabStrip1).HideTab("dynamic_tab4");
         }
 
     }

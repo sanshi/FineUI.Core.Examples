@@ -15,15 +15,15 @@ namespace FineUI.Core.Examples.Pages.Grid
         }
 
 
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(String.Format("changeColumnTitleAndWidth('入学年份（已修改）', 200);"));
+            FineUI.Core.PageContext.InvokeFunction("changeColumnTitleAndWidth", "入学年份（已修改）", 200);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(String.Format("changeColumnTitleAndWidth('入学年份', 120);"));
+            FineUI.Core.PageContext.InvokeFunction("changeColumnTitleAndWidth", "入学年份", 120);
         }
 
     }

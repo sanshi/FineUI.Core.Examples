@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
         }
 
 
-        
+
 
         protected void btnClearData_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 
         protected void btnSelectAll_Click(object sender, EventArgs e)
         {
-            RegisterStartupScript(Grid1.GetSelectAllRowsReference());
+            new GridAjaxHelper(Grid1).SelectAllRows();
         }
 
 

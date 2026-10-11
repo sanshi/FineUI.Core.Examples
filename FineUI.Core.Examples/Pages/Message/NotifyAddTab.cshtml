@@ -32,6 +32,15 @@
 
     <script type="text/javascript">
 
+        F.ready(function () {
+            $(document).on('click', '.addtablink[data-notify-id]', onAddExampleTabClick);
+        });
+
+        function onAddExampleTabClick(event) {
+            event.preventDefault();
+            openExampleHello($(this).attr('data-notify-id'));
+        }
+
         function openExampleHello(notifyId) {
             parent.addExampleTab({
                 iframeUrl: '@Url.Content("~/Basic/Hello")',

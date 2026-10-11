@@ -17,8 +17,8 @@ namespace FineUI.Core.Examples.Pages.Grid
 
         protected void SelectColumnsIFrame_btnSaveContinue_Click(object sender, EventArgs e)
         {
-            // 关闭弹出窗体，然后执行父页面的JavaScript函数（exportToExcel）并传入参数
-            ActiveWindow.HideExecuteScript(String.Format("exportToExcel({0});", new JArray(cblColumns.SelectedValueArray).ToString(Newtonsoft.Json.Formatting.None)));
+            // 关闭弹出窗体后，把所选列数组交给原来打开窗体的页面，避免拼接执行脚本。
+            ActiveWindow.HideCallParentFunction("exportToExcel", new JArray(cblColumns.SelectedValueArray));
         }
 
     }

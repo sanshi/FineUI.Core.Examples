@@ -37,9 +37,9 @@ namespace FineUI.Core.Examples.Pages.Tree
 
 
 
-            RegisterStartupScript(Tree1.GetLoadDataReference("zhumadian", source));
+            new TreeAjaxHelper(Tree1).LoadData("zhumadian", source);
             // 展开更新后的节点
-            RegisterStartupScript(Tree1.GetExpandNodeReference("zhumadian"));
+            new TreeAjaxHelper(Tree1).ExpandNode("zhumadian");
 
         }
 

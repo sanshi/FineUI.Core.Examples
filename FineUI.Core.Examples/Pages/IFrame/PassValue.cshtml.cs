@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.IFrame
         {
             string openUrl = String.Format("{0}?selected={1}", Url.Content("~/IFrame/PassValue/IFrameWindow"), HttpUtility.UrlEncode(tbxProvince.Text));
 
-            RegisterStartupScript(Window1.GetSaveStateReference("tbxProvince") + Window1.GetShowReference(openUrl));
+            global::FineUI.Core.PageContext.InvokeFunction("showProvinceWindow", openUrl);
         }
 
 

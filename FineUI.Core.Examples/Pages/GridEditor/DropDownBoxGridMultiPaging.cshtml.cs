@@ -13,6 +13,16 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 {
     public partial class DropDownBoxGridMultiPagingModel : BaseModel
     {
+        /// <summary>
+        /// 兴趣代码与名称的完整列表，分页编辑器用它显示其它分页中的名称。模板执行早于 Page_Load，读取时准备数据，并与本次请求的表格绑定共用同一份结果。
+        /// </summary>
+        public string HobbyDataJson => JsonConvert.SerializeObject(GetHobbyTable(), new Newtonsoft.Json.JsonSerializerSettings
+        {
+            StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+        });
+
+        private DataTable _hobbyTable;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,16 +42,17 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
             Grid2.DataSource = hobbyTable;
             Grid2.DataBind();
-
-            string hobbyTableScript = String.Format("window.hobbyTable={0};", JsonConvert.SerializeObject(hobbyTable));
-
-            FineUI.Core.PageContext.RegisterPreStartupScript(hobbyTableScript);
         }
 
 
 
         private DataTable GetHobbyTable()
         {
+            if (_hobbyTable != null)
+            {
+                return _hobbyTable;
+            }
+
             DataTable table = new DataTable();
             table.Columns.Add(new DataColumn("Code", typeof(String)));
             table.Columns.Add(new DataColumn("Name", typeof(String)));
@@ -73,7 +84,8 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             row[1] = "音乐";
             table.Rows.Add(row);
 
-            return table;
+            _hobbyTable = table;
+            return _hobbyTable;
         }
 
 
