@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
-            DataSource="@DataSourceUtil.GetDataTable()" RowDataBoundFunction="onGrid1RowDataBound" DisableUnselectableRows="true"
+            RowDataBoundFunction="onGrid1RowDataBound" DisableUnselectableRows="true"
             _DataAttributeFields="ResolvedRowSelectable" OnRowDataBound="Grid1_RowDataBound">
         <Columns>
             <f:RowNumberField />

@@ -13,7 +13,7 @@
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false">
                 <PopPanel>
                     <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            AllowPaging="true" IsDatabasePaging="false" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true">
+                            AllowPaging="true" IsDatabasePaging="false" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />

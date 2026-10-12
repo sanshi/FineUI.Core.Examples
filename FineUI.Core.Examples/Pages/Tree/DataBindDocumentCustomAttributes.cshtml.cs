@@ -56,7 +56,7 @@ namespace FineUI.Core.Examples.Pages.Tree
 
                         if (name == "Highlight")
                         {
-                            node.Attributes["data-highlight"] = true;
+                            node.Attributes["data-highlight"] = "true";
                         }
                         else
                         {

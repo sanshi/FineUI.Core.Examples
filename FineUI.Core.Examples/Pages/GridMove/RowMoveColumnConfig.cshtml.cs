@@ -66,6 +66,10 @@ namespace FineUI.Core.Examples.Pages.GridMove
             if (!IsPostBack)
             {
                 LoadData();
+
+                // 首次加载才取数；回发重跑模板只取控件声明，保留浏览器已有数据。
+                Grid1.DataSource = DataSourceUtil.GetDataTable();
+                Grid1.DataBind();
             }
         }
 

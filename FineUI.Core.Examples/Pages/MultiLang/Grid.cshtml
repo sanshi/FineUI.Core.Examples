@@ -20,7 +20,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="@_R("表格")" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="@_R("表格")" DataIDField="Id" DataTextField="Name">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="@_R("姓名")" DataField="Name" Width="150" />

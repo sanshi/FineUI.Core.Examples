@@ -29,7 +29,7 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="自定义列表项（DataDisplayFields）" ShowHeader="true">
         <Items>
-            <f:DropDownList ID="DropDownList1" DataTextField="Name" DataValueField="Id" _DataDisplayFields="Name,Desc" DataDisplayFormatString="@DDL_DISPLAY_TEMPLATE" DataSource="@DataSourceUtil.GetDataTable()">
+            <f:DropDownList ID="DropDownList1" DataTextField="Name" DataValueField="Id" _DataDisplayFields="Name,Desc" DataDisplayFormatString="@DDL_DISPLAY_TEMPLATE">
             </f:DropDownList>
             <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
         </Items>

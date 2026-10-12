@@ -3,6 +3,14 @@
 @{
     ViewBag.Title = "CSP/HtmlEditor";
     var F = Html.F();
+
+    // 每轮从可信模板取得策略，第三方兼容页的放宽仅限本页。
+    var pm = PageManager.Instance;
+    pm.CspScripts = true;
+    pm.CspScriptsAllowNonce = false;
+    pm.CspScriptsAllowUnsafeInline = true;
+    // UEditor 自身会动态编译脚本；本第三方兼容页单独放宽，不能将此设置推广到普通业务页。
+    pm.CspScriptsAllowUnsafeEval = true;
 }
 
 

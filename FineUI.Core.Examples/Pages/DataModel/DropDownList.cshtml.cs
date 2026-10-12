@@ -12,9 +12,12 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class DropDownListModel : BaseModel
     {
-        public void OnGet()
+        /// <summary>
+        /// 固定选项每轮重新取得；回发绑定的用户选择仍保留，不覆盖 TheModel。
+        /// </summary>
+        public ListItem[] GetDeclaredItems()
         {
-            var listItems = new List<ListItem>
+            return new List<ListItem>
             {
                 new ListItem {
                     Text = "可选项1",
@@ -58,7 +61,12 @@ namespace FineUI.Core.Examples.Pages.DataModel
                     Text = "一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的可选择项",
                     Value = "Value10"
                 }
-            };
+            }.ToArray();
+        }
+
+        public void OnGet()
+        {
+            var listItems = GetDeclaredItems().ToList();
 
             var model = new Models.DropDownListModel();
             model.DropDownList1 = "Value5";

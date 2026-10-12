@@ -18,6 +18,10 @@ namespace FineUI.Core.Examples.Pages.Grid
             {
                 // 禁用名称为 Action2 的图标按钮
                 Grid1.FindCommand("Action2").Enabled = false;
+
+                // 首次加载才取数；回发重跑模板只取控件声明，保留浏览器已有数据。
+                Grid1.DataSource = DataSourceUtil.GetDataTable();
+                Grid1.DataBind();
             }
         }
 

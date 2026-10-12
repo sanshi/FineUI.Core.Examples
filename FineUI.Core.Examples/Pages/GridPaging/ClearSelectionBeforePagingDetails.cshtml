@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />

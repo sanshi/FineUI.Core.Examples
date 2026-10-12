@@ -14,7 +14,7 @@
                            OnTextChanged="DropDownBox1_TextChanged">
                 <PopPanel>
                     <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            Hidden="true" Width="550" Height="300" EnableMultiSelect="true" KeepCurrentSelection="true" DataSource="@DataSourceUtil.GetDataTable()">
+                            Hidden="true" Width="550" Height="300" EnableMultiSelect="true" KeepCurrentSelection="true">
                         <Columns>
                             <f:RenderField HeaderText="姓名" DataField="Name" />
                             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />

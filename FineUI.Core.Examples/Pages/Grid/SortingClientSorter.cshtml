@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" 
-            AllowSorting="true" DataSource="@DataSourceUtil.GetDataTable()">
+            AllowSorting="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />

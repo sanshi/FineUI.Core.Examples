@@ -18,7 +18,7 @@
             EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
             DataIDField="Id" DataTextField="Name" _DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc"
             Height="600" ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard"
-            DataSource="@DataSourceUtil.GetDataTable()">
+           >
         <Columns>
             <f:RenderField ColumnID="UserProfile" Width="250" RendererFunction="renderUserProfile" HeaderText="基本信息"></f:RenderField>
             <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />

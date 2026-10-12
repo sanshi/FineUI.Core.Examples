@@ -11,8 +11,8 @@
     <f:SimpleForm IsFluid="true" ID="SimpleForm1" BodyPadding="10" LabelWidth="150" ShowBorder="true" ShowHeader="true" Title="简单表单">
         <Items>
             <f:CheckBox For="TheModel.IsChecked" Text="复选框"></f:CheckBox>
-            <f:CheckBoxList For="TheModel.CheckBoxList1" ColumnNumber="3" Items="@Model.TheModel.CheckBoxList1Items.ToArray()"></f:CheckBoxList>
-            <f:RadioButtonList For="TheModel.RadioButtonList1" ColumnNumber="3" Items="@Model.TheModel.RadioButton1Items.ToArray()"></f:RadioButtonList>
+            <f:CheckBoxList For="TheModel.CheckBoxList1" ColumnNumber="3" Items="@Model.GetDeclaredCheckItems()"></f:CheckBoxList>
+            <f:RadioButtonList For="TheModel.RadioButtonList1" ColumnNumber="3" Items="@Model.GetDeclaredRadioItems()"></f:RadioButtonList>
             <f:RadioButtonList For="TheModel.Gender" ColumnNumber="3">
                 <f:RadioItem Text="男" Value="1"></f:RadioItem>
                 <f:RadioItem Text="女" Value="0"></f:RadioItem>

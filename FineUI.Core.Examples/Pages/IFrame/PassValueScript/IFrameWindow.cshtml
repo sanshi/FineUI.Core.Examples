@@ -10,7 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" LabelAlign="Top" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" Title="SimpleForm" BodyPadding="10" EnableCollapse="false" AutoScroll="true" IsViewPort="true">
         <Items>
-            <f:RadioButtonList ID="ddlSheng" Label="请选择省份" ColumnNumber="4" ShowRedStar="true" DataSource="@DataSourceUtil.SHENG_JSON" SelectedValue="@HttpContext.Request.Query["selected"]">
+            <f:RadioButtonList ID="ddlSheng" Label="请选择省份" ColumnNumber="4" ShowRedStar="true" SelectedValue="@HttpContext.Request.Query["selected"]">
                 <Listeners>
                     <f:Listener Event="change" Handler="onDdlShengChange"></f:Listener>
                 </Listeners>

@@ -13,8 +13,8 @@
             <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1"
                           Editor="TinyMCE" BasePath="@Url.Content("~/res/third-party/tinymce/")" ToolbarSet="Full" Height="350" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
                 <Options>
-                    <f:OptionItem Key="menubar" Value="false" PersistOriginal="true" />
-                    <f:OptionItem Key="plugins" Value="['link','code','textcolor colorpicker']" PersistOriginal="true" />
+                    <f:OptionItem Key="menubar" JsonValue="@Model.MenubarOption" />
+                    <f:OptionItem Key="plugins" JsonValue="@Model.PluginsOption" />
                     <f:OptionItem Key="toolbar1"
                                   Value="bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright | link unlink | code"
                                   PersistOriginal="false" />

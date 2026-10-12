@@ -11,7 +11,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" EnableHeaderMenu="false">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableHeaderMenu="false">
         <Columns>
             <f:RowNumberField ColumnID="RowNumber" />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />

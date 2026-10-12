@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（内存分页）" Height="350" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="5" DataSource="@DataSourceUtil.GetDataTable2()" ExpandAllRowExpanders="true">
+            AllowPaging="true" PageSize="5" ExpandAllRowExpanders="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />

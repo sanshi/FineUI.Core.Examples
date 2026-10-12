@@ -35,7 +35,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsViewPort="true" ShowBorder="true" ShowHeader="true" Title="表格（嵌套表格仅用于数据展示，不适合复杂的逻辑处理）" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+    <f:Grid ID="Grid1" IsViewPort="true" ShowBorder="true" ShowHeader="true" Title="表格（嵌套表格仅用于数据展示，不适合复杂的逻辑处理）" DataIDField="Id" DataTextField="Name">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />

@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsViewPort="true" ShowBorder="false" ShowHeader="false" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" EnableMultiSelect="false" DataSource="@DataSourceUtil.GetDataTable()">
+    <f:Grid ID="Grid1" IsViewPort="true" ShowBorder="false" ShowHeader="false" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" EnableMultiSelect="false">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />

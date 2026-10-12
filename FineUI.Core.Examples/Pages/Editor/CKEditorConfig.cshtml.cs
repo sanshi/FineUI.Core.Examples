@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,41 @@ namespace FineUI.Core.Examples.Pages.Editor
 {
     public partial class CKEditorConfigModel : BaseModel
     {
+        /// <summary>
+        /// 编辑器初始化数据，每次从固定服务器配置生成；严格 CSP 下无需编译字符串。
+        /// </summary>
+        public JToken ToolbarOption => new JArray
+        {
+            new JArray
+            {
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strike"
+            },
+            new JArray
+            {
+                "NumberedList",
+                "BulletedList"
+            },
+            new JArray
+            {
+                "JustifyLeft",
+                "JustifyCenter",
+                "JustifyRight"
+            },
+            new JArray
+            {
+                "Link",
+                "Unlink"
+            },
+            new JArray
+            {
+                "Source"
+            }
+        };
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

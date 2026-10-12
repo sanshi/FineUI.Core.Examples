@@ -7,7 +7,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()"
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name"
             EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId"
             OnRowDoubleClick="Grid1_RowDoubleClick" _DataKeyNames="Id,Name"
             TreeExpandOnDblClick="false">

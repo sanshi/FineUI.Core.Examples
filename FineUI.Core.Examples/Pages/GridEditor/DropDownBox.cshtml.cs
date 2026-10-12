@@ -17,6 +17,10 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             if (!IsPostBack)
             {
                 LoadData();
+
+                // 首次加载才取数；回发重跑模板只取控件声明，保留浏览器已有数据。
+                Grid2.DataSource = DataSourceUtil.GetDataTable();
+                Grid2.DataBind();
             }
         }
 

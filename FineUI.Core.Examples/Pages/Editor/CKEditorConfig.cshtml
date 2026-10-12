@@ -15,9 +15,7 @@
                 <Options>
                     <f:OptionItem Key="uiColor" Value="#aed0ea" />
                     <f:OptionItem Key="language" Value="zh" />
-                    <f:OptionItem Key="toolbar"
-                                  Value="[['Bold','Italic','Underline','Strike'],['NumberedList','BulletedList'],['JustifyLeft','JustifyCenter','JustifyRight'],['Link','Unlink'],['Source']]"
-                                  PersistOriginal="true" />
+                    <f:OptionItem Key="toolbar" JsonValue="@Model.ToolbarOption" />
                 </Options>
             </f:HtmlEditor>
         </Items>

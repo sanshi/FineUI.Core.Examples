@@ -26,7 +26,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()" RowDataBoundFunction="onGrid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" RowDataBoundFunction="onGrid1RowDataBound">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />

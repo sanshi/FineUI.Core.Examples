@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetTreeDataTable()" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" ExpandAllTreeNodes="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" ExpandAllTreeNodes="true">
         <Columns>
             <f:RowNumberField EnableTreeNumber="true" />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />

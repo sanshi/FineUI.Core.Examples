@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" AllowCellEditing="true" ClicksToEdit="1" TabVerticalNavigate="true" EnterNavigate="true" EnterVerticalNavigate="false">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1" TabVerticalNavigate="true" EnterNavigate="true" EnterVerticalNavigate="false">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">

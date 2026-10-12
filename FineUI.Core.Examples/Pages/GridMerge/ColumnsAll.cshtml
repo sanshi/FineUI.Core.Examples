@@ -10,18 +10,10 @@
 
 @section body {
 
-    @{
-        DataTable source = DataSourceUtil.GetDataTable();
-
-        foreach (DataRow row in source.Rows)
-        {
-            DateTime logTime = (DateTime)row["LogTime"];
-            row["LogTime"] = new DateTime(logTime.Year, logTime.Month, logTime.Day);
-        }
-    }
 
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@source" EnableColumnLines="true">
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableColumnLines="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="ID" DataField="ID" />
