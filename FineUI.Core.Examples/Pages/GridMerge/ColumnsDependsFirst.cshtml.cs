@@ -14,7 +14,7 @@ namespace FineUI.Core.Examples.Pages.GridMerge
         {
             if (!IsPostBack)
             {
-                // 首次取数并统一日期精度，回发只重建列声明，保留已有合并结果。
+                // 去掉时间部分，同一天的记录才能按日期合并。
                 DataTable source = DataSourceUtil.GetDataTable();
 
                 foreach (DataRow row in source.Rows)

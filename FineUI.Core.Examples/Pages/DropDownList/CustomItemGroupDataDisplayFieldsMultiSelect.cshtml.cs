@@ -14,7 +14,6 @@ namespace FineUI.Core.Examples.Pages.DropDownList
         {
             if (!IsPostBack)
             {
-                // 首次加载才取数；回发重跑模板只取控件声明，保留浏览器已有数据。
                 DropDownList1.DataSource = DataSourceUtil.GetDataTable();
                 DropDownList1.DataBind();
             }

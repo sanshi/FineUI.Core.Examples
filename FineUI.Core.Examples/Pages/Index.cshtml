@@ -52,8 +52,12 @@
                     </f:ContentPanel>
                     <f:Panel ID="leftPanel" CssClass="leftregion" BoxFlex="1" ShowBorder="false" ShowHeader="false" Layout="Fit">
                         <Items>
-                            <f:Tree ID="treeMenu" ShowBorder="false" ShowHeader="false" EnableSingleClickExpand="true"
-                                    HideHScrollbar="true" HideVScrollbar="true" ExpanderToRight="true" HeaderStyle="true" AllHeaderStyle="true"></f:Tree>
+                            @* 菜单点击只负责打开示例，搜索通过 Cookie 后重新请求整页，服务器无需在控件回发时恢复菜单节点。
+                               因此设置 PersistNodes="false"，避免每次回发上传整棵菜单。 *@
+                            <f:Tree ID="treeMenu" ShowBorder="false" ShowHeader="false"
+                                    EnableSingleClickExpand="true" PersistNodes="false"
+                                    HideHScrollbar="true" HideVScrollbar="true" ExpanderToRight="true"
+                                    HeaderStyle="true" AllHeaderStyle="true"></f:Tree>
                         </Items>
                     </f:Panel>
                 </Items>

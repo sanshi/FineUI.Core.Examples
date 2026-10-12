@@ -13,7 +13,6 @@ namespace FineUI.Core.Examples.Pages.IFrame.PassValueScript
         {
             if (!IsPostBack)
             {
-                // 首次加载才取数；回发重跑模板只取控件声明，保留浏览器已有数据。
                 ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
                 ddlSheng.DataBind();
             }
