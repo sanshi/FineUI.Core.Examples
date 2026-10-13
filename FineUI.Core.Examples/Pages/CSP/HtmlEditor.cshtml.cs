@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.CSP
 {
-    public partial class HtmlEditorModel : BaseModel
+    public partial class HtmlEditorModel : BaseThirdPartyEditorModel
     {
 
 

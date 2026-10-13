@@ -1,4 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @{
     Layout = "_Layout";
+
+    // 每次渲染都按服务器模型确定兼容策略，首屏和回发重跑模板使用相同设置。
+    // 例如 UEditor 弹窗页关闭 CSP，打开弹窗的普通 Grid 页面继续使用严格策略。
+    if (Model is BaseThirdPartyEditorModel)
+    {
+        PageManager.Instance.CspScripts = false;
+    }
 }

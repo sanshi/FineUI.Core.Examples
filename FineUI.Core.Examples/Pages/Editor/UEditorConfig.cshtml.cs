@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Editor
 {
-    public partial class UEditorConfigModel : BaseModel
+    public partial class UEditorConfigModel : BaseThirdPartyEditorModel
     {
         /// <summary>
         /// 编辑器初始化数据，每次从固定服务器配置生成；严格 CSP 下无需编译字符串。
