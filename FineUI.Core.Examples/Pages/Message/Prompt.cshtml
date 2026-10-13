@@ -20,7 +20,11 @@
                     </f:TextBox>
                     <f:CheckBox ID="cbxEnableClose" Checked="true" Label="是否可关闭"></f:CheckBox>
                     <f:CheckBox ID="cbxRequired" Checked="false" Label="是否必填项"></f:CheckBox>
-                    <f:CheckBox ID="cbxIsMultiLine" Checked="true" OnCheckedChanged="cbxIsMultiLine_CheckedChanged" Label="是否多行输入框"></f:CheckBox>
+                    <f:CheckBox ID="cbxIsMultiLine" Checked="true" Label="是否多行输入框">
+                        <Listeners>
+                            <f:Listener Event="change" Handler="onMultiLineChange" />
+                        </Listeners>
+                    </f:CheckBox>
                     <f:NumberBox ID="nbMultiLineHeight" NoDecimal="true" NoNegative="true" Label="多行输入框高度" MinValue="80" MaxValue="300" Text="100"></f:NumberBox>
                     <f:CheckBox ID="cbxIsPassword" Checked="false" Hidden="true" Label="是否密码输入框"></f:CheckBox>
                     <f:RadioButtonList ID="rblMessageBoxIcon" Label="消息图标" ColumnNumber="3">
@@ -74,7 +78,8 @@
             var checked = this.getValue();
 
             F.ui.nbMultiLineHeight.setHidden(!checked);
-            F.ui.cbxIsPassword.setHidden(!checked);
+            // 密码模式只适用于单行输入；切回多行后隐藏这个选项。
+            F.ui.cbxIsPassword.setHidden(checked);
         }
 
     </script>

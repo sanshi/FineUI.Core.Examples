@@ -18,18 +18,18 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void btnShowInServer_Click(object sender, EventArgs e)
         {
-            new TabAjaxHelper(Tab3).Show();
+            Tab3.Show();
         }
 
         protected void btnShowActiveInServer_Click(object sender, EventArgs e)
         {
-            new TabAjaxHelper(Tab3).Active();
+            Tab3.Activate();
         }
 
 
         protected void btnHideInServer_Click(object sender, EventArgs e)
         {
-            new TabAjaxHelper(Tab3).Hide();
+            Tab3.Hide();
         }
 
     }

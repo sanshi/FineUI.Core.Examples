@@ -88,7 +88,7 @@ namespace FineUI.Core.Examples.Pages.Grid
             // 重新绑定表格，选中刚保存的那一行，并关闭弹出窗体
             BindGrid();
             Grid1.SelectedRowID = rowData["Id"].ToString();
-            new WindowAjaxHelper(Window1).Hide();
+            Window1.Hide();
         }
 
 

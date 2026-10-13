@@ -28,7 +28,7 @@ namespace FineUI.Core.Examples.Pages.Message
 
         protected void btnOperation_Click(object sender, EventArgs e)
         {
-            new WindowAjaxHelper(Window1).Hide();
+            Window1.Hide();
 
             new Confirm
             {

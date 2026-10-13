@@ -11,17 +11,17 @@ namespace FineUI.Core.Examples.Pages.Window
     {
         protected void btnServerMaximize_Click(object sender, EventArgs e)
         {
-            new WindowAjaxHelper(Window1).Maximize();
+            Window1.Maximize();
         }
 
         protected void btnServerRestore_Click(object sender, EventArgs e)
         {
-            new WindowAjaxHelper(Window1).Restore();
+            Window1.Restore();
         }
 
         protected void btnServerClose_Click(object sender, EventArgs e)
         {
-            new WindowAjaxHelper(Window1).Close();
+            Window1.Close();
         }
 
         protected void Page_Load(object sender, EventArgs e)

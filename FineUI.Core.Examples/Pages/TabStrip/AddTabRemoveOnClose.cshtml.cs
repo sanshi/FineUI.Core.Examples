@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void btnAddTab3_Click(object sender, EventArgs e)
         {
-            new TabStripAjaxHelper(TabStrip1).AddTab(new TabOptions()
+            TabStrip1.AddTab(new TabOptions()
             {
                 ID = "dynamic_tab3",
                 IFrameUrl = "https://deepseek.com/",
@@ -31,7 +31,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void btnAddTab4_Click(object sender, EventArgs e)
         {
-            new TabStripAjaxHelper(TabStrip1).AddTab(new TabOptions()
+            TabStrip1.AddTab(new TabOptions()
             {
                 ID = "dynamic_tab4",
                 IFrameUrl = "https://asp.net/",
@@ -44,12 +44,12 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 
         protected void btnRemoveTab3_Click(object sender, EventArgs e)
         {
-            new TabStripAjaxHelper(TabStrip1).CloseTab("dynamic_tab3");
+            TabStrip1.CloseTab("dynamic_tab3");
         }
 
         protected void btnRemoveTab4_Click(object sender, EventArgs e)
         {
-            new TabStripAjaxHelper(TabStrip1).CloseTab("dynamic_tab4");
+            TabStrip1.CloseTab("dynamic_tab4");
         }
 
     }

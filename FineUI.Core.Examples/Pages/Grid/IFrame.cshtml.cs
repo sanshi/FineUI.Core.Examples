@@ -29,7 +29,7 @@ namespace FineUI.Core.Examples.Pages.Grid
         private void ShowEditWindow(object id, object name)
         {
             var iframeUrl = String.Format(Url.Content("~/Grid/IFrameWindow?id={0}&name={1}"), id, HttpUtility.UrlEncode(name.ToString()));
-            new WindowAjaxHelper(Window1).Show(iframeUrl, "编辑 - " + name);
+            Window1.Show(iframeUrl, "编辑 - " + name);
         }
 
         protected void Grid1_RowDoubleClick(object sender, GridRowEventArgs e)

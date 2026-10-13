@@ -36,7 +36,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 
         protected void btnSelectAll_Click(object sender, EventArgs e)
         {
-            new GridAjaxHelper(Grid1).SelectAllRows();
+            Grid1.SelectAllRows();
         }
 
 

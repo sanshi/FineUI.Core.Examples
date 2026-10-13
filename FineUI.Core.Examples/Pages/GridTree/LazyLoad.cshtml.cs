@@ -201,12 +201,12 @@ namespace FineUI.Core.Examples.Pages.GridTree
             if (e.RowID == "50")
             {
                 // basic文件夹
-                new GridAjaxHelper(Grid1).LoadData(e.RowID, GetBasicFolderDataTable());
+                Grid1.LoadData(e.RowID, GetBasicFolderDataTable());
             }
             else if (e.RowID == "54")
             {
                 // Captcha文件夹
-                new GridAjaxHelper(Grid1).LoadData(e.RowID, GetCaptchaFolderDataTable());
+                Grid1.LoadData(e.RowID, GetCaptchaFolderDataTable());
             }
         }
 

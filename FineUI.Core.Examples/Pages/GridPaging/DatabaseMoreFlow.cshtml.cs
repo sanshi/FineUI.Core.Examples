@@ -49,7 +49,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
             if (dataIndex <= pageCount - 1)
             {
                 var dataSource = DataSourceUtil.GetPagedDataTable(pageIndex: dataIndex, pageSize: PAGESIZE);
-                new GridAjaxHelper(Grid1).AppendData(dataSource, null); // 追加数据
+                Grid1.AppendData(dataSource); // 追加数据
 
                 Grid1.Attributes["data-index"] = dataIndex.ToString();
             }

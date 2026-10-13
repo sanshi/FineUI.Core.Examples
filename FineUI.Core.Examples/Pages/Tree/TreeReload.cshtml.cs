@@ -37,9 +37,9 @@ namespace FineUI.Core.Examples.Pages.Tree
 
 
 
-            new TreeAjaxHelper(Tree1).LoadData("zhumadian", source);
+            Tree1.LoadData("zhumadian", source);
             // 展开更新后的节点
-            new TreeAjaxHelper(Tree1).ExpandNode("zhumadian");
+            Tree1.ExpandNode("zhumadian");
 
         }
 
