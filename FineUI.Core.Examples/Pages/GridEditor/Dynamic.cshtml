@@ -71,7 +71,8 @@
 
             var sourceYearData = rowData.values.YearData;
             if (sourceYearData) {
-                var yearData = F.parseJSON(sourceYearData);
+                // 保存后重新绑定数据时，年份数据可能已是对象；两种格式都能继续计算各年费用与合计。
+                var yearData = typeof sourceYearData === 'string' ? F.parseJSON(sourceYearData) : sourceYearData;
                 year2014 = yearData['2014'] || 0;
                 year2015 = yearData['2015'] || 0;
                 year2016 = yearData['2016'] || 0;
