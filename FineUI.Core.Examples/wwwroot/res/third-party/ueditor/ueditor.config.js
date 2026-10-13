@@ -44,6 +44,9 @@
         ]]
         //源码模式固定使用文本框，不加载可选的 CodeMirror。
         , sourceEditor: "textarea"
+        // 禁用依赖 Flash 的复制插件，避免初始化时请求未分发的 ZeroClipboard.js 和 SWF。
+        // 浏览器原生的 Ctrl+C / Ctrl+V 仍可使用。
+        , copy: false
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
         //    'anchor':'', 'undo':''

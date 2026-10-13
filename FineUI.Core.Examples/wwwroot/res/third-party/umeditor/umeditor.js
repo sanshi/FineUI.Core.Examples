@@ -10275,7 +10275,15 @@ UM.registerUI('bold italic redo undo underline strikethrough superscript subscri
 })();
 UM.registerUI('link image video map formula',function(name){
 
-    var me = this, currentRange, $dialog,
+    var me = this;
+    var toolbarItems = (me.options.toolbar || []).join(' ').split(/\s+/);
+    // 初始化会遍历所有已注册的界面模块，但只能为工具栏实际使用的按钮加载弹窗。
+    // 例如仅配置 link 时，不应再请求未分发的 image、video、map、formula 脚本。
+    if ($.inArray(name, toolbarItems) === -1) {
+        return;
+    }
+
+    var currentRange, $dialog,
         opt = {
             title: (me.options.labelMap && me.options.labelMap[name]) || me.getLang("labelMap." + name),
             url: me.options.UMEDITOR_HOME_URL + 'dialogs/' + name + '/' + name + '.js'
@@ -10375,8 +10383,13 @@ UM.registerUI('link image video map formula',function(name){
     return $btn;
 });
 UM.registerUI( 'emotion formula', function( name ){
-    var me = this,
-        url  = me.options.UMEDITOR_HOME_URL + 'dialogs/' +name+ '/'+name+'.js';
+    var me = this;
+    var toolbarItems = (me.options.toolbar || []).join(' ').split(/\s+/);
+    // 表情和公式使用另一组弹出层入口，同样只加载当前工具栏启用的模块。
+    if ($.inArray(name, toolbarItems) === -1) {
+        return;
+    }
+    var url = me.options.UMEDITOR_HOME_URL + 'dialogs/' + name + '/' + name + '.js';
 
     var $btn = $.eduibutton({
         icon: name,
