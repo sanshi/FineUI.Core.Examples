@@ -20,7 +20,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.GridIFrameReload
 
             // 2. 不关闭窗体，直接回发父窗体
             // 窗体可能在顶层以幻影形式显示；函数仍属于最初打开窗体的页面。
-            ActiveWindow.CallParentFunction("closeWindow1", "参数 - " + DateTime.Now.Millisecond);
+            ActiveWindow.InvokeFunction("closeWindow1", "参数 - " + DateTime.Now.Millisecond);
 
         }
 

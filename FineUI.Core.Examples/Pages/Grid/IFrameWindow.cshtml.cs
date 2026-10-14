@@ -37,7 +37,7 @@ namespace FineUI.Core.Examples.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 等本窗体隐藏完成后，调用父页函数关闭当前激活的选项卡。
-            ActiveWindow.HideCallParentFunction("closeOwnerTab");
+            ActiveWindow.HideInvokeFunction("closeOwnerTab");
         }
 
 

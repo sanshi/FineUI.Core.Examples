@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.GridIFrameAlert
                 Message = "保存成功！",
                 MessageBoxIcon = MessageBoxIcon.Success,
                 Target = Target.Top,
-                OkCommand = ClientCommand.HideActiveWindowPostBack("参数 - " + DateTime.Now.Millisecond)
+                OkCommand = ActiveWindow.CreateHidePostBackCommand("参数 - " + DateTime.Now.Millisecond)
             }.Show();
 
         }

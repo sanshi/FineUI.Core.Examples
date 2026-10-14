@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.GridIFrameAlertScript
                 Message = "保存成功！",
                 MessageBoxIcon = MessageBoxIcon.Success,
                 Target = Target.Top,
-                OkCommand = ClientCommand.HideActiveWindowCallParentFunction("closeWindow1", "参数 - " + DateTime.Now.Millisecond)
+                OkCommand = ActiveWindow.CreateHideInvokeFunctionCommand("closeWindow1", "参数 - " + DateTime.Now.Millisecond)
             }.Show();
 
         }

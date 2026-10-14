@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.Grid
         protected void SelectColumnsIFrame_btnSaveContinue_Click(object sender, EventArgs e)
         {
             // 关闭弹出窗体后，把所选列数组交给原来打开窗体的页面，避免拼接执行脚本。
-            ActiveWindow.HideCallParentFunction("exportToExcel", new JArray(cblColumns.SelectedValueArray));
+            ActiveWindow.HideInvokeFunction("exportToExcel", new JArray(cblColumns.SelectedValueArray));
         }
 
     }

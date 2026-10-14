@@ -31,7 +31,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
             {
                 // 中止本次请求：不渲染本页，改渲染框架内置极简页并弹出提示。
                 // 本页常被窗体以 IFrame 弹出，故让用户点「确定」后顺手关掉父级窗体。
-                return UIHelper.AbortPageWithCommand("该学生不存在或已被删除！", ClientCommand.HideActiveWindow());
+                return UIHelper.AbortPageWithCommand("该学生不存在或已被删除！", ActiveWindow.CreateHideCommand());
             }
 
             // 真实项目在此判断当前用户能不能编辑这条记录，无权则同样 return UIHelper.AbortPage(...)。
