@@ -9,12 +9,11 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
+    [NoRazorForms]
     public partial class TwoGridModel : BaseModel
     {
         public void OnGet()
         {
-            // 本页使用数据模型声明控件，不绑定 RazorForms 控件字段。
-            PageManager.Instance.EnableRazorForms = false;
 
             var students = StudentHelper.GetSimpleStudentList();
 
