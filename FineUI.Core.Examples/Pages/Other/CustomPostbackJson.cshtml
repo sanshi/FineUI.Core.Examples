@@ -23,7 +23,7 @@
 
     <br />
     <br />
-    注：需要后台返回 JSON 的时候，请直接调用 jQuery.ajax 函数（不推荐使用 F.doPostBack 函数)！
+    注：本例接收业务 JSON；回发使用 responseType='data'，由页面读取结果。
 }
 
 @section script {
@@ -33,9 +33,10 @@
         function onTextBoxEnter(event) {
             var me = this;
 
-            // 显式指定 handler，使 RazorForms 将它识别为独立页面地址。
+            // 明确使用业务数据通道，返回的 text 字段不属于控件更新协议。
             F.doPostBack({
                 url: '@Url.Page("/Other/CustomPostbackJsonData", "Process")',
+                responseType: 'data',
                 params: {
                     text1: me.getValue()
                 },
@@ -50,7 +51,7 @@
                     F.ui.TextBox2.setValue(json.text);
                     F.ui.TextBox2.focus();
 
-                    // 已自行处理原始 JSON；阻止 FineUI 将它当作响应脚本执行。
+                    // 结果已经由本页处理，不再触发后续成功回调。
                     return false;
                 }
             });
