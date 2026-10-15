@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.Pages.Other
 {
     public partial class AjaxLoadingModel : BaseModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             PageManager.Instance.AjaxLoadingType = AjaxLoadingType.Mask;
         }

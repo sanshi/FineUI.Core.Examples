@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
 
     public partial class UICompareModel : BaseModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             TheModel = new Models.UICompareModel()
             {

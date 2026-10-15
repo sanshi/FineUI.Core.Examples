@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.Pages.Block
 {
     public partial class DashboardModel : BaseModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             var pm = PageManager.Instance;
             pm.EnableWatermark = true;

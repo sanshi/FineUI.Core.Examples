@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     public partial class CheckBoxListModel : BaseModel
     {
         /// <summary>
-        /// 固定选项每轮从服务器声明取得，不依赖只在 OnGet 中装载的输入模型。
+        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Get 中装载的输入模型。
         /// </summary>
         public CheckItem[] GetDeclaredCheckItems()
         {
@@ -35,7 +35,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
         }
 
         /// <summary>
-        /// 固定选项每轮从服务器声明取得，不依赖只在 OnGet 中装载的输入模型。
+        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Get 中装载的输入模型。
         /// </summary>
         public RadioItem[] GetDeclaredRadioItems()
         {
@@ -56,7 +56,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
             }.ToArray();
         }
 
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             var model = new Models.CheckBoxListModel();
             model.IsChecked = true;

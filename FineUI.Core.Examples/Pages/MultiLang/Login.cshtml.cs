@@ -14,7 +14,7 @@ namespace FineUI.Core.Examples.Pages.MultiLang
 {
     public partial class LoginModel : BaseMultilangModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             
         }

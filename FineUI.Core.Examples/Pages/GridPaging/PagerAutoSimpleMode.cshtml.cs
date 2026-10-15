@@ -6,7 +6,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 {
     public partial class PagerAutoSimpleModeModel : BaseModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             // 窄屏下分页栏放不下时，自动使用简洁分页。
             PageManager.Instance.GridPagerAutoSimpleMode = true;

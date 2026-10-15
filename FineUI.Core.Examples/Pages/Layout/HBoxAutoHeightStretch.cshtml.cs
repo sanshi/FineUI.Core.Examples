@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.Pages.Layout
 {
     public partial class HBoxAutoHeightStretchModel : BaseModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
 
         }

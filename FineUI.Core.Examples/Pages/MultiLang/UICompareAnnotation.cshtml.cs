@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.Pages.MultiLang
 
     public partial class UICompareAnnotationModel : BaseMultilangModel
     {
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             TheModel = new Models.UICompareModel()
             {

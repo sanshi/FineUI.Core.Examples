@@ -23,7 +23,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
         public string UserRoleName { get; set; }
 
 
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             var model = new Student
             {

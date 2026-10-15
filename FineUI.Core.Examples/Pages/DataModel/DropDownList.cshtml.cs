@@ -64,7 +64,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
             }.ToArray();
         }
 
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             var listItems = GetDeclaredItems().ToList();
 

@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.Mobile
         /// </summary>
         public JArray MenuSource { get; private set; } = new JArray();
 
-        public void OnGet()
+        public void Page_Get(object sender, EventArgs e)
         {
             // 页面中的 JSON 数据标签在 Razor 渲染时读取 MenuSource，必须在渲染前准备菜单。
             // 控件字段在这里尚未绑定；只读取菜单 XML，回发不再次加载它。

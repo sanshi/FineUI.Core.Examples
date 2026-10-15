@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     public partial class StudentEditModel : BaseModel
     {
         /// <summary>
-        /// 表单绑定根：首屏由 OnGet 加载供回显；回发时模型绑定器新建空壳承载表单值。
+        /// 表单绑定根：首屏由 Page_Get 加载供回显；回发时模型绑定器新建空壳承载表单值。
         /// </summary>
         [BindProperty]
         public Student Student { get; set; }
@@ -24,20 +24,21 @@ namespace FineUI.Core.Examples.Pages.DataModel
         /// <summary>
         /// 首屏渲染前执行（回发不执行）：读 ?id 加载实体，供页面上的 For 回显。
         /// </summary>
-        public IActionResult OnGet(int id)
+        public void Page_Get(object sender, EventArgs e)
         {
+            int.TryParse(Request.Query["id"], out var id);
             Student = StudentStore.Find(id);
             if (Student == null)
             {
                 // 中止本次请求：不渲染本页，改渲染框架内置极简页并弹出提示。
                 // 本页常被窗体以 IFrame 弹出，故让用户点「确定」后顺手关掉父级窗体。
-                return UIHelper.AbortPageWithCommand("该学生不存在或已被删除！", ActiveWindow.HideCommand());
+                FineUI.Core.PageContext.AbortPage("该学生不存在或已被删除！", ActiveWindow.HideCommand());
+                return;
             }
 
-            // 真实项目在此判断当前用户能不能编辑这条记录，无权则同样 return UIHelper.AbortPage(...)。
+            // 真实项目还应检查编辑权限；无权时同样登记中止结果并返回。
             // ⚠️ 注意本方法只在首屏执行——回发时不跑，所以鉴权在事件处理器里还要再做一次（见 btnSave_Click）。
             // 本示例数据无归属关系，故只留说明。
-            return Page();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
             // 这份清单必须与页面里的 For 保持一致——往表单加字段而忘了补赋值，该字段就永远保存不上。
             // 它同时是 over-posting 的防线：绑定器会把构造 POST 里任何 Student.* 字段灌进这个空壳，
             // 但只有这里显式抄过去的字段才会落库。
-            // 主键由页面上的隐藏字段随回发带回，客户端可以篡改成任意值——回发路径没有 OnGet，
+            // 主键由页面上的隐藏字段随回发带回，客户端可以篡改成任意值——回发路径没有 Page_Get，
             // 所以「当前用户能不能编辑这条记录」必须在这里再判一次（真实项目：无权则 ShowNotify + return）。
             var stored = StudentStore.Find(Student.Id);
             if (stored == null)
