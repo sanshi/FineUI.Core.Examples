@@ -14,14 +14,22 @@
                 <Items>
                     <f:TextBox ID="TextBox1" Label="文本一">
                     </f:TextBox>
-                    <f:Button ID="Button4" CssClass="btn-in-form" Text="按钮一"></f:Button>
+                    <f:Panel ID="ButtonPanel1" ShowHeader="false" ShowBorder="false">
+                        <Items>
+                            <f:Button ID="Button4" CssClass="btn-in-form" Text="按钮一"></f:Button>
+                        </Items>
+                    </f:Panel>
                 </Items>
             </f:FormRow>
             <f:FormRow ID="FormRow6">
                 <Items>
                     <f:TextBox ID="TextBox2" Label="文本二">
                     </f:TextBox>
-                    <f:Button ID="Button3" CssClass="btn-in-form" Text="按钮二"></f:Button>
+                    <f:Panel ID="ButtonPanel2" ShowHeader="false" ShowBorder="false">
+                        <Items>
+                            <f:Button ID="Button3" CssClass="btn-in-form" Text="按钮二"></f:Button>
+                        </Items>
+                    </f:Panel>
                 </Items>
             </f:FormRow>
             <f:FormRow ID="FormRow7">
@@ -42,7 +50,9 @@
     </f:Form>
     <br>
     <br />
-    注：为表单设置 RemoveLastFieldsMargin="true" 来移除最后一行表单字段的底部外边距。
+    注：前两行用 Panel 承接列宽，按钮保持内容宽度；后两行的按钮直接占满所在列。
+    <br />
+    为表单设置 RemoveLastFieldsMargin="true" 来移除最后一行表单字段的底部外边距。
 
 
 }

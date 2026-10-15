@@ -8,9 +8,11 @@ namespace FineUI.Core.Examples.Pages.FormLayout
 		protected FineUI.Core.Form SimpleForm1;
 		protected FineUI.Core.FormRow FormRow5;
 		protected FineUI.Core.TextBox TextBox1;
+		protected FineUI.Core.Panel ButtonPanel1;
 		protected FineUI.Core.Button Button4;
 		protected FineUI.Core.FormRow FormRow6;
 		protected FineUI.Core.TextBox TextBox2;
+		protected FineUI.Core.Panel ButtonPanel2;
 		protected FineUI.Core.Button Button3;
 		protected FineUI.Core.FormRow FormRow7;
 		protected FineUI.Core.TextBox TextBox3;
