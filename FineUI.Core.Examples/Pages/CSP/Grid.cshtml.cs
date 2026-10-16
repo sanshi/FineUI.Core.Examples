@@ -9,6 +9,11 @@ namespace FineUI.Core.Examples.Pages.CSP
 {
     public partial class GridModel : BaseModel
     {
+        protected void Page_Get(object sender, EventArgs e)
+        {
+            // 首屏会从外部来源加载 underscore；全局严格 CSP 的其它设置保持不变。
+            PageManager.Instance.CspScriptsAllowUrls = new[] { "cdn.jsdelivr.net", "unpkg.com" };
+        }
 
 
         protected void Page_Load(object sender, EventArgs e)

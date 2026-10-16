@@ -3,11 +3,6 @@
 @{
     ViewBag.Title = "CSP/Button";
     var F = Html.F();
-
-    // 每轮从可信模板取得策略，第三方兼容页的放宽仅限本页。
-    var pm = PageManager.Instance;
-    pm.CspScripts = true;
-    pm.CspScriptsAllowNonce = true;
 }
 
 @section body {

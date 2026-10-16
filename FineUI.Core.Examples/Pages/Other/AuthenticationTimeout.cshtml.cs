@@ -18,7 +18,8 @@ namespace FineUI.Core.Examples.Pages.Other
         
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Url.Content("~/?ReturnUrl=%2fOther%2fAuthenticationTimeout"));
+            // 回发返回跳转命令，页面的 beforeAjaxSuccess 可先询问用户是否继续。
+            FineUI.Core.PageContext.Redirect(Url.Content("~/?ReturnUrl=%2fOther%2fAuthenticationTimeout"));
         }
 
     }
