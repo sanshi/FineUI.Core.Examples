@@ -46,8 +46,8 @@ namespace FineUI.Core.Examples.Pages.Tree
             {
                 cssSB.AppendFormat("{0}", dynamicCssDic[css]);
             }
-            // 样式作为字符串数据下发，由页面中预先定义的函数应用，不把颜色数据拼成 JavaScript。
-            FineUI.Core.PageContext.InvokeFunction("applyTreeColors", cssSB.ToString());
+            // 节点颜色作为 CSS 数据下发，同名样式再次加载时直接替换，不把颜色拼成 JavaScript。
+            FineUI.Core.PageContext.AddCss("dynamicCSSStyles", cssSB.ToString());
         }
 
 
