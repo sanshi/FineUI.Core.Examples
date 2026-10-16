@@ -24,7 +24,9 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 
         private void BindSheng()
         {
-            ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+            ddlSheng.DataTextField = "Name";
+            ddlSheng.DataValueField = "Code";
+            ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
             ddlSheng.DataBind();
 
             ddlSheng.Items.Insert(0, new ListItem("选择省份", "-1"));
@@ -37,8 +39,9 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 
             if (!String.IsNullOrEmpty(sheng) && sheng != "-1")
             {
-                JArray ja = DataSourceUtil.SHI_JSON.Value<JArray>(sheng);
-                ddlShi.DataSource = ja;
+                ddlShi.DataTextField = "Name";
+                ddlShi.DataValueField = "Code";
+                ddlShi.DataSource = ProvinceCityCountyData.Cities(sheng);
                 ddlShi.DataBind();
             }
 
@@ -55,8 +58,9 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 
             if (!String.IsNullOrEmpty(shi) && shi != "-1")
             {
-                JArray ja = DataSourceUtil.XIAN_JSON.Value<JArray>(shi);
-                ddlXian.DataSource = ja;
+                ddlXian.DataTextField = "Name";
+                ddlXian.DataValueField = "Code";
+                ddlXian.DataSource = ProvinceCityCountyData.Counties(shi);
                 ddlXian.DataBind();
             }
 
@@ -84,7 +88,7 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            labResult.Text = "您选择的省市县：" + ddlSheng.SelectedValue + " | " + ddlShi.SelectedValue + (ddlXian.SelectedValue == "-1" ? "" : " | " + ddlXian.SelectedValue);
+            labResult.Text = "您选择的省市县：" + ProvinceCityCountyData.ProvinceName(ddlSheng.SelectedValue) + " | " + ProvinceCityCountyData.CityName(ddlShi.SelectedValue) + (ddlXian.SelectedValue == "-1" ? "" : " | " + ProvinceCityCountyData.CountyName(ddlXian.SelectedValue));
         }
 
 

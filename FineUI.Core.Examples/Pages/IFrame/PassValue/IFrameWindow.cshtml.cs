@@ -13,7 +13,9 @@ namespace FineUI.Core.Examples.Pages.IFrame.PassValue
         {
             if (!IsPostBack)
             {
-                ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+                ddlSheng.DataTextField = "Name";
+                ddlSheng.DataValueField = "Code";
+                ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
                 ddlSheng.DataBind();
             }
         }
@@ -21,7 +23,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.PassValue
 
         protected void ddlSheng_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActiveWindow.WriteBackValue(ddlSheng.SelectedValue);
+            ActiveWindow.WriteBackValue(ProvinceCityCountyData.ProvinceName(ddlSheng.SelectedValue));
             ActiveWindow.Hide();
         }
     }

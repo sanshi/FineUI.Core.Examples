@@ -13,12 +13,9 @@ namespace FineUI.Core.Examples.Pages.GridEditor
     public partial class ShengShiModel : BaseModel
     {
         /// <summary>
-        /// 按省名称分组的城市列表。模板执行早于 Page_Load，直接读取固定的省市数据，保证首次编辑时就能加载城市。
+        /// 省市编码及名称由模板输出到非执行 JSON 数据块，首次编辑时即可加载对应城市。
         /// </summary>
-        public string CityDataJson => Newtonsoft.Json.JsonConvert.SerializeObject(DataSourceUtil.SHI_JSON, new Newtonsoft.Json.JsonSerializerSettings
-            {
-                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
-            });
+        public string ProvinceCityDataJson => ProvinceCityCountyData.ProvinceCityJson;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +23,11 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             {
                 LoadData();
 
-                ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+                ddlSheng.DataTextField = "Name";
+
+                ddlSheng.DataValueField = "Code";
+
+                ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
                 ddlSheng.DataBind();
             }
         }
@@ -107,8 +108,8 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             row[0] = 101;
             row[1] = "张萍萍";
             row[2] = 0;
-            row[3] = "河南";
-            row[4] = "驻马店市";
+            row[3] = "002";
+            row[4] = "002017";
             table.Rows.Add(row);
 
 
@@ -116,8 +117,8 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             row[0] = 102;
             row[1] = "陈飞";
             row[2] = 1;
-            row[3] = "安徽";
-            row[4] = "合肥市";
+            row[3] = "007";
+            row[4] = "007001";
             table.Rows.Add(row);
 
 
@@ -125,8 +126,8 @@ namespace FineUI.Core.Examples.Pages.GridEditor
             row[0] = 103;
             row[1] = "董婷婷";
             row[2] = 0;
-            row[3] = "北京";
-            row[4] = "北京市";
+            row[3] = "001";
+            row[4] = "001001";
             table.Rows.Add(row);
 
             row = table.NewRow();

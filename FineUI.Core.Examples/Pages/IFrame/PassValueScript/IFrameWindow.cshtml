@@ -10,7 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" LabelAlign="Top" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" Title="SimpleForm" BodyPadding="10" EnableCollapse="false" AutoScroll="true" IsViewPort="true">
         <Items>
-            <f:RadioButtonList ID="ddlSheng" Label="请选择省份" ColumnNumber="4" ShowRedStar="true" SelectedValue="@HttpContext.Request.Query["selected"]">
+            <f:RadioButtonList ID="ddlSheng" Label="请选择省份" ColumnNumber="4" ShowRedStar="true" SelectedValue="@ProvinceCityCountyData.ProvinceCode(HttpContext.Request.Query["selected"])">
                 <Listeners>
                     <f:Listener Event="change" Handler="onDdlShengChange"></f:Listener>
                 </Listeners>
@@ -27,7 +27,13 @@
         function onDdlShengChange(event) {
             // 返回当前活动Window对象（浏览器窗口对象通过F.getActiveWindow().window获取）
             var activeWindow = F.getActiveWindow();
-            activeWindow.window.updateProvince(this.getValue());
+            var selectedCode = this.getValue();
+            for (var i = 0; i < this.items.length; i++) {
+                if (this.items[i].inputValue === selectedCode) {
+                    activeWindow.window.updateProvince(this.items[i].inputLabel);
+                    break;
+                }
+            }
             activeWindow.hide();
         }
 

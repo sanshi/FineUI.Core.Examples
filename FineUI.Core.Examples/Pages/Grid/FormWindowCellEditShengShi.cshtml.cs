@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.Grid
         /// <summary>
         /// 省代码、名称及各省城市列表，由模板的数据块输出。模板执行早于 Page_Load，读取属性时直接准备固定数据，保证首次渲染就能显示名称。
         /// </summary>
-        public string ProvinceCityDataJson => CreateProvinceCityData();
+        public string ProvinceCityDataJson => ProvinceCityCountyData.ProvinceCityJson;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,68 +34,6 @@ namespace FineUI.Core.Examples.Pages.Grid
 
 
         // 省和市都用代码：省下拉列表的数据在这里下发，市下拉列表的数据按省代码分组，等前台选中省份后再换一批
-        private string CreateProvinceCityData()
-        {
-            // 准备省代码与名称数据。
-            JArray shengData = new JArray();
-            shengData.Add(new JArray("001", "北京"));
-            shengData.Add(new JArray("002", "河南"));
-            shengData.Add(new JArray("003", "河北"));
-            shengData.Add(new JArray("004", "湖南"));
-            shengData.Add(new JArray("005", "湖北"));
-            shengData.Add(new JArray("006", "广西"));
-            shengData.Add(new JArray("007", "安徽"));
-
-
-            // 市代码 = 省代码 + 三位序号，名称沿用公共的省市数据。
-            JObject shiData = new JObject();
-            foreach (JArray item in shengData)
-            {
-                string shengValue = item[0].Value<string>();
-                string shengText = item[1].Value<string>();
-
-                JArray newSheng = new JArray();
-                JArray sheng = DataSourceUtil.SHI_JSON[shengText] as JArray;
-                int num = 1;
-                foreach (string shi in sheng)
-                {
-                    JArray newShi = new JArray();
-                    newShi.Add(shengValue + PaddingLeft(num));
-                    newShi.Add(shi);
-                    num++;
-
-                    newSheng.Add(newShi);
-                }
-
-                shiData[shengValue] = newSheng;
-            }
-            // 作为纯 JSON 数据输出，不能把省市名称拼入可执行脚本。
-            return Newtonsoft.Json.JsonConvert.SerializeObject(new JObject
-            {
-                ["provinces"] = shengData,
-                ["cities"] = shiData
-            }, new Newtonsoft.Json.JsonSerializerSettings
-            {
-                StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
-            });
-        }
-
-
-        private string PaddingLeft(int value)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            string str = value.ToString();
-            for (int i = 0, count = 3 - str.Length; i < count; i++)
-            {
-                sb.Append("0");
-            }
-            sb.Append(str);
-
-            return sb.ToString();
-        }
-
-
         // 保存数据：客户端的改动一次性提交上来，按行状态分别处理
         protected void btnSaveAll_Click(object sender, EventArgs e)
         {

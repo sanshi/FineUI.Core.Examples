@@ -16,12 +16,12 @@
                     <f:TextBox ID="tbxName" Required="true"></f:TextBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="所在省" ColumnID="Sheng" DataField="Sheng" Width="150">
+            <f:RenderField HeaderText="所在省" ColumnID="Sheng" DataField="Sheng" Width="150" RendererFunction="renderSheng">
                 <Editor>
                     <f:DropDownList ID="ddlSheng" Required="true"></f:DropDownList>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="所在市" ColumnID="Shi" DataField="Shi" Width="150">
+            <f:RenderField HeaderText="所在市" ColumnID="Shi" DataField="Shi" Width="150" RendererFunction="renderShi">
                 <Editor>
                     <f:DropDownList ID="ddlShi" Required="true"></f:DropDownList>
                 </Editor>
@@ -58,14 +58,38 @@
 
 @section script {
 
-    <script type="application/json" id="cityData">@Html.Raw(Model.CityDataJson)</script>
+    <script type="application/json" id="provinceCityData">@Html.Raw(Model.ProvinceCityDataJson)</script>
 
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
         // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
-        window._SHI = JSON.parse(document.getElementById('cityData').textContent);
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+        window._SHENG = provinceCityData.provinces;
+        window._SHI = provinceCityData.cities;
+        // 单元格保存固定编码，渲染时从统一数据查找名称。
+        function findPlaceName(items, code) {
+            if (!items) {
+                return '';
+            }
+            for (var i = 0; i < items.length; i++) {
+                if (items[i][0] === code) {
+                    return items[i][1];
+                }
+            }
+            return '';
+        }
+
+        function renderSheng(value) {
+            return findPlaceName(window._SHENG, value);
+        }
+
+        function renderShi(value, params) {
+            var provinceCode = params.rowValue['Sheng'];
+            return findPlaceName(window._SHI[provinceCode], value);
+        }
+
 
         function onGrid1BeforeEdit(event, value, params) {
             var grid1 = F.ui.Grid1;

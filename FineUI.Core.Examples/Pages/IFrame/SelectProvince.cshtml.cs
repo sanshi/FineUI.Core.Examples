@@ -13,7 +13,9 @@ namespace FineUI.Core.Examples.Pages.IFrame
         {
             if (!IsPostBack)
             {
-                ddlProvince.DataSource = DataSourceUtil.SHENG_JSON;
+                ddlProvince.DataTextField = "Name";
+                ddlProvince.DataValueField = "Code";
+                ddlProvince.DataSource = ProvinceCityCountyData.Provinces;
                 ddlProvince.DataBind();
             }
         }

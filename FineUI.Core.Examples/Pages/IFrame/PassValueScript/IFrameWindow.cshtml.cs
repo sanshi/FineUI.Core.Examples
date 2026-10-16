@@ -13,7 +13,9 @@ namespace FineUI.Core.Examples.Pages.IFrame.PassValueScript
         {
             if (!IsPostBack)
             {
-                ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+                ddlSheng.DataTextField = "Name";
+                ddlSheng.DataValueField = "Code";
+                ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
                 ddlSheng.DataBind();
             }
         }
