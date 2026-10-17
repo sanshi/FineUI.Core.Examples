@@ -5,20 +5,31 @@ using System.Threading.Tasks;
 using System.Xml;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Mobile
 {
     public partial class MainModel : BaseMobileModel
     {
+        private static readonly JsonSerializerSettings ScriptDataSettings = new JsonSerializerSettings
+        {
+            StringEscapeHandling = StringEscapeHandling.EscapeHtml
+        };
+
         /// <summary>
-        /// 首屏的移动菜单数据。模板输出为 JSON，客户端只解析数据，不拼接执行脚本。
+        /// 首屏的移动菜单数据。先在 Page_Get 中读取菜单 XML，再交给页面输出为 JSON。
         /// </summary>
         public JArray MenuSource { get; private set; } = new JArray();
 
+        /// <summary>
+        /// 给页面的非执行 JSON 数据块使用。转义菜单文本中的小于号等字符，避免 &lt;/script&gt; 提前结束标签。
+        /// </summary>
+        public string MenuSourceJson => JsonConvert.SerializeObject(MenuSource, ScriptDataSettings);
+
         public void Page_Get(object sender, EventArgs e)
         {
-            // 页面中的 JSON 数据标签在 Razor 渲染时读取 MenuSource，必须在渲染前准备菜单。
+            // 页面中的 JSON 数据标签在 Razor 渲染时读取 MenuSourceJson，必须在渲染前准备菜单。
             // 控件字段在这里尚未绑定；只读取菜单 XML，回发不再次加载它。
             LoadData();
         }

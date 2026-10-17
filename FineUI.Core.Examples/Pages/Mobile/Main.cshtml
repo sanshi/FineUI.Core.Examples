@@ -4,10 +4,6 @@
     ViewData["Title"] = "Mobile/Main";
     ViewBag.BodyBGColor = false;
     var F = Html.F();
-    var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings
-    {
-        StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
-    };
 }
 
 
@@ -216,7 +212,7 @@
 
 @section script {
 
-    <script id="mobile-menu-data" type="application/json">@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MenuSource, jsonSettings))</script>
+    <script id="mobile-menu-data" type="application/json">@Html.Raw(Model.MenuSourceJson)</script>
 
     <script>
 
