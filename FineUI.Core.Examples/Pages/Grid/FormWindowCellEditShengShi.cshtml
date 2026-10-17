@@ -105,8 +105,6 @@
 
         // 先读取纯 JSON，保证控件首次渲染时就能使用这些数据。
         var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
-        window._SHENG = provinceCityData.provinces;
-        window._SHI = provinceCityData.cities;
 
         function renderGender(value) {
             return value == 1 ? '男' : '女';
@@ -130,8 +128,8 @@
         function getShengName(shengValue) {
             var shengName = '', sheng;
             if (shengValue) {
-                for (var i = 0, count = window._SHENG.length; i < count; i++) {
-                    sheng = window._SHENG[i];
+                for (var i = 0, count = provinceCityData.provinces.length; i < count; i++) {
+                    sheng = provinceCityData.provinces[i];
                     if (shengValue == sheng[0]) {
                         shengName = sheng[1];
                         break;
@@ -144,7 +142,7 @@
 
         // 根据省代码和市代码获取市名称
         function getShiName(shengValue, shiValue) {
-            var shiData = window._SHI[shengValue], shi, shiName = '';
+            var shiData = provinceCityData.cities[shengValue], shi, shiName = '';
             if (shiData) {
                 for (var i = 0, count = shiData.length; i < count; i++) {
                     shi = shiData[i];
@@ -160,7 +158,7 @@
 
         // 页面加载完毕：省下拉列表的数据由服务端下发，这里取过来绑上
         F.ready(function () {
-            F.ui.ddlSheng.loadData(window._SHENG);
+            F.ui.ddlSheng.loadData(provinceCityData.provinces);
         });
 
 
@@ -189,7 +187,7 @@
         // 省下拉列表改变事件处理函数：按当前省份重新加载市下拉列表
         function onShengChange(event) {
             var sheng = this.getValue();
-            var shidata = window._SHI[sheng];
+            var shidata = provinceCityData.cities[sheng];
             F.ui.ddlShi.loadData(shidata);
         }
 
@@ -227,7 +225,7 @@
             var sheng = rowValue['Sheng'];
             F.ui.ddlSheng.setValue(sheng);
 
-            var shidata = window._SHI[sheng];
+            var shidata = provinceCityData.cities[sheng];
             F.ui.ddlShi.loadData(shidata);
             F.ui.ddlShi.setValue(rowValue['Shi']);
 

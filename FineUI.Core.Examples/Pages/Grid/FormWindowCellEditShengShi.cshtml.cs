@@ -33,7 +33,6 @@ namespace FineUI.Core.Examples.Pages.Grid
         }
 
 
-        // 省和市都用代码：省下拉列表的数据在这里下发，市下拉列表的数据按省代码分组，等前台选中省份后再换一批
         // 保存数据：客户端的改动一次性提交上来，按行状态分别处理
         protected void btnSaveAll_Click(object sender, EventArgs e)
         {
