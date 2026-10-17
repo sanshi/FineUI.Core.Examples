@@ -18,36 +18,26 @@ namespace FineUI.Core.Examples.Pages.Mobile
         };
 
         /// <summary>
-        /// 首屏的移动菜单数据。先在 Page_Get 中读取菜单 XML，再交给页面输出为 JSON。
+        /// 首屏菜单的 JSON 文本，由 Page_Get 从菜单 XML 生成。默认空数组；序列化时转义菜单文字，
+        /// 避免其中的 &lt;/script&gt; 提前结束页面上的非执行 JSON 数据块。
         /// </summary>
-        public JArray MenuSource { get; private set; } = new JArray();
-
-        /// <summary>
-        /// 给页面的非执行 JSON 数据块使用。转义菜单文本中的小于号等字符，避免 &lt;/script&gt; 提前结束标签。
-        /// </summary>
-        public string MenuSourceJson => JsonConvert.SerializeObject(MenuSource, ScriptDataSettings);
+        public string MenuSourceJson { get; private set; } = "[]";
 
         public void Page_Get(object sender, EventArgs e)
         {
-            // 页面中的 JSON 数据标签在 Razor 渲染时读取 MenuSourceJson，必须在渲染前准备菜单。
-            // 控件字段在这里尚未绑定；只读取菜单 XML，回发不再次加载它。
-            LoadData();
-        }
-
-        private void LoadData()
-        {
+            // 页面模板会直接读取 MenuSourceJson，先组装菜单，再序列化成可安全输出的数据。
             XmlDocument doc = DataSourceUtil.LoadXml("~/wwwroot/res/menu.xml");
             XmlNode mobileRootNode = doc.SelectSingleNode("/Tree/TreeNode[@Text=\"移动\"]");
 
             JArray menuSource = new JArray();
-            // 一级菜单
+            // 一级菜单跳过「移动首页」本身，只保留用户可以打开的页面。
             foreach (XmlNode node in mobileRootNode.ChildNodes)
             {
                 string menuText = node.Attributes["Text"].Value;
 
                 if (menuText == "移动首页")
                 {
-                    continue; // 不添加本项
+                    continue;
                 }
 
                 JObject menu = new JObject();
@@ -58,8 +48,7 @@ namespace FineUI.Core.Examples.Pages.Mobile
                 menuSource.Add(menu);
             }
 
-
-            MenuSource = menuSource;
+            MenuSourceJson = JsonConvert.SerializeObject(menuSource, ScriptDataSettings);
         }
 
         private void ResolveXmlNode(XmlNode node, JObject parentMenu)
