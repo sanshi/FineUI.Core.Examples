@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     [NoRazorForms]
     public partial class TwoGridLayoutModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
+        public void OnGet()
         {
 
             var students = StudentHelper.GetSimpleStudentList();
