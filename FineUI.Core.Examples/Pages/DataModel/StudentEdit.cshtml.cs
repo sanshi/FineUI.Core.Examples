@@ -28,7 +28,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
         /// </summary>
         public void Page_Init(object sender, EventArgs e)
         {
-            int.TryParse(Request.Query["id"], out var id);
+            var id = GetQueryIntValue("id");
             _storedStudent = StudentStore.Find(id);
             if (_storedStudent == null)
             {

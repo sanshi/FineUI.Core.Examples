@@ -9,28 +9,12 @@ using System.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples
 {
-    public class PageBase : PageModel
+    public class PageBase : FineUI.Core.FineUIPageBase
     {
-        #region IsPostBack
-
-        /// <summary>
-        /// 是否页面回发
-        /// </summary>
-        public bool IsPostBack
-        {
-            get
-            {
-                return FineUI.Core.PageContext.IsFineUIAjaxPostBack();
-            }
-        }
-
-        #endregion
-
         #region RegisterStartupScript
 
         /// <summary>
