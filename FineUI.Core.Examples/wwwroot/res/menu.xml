@@ -2283,13 +2283,13 @@
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="内容安全策略（CSP）">
-			<TreeNode Text="按钮（CspScriptsAllowNonce）" NavigateUrl="~/CSP/Button">
+			<TreeNode Text="按钮（严格 CSP）" NavigateUrl="~/CSP/Button">
 			</TreeNode>
-			<TreeNode Text="链接按钮与超链接（CspScriptsAllowNonce）" NavigateUrl="~/CSP/LinkButton">
+			<TreeNode Text="链接按钮与超链接（严格 CSP）" NavigateUrl="~/CSP/LinkButton">
 			</TreeNode>
-			<TreeNode Text="富文本编辑器（CspScriptsAllowNonce）" NavigateUrl="~/CSP/HtmlEditor">
+			<TreeNode Text="富文本编辑器（CSP 兼容例外）" NavigateUrl="~/CSP/HtmlEditor">
 			</TreeNode>
-			<TreeNode Text="表格（CspScriptsAllowUrls）" NavigateUrl="~/CSP/Grid">
+			<TreeNode Text="表格（外部脚本来源）" NavigateUrl="~/CSP/Grid">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="第三方组件">
