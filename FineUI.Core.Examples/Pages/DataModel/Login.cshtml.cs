@@ -12,10 +12,6 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class LoginModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-
-        }
         
         public void btnLogin_Click(object sender, EventArgs e)
         {

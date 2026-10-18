@@ -15,10 +15,6 @@ namespace FineUI.Core.Examples.Pages.DataModel
     {
         public IList<Student> Students { get; set; }
 
-        public void Page_Get(object sender, EventArgs e)
-        {
-            
-        }
 
 
         protected void Page_Load(object sender, EventArgs e)

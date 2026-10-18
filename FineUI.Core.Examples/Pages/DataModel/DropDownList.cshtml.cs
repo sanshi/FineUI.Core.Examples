@@ -64,19 +64,22 @@ namespace FineUI.Core.Examples.Pages.DataModel
             }.ToArray();
         }
 
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
-            var listItems = GetDeclaredItems().ToList();
+            if (!IsPostBack)
+            {
+                var listItems = GetDeclaredItems().ToList();
 
-            var model = new Models.DropDownListModel();
-            model.DropDownList1 = "Value5";
-            model.DropDownList1Items = listItems;
+                var model = new Models.DropDownListModel();
+                model.DropDownList1 = "Value5";
+                model.DropDownList1Items = listItems;
 
 
-            model.DropDownList2 = new string[] { "Value1", "Value5" };
-            model.DropDownList2Items = listItems;
+                model.DropDownList2 = new string[] { "Value1", "Value5" };
+                model.DropDownList2Items = listItems;
 
-            TheModel = model;
+                TheModel = model;
+            }
         }
 
         [BindProperty]

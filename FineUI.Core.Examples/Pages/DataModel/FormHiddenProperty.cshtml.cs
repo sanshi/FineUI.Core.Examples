@@ -23,25 +23,28 @@ namespace FineUI.Core.Examples.Pages.DataModel
         public string UserRoleName { get; set; }
 
 
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
-            var model = new Student
+            if (!IsPostBack)
             {
-                Id = 101,
-                Name = "张萍萍",
-                Gender = 0,
-                EntranceYear = 2000,
-                AtSchool = true,
-                Major = "材料科学与工程系",
-                Group = 1,
-                EntranceDate = DateTime.Parse("2000-09-01")
-            };
+                var model = new Student
+                {
+                    Id = 101,
+                    Name = "张萍萍",
+                    Gender = 0,
+                    EntranceYear = 2000,
+                    AtSchool = true,
+                    Major = "材料科学与工程系",
+                    Group = 1,
+                    EntranceDate = DateTime.Parse("2000-09-01")
+                };
 
-            Student = model;
+                Student = model;
 
-            // 页面初始化时赋值
-            UserRoleId = 101;
-            UserRoleName = "系统管理员";
+                // 页面初始化时赋值
+                UserRoleId = 101;
+                UserRoleName = "系统管理员";
+            }
         }
 
         public void btnModifyHiddenProperty_Click(object sender, EventArgs e)

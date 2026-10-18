@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class LoginModelModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
             //CurrentUser = new User { 
             //    UserName = "<b>BBB</b>",

@@ -12,13 +12,16 @@ namespace FineUI.Core.Examples.Pages.DataModel
 
     public partial class UICompareModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
-            TheModel = new Models.UICompareModel()
+            if (!IsPostBack)
             {
-                StartDate = DateTime.Now,
-                Number1 = 30
-            };
+                TheModel = new Models.UICompareModel()
+                {
+                    StartDate = DateTime.Now,
+                    Number1 = 30
+                };
+            }
         }
 
         [BindProperty]

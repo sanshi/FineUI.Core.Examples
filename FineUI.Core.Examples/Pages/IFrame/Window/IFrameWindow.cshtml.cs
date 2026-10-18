@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.Pages.IFrame.Window
 {
     public partial class IFrameWindowModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
             PageManager.Instance.EnableFormChangeConfirm = true;
         }

@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     public partial class CheckBoxListModel : BaseModel
     {
         /// <summary>
-        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Get 中装载的输入模型。
+        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Init 中装载的输入模型。
         /// </summary>
         public CheckItem[] GetDeclaredCheckItems()
         {
@@ -35,7 +35,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
         }
 
         /// <summary>
-        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Get 中装载的输入模型。
+        /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Init 中装载的输入模型。
         /// </summary>
         public RadioItem[] GetDeclaredRadioItems()
         {
@@ -56,21 +56,24 @@ namespace FineUI.Core.Examples.Pages.DataModel
             }.ToArray();
         }
 
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
-            var model = new Models.CheckBoxListModel();
-            model.IsChecked = true;
-            model.CheckBoxList1 = new string[] { "Value1", "Value3" };
-            model.CheckBoxList1Items = GetDeclaredCheckItems().ToList();
+            if (!IsPostBack)
+            {
+                var model = new Models.CheckBoxListModel();
+                model.IsChecked = true;
+                model.CheckBoxList1 = new string[] { "Value1", "Value3" };
+                model.CheckBoxList1Items = GetDeclaredCheckItems().ToList();
 
-            model.RadioButtonList1 = "Value1";
-            model.RadioButton1Items = GetDeclaredRadioItems().ToList();
+                model.RadioButtonList1 = "Value1";
+                model.RadioButton1Items = GetDeclaredRadioItems().ToList();
 
-            model.Gender = 0;
+                model.Gender = 0;
 
-            model.GenderType = GenderType.Woman;
+                model.GenderType = GenderType.Woman;
 
-            TheModel = model;
+                TheModel = model;
+            }
         }
 
         [BindProperty]

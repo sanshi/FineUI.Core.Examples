@@ -14,10 +14,6 @@ namespace FineUI.Core.Examples.Pages.MultiLang
 {
     public partial class LoginModel : BaseMultilangModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-            
-        }
 
         public void btnLogin_Click(object sender, EventArgs e)
         {

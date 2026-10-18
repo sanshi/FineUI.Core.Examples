@@ -12,10 +12,6 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class ComplexPropertyModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-            
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

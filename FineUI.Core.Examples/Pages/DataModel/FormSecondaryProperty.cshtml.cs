@@ -13,28 +13,31 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class FormSecondaryPropertyModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
-            var model = new Student
+            if (!IsPostBack)
             {
-                Id = 101,
-                Name = "张萍萍",
-                Gender = 0,
-                EntranceYear = 2000,
-                AtSchool = true,
-                Major = "材料科学与工程系",
-                Group = 1,
-                EntranceDate = DateTime.Parse("2000-09-01"),
-                Score = new Score
+                var model = new Student
                 {
-                    Chinese = 80,
-                    Math = 100,
-                    Physics = 88,
-                    Chemistry = 79
-                }
-            };
+                    Id = 101,
+                    Name = "张萍萍",
+                    Gender = 0,
+                    EntranceYear = 2000,
+                    AtSchool = true,
+                    Major = "材料科学与工程系",
+                    Group = 1,
+                    EntranceDate = DateTime.Parse("2000-09-01"),
+                    Score = new Score
+                    {
+                        Chinese = 80,
+                        Math = 100,
+                        Physics = 88,
+                        Chemistry = 79
+                    }
+                };
 
-            Student = model;
+                Student = model;
+            }
         }
 
         [BindProperty]

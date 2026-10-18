@@ -10,9 +10,5 @@ namespace FineUI.Core.Examples.Pages.Home
 {
     public partial class SourceFileModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-
-        }
     }
 }

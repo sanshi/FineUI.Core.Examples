@@ -11,7 +11,6 @@
     <f:SimpleForm IsFluid="true" ID="SimpleForm1" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="编辑学生">
         <Items>
             @* 编辑目标的主键：随回发一起提交，供保存时按主键重新读出实体 *@
-            <f:HiddenField For="Student.Id"></f:HiddenField>
             @* 只读展示：Label 是展示型控件，不参与回发绑定。首屏由 OnGet 加载的实体填值；
                保存时事件处理器不覆盖分组，故数据源里的原值保持不变 *@
             <f:Label For="Student.Group"></f:Label>

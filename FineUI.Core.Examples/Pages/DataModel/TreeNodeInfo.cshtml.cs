@@ -13,10 +13,6 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class TreeNodeInfoModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-
-        }
 
         [BindProperty]
         public IList<TreeNodeInfo> CheckedNodes { get; set; }

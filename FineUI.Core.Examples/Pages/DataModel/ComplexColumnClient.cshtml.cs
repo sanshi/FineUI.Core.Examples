@@ -11,10 +11,6 @@ namespace FineUI.Core.Examples.Pages.DataModel
     
     public partial class ComplexColumnClientModel : BaseModel
     {
-        public void Page_Get(object sender, EventArgs e)
-        {
-            
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

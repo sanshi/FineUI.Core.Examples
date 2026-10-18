@@ -18,12 +18,12 @@ namespace FineUI.Core.Examples.Pages.Mobile
         };
 
         /// <summary>
-        /// 首屏菜单的 JSON 文本，由 Page_Get 从菜单 XML 生成。默认空数组；序列化时转义菜单文字，
+        /// 首屏菜单的 JSON 文本，由 Page_Init 从菜单 XML 生成。默认空数组；序列化时转义菜单文字，
         /// 避免其中的 &lt;/script&gt; 提前结束页面上的非执行 JSON 数据块。
         /// </summary>
         public string MenuSourceJson { get; private set; } = "[]";
 
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
             // 页面模板会直接读取 MenuSourceJson，先组装菜单，再序列化成可安全输出的数据。
             XmlDocument doc = DataSourceUtil.LoadXml("~/wwwroot/res/menu.xml");

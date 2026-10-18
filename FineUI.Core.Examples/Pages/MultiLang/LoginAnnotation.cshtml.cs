@@ -15,7 +15,7 @@ namespace FineUI.Core.Examples.Pages.MultiLang
     public partial class LoginAnnotationModel : BaseMultilangModel
     {
 
-        public void Page_Get(object sender, EventArgs e)
+        public void Page_Init(object sender, EventArgs e)
         {
             //CurrentUser = new User { 
             //    UserName = "<b>BBB</b>",
