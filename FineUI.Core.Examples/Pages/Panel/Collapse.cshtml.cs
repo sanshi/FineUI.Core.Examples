@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Panel
 {
-    public partial class CollapseModel : BaseModel
+    public partial class CollapseModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

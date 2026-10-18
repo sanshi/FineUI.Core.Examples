@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class HtmlEditorModel : BaseThirdPartyEditorModel
+    public partial class HtmlEditorModel : ThirdPartyEditorPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

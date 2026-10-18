@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridDataUrl
 {
-    public partial class RowButtonModel : BaseModel
+    public partial class RowButtonModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

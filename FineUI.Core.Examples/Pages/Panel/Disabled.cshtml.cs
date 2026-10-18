@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Panel
 {
-    public partial class DisabledModel : BaseModel
+    public partial class DisabledModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

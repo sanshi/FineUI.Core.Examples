@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridRowGroup
 {
-    public partial class DatabaseSortingModel : BaseModel
+    public partial class DatabaseSortingModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.FormLayout
 {
-    public partial class LayoutCenterLabelModel : BaseModel
+    public partial class LayoutCenterLabelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

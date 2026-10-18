@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.FormTable
 {
-    public partial class TableStyleLayoutInfoModel : BaseModel
+    public partial class TableStyleLayoutInfoModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

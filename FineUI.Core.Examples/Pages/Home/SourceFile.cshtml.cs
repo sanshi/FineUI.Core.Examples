@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Home
 {
-    public partial class SourceFileModel : BaseModel
+    public partial class SourceFileModel : PageBase
     {
     }
 }

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridRowHeight
 {
-    public partial class Grid100Model : BaseModel
+    public partial class Grid100Model : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

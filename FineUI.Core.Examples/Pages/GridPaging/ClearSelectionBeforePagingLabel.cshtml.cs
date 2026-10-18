@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridPaging
 {
-    public partial class ClearSelectionBeforePagingLabelModel : BaseModel
+    public partial class ClearSelectionBeforePagingLabelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class DateParseStringModel : BaseModel
+    public partial class DateParseStringModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

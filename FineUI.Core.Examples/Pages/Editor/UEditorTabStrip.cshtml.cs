@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Editor
 {
-    public partial class UEditorTabStripModel : BaseThirdPartyEditorModel
+    public partial class UEditorTabStripModel : ThirdPartyEditorPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

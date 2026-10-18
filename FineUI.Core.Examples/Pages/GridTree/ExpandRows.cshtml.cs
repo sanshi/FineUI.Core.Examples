@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridTree
 {
-    public partial class ExpandRowsModel : BaseModel
+    public partial class ExpandRowsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

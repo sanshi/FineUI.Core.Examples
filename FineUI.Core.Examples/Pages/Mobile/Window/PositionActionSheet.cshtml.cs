@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Window
 {
-    public partial class PositionActionSheetModel : BaseMobileModel
+    public partial class PositionActionSheetModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

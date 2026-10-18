@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.IFrame.Window
 {
-    public partial class IFrameWindowModel : BaseModel
+    public partial class IFrameWindowModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace FineUI.Core.Examples
 {
     /// <summary>
-    /// 含文件上传的示例页基类：在 <see cref="BaseModel"/> 之上补「安全上传」便捷方法
+    /// 含文件上传的示例页基类：在 <see cref="PageBase"/> 之上补「安全上传」便捷方法
     /// （校验、保存到 wwwroot 之外、生成公共下载地址），供上传类示例页复用。
     /// 具体实现都在 <see cref="UploadStorage"/> 里，本类只是页面侧的门面。
     /// </summary>
-    public class BaseUploadModel : BaseModel
+    public class UploadPageBase : PageBase
     {
         /// <summary>
         /// 对上传文件做校验：扩展名白名单 + 文件大小上限。

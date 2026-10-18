@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.IFrame.ParentWindowClose
 {
-    public partial class IFrameWindow1Model : BaseModel
+    public partial class IFrameWindow1Model : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

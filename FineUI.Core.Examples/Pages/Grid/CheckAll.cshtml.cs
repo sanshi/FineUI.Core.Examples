@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class CheckAllModel : BaseModel
+    public partial class CheckAllModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

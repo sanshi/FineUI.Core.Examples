@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Message
 {
-    public partial class AlertDownloadHideModel : BaseModel
+    public partial class AlertDownloadHideModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

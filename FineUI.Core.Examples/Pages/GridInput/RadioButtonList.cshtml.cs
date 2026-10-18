@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridInput
 {
-    public partial class RadioButtonListModel : BaseModel
+    public partial class RadioButtonListModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.CSP
 {
-    public partial class GridModel : BaseModel
+    public partial class GridModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

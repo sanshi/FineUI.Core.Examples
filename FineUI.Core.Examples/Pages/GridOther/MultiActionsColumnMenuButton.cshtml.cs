@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class MultiActionsColumnMenuButtonModel : BaseModel
+    public partial class MultiActionsColumnMenuButtonModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

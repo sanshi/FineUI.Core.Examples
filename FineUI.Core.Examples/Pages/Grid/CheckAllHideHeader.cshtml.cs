@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class CheckAllHideHeaderModel : BaseModel
+    public partial class CheckAllHideHeaderModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

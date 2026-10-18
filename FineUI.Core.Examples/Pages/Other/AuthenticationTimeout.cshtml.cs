@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class AuthenticationTimeoutModel : BaseModel
+    public partial class AuthenticationTimeoutModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

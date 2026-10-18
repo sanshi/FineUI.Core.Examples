@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class BorderColorSeparatedModel : BaseModel
+    public partial class BorderColorSeparatedModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

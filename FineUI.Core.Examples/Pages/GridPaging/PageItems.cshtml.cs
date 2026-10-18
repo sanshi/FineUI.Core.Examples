@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridPaging
 {
-    public partial class PageItemsModel : BaseModel
+    public partial class PageItemsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Form
 {
-    public partial class LoginValidateMessageBoxPlainModel : BaseMobileModel
+    public partial class LoginValidateMessageBoxPlainModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarMonthRangeModel : BaseModel
+    public partial class CalendarMonthRangeModel : PageBase
     {
         private DateTime startDate = DateTime.Now.AddMonths(2);
         private DateTime endDate = DateTime.Now.AddMonths(10);

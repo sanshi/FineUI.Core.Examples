@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Animation
 {
-    public partial class FadeModel : BaseMobileModel
+    public partial class FadeModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

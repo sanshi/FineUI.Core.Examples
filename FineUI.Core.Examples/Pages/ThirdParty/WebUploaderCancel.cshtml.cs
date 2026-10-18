@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.ThirdParty
 {
-    public partial class WebUploaderCancelModel : BaseWebUploaderModel
+    public partial class WebUploaderCancelModel : WebUploaderPageBase
     {
         private static readonly string KEY_FOR_DATASOURCE_SESSION = "webuploader.webuploader_cancel";
 

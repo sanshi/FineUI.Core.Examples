@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarTimeRangeModel : BaseModel
+    public partial class CalendarTimeRangeModel : PageBase
     {
         public static readonly string Calendar1DateFormatString = "HH:mm:ss";
 

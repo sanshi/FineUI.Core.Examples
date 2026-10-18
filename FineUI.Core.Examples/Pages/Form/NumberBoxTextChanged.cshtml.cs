@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class NumberBoxTextChangedModel : BaseModel
+    public partial class NumberBoxTextChangedModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

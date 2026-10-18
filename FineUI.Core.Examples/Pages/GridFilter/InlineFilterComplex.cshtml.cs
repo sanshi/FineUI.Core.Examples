@@ -6,7 +6,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridFilter
 {
-    public partial class InlineFilterComplexModel : BaseModel
+    public partial class InlineFilterComplexModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

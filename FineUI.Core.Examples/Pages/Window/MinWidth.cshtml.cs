@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Window
 {
-    public partial class MinWidthModel : BaseModel
+    public partial class MinWidthModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

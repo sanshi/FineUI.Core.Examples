@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.GridBigData
 {
-    public partial class BigData10000PagingDatabaseModel : BaseModel
+    public partial class BigData10000PagingDatabaseModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

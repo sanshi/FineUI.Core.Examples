@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class LoginModel : BaseModel
+    public partial class LoginModel : PageBase
     {
         
         public void btnLogin_Click(object sender, EventArgs e)

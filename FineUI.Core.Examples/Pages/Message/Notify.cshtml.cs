@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Message
 {
-    public partial class NotifyModel : BaseModel
+    public partial class NotifyModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

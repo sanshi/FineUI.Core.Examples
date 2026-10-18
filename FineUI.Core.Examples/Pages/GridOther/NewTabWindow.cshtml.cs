@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class NewTabWindowModel : BaseThirdPartyEditorModel
+    public partial class NewTabWindowModel : ThirdPartyEditorPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

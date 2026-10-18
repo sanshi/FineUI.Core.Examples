@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class ExcelInputModel : BaseModel
+    public partial class ExcelInputModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

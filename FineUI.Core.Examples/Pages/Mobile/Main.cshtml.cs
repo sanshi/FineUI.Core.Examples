@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Mobile
 {
-    public partial class MainModel : BaseMobileModel
+    public partial class MainModel : MobilePageBase
     {
         private static readonly JsonSerializerSettings ScriptDataSettings = new JsonSerializerSettings
         {

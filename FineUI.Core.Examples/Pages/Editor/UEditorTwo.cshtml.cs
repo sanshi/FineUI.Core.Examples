@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Editor
 {
-    public partial class UEditorTwoModel : BaseThirdPartyEditorModel
+    public partial class UEditorTwoModel : ThirdPartyEditorPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

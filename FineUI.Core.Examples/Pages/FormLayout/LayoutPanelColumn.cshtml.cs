@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.FormLayout
 {
-    public partial class LayoutPanelColumnModel : BaseModel
+    public partial class LayoutPanelColumnModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

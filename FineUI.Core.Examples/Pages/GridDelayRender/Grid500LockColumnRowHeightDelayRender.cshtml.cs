@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridDelayRender
 {
-    public partial class Grid500LockColumnRowHeightDelayRenderModel : BaseModel
+    public partial class Grid500LockColumnRowHeightDelayRenderModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

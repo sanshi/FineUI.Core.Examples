@@ -7,7 +7,7 @@ namespace FineUI.Core.Examples
     /// 这些页面在首次打开时通过 Page_Init 关闭本页 CSP。仅实际加载编辑器的页面继承此类，
     /// 打开编辑窗口的外层页面仍使用全局严格策略。
     /// </summary>
-    public abstract class BaseThirdPartyEditorModel : BaseModel
+    public abstract class ThirdPartyEditorPageBase : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

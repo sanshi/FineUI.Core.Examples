@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class TreeNodeExpandModel : BaseModel
+    public partial class TreeNodeExpandModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

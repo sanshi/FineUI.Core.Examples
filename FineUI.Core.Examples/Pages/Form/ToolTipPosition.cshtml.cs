@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class ToolTipPositionModel : BaseModel
+    public partial class ToolTipPositionModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class TreeNodeCssClassModel : BaseModel
+    public partial class TreeNodeCssClassModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

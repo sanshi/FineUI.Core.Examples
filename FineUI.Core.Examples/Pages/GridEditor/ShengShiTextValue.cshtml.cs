@@ -11,7 +11,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class ShengShiTextValueModel : BaseModel
+    public partial class ShengShiTextValueModel : PageBase
     {
         /// <summary>
         /// 省代码、名称及各省城市列表，由模板的数据块输出。模板执行早于 Page_Load，读取属性时直接准备固定数据，保证首次渲染就能显示名称。

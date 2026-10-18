@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class RadioButtonCustomTextStyleModel : BaseModel
+    public partial class RadioButtonCustomTextStyleModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

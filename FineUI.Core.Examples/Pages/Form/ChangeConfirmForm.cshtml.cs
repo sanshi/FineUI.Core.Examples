@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class ChangeConfirmFormModel : BaseModel
+    public partial class ChangeConfirmFormModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

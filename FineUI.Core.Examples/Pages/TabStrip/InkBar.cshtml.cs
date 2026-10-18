@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class InkBarModel : BaseModel
+    public partial class InkBarModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

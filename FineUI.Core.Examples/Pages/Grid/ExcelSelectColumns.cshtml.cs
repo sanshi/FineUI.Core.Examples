@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class ExcelSelectColumnsModel : BaseModel
+    public partial class ExcelSelectColumnsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

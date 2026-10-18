@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace FineUI.Core.Examples.Pages
 {
-    public partial class IndexModel : BaseModel
+    public partial class IndexModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

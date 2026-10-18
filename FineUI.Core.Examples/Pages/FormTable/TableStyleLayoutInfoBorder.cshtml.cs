@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.FormTable
 {
-    public partial class TableStyleLayoutInfoBorderModel : BaseModel
+    public partial class TableStyleLayoutInfoBorderModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

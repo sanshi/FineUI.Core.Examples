@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Button
 {
-    public partial class ButtonMenuIDModel : BaseModel
+    public partial class ButtonMenuIDModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

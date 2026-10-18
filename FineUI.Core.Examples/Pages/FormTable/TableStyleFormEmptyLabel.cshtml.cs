@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.FormTable
 {
-    public partial class TableStyleFormEmptyLabelModel : BaseModel
+    public partial class TableStyleFormEmptyLabelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

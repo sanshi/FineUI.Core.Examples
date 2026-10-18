@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace FineUI.Core.Examples.Pages.MultiLang
 {
-    public partial class GridModel : BaseMultilangModel
+    public partial class GridModel : MultilangPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

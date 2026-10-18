@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.DropDownList
 {
-    public partial class MultiSelectTagsSelectedIndexChangedModel : BaseModel
+    public partial class MultiSelectTagsSelectedIndexChangedModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

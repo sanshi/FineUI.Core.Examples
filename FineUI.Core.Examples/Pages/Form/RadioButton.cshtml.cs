@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class RadioButtonModel : BaseModel
+    public partial class RadioButtonModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

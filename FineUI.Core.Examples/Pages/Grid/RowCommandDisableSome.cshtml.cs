@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class RowCommandDisableSomeModel : BaseModel
+    public partial class RowCommandDisableSomeModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

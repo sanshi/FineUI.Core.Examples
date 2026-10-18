@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class TwinTriggerBoxClearIconModel : BaseModel
+    public partial class TwinTriggerBoxClearIconModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

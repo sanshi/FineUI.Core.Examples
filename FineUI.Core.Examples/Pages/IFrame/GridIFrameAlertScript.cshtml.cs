@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.IFrame
 {
-    public partial class GridIFrameAlertScriptModel : BaseModel
+    public partial class GridIFrameAlertScriptModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

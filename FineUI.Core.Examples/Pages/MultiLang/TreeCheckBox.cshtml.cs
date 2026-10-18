@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.MultiLang
 {
-    public partial class TreeCheckBoxModel : BaseMultilangModel
+    public partial class TreeCheckBoxModel : MultilangPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

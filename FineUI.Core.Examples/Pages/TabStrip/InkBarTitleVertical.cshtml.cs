@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class InkBarTitleVerticalModel : BaseModel
+    public partial class InkBarTitleVerticalModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

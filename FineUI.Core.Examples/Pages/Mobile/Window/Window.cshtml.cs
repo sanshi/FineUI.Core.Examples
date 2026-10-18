@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Window
 {
-    public partial class WindowModel : BaseMobileModel
+    public partial class WindowModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

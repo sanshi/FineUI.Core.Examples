@@ -10,7 +10,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class CheckBoxListModel : BaseModel
+    public partial class CheckBoxListModel : PageBase
     {
         /// <summary>
         /// 固定选项每轮从服务器声明取得，不依赖只在 Page_Init 中装载的输入模型。

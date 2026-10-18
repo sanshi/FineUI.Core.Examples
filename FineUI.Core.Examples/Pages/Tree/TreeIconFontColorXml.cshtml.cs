@@ -11,7 +11,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class TreeIconFontColorXmlModel : BaseModel
+    public partial class TreeIconFontColorXmlModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

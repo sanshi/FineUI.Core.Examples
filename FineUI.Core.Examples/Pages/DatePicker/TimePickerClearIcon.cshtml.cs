@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class TimePickerClearIconModel : BaseModel
+    public partial class TimePickerClearIconModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

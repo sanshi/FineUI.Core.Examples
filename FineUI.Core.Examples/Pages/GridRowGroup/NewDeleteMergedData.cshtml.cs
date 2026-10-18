@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridRowGroup
 {
-    public partial class NewDeleteMergedDataModel : BaseModel
+    public partial class NewDeleteMergedDataModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

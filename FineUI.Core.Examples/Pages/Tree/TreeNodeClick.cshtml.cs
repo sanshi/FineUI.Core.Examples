@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class TreeNodeClickModel : BaseModel
+    public partial class TreeNodeClickModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

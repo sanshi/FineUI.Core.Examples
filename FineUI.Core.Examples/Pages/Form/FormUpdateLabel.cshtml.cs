@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FormUpdateLabelModel : BaseModel
+    public partial class FormUpdateLabelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

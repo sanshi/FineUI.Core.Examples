@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class AddTabRemoveOnCloseModel : BaseModel
+    public partial class AddTabRemoveOnCloseModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

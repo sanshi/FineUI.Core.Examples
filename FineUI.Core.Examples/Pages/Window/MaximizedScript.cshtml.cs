@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Window
 {
-    public partial class MaximizedScriptModel : BaseModel
+    public partial class MaximizedScriptModel : PageBase
     {
         protected void btnServerMaximize_Click(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridDataUrl
 {
-    public partial class ChangeDataUrlModel : BaseModel
+    public partial class ChangeDataUrlModel : PageBase
     {
         protected void btnReload_Click(object sender, EventArgs e)
         {

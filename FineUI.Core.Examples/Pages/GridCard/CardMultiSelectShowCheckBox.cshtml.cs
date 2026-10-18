@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.Pages.GridCard
 {
-    public partial class CardMultiSelectShowCheckBoxModel : BaseModel
+    public partial class CardMultiSelectShowCheckBoxModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

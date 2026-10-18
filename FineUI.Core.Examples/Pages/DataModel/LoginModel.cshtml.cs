@@ -11,7 +11,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class LoginModelModel : BaseModel
+    public partial class LoginModelModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

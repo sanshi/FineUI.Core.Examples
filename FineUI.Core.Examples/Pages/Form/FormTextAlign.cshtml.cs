@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FormTextAlignModel : BaseModel
+    public partial class FormTextAlignModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

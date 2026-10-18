@@ -10,7 +10,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
 
-    public partial class UICompareModel : BaseModel
+    public partial class UICompareModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

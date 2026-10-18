@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Panel
 {
-    public partial class PanelIFrameModel : BaseMobileModel
+    public partial class PanelIFrameModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

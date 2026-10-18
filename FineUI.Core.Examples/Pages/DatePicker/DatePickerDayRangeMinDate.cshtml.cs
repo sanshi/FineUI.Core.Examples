@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class DatePickerDayRangeMinDateModel : BaseModel
+    public partial class DatePickerDayRangeMinDateModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class RadioButtonListImageItemModel : BaseModel
+    public partial class RadioButtonListImageItemModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.DropDownList
 {
-    public partial class ShengShiXianModel : BaseModel
+    public partial class ShengShiXianModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

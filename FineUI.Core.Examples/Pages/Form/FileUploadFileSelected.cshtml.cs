@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FileUploadFileSelectedModel : BaseUploadModel
+    public partial class FileUploadFileSelectedModel : UploadPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

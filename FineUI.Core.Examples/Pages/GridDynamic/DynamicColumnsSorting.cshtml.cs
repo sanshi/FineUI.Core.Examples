@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridDynamic
 {
-    public partial class DynamicColumnsSortingModel : BaseModel
+    public partial class DynamicColumnsSortingModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

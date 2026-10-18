@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class NavModel : BaseModel
+    public partial class NavModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

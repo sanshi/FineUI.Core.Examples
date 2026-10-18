@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class ShengShiModel : BaseModel
+    public partial class ShengShiModel : PageBase
     {
         /// <summary>
         /// 省市编码及名称由模板输出到非执行 JSON 数据块，首次编辑时即可加载对应城市。

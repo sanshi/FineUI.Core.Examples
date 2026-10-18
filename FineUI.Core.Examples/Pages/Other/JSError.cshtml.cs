@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class JSErrorModel : BaseModel
+    public partial class JSErrorModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

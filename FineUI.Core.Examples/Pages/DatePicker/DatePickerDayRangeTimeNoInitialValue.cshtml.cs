@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class DatePickerDayRangeTimeNoInitialValueModel : BaseModel
+    public partial class DatePickerDayRangeTimeNoInitialValueModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

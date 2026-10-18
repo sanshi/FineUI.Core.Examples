@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class TreeNodeHyperLinkHashModel : BaseModel
+    public partial class TreeNodeHyperLinkHashModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

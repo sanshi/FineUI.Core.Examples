@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Toolbar
 {
-    public partial class MenuDynamicButtonModel : BaseModel
+    public partial class MenuDynamicButtonModel : PageBase
     {
         protected FineUI.Core.Button btnDynamic;
 

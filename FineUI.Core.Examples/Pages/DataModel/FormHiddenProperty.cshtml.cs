@@ -11,7 +11,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
 
-    public partial class FormHiddenPropertyModel : BaseModel
+    public partial class FormHiddenPropertyModel : PageBase
     {
         [BindProperty]
         public Student Student { get; set; }

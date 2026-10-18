@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class TreeModel : BaseModel
+    public partial class TreeModel : PageBase
     {
 
 

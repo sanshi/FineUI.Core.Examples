@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridDelayRender
 {
-    public partial class Grid500LockColumnRowHeightModel : BaseModel
+    public partial class Grid500LockColumnRowHeightModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

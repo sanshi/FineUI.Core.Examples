@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Window
 {
-    public partial class PositionShengShiXianModel : BaseMobileModel
+    public partial class PositionShengShiXianModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

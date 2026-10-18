@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridPaging
 {
-    public partial class PagerAutoSimpleModeModel : BaseModel
+    public partial class PagerAutoSimpleModeModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

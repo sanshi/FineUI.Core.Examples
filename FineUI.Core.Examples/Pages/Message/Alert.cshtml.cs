@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Message
 {
-    public partial class AlertModel : BaseModel
+    public partial class AlertModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

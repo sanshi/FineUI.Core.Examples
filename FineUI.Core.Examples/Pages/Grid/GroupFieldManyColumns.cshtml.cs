@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class GroupFieldManyColumnsModel : BaseModel
+    public partial class GroupFieldManyColumnsModel : PageBase
     {
         // 分组内部使用混合列宽，覆盖跨列分配时的累积舍入。
         private static readonly int[] LEAF_WIDTHS = { 70, 100, 110, 150 };

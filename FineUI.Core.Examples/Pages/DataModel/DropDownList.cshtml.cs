@@ -10,7 +10,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class DropDownListModel : BaseModel
+    public partial class DropDownListModel : PageBase
     {
         /// <summary>
         /// 固定选项每轮重新取得；回发绑定的用户选择仍保留，不覆盖 TheModel。

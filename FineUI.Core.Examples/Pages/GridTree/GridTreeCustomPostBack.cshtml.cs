@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.Pages.GridTree
 {
-    public partial class GridTreeCustomPostBackModel : BaseModel
+    public partial class GridTreeCustomPostBackModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

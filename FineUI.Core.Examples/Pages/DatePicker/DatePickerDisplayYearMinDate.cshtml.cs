@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class DatePickerDisplayYearMinDateModel : BaseModel
+    public partial class DatePickerDisplayYearMinDateModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

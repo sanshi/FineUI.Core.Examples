@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.CSP
 {
-    public partial class ButtonModel : BaseModel
+    public partial class ButtonModel : PageBase
     {
 
 

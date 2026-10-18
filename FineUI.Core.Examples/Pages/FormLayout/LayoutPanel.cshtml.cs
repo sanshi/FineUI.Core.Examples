@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.FormLayout
 {
-    public partial class LayoutPanelModel : BaseModel
+    public partial class LayoutPanelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 namespace FineUI.Core.Examples.Pages.MultiLang
 {
     
-    public partial class GridAnnotationModel : BaseMultilangModel
+    public partial class GridAnnotationModel : MultilangPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

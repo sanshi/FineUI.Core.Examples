@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.DataList
 {
-    public partial class DataListSelectedValueArrayKeepCurrentSelectionModel : BaseMobileModel
+    public partial class DataListSelectedValueArrayKeepCurrentSelectionModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

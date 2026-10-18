@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarYearRangeModel : BaseModel
+    public partial class CalendarYearRangeModel : PageBase
     {
         private int startYear = DateTime.Now.AddYears(2).Year;
         private int endYear = DateTime.Now.AddYears(10).Year;

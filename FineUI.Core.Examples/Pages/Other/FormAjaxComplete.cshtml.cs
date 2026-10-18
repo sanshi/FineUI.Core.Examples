@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class FormAjaxCompleteModel : BaseModel
+    public partial class FormAjaxCompleteModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

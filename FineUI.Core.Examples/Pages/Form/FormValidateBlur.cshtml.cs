@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FormValidateBlurModel : BaseModel
+    public partial class FormValidateBlurModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

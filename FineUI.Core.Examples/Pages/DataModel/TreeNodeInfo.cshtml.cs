@@ -11,7 +11,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class TreeNodeInfoModel : BaseModel
+    public partial class TreeNodeInfoModel : PageBase
     {
 
         [BindProperty]

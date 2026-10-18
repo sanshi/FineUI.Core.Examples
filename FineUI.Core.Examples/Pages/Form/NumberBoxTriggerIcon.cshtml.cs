@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class NumberBoxTriggerIconModel : BaseModel
+    public partial class NumberBoxTriggerIconModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

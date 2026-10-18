@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class SortingToolTipModel : BaseModel
+    public partial class SortingToolTipModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

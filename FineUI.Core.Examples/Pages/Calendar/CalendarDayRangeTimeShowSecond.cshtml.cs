@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarDayRangeTimeShowSecondModel : BaseModel
+    public partial class CalendarDayRangeTimeShowSecondModel : PageBase
     {
         private DateTime GetStartDate()
         {

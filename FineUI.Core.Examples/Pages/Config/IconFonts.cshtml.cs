@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Config
 {
-    public partial class IconFontsModel : BaseModel
+    public partial class IconFontsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

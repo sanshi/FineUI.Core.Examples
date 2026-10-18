@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Panel
 {
-    public partial class PanelModel : BaseModel
+    public partial class PanelModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

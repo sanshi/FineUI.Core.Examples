@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class GridNumberTrailingZeroModel : BaseModel
+    public partial class GridNumberTrailingZeroModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

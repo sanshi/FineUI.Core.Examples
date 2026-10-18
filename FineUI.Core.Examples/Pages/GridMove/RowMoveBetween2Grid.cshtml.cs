@@ -12,7 +12,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridMove
 {
-    public partial class RowMoveBetween2GridModel : BaseModel
+    public partial class RowMoveBetween2GridModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.DropDownList
 {
-    public partial class SelectedIndexChangedModel : BaseModel
+    public partial class SelectedIndexChangedModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

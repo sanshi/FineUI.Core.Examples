@@ -10,7 +10,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.Pages.GridTree
 {
-    public partial class CheckBoxHideSomeModel : BaseModel
+    public partial class CheckBoxHideSomeModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

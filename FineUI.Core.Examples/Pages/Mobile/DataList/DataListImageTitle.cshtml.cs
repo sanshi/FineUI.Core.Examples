@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.DataList
 {
-    public partial class DataListImageTitleModel : BaseMobileModel
+    public partial class DataListImageTitleModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

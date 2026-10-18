@@ -10,7 +10,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.MultiLang
 {
 
-    public partial class UICompareAnnotationModel : BaseMultilangModel
+    public partial class UICompareAnnotationModel : MultilangPageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

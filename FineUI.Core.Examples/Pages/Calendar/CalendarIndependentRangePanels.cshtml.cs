@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarIndependentRangePanelsModel : BaseModel
+    public partial class CalendarIndependentRangePanelsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

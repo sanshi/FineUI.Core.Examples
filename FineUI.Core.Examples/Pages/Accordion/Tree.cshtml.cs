@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.Pages.Accordion
 {
-    public partial class TreeModel : BaseModel
+    public partial class TreeModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

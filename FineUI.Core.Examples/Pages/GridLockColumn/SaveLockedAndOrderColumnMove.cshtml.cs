@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridLockColumn
 {
-    public partial class SaveLockedAndOrderColumnMoveModel : BaseModel
+    public partial class SaveLockedAndOrderColumnMoveModel : PageBase
     {
         private static readonly JArray GRID_COLUMNCONFIG_DEFAULT = new JArray
         {

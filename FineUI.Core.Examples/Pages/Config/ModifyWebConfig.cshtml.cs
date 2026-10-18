@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Config
 {
-    public partial class ModifyWebConfigModel : BaseModel
+    public partial class ModifyWebConfigModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

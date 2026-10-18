@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.ThirdParty
 {
-    public partial class AutoCompleteMultiValuesModel : BaseModel
+    public partial class AutoCompleteMultiValuesModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

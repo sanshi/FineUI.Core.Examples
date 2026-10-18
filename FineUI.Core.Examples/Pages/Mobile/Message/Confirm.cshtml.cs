@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Message
 {
-    public partial class ConfirmModel : BaseMobileModel
+    public partial class ConfirmModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

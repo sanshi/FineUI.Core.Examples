@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class DataBindDocumentIconFontModel : BaseModel
+    public partial class DataBindDocumentIconFontModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

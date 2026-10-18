@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Message
 {
-    public partial class PromptModel : BaseMobileModel
+    public partial class PromptModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

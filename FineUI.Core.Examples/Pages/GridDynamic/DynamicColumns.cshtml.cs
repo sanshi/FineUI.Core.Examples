@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridDynamic
 {
-    public partial class DynamicColumnsModel : BaseModel
+    public partial class DynamicColumnsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

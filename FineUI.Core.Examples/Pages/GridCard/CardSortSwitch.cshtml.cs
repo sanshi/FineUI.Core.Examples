@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridCard
 {
-    public partial class CardSortSwitchModel : BaseModel
+    public partial class CardSortSwitchModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

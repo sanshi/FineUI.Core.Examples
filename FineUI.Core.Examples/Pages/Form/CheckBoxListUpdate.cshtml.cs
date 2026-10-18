@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class CheckBoxListUpdateModel : BaseModel
+    public partial class CheckBoxListUpdateModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

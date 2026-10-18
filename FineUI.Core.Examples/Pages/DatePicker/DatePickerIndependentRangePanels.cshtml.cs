@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class DatePickerIndependentRangePanelsModel : BaseModel
+    public partial class DatePickerIndependentRangePanelsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

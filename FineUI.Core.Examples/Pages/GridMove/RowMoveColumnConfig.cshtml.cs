@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridMove
 {
-    public partial class RowMoveColumnConfigModel : BaseModel
+    public partial class RowMoveColumnConfigModel : PageBase
     {
         private static readonly JArray GRID_COLUMNCONFIG_DEFAULT = new JArray
         {

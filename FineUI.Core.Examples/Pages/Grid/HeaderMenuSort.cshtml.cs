@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class HeaderMenuSortModel : BaseModel
+    public partial class HeaderMenuSortModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

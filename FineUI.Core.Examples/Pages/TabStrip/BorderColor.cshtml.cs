@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class BorderColorModel : BaseModel
+    public partial class BorderColorModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

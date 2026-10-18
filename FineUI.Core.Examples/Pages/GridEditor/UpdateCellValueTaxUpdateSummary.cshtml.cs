@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class UpdateCellValueTaxUpdateSummaryModel : BaseModel
+    public partial class UpdateCellValueTaxUpdateSummaryModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

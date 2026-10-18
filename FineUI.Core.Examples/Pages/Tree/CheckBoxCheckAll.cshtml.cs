@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Tree
 {
-    public partial class CheckBoxCheckAllModel : BaseModel
+    public partial class CheckBoxCheckAllModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

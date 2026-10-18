@@ -14,7 +14,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples
 {
-    public class BaseModel : PageModel
+    public class PageBase : PageModel
     {
         #region IsPostBack
 

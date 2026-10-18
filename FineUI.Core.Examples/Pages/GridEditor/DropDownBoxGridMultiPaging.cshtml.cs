@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class DropDownBoxGridMultiPagingModel : BaseModel
+    public partial class DropDownBoxGridMultiPagingModel : PageBase
     {
         /// <summary>
         /// 兴趣代码与名称的完整列表，分页编辑器用它显示其它分页中的名称。模板执行早于 Page_Load，读取时准备数据，并与本次请求的表格绑定共用同一份结果。

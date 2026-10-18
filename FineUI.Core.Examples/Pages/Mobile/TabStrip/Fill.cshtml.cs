@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Mobile.TabStrip
 {
-    public partial class FillModel : BaseMobileModel
+    public partial class FillModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

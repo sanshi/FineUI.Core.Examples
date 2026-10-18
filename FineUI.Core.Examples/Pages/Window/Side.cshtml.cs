@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Window
 {
-    public partial class SideModel : BaseModel
+    public partial class SideModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

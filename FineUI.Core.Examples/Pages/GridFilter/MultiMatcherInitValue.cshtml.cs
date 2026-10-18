@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridFilter
 {
-    public partial class MultiMatcherInitValueModel : BaseModel
+    public partial class MultiMatcherInitValueModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

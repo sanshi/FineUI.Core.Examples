@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class DatePickerTimeStackModel : BaseModel
+    public partial class DatePickerTimeStackModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

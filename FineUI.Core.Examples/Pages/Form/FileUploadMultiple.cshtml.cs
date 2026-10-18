@@ -6,7 +6,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FileUploadMultipleModel : BaseUploadModel
+    public partial class FileUploadMultipleModel : UploadPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

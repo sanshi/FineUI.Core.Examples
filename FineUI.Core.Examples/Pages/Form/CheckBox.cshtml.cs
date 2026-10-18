@@ -3,7 +3,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class CheckBoxModel : BaseModel
+    public partial class CheckBoxModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

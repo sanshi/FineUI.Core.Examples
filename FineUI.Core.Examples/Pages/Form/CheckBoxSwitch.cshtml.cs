@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class CheckBoxSwitchModel : BaseModel
+    public partial class CheckBoxSwitchModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

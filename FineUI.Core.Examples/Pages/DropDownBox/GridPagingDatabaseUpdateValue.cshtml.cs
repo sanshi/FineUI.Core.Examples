@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.DropDownBox
 {
-    public partial class GridPagingDatabaseUpdateValueModel : BaseModel
+    public partial class GridPagingDatabaseUpdateValueModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

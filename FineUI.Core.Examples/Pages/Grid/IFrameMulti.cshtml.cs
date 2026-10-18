@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class IFrameMultiModel : BaseModel
+    public partial class IFrameMultiModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

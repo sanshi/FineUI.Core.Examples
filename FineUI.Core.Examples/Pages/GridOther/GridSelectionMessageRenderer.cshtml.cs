@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class GridSelectionMessageRendererModel : BaseModel
+    public partial class GridSelectionMessageRendererModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

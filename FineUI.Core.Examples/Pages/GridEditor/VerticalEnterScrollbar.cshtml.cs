@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class VerticalEnterScrollbarModel : BaseModel
+    public partial class VerticalEnterScrollbarModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

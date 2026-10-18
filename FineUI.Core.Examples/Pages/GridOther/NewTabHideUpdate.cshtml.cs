@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class NewTabHideUpdateModel : BaseModel
+    public partial class NewTabHideUpdateModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

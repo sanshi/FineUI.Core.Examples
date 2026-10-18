@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarDayRangeMinDateModel : BaseModel
+    public partial class CalendarDayRangeMinDateModel : PageBase
     {
         private DateTime startDate = DateTime.Now.AddDays(2);
         private DateTime endDate = DateTime.Now.AddDays(20);

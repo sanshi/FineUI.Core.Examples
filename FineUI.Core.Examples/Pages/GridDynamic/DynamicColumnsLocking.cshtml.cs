@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridDynamic
 {
-    public partial class DynamicColumnsLockingModel : BaseModel
+    public partial class DynamicColumnsLockingModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

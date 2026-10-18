@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class PositionToolsTitleVerticalModel : BaseModel
+    public partial class PositionToolsTitleVerticalModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Mobile.Form
 {
-    public partial class LoginCustomErrorMessageModel : BaseMobileModel
+    public partial class LoginCustomErrorMessageModel : MobilePageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

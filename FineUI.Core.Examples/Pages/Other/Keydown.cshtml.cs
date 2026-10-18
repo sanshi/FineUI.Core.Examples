@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class KeydownModel : BaseModel
+    public partial class KeydownModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

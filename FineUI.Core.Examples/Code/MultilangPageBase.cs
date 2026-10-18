@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc.Localization;
 namespace FineUI.Core.Examples
 {
     /// <summary>
-    /// 多语言示例页基类：在 <see cref="BaseModel"/> 之上提供「按页面模型取多语言资源」的便捷方法。
+    /// 多语言示例页基类：在 <see cref="PageBase"/> 之上提供「按页面模型取多语言资源」的便捷方法。
     /// 只有多语言示例页需要，所以放在这一层而不是通用页面基类里。
     /// </summary>
-    public class BaseMultilangModel : BaseModel
+    public class MultilangPageBase : PageBase
     {
         private IHtmlLocalizer _localizer;
 

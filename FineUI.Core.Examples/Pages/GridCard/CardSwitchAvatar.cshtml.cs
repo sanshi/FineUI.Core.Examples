@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.GridCard
 {
-    public partial class CardSwitchAvatarModel : BaseModel
+    public partial class CardSwitchAvatarModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

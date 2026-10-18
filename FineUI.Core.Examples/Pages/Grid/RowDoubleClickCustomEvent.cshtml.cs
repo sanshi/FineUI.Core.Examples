@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class RowDoubleClickCustomEventModel : BaseModel
+    public partial class RowDoubleClickCustomEventModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

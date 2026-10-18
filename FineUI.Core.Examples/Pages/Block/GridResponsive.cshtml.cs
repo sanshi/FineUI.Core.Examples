@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Block
 {
-    public partial class GridResponsiveModel : BaseModel
+    public partial class GridResponsiveModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

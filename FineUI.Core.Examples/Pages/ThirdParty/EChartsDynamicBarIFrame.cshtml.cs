@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.ThirdParty
 {
-    public partial class EChartsDynamicBarIFrameModel : BaseModel
+    public partial class EChartsDynamicBarIFrameModel : PageBase
     {
         //public void OnGet()
         //{

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.Pages.Toolbar
 {
-    public partial class ToolbarButtonBadgeModel : BaseModel
+    public partial class ToolbarButtonBadgeModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

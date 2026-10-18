@@ -3,7 +3,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class LongPrecisionModel : BaseModel
+    public partial class LongPrecisionModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

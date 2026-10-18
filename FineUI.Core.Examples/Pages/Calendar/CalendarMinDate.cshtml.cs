@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarMinDateModel : BaseModel
+    public partial class CalendarMinDateModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

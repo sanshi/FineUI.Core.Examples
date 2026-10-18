@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.IFrame
 {
-    public partial class ParentWindowCloseModel : BaseModel
+    public partial class ParentWindowCloseModel : PageBase
     {
         protected void btnServerRefresh_Click(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridLockColumn
 {
-    public partial class GroupFieldModel : BaseModel
+    public partial class GroupFieldModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

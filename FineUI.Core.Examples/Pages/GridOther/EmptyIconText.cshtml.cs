@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class EmptyIconTextModel : BaseModel
+    public partial class EmptyIconTextModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

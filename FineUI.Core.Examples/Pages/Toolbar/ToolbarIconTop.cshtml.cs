@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.Pages.Toolbar
 {
-    public partial class ToolbarIconTopModel : BaseUploadModel
+    public partial class ToolbarIconTopModel : UploadPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

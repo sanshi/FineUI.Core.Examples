@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.DropDownBox
 {
-    public partial class GridSearchModel : BaseModel
+    public partial class GridSearchModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

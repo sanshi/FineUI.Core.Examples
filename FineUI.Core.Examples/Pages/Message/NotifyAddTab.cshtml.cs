@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Message
 {
-    public partial class NotifyAddTabModel : BaseModel
+    public partial class NotifyAddTabModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

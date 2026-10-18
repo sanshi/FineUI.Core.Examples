@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.CSP
 {
-    public partial class LinkButtonModel : BaseModel
+    public partial class LinkButtonModel : PageBase
     {
 
 

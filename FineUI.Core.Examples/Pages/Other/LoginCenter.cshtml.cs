@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class LoginCenterModel : BaseModel
+    public partial class LoginCenterModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

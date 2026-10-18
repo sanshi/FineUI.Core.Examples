@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class TabWidthModel : BaseModel
+    public partial class TabWidthModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

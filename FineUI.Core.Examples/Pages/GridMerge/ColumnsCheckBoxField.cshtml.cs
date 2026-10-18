@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridMerge
 {
-    public partial class ColumnsCheckBoxFieldModel : BaseModel
+    public partial class ColumnsCheckBoxFieldModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Home
 {
-    public partial class ThemesModel : BaseModel
+    public partial class ThemesModel : PageBase
     {
     }
 }

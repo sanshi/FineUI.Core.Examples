@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class CheckBoxListItemDataBoundModel : BaseModel
+    public partial class CheckBoxListItemDataBoundModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

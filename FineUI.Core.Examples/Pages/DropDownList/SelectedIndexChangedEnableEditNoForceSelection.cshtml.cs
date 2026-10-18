@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace FineUI.Core.Examples.Pages.DropDownList
 {
-    public partial class SelectedIndexChangedEnableEditNoForceSelectionModel : BaseModel
+    public partial class SelectedIndexChangedEnableEditNoForceSelectionModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

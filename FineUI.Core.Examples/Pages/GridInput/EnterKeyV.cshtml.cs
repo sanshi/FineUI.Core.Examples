@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridInput
 {
-    public partial class EnterKeyVModel : BaseModel
+    public partial class EnterKeyVModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

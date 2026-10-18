@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FormPrefixSuffixModel : BaseModel
+    public partial class FormPrefixSuffixModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

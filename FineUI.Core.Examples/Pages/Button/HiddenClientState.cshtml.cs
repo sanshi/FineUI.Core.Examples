@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Button
 {
-    public partial class HiddenClientStateModel : BaseModel
+    public partial class HiddenClientStateModel : PageBase
     {
         protected void btnReadOnServer_Click(object sender, EventArgs e)
         {

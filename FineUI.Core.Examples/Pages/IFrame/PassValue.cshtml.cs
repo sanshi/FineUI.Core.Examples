@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.IFrame
 {
-    public partial class PassValueModel : BaseModel
+    public partial class PassValueModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

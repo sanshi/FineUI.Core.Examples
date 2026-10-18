@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class ToolTipCellAttrsModel : BaseModel
+    public partial class ToolTipCellAttrsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

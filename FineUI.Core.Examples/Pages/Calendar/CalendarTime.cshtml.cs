@@ -3,7 +3,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Calendar
 {
-    public partial class CalendarTimeModel : BaseModel
+    public partial class CalendarTimeModel : PageBase
     {
         public static readonly string Calendar1DateFormatString = "yyyy-MM-dd HH:mm:ss";
 

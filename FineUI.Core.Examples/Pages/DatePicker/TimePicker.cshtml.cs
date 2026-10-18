@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.DatePicker
 {
-    public partial class TimePickerModel : BaseModel
+    public partial class TimePickerModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

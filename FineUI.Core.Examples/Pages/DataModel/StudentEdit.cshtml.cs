@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
     /// 会把已有数据清零），而要<b>按主键重新读出实体、只覆盖表单里出现过的字段</b>。
     /// </para>
     /// </summary>
-    public partial class StudentEditModel : BaseModel
+    public partial class StudentEditModel : PageBase
     {
         /// <summary>
         /// 表单绑定根：首屏填入数据库值；回发时保留用户提交的表单值。

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class StyleColumnClassModel : BaseModel
+    public partial class StyleColumnClassModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

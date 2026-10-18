@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class CheckFieldPostBackCustomEventModel : BaseModel
+    public partial class CheckFieldPostBackCustomEventModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

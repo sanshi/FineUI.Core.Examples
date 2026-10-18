@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Message
 {
-    public partial class ConfirmButtonsModel : BaseModel
+    public partial class ConfirmButtonsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

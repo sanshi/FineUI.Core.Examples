@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FormValidateValidatorParamsModel : BaseModel
+    public partial class FormValidateValidatorParamsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

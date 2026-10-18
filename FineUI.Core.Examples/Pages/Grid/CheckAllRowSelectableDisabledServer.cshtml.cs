@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class CheckAllRowSelectableDisabledServerModel : BaseModel
+    public partial class CheckAllRowSelectableDisabledServerModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

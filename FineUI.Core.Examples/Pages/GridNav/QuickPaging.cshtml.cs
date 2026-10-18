@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridNav
 {
-    public partial class QuickPagingModel : BaseModel
+    public partial class QuickPagingModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

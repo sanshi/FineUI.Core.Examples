@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.SignalR.Protocol;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class RowCommandModel : BaseModel
+    public partial class RowCommandModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FineUI.Core.Examples.Pages.GridMove
 {
-    public partial class RowMoveModel : BaseModel
+    public partial class RowMoveModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

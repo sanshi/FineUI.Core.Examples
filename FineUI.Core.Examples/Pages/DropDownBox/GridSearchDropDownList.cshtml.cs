@@ -7,7 +7,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.DropDownBox
 {
-    public partial class GridSearchDropDownListModel : BaseModel
+    public partial class GridSearchDropDownListModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class DropDownBoxGridMultiPagingServerHobbyModel : BaseModel
+    public partial class DropDownBoxGridMultiPagingServerHobbyModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

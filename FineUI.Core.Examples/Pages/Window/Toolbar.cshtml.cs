@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Window
 {
-    public partial class ToolbarModel : BaseModel
+    public partial class ToolbarModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

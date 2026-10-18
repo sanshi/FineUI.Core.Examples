@@ -9,7 +9,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.Pages.FormTable
 {
-    public partial class TableStyleFileUploadModel : BaseUploadModel
+    public partial class TableStyleFileUploadModel : UploadPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

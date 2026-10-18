@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class RowDataBoundServerModel : BaseModel
+    public partial class RowDataBoundServerModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

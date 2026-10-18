@@ -3,7 +3,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.GridCard
 {
-    public partial class CardPagingDatabaseModel : BaseModel
+    public partial class CardPagingDatabaseModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

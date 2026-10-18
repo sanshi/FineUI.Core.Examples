@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Other
 {
-    public partial class AjaxLoadingModel : BaseModel
+    public partial class AjaxLoadingModel : PageBase
     {
         public void Page_Init(object sender, EventArgs e)
         {

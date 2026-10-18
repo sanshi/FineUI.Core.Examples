@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Layout
 {
-    public partial class VBoxAutoHeightModel : BaseModel
+    public partial class VBoxAutoHeightModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

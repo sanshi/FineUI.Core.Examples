@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class CheckFieldPostBackModel : BaseModel
+    public partial class CheckFieldPostBackModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

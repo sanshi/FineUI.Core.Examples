@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.TabStrip
 {
-    public partial class PositionToolsModel : BaseModel
+    public partial class PositionToolsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

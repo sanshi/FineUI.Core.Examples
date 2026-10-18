@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class CheckBoxListAutoColumnWidthModel : BaseModel
+    public partial class CheckBoxListAutoColumnWidthModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

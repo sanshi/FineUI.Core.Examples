@@ -9,7 +9,7 @@ using FineUI.Core.Examples.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.Pages.DataModel
 {
     
-    public partial class ComplexColumnModel : BaseModel
+    public partial class ComplexColumnModel : PageBase
     {
 
 

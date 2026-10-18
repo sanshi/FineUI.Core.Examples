@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class DropDownBoxCheckBoxListModel : BaseModel
+    public partial class DropDownBoxCheckBoxListModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

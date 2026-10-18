@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Panel
 {
-    public partial class GroupModel : BaseModel
+    public partial class GroupModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

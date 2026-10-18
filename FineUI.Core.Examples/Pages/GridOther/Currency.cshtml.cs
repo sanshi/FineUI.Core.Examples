@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class CurrencyModel : BaseModel
+    public partial class CurrencyModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 
 namespace FineUI.Core.Examples.Pages.MultiLang
 {
-    public partial class LoginModel : BaseMultilangModel
+    public partial class LoginModel : MultilangPageBase
     {
 
         public void btnLogin_Click(object sender, EventArgs e)

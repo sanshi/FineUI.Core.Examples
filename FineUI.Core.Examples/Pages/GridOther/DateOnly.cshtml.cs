@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class DateOnlyModel : BaseModel
+    public partial class DateOnlyModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

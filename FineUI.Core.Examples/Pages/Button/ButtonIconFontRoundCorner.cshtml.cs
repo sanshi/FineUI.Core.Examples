@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Button
 {
-    public partial class ButtonIconFontRoundCornerModel : BaseModel
+    public partial class ButtonIconFontRoundCornerModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

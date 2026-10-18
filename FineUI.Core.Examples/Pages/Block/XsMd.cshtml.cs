@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Block
 {
-    public partial class XsMdModel : BaseModel
+    public partial class XsMdModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

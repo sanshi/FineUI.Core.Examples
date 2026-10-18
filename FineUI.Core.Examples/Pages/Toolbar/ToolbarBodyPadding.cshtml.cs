@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.Pages.Toolbar
 {
-    public partial class ToolbarBodyPaddingModel : BaseModel
+    public partial class ToolbarBodyPaddingModel : PageBase
     {
     }
 }

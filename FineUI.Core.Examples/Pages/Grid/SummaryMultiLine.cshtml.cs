@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class SummaryMultiLineModel : BaseModel
+    public partial class SummaryMultiLineModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

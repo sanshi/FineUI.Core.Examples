@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.GridEditor
 {
-    public partial class DynamicModel : BaseModel
+    public partial class DynamicModel : PageBase
     {
         /// <summary>
         /// 动态年份列使用的最小年份和最大年份。模板执行早于 Page_Load，直接读取本页固定范围，保证首次编辑时就能更新其余年份。

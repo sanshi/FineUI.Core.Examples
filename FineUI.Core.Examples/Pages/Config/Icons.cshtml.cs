@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Config
 {
-    public partial class IconsModel : BaseModel
+    public partial class IconsModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

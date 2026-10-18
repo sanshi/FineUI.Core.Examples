@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.SignalR.Protocol;
 
 namespace FineUI.Core.Examples.Pages.GridOther
 {
-    public partial class MultiActionsColumnModel : BaseModel
+    public partial class MultiActionsColumnModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

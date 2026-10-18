@@ -9,7 +9,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.Pages.Form
 {
-    public partial class FileUploadLoadingModel : BaseUploadModel
+    public partial class FileUploadLoadingModel : UploadPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

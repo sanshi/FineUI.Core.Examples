@@ -11,7 +11,7 @@ namespace FineUI.Core.Examples.Pages.DataModel
 {
     
     [NoRazorForms]
-    public partial class TwoGridLayoutModel : BaseModel
+    public partial class TwoGridLayoutModel : PageBase
     {
         public void OnGet()
         {

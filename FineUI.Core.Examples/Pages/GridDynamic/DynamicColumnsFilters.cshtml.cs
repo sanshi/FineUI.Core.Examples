@@ -7,7 +7,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.Pages.GridDynamic
 {
-    public partial class DynamicColumnsFiltersModel : BaseModel
+    public partial class DynamicColumnsFiltersModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

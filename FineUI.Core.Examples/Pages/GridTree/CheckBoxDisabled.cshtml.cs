@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.Pages.GridTree
 {
-    public partial class CheckBoxDisabledModel : BaseModel
+    public partial class CheckBoxDisabledModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

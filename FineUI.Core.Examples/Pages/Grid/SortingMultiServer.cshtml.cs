@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.Pages.Grid
 {
-    public partial class SortingMultiServerModel : BaseModel
+    public partial class SortingMultiServerModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
