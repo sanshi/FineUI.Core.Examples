@@ -16,9 +16,10 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
         {
             if (!IsPostBack)
             {
-                // 设置下拉框的初始值为自定义文本
-                DropDownBox1.Text = "JavaScript, 初始自定义值";
-                DropDownBox1.Values = new string[] { "js", "__USERINPUT_value1" };
+                // 一个真实选项和一个自定义标签按位置配对，初始自定义值不会误认作列表项。
+                DropDownBox1.SetSelection(
+                    new[] { "js", "__USERINPUT_value1" },
+                    new[] { "JavaScript", "初始自定义值" });
             }
         }
 
@@ -39,15 +40,24 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 
         protected void btnSelectItem6_Click(object sender, EventArgs e)
         {
-            // 后台更新下拉框的值，需要同时设置Text和Value
-            DropDownBox1.Texts = new string[] { "PHP", "Basic" };
-            DropDownBox1.Values = new string[] { "php", "basic" };
+            DropDownBox1.SetSelection(
+                new[] { "php", "basic" },
+                new[] { "PHP", "Basic" });
         }
 
         protected void btnSetText_Click(object sender, EventArgs e)
         {
-            DropDownBox1.Text = "用户输入值";
-            DropDownBox1.Values = new string[] { "__USERINPUT_value2" };
+            DropDownBox1.SetUserInput("用户输入值");
+        }
+
+        protected void btnSetCommaText_Click(object sender, EventArgs e)
+        {
+            DropDownBox1.SetUserInput("研发, 华东");
+        }
+
+        protected void btnClearSelection_Click(object sender, EventArgs e)
+        {
+            DropDownBox1.ClearSelection();
         }
 
 

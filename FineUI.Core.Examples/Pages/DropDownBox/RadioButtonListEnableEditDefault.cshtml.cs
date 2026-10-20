@@ -16,8 +16,7 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
         {
             if (!IsPostBack)
             {
-                // 设置下拉框的初始值为自定义文本
-                DropDownBox1.Text = "初始自定义值";
+                DropDownBox1.SetUserInput("初始自定义值");
             }
         }
 
@@ -38,14 +37,12 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 
         protected void btnSelectItem_Click(object sender, EventArgs e)
         {
-            DropDownBox1.Value = "js";
-            DropDownBox1.Text = "JavaScript";
+            DropDownBox1.SetSelection(new[] { "js" }, new[] { "JavaScript" });
         }
 
         protected void btnSetText_Click(object sender, EventArgs e)
         {
-            DropDownBox1.Text = "用户输入值";
-            DropDownBox1.Value = null;
+            DropDownBox1.SetUserInput("用户输入值");
         }
 
     }

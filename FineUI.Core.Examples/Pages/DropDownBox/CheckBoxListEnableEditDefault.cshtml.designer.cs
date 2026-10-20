@@ -12,6 +12,8 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 		protected FineUI.Core.CheckBoxList CheckBoxList1;
 		protected FineUI.Core.Button btnSelectItem6;
 		protected FineUI.Core.Button btnSetText;
+		protected FineUI.Core.Button btnSetCommaText;
+		protected FineUI.Core.Button btnClearSelection;
 		protected FineUI.Core.Button btnGetSelection;
 		protected FineUI.Core.Label labResult;
 	}
