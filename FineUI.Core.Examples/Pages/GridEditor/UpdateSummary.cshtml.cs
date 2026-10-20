@@ -28,7 +28,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         }
 
         // 合计行数据在客户端计算
-        //private JObject GetSummaryData(DataTable source)
+        //private JObject CalculateSummaryData(DataTable source)
         //{
         //    int chineseTotal = 0;
         //    int mathTotal = 0;

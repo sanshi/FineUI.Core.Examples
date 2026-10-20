@@ -31,10 +31,10 @@ namespace FineUI.Core.Examples.Pages.Grid
             Grid1.DataBind();
 
             // 3. 合计行数据
-            Grid1.SummaryData = GetSummaryData(pagedDataTable);
+            Grid1.SummaryData = CalculateSummaryData(pagedDataTable);
         }
 
-        private JObject GetSummaryData(DataTable source)
+        private JObject CalculateSummaryData(DataTable source)
         {
             float extraFeeTotal = 0.0f;
             float feeTotal = 0.0f;

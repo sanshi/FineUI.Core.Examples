@@ -14,7 +14,7 @@ namespace FineUI.Core.Examples.Pages.Grid
                 LoadData();
 
                 // 合计行数据
-                Grid1.SummaryData = GetSummaryData();
+                Grid1.SummaryData = CalculateSummaryData();
             }
         }
 
@@ -33,7 +33,7 @@ namespace FineUI.Core.Examples.Pages.Grid
             Grid1.DataBind();
         }
 
-        private JObject GetSummaryData()
+        private JObject CalculateSummaryData()
         {
             DataTable source = DataSourceUtil.GetDataTable2();
 

@@ -47,13 +47,13 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
             // 只在请求第一页数据时计算合计行数据
             if (pageIndex == 0)
             {
-                result.Add("summaryData", GetSummaryData());
+                result.Add("summaryData", CalculateSummaryData());
             }
 
             return Content(result.ToString(Newtonsoft.Json.Formatting.None));
         }
 
-        private JObject GetSummaryData()
+        private JObject CalculateSummaryData()
         {
             DataTable source = DataSourceUtil.GetDataTable2();
 

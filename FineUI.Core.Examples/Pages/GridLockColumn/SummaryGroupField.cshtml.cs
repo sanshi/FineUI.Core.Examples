@@ -35,10 +35,10 @@ namespace FineUI.Core.Examples.Pages.GridLockColumn
             Grid1.DataBind();
 
             // 3. 合计行数据
-            Grid1.SummaryData = GetSummaryData();
+            Grid1.SummaryData = CalculateSummaryData();
         }
 
-        private JObject GetSummaryData()
+        private JObject CalculateSummaryData()
         {
             DataTable source = DataSourceUtil.GetDataTable2();
 

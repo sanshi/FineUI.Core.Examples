@@ -37,11 +37,11 @@ namespace FineUI.Core.Examples.Pages.GridTree
             Grid1.DataBind();
 
             // 3. 合计行数据
-            Grid1.SummaryData = GetSummaryData(pagedData);
+            Grid1.SummaryData = CalculateSummaryData(pagedData);
         }
 
 
-        private JObject GetSummaryData(DataTable paged)
+        private JObject CalculateSummaryData(DataTable paged)
         {
             int totalSize = 0;
             int totalFileCount = 0;
