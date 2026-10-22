@@ -8,11 +8,14 @@
 
 @section body {
 
+    <f:Button ID="btnCheckColumns" Text="读取后台列数" OnClick="btnCheckColumns_Click" />
+
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="多级分组表头 + 大量列（约 425 列，验证表头/表体列线对齐）" DataIDField="Id" IsViewPort="true"
             AllowColumnLocking="true" EnableColumnLines="true">
         <Columns>
             <f:RowNumberField />
         </Columns>
     </f:Grid>
+
 
 }

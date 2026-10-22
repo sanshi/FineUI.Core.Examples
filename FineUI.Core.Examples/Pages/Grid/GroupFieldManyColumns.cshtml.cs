@@ -27,6 +27,13 @@ namespace FineUI.Core.Examples.Pages.Grid
             }
         }
 
+        protected void btnCheckColumns_Click(object sender, EventArgs e)
+        {
+            // 这些列只在首次加载时创建；普通回发必须能读到完整列树，而不只是模板中的序号列。
+            int leafCount = Grid1.AllColumns.Count(column => column is not GroupField);
+            ShowNotify($"顶层列：{Grid1.Columns.Count}，叶子列：{leafCount}");
+        }
+
 
 
         private void LoadData()
