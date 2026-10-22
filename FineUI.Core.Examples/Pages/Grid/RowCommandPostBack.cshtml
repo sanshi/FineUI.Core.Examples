@@ -19,7 +19,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name">
+            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name" EnableColumnMove="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -27,7 +27,7 @@
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
             <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
-            <f:RenderField HeaderText="" ColumnID="RowActions">
+            <f:RenderField HeaderText="">
                 <Commands>
                     <f:Command CommandName="Action3" IconFont="Remove" CssClass="mybtn3" ConfirmText="你确定要这么做吗？" ConfirmTarget="Top" />
                 </Commands>
