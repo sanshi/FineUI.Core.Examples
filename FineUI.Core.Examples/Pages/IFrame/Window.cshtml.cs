@@ -21,6 +21,12 @@ namespace FineUI.Core.Examples.Pages.IFrame
             Window1.IFrameAttributes["title"] = "服务端已更新标题";
         }
 
+        protected void btnRemoveIFrameReferrerPolicy_Click(object sender, EventArgs e)
+        {
+            // 移除来源策略后，标题和沙箱约束仍按当前值保留。
+            Window1.RemoveIFrameAttribute("referrerpolicy");
+        }
+
 
     }
 }
