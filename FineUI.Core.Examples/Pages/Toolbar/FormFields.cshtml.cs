@@ -23,8 +23,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
             dpStartDate.Reset();
             dpEndDate.Reset();
 
-            Grid1.DataSource = null;
-            Grid1.DataBind();
+            Grid1.ClearData();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

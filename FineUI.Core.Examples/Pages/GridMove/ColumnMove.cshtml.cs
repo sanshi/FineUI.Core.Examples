@@ -59,8 +59,7 @@ namespace FineUI.Core.Examples.Pages.GridMove
 
         protected void btnClearData_Click(object sender, EventArgs e)
         {
-            Grid1.DataSource = null;
-            Grid1.DataBind();
+            Grid1.ClearData();
         }
 
         protected void btnRebindData_Click(object sender, EventArgs e)
