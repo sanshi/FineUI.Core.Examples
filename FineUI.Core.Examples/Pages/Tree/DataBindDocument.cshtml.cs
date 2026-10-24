@@ -46,8 +46,7 @@ namespace FineUI.Core.Examples.Pages.Tree
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            Tree1.DataSource = null;
-            Tree1.DataBind();
+            Tree1.ClearData();
         }
 
         protected void btnReBind_Click(object sender, EventArgs e)
