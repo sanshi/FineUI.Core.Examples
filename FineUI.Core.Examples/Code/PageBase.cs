@@ -67,7 +67,8 @@ namespace FineUI.Core.Examples
                 {
                     continue;
                 }
-                sb.AppendFormat("<li>{0}: {1}</li>", key, values[key]);
+                // 只信任固定的列表标签，字段名和值都按文字编码，避免用户输入变成 HTML 元素。
+                sb.AppendFormat("<li>{0}: {1}</li>", HtmlEncode(key), HtmlEncode(values[key].ToString()));
             }
             sb.Append("</ul>");
 
@@ -191,7 +192,8 @@ namespace FineUI.Core.Examples
 
                 if (!String.IsNullOrEmpty(text))
                 {
-                    sb.AppendFormat("<li>{0}: {1}</li>", field.ID, text);
+                    // 控件文字可能来自用户输入；保留列表格式，但不把输入中的标签作为 HTML 执行。
+                    sb.AppendFormat("<li>{0}: {1}</li>", HtmlEncode(field.ID), HtmlEncode(text));
                 }
             }
             sb.Append("</ul>");
