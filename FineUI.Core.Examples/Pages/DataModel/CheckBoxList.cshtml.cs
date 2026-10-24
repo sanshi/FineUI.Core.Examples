@@ -84,7 +84,14 @@ namespace FineUI.Core.Examples.Pages.DataModel
         {
             if (ModelState.IsValid)
             {
-                ShowNotify(new RawHtml("用户提交的数据：<br/><pre>{0}</pre>", EncodeJson(TheModel)));
+                // 单选列表写入模型；下拉列表另设 Name，直接从控件读取，允许两者选择不同。
+                GenderType firstGender = TheModel.GenderType;
+                string otherGender = TheModel_GenderType_2.Text;
+
+                ShowNotify(new RawHtml(
+                    "用户提交的数据：<br/><pre>{0}</pre>"
+                        + "模型性别：{1}<br/>独立下拉列表 TheModel_GenderType_2：{2}",
+                    EncodeJson(TheModel), EncodeJson(firstGender), EncodeJson(otherGender)));
             }
         }
 

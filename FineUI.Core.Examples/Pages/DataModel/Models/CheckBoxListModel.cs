@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace FineUI.Core.Examples.Pages.DataModel.Models
 {
@@ -39,18 +42,21 @@ namespace FineUI.Core.Examples.Pages.DataModel.Models
     }
 
     /// <summary>
-    /// 性别
+    /// 性别枚举：控件提交使用 0/1，展示模型 JSON 时使用“女/男”。
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum GenderType
     {
         /// <summary>
         /// 女
         /// </summary>
+        [EnumMember(Value = "女")]
         Woman = 0,
 
         /// <summary>
         /// 男
         /// </summary>
+        [EnumMember(Value = "男")]
         Man = 1
     }
 
