@@ -24,7 +24,8 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
         
         protected void btnGetSelection_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(DropDownBox1.Value))
+            // 空字符串也可以是选中项的 ID；用选中项数量区分选择与自由文字。
+            if (DropDownBox1.Values.Length > 0)
             {
                 labResult.Text = String.Format("下拉框文本：{0}（值：{1}）", DropDownBox1.Text, DropDownBox1.Value);
             }
