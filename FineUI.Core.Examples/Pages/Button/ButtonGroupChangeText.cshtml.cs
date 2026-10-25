@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.Button
         
         protected void btnChangeButtonText_Click(object sender, EventArgs e)
         {
-            Button4.Text = Button4.Text.Length == 3 ? "按钮四（" + DateTime.Now.ToString() + "）" : "按钮四";
+            Button4.Text = Button4.Text.Length == 3 ? "按钮四（" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture) + "）" : "按钮四";
         }
 
         protected void btnShowHideButton_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace FineUI.Core.Examples.Pages.Button
 
         protected void btnChangeButtonText2_Click(object sender, EventArgs e)
         {
-            Button8.Text = Button8.Text.Length == 3 ? "按钮八（" + DateTime.Now.ToString() + "）" : "按钮八";
+            Button8.Text = Button8.Text.Length == 3 ? "按钮八（" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture) + "）" : "按钮八";
         }
 
         protected void btnShowHideButton2_Click(object sender, EventArgs e)

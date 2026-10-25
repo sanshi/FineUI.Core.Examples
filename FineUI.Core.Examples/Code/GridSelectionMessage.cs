@@ -40,7 +40,15 @@ namespace FineUI.Core.Examples
                     sb.Append("<tr>");
                     for (int j = 0; j < dataKeys.Length; j++)
                     {
-                        sb.AppendFormat("<td>{0}</td>", HttpUtility.HtmlEncode(Convert.ToString(dataKeys[j])));
+                        string keyName = j < grid.DataKeyNames.Length ? grid.DataKeyNames[j] : String.Empty;
+                        string text = Convert.ToString(dataKeys[j]);
+                        // 提示中把合法性别值转成可读文字，未知值保留，表格原始数据不变。
+                        if (String.Equals(keyName, "Gender", StringComparison.OrdinalIgnoreCase)
+                            && (text == "0" || text == "1"))
+                        {
+                            text = localizer.GetString(text == "1" ? "Male" : "Female");
+                        }
+                        sb.AppendFormat("<td>{0}</td>", HttpUtility.HtmlEncode(text));
                     }
 
                     sb.Append("</tr>");
