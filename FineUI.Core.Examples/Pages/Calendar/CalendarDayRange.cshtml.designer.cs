@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Calendar
 	public partial class CalendarDayRangeModel
 	{
 		protected FineUI.Core.Calendar Calendar1;
+		protected FineUI.Core.Button btnMoveStart;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Label labResult;
 	}

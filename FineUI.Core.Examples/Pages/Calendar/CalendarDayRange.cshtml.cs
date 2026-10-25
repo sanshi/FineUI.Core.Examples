@@ -17,6 +17,18 @@ namespace FineUI.Core.Examples.Pages.Calendar
 
 
 
+        protected void btnMoveStart_Click(object sender, EventArgs e)
+        {
+            DateTime? start = Calendar1.RangeStartDate;
+            DateTime? end = Calendar1.RangeEndDate;
+            if (start.HasValue && end.HasValue && start.Value < end.Value)
+            {
+                // 只改开始日期，保留用户当前选择的结束日期。
+                Calendar1.RangeStartDate = start.Value.AddDays(1);
+            }
+            labResult.Text = String.Format("选择的日期：{0}", Calendar1.Text);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

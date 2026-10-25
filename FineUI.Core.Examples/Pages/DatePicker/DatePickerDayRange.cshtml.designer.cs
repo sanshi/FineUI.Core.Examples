@@ -7,6 +7,7 @@ namespace FineUI.Core.Examples.Pages.DatePicker
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
 		protected FineUI.Core.DatePicker DatePicker1;
+		protected FineUI.Core.Button btnMoveStart;
 		protected FineUI.Core.Button btnSubmit;
 		protected FineUI.Core.Label labResult;
 	}
