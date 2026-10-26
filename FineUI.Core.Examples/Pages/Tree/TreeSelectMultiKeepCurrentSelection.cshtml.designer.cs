@@ -8,6 +8,8 @@ namespace FineUI.Core.Examples.Pages.Tree
 		protected FineUI.Core.Tree Tree1;
 		protected FineUI.Core.Button btnGetSelectedValues;
 		protected FineUI.Core.Button btnSelectOthers;
+		protected FineUI.Core.Button btnToggleKeepSelection;
+		protected FineUI.Core.Label labKeepSelection;
 		protected FineUI.Core.Label labResult;
 	}
 }

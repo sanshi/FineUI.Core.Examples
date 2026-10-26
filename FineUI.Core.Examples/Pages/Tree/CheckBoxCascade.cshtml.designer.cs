@@ -7,6 +7,8 @@ namespace FineUI.Core.Examples.Pages.Tree
 	{
 		protected FineUI.Core.Tree Tree1;
 		protected FineUI.Core.Button btnGetCheckedValues;
+		protected FineUI.Core.Button btnToggleCascadeCheck;
+		protected FineUI.Core.Label labCascadeCheck;
 		protected FineUI.Core.Label labResult;
 	}
 }

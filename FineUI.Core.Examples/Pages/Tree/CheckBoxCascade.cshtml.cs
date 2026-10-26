@@ -16,6 +16,13 @@ namespace FineUI.Core.Examples.Pages.Tree
 
         }
 
+        protected void btnToggleCascadeCheck_Click(object sender, EventArgs e)
+        {
+            // 切换时保留当前勾选结果，后续勾选再使用新规则。
+            Tree1.CascadeCheck = !Tree1.CascadeCheck;
+            labCascadeCheck.Text = Tree1.CascadeCheck ? "父子级联勾选：开启" : "父子级联勾选：关闭";
+        }
+
 
         
         protected void btnGetCheckedValues_Click(object sender, EventArgs e)

@@ -6,5 +6,7 @@ namespace FineUI.Core.Examples.Pages.Tree
 	public partial class TreeSingleExpandModel
 	{
 		protected FineUI.Core.Tree Tree1;
+		protected FineUI.Core.Button btnToggleExpandOptions;
+		protected FineUI.Core.Label labExpandOptions;
 	}
 }

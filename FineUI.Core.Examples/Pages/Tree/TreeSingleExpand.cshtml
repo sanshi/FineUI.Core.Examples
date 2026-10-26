@@ -43,7 +43,10 @@
     </f:Tree>
 
     <br />
-    注：启用了 EnableSingleExpand，也就是说同一级节点同时只能展开一个（初始状态除外）。
+    初始启用同级单节点展开；下方按钮可切换同级展开与双击展开规则，不改变已有展开状态。
+    <br />
+    <f:Button ID="btnToggleExpandOptions" Text="切换展开规则" OnClick="btnToggleExpandOptions_Click" />
+    <f:Label ID="labExpandOptions" Text="同级单节点展开：开启；双击展开：开启" />
 
 }
 

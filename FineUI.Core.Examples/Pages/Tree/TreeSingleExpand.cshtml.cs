@@ -15,6 +15,16 @@ namespace FineUI.Core.Examples.Pages.Tree
 
         }
 
+        protected void btnToggleExpandOptions_Click(object sender, EventArgs e)
+        {
+            // 只切换后续交互规则，现有节点与展开状态保留。
+            bool enabled = !Tree1.EnableSingleExpand;
+            Tree1.EnableSingleExpand = enabled;
+            Tree1.ExpandOnDblClick = enabled;
+            string status = enabled ? "开启" : "关闭";
+            labExpandOptions.Text = $"同级单节点展开：{status}；双击展开：{status}";
+        }
+
 
 
     }

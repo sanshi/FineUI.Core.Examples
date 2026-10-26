@@ -50,5 +50,12 @@ namespace FineUI.Core.Examples.Pages.Tree
             Tree1.SelectedNodeIDArray = Tree1.SelectedNodeIDArray.Concat(new string[] { "hefei", "huangshan" }).ToArray();
         }
 
+        protected void btnToggleKeepSelection_Click(object sender, EventArgs e)
+        {
+            // 保留已有选择，只改变接下来的普通点击是否累加。
+            Tree1.KeepCurrentSelection = !Tree1.KeepCurrentSelection;
+            labKeepSelection.Text = Tree1.KeepCurrentSelection ? "连续点击累加选择：开启" : "连续点击累加选择：关闭";
+        }
+
     }
 }

@@ -9,5 +9,7 @@ namespace FineUI.Core.Examples.Pages.Tree
 		protected FineUI.Core.Menu Menu1;
 		protected FineUI.Core.MenuButton btnExpandNode;
 		protected FineUI.Core.MenuButton btnCollapseNode;
+		protected FineUI.Core.Button btnToggleContextSelection;
+		protected FineUI.Core.Label labContextSelection;
 	}
 }
