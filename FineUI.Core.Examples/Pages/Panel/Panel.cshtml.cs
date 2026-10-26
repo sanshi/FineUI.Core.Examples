@@ -10,6 +10,25 @@ namespace FineUI.Core.Examples.Pages.Panel
 {
     public partial class PanelModel : PageBase
     {
+        private const string StatusMarkup = "<b data-kind=\"status\">服务已连接</b>";
+
+        protected void btnRichToolbarText_Click(object sender, EventArgs e)
+        {
+            ToolbarText1.TextRawHtml = new RawHtml(StatusMarkup);
+        }
+
+        protected void btnPlainToolbarText_Click(object sender, EventArgs e)
+        {
+            // 先撤销HTML授权，再设置普通文字；同一段带标签的内容就会按文字显示。
+            ToolbarText1.TextRawHtml = null;
+            ToolbarText1.Text = StatusMarkup;
+        }
+
+        protected void btnReadToolbarText_Click(object sender, EventArgs e)
+        {
+            labToolbarText.Text = $"文字：{ToolbarText1.Text}；本轮HTML授权：{(ToolbarText1.TextRawHtml == null ? "否" : "是")}";
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
