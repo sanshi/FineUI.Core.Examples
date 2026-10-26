@@ -9,6 +9,8 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 		protected FineUI.Core.DropDownList DropDownList1;
 		protected FineUI.Core.Button btnSelectItem6;
 		protected FineUI.Core.Button btnGetSelection;
+		protected FineUI.Core.Button btnToggleClickAction;
+		protected FineUI.Core.Label labClickAction;
 		protected FineUI.Core.Label labResult;
 	}
 }
