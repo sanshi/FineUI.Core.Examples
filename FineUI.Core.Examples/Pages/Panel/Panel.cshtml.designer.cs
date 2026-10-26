@@ -23,10 +23,11 @@ namespace FineUI.Core.Examples.Pages.Panel
 		protected FineUI.Core.Button Button7;
 		protected FineUI.Core.Button Button8;
 		protected FineUI.Core.Button Button9;
+		protected FineUI.Core.Button Button10;
 		protected FineUI.Core.Button btnRichToolbarText;
 		protected FineUI.Core.Button btnPlainToolbarText;
+		protected FineUI.Core.Button btnClearToolbarText;
 		protected FineUI.Core.Button btnReadToolbarText;
 		protected FineUI.Core.Label labToolbarText;
-		protected FineUI.Core.Button Button10;
 	}
 }

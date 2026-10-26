@@ -12,23 +12,6 @@ namespace FineUI.Core.Examples.Pages.Panel
     {
         private const string StatusMarkup = "<b data-kind=\"status\">服务已连接</b>";
 
-        protected void btnRichToolbarText_Click(object sender, EventArgs e)
-        {
-            ToolbarText1.TextRawHtml = new RawHtml(StatusMarkup);
-        }
-
-        protected void btnPlainToolbarText_Click(object sender, EventArgs e)
-        {
-            // 先撤销HTML授权，再设置普通文字；同一段带标签的内容就会按文字显示。
-            ToolbarText1.TextRawHtml = null;
-            ToolbarText1.Text = StatusMarkup;
-        }
-
-        protected void btnReadToolbarText_Click(object sender, EventArgs e)
-        {
-            labToolbarText.Text = $"文字：{ToolbarText1.Text}；本轮HTML授权：{(ToolbarText1.TextRawHtml == null ? "否" : "是")}";
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -100,6 +83,29 @@ namespace FineUI.Core.Examples.Pages.Panel
         protected void Button10_Click(object sender, EventArgs e)
         {
             Panel1.IconFont = IconFont.None;
+        }
+
+        protected void btnRichToolbarText_Click(object sender, EventArgs e)
+        {
+            ToolbarText1.TextRawHtml = new RawHtml(StatusMarkup);
+        }
+
+        protected void btnPlainToolbarText_Click(object sender, EventArgs e)
+        {
+            // 设置普通文本时明确关闭可信标记，同一段带标签的内容就会按文字显示。
+            ToolbarText1.TextRaw = false;
+            ToolbarText1.Text = StatusMarkup;
+        }
+
+        protected void btnClearToolbarText_Click(object sender, EventArgs e)
+        {
+            // null表示清空内容并取消可信标记；只取消标记应设置TextRaw=false。
+            ToolbarText1.TextRawHtml = null;
+        }
+
+        protected void btnReadToolbarText_Click(object sender, EventArgs e)
+        {
+            labToolbarText.Text = $"文字：{ToolbarText1.Text}；是否可信 HTML 标记：{(ToolbarText1.TextRaw ? "是" : "否")}";
         }
 
     }

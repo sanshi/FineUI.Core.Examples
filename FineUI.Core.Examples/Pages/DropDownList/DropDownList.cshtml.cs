@@ -9,12 +9,6 @@ namespace FineUI.Core.Examples.Pages.DropDownList
 {
     public partial class DropDownListModel : PageBase
     {
-        protected void btnToggleClickAction_Click(object sender, EventArgs e)
-        {
-            DropDownList1.EnableClickAction = !DropDownList1.EnableClickAction;
-            labClickAction.Text = "输入区点击弹出：" + (DropDownList1.EnableClickAction ? "开启" : "关闭");
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -38,5 +32,12 @@ namespace FineUI.Core.Examples.Pages.DropDownList
         {
             DropDownList1.SelectedValue = "Value6";
         }
+
+        protected void btnToggleClickAction_Click(object sender, EventArgs e)
+        {
+            DropDownList1.EnableClickAction = !DropDownList1.EnableClickAction;
+            labClickAction.Text = "输入区点击弹出：" + (DropDownList1.EnableClickAction ? "开启" : "关闭");
+        }
+
     }
 }

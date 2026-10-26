@@ -10,13 +10,6 @@ namespace FineUI.Core.Examples.Pages.DatePicker
 {
     public partial class TimePickerModel : PageBase
     {
-        protected void btnToggleClickAction_Click(object sender, EventArgs e)
-        {
-            DatePicker1.EnableClickAction = !DatePicker1.EnableClickAction;
-            TimePicker1.EnableClickAction = !TimePicker1.EnableClickAction;
-            labClickAction.Text = $"日期：{(DatePicker1.EnableClickAction ? "开启" : "关闭")}；时间：{(TimePicker1.EnableClickAction ? "开启" : "关闭")}";
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,6 +24,13 @@ namespace FineUI.Core.Examples.Pages.DatePicker
                 TimePicker1.Text);
 
             labResult.Text = result;
+        }
+
+        protected void btnToggleClickAction_Click(object sender, EventArgs e)
+        {
+            DatePicker1.EnableClickAction = !DatePicker1.EnableClickAction;
+            TimePicker1.EnableClickAction = !TimePicker1.EnableClickAction;
+            labClickAction.Text = $"日期：{(DatePicker1.EnableClickAction ? "开启" : "关闭")}；时间：{(TimePicker1.EnableClickAction ? "开启" : "关闭")}";
         }
 
     }
