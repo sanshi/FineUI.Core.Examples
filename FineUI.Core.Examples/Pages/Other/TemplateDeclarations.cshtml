@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.TemplateDeclarationsModel
+@{
+    ViewBag.Title = "Other/TemplateDeclarations";
+}
+
+@section body {
+    <p>在模板中声明字段属性，回发后可直接在后台读取，无需重复赋值。</p>
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" Title="模板声明的控件" BodyPadding="10" LabelWidth="90">
+        <Items>
+            <f:TextBox ID="tbxUserName" Label="用户名" EmptyText="请输入用户名" MaxLength="20"></f:TextBox>
+        </Items>
+    </f:SimpleForm>
+    <br />
+
+    <f:Button ID="btnRead" Text="回发读取属性" OnClick="btnRead_Click" CssClass="marginr"></f:Button>
+    <f:Button ID="btnChange" Text="后台修改标签和提示" OnClick="btnChange_Click"></f:Button>
+    <br />
+    <br />
+
+    <f:GroupPanel ID="PanelResult" Title="后台读取结果" IsFluid="true" BodyPadding="10">
+        <Items>
+            <f:Label ID="labResult" ShowLabel="false" Text="请输入用户名，再点击“回发读取属性”。" CssStyle="white-space: pre-wrap;"></f:Label>
+        </Items>
+    </f:GroupPanel>
+
+    <p>点击“后台修改标签和提示”后，长度限制也会从 20 改为 30；再次读取时，这些修改和输入内容都会保留。</p>
+}

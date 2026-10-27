@@ -2460,5 +2460,7 @@
 		</TreeNode>
 		<TreeNode Text="释放window.F命名空间" NavigateUrl="~/Other/NoConflict">
 		</TreeNode>
+		<TreeNode Text="回发时读取模板声明属性" NavigateUrl="~/Other/TemplateDeclarations" Version="16.1.0">
+		</TreeNode>
 	</TreeNode>
 </Tree>
