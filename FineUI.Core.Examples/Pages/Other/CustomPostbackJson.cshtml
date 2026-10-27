@@ -23,7 +23,7 @@
 
     <br />
     <br />
-    注：本例接收业务 JSON；回发使用 responseType='data'，由页面读取结果。
+    注：本例通过 jQuery.ajax 读取独立业务 JSON，结果由页面脚本处理。
 }
 
 @section script {
@@ -33,26 +33,21 @@
         function onTextBoxEnter(event) {
             var me = this;
 
-            // 明确使用业务数据通道，返回的 text 字段不属于控件更新协议。
-            F.doPostBack({
+            // 接口只返回业务数据，使用普通 AJAX；POST 同时提交页面的防伪令牌。
+            $.ajax({
                 url: '@Url.Page("/Other/CustomPostbackJsonData", "Process")',
-                responseType: 'data',
-                params: {
-                    text1: me.getValue()
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    text1: me.getValue(),
+                    __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
                 },
-                complete: function (data, textStatus, xhr) {
-                    // 失败响应仍交给 FineUI 的默认错误处理，不尝试解析为业务 JSON。
-                    if (textStatus !== 'success') {
-                        return;
-                    }
-
-                    var json = JSON.parse(data);
-
+                success: function (json) {
                     F.ui.TextBox2.setValue(json.text);
                     F.ui.TextBox2.focus();
-
-                    // 结果已经由本页处理，不再触发后续成功回调。
-                    return false;
+                },
+                error: function () {
+                    F.alert('读取数据失败，请稍后重试。');
                 }
             });
 
