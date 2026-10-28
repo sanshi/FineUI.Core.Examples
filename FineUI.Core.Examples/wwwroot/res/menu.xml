@@ -870,6 +870,8 @@
 			</TreeNode>
 			<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/Grid/HeaderChangeTextWidth">
 			</TreeNode>
+			<TreeNode Text="后台属性修改标题和宽度" NavigateUrl="~/Grid/HeaderChangeProperties" Version="16.1.0">
+			</TreeNode>
 			<TreeNode Text="标题栏自动换行" NavigateUrl="~/Grid/HeaderWrap">
 			</TreeNode>
 			<TreeNode Text="标题栏自动换行（多行文本省略）" NavigateUrl="~/Grid/HeaderWrapLineClamp">

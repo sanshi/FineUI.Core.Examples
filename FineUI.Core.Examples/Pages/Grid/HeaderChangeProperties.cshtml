@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.Grid.HeaderChangePropertiesModel
+@{
+    ViewBag.Title = "后台属性修改标题和宽度";
+}
+
+@section body {
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"
+            DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" Width="120" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <f:Button ID="Button1" CssClass="marginr" Text="修改[入学年份]的标题文本和宽度" OnClick="Button1_Click" />
+    <f:Button ID="Button2" CssClass="marginr" Text="还原[入学年份]" OnClick="Button2_Click" />
+    <f:Button ID="Button3" Text="读取当前列属性" OnClick="Button3_Click" />
+    <br>
+    <br>
+    <f:Label ID="LabelResult" Text="点击读取按钮，查看后台取得的当前列属性。" />
+    <p>后台通过 ColumnID 找到列，直接修改 HeaderText 和 Width，即可更新标题文本和列宽。</p>
+    <p>可先勾选几行再修改或还原，观察行数据和选择是否保留；修改后点击“读取当前列属性”，可查看下一次回发读取到的值。</p>
+}
+
+@section script {
+    <script src="~/res/js/grid.js"></script>
+}
