@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.FluentLoginModel
+@{
+    ViewBag.Title = "登录表单（流式创建控件）";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.SimpleForm()
+        .ID("SimpleForm1")
+        .Title("登录表单")
+        .ShowHeader(true)
+        .BodyPadding(10)
+        .Items(
+            F.TextBox().ID("UserName").Label("用户名").Required(true),
+            F.TextBox().ID("Password").Label("密码").TextMode(TextMode.Password).Required(true),
+            F.Button().ID("Submit").Text("登录").ButtonColor(ButtonColor.Primary)
+                .OnClick(Url.Handler("Login"), "SimpleForm1").ValidateForms("SimpleForm1")))
+    <div style="margin-top: 10px">
+        @F.Label().ID("Result").Text("等待操作")
+    </div>
+    <ul class="compatibility-notes">
+        <li>全局启用 RazorForms，继续使用流式控件、Url.Handler 和 OnPost 登录事件。</li>
+        <li>示例账号为 admin，密码为 admin888。</li>
+        <li>UIHelper 更新即时显示，不保证同步为后台控件持久属性。</li>
+    </ul>
+}

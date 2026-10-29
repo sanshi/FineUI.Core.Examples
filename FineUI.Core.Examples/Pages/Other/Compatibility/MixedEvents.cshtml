@@ -1,0 +1,26 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.MixedEventsModel
+@{
+    ViewBag.Title = "同页混合事件与持久属性";
+}
+@section body {
+    <f:Button ID="Legacy" Text="旧事件追加" CssClass="marginr" OnClick="@Url.Handler("Append")" />
+    <f:Button ID="Direct" Text="RazorForms 事件追加" CssClass="marginr" OnClick="Direct_Click" />
+    <f:Button ID="OpenWindow" Text="旧事件打开弹窗" OnClick="@Url.Handler("Open")" />
+    <br />
+    <f:Label ID="History" Label="持久属性" Text="开始" />
+    <div style="margin-top: 10px">
+        <f:Label ID="Immediate" Label="即时提示" Text="等待操作" />
+    </div>
+    <f:Window ID="Dialog" Title="兼容事件弹窗" Hidden="true" Width="360" Height="180" IsModal="true" BodyPadding="10">
+        <Items>
+            <f:Label Text="由旧 OnPost 操作后台 Window 实例打开。" />
+            <f:Button ID="CloseWindow" Text="RazorForms 事件关闭" OnClick="Close_Click" />
+        </Items>
+    </f:Window>
+    <ul class="compatibility-notes">
+        <li>交替点击前两个按钮，旧 OnPost 和 RazorForms 事件都直接修改后台 Label.Text，后续回发继续保留历史。</li>
+        <li>UIHelper 更新另一个标签的即时提示，不保证同步到服务器属性或按 RazorForms 持久属性恢复。</li>
+        <li>新代码推荐直接操作后台控件实例。</li>
+    </ul>
+}

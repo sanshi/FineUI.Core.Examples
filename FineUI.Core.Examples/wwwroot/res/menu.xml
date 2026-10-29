@@ -2232,6 +2232,18 @@
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
+		<TreeNode Text="旧写法兼容" Expanded="false">
+			<TreeNode Text="登录表单（流式创建控件）" NavigateUrl="~/Other/Compatibility/FluentLogin" />
+			<TreeNode Text="查询与附加参数" NavigateUrl="~/Other/Compatibility/QueryParameters?id=999&amp;dialog=2" />
+			<TreeNode Text="对象绑定" NavigateUrl="~/Other/Compatibility/ModelBinding?id=105" />
+			<TreeNode Text="选项变化" NavigateUrl="~/Other/Compatibility/SelectionChanged" />
+			<TreeNode Text="异步更新" NavigateUrl="~/Other/Compatibility/AsyncUpdate" />
+			<TreeNode Text="表格分页" NavigateUrl="~/Other/Compatibility/GridPaging" />
+			<TreeNode Text="表格选择" NavigateUrl="~/Other/Compatibility/GridSelection" />
+			<TreeNode Text="树节点选择" NavigateUrl="~/Other/Compatibility/TreeSelection" />
+			<TreeNode Text="选项卡切换" NavigateUrl="~/Other/Compatibility/TabIndexChanged" />
+			<TreeNode Text="同页混合事件" NavigateUrl="~/Other/Compatibility/MixedEvents" />
+		</TreeNode>
 		<TreeNode Text="数据模型">
 			<TreeNode Text="登录页面" NavigateUrl="~/DataModel/Login">
 			</TreeNode>

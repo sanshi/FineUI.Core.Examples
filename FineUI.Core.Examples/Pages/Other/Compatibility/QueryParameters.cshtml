@@ -1,0 +1,37 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.QueryParametersModel
+@{
+    ViewBag.Title = "显式网址与附加参数";
+}
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" Title="参数提交" ShowHeader="true" BodyPadding="10">
+        <Items>
+            <f:TextBox ID="Note" Label="备注" Text="首次备注" />
+            <f:Button ID="Submit" Text="仅提交 Parameter" CssClass="marginr" OnClick="@Url.Handler("Save")"
+                OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
+                OnClickParameter2="@(Parameter.FromData("source", "兼容示例"))" />
+            <f:Button ID="SubmitExplicit" Text="同时提交显式网址参数"
+                OnClick="@Url.Page(null, "Save", new { id = 105, dialog = 1 })"
+                OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
+                OnClickParameter2="@(Parameter.FromData("source", "兼容示例"))" />
+        </Items>
+    </f:SimpleForm>
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>第一个按钮使用 Url.Handler，不自动携带页面网址中的 id 和 dialog，后台两个整数参数均为默认值 0。</li>
+        <li>第二个按钮使用 Url.Page，显式传入 id=105 和 dialog=1。</li>
+        <li>Parameter.FromFunction 每次提交时读取最新备注，Parameter.FromData 提供固定的来源参数。</li>
+        <li>两个按钮的参数写法均兼容严格 CSP。</li>
+    </ul>
+}
+
+@section script {
+    <script>
+        function getCompatibilityNote() {
+            return F('Note').getValue();
+        }
+    </script>
+}
