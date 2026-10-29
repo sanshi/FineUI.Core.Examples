@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.ModelBindingModel
+@{
+    ViewBag.Title = "对象绑定与首次加载";
+}
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" Title="订单信息" ShowHeader="true" BodyPadding="10">
+        <Items>
+            <f:TextBox For="Data.Name" />
+            <f:NumberBox For="Data.Quantity" />
+            <f:Button ID="Submit" Text="保存订单"
+                OnClick="@Url.Page(null, "Save", new { id = Request.Query["id"].ToString() })" OnClickFields="SimpleForm1" />
+        </Items>
+    </f:SimpleForm>
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>OnGet 准备表单初值，BindProperty 接收编辑结果。</li>
+        <li>回发不会再执行 OnGet；普通绑定模型仍为空时由框架创建对象。</li>
+        <li>实际保存前应按当前用户校验订单权限。</li>
+    </ul>
+}

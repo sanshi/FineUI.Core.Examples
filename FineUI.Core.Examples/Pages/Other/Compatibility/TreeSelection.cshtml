@@ -1,0 +1,34 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.TreeSelectionModel
+@{
+    ViewBag.Title = "树节点与对象参数";
+}
+@section body {
+    <f:Tree ID="Tree1" Title="地区" ShowHeader="true" IsFluid="true" Height="210">
+        <Nodes>
+            <f:TreeNode Text="安徽省" NodeID="anhui" Expanded="true">
+                <f:TreeNode Text="合肥市" NodeID="hefei" />
+                <f:TreeNode Text="黄山市" NodeID="huangshan" />
+            </f:TreeNode>
+        </Nodes>
+    </f:Tree>
+    <br />
+    <f:Button ID="Submit" Text="读取节点" CssClass="marginr" OnClick="@Url.Handler("ReadNode")"
+        OnClickParameter1="@(Parameter.FromFunction("selectedNode", "getCompatibilityNode"))" />
+    <f:Button ID="SelectHefei" Text="选中合肥" OnClick="@Url.Handler("SelectHefei")" />
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>选中节点的 ID 和文本以 JSON 对象传给 OnPostReadNode。</li>
+        <li>另一个按钮用 UIHelper 即时选择合肥，再次读取时可以获得新的当前选择。</li>
+    </ul>
+}
+@section script {
+    <script>
+        function getCompatibilityNode() {
+            var node = F('Tree1').getSelectedNode(true);
+            return node ? F.toJSON({ id: node.id, text: node.text }) : '{}';
+        }
+    </script>
+}

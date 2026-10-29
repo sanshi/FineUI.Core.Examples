@@ -1,0 +1,27 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.SelectionChangedModel
+@{
+    ViewBag.Title = "下拉框原生变化事件";
+}
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" Title="部门与通知" ShowHeader="true" BodyPadding="10">
+        <Items>
+            <f:DropDownList ID="Department" Label="部门" AutoPostBack="true"
+                OnSelectedIndexChanged="@Url.Handler("DepartmentChanged")" OnSelectedIndexChangedFields="Department">
+                <Items>
+                    <f:ListItem Text="研发部" Value="dev" />
+                    <f:ListItem Text="销售部" Value="sales" />
+                </Items>
+            </f:DropDownList>
+            <f:CheckBox ID="Enabled" Text="接收通知" AutoPostBack="true" OnCheckedChanged="@Url.Handler("EnabledChanged")" OnCheckedChangedFields="Enabled" />
+        </Items>
+    </f:SimpleForm>
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>下拉框与复选框继续通过 Url.Handler 调用本页 OnPost。</li>
+        <li>处理程序读取本次输入，使用 UIHelper 即时更新提示。</li>
+    </ul>
+}

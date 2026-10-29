@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.GridSelectionModel
+@{
+    ViewBag.Title = "表格多选与数组参数";
+}
+@section body {
+    <f:Grid ID="Grid1" Title="选择客户" ShowHeader="true" IsFluid="true" Height="230"
+        DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="Model.Rows">
+        <Columns>
+            <f:RenderField HeaderText="客户名称" DataField="Name" ExpandUnusedSpace="true" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button ID="Submit" Text="读取选择" OnClick="@Url.Handler("ReadSelection")"
+        OnClickParameter1="@(Parameter.FromFunction("selectedIds", "getCompatibilitySelectedIds"))" />
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>Parameter 通过具名函数读取当前选中行，将 ID 数组绑定到旧 OnPost 方法。</li>
+        <li>取消选择后再次提交，后台得到的是当次选择。</li>
+    </ul>
+}
+@section script {
+    <script>
+        function getCompatibilitySelectedIds() {
+            return F('Grid1').getSelectedRows();
+        }
+    </script>
+}

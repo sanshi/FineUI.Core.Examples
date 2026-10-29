@@ -125,3 +125,7 @@ RazorForms、MVC 和 RazorPages 共用 JSON 首屏与 UI 响应解释器。MVC/R
 ## 参与贡献
 
 请先阅读 `CONTRIBUTING.md`。安全问题请按 `SECURITY.md` 私下报告。
+
+## v16.1.1 旧事件兼容示例
+
+“其他 → 旧写法兼容”包含十个页面，演示本页 Url.Handler、OnPost、Parameter、对象绑定、表格、树、选项卡和混合事件。全部启用 RazorForms，无需添加 NoRazorForms；仅 FluentLogin 保留流式声明，其余使用 TagHelper。页面源码位于 [Pages/Other/Compatibility](FineUI.Core.Examples/Pages/Other/Compatibility)。推荐直接操作后台控件实例；UIHelper 更新不保证同步服务器属性或按 RazorForms 持久属性恢复。

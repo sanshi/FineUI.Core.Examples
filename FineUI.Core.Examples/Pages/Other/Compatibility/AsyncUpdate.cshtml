@@ -1,0 +1,21 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.AsyncUpdateModel
+@{
+    ViewBag.Title = "异步事件与连续更新";
+}
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" Title="数量更新" ShowHeader="true" BodyPadding="10">
+        <Items>
+            <f:NumberBox ID="Quantity" Label="数量" Text="1" MinValue="0" MaxValue="100" NoDecimal="true" />
+            <f:Button ID="Submit" Text="异步增加" OnClick="@Url.Handler("Increase")" OnClickFields="Quantity" />
+        </Items>
+    </f:SimpleForm>
+    <div style="margin-top: 10px">
+        <f:Label ID="Result" Text="等待操作" />
+    </div>
+    <ul class="compatibility-notes">
+        <li>异步 OnPost 等待业务处理完成后返回 UIHelper.Result。</li>
+        <li>连续点击时提交最新数量，使用同一 RazorForms 请求队列。</li>
+    </ul>
+}
