@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.SortingDatabaseModel
+@{
+    ViewBag.Title = "动态修改排序（数据库数据）";
+}
+
+@section body {
+    <f:Grid ID="Grid1" Title="动态修改排序（数据库数据）" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400"
+            DataIDField="Id" DataTextField="Name" AllowPaging="false" IsDatabasePaging="false"
+            IsDatabaseSorting="true" OnSort="Grid1_Sort" EnableMultiSelect="false" PagingToolbarVisible="true"
+            >
+        <Columns>
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" SortField="Name" Width="220" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int"
+                    SortField="EntranceYear" Width="240" />
+        </Columns>
+        <PageItems>
+            <f:Button ID="BusinessButton" Text="业务按钮" OnClick="BusinessButton_Click" />
+        </PageItems>
+    </f:Grid>
+    <br>
+    <f:Button ID="Button1" Text="应用配置" OnClick="Button1_Click" CssClass="marginr" />
+    <f:Button ID="Button2" Text="恢复配置" OnClick="Button2_Click" CssClass="marginr" />
+    <f:Button ID="Button3" Text="读取当前配置" OnClick="Button3_Click" CssClass="marginr" />
+    <f:Button ID="Button4" Text="按年份、姓名多列排序" OnClick="Button4_Click" />
+    <br><br>
+    <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
+
+    <p>示例用数据视图模拟数据库查询。回发后开启单列或多列排序，点击表头会触发排序事件，再查询并绑定结果。</p>
+}

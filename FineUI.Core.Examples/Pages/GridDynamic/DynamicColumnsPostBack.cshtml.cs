@@ -16,6 +16,17 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
             {
                 LoadData();
             }
+            else
+            {
+                // 动态列的函数名由本页固定提供；补齐显示行为不需要重新读取或绑定数据。
+                foreach (var entry in new[] { ("Gender", "renderGender"), ("Major", "renderMajor"), ("Group", "renderGroup") })
+                {
+                    if (Grid1.FindColumn(entry.Item1) is RenderField field)
+                    {
+                        field.RendererFunction = entry.Item2;
+                    }
+                }
+            }
         }
 
 
@@ -25,35 +36,31 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
             {
                 Grid1.Title = "表格一（单选，行扩展列）";
 
-                // 重新配置表头并绑定数据
-                Grid1.ConfigColumns(CreateGrid1Columns(), new GridConfigOptions()
-                {
-                    DataIDField = "Id",
-                    DataTextField = "Name",
-                    EnableCheckBoxSelect = false,
-                    EnableMultiSelect = false,
-                }, DynamicColumnsData.GetStudents());
+                Grid1.Columns = CreateGrid1Columns();
+                Grid1.DataIDField = "Id";
+                Grid1.DataTextField = "Name";
+                Grid1.EnableCheckBoxSelect = false;
+                Grid1.EnableMultiSelect = false;
+                Grid1.DataSource = DynamicColumnsData.GetStudents();
             }
             else
             {
                 Grid1.Title = "表格二（多选，多表头，全选列）";
 
-                // 重新配置表头并绑定数据
-                Grid1.ConfigColumns(CreateGrid2Columns(), new GridConfigOptions()
-                {
-                    DataIDField = "Id",
-                    DataTextField = "Year",
-                    EnableCheckBoxSelect = true,
-                    EnableMultiSelect = true,
-                }, DynamicColumnsData.GetStatistics());
+                Grid1.Columns = CreateGrid2Columns();
+                Grid1.DataIDField = "Id";
+                Grid1.DataTextField = "Year";
+                Grid1.EnableCheckBoxSelect = true;
+                Grid1.EnableMultiSelect = true;
+                Grid1.DataSource = DynamicColumnsData.GetStatistics();
             }
-
+            Grid1.DataBind();
         }
 
 
-        private List<GridColumn> CreateGrid1Columns()
+        private GridColumnCollection CreateGrid1Columns()
         {
-            List<GridColumn> columns = new List<GridColumn>();
+            GridColumnCollection columns = new GridColumnCollection();
 
             RenderField field = null;
 
@@ -124,9 +131,9 @@ namespace FineUI.Core.Examples.Pages.GridDynamic
         }
 
 
-        private List<GridColumn> CreateGrid2Columns()
+        private GridColumnCollection CreateGrid2Columns()
         {
-            List<GridColumn> columns = new List<GridColumn>();
+            GridColumnCollection columns = new GridColumnCollection();
 
             RenderField field = null;
 

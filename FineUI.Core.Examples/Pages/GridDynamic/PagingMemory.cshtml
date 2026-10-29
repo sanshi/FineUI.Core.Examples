@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.PagingMemoryModel
+@{
+    ViewBag.Title = "动态修改分页（内存数据）";
+}
+
+@section body {
+    <f:Grid ID="Grid1" Title="动态修改分页（内存数据）" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400"
+            DataIDField="Id" DataTextField="Name" AllowPaging="false" IsDatabasePaging="false"
+            IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true"
+            >
+        <Columns>
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" SortField="Name" Width="220" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int"
+                    SortField="EntranceYear" Width="240" />
+        </Columns>
+        <PageItems>
+            <f:Button ID="BusinessButton" Text="业务按钮" OnClick="BusinessButton_Click" />
+        </PageItems>
+    </f:Grid>
+    <br>
+    <f:Button ID="Button1" Text="应用配置" OnClick="Button1_Click" CssClass="marginr" />
+    <f:Button ID="Button2" Text="恢复配置" OnClick="Button2_Click" CssClass="marginr" />
+    <f:Button ID="Button3" Text="读取当前配置" OnClick="Button3_Click" CssClass="marginr" />
+    <f:Button ID="Button4" Text="改为数字按钮分页器" OnClick="Button4_Click" />
+    <br><br>
+    <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
+
+    <p>首次加载完整数据，随后切换分页及页大小不再查询数据。分页器中的业务按钮始终保留。</p>
+}

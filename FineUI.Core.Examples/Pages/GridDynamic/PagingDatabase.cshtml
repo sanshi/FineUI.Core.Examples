@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.Pages.GridDynamic.PagingDatabaseModel
+@{
+    ViewBag.Title = "动态修改分页（数据库数据）";
+}
+
+@section body {
+    <f:Grid ID="Grid1" Title="动态修改分页（数据库数据）" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400"
+            DataIDField="Id" DataTextField="Name" AllowPaging="false" IsDatabasePaging="true"
+            IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true"
+            OnPageIndexChanged="Grid1_PageIndexChanged" OnPageSizeChanged="Grid1_PageSizeChanged">
+        <Columns>
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" SortField="Name" Width="220" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int"
+                    SortField="EntranceYear" Width="240" />
+        </Columns>
+        <PageItems>
+            <f:Button ID="BusinessButton" Text="业务按钮" OnClick="BusinessButton_Click" />
+        </PageItems>
+    </f:Grid>
+    <br>
+    <f:Button ID="Button1" Text="应用配置" OnClick="Button1_Click" CssClass="marginr" />
+    <f:Button ID="Button2" Text="恢复配置" OnClick="Button2_Click" CssClass="marginr" />
+    <f:Button ID="Button3" Text="读取当前配置" OnClick="Button3_Click" CssClass="marginr" />
+    <br><br>
+    <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
+
+    <p>示例用数据工具模拟数据库查询。开启分页后只读取当前页，并设置总记录数；关闭分页时重新读取全部数据，不能把已加载的一页当成完整数据。</p>
+}

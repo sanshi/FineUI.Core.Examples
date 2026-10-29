@@ -815,11 +815,20 @@
 			<TreeNode Text="复选框列（单选，单选框样式）" NavigateUrl="~/Grid/CheckFieldRadio">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="动态创建列">
+		<TreeNode Text="动态修改表格">
 			<TreeNode Text="动态创建列" NavigateUrl="~/GridDynamic/DynamicColumns">
 			</TreeNode>
 			<TreeNode Text="动态创建列（回发时改变表头）" NavigateUrl="~/GridDynamic/DynamicColumnsPostBack">
 			</TreeNode>
+			<TreeNode Text="后台属性修改标题和宽度" NavigateUrl="~/Grid/HeaderChangeProperties" Version="16.1.0">
+			</TreeNode>
+			<TreeNode Text="修改表格显示与选择方式" NavigateUrl="~/GridDynamic/DisplaySelection" Version="16.1.0"></TreeNode>
+			<TreeNode Text="增删列与多表头" NavigateUrl="~/GridDynamic/ColumnsCollection" Version="16.1.0"></TreeNode>
+			<TreeNode Text="动态修改排序" NavigateUrl="~/GridDynamic/Sorting" Version="16.1.0"></TreeNode>
+			<TreeNode Text="动态修改排序（数据库数据）" NavigateUrl="~/GridDynamic/SortingDatabase" Version="16.1.0"></TreeNode>
+			<TreeNode Text="动态修改分页（内存数据）" NavigateUrl="~/GridDynamic/PagingMemory" Version="16.1.0"></TreeNode>
+			<TreeNode Text="动态修改分页（数据库数据）" NavigateUrl="~/GridDynamic/PagingDatabase" Version="16.1.0"></TreeNode>
+			<TreeNode Text="动态修改列锁定与合计" NavigateUrl="~/GridDynamic/LayoutSummary" Version="16.1.0"></TreeNode>
 			<!--<TreeNode Text="动态创建列（回发，列锁定）" NavigateUrl="~/GridDynamic/DynamicColumnsLocking">
 			</TreeNode>
 			<TreeNode Text="动态创建列（回发，排序）" NavigateUrl="~/GridDynamic/DynamicColumnsSorting">
@@ -871,8 +880,6 @@
 			<TreeNode Text="隐藏标题栏" NavigateUrl="~/Grid/HeaderHide">
 			</TreeNode>
 			<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/Grid/HeaderChangeTextWidth">
-			</TreeNode>
-			<TreeNode Text="后台属性修改标题和宽度" NavigateUrl="~/Grid/HeaderChangeProperties" Version="16.1.0">
 			</TreeNode>
 			<TreeNode Text="标题栏自动换行" NavigateUrl="~/Grid/HeaderWrap">
 			</TreeNode>
