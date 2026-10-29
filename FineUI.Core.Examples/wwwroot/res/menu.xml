@@ -736,6 +736,8 @@
 		<TreeNode Text="行命令">
 			<TreeNode Text="行命令（客户端事件）" NavigateUrl="~/Grid/RowCommand">
 			</TreeNode>
+			<TreeNode Text="行命令弹窗（独立网址和标题字段）" NavigateUrl="~/Grid/RowCommandWindow">
+			</TreeNode>
 			<TreeNode Text="行命令（服务端事件）" NavigateUrl="~/Grid/RowCommandPostBack">
 			</TreeNode>
 			<TreeNode Text="行命令（自定义命令文本）" NavigateUrl="~/Grid/RowCommandTextIcon">
