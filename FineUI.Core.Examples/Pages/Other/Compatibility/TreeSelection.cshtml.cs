@@ -7,7 +7,7 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
     {
         public IActionResult OnPostReadNode(JObject selectedNode)
         {
-            UIHelper.Label("Result").Text($"节点：{selectedNode?["id"]}；{selectedNode?["text"]}");
+            UIHelper.Label("labResult").Text($"节点：{selectedNode?["id"]}；{selectedNode?["text"]}");
             return UIHelper.Result();
         }
 

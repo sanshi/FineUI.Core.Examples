@@ -6,9 +6,9 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class QueryParametersModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
-		protected FineUI.Core.TextBox Note;
-		protected FineUI.Core.Button Submit;
-		protected FineUI.Core.Button SubmitExplicit;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.TextBox tbxNote;
+		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Button btnSubmitExplicit;
+		protected FineUI.Core.Label labResult;
 	}
 }

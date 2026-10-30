@@ -6,6 +6,6 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class GridPagingModel
 	{
 		protected FineUI.Core.Grid Grid1;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.Label labResult;
 	}
 }

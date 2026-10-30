@@ -17,13 +17,13 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
         {
             if (!ModelState.IsValid)
             {
-                UIHelper.Label("Result").Text("请填写名称和大于零的数量");
+                UIHelper.Label("labResult").Text("请填写名称和大于零的数量");
                 // 页面已经展示校验提示，不再额外弹出默认的模型错误对话框。
                 return UIHelper.Result(checkModelState: false);
             }
 
             // 实际保存前还需按当前用户校验该订单的修改权限。
-            UIHelper.Label("Result").Text($"已保存：{id}；{Data.Name}；{Data.Quantity}");
+            UIHelper.Label("labResult").Text($"已保存：{id}；{Data.Name}；{Data.Quantity}");
             return UIHelper.Result();
         }
     }

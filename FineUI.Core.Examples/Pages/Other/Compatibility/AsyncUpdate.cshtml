@@ -7,12 +7,12 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" Title="数量更新" ShowHeader="true" BodyPadding="10">
         <Items>
-            <f:NumberBox ID="Quantity" Label="数量" Text="1" MinValue="0" MaxValue="100" NoDecimal="true" />
-            <f:Button ID="Submit" Text="异步增加" OnClick="@Url.Handler("Increase")" OnClickFields="Quantity" />
+            <f:NumberBox ID="nbxQuantity" Name="Quantity" Label="数量" Text="1" MinValue="0" MaxValue="100" NoDecimal="true" />
+            <f:Button ID="btnSubmit" Text="异步增加" OnClick="@Url.Handler("Increase")" OnClickFields="nbxQuantity" />
         </Items>
     </f:SimpleForm>
     <div style="margin-top: 10px">
-        <f:Label ID="Result" Text="等待操作" />
+        <f:Label ID="labResult" Text="等待操作" />
     </div>
     <ul class="compatibility-notes">
         <li>异步 OnPost 等待业务处理完成后返回 UIHelper.Result。</li>

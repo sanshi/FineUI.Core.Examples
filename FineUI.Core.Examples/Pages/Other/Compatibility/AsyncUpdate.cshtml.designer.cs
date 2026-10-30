@@ -6,8 +6,8 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class AsyncUpdateModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
-		protected FineUI.Core.NumberBox Quantity;
-		protected FineUI.Core.Button Submit;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.NumberBox nbxQuantity;
+		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Label labResult;
 	}
 }

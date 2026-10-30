@@ -7,14 +7,14 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" Title="订单信息" ShowHeader="true" BodyPadding="10">
         <Items>
-            <f:TextBox For="Data.Name" />
-            <f:NumberBox For="Data.Quantity" />
-            <f:Button ID="Submit" Text="保存订单"
+            <f:TextBox ID="tbxName" For="Data.Name" />
+            <f:NumberBox ID="nbxQuantity" For="Data.Quantity" />
+            <f:Button ID="btnSubmit" Text="保存订单"
                 OnClick="@Url.Page(null, "Save", new { id = Request.Query["id"].ToString() })" OnClickFields="SimpleForm1" />
         </Items>
     </f:SimpleForm>
     <div style="margin-top: 10px">
-        <f:Label ID="Result" Text="等待操作" />
+        <f:Label ID="labResult" Text="等待操作" />
     </div>
     <ul class="compatibility-notes">
         <li>OnGet 准备表单初值，BindProperty 接收编辑结果。</li>

@@ -5,12 +5,12 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 {
 	public partial class MixedEventsModel
 	{
-		protected FineUI.Core.Button Legacy;
-		protected FineUI.Core.Button Direct;
-		protected FineUI.Core.Button OpenWindow;
-		protected FineUI.Core.Label History;
-		protected FineUI.Core.Label Immediate;
-		protected FineUI.Core.Window Dialog;
-		protected FineUI.Core.Button CloseWindow;
+		protected FineUI.Core.Button btnLegacy;
+		protected FineUI.Core.Button btnRazorForms;
+		protected FineUI.Core.Button btnOpenWindow;
+		protected FineUI.Core.Label labHistory;
+		protected FineUI.Core.Label labImmediate;
+		protected FineUI.Core.Window Window1;
+		protected FineUI.Core.Button btnCloseWindow;
 	}
 }

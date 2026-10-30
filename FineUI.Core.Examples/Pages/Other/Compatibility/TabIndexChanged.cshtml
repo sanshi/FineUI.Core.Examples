@@ -4,7 +4,7 @@
     ViewBag.Title = "选项卡切换与附加参数";
 }
 @section body {
-    <f:TabStrip ID="Tabs" IsFluid="true" Height="220" ActiveTabIndex="0"
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="220" ActiveTabIndex="0"
         OnTabIndexChanged="@Url.Handler("Changed")"
         OnTabIndexChangedParameter1="@(Parameter.FromFunction("activeIndex", "getCompatibilityTabIndex"))">
         <Tabs>
@@ -14,10 +14,10 @@
         </Tabs>
     </f:TabStrip>
     <br />
-    <f:Button ID="Next" Text="下一个标签" OnClick="@Url.Handler("Next")"
+    <f:Button ID="btnNext" Text="下一个标签" OnClick="@Url.Handler("Next")"
         OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getCompatibilityTabIndex"))" />
     <br />
-    <f:Label ID="Result" Text="当前标签：0" />
+    <f:Label ID="labResult" Text="当前标签：0" />
     <ul class="compatibility-notes">
         <li>保留旧 TabIndexChanged 和按钮 OnPost 写法，Parameter 每轮读取活动索引。</li>
         <li>后台也可以通过 UIHelper 切换标签。</li>
@@ -26,7 +26,7 @@
 @section script {
     <script>
         function getCompatibilityTabIndex() {
-            return F('Tabs').getActiveTabIndex();
+            return F.ui.TabStrip1.getActiveTabIndex();
         }
     </script>
 }

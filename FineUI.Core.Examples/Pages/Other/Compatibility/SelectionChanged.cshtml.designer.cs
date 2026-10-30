@@ -6,8 +6,8 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class SelectionChangedModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
-		protected FineUI.Core.DropDownList Department;
-		protected FineUI.Core.CheckBox Enabled;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.DropDownList ddlDepartment;
+		protected FineUI.Core.CheckBox cbxEnabled;
+		protected FineUI.Core.Label labResult;
 	}
 }

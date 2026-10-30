@@ -7,18 +7,18 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" Title="部门与通知" ShowHeader="true" BodyPadding="10">
         <Items>
-            <f:DropDownList ID="Department" Label="部门" AutoPostBack="true"
-                OnSelectedIndexChanged="@Url.Handler("DepartmentChanged")" OnSelectedIndexChangedFields="Department">
+            <f:DropDownList ID="ddlDepartment" Name="Department" Label="部门" AutoPostBack="true"
+                OnSelectedIndexChanged="@Url.Handler("DepartmentChanged")" OnSelectedIndexChangedFields="ddlDepartment">
                 <Items>
                     <f:ListItem Text="研发部" Value="dev" />
                     <f:ListItem Text="销售部" Value="sales" />
                 </Items>
             </f:DropDownList>
-            <f:CheckBox ID="Enabled" Text="接收通知" AutoPostBack="true" OnCheckedChanged="@Url.Handler("EnabledChanged")" OnCheckedChangedFields="Enabled" />
+            <f:CheckBox ID="cbxEnabled" Name="Enabled" Text="接收通知" AutoPostBack="true" OnCheckedChanged="@Url.Handler("EnabledChanged")" OnCheckedChangedFields="cbxEnabled" />
         </Items>
     </f:SimpleForm>
     <div style="margin-top: 10px">
-        <f:Label ID="Result" Text="等待操作" />
+        <f:Label ID="labResult" Text="等待操作" />
     </div>
     <ul class="compatibility-notes">
         <li>下拉框与复选框继续通过 Url.Handler 调用本页 OnPost。</li>

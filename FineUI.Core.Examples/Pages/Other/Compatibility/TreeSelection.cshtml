@@ -13,11 +13,11 @@
         </Nodes>
     </f:Tree>
     <br />
-    <f:Button ID="Submit" Text="读取节点" CssClass="marginr" OnClick="@Url.Handler("ReadNode")"
+    <f:Button ID="btnSubmit" Text="读取节点" CssClass="marginr" OnClick="@Url.Handler("ReadNode")"
         OnClickParameter1="@(Parameter.FromFunction("selectedNode", "getCompatibilityNode"))" />
-    <f:Button ID="SelectHefei" Text="选中合肥" OnClick="@Url.Handler("SelectHefei")" />
+    <f:Button ID="btnSelectHefei" Text="选中合肥" OnClick="@Url.Handler("SelectHefei")" />
     <div style="margin-top: 10px">
-        <f:Label ID="Result" Text="等待操作" />
+        <f:Label ID="labResult" Text="等待操作" />
     </div>
     <ul class="compatibility-notes">
         <li>选中节点的 ID 和文本以 JSON 对象传给 OnPostReadNode。</li>

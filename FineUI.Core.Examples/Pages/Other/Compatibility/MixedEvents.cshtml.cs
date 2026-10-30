@@ -7,25 +7,25 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
     {
         public IActionResult OnPostAppend()
         {
-            History.Text += " → OnPost";
-            UIHelper.Label("Immediate").Text("旧事件已完成");
+            labHistory.Text += " → OnPost";
+            UIHelper.Label("labImmediate").Text("旧事件已完成");
             return UIHelper.Result();
         }
 
-        public void Direct_Click(object sender, EventArgs e)
+        public void btnRazorForms_Click(object sender, EventArgs e)
         {
-            History.Text += " → RazorForms";
+            labHistory.Text += " → RazorForms";
         }
 
         public IActionResult OnPostOpen()
         {
-            Dialog.Show();
+            Window1.Show();
             return UIHelper.Result();
         }
 
-        public void Close_Click(object sender, EventArgs e)
+        public void btnCloseWindow_Click(object sender, EventArgs e)
         {
-            Dialog.Hide();
+            Window1.Hide();
         }
     }
 }

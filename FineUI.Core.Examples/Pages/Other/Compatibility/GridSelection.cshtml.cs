@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 
         public IActionResult OnPostReadSelection(string[] selectedIds)
         {
-            UIHelper.Label("Result").Text("选中编号：" + string.Join("、", selectedIds));
+            UIHelper.Label("labResult").Text("选中编号：" + string.Join("、", selectedIds));
             return UIHelper.Result();
         }
     }

@@ -4,18 +4,18 @@
     ViewBag.Title = "同页混合事件与持久属性";
 }
 @section body {
-    <f:Button ID="Legacy" Text="旧事件追加" CssClass="marginr" OnClick="@Url.Handler("Append")" />
-    <f:Button ID="Direct" Text="RazorForms 事件追加" CssClass="marginr" OnClick="Direct_Click" />
-    <f:Button ID="OpenWindow" Text="旧事件打开弹窗" OnClick="@Url.Handler("Open")" />
+    <f:Button ID="btnLegacy" Text="旧事件追加" CssClass="marginr" OnClick="@Url.Handler("Append")" />
+    <f:Button ID="btnRazorForms" Text="RazorForms 事件追加" CssClass="marginr" OnClick="btnRazorForms_Click" />
+    <f:Button ID="btnOpenWindow" Text="旧事件打开弹窗" OnClick="@Url.Handler("Open")" />
     <br />
-    <f:Label ID="History" Label="持久属性" Text="开始" />
+    <f:Label ID="labHistory" Label="持久属性" Text="开始" />
     <div style="margin-top: 10px">
-        <f:Label ID="Immediate" Label="即时提示" Text="等待操作" />
+        <f:Label ID="labImmediate" Label="即时提示" Text="等待操作" />
     </div>
-    <f:Window ID="Dialog" Title="兼容事件弹窗" Hidden="true" Width="360" Height="180" IsModal="true" BodyPadding="10">
+    <f:Window ID="Window1" Title="兼容事件弹窗" Hidden="true" Width="360" Height="180" IsModal="true" BodyPadding="10">
         <Items>
             <f:Label Text="由旧 OnPost 操作后台 Window 实例打开。" />
-            <f:Button ID="CloseWindow" Text="RazorForms 事件关闭" OnClick="Close_Click" />
+            <f:Button ID="btnCloseWindow" Text="RazorForms 事件关闭" OnClick="btnCloseWindow_Click" />
         </Items>
     </f:Window>
     <ul class="compatibility-notes">

@@ -6,7 +6,9 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class ModelBindingModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
-		protected FineUI.Core.Button Submit;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.TextBox tbxName;
+		protected FineUI.Core.NumberBox nbxQuantity;
+		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Label labResult;
 	}
 }

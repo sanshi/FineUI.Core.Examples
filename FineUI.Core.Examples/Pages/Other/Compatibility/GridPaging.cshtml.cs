@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
             int pageIndex = Math.Clamp(Grid1_pageIndex, 0, 2);
             UIHelper.Grid("Grid1").RecordCount(15);
             UIHelper.Grid("Grid1").DataSource(LoadRows(pageIndex), Grid1_fields);
-            UIHelper.Label("Result").Text($"第 {pageIndex + 1} 页");
+            UIHelper.Label("labResult").Text($"第 {pageIndex + 1} 页");
             return UIHelper.Result();
         }
     }

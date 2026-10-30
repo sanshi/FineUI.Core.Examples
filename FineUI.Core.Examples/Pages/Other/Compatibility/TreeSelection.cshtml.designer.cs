@@ -6,8 +6,8 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class TreeSelectionModel
 	{
 		protected FineUI.Core.Tree Tree1;
-		protected FineUI.Core.Button Submit;
-		protected FineUI.Core.Button SelectHefei;
-		protected FineUI.Core.Label Result;
+		protected FineUI.Core.Button btnSubmit;
+		protected FineUI.Core.Button btnSelectHefei;
+		protected FineUI.Core.Label labResult;
 	}
 }
