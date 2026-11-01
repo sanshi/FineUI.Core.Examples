@@ -12,16 +12,29 @@
         .ShowHeader(true)
         .BodyPadding(10)
         .Items(
+            F.Label().Text("填写账号和密码后登录"),
             F.TextBox().ID("tbxUserName").Name("UserName").Label("用户名").Required(true),
             F.TextBox().ID("tbxPassword").Name("Password").Label("密码").TextMode(TextMode.Password).Required(true),
-            F.Button().ID("btnSubmit").Text("登录").ButtonColor(ButtonColor.Primary)
-                .OnClick(Url.Handler("Login"), "SimpleForm1").ValidateForms("SimpleForm1")))
+            F.Button().ID("btnSubmit").Text("登录").ButtonColor(ButtonColor.Primary).CssClass("marginr")
+                .OnClick(Url.Handler("Login"), "SimpleForm1").ValidateForms("SimpleForm1"),
+            F.Button().ID("btnManualSubmit").Text("手写回发登录")
+                .ClickHandler("onSubmitCompatibilityLogin").ValidateForms("SimpleForm1")))
     <div style="margin-top: 10px">
         @F.Label().ID("labResult").Text("等待操作")
     </div>
     <ul class="compatibility-notes">
         <li>全局启用 RazorForms，继续使用流式控件、Url.Handler 和 OnPost 登录事件。</li>
+        <li>第二个按钮手写 F.doPostBack 调用同一个 OnPost；固定结构中的匿名说明标签也可连续回发。</li>
         <li>示例账号为 admin，密码为 admin888。</li>
         <li>UIHelper 更新即时显示，不保证同步为后台控件持久属性。</li>
     </ul>
+}
+
+@section script {
+    <script>
+        function onSubmitCompatibilityLogin(event) {
+            F.doPostBack('@Url.Handler("Login")', 'SimpleForm1');
+            return false;
+        }
+    </script>
 }

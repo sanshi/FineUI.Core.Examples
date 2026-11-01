@@ -1,4 +1,4 @@
-@page
+@page "{category?}"
 @model FineUI.Core.Examples.Pages.Other.Compatibility.QueryParametersModel
 @{
     ViewBag.Title = "显式网址与附加参数";
@@ -25,6 +25,7 @@
         <li>第二个按钮使用 Url.Page，显式传入 id=105 和 dialog=1。</li>
         <li>Parameter.FromFunction 每次提交时读取最新备注，Parameter.FromData 提供固定的来源参数。</li>
         <li>两个按钮的参数写法均兼容严格 CSP。</li>
+        <li>页面支持附加分类路由值，分类内容含斜杠时可使用编码后的 %2F，不必手工重复编码。</li>
     </ul>
 }
 

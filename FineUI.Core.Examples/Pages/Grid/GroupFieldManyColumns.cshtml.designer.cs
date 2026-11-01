@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 {
 	public partial class GroupFieldManyColumnsModel
 	{
+		protected FineUI.Core.Button btnCheckColumns;
 		protected FineUI.Core.Grid Grid1;
 	}
 }

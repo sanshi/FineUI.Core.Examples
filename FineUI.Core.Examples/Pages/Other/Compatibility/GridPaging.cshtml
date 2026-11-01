@@ -2,22 +2,22 @@
 @model FineUI.Core.Examples.Pages.Other.Compatibility.GridPagingModel
 @{
     ViewBag.Title = "表格分页与旧处理程序";
+    var F = Html.F();
 }
 @section body {
-    <f:Grid ID="Grid1" Title="客户列表" ShowHeader="true" IsFluid="true" Height="320"
-        DataIDField="Id" DataTextField="Name" AllowPaging="true" IsDatabasePaging="true" PageSize="5"
-        RecordCount="15" DataSource="Model.Rows"
-        OnPageIndexChanged="@Url.Handler("PageChanged")" OnPageIndexChangedFields="Grid1">
-        <Columns>
-            <f:RowNumberField />
-            <f:RenderField HeaderText="编号" DataField="Id" Width="100" />
-            <f:RenderField HeaderText="客户名称" DataField="Name" ExpandUnusedSpace="true" />
-        </Columns>
-    </f:Grid>
+    @(F.Grid().ID("Grid1").Title("客户列表").ShowHeader(true).IsFluid(true).Height(320)
+        .DataIDField("Id").DataTextField("Name").AllowPaging(true).IsDatabasePaging(true).PageSize(5)
+        .RecordCount(15).DataSource(Model.Rows)
+        .OnPageIndexChanged(Url.Handler("PageChanged"), "Grid1")
+        .Columns(
+            F.RowNumberField(),
+            F.RenderField().HeaderText("编号").DataField("Id").Width(100),
+            F.RenderField().HeaderText("客户名称").DataField("Name").ExpandUnusedSpace(true)))
     <f:Label ID="labResult" Text="第 1 页" />
     <ul class="compatibility-notes">
         <li>分页沿用 RazorPages 的页码和字段参数，通过 UIHelper 加载当前页数据。</li>
         <li>首屏在 OnGet 查询，翻页时只在 OnPostPageChanged 查询对应页。</li>
         <li>示例使用 15 条内存记录模拟数据库分页。</li>
+        <li>固定列结构使用流式 API，不必为每个列单独设置 ID。</li>
     </ul>
 }
