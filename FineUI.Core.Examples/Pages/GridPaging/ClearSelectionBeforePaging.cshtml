@@ -22,7 +22,7 @@
     </f:Grid>
     <br />
     <f:Button CssClass="marginr" ID="btnSelectCell" Text="选择第二页姓名单元格" OnClick="btnSelectCell_Click"></f:Button>
-    <f:Button CssClass="marginr" ID="btnClearSelections" Text="服务端清空全部选择" OnClick="btnClearSelections_Click"></f:Button>
+    <f:Button CssClass="marginr" ID="btnClearSelection" Text="服务端清空全部选择" OnClick="btnClearSelection_Click"></f:Button>
     <f:Button ID="btnReadSelection" Text="服务端读取选择" OnClick="btnReadSelection_Click"></f:Button>
     <f:Label ID="labServerSelection"></f:Label>
     <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedRowIdsClick"></f:Button>
@@ -44,10 +44,6 @@
     <script src="~/res/js/grid.js"></script>
 
     <script>
-
-        function clearGridSelections() {
-            F.ui.Grid1.clearSelections();
-        }
 
         function onShowSelectedRowIdsClick(event) {
             F.alert('选中行的ID列表为：' + F.ui.Grid1.getSelectedRows().join(', '));

@@ -57,7 +57,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.DataList
         // 服务端清空选择。
         protected void btnClearSelection_Click(object sender, EventArgs e)
         {
-            DataList1.SelectedValue = null;
+            DataList1.ClearSelection();
         }
 
         // 倒序重绑同一批列表项，并选中美国。

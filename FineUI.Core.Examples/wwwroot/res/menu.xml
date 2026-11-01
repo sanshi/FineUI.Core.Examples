@@ -576,6 +576,10 @@
 		<TreeNode Text="杂项">
 			<TreeNode Text="重置表单" NavigateUrl="~/Form/FormReset">
 			</TreeNode>
+			<TreeNode Text="统一清空选择" NavigateUrl="~/Form/ClearSelection">
+			</TreeNode>
+			<TreeNode Text="下拉列表赋值顺序" NavigateUrl="~/Form/DropDownListAssignmentOrder">
+			</TreeNode>
 			<TreeNode Text="动态创建表单元素" NavigateUrl="~/Form/FormDynamic">
 			</TreeNode>
 			<TreeNode Text="隐藏表单字段" NavigateUrl="~/Form/FormHideField">

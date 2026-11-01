@@ -61,8 +61,7 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 
         protected void btnClearValue_Click(object sender, EventArgs e)
         {
-            DropDownBox1.Text = "";
-            DropDownBox1.Values = new string[0];
+            DropDownBox1.ClearSelection();
         }
 
     }

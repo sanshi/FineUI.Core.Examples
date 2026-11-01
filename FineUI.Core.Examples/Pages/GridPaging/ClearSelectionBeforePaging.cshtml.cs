@@ -15,9 +15,9 @@ namespace FineUI.Core.Examples.Pages.GridPaging
             Grid1.SelectCell("106", "Name");
         }
 
-        protected void btnClearSelections_Click(object sender, EventArgs e)
+        protected void btnClearSelection_Click(object sender, EventArgs e)
         {
-            FineUI.Core.PageContext.InvokeFunction("clearGridSelections");
+            Grid1.ClearSelection();
         }
 
         protected void btnReadSelection_Click(object sender, EventArgs e)

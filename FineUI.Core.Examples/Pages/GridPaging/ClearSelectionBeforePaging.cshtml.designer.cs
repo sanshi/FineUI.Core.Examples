@@ -7,7 +7,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 	{
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.Button btnSelectCell;
-		protected FineUI.Core.Button btnClearSelections;
+		protected FineUI.Core.Button btnClearSelection;
 		protected FineUI.Core.Button btnReadSelection;
 		protected FineUI.Core.Label labServerSelection;
 	}

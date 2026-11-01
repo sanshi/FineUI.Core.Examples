@@ -31,6 +31,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.DataList
             foreach (DataRow row in source.Rows)
             {
                 DataListItem listItem = new DataListItem();
+                listItem.Value = row["Id"].ToString();
                 listItem.TextRawHtml = new RawHtml(DATALIST_ITEM_TEMPLATE_ACTIONS,
                     Url.Content("~/res/icon/flag_" + row["Image"] + ".png"),
                     HttpUtility.HtmlEncode(row["Name"]),
