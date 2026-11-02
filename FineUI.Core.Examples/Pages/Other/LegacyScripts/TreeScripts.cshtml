@@ -1,0 +1,17 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.TreeScriptsModel
+@{
+    ViewBag.Title = "树加载与展开的旧脚本引用";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+    <f:Tree ID="Tree1" Title="旧树脚本" ShowHeader="true" Height="220" />
+    <br />
+    <f:Button ID="btnLoad" Text="加载部门" OnClick="btnLoad_Click" CssClass="marginr" />
+    <f:Button ID="btnExpand" Text="展开研发部门" OnClick="btnExpand_Click" />
+    <ul class="compatibility-notes">
+        <li>先加载节点，再点击展开研发部门；旧 GetLoadDataReference 和 GetExpandNodeReference 仍可交给启动脚本执行。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

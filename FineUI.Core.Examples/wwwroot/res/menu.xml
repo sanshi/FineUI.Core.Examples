@@ -2249,7 +2249,25 @@
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
-		<TreeNode Text="旧写法兼容" Expanded="false">
+		<TreeNode Text="旧脚本兼容（禁用脚本 CSP）" Expanded="false">
+			<TreeNode Text="启动脚本：首次显示与回发" NavigateUrl="~/Other/LegacyScripts/StartupScript" />
+			<TreeNode Text="预启动脚本与启动脚本的顺序" NavigateUrl="~/Other/LegacyScripts/PreStartupScript" />
+			<TreeNode Text="OnClientClick：旧点击脚本与取消回发" NavigateUrl="~/Other/LegacyScripts/ClientClick" />
+			<TreeNode Text="Listener：函数名、调用语句与参数" NavigateUrl="~/Other/LegacyScripts/Listeners" />
+			<TreeNode Text="Parameter：发送前读取旧脚本表达式" NavigateUrl="~/Other/LegacyScripts/Parameters" />
+			<TreeNode Text="确认文字中的旧 script 表达式" NavigateUrl="~/Other/LegacyScripts/ConfirmText" />
+			<TreeNode Text="表格列中的内联渲染函数" NavigateUrl="~/Other/LegacyScripts/Renderer" />
+			<TreeNode Text="渲染函数工厂的旧调用表达式" NavigateUrl="~/Other/LegacyScripts/RendererFactory" />
+			<TreeNode Text="表格追加与改单元格的旧脚本引用" NavigateUrl="~/Other/LegacyScripts/GridScripts" />
+			<TreeNode Text="树加载与展开的旧脚本引用" NavigateUrl="~/Other/LegacyScripts/TreeScripts" />
+			<TreeNode Text="javascript 链接与窗口脚本引用" NavigateUrl="~/Other/LegacyScripts/JavaScriptUrl" />
+			<TreeNode Text="窗口显示、隐藏与最大化脚本" NavigateUrl="~/Other/LegacyScripts/WindowScripts" />
+			<TreeNode Text="确认框脚本引用与字符串回调" NavigateUrl="~/Other/LegacyScripts/MessageCallbacks" />
+			<TreeNode Text="子窗口关闭后执行父页脚本" NavigateUrl="~/Other/LegacyScripts/ActiveWindow" />
+			<TreeNode Text="通过旧脚本引用添加选项卡" NavigateUrl="~/Other/LegacyScripts/TabScripts" />
+			<TreeNode Text="原生 HTML 内联事件与脚本地址" NavigateUrl="~/Other/LegacyScripts/InlineAttributes" />
+		</TreeNode>
+		<TreeNode Text="旧写法兼容（RazorPages）" Expanded="false">
 			<TreeNode Text="登录表单（流式创建控件）" NavigateUrl="~/Other/Compatibility/FluentLogin" />
 			<TreeNode Text="查询与附加参数" NavigateUrl="~/Other/Compatibility/QueryParameters?id=999&amp;dialog=2" />
 			<TreeNode Text="对象绑定" NavigateUrl="~/Other/Compatibility/ModelBinding?id=105" />

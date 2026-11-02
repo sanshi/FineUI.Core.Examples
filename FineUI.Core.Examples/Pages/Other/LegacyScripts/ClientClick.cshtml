@@ -1,0 +1,20 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.ClientClickModel
+@{
+    ViewBag.Title = "OnClientClick：旧点击脚本与取消回发";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnCancel" Text="执行脚本并取消回发" CssClass="marginr" OnClick="btnServer_Click"
+        OnClientClick="F.ui.labResult.setText('旧点击脚本已取消回发'); return false;" />
+    <f:Button ID="btnContinue" Text="执行脚本并继续回发" OnClick="btnServer_Click"
+        OnClientClick="F.ui.labResult.setText('旧点击脚本已执行');" />
+    <br /><br />
+    <f:Label ID="labResult" Text="尚未点击" />
+    <ul class="compatibility-notes">
+        <li>旧 OnClientClick 中显式 return false 会取消后台回发；不返回 false 时继续执行后台事件。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

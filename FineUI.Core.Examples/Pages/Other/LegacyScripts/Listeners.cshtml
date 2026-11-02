@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.ListenersModel
+@{
+    ViewBag.Title = "Listener：函数名、调用语句与参数";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnName" Text="函数名" CssClass="marginr" />
+    <f:Button ID="btnCall" Text="无参调用（无分号）" CssClass="marginr" />
+    <f:Button ID="btnSemicolon" Text="无参调用（有分号）" CssClass="marginr" />
+    <f:Button ID="btnArguments" Text="带参数调用" CssClass="marginr" />
+    <f:Button ID="btnStatements" Text="多条语句" />
+    <br /><br />
+    <f:Label ID="labResult" Text="尚未点击" />
+    <ul class="compatibility-notes">
+        <li>两个无参调用只相差末尾分号，效果相同；“带参数调用”单独演示传入文字，函数名写法保留事件参数。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}
+
+@section script {
+    <script>
+
+        function onLegacyNameClick(event) {
+            showLegacyResult('函数名');
+        }
+
+        function showLegacyCallResult() {
+            showLegacyResult('无参函数已执行');
+        }
+
+        function showLegacyResult(message) {
+            F.ui.labResult.setText(message);
+        }
+    </script>
+}

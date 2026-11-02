@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.InlineAttributesModel
+@{
+    ViewBag.Title = "原生 HTML 内联事件与脚本地址";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <button id="btnInline" type="button" onclick="document.getElementById('nativeResult').textContent='内联点击已执行';">执行原生 onclick</button>
+    <br /><br />
+    <a id="lnkScript" href="javascript:showLegacyNativeResult();">执行原生 javascript 链接</a>
+    <br /><br />
+    <span id="nativeResult">尚未执行</span>
+    <ul class="compatibility-notes">
+        <li>原生 HTML 的 onclick 和 javascript 地址由浏览器执行；这两种写法需要禁用 CSP 脚本限制。</li>
+        <li>AllowDangerousJavaScriptUrl 校验 FineUI 控件的链接属性，不校验直接写入页面的原生 HTML；原生脚本链接由浏览器的 CSP 控制。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}
+
+@section script {
+    <script>
+
+        function showLegacyNativeResult() {
+            document.getElementById('nativeResult').textContent = '脚本链接已执行';
+        }
+    </script>
+}

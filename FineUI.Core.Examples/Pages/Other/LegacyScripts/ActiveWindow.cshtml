@@ -1,0 +1,18 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.ActiveWindowModel
+@{
+    ViewBag.Title = "子窗口关闭后执行父页脚本";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs;~/Pages/Other/LegacyScripts/ActiveWindowChild.cshtml;~/Pages/Other/LegacyScripts/ActiveWindowChild.cshtml.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnOpen" Text="打开子窗口" OnClick="btnOpen_Click" />
+    <br /><br />
+    <f:Label ID="labResult" Text="等待子窗口保存" />
+    <f:Window ID="Window1" Title="旧保存关窗写法" Hidden="true" IsModal="true" Width="420" Height="240" EnableIFrame="true" />
+    <ul class="compatibility-notes">
+        <li>子页用 ActiveWindow.GetHideReference 关闭自身，再执行父页的结果更新脚本。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

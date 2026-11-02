@@ -1,0 +1,17 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.MessageCallbacksModel
+@{
+    ViewBag.Title = "确认框脚本引用与字符串回调";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnConfirm" Text="打开旧确认框" OnClick="btnConfirm_Click" />
+    <br /><br />
+    <f:Label ID="labResult" Text="尚未选择" />
+    <ul class="compatibility-notes">
+        <li>确认与取消分别执行原来的字符串回调，可以连续打开并选择不同结果。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

@@ -1,0 +1,20 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.JavaScriptUrlModel
+@{
+    ViewBag.Title = "javascript 链接与窗口脚本引用";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs;~/Pages/Other/LegacyScripts/Child.cshtml;~/Pages/Other/LegacyScripts/Child.cshtml.cs";
+}
+
+@section body {
+
+    <f:HyperLink ID="hlxOpen" Text="通过旧脚本链接打开窗口" />
+    <br /><br />
+    <f:Button ID="btnRead" Text="回发后继续验证链接" OnClick="btnRead_Click" />
+    <br /><br />
+    <f:Label ID="labResult" Text="尚未回发" />
+    <f:Window ID="Window1" Title="旧脚本链接" Hidden="true" IsModal="true" Width="420" Height="220" EnableIFrame="true" />
+    <ul class="compatibility-notes">
+        <li>项目在 appsettings.json 中设置 AllowDangerousJavaScriptUrl=false；本页在每轮 Page_Init 中通过 PageManager 单独开启，以演示旧链接在回发后仍可使用。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

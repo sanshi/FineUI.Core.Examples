@@ -1,0 +1,23 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.TabScriptsModel
+@{
+    ViewBag.Title = "通过旧脚本引用添加选项卡";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs;~/Pages/Other/LegacyScripts/Child.cshtml;~/Pages/Other/LegacyScripts/Child.cshtml.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnAdd" Text="添加旧脚本选项卡" OnClick="btnAdd_Click" />
+    <br /><br />
+    <f:TabStrip ID="TabStrip1" Height="250" ActiveTabIndex="0">
+        <Tabs>
+            <f:Tab ID="Tab1" Title="初始页面" BodyPadding="10">
+                <Items><f:Label ID="labInitial" Text="点击上方按钮追加选项卡" /></Items>
+            </f:Tab>
+        </Tabs>
+    </f:TabStrip>
+    <ul class="compatibility-notes">
+        <li>GetAddTabReference 生成的旧脚本仍能新增 IFrame 选项卡；重复点击不创建重复 ID。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

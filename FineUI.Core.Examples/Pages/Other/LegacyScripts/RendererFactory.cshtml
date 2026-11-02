@@ -1,0 +1,31 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.RendererFactoryModel
+@{
+    ViewBag.Title = "渲染函数工厂的旧调用表达式";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" Title="带参数的渲染函数工厂" ShowHeader="true" Height="180" DataIDField="Id">
+        <Columns>
+            <f:RenderField DataField="Amount" HeaderText="金额" ExpandUnusedSpace="true"
+                RendererFunction="createLegacyRenderer(window.legacyAmountPrefix + '：')" />
+        </Columns>
+    </f:Grid>
+    <ul class="compatibility-notes">
+        <li>旧工厂调用可以先计算脚本参数，再返回真正的渲染函数；这里读取页面变量拼接金额前缀。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}
+
+@section script {
+    <script>
+        window.legacyAmountPrefix = '金额';
+        function createLegacyRenderer(prefix) {
+            return function (value) {
+                return prefix + F.format.htmlEncode(value);
+            };
+        }
+    </script>
+}

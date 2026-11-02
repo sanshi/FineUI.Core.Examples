@@ -1,0 +1,22 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.RendererModel
+@{
+    ViewBag.Title = "表格列中的内联渲染函数";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Grid ID="Grid1" Title="旧内联渲染函数" ShowHeader="true" Height="180" DataIDField="Id">
+        <Columns>
+            <f:RenderField DataField="Name" HeaderText="客户" ExpandUnusedSpace="true"
+                RendererFunction="function(value){ return F.format.htmlEncode(value) + '（旧渲染）'; }" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button ID="btnReload" Text="回发重新加载" OnClick="btnReload_Click" />
+    <ul class="compatibility-notes">
+        <li>RendererFunction 保留完整函数正文；后台重新加载后仍使用同一渲染规则。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

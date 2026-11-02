@@ -1,0 +1,17 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.PreStartupScriptModel
+@{
+    ViewBag.Title = "预启动脚本与启动脚本的顺序";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:Button ID="btnRun" Text="追加回发启动记录" OnClick="btnRun_Click" />
+    <br /><br />
+    <f:Label ID="labResult" />
+    <ul class="compatibility-notes">
+        <li>RegisterPreStartupScript 是已废弃的首屏接口，只在页面初次输出时准备数据；回发使用 RegisterStartupScript。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}

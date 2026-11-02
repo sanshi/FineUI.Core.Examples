@@ -1,0 +1,22 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.LegacyScripts.ParametersModel
+@{
+    ViewBag.Title = "Parameter：发送前读取旧脚本表达式";
+    ViewBag.SourceFiles = "~/Code/LegacyScriptPageBase.cs";
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" Title="脚本表达式参数" ShowHeader="true" IsFluid="true" BodyPadding="10" LabelWidth="120">
+        <Items>
+            <f:TextBox ID="tbxValue" Label="备注" Text="第一次备注" />
+            <f:Button ID="btnSubmit" Text="按表达式读取并提交" OnClick="@Url.Handler("Capture")"
+                OnClickParameter1="@(new Parameter("note", "F.ui.tbxValue.getValue()"))" />
+            <f:Label ID="labResult" Text="尚未提交" />
+        </Items>
+    </f:SimpleForm>
+    <ul class="compatibility-notes">
+        <li>Parameter 的旧字符串表达式在发送请求前求值，修改输入后再次提交可取得新值。</li>
+        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+    </ul>
+}
