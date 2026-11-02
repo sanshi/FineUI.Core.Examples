@@ -1,0 +1,20 @@
+@page
+@model FineUI.Core.Examples.Pages.Other.Compatibility.DynamicOnPostModel
+@{
+    ViewBag.Title = "动态表单与旧 OnPost";
+}
+
+@section body {
+    <f:Form ID="Form2" Title="动态表单" ShowHeader="true" BodyPadding="10" LabelWidth="120" LabelAlign="Top">
+        <Rows>
+            <f:FormRow Items="@ViewBag.DynamicItems" />
+        </Rows>
+    </f:Form>
+    <f:Button ID="Button1" Text="验证表单并提交" _ValidateForms="Form2" ValidateTarget="Top"
+        OnClick="@Url.Handler("Button1_Click")" OnClickFields="Form2" />
+    <ul class="compatibility-notes">
+        <li>沿用 RazorPages 的写法：OnGet 首次创建字段并放入 ViewBag.DynamicItems，事件指向本页 OnPost。</li>
+        <li>全局开启 RazorForms 后，选择性别、输入姓名、提交，再次修改后仍可继续操作。</li>
+        <li>无需在回发时再次创建字段或登记 URL 事件；OnPost 仍须校验当前用户及业务权限。</li>
+    </ul>
+}

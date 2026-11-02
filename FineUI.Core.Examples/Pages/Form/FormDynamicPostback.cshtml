@@ -1,0 +1,18 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.FormDynamicPostbackModel
+@{
+    ViewBag.Title = "回发时追加表单控件";
+}
+
+@section body {
+    <f:Button ID="btnAdd" Text="追加备注输入框和按钮" OnClick="btnAdd_Click" />
+    <br />
+    <br />
+    <f:Panel ID="Panel1" Title="新增控件区域" ShowHeader="true" BodyPadding="10" />
+    <f:Label ID="labResult" Text="尚未追加控件" />
+    <ul class="compatibility-notes">
+        <li>点击追加后，后台创建备注输入框和提交按钮，立即放入上方面板。</li>
+        <li>输入备注并点击新增按钮提交，再修改备注并提交，观察结果及输入值。</li>
+        <li>重复点击追加不会创建同名控件；新按钮只在创建时登记事件。</li>
+    </ul>
+}

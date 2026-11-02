@@ -582,6 +582,7 @@
 			</TreeNode>
 			<TreeNode Text="动态创建表单元素" NavigateUrl="~/Form/FormDynamic">
 			</TreeNode>
+			<TreeNode Text="回发时追加表单控件" NavigateUrl="~/Form/FormDynamicPostback" />
 			<TreeNode Text="隐藏表单字段" NavigateUrl="~/Form/FormHideField">
 			</TreeNode>
 			<TreeNode Text="禁用与只读" NavigateUrl="~/Form/FormDisabled">
@@ -2256,6 +2257,7 @@
 			<TreeNode Text="树节点选择" NavigateUrl="~/Other/Compatibility/TreeSelection" />
 			<TreeNode Text="选项卡切换" NavigateUrl="~/Other/Compatibility/TabIndexChanged" />
 			<TreeNode Text="同页混合事件" NavigateUrl="~/Other/Compatibility/MixedEvents" />
+			<TreeNode Text="动态表单与旧 OnPost" NavigateUrl="~/Other/Compatibility/DynamicOnPost" />
 		</TreeNode>
 		<TreeNode Text="数据模型">
 			<TreeNode Text="登录页面" NavigateUrl="~/DataModel/Login">

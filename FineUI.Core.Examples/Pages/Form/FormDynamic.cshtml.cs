@@ -18,11 +18,6 @@ namespace FineUI.Core.Examples.Pages.Form
             {
                 LoadData();
             }
-            if (IsPostBack && ddlGender != null)
-            {
-                // 动态控件已恢复当前值，后台方法每轮由服务器重新授权。
-                ddlGender.Events.Add(new Event("change", "ddlGender_SelectedIndexChanged"));
-            }
         }
 
         // 这两个控件是动态创建的，不会在 .designer.cs 文件中生成，只需要在此定义即可

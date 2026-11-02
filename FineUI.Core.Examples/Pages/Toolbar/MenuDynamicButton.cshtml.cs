@@ -17,11 +17,6 @@ namespace FineUI.Core.Examples.Pages.Toolbar
             {
                 LoadData();
             }
-            else if (btnDynamic != null)
-            {
-                // 动态按钮的当前状态已恢复；点击方法由服务器每轮重新登记，不能从浏览器取回。
-                btnDynamic.OnClick = new Event("click", "btnDynamic_Click");
-            }
         }
 
         private void LoadData()
