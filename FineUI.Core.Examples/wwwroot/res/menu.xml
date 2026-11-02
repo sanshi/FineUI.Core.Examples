@@ -573,6 +573,12 @@
 			<TreeNode Text="表格样式（信息录入，不显示边框）" NavigateUrl="~/FormTable/TableStyleLayoutInfoBorder">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="动态控件">
+			<TreeNode Text="动态创建表单元素" NavigateUrl="~/Form/FormDynamic">
+			</TreeNode>
+			<TreeNode Text="回发时追加表单控件" NavigateUrl="~/Form/FormDynamicPostback" />
+			<TreeNode Text="动态事件的条件撤回" NavigateUrl="~/Form/DynamicEventRevocation" />
+		</TreeNode>
 		<TreeNode Text="杂项">
 			<TreeNode Text="重置表单" NavigateUrl="~/Form/FormReset">
 			</TreeNode>
@@ -580,9 +586,6 @@
 			</TreeNode>
 			<TreeNode Text="下拉列表赋值顺序" NavigateUrl="~/Form/DropDownListAssignmentOrder">
 			</TreeNode>
-			<TreeNode Text="动态创建表单元素" NavigateUrl="~/Form/FormDynamic">
-			</TreeNode>
-			<TreeNode Text="回发时追加表单控件" NavigateUrl="~/Form/FormDynamicPostback" />
 			<TreeNode Text="隐藏表单字段" NavigateUrl="~/Form/FormHideField">
 			</TreeNode>
 			<TreeNode Text="禁用与只读" NavigateUrl="~/Form/FormDisabled">

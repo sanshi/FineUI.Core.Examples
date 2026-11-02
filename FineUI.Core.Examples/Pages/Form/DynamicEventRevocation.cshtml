@@ -1,0 +1,38 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.DynamicEventRevocationModel
+@{
+    ViewBag.Title = "动态事件的条件撤回";
+}
+
+@section body {
+    <f:CheckBox ID="cbxRevoke" Text="本轮撤回动态按钮事件" ShowLabel="false" />
+    <br />
+    <br />
+    <f:Panel ID="Panel1" Title="首次加载时创建的动态按钮" ShowHeader="true" BodyPadding="10" />
+    <br />
+    <f:Button ID="btnReadCount" Text="读取服务器处理次数" OnClick="btnReadCount_Click" />
+    <br />
+    <br />
+    <f:Label ID="labCount" Text="服务器处理次数：0" />
+    <br />
+    <br />
+    <f:Label ID="labResult" Text="请先点击动态按钮，观察处理次数" />
+    <ul class="compatibility-notes">
+        <li>动态按钮仅首次绑定事件，回发无需重复登记。</li>
+        <li>勾选后每轮明确撤回事件，点击返回 HTTP 400；取消勾选后恢复。</li>
+        <li>读取服务器处理次数，确认拒绝时次数不增加。计数保存在 Session 中，刷新本页重置。</li>
+        <li>复选框仅模拟撤回条件，实际业务权限须由服务器判断并校验。</li>
+    </ul>
+}
+
+@section script {
+    <script>
+        F.beforeAjaxError(function (data, textStatus, xhr) {
+            // 勾选撤回时的 HTTP 400 是本例的预期结果，直接显示在页面；其他错误仍走默认提示。
+            if (xhr.status === 400 && F.ui.cbxRevoke.getValue()) {
+                F.ui.labResult.setText('事件已撤回，服务器拒绝本次请求（HTTP 400）；请读取服务器处理次数核对');
+                return false;
+            }
+        });
+    </script>
+}
