@@ -1,0 +1,23 @@
+@page
+@model FineUI.Core.Examples.Pages.DataList.DataListModel
+@{
+    ViewBag.Title = "数据列表：基础列表";
+    var beijingText = "<img src=\"" + Url.Content("~/res/icon/building.png") + "\" alt=\"\" /> 北京";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="700" Title="基础列表" ShowBorder="true" BodyPadding="10">
+        <Items>
+            <f:DataList ID="DataList1">
+                <Items>
+                    <f:DataListItem Value="beijing" _TextRawHtml="@beijingText" />
+                    <f:DataListItem Value="shanghai" Text="上海" />
+                    <f:DataListItem Value="guangzhou" Text="广州" />
+                    <f:DataListItem Value="hefei" Text="合肥" NavigateUrl="https://fineui.com/" Target="_blank" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <br />
+    <p>列表项使用稳定的城市编号，文字、图片和普通超链接可放在同一个列表中。点击合肥，在新页面打开官网。</p>
+}

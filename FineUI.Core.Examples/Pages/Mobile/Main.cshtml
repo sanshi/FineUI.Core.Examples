@@ -325,7 +325,7 @@
 
         F.ready(function () {
 
-            // 社区版不支持DataList
+            // 控件未创建时不初始化菜单；本页的移动布局、工具栏和动画仍需企业版。
             if (!F.ui.DataList1) {
                 return;
             }

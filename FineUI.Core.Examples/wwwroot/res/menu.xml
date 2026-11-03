@@ -1967,6 +1967,16 @@
 			<TreeNode Text="分部视图（复杂布局）" NavigateUrl="~/Partial/Layout">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="数据列表（DataList）">
+			<TreeNode Text="基础列表" NavigateUrl="~/DataList/DataList">
+			</TreeNode>
+			<TreeNode Text="数据绑定与追加" NavigateUrl="~/DataList/DataListDataBind">
+			</TreeNode>
+			<TreeNode Text="选择与清空" NavigateUrl="~/DataList/DataListSelection">
+			</TreeNode>
+			<TreeNode Text="分组与模板" NavigateUrl="~/DataList/DataListGroup">
+			</TreeNode>
+		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="移动" IconFont="_Mobile">
 		<TreeNode Text="移动首页" NavigateUrl="~/Mobile/?file=Main" IsEnterprise="true">

@@ -1,0 +1,49 @@
+@page
+@model FineUI.Core.Examples.Pages.DataList.DataListSelectionModel
+@{
+    ViewBag.Title = "数据列表：选择与清空";
+}
+
+@section body {
+    <f:Panel ID="PanelDataListSingle" IsFluid="true" MaxWidth="700" Title="单选" ShowBorder="true" BodyPadding="10" MarginBottom="20">
+        <Items>
+            <f:DataList ID="DataListSingle" EnableSelect="true" SelectedValue="beijing">
+                <Items>
+                    <f:DataListItem Value="beijing" Text="北京" />
+                    <f:DataListItem Value="shanghai" Text="上海" />
+                    <f:DataListItem Value="guangzhou" Text="广州" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <f:Panel ID="PanelDataListMulti" IsFluid="true" MaxWidth="700" Title="多选" ShowBorder="true" BodyPadding="10" MarginBottom="20">
+        <Items>
+            <f:DataList ID="DataListMulti" EnableSelect="true" EnableMultiSelect="true" _SelectedValueArray="beijing,shanghai">
+                <Items>
+                    <f:DataListItem Value="beijing" Text="北京" />
+                    <f:DataListItem Value="shanghai" Text="上海" />
+                    <f:DataListItem Value="guangzhou" Text="广州" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <f:Panel ID="PanelDataListKeep" IsFluid="true" MaxWidth="700" Title="多选并保持当前选择" ShowBorder="true" BodyPadding="10" MarginBottom="20">
+        <Items>
+            <f:DataList ID="DataListKeep" EnableSelect="true" EnableMultiSelect="true" KeepCurrentSelection="true" _SelectedValueArray="beijing,shanghai">
+                <Items>
+                    <f:DataListItem Value="beijing" Text="北京" />
+                    <f:DataListItem Value="shanghai" Text="上海" />
+                    <f:DataListItem Value="guangzhou" Text="广州" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <f:Button ID="btnRead" Text="读取当前选择" OnClick="btnRead_Click" CssClass="marginr" />
+    <f:Button ID="btnAssign" Text="后台设置选择" OnClick="btnAssign_Click" CssClass="marginr" />
+    <f:Button ID="btnClear" Text="清空全部选择" OnClick="btnClear_Click" />
+    <br />
+    <br />
+    <f:Label ID="labResult" Text="请点击列表项，再读取后台选择。" />
+    <p>单选列表只保留一项；多选列表可配合 Ctrl 或 Shift 键选择多项。</p>
+    <p>保持当前选择时，直接点击会累积或取消该项。清空后再次读取，后台结果仍为空。</p>
+}

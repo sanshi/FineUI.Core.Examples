@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.DataList.DataListGroupModel
+@{
+    ViewBag.Title = "数据列表：分组与模板";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="700" Title="分组与模板" ShowBorder="true" BodyPadding="10">
+        <Items>
+            <f:DataList ID="DataList1" EnableGroup="true" EnableSelect="true">
+                <Items>
+                    <f:DataListItem Value="beijing" Group="华北" _TextRawHtml="<strong>北京</strong><br />客户服务中心"
+                        NavigateUrl="#details" ShowArrow="true" />
+                    <f:DataListItem Value="tianjin" Group="华北" _TextRawHtml="<strong>天津</strong><br />物流服务中心"
+                        NavigateUrl="#details" ShowArrow="true" />
+                    <f:DataListItem Value="shanghai" Group="华东" _TextRawHtml="<strong>上海</strong><br />技术支持中心"
+                        NavigateUrl="#details" ShowArrow="true" />
+                    <f:DataListItem Value="hangzhou" Group="华东" _TextRawHtml="<strong>杭州</strong><br />产品体验中心"
+                        NavigateUrl="#details" ShowArrow="true" />
+                </Items>
+                <Listeners>
+                    <f:Listener Event="itemclick" Handler="onDataListItemClick" />
+                </Listeners>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Label ID="labResult" Text="请点击一个城市。" />
+    <p>列表按区域分组，每项通过可信 HTML 模板展示标题和业务说明，并显示右侧箭头。</p>
+    <p>点击项时直接显示对应编号，不切换移动面板。模板中的 HTML 由应用固定提供，外部输入应先进行编码。</p>
+}
+
+@section script {
+    <script>
+        function onDataListItemClick(event, itemValue) {
+            event.preventDefault();
+            F.ui.labResult.setValue('当前项：' + itemValue);
+        }
+    </script>
+}
