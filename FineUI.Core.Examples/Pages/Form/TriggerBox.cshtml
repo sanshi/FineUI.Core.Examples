@@ -16,6 +16,22 @@
                     <f:Listener Event="triggerclick" Handler="onTriggerBox1TriggerClick"></f:Listener>
                 </Listeners>
             </f:TriggerBox>
+            <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Search" Trigger2Icon="Search"
+                             EmptyText="双触发器：输入文字或点击右侧按钮" EnableEdit="true" EnableClickAction="false"
+                             OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click">
+            </f:TwinTriggerBox>
+            <f:CheckBox ID="cbxEnableEdit" ShowLabel="false" Text="允许两个输入框手工编辑" Checked="true"></f:CheckBox>
+            <f:CheckBox ID="cbxEnableClickAction" ShowLabel="false" Text="点击双触发器输入区域时执行第二个按钮" Checked="false"></f:CheckBox>
+            <f:Panel ShowBorder="false" ShowHeader="false" Layout="HBox">
+                <Items>
+                    <f:Button ID="btnApplyOptions" Text="应用设置" CssClass="marginr" OnClick="btnApplyOptions_Click"></f:Button>
+                    <f:Button ID="btnReadOptions" Text="读取当前状态" CssClass="marginr" OnClick="btnReadOptions_Click"></f:Button>
+                    <f:Button ID="btnToggleReadonly" Text="切换只读" CssClass="marginr" OnClick="btnToggleReadonly_Click"></f:Button>
+                    <f:Button ID="btnToggleEnabled" Text="切换可用" OnClick="btnToggleEnabled_Click"></f:Button>
+                </Items>
+            </f:Panel>
+            <f:Label ID="labResult" ShowLabel="false"></f:Label>
+            <f:Label ID="labTriggerResult" ShowLabel="false"></f:Label>
         </Items>
     </f:SimpleForm>
     <f:Window ID="Window1" Title="弹出窗口" BodyPadding="10" IsModal="true" Hidden="true" Target="Top" Width="450" Height="300">
@@ -25,7 +41,10 @@
     </f:Window>
     <br />
     <br />
-    注：点击输入框即可弹出窗体（EnableClickAction=true）。
+    <p>单触发器点击输入区域或右侧按钮即可弹出窗口（EnableClickAction=true），关闭窗口后回填文字。</p>
+    <p>修改勾选项后点击“应用设置”：EnableEdit控制能否手工输入，EnableClickAction控制点击输入区域是否执行默认触发动作。
+        双触发器有第二个图标时，输入区点击执行第二个按钮；关闭输入区点击后，右侧按钮仍可使用。</p>
+    <p>“读取当前状态”只读取，不重新设置开关。“切换只读”和“切换可用”演示独立限制：允许编辑不会解除只读或禁用状态。</p>
 
 }
 
