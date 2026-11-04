@@ -1,0 +1,81 @@
+@page
+@model FineUI.Core.Examples.Pages.Config.AjaxPropertiesModel
+@{
+    ViewBag.Title = "AJAX 属性";
+    ViewBag.SourceFiles = "~/content/config/ajax-properties/query.js";
+}
+
+@section head {
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        .ajax-property-detail {
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .ajax-property-detail pre {
+            white-space: pre-wrap;
+        }
+    </style>
+}
+
+@section body {
+    <div id="ajaxPropertyCatalog" data-catalog-url="@Url.Content("~/content/config/ajax-properties/catalog.json")">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="AJAX 属性"
+                DataIDField="id" DataTextField="property" AllowPaging="true" PageSize="20"
+                EnableTextSelection="true" EnableMultiSelect="false"
+                EmptyText="未找到匹配属性，可缩短关键词或调整筛选条件。">
+            <Toolbars>
+                <f:Toolbar ID="ToolbarFilters" Position="Top" Layout="HBox" BoxConfigSpace="10" BodyPadding="5">
+                    <Items>
+                        <f:DropDownList ID="ddlControlType" Label="控件类型" LabelAlign="LabelAlign.Top" BoxFlex="2"
+                                EmptyText="全部控件" EnableEdit="true" AutoSelectFirstItem="false" AutoShowClearIcon="true">
+                            <Listeners>
+                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                            </Listeners>
+                        </f:DropDownList>
+                        <f:TriggerBox ID="tbxPropertySearch" Label="搜索属性" LabelAlign="LabelAlign.Top" BoxFlex="3"
+                                EmptyText="属性名或中文含义" TriggerIcon="Clear" AutoShowClearIcon="true">
+                            <Listeners>
+                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                            </Listeners>
+                        </f:TriggerBox>
+                    </Items>
+                </f:Toolbar>
+                <f:Toolbar ID="ToolbarOptions" Position="Top">
+                    <Items>
+                        <f:CheckBox ID="cbxExcludeInherited" Text="排除继承属性" ShowLabel="false">
+                            <Listeners>
+                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                            </Listeners>
+                        </f:CheckBox>
+                        <f:ToolbarFill />
+                        <f:Label ID="labResultCount" Text="正在读取属性清单…" ShowLabel="false" />
+                        <f:Button ID="btnRetryCatalog" Text="重新读取" Hidden="true"
+                                ClickHandler="AjaxPropertyQuery.loadCatalog" />
+                    </Items>
+                </f:Toolbar>
+            </Toolbars>
+            <Columns>
+                <f:RenderField DataField="id" RenderAsRowExpander="true"
+                        ExpandOnDblClick="false" RendererFunction="AjaxPropertyQuery.renderDetail" />
+                <f:RenderField ColumnID="control" HeaderText="控件" DataField="control" Width="150" />
+                <f:RenderField ColumnID="property" HeaderText="属性" DataField="property" Width="220" />
+                <f:RenderField ColumnID="description" HeaderText="含义" DataField="description"
+                        ExpandUnusedSpace="true" MinWidth="220" />
+                <f:RenderField ColumnID="effect" HeaderText="生效时机" DataField="effectText" Width="120" />
+            </Columns>
+            <Listeners>
+                <f:Listener Event="rowclick" Handler="AjaxPropertyQuery.onRowClick" />
+                <f:Listener Event="rowexpanderexpand" Handler="AjaxPropertyQuery.onExpand" />
+                <f:Listener Event="rowexpandercollapse" Handler="AjaxPropertyQuery.onCollapse" />
+            </Listeners>
+        </f:Grid>
+    </div>
+    <p><strong>什么是 AJAX 属性？</strong>在 Core RazorForms 中，可以在后台回发事件里修改这类属性，响应返回后会更新页面上已有的控件。例如设置 Button.Text 可以修改按钮文字，无需刷新整个页面。</p>
+    <p>不同属性的生效时机有所区别：按钮文字在本次响应后更新，按钮确认文字在下一次点击时使用，必填规则在后续校验时使用。默认包含继承属性，勾选“排除继承属性”可只看当前类型自身声明的属性；点击表格行或左侧加号，查看使用条件、声明来源和后台赋值方式。</p>
+}
+
+@section script {
+    <script src="~/content/config/ajax-properties/query.js"></script>
+}
