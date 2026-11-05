@@ -1445,6 +1445,8 @@
 			</TreeNode>
 			<TreeNode Text="行分组（自定义分组标题）" NavigateUrl="~/GridRowGroup/Renderer" IsEnterprise="true">
 			</TreeNode>
+			<TreeNode Text="行分组（后台切换）" NavigateUrl="~/GridRowGroup/RowGroupAjax" IsEnterprise="true">
+			</TreeNode>
 			<TreeNode Text="折叠行">
 				<TreeNode Text="行分组（折叠指定行）" NavigateUrl="~/GridRowGroup/ExpandedRows" IsEnterprise="true">
 				</TreeNode>

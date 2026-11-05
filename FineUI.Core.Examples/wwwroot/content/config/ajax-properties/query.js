@@ -194,4 +194,25 @@ window.AjaxPropertyQuery = (function () {
     return { loadCatalog, queueSearch, renderDetail, onRowClick, onExpand, onCollapse };
 })();
 
+// 声明事件使用固定的全局函数入口，供筛选、重试和行展开调用。
+function onAjaxPropertyQueryChange() {
+    return AjaxPropertyQuery.queueSearch();
+}
+
+function onAjaxPropertyQueryRetry() {
+    return AjaxPropertyQuery.loadCatalog();
+}
+
+function onAjaxPropertyQueryRowClick(event, rowId) {
+    return AjaxPropertyQuery.onRowClick(event, rowId);
+}
+
+function onAjaxPropertyQueryExpand(event, rowId) {
+    return AjaxPropertyQuery.onExpand(event, rowId);
+}
+
+function onAjaxPropertyQueryCollapse(event, rowId) {
+    return AjaxPropertyQuery.onCollapse(event, rowId);
+}
+
 F.ready(AjaxPropertyQuery.loadCatalog);

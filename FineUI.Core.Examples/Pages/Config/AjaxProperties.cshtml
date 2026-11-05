@@ -32,13 +32,13 @@
                         <f:DropDownList ID="ddlControlType" Label="控件类型" LabelAlign="LabelAlign.Top" BoxFlex="2"
                                 EmptyText="全部控件" EnableEdit="true" AutoSelectFirstItem="false" AutoShowClearIcon="true">
                             <Listeners>
-                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                                <f:Listener Event="change" Handler="onAjaxPropertyQueryChange" />
                             </Listeners>
                         </f:DropDownList>
                         <f:TriggerBox ID="tbxPropertySearch" Label="搜索属性" LabelAlign="LabelAlign.Top" BoxFlex="3"
                                 EmptyText="属性名或中文含义" TriggerIcon="Clear" AutoShowClearIcon="true">
                             <Listeners>
-                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                                <f:Listener Event="change" Handler="onAjaxPropertyQueryChange" />
                             </Listeners>
                         </f:TriggerBox>
                     </Items>
@@ -47,13 +47,13 @@
                     <Items>
                         <f:CheckBox ID="cbxExcludeInherited" Text="排除继承属性" ShowLabel="false">
                             <Listeners>
-                                <f:Listener Event="change" Handler="AjaxPropertyQuery.queueSearch" />
+                                <f:Listener Event="change" Handler="onAjaxPropertyQueryChange" />
                             </Listeners>
                         </f:CheckBox>
                         <f:ToolbarFill />
                         <f:Label ID="labResultCount" Text="正在读取属性清单…" ShowLabel="false" />
                         <f:Button ID="btnRetryCatalog" Text="重新读取" Hidden="true"
-                                ClickHandler="AjaxPropertyQuery.loadCatalog" />
+                                ClickHandler="onAjaxPropertyQueryRetry" />
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -67,9 +67,9 @@
                 <f:RenderField ColumnID="effect" HeaderText="生效时机" DataField="effectText" Width="120" />
             </Columns>
             <Listeners>
-                <f:Listener Event="rowclick" Handler="AjaxPropertyQuery.onRowClick" />
-                <f:Listener Event="rowexpanderexpand" Handler="AjaxPropertyQuery.onExpand" />
-                <f:Listener Event="rowexpandercollapse" Handler="AjaxPropertyQuery.onCollapse" />
+                <f:Listener Event="rowclick" Handler="onAjaxPropertyQueryRowClick" />
+                <f:Listener Event="rowexpanderexpand" Handler="onAjaxPropertyQueryExpand" />
+                <f:Listener Event="rowexpandercollapse" Handler="onAjaxPropertyQueryCollapse" />
             </Listeners>
         </f:Grid>
     </div>
