@@ -2,6 +2,7 @@
 @model FineUI.Core.Examples.Pages.Config.AjaxPropertiesModel
 @{
     ViewBag.Title = "AJAX 属性";
+    ViewBag.IsDarkerBG = true;
     ViewBag.SourceFiles = "~/content/config/ajax-properties/query.js";
 }
 
@@ -21,8 +22,8 @@
 
 @section body {
     <div id="ajaxPropertyCatalog" data-catalog-url="@Url.Content("~/content/config/ajax-properties/catalog.json")">
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="AJAX 属性"
-                DataIDField="id" DataTextField="property" AllowPaging="true" PageSize="20"
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="AJAX 属性"
+                DataIDField="id" DataTextField="property" AllowPaging="true" PageSize="100"
                 EnableTextSelection="true" EnableMultiSelect="false"
                 EmptyText="未找到匹配属性，可缩短关键词或调整筛选条件。">
             <Toolbars>
