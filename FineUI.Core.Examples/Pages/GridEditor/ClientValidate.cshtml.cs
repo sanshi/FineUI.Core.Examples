@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         {
             if (e.EventName == "Submit_Click")
             {
-                Submit_Click();
+                SaveGridChanges();
             }
         }
         private void LoadData()
@@ -36,7 +36,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 
 
 
-        private void Submit_Click()
+        private void SaveGridChanges()
         {
             JArray modifiedData = Grid1.GetModifiedData();
 
