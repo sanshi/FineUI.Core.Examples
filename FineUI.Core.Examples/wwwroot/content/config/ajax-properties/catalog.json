@@ -80,6 +80,16 @@
     },
     {
       "control": "Accordion",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Accordion",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -97,6 +107,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Accordion",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Accordion",
@@ -179,6 +199,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Accordion",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Accordion",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "AccordionPane",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -240,6 +280,16 @@
     },
     {
       "control": "AccordionPane",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "AccordionPane",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -257,6 +307,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "AccordionPane",
@@ -357,6 +417,26 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Button",
@@ -510,6 +590,16 @@
     },
     {
       "control": "Button",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Button",
       "property": "DisableControlBeforePostBack",
       "method": "setDisableControlBeforePostBack",
       "owner": "Button",
@@ -537,6 +627,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Button",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Button",
@@ -709,6 +809,16 @@
       "note": "下一次显示校验提示时使用新的目标窗口；修改属性本身不触发校验。"
     },
     {
+      "control": "Button",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "ButtonGroup",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -760,6 +870,16 @@
     },
     {
       "control": "ButtonGroup",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "ButtonGroup",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -780,6 +900,16 @@
     },
     {
       "control": "ButtonGroup",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "ButtonGroup",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -797,6 +927,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "ButtonGroup",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Calendar",
@@ -860,6 +1000,16 @@
     },
     {
       "control": "Calendar",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Calendar",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -877,6 +1027,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Calendar",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Calendar",
@@ -999,6 +1159,16 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Calendar",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "CheckBox",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -1060,6 +1230,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "CheckBox",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -1080,6 +1260,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "CheckBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -1087,6 +1277,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "CheckBox",
@@ -1117,6 +1317,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
     },
     {
       "control": "CheckBox",
@@ -1157,6 +1367,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "CheckBoxList",
@@ -1210,6 +1430,16 @@
     },
     {
       "control": "CheckBoxList",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "CheckBoxList",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -1230,6 +1460,16 @@
     },
     {
       "control": "CheckBoxList",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "CheckBoxList",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -1237,6 +1477,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "CheckBoxList",
@@ -1277,6 +1527,26 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "ContentPanel",
@@ -1346,6 +1616,17 @@
     },
     {
       "control": "ContentPanel",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -1364,6 +1645,17 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。",
       "alias": "Panel 的内容面板标签"
     },
     {
@@ -1477,6 +1769,28 @@
       "alias": "Panel 的内容面板标签"
     },
     {
+      "control": "ContentPanel",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
       "control": "DataList",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -1528,6 +1842,16 @@
     },
     {
       "control": "DataList",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "DataList",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -1545,6 +1869,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "DataList",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "DataList",
@@ -1585,6 +1919,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "DataList",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "DatePicker",
@@ -1638,6 +1982,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "DatePicker",
       "property": "ConfirmToSelect",
       "method": "setConfirmToSelect",
       "owner": "DatePicker",
@@ -1655,6 +2009,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "DatePicker",
@@ -1698,6 +2062,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "DatePicker",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -1715,6 +2089,16 @@
       "description": "范围选择的左右面板可以独立切换月份/年份（默认为false）",
       "effect": "response",
       "note": "仅适用于日期、月份或年份范围选择，更新左右面板能否独立导航；不改变当前范围值。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "DatePicker",
@@ -1838,6 +2222,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "DatePicker",
       "property": "ShowSecond",
       "method": "setShowSecond",
       "owner": "DatePicker",
@@ -1885,6 +2279,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "DropDownBox",
@@ -1938,6 +2342,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -1945,6 +2359,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "DropDownBox",
@@ -1988,6 +2412,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -1995,6 +2429,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "DropDownBox",
@@ -2078,6 +2522,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "Text",
       "method": "setText",
       "owner": "DropDownBox",
@@ -2115,6 +2569,16 @@
       "description": "选中项的值",
       "effect": "response",
       "note": "本次响应后更新当前选择；指定的值应与当前项目或节点数据及选择模式匹配。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "DropDownList",
@@ -2168,6 +2632,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "DropDownList",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -2175,6 +2649,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "DropDownList",
@@ -2228,6 +2712,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -2235,6 +2729,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "DropDownList",
@@ -2348,6 +2852,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Text",
       "method": "setText",
       "owner": "DropDownList",
@@ -2355,6 +2869,16 @@
       "description": "显示文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "FileUpload",
@@ -2418,6 +2942,16 @@
     },
     {
       "control": "FileUpload",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "FileUpload",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -2425,6 +2959,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "FileUpload",
@@ -2448,6 +2992,16 @@
     },
     {
       "control": "FileUpload",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "FileUpload",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -2455,6 +3009,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "FileUpload",
@@ -2538,6 +3102,16 @@
     },
     {
       "control": "FileUpload",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "FileUpload",
       "property": "Text",
       "method": "setValue",
       "owner": "FileUpload",
@@ -2545,6 +3119,16 @@
       "description": "不支持此属性",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Form",
@@ -2608,6 +3192,16 @@
     },
     {
       "control": "Form",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Form",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -2625,6 +3219,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Form",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Form",
@@ -2707,6 +3311,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Form",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Form",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "FormRow",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -2758,6 +3382,16 @@
     },
     {
       "control": "FormRow",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "FormRow",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -2778,6 +3412,16 @@
     },
     {
       "control": "FormRow",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "FormRow",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -2795,6 +3439,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "FormRow",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Grid",
@@ -3005,6 +3659,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Grid",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "Grid",
@@ -3315,6 +3979,16 @@
       "description": "是否显示表头中的排序图标。",
       "effect": "response",
       "note": "仅在普通 Grid 中支持，刷新现有表格；不覆盖含编辑器/过滤器或树、行分组、大数据、卡片等特殊模式。相关外观仍依赖对应区域或功能已启用。"
+    },
+    {
+      "control": "Grid",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Grid",
@@ -3867,6 +4541,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Grid",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Grid",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "GroupPanel",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -3928,6 +4622,16 @@
     },
     {
       "control": "GroupPanel",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "GroupPanel",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -3945,6 +4649,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "GroupPanel",
@@ -4047,6 +4761,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "GroupPanel",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "HiddenField",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -4088,6 +4822,16 @@
     },
     {
       "control": "HiddenField",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "HiddenField",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -4095,6 +4839,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "HiddenField",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "HiddenField",
@@ -4118,6 +4872,16 @@
     },
     {
       "control": "HiddenField",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "HiddenField",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "HiddenField",
@@ -4125,6 +4889,16 @@
       "description": "是否隐藏控件（默认为true）",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "HiddenField",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "HiddenField",
@@ -4208,6 +4982,16 @@
     },
     {
       "control": "HiddenField",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "HiddenField",
       "property": "Text",
       "method": "setText",
       "owner": "RealTextField",
@@ -4215,6 +4999,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "HiddenField",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "HtmlEditor",
@@ -4265,6 +5059,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "HtmlEditor",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "HtmlEditor",
@@ -4288,6 +5092,16 @@
     },
     {
       "control": "HtmlEditor",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "HtmlEditor",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -4295,6 +5109,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "HtmlEditor",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "HtmlEditor",
@@ -4318,6 +5142,16 @@
     },
     {
       "control": "HtmlEditor",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "HtmlEditor",
       "property": "Text",
       "method": "setText",
       "owner": "HtmlEditor",
@@ -4325,6 +5159,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "HtmlEditor",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "HyperLink",
@@ -4378,6 +5222,16 @@
     },
     {
       "control": "HyperLink",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "HyperLink",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -4398,6 +5252,16 @@
     },
     {
       "control": "HyperLink",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "HyperLink",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -4405,6 +5269,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "HyperLink",
@@ -4435,6 +5309,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
     },
     {
       "control": "HyperLink",
@@ -4517,6 +5401,26 @@
       "note": "下一次显示增强提示时使用新标题；原生 title 提示不显示此标题。"
     },
     {
+      "control": "HyperLink",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "ToolTipField",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "response",
+      "note": "可在回发中切换原生 Title 与增强 Qtip 提示，保留提示原文、Raw 标记及已有增强提示配置。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "Image",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -4568,6 +5472,16 @@
     },
     {
       "control": "Image",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Image",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -4585,6 +5499,16 @@
       "description": "不支持此属性",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Image",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Image",
@@ -4668,6 +5592,16 @@
     },
     {
       "control": "Image",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "Image",
       "property": "Readonly",
       "method": "setReadonly",
       "owner": "Field",
@@ -4685,6 +5619,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "Image",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
     },
     {
       "control": "Image",
@@ -4735,6 +5679,26 @@
       "description": "提示文本的标题",
       "effect": "interaction",
       "note": "下一次显示增强提示时使用新标题；原生 title 提示不显示此标题。"
+    },
+    {
+      "control": "Image",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "ToolTipField",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "response",
+      "note": "可在回发中切换原生 Title 与增强 Qtip 提示，保留提示原文、Raw 标记及已有增强提示配置。"
+    },
+    {
+      "control": "Image",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Label",
@@ -4788,6 +5752,16 @@
     },
     {
       "control": "Label",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Label",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -4808,6 +5782,16 @@
     },
     {
       "control": "Label",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "Label",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -4815,6 +5799,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "Label",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "Label",
@@ -4835,6 +5829,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "Label",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
     },
     {
       "control": "Label",
@@ -4905,6 +5909,26 @@
       "description": "提示文本的标题",
       "effect": "interaction",
       "note": "下一次显示增强提示时使用新标题；原生 title 提示不显示此标题。"
+    },
+    {
+      "control": "Label",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "ToolTipField",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "response",
+      "note": "可在回发中切换原生 Title 与增强 Qtip 提示，保留提示原文、Raw 标记及已有增强提示配置。"
+    },
+    {
+      "control": "Label",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "LinkButton",
@@ -5008,6 +6032,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "LinkButton",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -5028,6 +6062,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "LinkButton",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -5035,6 +6079,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "LinkButton",
@@ -5055,6 +6109,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
     },
     {
       "control": "LinkButton",
@@ -5128,6 +6192,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "ToolTipField",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "response",
+      "note": "可在回发中切换原生 Title 与增强 Qtip 提示，保留提示原文、Raw 标记及已有增强提示配置。"
+    },
+    {
+      "control": "LinkButton",
       "property": "ValidateForms",
       "method": "setValidateForms",
       "owner": "LinkButton",
@@ -5165,6 +6239,16 @@
       "description": "验证失败时提示对话框弹出位置",
       "effect": "validation",
       "note": "下一次显示校验提示时使用新的目标窗口；修改属性本身不触发校验。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Menu",
@@ -5215,6 +6299,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Menu",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "Menu",
@@ -5355,6 +6449,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "MenuButton",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "MenuButton",
@@ -5568,6 +6672,16 @@
     },
     {
       "control": "MenuCheckBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "MenuCheckBox",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -5718,6 +6832,16 @@
     },
     {
       "control": "MenuHyperLink",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "MenuHyperLink",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -5868,6 +6992,16 @@
     },
     {
       "control": "MenuSeparator",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "MenuSeparator",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -5955,6 +7089,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "MenuText",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "MenuText",
@@ -6098,6 +7242,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "NumberBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -6105,6 +7259,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "NumberBox",
@@ -6138,6 +7302,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "NumberBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -6155,6 +7329,16 @@
       "description": "增量",
       "effect": "interaction",
       "note": "下一次通过增减按钮或步进操作调整数值时使用新步长；null 取消局部覆盖，恢复继承或默认步长。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "NumberBox",
@@ -6278,6 +7462,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "NumberBox",
       "property": "ShowTrigger",
       "method": "setShowTrigger",
       "owner": "NumberBox",
@@ -6295,6 +7489,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Panel",
@@ -6358,6 +7562,16 @@
     },
     {
       "control": "Panel",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Panel",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -6375,6 +7589,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Panel",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Panel",
@@ -6475,6 +7699,26 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Panel",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Panel",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "RadioButton",
@@ -6538,6 +7782,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "RadioButton",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -6558,6 +7812,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -6565,6 +7829,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "RadioButton",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "RadioButton",
@@ -6598,6 +7872,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Text",
       "method": "setText",
       "owner": "RadioButton",
@@ -6615,6 +7899,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "RadioButton",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "RadioButtonList",
@@ -6668,6 +7962,16 @@
     },
     {
       "control": "RadioButtonList",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "RadioButtonList",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -6688,6 +7992,16 @@
     },
     {
       "control": "RadioButtonList",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "RadioButtonList",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -6695,6 +8009,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "RadioButtonList",
@@ -6735,6 +8059,26 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Region",
@@ -6798,6 +8142,16 @@
     },
     {
       "control": "Region",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Region",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -6815,6 +8169,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Region",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Region",
@@ -6917,6 +8281,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Region",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Region",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "RegionPanel",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -6968,6 +8352,16 @@
     },
     {
       "control": "RegionPanel",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "RegionPanel",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -6988,6 +8382,16 @@
     },
     {
       "control": "RegionPanel",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "RegionPanel",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -7005,6 +8409,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "SimpleForm",
@@ -7068,6 +8482,16 @@
     },
     {
       "control": "SimpleForm",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "SimpleForm",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -7085,6 +8509,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "SimpleForm",
@@ -7167,6 +8601,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "SimpleForm",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "Tab",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -7228,6 +8682,16 @@
     },
     {
       "control": "Tab",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Tab",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -7255,6 +8719,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Tab",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Tab",
@@ -7357,6 +8831,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Tab",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Tab",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "TabStrip",
       "property": "ActiveTabIndex",
       "method": "setActiveTabIndex",
@@ -7418,6 +8912,16 @@
     },
     {
       "control": "TabStrip",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "TabStrip",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -7438,6 +8942,16 @@
     },
     {
       "control": "TabStrip",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TabStrip",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -7455,6 +8969,16 @@
       "description": "本控件发起回发时是否显示遮罩提示文本。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "TextArea",
@@ -7498,6 +9022,16 @@
     },
     {
       "control": "TextArea",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TextArea",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -7505,6 +9039,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TextArea",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "TextArea",
@@ -7528,6 +9072,16 @@
     },
     {
       "control": "TextArea",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TextArea",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -7535,6 +9089,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "TextArea",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "TextArea",
@@ -7618,6 +9182,16 @@
     },
     {
       "control": "TextArea",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TextArea",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -7625,6 +9199,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TextArea",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "TextBox",
@@ -7668,6 +9252,16 @@
     },
     {
       "control": "TextBox",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TextBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -7675,6 +9269,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TextBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "TextBox",
@@ -7695,6 +9299,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "TextBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "TextBox",
@@ -7718,6 +9332,16 @@
     },
     {
       "control": "TextBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TextBox",
       "property": "MaxLength",
       "method": "setMaxLength",
       "owner": "TextField",
@@ -7798,6 +9422,16 @@
     },
     {
       "control": "TextBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TextBox",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -7815,6 +9449,16 @@
       "description": "文本框类型",
       "effect": "response",
       "note": "本次响应后更新现有输入元素的输入类型；保留控件原有模式限制，不重建成另一种控件。"
+    },
+    {
+      "control": "TextBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "TimePicker",
@@ -7868,6 +9512,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TimePicker",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -7875,6 +9529,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "TimePicker",
@@ -7918,6 +9582,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TimePicker",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -7925,6 +9599,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "TimePicker",
@@ -8008,6 +9692,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TimePicker",
       "property": "Text",
       "method": "setText",
       "owner": "RealTextField",
@@ -8015,6 +9709,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Tool",
@@ -8115,6 +9819,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tool",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "Tool",
@@ -8248,6 +9962,16 @@
     },
     {
       "control": "Tool",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "Tool",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "response",
+      "note": "可在回发中切换原生 Title 与增强 Qtip 提示，保留提示原文、Raw 标记及已有增强提示配置。"
+    },
+    {
+      "control": "Tool",
       "property": "ValidateForms",
       "method": "setValidateForms",
       "owner": "Tool",
@@ -8338,6 +10062,16 @@
     },
     {
       "control": "Toolbar",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Toolbar",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -8355,6 +10089,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Toolbar",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Toolbar",
@@ -8397,6 +10141,16 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Toolbar",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "ToolbarFill",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -8445,6 +10199,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "ToolbarFill",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "ToolbarFill",
@@ -8538,6 +10302,16 @@
     },
     {
       "control": "ToolbarSeparator",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "ToolbarSeparator",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -8625,6 +10399,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "ToolbarText",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "ToolbarText",
@@ -8778,6 +10562,16 @@
     },
     {
       "control": "Tree",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Tree",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -8905,6 +10699,16 @@
       "description": "是否启用一级树节点标题栏样式",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tree",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Tree",
@@ -9077,6 +10881,26 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "Tree",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Tree",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "TriggerBox",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -9128,6 +10952,16 @@
     },
     {
       "control": "TriggerBox",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -9135,6 +10969,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "TriggerBox",
@@ -9178,6 +11022,16 @@
     },
     {
       "control": "TriggerBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -9185,6 +11039,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "TriggerBox",
@@ -9268,6 +11132,16 @@
     },
     {
       "control": "TriggerBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "ShowTrigger",
       "method": "setShowTrigger",
       "owner": "TriggerBox",
@@ -9305,6 +11179,16 @@
       "description": "右侧的图标",
       "effect": "response",
       "note": "本次响应后更新触发按钮图标；显隐仍由触发按钮开关、自动清除和只读条件决定。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "TwinTriggerBox",
@@ -9358,6 +11242,16 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "CompareOperator",
+      "method": "setCompareOperator",
+      "owner": "TextField",
+      "type": "Operator get/set",
+      "description": "比较操作符",
+      "effect": "validation",
+      "note": "下次校验按新的比较运算符执行；修改本身不触发校验、不改变输入或已有错误提示。默认 Equal；Java 传 null 恢复 Equal，Core 使用 Operator.Equal。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -9365,6 +11259,16 @@
       "description": "控件样式类名",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
     },
     {
       "control": "TwinTriggerBox",
@@ -9408,6 +11312,16 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -9415,6 +11329,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "Label",
+      "method": "setLabel",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "标签文本",
+      "effect": "response",
+      "note": "更新已有字段的标签文字；空标签可在回发时补齐，null 或空串清空。遵守显示标签和空标签占位设置，保留输入节点、当前值及校验状态；HiddenField 不生成可见标签。"
     },
     {
       "control": "TwinTriggerBox",
@@ -9498,6 +11422,16 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "ShowRedStar",
+      "method": "setShowRedStar",
+      "owner": "Field",
+      "type": "bool get/set",
+      "description": "用来标识必填项的红色星号",
+      "effect": "response",
+      "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "ShowTrigger",
       "method": "setShowTrigger",
       "owner": "TwinTriggerBox",
@@ -9535,6 +11469,16 @@
       "description": "文本",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Window",
@@ -9598,6 +11542,16 @@
     },
     {
       "control": "Window",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Window",
       "property": "EnableAjaxLoading",
       "method": "setEnableAjaxLoading",
       "owner": "Component",
@@ -9615,6 +11569,16 @@
       "description": "是否可用",
       "effect": "response",
       "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Window",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
     },
     {
       "control": "Window",
@@ -9715,6 +11679,26 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Window",
+      "property": "TitleToolTip",
+      "method": "setTitleToolTip",
+      "owner": "CollapsablePanel",
+      "type": "string get/set",
+      "description": "标题的提示文本",
+      "effect": "response",
+      "note": "更新标题栏及区域折叠封面的提示；null 或空字符串移除旧提示。没有标题栏时不创建额外元素，顶层窗口同步实际窗口的提示。"
+    },
+    {
+      "control": "Window",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     }
   ]
 }
