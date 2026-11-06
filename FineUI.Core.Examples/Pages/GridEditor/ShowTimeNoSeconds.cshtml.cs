@@ -80,7 +80,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
         {
             if (HttpContext.Session.GetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION) == null)
             {
-                HttpContext.Session.SetObject(KEY_FOR_DATASOURCE_SESSION, DataSourceUtil.GetDataTable());
+                HttpContext.Session.SetObject(KEY_FOR_DATASOURCE_SESSION, DataSourceUtil.GetDataTable(includeEntranceTime: true));
             }
             return HttpContext.Session.GetObject<DataTable>(KEY_FOR_DATASOURCE_SESSION);
         }

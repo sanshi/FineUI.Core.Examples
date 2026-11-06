@@ -112,11 +112,28 @@ namespace FineUI.Core.Examples
             return rd.Next(1, 6);
         }
 
+        // 入学日期取本行入学年份的 9 月 1 日；普通表格只显示日期，时间编辑示例同时显示时分秒。
+        private static void SetStudentEntranceDates(DataTable table, bool includeTime)
+        {
+            string format = includeTime ? "yyyy-MM-dd HH:mm:ss" : "yyyy-MM-dd";
+            foreach (DataRow row in table.Rows)
+            {
+                DateTime entranceDate = new DateTime((int)row["EntranceYear"], 9, 1, 8, 30, 0);
+                row["EntranceDate"] = entranceDate.ToString(format, System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
+
         /// <summary>
         /// 获取模拟表格
         /// </summary>
         /// <returns></returns>
         public static DataTable GetDataTable()
+        {
+            return GetDataTable(includeEntranceTime: false);
+        }
+
+        /// <summary>生成学生表；时间编辑示例传入 true，入学时间显示为当天 08:30。</summary>
+        public static DataTable GetDataTable(bool includeEntranceTime)
         {
             // 注册日期精确到天；每批只读取一次今天，避免行间带入不同的时间和时区偏移。
             DateTime today = DateTime.Today;
@@ -186,7 +203,6 @@ namespace FineUI.Core.Examples
             row[8] = "张萍萍，女，20岁，出生于中国南方的一个小山村，毕业于中国科学技术大学。毕业后就职于某大型国有企业，任部门经理，连续三年获得企业优秀员工称号。张萍萍凭借出色的领导能力和创新思维，带领团队完成了多个重大项目，赢得了同事和上级的一致认可。她积极参与公益活动，回馈家乡，致力于推动乡村教育发展，成为年轻一代的榜样。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,music";
-            row[11] = "2000-09-01";
             row[12] = 80;
             row[13] = 90;
             row[14] = 170;
@@ -221,7 +237,6 @@ namespace FineUI.Core.Examples
             row[8] = "陈飞，男，20岁，出生于中国北方的一个小山村，毕业于南方科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "basketball,travel,movie,reading,music";
-            row[11] = "2001-09-01";
             row[12] = 85;
             row[13] = 90;
             row[14] = 175;
@@ -256,7 +271,6 @@ namespace FineUI.Core.Examples
             row[8] = "董婷婷，女，18岁，出生于中国海南岛的一个小山村，毕业于中国科学技术大学。董婷婷是在学校认识丈夫刘国的，有一天晚上下自习后，董婷婷发短信给刘国说“做我男朋友吧！”，然后他们就走到了一起。";
             row[9] = Guid.NewGuid();
             row[10] = "basketball,movie,music";
-            row[11] = "2008-09-01";
             row[12] = 90;
             row[13] = 90;
             row[14] = 180;
@@ -292,7 +306,6 @@ namespace FineUI.Core.Examples
             row[8] = "刘国，男，22岁，出生于中国澳门的一个小山村，毕业于中国科学技术大学。刘国是作为交换生来中科大学习，在校期间认识了妻子董婷婷，虽然是被追到手了，不过在人前却总是说“老婆是我千辛万苦追来的！”。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,movie";
-            row[11] = "2020-09-01";
             row[12] = 95;
             row[13] = 95;
             row[14] = 190;
@@ -328,7 +341,6 @@ namespace FineUI.Core.Examples
             row[8] = "康颖颖，女，26岁，出生于中国福建的一个小山村，毕业于香港科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,movie,music";
-            row[11] = "2008-09-01";
             row[12] = 85;
             row[13] = 95;
             row[14] = 180;
@@ -364,7 +376,6 @@ namespace FineUI.Core.Examples
             row[8] = "彭博，男，28岁，出生于中国浙江的一个小山村，毕业于电子科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "basketball,travel,music";
-            row[11] = "2003-09-01";
             row[12] = 60;
             row[13] = 100;
             row[14] = 160;
@@ -400,7 +411,6 @@ namespace FineUI.Core.Examples
             row[8] = "黄婷婷，女，25岁，出生于中国北方的一个小山村，毕业于北京科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "travel,movie,music,reading";
-            row[11] = "2000-09-01";
             row[12] = 100;
             row[13] = 80;
             row[14] = 180;
@@ -436,7 +446,6 @@ namespace FineUI.Core.Examples
             row[8] = "唐超，男，26岁，出生于中国河南的一个小山村，毕业于中国科学技术大学。作为刘国的同班同学，唐超是班里的尖子生，本科还没毕业就被哈佛大学录取了，现在好像还没毕业呢。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music,basketball";
-            row[11] = "2020-09-01";
             row[12] = 80;
             row[13] = 80;
             row[14] = 160;
@@ -472,7 +481,6 @@ namespace FineUI.Core.Examples
             row[8] = "杨婷婷，女，25岁，出生于中国广西的一个小山村，毕业于南方科学技术大学。杨婷婷的父母都是中科大的高材生，他们很高兴送女儿上一所前中科大校长创办的大学，而南科大自己颁发的学位文凭也颇受争议。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,movie";
-            row[11] = "2003-09-01";
             row[12] = 90;
             row[13] = 60;
             row[14] = 150;
@@ -507,7 +515,6 @@ namespace FineUI.Core.Examples
             row[8] = "徐鹏，男，23岁，出生于中国安徽的一个小山村，毕业于国防科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,travel";
-            row[11] = "2020-09-01";
             row[12] = 60;
             row[13] = 90;
             row[14] = 150;
@@ -542,7 +549,6 @@ namespace FineUI.Core.Examples
             row[8] = "董国，男，22岁，出生于中国台湾的一个小山村，毕业于台湾科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music,basketball";
-            row[11] = "2006-09-01";
             row[12] = 90;
             row[13] = 70;
             row[14] = 160;
@@ -578,7 +584,6 @@ namespace FineUI.Core.Examples
             row[8] = "张三石，男，28岁，出生于中国河南的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music";
-            row[11] = "2000-09-01";
             row[12] = 99;
             row[13] = 98;
             row[14] = 197;
@@ -601,6 +606,7 @@ namespace FineUI.Core.Examples
             row[31] = GenerateRandomStatus();
             table.Rows.Add(row);
 
+            SetStudentEntranceDates(table, includeEntranceTime);
             return table;
         }
 
@@ -635,7 +641,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "材料科学与工程系";
             row[5] = 0;
-            row[6] = "2000-09-01";
             row[7] = nowDate;
             row[8] = nowTime;
             table.Rows.Add(row);
@@ -647,7 +652,6 @@ namespace FineUI.Core.Examples
             row[3] = false;
             row[4] = "化学系";
             row[5] = 1;
-            row[6] = "2001-09-01";
             row[7] = nowDate.AddDays(1);
             row[8] = nowTime.AddHours(1);
             table.Rows.Add(row);
@@ -659,7 +663,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "化学系";
             row[5] = 0;
-            row[6] = "2008-09-01";
             row[7] = nowDate.AddDays(1);
             row[8] = nowTime.AddHours(1);
             table.Rows.Add(row);
@@ -672,7 +675,6 @@ namespace FineUI.Core.Examples
             row[3] = false;
             row[4] = "化学系";
             row[5] = 1;
-            row[6] = "2020-09-01";
             row[7] = nowDate.AddDays(2);
             row[8] = nowTime.AddHours(2);
             table.Rows.Add(row);
@@ -685,7 +687,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "数学系";
             row[5] = 0;
-            row[6] = "2008-09-01";
             row[7] = nowDate.AddDays(2);
             row[8] = nowTime.AddHours(2);
             table.Rows.Add(row);
@@ -698,7 +699,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "数学系";
             row[5] = 1;
-            row[6] = "2003-09-01";
             row[7] = nowDate.AddDays(3);
             row[8] = nowTime.AddHours(3);
             table.Rows.Add(row);
@@ -711,7 +711,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "数学系";
             row[5] = 0;
-            row[6] = "2000-09-01";
             row[7] = nowDate.AddDays(3);
             row[8] = nowTime.AddHours(3);
             table.Rows.Add(row);
@@ -724,7 +723,6 @@ namespace FineUI.Core.Examples
             row[3] = false;
             row[4] = "物理系";
             row[5] = 1;
-            row[6] = "2020-09-01";
             row[7] = nowDate.AddDays(4);
             row[8] = nowTime.AddHours(4);
             table.Rows.Add(row);
@@ -737,7 +735,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "物理系";
             row[5] = 0;
-            row[6] = "2003-09-01";
             row[7] = nowDate.AddDays(4);
             row[8] = nowTime.AddHours(4);
             table.Rows.Add(row);
@@ -749,7 +746,6 @@ namespace FineUI.Core.Examples
             row[3] = false;
             row[4] = "物理系";
             row[5] = 1;
-            row[6] = "2020-09-01";
             row[7] = nowDate.AddDays(10);
             row[8] = nowTime.AddHours(10);
             table.Rows.Add(row);
@@ -761,7 +757,6 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "自动化系";
             row[5] = 1;
-            row[6] = "2006-09-01";
             row[7] = nowDate.AddDays(10);
             row[8] = nowTime.AddHours(10);
             table.Rows.Add(row);
@@ -774,11 +769,11 @@ namespace FineUI.Core.Examples
             row[3] = true;
             row[4] = "材料科学与工程系";
             row[5] = 1;
-            row[6] = "2000-09-01";
             row[7] = nowDate.AddDays(10);
             row[8] = nowTime.AddHours(10);
             table.Rows.Add(row);
 
+            SetStudentEntranceDates(table, false);
             return table;
         }
 
@@ -844,7 +839,6 @@ namespace FineUI.Core.Examples
             row[8] = "陈萍萍，女，20岁，出生于中国南方的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,travel";
-            row[11] = "2000-09-01";
             row[12] = 299;
             row[13] = 2990;
             row[14] = 80;
@@ -873,7 +867,6 @@ namespace FineUI.Core.Examples
             row[8] = "胡飞，男，20岁，出生于中国北方的一个小山村，毕业于南方科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball";
-            row[11] = "2008-09-01";
             row[12] = 199;
             row[13] = 1990;
             row[14] = 90;
@@ -902,7 +895,6 @@ namespace FineUI.Core.Examples
             row[8] = "金婷婷，女，28岁，出生于中国海南岛的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,music";
-            row[11] = "2001-09-01";
             row[12] = 299;
             row[13] = 3990;
             row[14] = 85;
@@ -932,7 +924,6 @@ namespace FineUI.Core.Examples
             row[8] = "潘国，男，22岁，出生于中国澳门的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,music";
-            row[11] = "2008-09-01";
             row[12] = 399;
             row[13] = 3998;
             row[14] = 89;
@@ -962,7 +953,6 @@ namespace FineUI.Core.Examples
             row[8] = "吴颖颖，女，26岁，出生于中国福建的一个小山村，毕业于香港科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music";
-            row[11] = "2020-09-01";
             row[12] = 499;
             row[13] = 4992;
             row[14] = 92;
@@ -992,7 +982,6 @@ namespace FineUI.Core.Examples
             row[8] = "张博，男，28岁，出生于中国浙江的一个小山村，毕业于电子科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "movie,music";
-            row[11] = "2003-09-01";
             row[12] = 99;
             row[13] = 997;
             row[14] = 88;
@@ -1022,7 +1011,6 @@ namespace FineUI.Core.Examples
             row[8] = "杨倩倩，女，25岁，出生于中国北方的一个小山村，毕业于北京科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "travel,movie,music";
-            row[11] = "2000-09-01";
             row[12] = 399;
             row[13] = 3995;
             row[14] = 65;
@@ -1052,7 +1040,6 @@ namespace FineUI.Core.Examples
             row[8] = "董超，男，26岁，出生于中国河南的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "basketball,movie,music";
-            row[11] = "2020-09-01";
             row[12] = 299;
             row[13] = 2996;
             row[14] = 86;
@@ -1082,7 +1069,6 @@ namespace FineUI.Core.Examples
             row[8] = "张娟娟，女，25岁，出生于中国广西的一个小山村，毕业于南方科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,movie,music";
-            row[11] = "2003-09-01";
             row[12] = 599;
             row[13] = 5990;
             row[14] = 92;
@@ -1111,7 +1097,6 @@ namespace FineUI.Core.Examples
             row[8] = "叶鹏，男，23岁，出生于中国安徽的一个小山村，毕业于国防科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music";
-            row[11] = "2006-09-01";
             row[12] = 699;
             row[13] = 6990;
             row[14] = 69;
@@ -1140,7 +1125,6 @@ namespace FineUI.Core.Examples
             row[8] = "李玲玲，女，22岁，出生于中国台湾的一个小山村，毕业于台湾科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,music";
-            row[11] = "2020-09-01";
             row[12] = 399;
             row[13] = 3990;
             row[14] = 88;
@@ -1169,7 +1153,6 @@ namespace FineUI.Core.Examples
             row[8] = "张萍萍，女，20岁，出生于中国南方的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,travel";
-            row[11] = "2000-09-01";
             row[12] = 299;
             row[13] = 2999;
             row[14] = 82;
@@ -1198,7 +1181,6 @@ namespace FineUI.Core.Examples
             row[8] = "曹飞，男，20岁，出生于中国北方的一个小山村，毕业于南方科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball";
-            row[11] = "2008-09-01";
             row[12] = 399;
             row[13] = 3996;
             row[14] = 96;
@@ -1227,7 +1209,6 @@ namespace FineUI.Core.Examples
             row[8] = "孙婷婷，女，28岁，出生于中国海南岛的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,basketball,music";
-            row[11] = "2001-09-01";
             row[12] = 499;
             row[13] = 4990;
             row[14] = 80;
@@ -1257,7 +1238,6 @@ namespace FineUI.Core.Examples
             row[8] = "董国，男，22岁，出生于中国澳门的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,music";
-            row[11] = "2008-09-01";
             row[12] = 299;
             row[13] = 2992;
             row[14] = 90;
@@ -1287,7 +1267,6 @@ namespace FineUI.Core.Examples
             row[8] = "习颖颖，女，26岁，出生于中国福建的一个小山村，毕业于香港科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music";
-            row[11] = "2020-09-01";
             row[12] = 199;
             row[13] = 1990;
             row[14] = 86;
@@ -1317,7 +1296,6 @@ namespace FineUI.Core.Examples
             row[8] = "李博，男，28岁，出生于中国浙江的一个小山村，毕业于电子科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "movie,music";
-            row[11] = "2003-09-01";
             row[12] = 99;
             row[13] = 990;
             row[14] = 80;
@@ -1347,7 +1325,6 @@ namespace FineUI.Core.Examples
             row[8] = "黄婷婷，女，25岁，出生于中国北方的一个小山村，毕业于北京科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "travel,movie,music";
-            row[11] = "2000-09-01";
             row[12] = 399;
             row[13] = 3990;
             row[14] = 65;
@@ -1377,7 +1354,6 @@ namespace FineUI.Core.Examples
             row[8] = "韩超，男，26岁，出生于中国河南的一个小山村，毕业于中国科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "basketball,movie,music";
-            row[11] = "2020-09-01";
             row[12] = 399;
             row[13] = 3991;
             row[14] = 88;
@@ -1407,7 +1383,6 @@ namespace FineUI.Core.Examples
             row[8] = "王娟娟，女，25岁，出生于中国广西的一个小山村，毕业于南方科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,movie,music";
-            row[11] = "2003-09-01";
             row[12] = 399;
             row[13] = 3992;
             row[14] = 90;
@@ -1436,7 +1411,6 @@ namespace FineUI.Core.Examples
             row[8] = "周鹏，男，23岁，出生于中国安徽的一个小山村，毕业于国防科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,movie,music";
-            row[11] = "2006-09-01";
             row[12] = 299;
             row[13] = 2992;
             row[14] = 92;
@@ -1465,7 +1439,6 @@ namespace FineUI.Core.Examples
             row[8] = "吴玲玲，女，22岁，出生于中国台湾的一个小山村，毕业于台湾科学技术大学。";
             row[9] = Guid.NewGuid();
             row[10] = "reading,travel,music";
-            row[11] = "2020-09-01";
             row[12] = 399;
             row[13] = 3993;
             row[14] = 65;
@@ -1483,6 +1456,7 @@ namespace FineUI.Core.Examples
             table.Rows.Add(row);
 
 
+            SetStudentEntranceDates(table, false);
             return table;
         }
         #endregion
