@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "全局配置属性";
     ViewBag.IsDarkerBG = true;
-    ViewBag.SourceFiles = "~/content/config/global-properties/query.js";
+    ViewBag.SourceFiles = "~/res/js/global-properties.js";
 }
 
 @section head {
@@ -54,7 +54,7 @@
         <Columns>
             <f:RenderField DataField="name" RenderAsRowExpander="true"
                     ExpandOnDblClick="false" RendererFunction="ConfigPropertyQuery.renderDetail" />
-            <f:RenderField ColumnID="name" HeaderText="配置名称" DataField="name" Width="234" />
+            <f:RenderField ColumnID="name" HeaderText="配置名称" DataField="name" Width="234" RendererFunction="ConfigPropertyQuery.renderName" />
             <f:RenderField ColumnID="description" HeaderText="含义" DataField="description" ExpandUnusedSpace="true" MinWidth="220" />
             <f:RenderField ColumnID="initialValue" HeaderText="初始值" DataField="initialText" Width="140" />
             <f:RenderField ColumnID="options" HeaderText="可选值或格式" DataField="options" Width="245" />
@@ -71,6 +71,7 @@
 }
 
 @section script {
-    <script type="application/json" id="configPropertyCatalog">@Json.Serialize(Model.Properties)</script>
-    <script src="~/content/config/global-properties/query.js"></script>
+    <script type="application/json" id="configPropertyCatalog" data-format="json" data-example-label="FineUI 节内写法"
+            data-grid="Grid1" data-category="ddlCategory" data-search="tbxSearch" data-count="labResultCount">@Json.Serialize(Model.Properties)</script>
+    <script src="~/res/js/global-properties.js"></script>
 }

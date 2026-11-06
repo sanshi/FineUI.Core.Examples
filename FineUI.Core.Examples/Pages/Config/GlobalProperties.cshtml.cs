@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.Pages.Config
 
         private static IReadOnlyList<PropertyRow> BuildCatalog()
         {
-            // 按配置指南的分组展示迁移说明，兼顾未标记 Obsolete 的旧键，例如 EnableLargeMode。
+            // 单独列出旧配置，方便维护已有项目时查找相应的迁移说明。
             const string obsoleteCategory = "已废弃配置";
             var defaults = new ConfigSection();
             var rows = new List<PropertyRow>();
@@ -179,20 +179,8 @@ namespace FineUI.Core.Examples.Pages.Config
                     Example: true),
                 new(nameof(ConfigSection.EnableIFrameLoading), "加载内嵌页面（IFrame）时显示加载提示。"),
                 new(nameof(ConfigSection.LoadingCSSNumber), "选择页面加载时使用的 CSS 动画。",
-                    "1～6 对应内置动画，0 改用加载图片",
-                    Example: 3),
-                new(nameof(ConfigSection.LoadingImageNumber), "选择内置加载图片的编号。",
-                    "1～30 的整数",
-                    Example: 2,
-                    Note: "LoadingCSSNumber 为 0 且 LoadingImageUrl 留空时使用。"),
-                new(nameof(ConfigSection.LoadingImageUrl), "指定用来替代内置加载图片的地址。",
-                    "图片 URL 或应用相对路径",
-                    Example: "~/images/loading.gif",
-                    Note: "将 LoadingCSSNumber 设为 0 后生效。留空时使用内置加载图片。"),
-                new(nameof(ConfigSection.CustomThemeEmbedLoadingImage), "指定自定义主题使用的内置加载图片配色文件。",
-                    "内置 GIF 文件名，例如 ffffff_444444.gif",
-                    Example: "ffffff_444444.gif",
-                    Note: "在自定义主题下使用内置加载图片时生效。自备图片使用 LoadingImageUrl。"));
+                    "1～6 对应内置 CSS 动画；0 仅用于兼容旧版 GIF 配置",
+                    Example: 3));
 
             AddGroup("表格与分页",
                 new(nameof(ConfigSection.GridColumnWidth), "设置未单独指定宽度的表格列宽。",
@@ -265,6 +253,15 @@ namespace FineUI.Core.Examples.Pages.Config
             // 旧项目仍可能用这些键。这里只列出名称和迁移办法，详情中不生成旧配置的示例。
 #pragma warning disable CS0618
             AddGroup(obsoleteCategory,
+                new(nameof(ConfigSection.LoadingImageNumber), "选择旧版内置加载 GIF 的编号。",
+                    "1～30 的整数",
+                    Note: "迁移时删除图片编号，将 LoadingCSSNumber 设为 1～6，选择 CSS 动画。"),
+                new(nameof(ConfigSection.LoadingImageUrl), "设置旧版加载图片的地址。",
+                    "图片 URL 或应用相对路径",
+                    Note: "迁移时删除图片地址，将 LoadingCSSNumber 设为 1～6。留空时旧版配置按编号选择内置 GIF。"),
+                new(nameof(ConfigSection.CustomThemeEmbedLoadingImage), "设置自定义主题使用的旧版内置 GIF 配色文件。",
+                    "内置 GIF 文件名，例如 ffffff_444444.gif",
+                    Note: "改用 LoadingCSSNumber（1～6）后即可删除此项，CSS 动画沿用主题颜色。"),
                 new(nameof(ConfigSection.EnableLargeMode), "启用大字模式的旧开关。",
                     Note: "大字模式请改用 \"DisplayMode\": \"Large\"。旧开关仅在 DisplayMode 为 Normal 时生效，两个旧开关同时开启时优先使用大字模式。"),
                 new(nameof(ConfigSection.EnableCompactMode), "启用紧凑布局的旧开关。",

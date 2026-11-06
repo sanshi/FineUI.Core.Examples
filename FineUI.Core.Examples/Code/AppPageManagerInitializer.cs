@@ -61,8 +61,10 @@ namespace FineUI.Core.Examples
         {
             if (int.TryParse(request.Cookies["Loading"], out int loadingNumber))
             {
+                // 保留旧 GIF 演示保存的编号；正常页面从下方的 CSS 动画设置读取选择。
+#pragma warning disable CS0618
                 pm.LoadingImageNumber = loadingNumber;
-                // 选择 GIF 动画时先关闭 CSS 动画；下面的 CSS 配置可以再次覆盖。
+#pragma warning restore CS0618
                 pm.LoadingCSSNumber = 0;
             }
 
