@@ -620,6 +620,10 @@
 			</TreeNode>
 			<TreeNode Text="同时定义客户端事件和服务端事件" NavigateUrl="~/Form/CheckBoxClientServerEvent">
 			</TreeNode>
+			<TreeNode Text="预约咨询" NavigateUrl="~/Form/AppointmentConsultation">
+			</TreeNode>
+			<TreeNode Text="订单配送" NavigateUrl="~/Form/OrderDelivery">
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表格" IconFont="_Table">

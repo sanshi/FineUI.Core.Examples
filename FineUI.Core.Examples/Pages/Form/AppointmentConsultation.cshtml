@@ -1,0 +1,28 @@
+@page
+@model FineUI.Core.Examples.Pages.Form.AppointmentConsultationModel
+@{
+    ViewBag.Title = "预约咨询";
+}
+
+@section body {
+    <f:SimpleForm ID="Form1" Title="预约咨询" IsFluid="true" MaxWidth="450" BodyPadding="16" LabelWidth="104"
+        ShowHeader="true" ShowBorder="true">
+        <Items>
+            <f:DropDownList ID="ddlService" Label="咨询项目"
+                OnSelectedIndexChanged="ddlService_SelectedIndexChanged">
+                <Items>
+                    <f:ListItem Text="常规咨询（15 分钟）" Value="standard" Selected="true" />
+                    <f:ListItem Text="深度咨询（30 分钟）" Value="extended" />
+                </Items>
+            </f:DropDownList>
+            <f:TimePicker ID="tpAppointment" Label="开始时间" Text="09:00" MinTimeText="09:00"
+                MaxTimeText="10:00" Increment="15" Required="true" ShowRedStar="true" />
+            <f:Button ID="btnSubmit" Text="提交预约" ButtonColor="Primary" _ValidateForms="Form1"
+                OnClick="btnSubmit_Click" />
+            <f:Label ID="labResult" ShowLabel="false" Hidden="true" />
+        </Items>
+    </f:SimpleForm>
+
+    <p>先选 09:15，再切换为深度咨询。后台把时间框的 AJAX 属性 <code>Increment</code> 改为 30，
+        原来的 09:15 会标为不可选。改选 09:30 后即可提交预约；切回常规咨询，09:15 也可以提交。</p>
+}
