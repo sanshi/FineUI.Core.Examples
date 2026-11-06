@@ -1,0 +1,15 @@
+// 此文件由 FineUI.Core 设计时工具自动生成。
+// 重新生成会覆盖手工修改。
+
+namespace FineUI.Core.Examples.Pages.Config
+{
+	public partial class GlobalPropertiesModel
+	{
+		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Toolbar ToolbarFilters;
+		protected FineUI.Core.DropDownList ddlCategory;
+		protected FineUI.Core.TriggerBox tbxSearch;
+		protected FineUI.Core.Toolbar ToolbarOptions;
+		protected FineUI.Core.Label labResultCount;
+	}
+}

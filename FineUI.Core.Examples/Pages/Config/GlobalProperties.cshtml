@@ -1,0 +1,76 @@
+@page
+@model FineUI.Core.Examples.Pages.Config.GlobalPropertiesModel
+@{
+    ViewBag.Title = "全局配置属性";
+    ViewBag.IsDarkerBG = true;
+    ViewBag.SourceFiles = "~/content/config/global-properties/query.js";
+}
+
+@section head {
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        .config-property-detail {
+            box-sizing: border-box;
+            max-width: min(76ch, calc(100vw - 6rem));
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .config-property-detail pre {
+            white-space: pre-wrap;
+        }
+    </style>
+}
+
+@section body {
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="全局配置属性"
+            DataIDField="name" DataTextField="name" AllowPaging="true" PageSize="100"
+            EnableTextSelection="true" EnableMultiSelect="false"
+            EmptyText="未找到匹配的配置项，可缩短关键词或清除筛选条件。">
+        <Toolbars>
+            <f:Toolbar ID="ToolbarFilters" Position="Top" Layout="HBox" BoxConfigSpace="10" BodyPadding="5">
+                <Items>
+                    <f:DropDownList ID="ddlCategory" Label="配置分类" LabelAlign="LabelAlign.Top" BoxFlex="2"
+                            EmptyText="全部分类" AutoSelectFirstItem="false" AutoShowClearIcon="true">
+                        <Listeners>
+                            <f:Listener Event="change" Handler="onConfigQueryChange" />
+                        </Listeners>
+                    </f:DropDownList>
+                    <f:TriggerBox ID="tbxSearch" Label="搜索配置项" LabelAlign="LabelAlign.Top" BoxFlex="3"
+                            EmptyText="名称、含义或可选值" TriggerIcon="Clear" AutoShowClearIcon="true">
+                        <Listeners>
+                            <f:Listener Event="change" Handler="onConfigQueryChange" />
+                        </Listeners>
+                    </f:TriggerBox>
+                </Items>
+            </f:Toolbar>
+            <f:Toolbar ID="ToolbarOptions" Position="Top">
+                <Items>
+                    <f:ToolbarFill />
+                    <f:Label ID="labResultCount" ShowLabel="false" />
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Columns>
+            <f:RenderField DataField="name" RenderAsRowExpander="true"
+                    ExpandOnDblClick="false" RendererFunction="ConfigPropertyQuery.renderDetail" />
+            <f:RenderField ColumnID="name" HeaderText="配置名称" DataField="name" Width="234" />
+            <f:RenderField ColumnID="description" HeaderText="含义" DataField="description" ExpandUnusedSpace="true" MinWidth="220" />
+            <f:RenderField ColumnID="initialValue" HeaderText="初始值" DataField="initialText" Width="140" />
+            <f:RenderField ColumnID="options" HeaderText="可选值或格式" DataField="options" Width="245" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowclick" Handler="onConfigRowClick" />
+            <f:Listener Event="rowexpanderexpand" Handler="onConfigRowExpand" />
+            <f:Listener Event="rowexpandercollapse" Handler="onConfigRowCollapse" />
+        </Listeners>
+    </f:Grid>
+
+    <p>初始值取自 FineUI.Core 的空配置。点击配置名称或左侧加号可查看完整取值和使用条件。配置示例写在 <code>appsettings.json</code> 的 <code>FineUI</code> 节内。</p>
+    <p>首次接入 FineUI 的服务注册、中间件和配置文件位置，见<a href="~/Config/ModifyWebConfig">配置入门</a>。</p>
+}
+
+@section script {
+    <script type="application/json" id="configPropertyCatalog">@Json.Serialize(Model.Properties)</script>
+    <script src="~/content/config/global-properties/query.js"></script>
+}

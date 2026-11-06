@@ -146,7 +146,7 @@ window.AjaxPropertyQuery = (function () {
             return;
         }
         const parameters = new URLSearchParams(window.location.search);
-        const requestedType = parameters.get('control') || 'Button';
+        const requestedType = parameters.get('control') || 'all';
         const type = catalog.properties.find(row => row.control.toLowerCase() === requestedType.toLowerCase())?.control;
         F.ui.ddlControlType.setValue(type || '');
         F.ui.tbxPropertySearch.setValue(parameters.get('q') || '');
