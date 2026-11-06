@@ -70,6 +70,16 @@
     },
     {
       "control": "Accordion",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Accordion",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -127,6 +137,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Accordion",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Accordion",
@@ -250,6 +270,36 @@
     },
     {
       "control": "Accordion",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Accordion",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Accordion",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Accordion",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -370,6 +420,16 @@
     },
     {
       "control": "AccordionPane",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "AccordionPane",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -427,6 +487,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "AccordionPane",
@@ -560,6 +630,36 @@
     },
     {
       "control": "AccordionPane",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "AccordionPane",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -680,6 +780,16 @@
     },
     {
       "control": "Button",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Button",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -777,6 +887,16 @@
       "description": "按钮颜色",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Button",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Button",
@@ -1020,6 +1140,16 @@
     },
     {
       "control": "Button",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Button",
+      "type": "int? get/set",
+      "description": "Tab键索引",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "Button",
       "property": "Text",
       "method": "setText",
       "owner": "Button",
@@ -1210,6 +1340,16 @@
     },
     {
       "control": "ButtonGroup",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "ButtonGroup",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -1257,6 +1397,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "ButtonGroup",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "ButtonGroup",
@@ -1410,6 +1560,16 @@
     },
     {
       "control": "Calendar",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Calendar",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -1457,6 +1617,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Calendar",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Calendar",
@@ -1720,6 +1890,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "CheckBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -1777,6 +1957,16 @@
       "description": "是否选中",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "CheckBox",
@@ -2000,6 +2190,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "CheckBox",
       "property": "Text",
       "method": "setText",
       "owner": "CheckBox",
@@ -2080,6 +2280,16 @@
     },
     {
       "control": "CheckBoxList",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "CheckBoxList",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -2157,6 +2367,16 @@
       "description": "是否按照纵向顺序渲染",
       "effect": "binding",
       "note": "先改属性，再在同一次回发重新绑定列表项，新项目按指定列数和顺序排列。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "CheckBoxList",
@@ -2485,6 +2705,17 @@
     },
     {
       "control": "ContentPanel",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -2547,6 +2778,17 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。",
       "alias": "Panel 的内容面板标签"
     },
     {
@@ -2705,6 +2947,39 @@
     },
     {
       "control": "ContentPanel",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -2832,6 +3107,16 @@
     },
     {
       "control": "DataList",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DataList",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -2889,6 +3174,16 @@
       "description": "右键点击时选中当前节点（默认为true）",
       "effect": "interaction",
       "note": "已启用选择时，开启后右键未选项会按现有选择规则选中并触发项目点击，右键已选项保留选择并触发点击。关闭后仍触发右键菜单事件。"
+    },
+    {
+      "control": "DataList",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "DataList",
@@ -3132,6 +3427,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DatePicker",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -3209,6 +3514,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "DatePicker",
@@ -3512,6 +3827,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DatePicker",
       "property": "RangeSeparator",
       "method": "setRangeSeparator",
       "owner": "DatePicker",
@@ -3692,6 +4017,26 @@
     },
     {
       "control": "DatePicker",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "DatePicker",
       "property": "Text",
       "method": "setText",
       "owner": "DatePicker",
@@ -3772,6 +4117,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -3839,6 +4194,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "DropDownBox",
@@ -4102,6 +4467,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "Readonly",
       "method": "setReadonly",
       "owner": "Field",
@@ -4209,6 +4584,26 @@
       "description": "用来标识必填项的红色星号",
       "effect": "response",
       "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
     },
     {
       "control": "DropDownBox",
@@ -4332,6 +4727,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -4409,6 +4814,16 @@
       "description": "双击改变选中项（配合参数EnableClickAction=false使用）",
       "effect": "interaction",
       "note": "下一次双击时按开关决定是否切换选项；禁用或只读时保留当前值。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "DropDownList",
@@ -4812,6 +5227,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Readonly",
       "method": "setReadonly",
       "owner": "Field",
@@ -4942,6 +5367,26 @@
     },
     {
       "control": "DropDownList",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Text",
       "method": "setText",
       "owner": "DropDownList",
@@ -5039,6 +5484,16 @@
       "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
     },
     {
       "control": "FileUpload",
@@ -5169,6 +5624,16 @@
       "description": "按钮文字；null 使用当前语言包文字，空字符串明确显示空文字，其他字符串显示指定文字。",
       "effect": "response",
       "note": "更新现有上传按钮的文字，保留文件选择。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "FileUpload",
@@ -5382,6 +5847,16 @@
     },
     {
       "control": "FileUpload",
+      "property": "Multiple",
+      "method": "setMultiple",
+      "owner": "FileUpload",
+      "type": "bool get/set",
+      "description": "是否可以选择多个文件",
+      "effect": "response",
+      "note": "从下次选择文件开始限制可选文件数。关闭多选时已选的全部附件仍可提交。"
+    },
+    {
+      "control": "FileUpload",
       "property": "NextClickControl",
       "method": "setNextClickControl",
       "owner": "TextField",
@@ -5399,6 +5874,16 @@
       "description": "响应回车键获得焦点的控件",
       "effect": "interaction",
       "note": "控件可用且非只读时，在输入区按回车会把焦点移到指定控件。填写可聚焦的控件 ID，同时设置点击目标时优先执行点击。清空 ID 可撤销，目标无效时保留输入焦点。FileUpload 仅适用于可见的文件名输入区。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "FileUpload",
@@ -5512,6 +5997,26 @@
     },
     {
       "control": "FileUpload",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "FileUpload",
       "property": "Text",
       "method": "setValue",
       "owner": "FileUpload",
@@ -5592,6 +6097,16 @@
     },
     {
       "control": "Form",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Form",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -5649,6 +6164,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Form",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Form",
@@ -5772,6 +6297,36 @@
     },
     {
       "control": "Form",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Form",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Form",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Form",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -5892,6 +6447,16 @@
     },
     {
       "control": "FormRow",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "FormRow",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -5939,6 +6504,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "FormRow",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "FormRow",
@@ -6099,6 +6674,16 @@
       "description": "允许服务器端排序",
       "effect": "response",
       "note": "仅在普通 Grid 中支持，刷新现有表格；不覆盖含编辑器/过滤器或树、行分组、大数据、卡片等特殊模式。相关外观仍依赖对应区域或功能已启用。"
+    },
+    {
+      "control": "Grid",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
     },
     {
       "control": "Grid",
@@ -6319,6 +6904,16 @@
       "description": "是否允许在表格右侧锁定列。",
       "effect": "response",
       "note": "仅在普通 Grid 中支持，刷新现有表格；不覆盖含编辑器/过滤器或树、行分组、大数据、卡片等特殊模式。相关外观仍依赖对应区域或功能已启用。"
+    },
+    {
+      "control": "Grid",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Grid",
@@ -6892,6 +7487,26 @@
     },
     {
       "control": "Grid",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Grid",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Grid",
       "property": "MouseWheelSelection",
       "method": "setMouseWheelSelection",
       "owner": "Grid",
@@ -7022,6 +7637,16 @@
     },
     {
       "control": "Grid",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Grid",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -7029,6 +7654,16 @@
       "description": "是否为区域分隔条使用表头样式",
       "effect": "response",
       "note": "更新已创建的区域分隔条的标题样式，仅对非中心且启用分隔条的区域有效。"
+    },
+    {
+      "control": "Grid",
+      "property": "ResponsiveCardSize",
+      "method": "setResponsiveCardSize",
+      "owner": "Grid",
+      "type": "GridResponsiveCardSize get/set",
+      "description": "响应式卡片断点（屏幕宽度≤该断点时自动切换为卡片模式，由屏幕主导）",
+      "effect": "response",
+      "note": "普通表格按新断点立即选择卡片或表格视图。关闭断点后保留当前视图；同轮关闭并明确设置显示模式时使用指定模式，不能同时更换列。"
     },
     {
       "control": "Grid",
@@ -7502,6 +8137,16 @@
     },
     {
       "control": "GroupPanel",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "GroupPanel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -7559,6 +8204,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "GroupPanel",
@@ -7702,6 +8357,36 @@
     },
     {
       "control": "GroupPanel",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "GroupPanel",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -7812,6 +8497,16 @@
     },
     {
       "control": "HiddenField",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "HiddenField",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -7859,6 +8554,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "HiddenField",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "HiddenField",
@@ -8192,6 +8897,16 @@
     },
     {
       "control": "HtmlEditor",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "HtmlEditor",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -8239,6 +8954,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "HtmlEditor",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "HtmlEditor",
@@ -8462,6 +9187,16 @@
     },
     {
       "control": "HyperLink",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "HyperLink",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -8509,6 +9244,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "HyperLink",
@@ -8822,6 +9567,16 @@
     },
     {
       "control": "Image",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Image",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -8869,6 +9624,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Image",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Image",
@@ -9212,6 +9977,16 @@
     },
     {
       "control": "Label",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Label",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -9259,6 +10034,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Label",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Label",
@@ -9552,6 +10337,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "LinkButton",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -9599,6 +10394,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "LinkButton",
@@ -9799,6 +10604,16 @@
       "description": "用来标识必填项的红色星号",
       "effect": "response",
       "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
     },
     {
       "control": "LinkButton",
@@ -10992,6 +11807,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "NumberBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -11059,6 +11884,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "NumberBox",
@@ -11412,6 +12247,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "NumberBox",
       "property": "ProgressHeight",
       "method": "setProgressHeight",
       "owner": "NumberBox",
@@ -11602,6 +12447,26 @@
     },
     {
       "control": "NumberBox",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "NumberBox",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -11702,6 +12567,16 @@
     },
     {
       "control": "Panel",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Panel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -11759,6 +12634,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Panel",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Panel",
@@ -11902,6 +12787,36 @@
     },
     {
       "control": "Panel",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Panel",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Panel",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Panel",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -12022,6 +12937,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -12079,6 +13004,16 @@
       "description": "是否选中",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "RadioButton",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "RadioButton",
@@ -12252,6 +13187,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Text",
       "method": "setText",
       "owner": "RadioButton",
@@ -12332,6 +13277,16 @@
     },
     {
       "control": "RadioButtonList",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "RadioButtonList",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -12409,6 +13364,16 @@
       "description": "是否按照纵向顺序渲染",
       "effect": "binding",
       "note": "先改属性，再在同一次回发重新绑定列表项，新项目按指定列数和顺序排列。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "RadioButtonList",
@@ -12702,6 +13667,16 @@
     },
     {
       "control": "Region",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Region",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -12759,6 +13734,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Region",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Region",
@@ -12902,6 +13887,36 @@
     },
     {
       "control": "Region",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Region",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Region",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Region",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -13022,6 +14037,16 @@
     },
     {
       "control": "RegionPanel",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "RegionPanel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -13069,6 +14094,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "RegionPanel",
@@ -13149,6 +14184,36 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
     },
     {
       "control": "RegionPanel",
@@ -13382,6 +14447,16 @@
     },
     {
       "control": "SimpleForm",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "SimpleForm",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -13439,6 +14514,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "SimpleForm",
@@ -13562,6 +14647,36 @@
     },
     {
       "control": "SimpleForm",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "SimpleForm",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -13682,6 +14797,16 @@
     },
     {
       "control": "Tab",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Tab",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -13739,6 +14864,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tab",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Tab",
@@ -13882,6 +15017,36 @@
     },
     {
       "control": "Tab",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Tab",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Tab",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
+    },
+    {
+      "control": "Tab",
       "property": "RegionSplitHeaderClass",
       "method": "setRegionSplitHeaderClass",
       "owner": "BoxComponent",
@@ -14002,6 +15167,16 @@
     },
     {
       "control": "TabStrip",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TabStrip",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -14049,6 +15224,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TabStrip",
@@ -14129,6 +15314,36 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
     },
     {
       "control": "TabStrip",
@@ -14222,6 +15437,16 @@
     },
     {
       "control": "TextArea",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TextArea",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -14309,6 +15534,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "TextArea",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TextArea",
@@ -14502,6 +15737,16 @@
     },
     {
       "control": "TextArea",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "TextArea",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "TextArea",
       "property": "MinLength",
       "method": "setMinLength",
       "owner": "TextField",
@@ -14519,6 +15764,16 @@
       "description": "少于最小长度时提示信息",
       "effect": "validation",
       "note": "下一次少于最小长度时使用新提示，{0} 替换为长度限制；回发 null/空串清空提示文字，长度规则继续有效，不立即刷新已有错误。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TextArea",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "TextArea",
@@ -14632,6 +15887,26 @@
     },
     {
       "control": "TextArea",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "TextArea",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "TextArea",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -14712,6 +15987,16 @@
     },
     {
       "control": "TextBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TextBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -14779,6 +16064,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "TextBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TextBox",
@@ -14916,7 +16211,7 @@
       "method": "setInputType",
       "owner": "RealTextField",
       "type": "string get/set",
-      "description": "文本框类型，可设置HTML5属性(url, date, color, tel, number...)",
+      "description": "普通文本框、单触发框与双触发框的 HTML 输入类型，例如 email、tel 或 password。日期、时间、数字和上传控件仅兼容已有首屏设置，新代码请使用各控件自身的配置。",
       "effect": "response",
       "note": "本次响应后更新现有输入元素的输入类型；保留控件原有模式限制，不重建成另一种控件。"
     },
@@ -15019,6 +16314,16 @@
       "description": "响应回车键获得焦点的控件",
       "effect": "interaction",
       "note": "控件可用且非只读时，在输入区按回车会把焦点移到指定控件。填写可聚焦的控件 ID，同时设置点击目标时优先执行点击。清空 ID 可撤销，目标无效时保留输入焦点。FileUpload 仅适用于可见的文件名输入区。"
+    },
+    {
+      "control": "TextBox",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "TextBox",
@@ -15132,6 +16437,26 @@
     },
     {
       "control": "TextBox",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "TextBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "TextBox",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -15222,6 +16547,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TimePicker",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -15299,6 +16634,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TimePicker",
@@ -15452,6 +16797,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "Increment",
+      "method": "setIncrement",
+      "owner": "TimePicker",
+      "type": "int get/set",
+      "description": "列表中每个时间值相差的分钟数（默认为15分钟）",
+      "effect": "response",
+      "note": "按新的分钟步长刷新候选时间，已有输入保留。要求从列表选择时，不在新候选范围内的值需要重新选择。"
+    },
+    {
+      "control": "TimePicker",
       "property": "Label",
       "method": "setLabel",
       "owner": "Field",
@@ -15502,6 +16857,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "MaxTimeText",
+      "method": "setMaxTimeText",
+      "owner": "TimePicker",
+      "type": "string get/set",
+      "description": "最大时间的字符串形式",
+      "effect": "response",
+      "note": "按新的最晚时间刷新候选列表。原输入保留，要求从列表选择时提示重选；同次明确指定时间时使用新值。"
+    },
+    {
+      "control": "TimePicker",
       "property": "MessageTarget",
       "method": "setMessageTarget",
       "owner": "Field",
@@ -15532,6 +16897,16 @@
     },
     {
       "control": "TimePicker",
+      "property": "MinTimeText",
+      "method": "setMinTimeText",
+      "owner": "TimePicker",
+      "type": "string get/set",
+      "description": "最小时间的字符串形式",
+      "effect": "response",
+      "note": "按新的最早时间刷新候选列表。原输入保留，要求从列表选择时提示重选；同次明确指定时间时使用新值。"
+    },
+    {
+      "control": "TimePicker",
       "property": "NextClickControl",
       "method": "setNextClickControl",
       "owner": "TextField",
@@ -15549,6 +16924,16 @@
       "description": "响应回车键获得焦点的控件",
       "effect": "interaction",
       "note": "控件可用且非只读时，在输入区按回车会把焦点移到指定控件。填写可聚焦的控件 ID，同时设置点击目标时优先执行点击。清空 ID 可撤销，目标无效时保留输入焦点。FileUpload 仅适用于可见的文件名输入区。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "TimePicker",
@@ -15659,6 +17044,26 @@
       "description": "用来标识必填项的红色星号",
       "effect": "response",
       "note": "更新已有标签的红色星号，沿用创建时的星号位置；后续设置非空标签时使用当前星号设置。不自动开启隐藏标签、不改变必填规则，HiddenField 不生成可见标签。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
     },
     {
       "control": "TimePicker",
@@ -16032,6 +17437,16 @@
     },
     {
       "control": "Toolbar",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Toolbar",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -16079,6 +17494,16 @@
       "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
       "effect": "response",
       "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Toolbar",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Toolbar",
@@ -16582,6 +18007,16 @@
     },
     {
       "control": "Tree",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Tree",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -16669,6 +18104,16 @@
       "description": "是否折叠",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tree",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "Tree",
@@ -16932,6 +18377,16 @@
     },
     {
       "control": "Tree",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Tree",
       "property": "MiniMode",
       "method": "setMiniMode",
       "owner": "Tree",
@@ -16939,6 +18394,16 @@
       "description": "是否启用微型模式（临时采用标题样式，退出后恢复 HeaderStyle 配置）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tree",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
     },
     {
       "control": "Tree",
@@ -16969,6 +18434,16 @@
       "description": "是否在回发时保持Nodes属性（仅RazorForms开发模式适用） 如果需要在页面回发时访问Nodes、SelectedNode等属性或者FindNode()、GetCheckedNodes()等函数，请开启此属性",
       "effect": "request",
       "note": "从下一次回发起决定是否携带节点集合；不清除已显示的节点和当前选择。"
+    },
+    {
+      "control": "Tree",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
     },
     {
       "control": "Tree",
@@ -17112,6 +18587,16 @@
     },
     {
       "control": "TriggerBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -17189,6 +18674,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TriggerBox",
@@ -17346,7 +18841,7 @@
       "method": "setInputType",
       "owner": "RealTextField",
       "type": "string get/set",
-      "description": "文本框类型，可设置HTML5属性(url, date, color, tel, number...)",
+      "description": "普通文本框、单触发框与双触发框的 HTML 输入类型，例如 email、tel 或 password。日期、时间、数字和上传控件仅兼容已有首屏设置，新代码请使用各控件自身的配置。",
       "effect": "response",
       "note": "本次响应更新现有输入框的 HTML 类型，清空设置恢复 text。例如在 text 和 tel 之间切换会保留原号码和查找按钮。同轮也设置文本时按新类型接收，能输入的值遵循浏览器对该类型的限制。"
     },
@@ -17449,6 +18944,16 @@
       "description": "响应回车键获得焦点的控件",
       "effect": "interaction",
       "note": "控件可用且非只读时，在输入区按回车会把焦点移到指定控件。填写可聚焦的控件 ID，同时设置点击目标时优先执行点击。清空 ID 可撤销，目标无效时保留输入焦点。FileUpload 仅适用于可见的文件名输入区。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "TriggerBox",
@@ -17572,6 +19077,26 @@
     },
     {
       "control": "TriggerBox",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -17672,6 +19197,16 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -17749,6 +19284,16 @@
       "description": "连续键入时，等待用户停顿多久再处理最新文本（毫秒，默认 300，设为 0 时立即处理）。",
       "effect": "interaction",
       "note": "从下一次键入开始按新延迟处理最新文本，默认 300 毫秒，设为 0 时立即处理。改设置本身不会触发事件。可编辑的时间框延迟过滤候选项，点选时间仍直接确认。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
     },
     {
       "control": "TwinTriggerBox",
@@ -17906,7 +19451,7 @@
       "method": "setInputType",
       "owner": "RealTextField",
       "type": "string get/set",
-      "description": "文本框类型，可设置HTML5属性(url, date, color, tel, number...)",
+      "description": "普通文本框、单触发框与双触发框的 HTML 输入类型，例如 email、tel 或 password。日期、时间、数字和上传控件仅兼容已有首屏设置，新代码请使用各控件自身的配置。",
       "effect": "response",
       "note": "本次响应更新现有输入框的 HTML 类型，清空设置恢复 text。例如在 text 和 tel 之间切换会保留原号码和查找按钮。同轮也设置文本时按新类型接收，能输入的值遵循浏览器对该类型的限制。"
     },
@@ -18009,6 +19554,16 @@
       "description": "响应回车键获得焦点的控件",
       "effect": "interaction",
       "note": "控件可用且非只读时，在输入区按回车会把焦点移到指定控件。填写可聚焦的控件 ID，同时设置点击目标时优先执行点击。清空 ID 可撤销，目标无效时保留输入焦点。FileUpload 仅适用于可见的文件名输入区。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "Prefix",
+      "method": "setPrefix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "前缀文本",
+      "effect": "response",
+      "note": "创建时已启用前缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
     },
     {
       "control": "TwinTriggerBox",
@@ -18152,6 +19707,26 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "Suffix",
+      "method": "setSuffix",
+      "owner": "TextField",
+      "type": "string get/set",
+      "description": "后缀文本",
+      "effect": "response",
+      "note": "创建时已启用后缀区域时，立即更新该区域的内容，空字符串清空内容，撤销局部设置后恢复继承值。可传开发者提供的可信 HTML；输入值和焦点保留。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "TabIndex",
+      "method": "setTabIndex",
+      "owner": "Field",
+      "type": "int? get/set",
+      "description": "Tab按键的跳转顺序",
+      "effect": "response",
+      "note": "更新实际接收焦点的按钮、链接或输入元素。上传控件作用于选择文件按钮；数字框须有可见输入框。负数跳过键盘 Tab 顺序，0 恢复自然顺序。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "Text",
       "method": "setValue",
       "owner": "RealTextField",
@@ -18232,6 +19807,16 @@
     },
     {
       "control": "Window",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Window",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -18292,6 +19877,16 @@
     },
     {
       "control": "Window",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
+    },
+    {
+      "control": "Window",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -18319,6 +19914,16 @@
       "description": "是否显示本控件发起的回发提示；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起决定是否显示页面级加载提示；不改变子控件自己的请求配置。"
+    },
+    {
+      "control": "Window",
+      "property": "EnableClose",
+      "method": "setEnableClose",
+      "owner": "Window",
+      "type": "bool get/set",
+      "description": "是否可以关闭",
+      "effect": "response",
+      "note": "更新当前窗口的关闭按钮、Esc 和已启用的遮罩关闭操作，后台仍可主动隐藏窗口。"
     },
     {
       "control": "Window",
@@ -18429,6 +20034,36 @@
       "description": "内嵌 iframe 的地址，默认空字符串；支持 iframe 的面板可设置地址或清空内容。 Grid、Tree、Form、SimpleForm、Accordion、RegionPanel、TabStrip 不支持此配置，赋值会报错。",
       "effect": "response",
       "note": "须已启用 iframe 模式，本次响应后加载新地址；不会动态启用 iframe 模式。"
+    },
+    {
+      "control": "Window",
+      "property": "MinHeight",
+      "method": "setMinHeight",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小高度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。多行文本框也更新最小高度，自动增高时重新测量内容。"
+    },
+    {
+      "control": "Window",
+      "property": "MinWidth",
+      "method": "setMinWidth",
+      "owner": "PanelBase",
+      "type": "int? get/set",
+      "description": "最小宽度",
+      "effect": "response",
+      "note": "按新下限重新计算面板尺寸，放宽下限时重新使用业务指定的尺寸。"
+    },
+    {
+      "control": "Window",
+      "property": "RegionPercent",
+      "method": "setRegionPercent",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "区域的百分比尺寸（当父容器的Layout=Region时有效）",
+      "effect": "response",
+      "note": "在 Region 布局中按新比例计算区域尺寸。清除比例后恢复最近拖动或显式设置的尺寸。"
     },
     {
       "control": "Window",
