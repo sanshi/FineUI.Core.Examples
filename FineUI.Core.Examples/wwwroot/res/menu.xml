@@ -1789,6 +1789,8 @@
 		<TreeNode Text="选项卡控件">
 			<TreeNode Text="基本用法" NavigateUrl="~/TabStrip/TabStrip">
 			</TreeNode>
+			<TreeNode Text="选项卡拖动排序与滚轮浏览" NavigateUrl="~/TabStrip/Reorder">
+			</TreeNode>
 			<TreeNode Text="选项卡改变事件" NavigateUrl="~/TabStrip/TabIndexChanged">
 			</TreeNode>
 			<TreeNode Text="关闭图标与右键菜单" NavigateUrl="~/TabStrip/EnableClose">
