@@ -23,6 +23,7 @@ window.AjaxPropertyQuery = (function () {
     let catalog;
     let propertiesById = new Map();
     let selectedProperty = '';
+    let lastFilter = '';
     let searchTimer;
 
     function controlType() {
@@ -78,12 +79,15 @@ window.AjaxPropertyQuery = (function () {
         if (!catalog) {
             return;
         }
-        if (!preserveSelection) {
-            selectedProperty = '';
-        }
         const type = controlType();
         const excludeInherited = F.ui.cbxExcludeInherited.getValue();
         const words = F.ui.tbxPropertySearch.getValue().toLowerCase().trim().split(/\s+/).filter(Boolean);
+        const filter = JSON.stringify([type, excludeInherited, words]);
+        // 输入后失焦可能重复触发相同筛选，保留刚展开的详情及地址参数，只有条件变化才清除选择。
+        if (!preserveSelection && filter !== lastFilter) {
+            selectedProperty = '';
+        }
+        lastFilter = filter;
         const rows = catalog.properties.filter(row => {
             if (type !== 'all' && row.control !== type) {
                 return false;
