@@ -3,7 +3,7 @@
 
 namespace FineUI.Core.Examples.Pages.HtmlEditor
 {
-	public partial class CspModel
+	public partial class FullToolbarModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
 		protected FineUI.Core.HtmlEditor HtmlEditor1;

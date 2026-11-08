@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.Pages.HtmlEditor
 {
-    public partial class FormattingModel : PageBase
+    public partial class FullToolbarModel : PageBase
     {
         protected void Button1_Click(object sender, EventArgs e)
         {

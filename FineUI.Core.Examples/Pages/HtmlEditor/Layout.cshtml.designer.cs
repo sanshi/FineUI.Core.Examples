@@ -11,5 +11,12 @@ namespace FineUI.Core.Examples.Pages.HtmlEditor
 		protected FineUI.Core.TextArea TextArea1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
+		protected FineUI.Core.Button btnOpenEditor;
+		protected FineUI.Core.Window Window1;
+		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab Tab1;
+		protected FineUI.Core.HtmlEditor HtmlEditor3;
+		protected FineUI.Core.Tab Tab2;
+		protected FineUI.Core.HtmlEditor HtmlEditor4;
 	}
 }
