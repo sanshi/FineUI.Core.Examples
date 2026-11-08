@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.HtmlEditor.SourceModel
+@{ ViewBag.Title = "HtmlEditor/Source"; }
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="HTML 源码与粘贴">
+        <Items>
+            <f:HtmlEditor ID="HtmlEditor1" Label="正文" Height="320" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" Readonly="false" ToolbarSet="Basic"></f:HtmlEditor>
+            
+            <f:TextArea ID="TextArea1" Label="HTML 内容" Height="120" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
+            <f:Button ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
+            <f:Button ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
+            
+        </Items>
+    </f:SimpleForm>
+    <p>工具栏的 HTML 源码按钮可以查看、修改正文。应用时保留支持的排版，移除脚本、事件、表格、图片等未支持结构；取消不改变正文。</p>
+    <p>内置编辑器默认启用，内容通过 Text 属性传入和读取。旧编辑器集成可继续使用 <a href="@Url.Content("~/Form/HtmlEditor")">UMEditor 示例</a>。</p>
+}
+@section script {
+    <script>
+function toggleHtmlEditorReadonly() {
+    var editor = F.ui.HtmlEditor1;
+    editor.setReadonly(!editor.readonly);
+}
+function getHtmlEditorContent() {
+    return F.ui.HtmlEditor1.getValue();
+}
+function getSourceContent() {
+    return F.ui.TextArea1.getValue();
+}
+
+    </script>
+}

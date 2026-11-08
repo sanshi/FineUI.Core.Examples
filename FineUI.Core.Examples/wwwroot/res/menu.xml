@@ -140,8 +140,16 @@
 			</TreeNode>
 			<TreeNode Text="多行文本框（自动扩展高度）" NavigateUrl="~/Form/TextArea">
 			</TreeNode>
-			<TreeNode Text="富文本编辑器" NavigateUrl="~/Form/HtmlEditor">
-			</TreeNode>
+			<TreeNode Text="富文本编辑器">
+                <TreeNode Text="基础编辑与后台交互" NavigateUrl="~/HtmlEditor/Basic" />
+                <TreeNode Text="文字排版与列表" NavigateUrl="~/HtmlEditor/Formatting" />
+                <TreeNode Text="HTML 源码与粘贴" NavigateUrl="~/HtmlEditor/Source" />
+                <TreeNode Text="只读与恢复编辑" NavigateUrl="~/HtmlEditor/Readonly" />
+                <TreeNode Text="自定义工具栏" NavigateUrl="~/HtmlEditor/Toolbar" />
+                <TreeNode Text="多实例与容器布局" NavigateUrl="~/HtmlEditor/Layout" />
+                <TreeNode Text="严格 CSP" NavigateUrl="~/HtmlEditor/Csp" />
+                <TreeNode Text="旧编辑器（UMEditor）" NavigateUrl="~/Form/HtmlEditor" />
+            </TreeNode>
 			<TreeNode Text="触发器输入框">
 				<TreeNode Text="触发器输入框" NavigateUrl="~/Form/TriggerBox">
 				</TreeNode>

@@ -1,0 +1,15 @@
+// 此文件由 FineUI.Core 设计时工具自动生成。
+// 重新生成会覆盖手工修改。
+
+namespace FineUI.Core.Examples.Pages.HtmlEditor
+{
+	public partial class ReadonlyModel
+	{
+		protected FineUI.Core.SimpleForm SimpleForm1;
+		protected FineUI.Core.HtmlEditor HtmlEditor1;
+		protected FineUI.Core.TextArea TextArea1;
+		protected FineUI.Core.Button Button1;
+		protected FineUI.Core.Button Button2;
+		protected FineUI.Core.Button btnToggle;
+	}
+}

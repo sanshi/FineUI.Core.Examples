@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.HtmlEditor.FormattingModel
+@{ ViewBag.Title = "HtmlEditor/Formatting"; }
+
+@section body {
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="文字排版与列表">
+        <Items>
+            <f:HtmlEditor ID="HtmlEditor1" Label="正文" Height="320" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" Readonly="false" ToolbarSet="Full"></f:HtmlEditor>
+            
+            <f:TextArea ID="TextArea1" Label="HTML 内容" Height="120" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
+            <f:Button ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
+            <f:Button ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
+            
+        </Items>
+    </f:SimpleForm>
+    <p>支持字体、字号、文字颜色、背景色、对齐、有序列表和无序列表；完整工具栏还支持标题、引用和分隔线。</p>
+    <p>内置编辑器默认启用，内容通过 Text 属性传入和读取。旧编辑器集成可继续使用 <a href="@Url.Content("~/Form/HtmlEditor")">UMEditor 示例</a>。</p>
+}
+@section script {
+    <script>
+function toggleHtmlEditorReadonly() {
+    var editor = F.ui.HtmlEditor1;
+    editor.setReadonly(!editor.readonly);
+}
+function getHtmlEditorContent() {
+    return F.ui.HtmlEditor1.getValue();
+}
+function getSourceContent() {
+    return F.ui.TextArea1.getValue();
+}
+
+    </script>
+}
