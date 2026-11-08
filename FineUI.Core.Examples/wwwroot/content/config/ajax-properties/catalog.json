@@ -2020,6 +2020,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "CheckBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -2477,6 +2487,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "CheckBoxList",
@@ -3687,6 +3707,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "DatePicker",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -4344,6 +4374,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "DropDownBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "DropDownBox",
@@ -5097,6 +5137,16 @@
     },
     {
       "control": "DropDownList",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "DropDownList",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -5754,6 +5804,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "FileUpload",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "FileUpload",
@@ -9017,6 +9077,16 @@
     },
     {
       "control": "HtmlEditor",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "HtmlEditor",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -9304,6 +9374,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "HyperLink",
@@ -9684,6 +9764,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "Image",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "Image",
@@ -10097,6 +10187,16 @@
     },
     {
       "control": "Label",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "Label",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -10504,6 +10604,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "LinkButton",
@@ -12067,6 +12177,16 @@
     },
     {
       "control": "NumberBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "NumberBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -13067,6 +13187,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -13474,6 +13604,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "RadioButtonList",
@@ -15667,6 +15807,16 @@
     },
     {
       "control": "TextArea",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "TextArea",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -16194,6 +16344,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TextBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "TextBox",
@@ -16784,6 +16944,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "TimePicker",
@@ -18827,6 +18997,16 @@
     },
     {
       "control": "TriggerBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
+    },
+    {
+      "control": "TriggerBox",
       "property": "Hidden",
       "method": "setHidden",
       "owner": "ControlBase",
@@ -19434,6 +19614,16 @@
       "description": "高度",
       "effect": "response",
       "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "TwinTriggerBox",
+      "property": "HelperText",
+      "method": "setHelperText",
+      "owner": "Field",
+      "type": "string get/set",
+      "description": "输入区域下方常驻的填写说明，默认空字符串；按纯文本显示，清空后释放占用空间。",
+      "effect": "response",
+      "note": "更新下方纯文本说明并重新布局，保留输入、焦点和文件选择。"
     },
     {
       "control": "TwinTriggerBox",

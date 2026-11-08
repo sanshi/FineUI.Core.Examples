@@ -134,7 +134,8 @@
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="输入框">
-			<TreeNode Text="文本框" NavigateUrl="~/Form/TextBox">
+			<TreeNode Text="字段帮助与下方错误提示" NavigateUrl="~/Form/FieldHelperText" Version="16.1.2"></TreeNode>
+            <TreeNode Text="文本框" NavigateUrl="~/Form/TextBox">
 			</TreeNode>
 			<TreeNode Text="文本框（文本改变事件）" NavigateUrl="~/Form/TextBoxTextChanged">
 			</TreeNode>
