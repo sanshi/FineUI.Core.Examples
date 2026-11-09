@@ -6,6 +6,11 @@ namespace FineUI.Core.Examples.Pages.Block
 	public partial class DashboardModel
 	{
 		protected FineUI.Core.Panel Panel1;
+		protected FineUI.Core.Chart ChartCardViews;
+		protected FineUI.Core.Chart ChartCardTrend;
+		protected FineUI.Core.Chart ChartCardUsers;
+		protected FineUI.Core.Chart ChartTabViews;
+		protected FineUI.Core.Chart ChartTabUsers;
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.CheckBox CheckBox1;
@@ -15,5 +20,6 @@ namespace FineUI.Core.Examples.Pages.Block
 		protected FineUI.Core.TimePicker TimePicker1;
 		protected FineUI.Core.CheckBoxList CheckBoxList1;
 		protected FineUI.Core.TextArea TextArea1;
+		protected FineUI.Core.Chart ChartTrafficSources;
 	}
 }

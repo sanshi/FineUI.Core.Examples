@@ -1,0 +1,16 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.CombinationModel
+@{
+    ViewBag.Title = "折柱混合图";
+}
+
+@section body {
+    <f:Chart ID="ChartCombo" Height="350" CategoryField="Category" ShowLegend="true">
+        <Series>
+            <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" ValueField="Evaporation" />
+            <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" ValueField="Precipitation" />
+            <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" ValueField="Temperature" />
+        </Series>
+    </f:Chart>
+    <p>月份和三组数值沿用官网的多 Y 轴示例。FineUI 当前把两个柱状系列与折线系列画在同一条数值轴上。<a href="https://echarts.apache.org/examples/zh/editor.html?c=multiple-y-axis" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+}

@@ -93,10 +93,6 @@ body.f-body {
             background-image: none;
         }
 
-.mytabstrip .tabstrip-chart {
-    height: 350px;
-}
-
 .mytable {
     width: 100%;
     border-collapse: collapse;
@@ -115,10 +111,6 @@ body.f-body {
 
 .myform .f-panel-body .f-field {
     margin: 0;
-}
-
-.mychart-pie {
-    min-height: 300px;
 }
 
 .mysitestats {

@@ -1989,6 +1989,206 @@
       "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
     },
     {
+      "control": "Chart",
+      "property": "AbsoluteX",
+      "method": "setAbsoluteX",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "绝对定位的X坐标（当父容器的Layout=Absolute时有效）",
+      "effect": "response",
+      "note": "在绝对定位的父容器中重新定位当前子项，清空坐标撤销该方向的定位值。"
+    },
+    {
+      "control": "Chart",
+      "property": "AbsoluteY",
+      "method": "setAbsoluteY",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "绝对定位的Y坐标（当父容器的Layout=Absolute时有效）",
+      "effect": "response",
+      "note": "在绝对定位的父容器中重新定位当前子项，清空坐标撤销该方向的定位值。"
+    },
+    {
+      "control": "Chart",
+      "property": "AjaxLoadingMaskText",
+      "method": "setAjaxLoadingMaskText",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "本控件发起回发时的遮罩提示文本。",
+      "effect": "request",
+      "note": "从本控件下一次请求起使用新的页面遮罩提示文字；仅在遮罩提示启用且允许显示文字时可见。"
+    },
+    {
+      "control": "Chart",
+      "property": "AjaxLoadingText",
+      "method": "setAjaxLoadingText",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "本控件发起回发时的默认风格提示文本。",
+      "effect": "request",
+      "note": "从本控件下一次请求起使用新的普通加载提示文字；仅在加载提示启用且类型为 Default 时可见，提示是页面级效果。"
+    },
+    {
+      "control": "Chart",
+      "property": "AjaxLoadingType",
+      "method": "setAjaxLoadingType",
+      "owner": "Component",
+      "type": "AjaxLoadingType get/set",
+      "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
+      "effect": "request",
+      "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "Chart",
+      "property": "AnchorValue",
+      "method": "setAnchorValue",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "锚点值（当父容器的Layout=Anchor时有效）",
+      "effect": "response",
+      "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Chart",
+      "property": "Attributes",
+      "method": "setAttributes",
+      "owner": "ControlBase",
+      "type": "JObject get/set",
+      "description": "HTML标签属性",
+      "effect": "response",
+      "note": "本次响应后更新自定义 HTML 属性，并移除旧集合中已删除的成员；属性名称和值须符合允许的 HTML 属性规则。"
+    },
+    {
+      "control": "Chart",
+      "property": "Block",
+      "method": "setBlock",
+      "owner": "BoxComponent",
+      "type": "int get/set",
+      "description": "块大小，超小屏幕（当父容器的Layout=Block时有效）",
+      "effect": "response",
+      "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Chart",
+      "property": "BlockLG",
+      "method": "setBlockLG",
+      "owner": "BoxComponent",
+      "type": "int get/set",
+      "description": "块大小，大屏幕（当父容器的Layout=Block时有效）",
+      "effect": "response",
+      "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Chart",
+      "property": "BlockMD",
+      "method": "setBlockMD",
+      "owner": "BoxComponent",
+      "type": "int get/set",
+      "description": "块大小，中等屏幕（当父容器的Layout=Block时有效）",
+      "effect": "response",
+      "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Chart",
+      "property": "BlockSM",
+      "method": "setBlockSM",
+      "owner": "BoxComponent",
+      "type": "int get/set",
+      "description": "块大小，小屏幕（当父容器的Layout=Block时有效）",
+      "effect": "response",
+      "note": "块布局按当前屏幕档位重新分配宽度并换行，其他档位在切到相应屏宽时生效。"
+    },
+    {
+      "control": "Chart",
+      "property": "ColumnWidth",
+      "method": "setColumnWidth",
+      "owner": "BoxComponent",
+      "type": "string get/set",
+      "description": "列的宽度（当父容器的Layout=Column时有效）",
+      "effect": "response",
+      "note": "父容器使用 Column 布局时按新比例重新分配宽度。父容器指定的列宽优先，清除比例后按布局恢复子项自身宽度。"
+    },
+    {
+      "control": "Chart",
+      "property": "CssClass",
+      "method": "setCssClass",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式类名",
+      "effect": "response",
+      "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Chart",
+      "property": "CssStyle",
+      "method": "setCssStyle",
+      "owner": "Component",
+      "type": "string get/set",
+      "description": "控件样式",
+      "effect": "response",
+      "note": "替换控件的业务 CSS 样式；null 或空字符串撤销业务声明，保留框架布局及隐藏状态。需要保留的业务声明应在新值中一并提供；明确宽高和父布局仍决定最终尺寸。"
+    },
+    {
+      "control": "Chart",
+      "property": "EnableAjaxLoading",
+      "method": "setEnableAjaxLoading",
+      "owner": "Component",
+      "type": "bool get/set",
+      "description": "是否显示本控件发起的回发提示；未设置时沿用页面配置。",
+      "effect": "request",
+      "note": "从本控件下一次请求起决定是否显示页面级加载提示；不改变子控件自己的请求配置。"
+    },
+    {
+      "control": "Chart",
+      "property": "Enabled",
+      "method": "setEnabled",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否可用",
+      "effect": "response",
+      "note": "本次响应后更新禁用状态，不改变控件原有的只读设置。"
+    },
+    {
+      "control": "Chart",
+      "property": "Height",
+      "method": "setHeight",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "高度",
+      "effect": "response",
+      "note": "更新控件显式高度并重新布局；null 撤销显式高度，按仍有效的业务 CSS、控件默认值和父布局计算。隐藏控件重新显示时使用新设置，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "Chart",
+      "property": "Hidden",
+      "method": "setHidden",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否隐藏控件",
+      "effect": "response",
+      "note": "本次响应后更新控件显隐；HiddenField 按设计始终为隐藏输入，不因设置此属性而显示。"
+    },
+    {
+      "control": "Chart",
+      "property": "ShowAjaxLoadingMaskText",
+      "method": "setShowAjaxLoadingMaskText",
+      "owner": "Component",
+      "type": "bool get/set",
+      "description": "本控件发起回发时是否显示遮罩提示文本。",
+      "effect": "request",
+      "note": "从本控件下一次请求起决定是否显示页面遮罩中的文字；仅在加载提示启用且类型为 Mask 时有效。"
+    },
+    {
+      "control": "Chart",
+      "property": "Width",
+      "method": "setWidth",
+      "owner": "BoxComponent",
+      "type": "int? get/set",
+      "description": "宽度",
+      "effect": "response",
+      "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
       "control": "CheckBox",
       "property": "AbsoluteX",
       "method": "setAbsoluteX",

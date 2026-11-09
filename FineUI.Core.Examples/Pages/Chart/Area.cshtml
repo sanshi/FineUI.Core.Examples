@@ -1,0 +1,14 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.AreaModel
+@{
+    ViewBag.Title = "基础面积图";
+}
+
+@section body {
+    <f:Chart ID="ChartArea" Height="350" CategoryField="Category" ShowTooltip="false">
+        <Series>
+            <f:ChartSeries Key="value" Type="Area" Name="数值" ValueField="Value" />
+        </Series>
+    </f:Chart>
+    <p>面积图填充折线下方区域，分类和数值沿用官网示例。<a href="https://echarts.apache.org/examples/zh/editor.html?c=area-basic" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+}

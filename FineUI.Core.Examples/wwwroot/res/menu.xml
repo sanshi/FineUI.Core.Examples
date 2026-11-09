@@ -2196,6 +2196,14 @@
 			<TreeNode Text="Region（多个侧边区域）" NavigateUrl="~/Layout/RegionMultiRegions">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="图表">
+			<TreeNode Text="基础柱状图" NavigateUrl="~/Chart/Bar" />
+			<TreeNode Text="基础折线图" NavigateUrl="~/Chart/Line" />
+			<TreeNode Text="基础面积图" NavigateUrl="~/Chart/Area" />
+			<TreeNode Text="基础饼图" NavigateUrl="~/Chart/Pie" />
+			<TreeNode Text="折柱混合图" NavigateUrl="~/Chart/Combination" />
+			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/Chart/Sales" />
+		</TreeNode>
 		<TreeNode Text="Block">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/Block/Dashboard">
 			</TreeNode>
