@@ -30,6 +30,16 @@
     },
     {
       "control": "Accordion",
+      "property": "ActivePane",
+      "method": null,
+      "owner": "Accordion",
+      "type": "AccordionPane get/set",
+      "description": "当前激活的面板；索引无对应项时返回 null。赋值对象必须先加入当前 Panes 集合。",
+      "effect": "response",
+      "note": "将本控件 Panes 中的已有面板对象赋给 ActivePane，在本次响应切换到该面板。传 null 或其它容器的面板会报参数错误。下一轮按激活索引恢复。"
+    },
+    {
+      "control": "Accordion",
       "property": "ActivePaneIndex",
       "method": "setActivePaneIndex",
       "owner": "Accordion",
@@ -77,6 +87,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Accordion",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Accordion",
@@ -437,6 +457,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "AccordionPane",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "AccordionPane",
@@ -807,6 +837,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Button",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Button",
@@ -1400,6 +1440,16 @@
     },
     {
       "control": "ButtonGroup",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "ButtonGroup",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -1617,6 +1667,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Calendar",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Calendar",
@@ -1977,6 +2037,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "CheckBox",
@@ -2407,6 +2477,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "CheckBoxList",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "CheckBoxList",
@@ -2846,6 +2926,17 @@
     },
     {
       "control": "ContentPanel",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -3258,6 +3349,16 @@
     },
     {
       "control": "DataList",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "DataList",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -3375,6 +3476,16 @@
       "description": "分组的格式化字符串",
       "effect": "binding",
       "note": "先修改属性，再重新绑定数据后生效；只修改属性不会更新已有项目。Core 格式串使用 {0}，Java 使用 String.format 的 %s；null 或空串表示不格式化。仅在启用分组且指定分组字段时消费。格式串和显示字段不跨请求保存；每次绑定前由服务器模板或后台代码重新提供，不从浏览器上传。"
+    },
+    {
+      "control": "DataList",
+      "property": "DataSource",
+      "method": "setDataSource",
+      "owner": "DataList",
+      "type": "object get/set",
+      "description": "数据源",
+      "effect": "binding",
+      "note": "提供当前请求的数据源后，重新绑定即可替换已有项目。Core 回发渲染时会补做绑定，Java 须调用 dataBind()。空数据源绑定后清空项目。"
     },
     {
       "control": "DataList",
@@ -3585,6 +3696,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "DatePicker",
@@ -4318,6 +4439,16 @@
     },
     {
       "control": "DropDownBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "DropDownBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -4935,6 +5066,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "DropDownList",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "DropDownList",
@@ -5708,6 +5849,16 @@
     },
     {
       "control": "FileUpload",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "FileUpload",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -6328,6 +6479,16 @@
     },
     {
       "control": "Form",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Form",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -6688,6 +6849,16 @@
     },
     {
       "control": "FormRow",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "FormRow",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -6925,6 +7096,16 @@
       "description": "箭头按键改变选中行和单元格",
       "effect": "interaction",
       "note": "下一次按方向键时使用新的行选择设置；修改属性本身不改变当前选择。"
+    },
+    {
+      "control": "Grid",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Grid",
@@ -8558,6 +8739,16 @@
     },
     {
       "control": "GroupPanel",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "GroupPanel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -8925,6 +9116,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "HiddenField",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "HiddenField",
@@ -9328,6 +9529,16 @@
     },
     {
       "control": "HtmlEditor",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "HtmlEditor",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -9625,6 +9836,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "HyperLink",
@@ -10035,6 +10256,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Image",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Image",
@@ -10468,6 +10699,16 @@
     },
     {
       "control": "Label",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Label",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -10855,6 +11096,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "LinkButton",
@@ -11328,6 +11579,16 @@
     },
     {
       "control": "Menu",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Menu",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -11425,6 +11686,16 @@
       "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "MenuButton",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "MenuButton",
@@ -11718,6 +11989,16 @@
     },
     {
       "control": "MenuCheckBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "MenuCheckBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -11905,6 +12186,16 @@
       "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "MenuHyperLink",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "MenuHyperLink",
@@ -12108,6 +12399,16 @@
     },
     {
       "control": "MenuSeparator",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "MenuSeparator",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -12205,6 +12506,16 @@
       "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "MenuText",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "MenuText",
@@ -12415,6 +12726,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "NumberBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "NumberBox",
@@ -13188,6 +13509,16 @@
     },
     {
       "control": "Panel",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Panel",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -13568,6 +13899,16 @@
     },
     {
       "control": "RadioButton",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "RadioButton",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -13925,6 +14266,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "RadioButtonList",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "RadioButtonList",
@@ -14328,6 +14679,16 @@
     },
     {
       "control": "Region",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Region",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -14705,6 +15066,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "RegionPanel",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "RegionPanel",
@@ -15478,6 +15849,16 @@
     },
     {
       "control": "SimpleForm",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "SimpleForm",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -15835,6 +16216,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Tab",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Tab",
@@ -16168,6 +16559,16 @@
     },
     {
       "control": "TabStrip",
+      "property": "ActiveTab",
+      "method": null,
+      "owner": "TabStrip",
+      "type": "Tab get/set",
+      "description": "当前激活的选项卡；索引无对应项时返回 null。赋值对象必须先加入当前 Tabs 集合。",
+      "effect": "response",
+      "note": "将本控件 Tabs 中的已有页签对象赋给 ActiveTab，在本次响应切换到该页签。传 null 或其它容器的页签会报参数错误。下一轮按激活索引恢复。"
+    },
+    {
+      "control": "TabStrip",
       "property": "ActiveTabIndex",
       "method": "setActiveTabIndex",
       "owner": "TabStrip",
@@ -16215,6 +16616,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TabStrip",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "TabStrip",
@@ -16485,6 +16896,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TextArea",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "TextArea",
@@ -17045,6 +17466,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TextBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "TextBox",
@@ -17615,6 +18046,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "TimePicker",
@@ -18208,6 +18649,16 @@
     },
     {
       "control": "Tool",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Tool",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -18558,6 +19009,16 @@
     },
     {
       "control": "Toolbar",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "Toolbar",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -18778,6 +19239,16 @@
     },
     {
       "control": "ToolbarFill",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "ToolbarFill",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -18878,6 +19349,16 @@
     },
     {
       "control": "ToolbarSeparator",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "ToolbarSeparator",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -18975,6 +19456,16 @@
       "description": "本控件发起回发时的提示类型；未设置时沿用页面配置。",
       "effect": "request",
       "note": "从本控件下一次请求起使用新的 Default 普通提示或 Mask 页面遮罩；须启用加载提示，不改变正在进行的请求。"
+    },
+    {
+      "control": "ToolbarText",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "ToolbarText",
@@ -19145,6 +19636,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Tree",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Tree",
@@ -19745,6 +20246,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "TriggerBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "TriggerBox",
@@ -20368,6 +20879,16 @@
     },
     {
       "control": "TwinTriggerBox",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
+    },
+    {
+      "control": "TwinTriggerBox",
       "property": "Attributes",
       "method": "setAttributes",
       "owner": "ControlBase",
@@ -20985,6 +21506,16 @@
       "description": "锚点值（当父容器的Layout=Anchor时有效）",
       "effect": "response",
       "note": "父容器使用 Anchor 布局时按新锚点重新定位尺寸。撤销某个方向的锚点后恢复该方向最近显式设置的尺寸。"
+    },
+    {
+      "control": "Window",
+      "property": "AttributeDataTag",
+      "method": "setAttributeDataTag",
+      "owner": "ControlBase",
+      "type": "string get/set",
+      "description": "HTML标签属性（data-tag）",
+      "effect": "response",
+      "note": "更新控件上的 data-tag 自定义属性。传 null 仅移除此成员，保留标题提示及其他自定义属性。"
     },
     {
       "control": "Window",
