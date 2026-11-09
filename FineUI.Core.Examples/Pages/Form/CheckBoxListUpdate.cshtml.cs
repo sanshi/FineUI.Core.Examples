@@ -152,8 +152,7 @@ namespace FineUI.Core.Examples.Pages.Form
         {
             if (CheckBoxList4.Items.Count > 0)
             {
-                CheckBoxList4.DataSource = null;
-                CheckBoxList4.DataBind();
+                CheckBoxList4.Items.Clear();
             }
             else
             {

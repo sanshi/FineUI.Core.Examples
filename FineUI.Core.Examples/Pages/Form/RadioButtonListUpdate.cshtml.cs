@@ -154,8 +154,7 @@ namespace FineUI.Core.Examples.Pages.Form
         {
             if (RadioButtonList4.Items.Count > 0)
             {
-                RadioButtonList4.DataSource = null;
-                RadioButtonList4.DataBind();
+                RadioButtonList4.Items.Clear();
             }
             else
             {
