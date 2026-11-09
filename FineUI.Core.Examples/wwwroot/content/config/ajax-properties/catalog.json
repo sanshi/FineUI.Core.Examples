@@ -1790,6 +1790,16 @@
     },
     {
       "control": "Calendar",
+      "property": "RangeEndDate",
+      "method": "setRangeEndDate",
+      "owner": "Calendar",
+      "type": "DateTime? get/set",
+      "description": "当前范围的结束日期；从 Text 按当前格式读取。赋 null 清空整个范围。 修改一端时保留当前另一端，暂时倒置的赋值等待另一端修正。",
+      "effect": "response",
+      "note": "已有完整范围时可在本次响应单独修改结束日期，例如把 11 月 10 日至 15 日改成 10 日至 17 日。缺少另一端或新范围暂时无效时，只在当前请求保留草稿。传 null 清空整个范围。"
+    },
+    {
+      "control": "Calendar",
       "property": "RangeSeparator",
       "method": "setRangeSeparator",
       "owner": "Calendar",
@@ -1797,6 +1807,26 @@
       "description": "日期范围的分隔符",
       "effect": "response",
       "note": "范围模式下重新显示两端日期，已打开的弹出日历与输入框使用相同分隔符。"
+    },
+    {
+      "control": "Calendar",
+      "property": "RangeStartDate",
+      "method": "setRangeStartDate",
+      "owner": "Calendar",
+      "type": "DateTime? get/set",
+      "description": "当前范围的开始日期；从 Text 按当前格式读取。赋 null 清空整个范围。 首次可先设置开始、再设置结束，完整有效后才更新 Text。",
+      "effect": "response",
+      "note": "已有完整范围时可在本次响应单独修改起始日期，例如把 11 月 10 日至 15 日改成 11 日至 15 日。缺少另一端或新范围暂时无效时，只在当前请求保留草稿。传 null 清空整个范围。"
+    },
+    {
+      "control": "Calendar",
+      "property": "SelectedDate",
+      "method": "setSelectedDate",
+      "owner": "Calendar",
+      "type": "DateTime? get/set",
+      "description": "当前文本表示的选中日期；无有效值返回 null，赋 null 清空。需要时间时先设置日期格式。",
+      "effect": "response",
+      "note": "本次响应更新当前单值。Calendar 和 DatePicker 按控件格式保留支持的精度。TimePicker 只保留时分，例如赋 09:30:45 后显示 09:30。传 null 清空当前值。"
     },
     {
       "control": "Calendar",
@@ -3958,6 +3988,16 @@
     },
     {
       "control": "DatePicker",
+      "property": "RangeEndDate",
+      "method": "setRangeEndDate",
+      "owner": "DatePicker",
+      "type": "DateTime? get/set",
+      "description": "当前范围的结束日期；从 Text 按当前格式读取。赋 null 清空整个范围。 修改一端时保留当前另一端，暂时倒置的赋值等待另一端修正。",
+      "effect": "response",
+      "note": "已有完整范围时可在本次响应单独修改结束日期，例如把 11 月 10 日至 15 日改成 10 日至 17 日。缺少另一端或新范围暂时无效时，只在当前请求保留草稿。传 null 清空整个范围。"
+    },
+    {
+      "control": "DatePicker",
       "property": "RangeSeparator",
       "method": "setRangeSeparator",
       "owner": "DatePicker",
@@ -3965,6 +4005,16 @@
       "description": "日期范围的分隔符",
       "effect": "response",
       "note": "范围模式下重新显示两端日期，已打开的弹出日历与输入框使用相同分隔符。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "RangeStartDate",
+      "method": "setRangeStartDate",
+      "owner": "DatePicker",
+      "type": "DateTime? get/set",
+      "description": "当前范围的开始日期；从 Text 按当前格式读取。赋 null 清空整个范围。 首次可先设置开始、再设置结束，完整有效后才更新 Text。",
+      "effect": "response",
+      "note": "已有完整范围时可在本次响应单独修改起始日期，例如把 11 月 10 日至 15 日改成 11 日至 15 日。缺少另一端或新范围暂时无效时，只在当前请求保留草稿。传 null 清空整个范围。"
     },
     {
       "control": "DatePicker",
@@ -4035,6 +4085,16 @@
       "description": "为空时提示信息",
       "effect": "validation",
       "note": "下一次必填或必选校验失败时使用新提示；回发 null/空串清空文字，必填或必选规则继续有效，不立即刷新已有错误。HiddenField 不参与校验。"
+    },
+    {
+      "control": "DatePicker",
+      "property": "SelectedDate",
+      "method": "setSelectedDate",
+      "owner": "DatePicker",
+      "type": "DateTime? get/set",
+      "description": "当前文本表示的选中日期；无有效值返回 null，赋 null 清空。需要时间时先设置日期格式。",
+      "effect": "response",
+      "note": "本次响应更新当前单值。Calendar 和 DatePicker 按控件格式保留支持的精度。TimePicker 只保留时分，例如赋 09:30:45 后显示 09:30。传 null 清空当前值。"
     },
     {
       "control": "DatePicker",
@@ -17975,6 +18035,16 @@
       "description": "为空时提示信息",
       "effect": "validation",
       "note": "下一次必填或必选校验失败时使用新提示；回发 null/空串清空文字，必填或必选规则继续有效，不立即刷新已有错误。HiddenField 不参与校验。"
+    },
+    {
+      "control": "TimePicker",
+      "property": "SelectedDate",
+      "method": "setSelectedDate",
+      "owner": "TimePicker",
+      "type": "DateTime? get/set",
+      "description": "选择的时间",
+      "effect": "response",
+      "note": "本次响应更新当前单值。Calendar 和 DatePicker 按控件格式保留支持的精度。TimePicker 只保留时分，例如赋 09:30:45 后显示 09:30。传 null 清空当前值。"
     },
     {
       "control": "TimePicker",
