@@ -6,7 +6,7 @@ namespace FineUI.Core.Examples.Pages.HtmlEditor
 {
     public partial class ToolbarModel : PageBase
     {
-        public JToken ToolbarOption => new JArray { "undo", "redo", "|", "bold", "italic", "underline", "|", "bulletList", "link", "source" };
+        public JToken ToolbarOption => new JArray { "bold", "italic", "underline", "|", "bulletList", "link", "source" };
         protected void Button1_Click(object sender, EventArgs e)
         {
             TextArea1.Text = HtmlEditor1.Text;
