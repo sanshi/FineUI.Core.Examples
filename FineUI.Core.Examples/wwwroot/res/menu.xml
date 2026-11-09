@@ -2196,14 +2196,6 @@
 			<TreeNode Text="Region（多个侧边区域）" NavigateUrl="~/Layout/RegionMultiRegions">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="图表">
-			<TreeNode Text="基础柱状图" NavigateUrl="~/Chart/Bar" />
-			<TreeNode Text="基础折线图" NavigateUrl="~/Chart/Line" />
-			<TreeNode Text="基础面积图" NavigateUrl="~/Chart/Area" />
-			<TreeNode Text="基础饼图" NavigateUrl="~/Chart/Pie" />
-			<TreeNode Text="折柱混合图" NavigateUrl="~/Chart/Combination" />
-			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/Chart/Sales" />
-		</TreeNode>
 		<TreeNode Text="Block">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/Block/Dashboard">
 			</TreeNode>
@@ -2284,6 +2276,28 @@
 			<TreeNode Text="面板高度随IFrame的高度变化" NavigateUrl="~/IFrame/IFrameAutoHeight">
 			</TreeNode>
 		</TreeNode>
+	</TreeNode>
+	<TreeNode Text="图表" IconFont="BarChart">
+		<TreeNode Text="柱状图">
+			<TreeNode Text="基础柱状图" NavigateUrl="~/Chart/Bar" />
+			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/Chart/Bar/Background" />
+			<TreeNode Text="单柱配色" NavigateUrl="~/Chart/Bar/PointColor" />
+		</TreeNode>
+		<TreeNode Text="折线图">
+			<TreeNode Text="基础折线图" NavigateUrl="~/Chart/Line" />
+			<TreeNode Text="平滑折线图" NavigateUrl="~/Chart/Line/Smooth" />
+		</TreeNode>
+		<TreeNode Text="面积图">
+			<TreeNode Text="基础面积图" NavigateUrl="~/Chart/Area" />
+			<TreeNode Text="堆叠面积图" NavigateUrl="~/Chart/Area/Stacked" />
+		</TreeNode>
+		<TreeNode Text="饼图">
+			<TreeNode Text="基础饼图" NavigateUrl="~/Chart/Pie" />
+			<TreeNode Text="环形图" NavigateUrl="~/Chart/Pie/Doughnut" />
+			<TreeNode Text="半环形图" NavigateUrl="~/Chart/Pie/HalfDoughnut" />
+		</TreeNode>
+		<TreeNode Text="折柱混合图" NavigateUrl="~/Chart/Combination" />
+		<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/Chart/Sales" />
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
 		<TreeNode Text="旧脚本兼容（禁用脚本 CSP）" Expanded="false">

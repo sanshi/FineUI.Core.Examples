@@ -1,0 +1,15 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.PointColorModel
+@{
+    ViewBag.Title = "单柱配色";
+}
+
+@section body {
+    <f:Chart ID="ChartBarPointColor" Height="550" CategoryField="Category"
+        ShowTooltip="false">
+        <Series>
+            <f:ChartSeries Key="value" Type="Bar" Name="数值" ValueField="Value" ColorField="PointColor" />
+        </Series>
+    </f:Chart>
+    <p>为星期二的数据行指定颜色，其余柱子沿用系列配色。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-data-color" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+}

@@ -1,0 +1,17 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.DoughnutModel
+@{
+    ViewBag.Title = "环形图";
+}
+
+@section body {
+    <f:Chart ID="ChartPieDoughnut" Height="550" CategoryField="Category"
+        ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
+        PieShowLabel="false" PieLabelPosition="center" PieEmphasisLabelSize="40"
+        PieEmphasisLabelFontWeight="bold">
+        <Series>
+            <f:ChartSeries Key="source" Type="Pie" Name="Access From" ValueField="Value" />
+        </Series>
+    </f:Chart>
+    <p>内半径留出圆心空间，指向扇区可在中央显示分类名称。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-doughnut" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+}
