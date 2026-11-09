@@ -350,6 +350,16 @@
     },
     {
       "control": "Accordion",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Accordion",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -710,6 +720,16 @@
     },
     {
       "control": "AccordionPane",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "AccordionPane",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -937,6 +957,16 @@
       "description": "ConfirmText 是否为开发者信任的 HTML。为真时确认框原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "interaction",
       "note": "下一次显示确认框时按新值决定是否将确认文字作为 HTML 显示；开启时须保证文字来源可信。"
+    },
+    {
+      "control": "Button",
+      "property": "ConfirmTextRawHtml",
+      "method": "setConfirmTextRawHtml",
+      "owner": "Button",
+      "type": "RawHtml get/set",
+      "description": "把 ConfirmText 设为可信 HTML 的便捷写法：赋值时同时设置 ConfirmText 和 ConfirmTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "interaction",
+      "note": "下次点击时用可信 HTML 显示新的确认文字。传 null 清空确认文字并关闭此确认提示。消息内容必须由服务器确认可信。"
     },
     {
       "control": "Button",
@@ -1170,6 +1200,16 @@
     },
     {
       "control": "Button",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "Button",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新按钮文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Button",
       "property": "ToolTip",
       "method": "setToolTip",
       "owner": "Button",
@@ -1197,6 +1237,16 @@
       "description": "ToolTip 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Button",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "Button",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Button",
@@ -2170,6 +2220,16 @@
     },
     {
       "control": "CheckBox",
+      "property": "SwitchOffTextRawHtml",
+      "method": "setSwitchOffTextRawHtml",
+      "owner": "CheckBox",
+      "type": "RawHtml get/set",
+      "description": "把 SwitchOffText 设为可信 HTML 的便捷写法：赋值时同时设置 SwitchOffText 和 SwitchOffTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新未选中时的开关文字。只在创建时已设为开关且显示开关文字的 CheckBox 上可见。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "CheckBox",
       "property": "SwitchOnText",
       "method": "setSwitchOnText",
       "owner": "CheckBox",
@@ -2187,6 +2247,16 @@
       "description": "SwitchOnText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "SwitchOnTextRawHtml",
+      "method": "setSwitchOnTextRawHtml",
+      "owner": "CheckBox",
+      "type": "RawHtml get/set",
+      "description": "把 SwitchOnText 设为可信 HTML 的便捷写法：赋值时同时设置 SwitchOnText 和 SwitchOnTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新选中时的开关文字。只在创建时已设为开关且显示开关文字的 CheckBox 上可见。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "CheckBox",
@@ -2227,6 +2297,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "CheckBox",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "CheckBox",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新复选框旁的标签文字，保留当前选中状态。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "CheckBox",
@@ -3051,6 +3131,17 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。",
+      "alias": "Panel 的内容面板标签"
+    },
+    {
+      "control": "ContentPanel",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。",
       "alias": "Panel 的内容面板标签"
     },
     {
@@ -6437,6 +6528,16 @@
     },
     {
       "control": "Form",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Form",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -6877,6 +6978,16 @@
     },
     {
       "control": "Grid",
+      "property": "CheckBoxSelectHeaderTextRawHtml",
+      "method": "setCheckBoxSelectHeaderTextRawHtml",
+      "owner": "Grid",
+      "type": "RawHtml get/set",
+      "description": "把 CheckBoxSelectHeaderText 设为可信 HTML 的便捷写法：赋值时同时设置 CheckBoxSelectHeaderText 和 CheckBoxSelectHeaderTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "在普通表格中，本次响应更新已启用的复选列标题，无需重新绑定数据。仅适用于未启用列编辑器、过滤器、树、行分组、大数据、模拟树或卡片模式的表格。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Grid",
       "property": "CheckBoxSelectOnly",
       "method": "setCheckBoxSelectOnly",
       "owner": "Grid",
@@ -6964,6 +7075,16 @@
       "description": "是否允许在表格右侧锁定列。",
       "effect": "response",
       "note": "仅在普通 Grid 中支持，刷新现有表格；不覆盖含编辑器/过滤器或树、行分组、大数据、卡片等特殊模式。相关外观仍依赖对应区域或功能已启用。"
+    },
+    {
+      "control": "Grid",
+      "property": "Columns",
+      "method": "setColumns",
+      "owner": "Grid",
+      "type": "GridColumnCollection get/set",
+      "description": "列集合",
+      "effect": "response",
+      "note": "普通表格在本次响应后整体替换列配置，空集合清空普通列。新列需要的字段已经存在于当前行数据时可复用现有数据，否则同轮提供数据。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
     },
     {
       "control": "Grid",
@@ -7114,6 +7235,16 @@
       "description": "EmptyText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "仅在普通 Grid 中支持，刷新现有表格；不覆盖含编辑器/过滤器或树、行分组、大数据、卡片等特殊模式。相关外观仍依赖对应区域或功能已启用。"
+    },
+    {
+      "control": "Grid",
+      "property": "EmptyTextRawHtml",
+      "method": "setEmptyTextRawHtml",
+      "owner": "Grid",
+      "type": "RawHtml get/set",
+      "description": "把 EmptyText 设为可信 HTML 的便捷写法：赋值时同时设置 EmptyText 和 EmptyTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "在普通表格中，本次响应更新空表格提示，无需重新绑定数据。有数据时在下次显示空表格时使用，仅适用于未启用列编辑器、过滤器、树、行分组、大数据、模拟树或卡片模式的表格。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Grid",
@@ -8127,6 +8258,16 @@
     },
     {
       "control": "Grid",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Grid",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -8144,6 +8285,86 @@
       "description": "宽度",
       "effect": "response",
       "note": "更新控件显式宽度并重新布局；null 撤销显式宽度，按仍有效的业务 CSS、控件默认值和父布局计算。百分比、伸缩和锚定等父布局约束继续生效，窗口再次显示或最大化后还原也保留。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderCssClass",
+      "method": "setHeaderCssClass",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏样式类",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头附加 CSS 类。空值移除原类名，叶子列的单元格也会使用列配置中的类名。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderText",
+      "method": "setHeaderText",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新可见列的表头文字，是否按 HTML 显示由 HeaderTextRaw 决定。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderTextAlign",
+      "method": "setHeaderTextAlign",
+      "owner": "GridColumn",
+      "type": "TextAlign get/set",
+      "description": "标题文本的排列位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头对齐方式。设为 Undefined 后采用列的默认对齐。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderTextRaw",
+      "method": "setHeaderTextRaw",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "HeaderText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头文字的 HTML 显示方式，保留当前文字。开启时须确保文字来源可信。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderToolTip",
+      "method": "setHeaderToolTip",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字的提示文本",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头的自定义提示文字。清空后仍可按表格设置显示排序提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderToolTipPosition",
+      "method": "setHeaderToolTipPosition",
+      "owner": "GridColumn",
+      "type": "ToolTipPosition get/set",
+      "description": "标题栏文字的提示文本位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头增强提示的位置。仅在提示文字非空且类型为 Qtip 时生效，Undefined 使用默认位置。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "HeaderToolTipType",
+      "method": "setHeaderToolTipType",
+      "owner": "GridColumn",
+      "type": "ToolTipType get/set",
+      "description": "标题栏文字的提示文本类型",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头自定义提示的显示方式。Qtip 使用增强提示，Title 使用浏览器原生提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "GroupField",
+      "property": "Hidden",
+      "method": "setHidden",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否隐藏控件",
+      "effect": "response",
+      "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
     },
     {
       "control": "GroupPanel",
@@ -8484,6 +8705,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "GroupPanel",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "GroupPanel",
@@ -9527,6 +9758,16 @@
     },
     {
       "control": "HyperLink",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "HyperLink",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新超链接文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "HyperLink",
       "property": "ToolTip",
       "method": "setToolTip",
       "owner": "ToolTipField",
@@ -9564,6 +9805,16 @@
       "description": "ToolTip 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "HyperLink",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "ToolTipField",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新超链接、图片、标签或链接按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "HyperLink",
@@ -9987,6 +10238,16 @@
     },
     {
       "control": "Image",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "ToolTipField",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新超链接、图片、标签或链接按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Image",
       "property": "ToolTipTitle",
       "method": "setToolTipTitle",
       "owner": "ToolTipField",
@@ -10317,6 +10578,16 @@
     },
     {
       "control": "Label",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "Label",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新标签文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Label",
       "property": "ToolTip",
       "method": "setToolTip",
       "owner": "ToolTipField",
@@ -10354,6 +10625,16 @@
       "description": "ToolTip 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Label",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "ToolTipField",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新超链接、图片、标签或链接按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Label",
@@ -10544,6 +10825,16 @@
       "description": "ConfirmText 是否为开发者信任的 HTML。为真时确认框原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "interaction",
       "note": "下一次显示确认框时按新值决定是否将确认文字作为 HTML 显示；开启时须保证文字来源可信。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "ConfirmTextRawHtml",
+      "method": "setConfirmTextRawHtml",
+      "owner": "LinkButton",
+      "type": "RawHtml get/set",
+      "description": "把 ConfirmText 设为可信 HTML 的便捷写法：赋值时同时设置 ConfirmText 和 ConfirmTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "interaction",
+      "note": "下次点击时用可信 HTML 显示新的确认文字。传 null 清空确认文字并关闭此确认提示。消息内容必须由服务器确认可信。"
     },
     {
       "control": "LinkButton",
@@ -10747,6 +11038,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "LinkButton",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新链接按钮文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "LinkButton",
       "property": "ToolTip",
       "method": "setToolTip",
       "owner": "ToolTipField",
@@ -10784,6 +11085,16 @@
       "description": "ToolTip 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "LinkButton",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "ToolTipField",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新超链接、图片、标签或链接按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "LinkButton",
@@ -11037,6 +11348,16 @@
     },
     {
       "control": "MenuButton",
+      "property": "ConfirmTextRawHtml",
+      "method": "setConfirmTextRawHtml",
+      "owner": "MenuButton",
+      "type": "RawHtml get/set",
+      "description": "把 ConfirmText 设为可信 HTML 的便捷写法：赋值时同时设置 ConfirmText 和 ConfirmTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "interaction",
+      "note": "下次点击时用可信 HTML 显示新的确认文字。传 null 清空确认文字并关闭此确认提示。消息内容必须由服务器确认可信。"
+    },
+    {
+      "control": "MenuButton",
       "property": "ConfirmTitle",
       "method": "setConfirmTitle",
       "owner": "MenuButton",
@@ -11184,6 +11505,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "MenuButton",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "MenuItem",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新菜单项文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "MenuButton",
@@ -11406,6 +11737,16 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "MenuCheckBox",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "MenuItem",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新菜单项文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
       "control": "MenuHyperLink",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -11596,6 +11937,16 @@
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
     },
     {
+      "control": "MenuHyperLink",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "MenuItem",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新菜单项文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
       "control": "MenuSeparator",
       "property": "AjaxLoadingMaskText",
       "method": "setAjaxLoadingMaskText",
@@ -11864,6 +12215,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "MenuText",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "MenuItem",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新菜单项文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "NumberBox",
@@ -12987,6 +13348,16 @@
     },
     {
       "control": "Panel",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Panel",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -13344,6 +13715,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "RadioButton",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "RadioButton",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新单选按钮旁的标签文字，保留当前选中状态。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "RadioButton",
@@ -14107,6 +14488,16 @@
     },
     {
       "control": "Region",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Region",
       "property": "TitleToolTip",
       "method": "setTitleToolTip",
       "owner": "CollapsablePanel",
@@ -14406,6 +14797,86 @@
       "note": "通过所属表格的列配置整体更新，仅支持不含编辑器、过滤器及树、分组、卡片等特殊模式的普通表格；字段已存在且解释方式兼容时可复用当前数据，缺少字段或改变字段类型、日期解析格式时须先修改属性，再在同一次回发中重新绑定原始数据。"
     },
     {
+      "control": "RenderCheckField",
+      "property": "HeaderCssClass",
+      "method": "setHeaderCssClass",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏样式类",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头附加 CSS 类。空值移除原类名，叶子列的单元格也会使用列配置中的类名。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderText",
+      "method": "setHeaderText",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新可见列的表头文字，是否按 HTML 显示由 HeaderTextRaw 决定。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderTextAlign",
+      "method": "setHeaderTextAlign",
+      "owner": "GridColumn",
+      "type": "TextAlign get/set",
+      "description": "标题文本的排列位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头对齐方式。设为 Undefined 后采用列的默认对齐。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderTextRaw",
+      "method": "setHeaderTextRaw",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "HeaderText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头文字的 HTML 显示方式，保留当前文字。开启时须确保文字来源可信。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderToolTip",
+      "method": "setHeaderToolTip",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字的提示文本",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头的自定义提示文字。清空后仍可按表格设置显示排序提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderToolTipPosition",
+      "method": "setHeaderToolTipPosition",
+      "owner": "GridColumn",
+      "type": "ToolTipPosition get/set",
+      "description": "标题栏文字的提示文本位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头增强提示的位置。仅在提示文字非空且类型为 Qtip 时生效，Undefined 使用默认位置。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "HeaderToolTipType",
+      "method": "setHeaderToolTipType",
+      "owner": "GridColumn",
+      "type": "ToolTipType get/set",
+      "description": "标题栏文字的提示文本类型",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头自定义提示的显示方式。Qtip 使用增强提示，Title 使用浏览器原生提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "Hidden",
+      "method": "setHidden",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否隐藏控件",
+      "effect": "response",
+      "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
       "control": "RenderField",
       "property": "DataField",
       "method": "setDataField",
@@ -14434,6 +14905,86 @@
       "description": "字段类型",
       "effect": "binding",
       "note": "通过所属表格的列配置整体更新，仅支持不含编辑器、过滤器及树、分组、卡片等特殊模式的普通表格；字段已存在且解释方式兼容时可复用当前数据，缺少字段或改变字段类型、日期解析格式时须先修改属性，再在同一次回发中重新绑定原始数据。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderCssClass",
+      "method": "setHeaderCssClass",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏样式类",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头附加 CSS 类。空值移除原类名，叶子列的单元格也会使用列配置中的类名。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderText",
+      "method": "setHeaderText",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新可见列的表头文字，是否按 HTML 显示由 HeaderTextRaw 决定。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderTextAlign",
+      "method": "setHeaderTextAlign",
+      "owner": "GridColumn",
+      "type": "TextAlign get/set",
+      "description": "标题文本的排列位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头对齐方式。设为 Undefined 后采用列的默认对齐。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderTextRaw",
+      "method": "setHeaderTextRaw",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "HeaderText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头文字的 HTML 显示方式，保留当前文字。开启时须确保文字来源可信。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderToolTip",
+      "method": "setHeaderToolTip",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字的提示文本",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头的自定义提示文字。清空后仍可按表格设置显示排序提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderToolTipPosition",
+      "method": "setHeaderToolTipPosition",
+      "owner": "GridColumn",
+      "type": "ToolTipPosition get/set",
+      "description": "标题栏文字的提示文本位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头增强提示的位置。仅在提示文字非空且类型为 Qtip 时生效，Undefined 使用默认位置。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "HeaderToolTipType",
+      "method": "setHeaderToolTipType",
+      "owner": "GridColumn",
+      "type": "ToolTipType get/set",
+      "description": "标题栏文字的提示文本类型",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头自定义提示的显示方式。Qtip 使用增强提示，Title 使用浏览器原生提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "Hidden",
+      "method": "setHidden",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否隐藏控件",
+      "effect": "response",
+      "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
     },
     {
       "control": "RenderField",
@@ -14534,6 +15085,86 @@
       "description": "启用客户端合计（SummaryType）时的数字格式化字符串（和RendererArgument支持的格式一致）",
       "effect": "binding",
       "note": "仅 RenderField 支持。表格启用合计时，通过所属表格列配置整体更新后生效；普通表格可直接修改列后重新绑定数据，沿用普通列配置的使用限制。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderCssClass",
+      "method": "setHeaderCssClass",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏样式类",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头附加 CSS 类。空值移除原类名，叶子列的单元格也会使用列配置中的类名。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderText",
+      "method": "setHeaderText",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新可见列的表头文字，是否按 HTML 显示由 HeaderTextRaw 决定。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderTextAlign",
+      "method": "setHeaderTextAlign",
+      "owner": "GridColumn",
+      "type": "TextAlign get/set",
+      "description": "标题文本的排列位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头对齐方式。设为 Undefined 后采用列的默认对齐。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderTextRaw",
+      "method": "setHeaderTextRaw",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "HeaderText 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头文字的 HTML 显示方式，保留当前文字。开启时须确保文字来源可信。用于行展开的窄列继续显示展开图标。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderToolTip",
+      "method": "setHeaderToolTip",
+      "owner": "GridColumn",
+      "type": "string get/set",
+      "description": "标题栏文字的提示文本",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头的自定义提示文字。清空后仍可按表格设置显示排序提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderToolTipPosition",
+      "method": "setHeaderToolTipPosition",
+      "owner": "GridColumn",
+      "type": "ToolTipPosition get/set",
+      "description": "标题栏文字的提示文本位置",
+      "effect": "response",
+      "note": "普通表格在本次响应后更新表头增强提示的位置。仅在提示文字非空且类型为 Qtip 时生效，Undefined 使用默认位置。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "HeaderToolTipType",
+      "method": "setHeaderToolTipType",
+      "owner": "GridColumn",
+      "type": "ToolTipType get/set",
+      "description": "标题栏文字的提示文本类型",
+      "effect": "response",
+      "note": "普通表格在本次响应后切换表头自定义提示的显示方式。Qtip 使用增强提示，Title 使用浏览器原生提示。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RowNumberField",
+      "property": "Hidden",
+      "method": "setHidden",
+      "owner": "ControlBase",
+      "type": "bool get/set",
+      "description": "是否隐藏控件",
+      "effect": "response",
+      "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
     },
     {
       "control": "SimpleForm",
@@ -14864,6 +15495,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "SimpleForm",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "SimpleForm",
@@ -15224,6 +15865,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tab",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Tab",
@@ -17347,6 +17998,16 @@
     },
     {
       "control": "Tool",
+      "property": "ConfirmTextRawHtml",
+      "method": "setConfirmTextRawHtml",
+      "owner": "Tool",
+      "type": "RawHtml get/set",
+      "description": "把 ConfirmText 设为可信 HTML 的便捷写法：赋值时同时设置 ConfirmText 和 ConfirmTextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "interaction",
+      "note": "下次点击时用可信 HTML 显示新的确认文字。传 null 清空确认文字并关闭此确认提示。消息内容必须由服务器确认可信。"
+    },
+    {
+      "control": "Tool",
       "property": "ConfirmTitle",
       "method": "setConfirmTitle",
       "owner": "Tool",
@@ -17487,6 +18148,16 @@
     },
     {
       "control": "Tool",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "Tool",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题栏中工具按钮的文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
+    },
+    {
+      "control": "Tool",
       "property": "ToolTip",
       "method": "setToolTip",
       "owner": "Tool",
@@ -17504,6 +18175,16 @@
       "description": "ToolTip 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tool",
+      "property": "ToolTipRawHtml",
+      "method": "setToolTipRawHtml",
+      "owner": "Tool",
+      "type": "RawHtml get/set",
+      "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新工具按钮的提示文字。增强提示可显示可信 HTML，浏览器原生 title 提示按文本显示。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Tool",
@@ -17784,6 +18465,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Toolbar",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "Toolbar",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新工具条上已显示的标题。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Toolbar",
@@ -18114,6 +18805,16 @@
       "description": "Text 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "ToolbarText",
+      "property": "TextRawHtml",
+      "method": "setTextRawHtml",
+      "owner": "ToolbarText",
+      "type": "RawHtml get/set",
+      "description": "把 Text 设为可信 HTML 的便捷写法：赋值时同时设置 Text 和 TextRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新工具条条目文字。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Tree",
@@ -18684,6 +19385,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Tree",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Tree",
@@ -20304,6 +21015,16 @@
       "description": "Title 是否为开发者信任的 HTML。为真时前端原样输出、不转义；默认 false 会做 HTML 转义（防 XSS）",
       "effect": "response",
       "note": "可在后台回发事件中修改，本次响应到达浏览器后更新该属性对应的显示或当前值。"
+    },
+    {
+      "control": "Window",
+      "property": "TitleRawHtml",
+      "method": "setTitleRawHtml",
+      "owner": "CollapsablePanel",
+      "type": "RawHtml get/set",
+      "description": "把 Title 设为可信 HTML 的便捷写法：赋值时同时设置 Title 和 TitleRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
+      "effect": "response",
+      "note": "本次响应更新可见标题。选项卡和手风琴使用新标题更新对应页签或面板。只传可信内容。传 null 清空文字并关闭 Raw 显示。"
     },
     {
       "control": "Window",
