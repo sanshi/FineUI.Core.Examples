@@ -8299,6 +8299,26 @@
     },
     {
       "control": "Grid",
+      "property": "SelectedRowIndex",
+      "method": null,
+      "owner": "Grid",
+      "type": "int get/set",
+      "description": "选中行的索引（列表中的第一项）。行索引会随分页、排序和行移动变化， 请设置DataIDField并改用SelectedRowID。",
+      "effect": "response",
+      "note": "旧入口按浏览器当前页从零起算的下标选择一行。例如设为 1 选择当前第二行，负数清空选择。分页或排序时使用稳定业务行 ID。"
+    },
+    {
+      "control": "Grid",
+      "property": "SelectedRowIndexArray",
+      "method": null,
+      "owner": "Grid",
+      "type": "int[] get/set",
+      "description": "选中行的索引列表（选中行在当前分页中的索引值）。行索引会随分页、排序和行移动变化， 请设置DataIDField并改用SelectedRowIDArray。",
+      "effect": "response",
+      "note": "旧入口按浏览器当前页从零起算的下标选择行。空数组或 null 清空选择。分页、排序或移动后下标可能指向其它业务行，建议使用稳定行 ID。"
+    },
+    {
+      "control": "Grid",
       "property": "ShowAjaxLoadingMaskText",
       "method": "setShowAjaxLoadingMaskText",
       "owner": "Component",
@@ -15478,6 +15498,16 @@
       "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
     },
     {
+      "control": "RenderCheckField",
+      "property": "MaxWidth",
+      "method": "setMaxWidth",
+      "owner": "GridColumn",
+      "type": "int? get/set",
+      "description": "最大列宽度",
+      "effect": "response",
+      "note": "在普通表格中为非固定宽度的数据列设置最大像素宽度。例如将 160 像素宽的列上限改为 90，列在本次响应重新布局。传 null 撤销本列限制。"
+    },
+    {
       "control": "RenderField",
       "property": "DataField",
       "method": "setDataField",
@@ -15536,6 +15566,36 @@
       "description": "是否在客户端进行HTML编码",
       "effect": "response",
       "note": "本次响应后生效。更新列的文本编码设置。true 按普通文本显示，false 允许原样显示可信 HTML，null 恢复继承表格的编码设置。该设置也用于本列提示内容。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ExpandOnDblClick",
+      "method": "setExpandOnDblClick",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "双击展开折叠行扩展列",
+      "effect": "interaction",
+      "note": "普通表格中已有的行扩展列可通过当前响应修改双击行时是否展开。下一次双击使用新规则；不影响点击展开图标。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ExpandOnEnter",
+      "method": "setExpandOnEnter",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "回车按键展开折叠行扩展列",
+      "effect": "interaction",
+      "note": "普通表格中已有的行扩展列可通过当前响应修改按回车时是否展开。下一次在行内按回车时使用新规则；不影响点击展开图标。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ExpandToSelectRow",
+      "method": "setExpandToSelectRow",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "点击行扩展列的图标时选中行",
+      "effect": "interaction",
+      "note": "普通表格中已有的行扩展列可通过当前响应修改点击展开图标时是否同时选中行。下一次点击图标时使用新规则。"
     },
     {
       "control": "RenderField",
@@ -15626,6 +15686,16 @@
       "description": "是否隐藏控件",
       "effect": "response",
       "note": "普通表格在本次响应后隐藏或显示列。隐藏分组列时，其子列一并隐藏。 修改已有列的属性即可，无需替换列集合或重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "MaxWidth",
+      "method": "setMaxWidth",
+      "owner": "GridColumn",
+      "type": "int? get/set",
+      "description": "最大列宽度",
+      "effect": "response",
+      "note": "在普通表格中为非固定宽度的数据列设置最大像素宽度。例如将 160 像素宽的列上限改为 90，列在本次响应重新布局。传 null 撤销本列限制。"
     },
     {
       "control": "RenderField",
