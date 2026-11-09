@@ -3488,6 +3488,16 @@
     },
     {
       "control": "DataList",
+      "property": "SelectedValue",
+      "method": "setSelectedValue",
+      "owner": "DataList",
+      "type": "string get/set",
+      "description": "选中项的值",
+      "effect": "response",
+      "note": "允许选择时，按当前项目的业务值更新单个选中项。传 null 清空选择。下一次回发按已有选中值数组恢复。"
+    },
+    {
+      "control": "DataList",
       "property": "SelectedValueArray",
       "method": "setSelectedValueArray",
       "owner": "DataList",
@@ -8078,6 +8088,16 @@
     },
     {
       "control": "Grid",
+      "property": "SelectedRowID",
+      "method": "setSelectedRowID",
+      "owner": "Grid",
+      "type": "string get/set",
+      "description": "选中的行ID（当DataIDField属性存在时有效）",
+      "effect": "response",
+      "note": "按已加载的业务行 ID 选中一行，需要设置 DataIDField。传空字符串或 null 清空选择。下一次回发按已有选中行数组恢复。"
+    },
+    {
+      "control": "Grid",
       "property": "SelectedRowIDArray",
       "method": "setSelectedRowIDArray",
       "owner": "Grid",
@@ -8255,6 +8275,26 @@
       "description": "是否将表格数据中的日期保留为字符串。",
       "effect": "binding",
       "note": "仅支持普通 Grid，须在同一次回发中重新绑定数据；不适用于含编辑器、过滤器或树、行分组、大数据、卡片等特殊模式的表格。"
+    },
+    {
+      "control": "Grid",
+      "property": "SummaryData",
+      "method": "setSummaryData",
+      "owner": "Grid",
+      "type": "JObject get/set",
+      "description": "合计行数据",
+      "effect": "response",
+      "note": "已启用合计行时，传入一个合计对象可在本次响应把手工合计替换为一行，无需重新绑定明细。例如传入金额字段和值以显示新的总金额。传 null 清空手工合计；多行合计用 SummaryDataArray。"
+    },
+    {
+      "control": "Grid",
+      "property": "SummaryDataArray",
+      "method": "setSummaryDataArray",
+      "owner": "Grid",
+      "type": "JArray get/set",
+      "description": "合计行数据",
+      "effect": "response",
+      "note": "已启用合计行时，可在本次响应替换合计数据，无需重新绑定明细。每个对象对应一行，字段取自合计列的数据字段；传空数组或 null 清空手工合计。下次需要生成合计时由业务重新提供数据。"
     },
     {
       "control": "Grid",
@@ -19545,6 +19585,16 @@
       "description": "是否为区域分隔条使用表头样式",
       "effect": "response",
       "note": "更新已创建的区域分隔条的标题样式，仅对非中心且启用分隔条的区域有效。"
+    },
+    {
+      "control": "Tree",
+      "property": "SelectedNodeID",
+      "method": "setSelectedNodeID",
+      "owner": "Tree",
+      "type": "string get/set",
+      "description": "选中的树节点ID",
+      "effect": "response",
+      "note": "按已加载节点的 ID 选中一个节点。传空字符串或 null 清空选择。下一次回发按已有选中节点数组恢复。"
     },
     {
       "control": "Tree",
