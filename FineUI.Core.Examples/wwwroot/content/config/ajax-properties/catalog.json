@@ -950,6 +950,16 @@
     },
     {
       "control": "Button",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "Button",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
+    },
+    {
+      "control": "Button",
       "property": "ColumnWidth",
       "method": "setColumnWidth",
       "owner": "BoxComponent",
@@ -9899,6 +9909,16 @@
     },
     {
       "control": "HyperLink",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "HyperLink",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）。超链接有真实地址，回调返回 false 可阻止默认导航",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
+    },
+    {
+      "control": "HyperLink",
       "property": "ColumnWidth",
       "method": "setColumnWidth",
       "owner": "BoxComponent",
@@ -11159,6 +11179,16 @@
     },
     {
       "control": "LinkButton",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "LinkButton",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
+    },
+    {
+      "control": "LinkButton",
       "property": "ColumnWidth",
       "method": "setColumnWidth",
       "owner": "BoxComponent",
@@ -11709,6 +11739,16 @@
     },
     {
       "control": "MenuButton",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "MenuItem",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
+    },
+    {
+      "control": "MenuButton",
       "property": "ConfirmIcon",
       "method": "setConfirmIcon",
       "owner": "MenuButton",
@@ -12019,6 +12059,16 @@
     },
     {
       "control": "MenuCheckBox",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "MenuItem",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
+    },
+    {
+      "control": "MenuCheckBox",
       "property": "CssClass",
       "method": "setCssClass",
       "owner": "Component",
@@ -12206,6 +12256,16 @@
       "description": "HTML标签属性",
       "effect": "response",
       "note": "本次响应后更新自定义 HTML 属性，并移除旧集合中已删除的成员；属性名称和值须符合允许的 HTML 属性规则。"
+    },
+    {
+      "control": "MenuHyperLink",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "MenuItem",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
     },
     {
       "control": "MenuHyperLink",
@@ -12526,6 +12586,16 @@
       "description": "HTML标签属性",
       "effect": "response",
       "note": "本次响应后更新自定义 HTML 属性，并移除旧集合中已删除的成员；属性名称和值须符合允许的 HTML 属性规则。"
+    },
+    {
+      "control": "MenuText",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "MenuItem",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
     },
     {
       "control": "MenuText",
@@ -18666,6 +18736,16 @@
       "description": "HTML标签属性",
       "effect": "response",
       "note": "本次响应后更新自定义 HTML 属性，并移除旧集合中已删除的成员；属性名称和值须符合允许的 HTML 属性规则。"
+    },
+    {
+      "control": "Tool",
+      "property": "ClickHandler",
+      "method": "setClickHandler",
+      "owner": "Tool",
+      "type": "string get/set",
+      "description": "客户端 click 事件的处理函数名称（回调首参为 event；等价于在 Listeners 中声明 click 事件）。仅接受开发者可信的函数名，绝不能拼入用户输入（该值会原样输出为 JavaScript）。回发中修改本属性会推送到已渲染的页面（客户端 setClickHandler ，只下发函数名、不下发脚本）",
+      "effect": "interaction",
+      "note": "本次响应替换点击时使用的具名客户端函数；下一次点击执行新函数。回调返回 false 可阻止后续点击行为，传空字符串或 null 移除回调。只传可信函数名；服务器下次回发不从浏览器恢复该名字。"
     },
     {
       "control": "Tool",
