@@ -14898,6 +14898,16 @@
     },
     {
       "control": "RenderField",
+      "property": "EncodeText",
+      "method": "setEncodeText",
+      "owner": "RenderField",
+      "type": "bool? get/set",
+      "description": "是否在客户端进行HTML编码",
+      "effect": "response",
+      "note": "本次响应后生效。更新列的文本编码设置。true 按普通文本显示，false 允许原样显示可信 HTML，null 恢复继承表格的编码设置。该设置也用于本列提示内容。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
       "property": "FieldType",
       "method": "setFieldType",
       "owner": "RenderField",
@@ -15048,6 +15058,26 @@
     },
     {
       "control": "RenderField",
+      "property": "ShowToolTip",
+      "method": "setShowToolTip",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "是否显示单元格文字的提示文本",
+      "effect": "response",
+      "note": "本次响应后生效。开启或关闭单元格的内容提示。仅对有原始内容的单元格生效。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ShowTooltipWhenTruncated",
+      "method": "setShowTooltipWhenTruncated",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "单元格tooltip仅在文本被列宽截断时显示",
+      "effect": "response",
+      "note": "本次响应后生效。ShowToolTip 为 true 且使用 Qtip 时，只在内容被截断时显示。显式设为 false 可覆盖表格的截断设置。原生 Title 提示由浏览器显示。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
       "property": "SummaryRendererFunction",
       "method": "setSummaryRendererFunction",
       "owner": "RenderField",
@@ -15085,6 +15115,36 @@
       "description": "启用客户端合计（SummaryType）时的数字格式化字符串（和RendererArgument支持的格式一致）",
       "effect": "binding",
       "note": "仅 RenderField 支持。表格启用合计时，通过所属表格列配置整体更新后生效；普通表格可直接修改列后重新绑定数据，沿用普通列配置的使用限制。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ToolTipPosition",
+      "method": "setToolTipPosition",
+      "owner": "RenderField",
+      "type": "ToolTipPosition get/set",
+      "description": "单元格文字的提示文本位置",
+      "effect": "response",
+      "note": "本次响应后生效。更新已开启的单元格增强提示的位置。仅适用于 Qtip，Undefined 使用默认位置。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "ToolTipType",
+      "method": "setToolTipType",
+      "owner": "RenderField",
+      "type": "ToolTipType get/set",
+      "description": "单元格文字的提示文本类型",
+      "effect": "response",
+      "note": "本次响应后生效。在已开启单元格提示的列中切换显示方式。Qtip 是增强提示，Title 是浏览器原生提示。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
+    },
+    {
+      "control": "RenderField",
+      "property": "TrimZero",
+      "method": "setTrimZero",
+      "owner": "RenderField",
+      "type": "bool get/set",
+      "description": "是否省略数字尾零（仅 Renderer=Number 时有效）",
+      "effect": "response",
+      "note": "本次响应后生效。改变数字渲染的尾零显示。例如数字格式为 F2 时，开启后 12.50 显示为 12.5。仅在使用内置 Number 渲染器时生效。 可复用当前行数据，无需重新绑定。 适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式的普通表格的数据列，且列未配置编辑器或过滤控件。"
     },
     {
       "control": "RowNumberField",
