@@ -8288,6 +8288,36 @@
     },
     {
       "control": "GroupField",
+      "property": "EnableColumnHide",
+      "method": "setEnableColumnHide",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单的隐藏列功能",
+      "effect": "response",
+      "note": "控制该列是否出现在列管理菜单中，以及该列表头菜单是否提供隐藏操作。表格需启用菜单中的列管理。后台仍可设置 Hidden，隐藏分组时子列随分组一起隐藏。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "GroupField",
+      "property": "EnableHeaderMenu",
+      "method": "setEnableHeaderMenu",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单",
+      "effect": "response",
+      "note": "控制该列表头是否提供菜单。表格需启用表头菜单，关闭本列菜单仍可按表格排序设置使用表头排序。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "GroupField",
+      "property": "EnableResize",
+      "method": "setEnableResize",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "是否可以改变列宽度",
+      "effect": "response",
+      "note": "控制是否显示该列表头的拖动手柄。表格需启用列宽调整。拖动分组表头会调整最右侧可见子列，分组和该子列都需允许调整。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "GroupField",
       "property": "HeaderCssClass",
       "method": "setHeaderCssClass",
       "owner": "GridColumn",
@@ -14798,6 +14828,36 @@
     },
     {
       "control": "RenderCheckField",
+      "property": "EnableColumnHide",
+      "method": "setEnableColumnHide",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单的隐藏列功能",
+      "effect": "response",
+      "note": "控制该列是否出现在列管理菜单中，以及该列表头菜单是否提供隐藏操作。表格需启用菜单中的列管理。后台仍可设置 Hidden，隐藏分组时子列随分组一起隐藏。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "EnableHeaderMenu",
+      "method": "setEnableHeaderMenu",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单",
+      "effect": "response",
+      "note": "控制该列表头是否提供菜单。表格需启用表头菜单，关闭本列菜单仍可按表格排序设置使用表头排序。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "RenderCheckField",
+      "property": "EnableResize",
+      "method": "setEnableResize",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "是否可以改变列宽度",
+      "effect": "response",
+      "note": "控制是否显示该列表头的拖动手柄。表格需启用列宽调整。拖动分组表头会调整最右侧可见子列，分组和该子列都需允许调整。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "RenderCheckField",
       "property": "HeaderCssClass",
       "method": "setHeaderCssClass",
       "owner": "GridColumn",
@@ -14895,6 +14955,36 @@
       "description": "日期解析的格式化字符串（当FieldType=Date时，如果输入是字符串，则按照DateParseString将字符串解析为日期对象）",
       "effect": "binding",
       "note": "通过所属表格的列配置整体更新，仅支持不含编辑器、过滤器及树、分组、卡片等特殊模式的普通表格；字段已存在且解释方式兼容时可复用当前数据，缺少字段或改变字段类型、日期解析格式时须先修改属性，再在同一次回发中重新绑定原始数据。"
+    },
+    {
+      "control": "RenderField",
+      "property": "EnableColumnHide",
+      "method": "setEnableColumnHide",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单的隐藏列功能",
+      "effect": "response",
+      "note": "控制该列是否出现在列管理菜单中，以及该列表头菜单是否提供隐藏操作。表格需启用菜单中的列管理。后台仍可设置 Hidden，隐藏分组时子列随分组一起隐藏。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "RenderField",
+      "property": "EnableHeaderMenu",
+      "method": "setEnableHeaderMenu",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "启用表头菜单",
+      "effect": "response",
+      "note": "控制该列表头是否提供菜单。表格需启用表头菜单，关闭本列菜单仍可按表格排序设置使用表头排序。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
+    },
+    {
+      "control": "RenderField",
+      "property": "EnableResize",
+      "method": "setEnableResize",
+      "owner": "GridColumn",
+      "type": "bool get/set",
+      "description": "是否可以改变列宽度",
+      "effect": "response",
+      "note": "控制是否显示该列表头的拖动手柄。表格需启用列宽调整。拖动分组表头会调整最右侧可见子列，分组和该子列都需允许调整。 本次响应后生效，无需重新绑定数据。适用于未启用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，且列未配置编辑器或过滤控件的普通表格。"
     },
     {
       "control": "RenderField",
