@@ -1358,7 +1358,7 @@
 			</TreeNode>
 			<TreeNode Text="列拖拽排序（保存列顺序+宽度+隐藏）" NavigateUrl="~/GridMove/ColumnMoveOrderWidthHidden" IsEnterprise="true">
 			</TreeNode>
-			<TreeNode Text="行移动（拖拽排序）" NavigateUrl="~/GridMove/RowSort" IsEnterprise="true">
+			<TreeNode Text="行拖拽排序" NavigateUrl="~/GridMove/RowSort" IsEnterprise="true">
 			</TreeNode>
 			<TreeNode Text="行移动（上下移动）" NavigateUrl="~/GridMove/RowMove" IsEnterprise="true">
 			</TreeNode>

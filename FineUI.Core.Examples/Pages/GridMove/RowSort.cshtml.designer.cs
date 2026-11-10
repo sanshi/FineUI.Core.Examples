@@ -7,6 +7,8 @@ namespace FineUI.Core.Examples.Pages.GridMove
 	{
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.Button btnReset;
+		protected FineUI.Core.Button btnSaveToDB;
+		protected FineUI.Core.Button btnRefresh;
 		protected FineUI.Core.Label labReset;
 	}
 }

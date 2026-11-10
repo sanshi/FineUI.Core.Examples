@@ -1,32 +1,51 @@
 @page
 @model FineUI.Core.Examples.Pages.GridMove.RowSortModel
 @{
-    ViewBag.Title = "行移动（拖拽排序）";
+    ViewBag.Title = "行拖拽排序";
 }
 
 @section body {
-    <f:Grid ID="Grid1" IsFluid="true" Title="任务优先级" DataIDField="Id" DataTextField="Name">
+    <f:Grid ID="Grid1" IsFluid="true" Title="学生信息" DataIDField="Id" DataTextField="Name" EnableRowMove="true">
         <Columns>
-            <f:RowNumberField ColumnID="RowNumber" Width="70" />
-            <f:RenderField ColumnID="Name" HeaderText="任务" DataField="Name" ExpandUnusedSpace="true" />
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" ColumnID="Group" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
         </Columns>
         <Listeners>
             <f:Listener Event="rowmove" Handler="onRowOrderChanged" />
             <f:Listener Event="dataload" Handler="onRowOrderChanged" />
         </Listeners>
     </f:Grid>
-    <f:Button ID="btnReset" Text="恢复初始顺序" OnClick="btnReset_Click" />
+    <f:Button ID="btnReset" Text="恢复初始顺序" CssClass="marginr" OnClick="btnReset_Click" />
+    <f:Button ID="btnSaveToDB" Text="保存数据" CssClass="marginr" ClickHandler="onSaveToDBClick" />
+    <f:Button ID="btnRefresh" Text="刷新本页面（请先点击保存按钮）" ClickHandler="onRefreshClick" />
+    <br />
     <f:Label ID="labReset" />
-    <p>拖动行左侧的手柄，将任务放到目标行的上方或下方。松手后更新顺序，刷新页面恢复初始顺序。</p>
+    <p>拖动表格最左列的六点手柄调整行顺序。点击保存数据后，刷新页面会加载最近一次保存的顺序。恢复初始顺序后也可以再次保存。</p>
     <p id="rowSortResult" aria-live="polite"></p>
 }
 
 @section script {
+    <script src="~/res/js/grid.js"></script>
     <script>
-        function onRowOrderChanged(event) {
-            // 用稳定的行 ID 记录顺序，业务需要时可将这组 ID 提交给后台保存。
+        function onRowOrderChanged() {
             const rowIds = this.data.map(row => row.id);
             document.getElementById('rowSortResult').textContent = '当前顺序：' + rowIds.join('、');
+        }
+
+        function onSaveToDBClick() {
+            // 提交行 ID 的排列，刷新时按这组 ID 重新读取学生数据。
+            const rowIds = F.ui.Grid1.data.map(row => row.id);
+            F.customEvent('Grid1_RowSort', { rowIds: rowIds });
+        }
+
+        function onRefreshClick() {
+            window.location.reload();
         }
     </script>
 }
