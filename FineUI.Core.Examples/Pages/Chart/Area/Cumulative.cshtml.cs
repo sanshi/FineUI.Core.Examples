@@ -15,7 +15,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Area
             }
         }
 
-        protected void ChangeAreaMode(object sender, EventArgs e)
+        protected void cbxCumulative_CheckedChanged(object sender, EventArgs e)
         {
             var cumulative = cbxCumulative.Checked;
             var rows = ChartInteractionData.AreaAmounts(cumulative);

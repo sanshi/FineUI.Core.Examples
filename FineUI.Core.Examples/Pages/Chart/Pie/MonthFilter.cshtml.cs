@@ -15,7 +15,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
             }
         }
 
-        protected void FilterMonth(object sender, EventArgs e)
+        protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             var month = ddlMonth.SelectedValue;
             var rows = ChartInteractionData.ChannelDistribution(month);

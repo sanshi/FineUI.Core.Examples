@@ -18,10 +18,10 @@
             <f:SimpleForm IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                 <Items>
                     <f:DatePicker ID="dpFocus" Label="日期" DateFormatString="yyyy-MM-dd" />
-                    <f:Button ID="btnFocus" Text="查看当天" OnClick="ReadDate" />
+                    <f:Button ID="btnFocus" Text="查看当天" OnClick="btnFocus_Click" />
                 </Items>
             </f:SimpleForm>
-            <f:Chart ID="ChartDateFocus" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="FocusDate">
+            <f:Chart ID="ChartDateFocus" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartDateFocus_PointClick">
                 <Series>
                     <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" ColorField="Color" />
                 </Series>

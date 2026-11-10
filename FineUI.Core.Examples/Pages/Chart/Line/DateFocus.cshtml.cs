@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
             }
         }
 
-        protected void FocusDate(object sender, ChartPointEventArgs e)
+        protected void ChartDateFocus_PointClick(object sender, ChartPointEventArgs e)
         {
             var seriesKey = e.SeriesKey;
             var dataKey = e.DataKey;
@@ -29,7 +29,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
             }
         }
 
-        protected void ReadDate(object sender, EventArgs e)
+        protected void btnFocus_Click(object sender, EventArgs e)
         {
             var date = dpFocus.Text;
             ChartDateFocus.DataSource = ChartInteractionData.DailyFocus(date);

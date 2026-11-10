@@ -16,7 +16,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
             }
         }
 
-        protected void FilterSales(object sender, EventArgs e)
+        protected void btnFilter_Click(object sender, EventArgs e)
         {
             var minimum = nbxMinimum.Text;
             var rows = ChartInteractionData.RegionThreshold(minimum);

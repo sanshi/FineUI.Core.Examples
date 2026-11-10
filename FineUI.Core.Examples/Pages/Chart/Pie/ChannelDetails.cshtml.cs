@@ -17,7 +17,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
             }
         }
 
-        protected void ReadChannel(object sender, ChartPointEventArgs e)
+        protected void ChartChannelDetails_PointClick(object sender, ChartPointEventArgs e)
         {
             var seriesKey = e.SeriesKey;
             var dataKey = e.DataKey;
@@ -30,7 +30,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
             }
         }
 
-        protected void ClearChannel(object sender, EventArgs e)
+        protected void btnClear_Click(object sender, EventArgs e)
         {
             var rows = new ChartInteractionData.ChartRow[0];
             GridChannelMonths.DataSource = rows;
