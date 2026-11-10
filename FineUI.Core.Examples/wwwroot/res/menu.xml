@@ -2283,7 +2283,7 @@
 			</TreeNode>
 		</TreeNode>
 	</TreeNode>
-	<TreeNode Text="图表" IconFont="BarChart">
+	<TreeNode Text="图表" IconFont="_Chart">
 		<TreeNode Text="柱状图">
 			<TreeNode Text="基础柱状图" NavigateUrl="~/Chart/Bar/Basic" />
 			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/Chart/Bar/TickAlign" />
