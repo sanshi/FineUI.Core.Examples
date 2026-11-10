@@ -6175,7 +6175,7 @@
       "type": "bool get/set",
       "description": "是否只显示按钮，不显示只读输入框",
       "effect": "response",
-      "note": "切换文件名显示框与仅按钮两种外观，保留用户已选的文件。"
+      "note": "传统上传行可切换文件名显示框与仅按钮两种外观，保留用户已选的文件。拖放模式始终在区域下方展示所选文件。"
     },
     {
       "control": "FileUpload",
@@ -6195,7 +6195,7 @@
       "type": "string get/set",
       "description": "按钮文字；null 使用当前语言包文字，空字符串明确显示空文字，其他字符串显示指定文字。",
       "effect": "response",
-      "note": "更新现有上传按钮的文字，保留文件选择。"
+      "note": "更新上传按钮文字或拖放区的选择提示，保留文件选择。空字符串省略按钮文字或选择提示。"
     },
     {
       "control": "FileUpload",

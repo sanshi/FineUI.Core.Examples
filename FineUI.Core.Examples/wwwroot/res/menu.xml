@@ -320,6 +320,8 @@
 			</TreeNode>
 			<TreeNode Text="上传控件（拖放上传）" NavigateUrl="~/Form/FileUploadDragDrop">
 			</TreeNode>
+			<TreeNode Text="上传控件（拖放后立即上传）" NavigateUrl="~/Form/FileUploadDragDropAuto">
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="表单布局">
 			<TreeNode Text="按钮与表单" NavigateUrl="~/FormLayout/LayoutPanel">

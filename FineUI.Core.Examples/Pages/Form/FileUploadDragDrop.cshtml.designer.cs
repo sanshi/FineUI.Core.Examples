@@ -9,6 +9,7 @@ namespace FineUI.Core.Examples.Pages.Form
 		protected FineUI.Core.FileUpload filePhoto;
 		protected FineUI.Core.FileUpload filePhotos;
 		protected FineUI.Core.Button btnSubmit;
-		protected FineUI.Core.Label labResult;
+		protected FineUI.Core.Label labPhotoResult;
+		protected FineUI.Core.Label labPhotosResult;
 	}
 }
