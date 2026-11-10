@@ -20,14 +20,14 @@ namespace FineUI.Core.Examples.Pages.Chart
 
         internal static ChartRow[] ChannelTrend(string key = null)
         {
-            return Trend(Channels.Where(channel => key == null || channel.Key == key).ToArray());
+            return Trend(Channels.Where(channel => key == null || channel.Id == key).ToArray());
         }
 
         internal static ChartRow[] ChannelTotals(string month)
         {
-            int index = Array.FindIndex(ChannelTrend(), row => row.Key == month);
+            int index = Array.FindIndex(ChannelTrend(), row => row.Id == month);
             return index < 0 ? new ChartRow[0]
-                : Channels.Select(channel => new ChartRow(channel.Key, channel.Name, channel.Values[index])).ToArray();
+                : Channels.Select(channel => new ChartRow(channel.Id, channel.Name, channel.Values[index])).ToArray();
         }
 
     }

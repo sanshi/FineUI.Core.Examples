@@ -69,12 +69,12 @@ namespace FineUI.Core.Examples.Pages.Chart
 
         internal static ChartRow[] RegionTrend(string key)
         {
-            return Trend(Regions.Where(region => region.Key == key).ToArray());
+            return Trend(Regions.Where(region => region.Id == key).ToArray());
         }
 
         internal static ChartRow[] RegionTrend(string[] keys)
         {
-            return Trend(Regions.Where(region => keys != null && keys.Contains(region.Key)).ToArray());
+            return Trend(Regions.Where(region => keys != null && keys.Contains(region.Id)).ToArray());
         }
 
         internal static ChartRow[] CityTotals(string regionKey)

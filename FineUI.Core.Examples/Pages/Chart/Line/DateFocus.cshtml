@@ -15,15 +15,15 @@
             </f:Toolbar>
         </Toolbars>
         <Items>
-            <f:SimpleForm IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
+            <f:SimpleForm IsFluid="true" MaxWidth="240" ShowHeader="false" ShowBorder="false" LabelWidth="64">
                 <Items>
                     <f:DatePicker ID="dpFocus" Label="日期" DateFormatString="yyyy-MM-dd" />
                     <f:Button ID="btnFocus" Text="查看当天" OnClick="btnFocus_Click" />
                 </Items>
             </f:SimpleForm>
-            <f:Chart ID="ChartDateFocus" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartDateFocus_PointClick">
+            <f:Chart ID="ChartDateFocus" Height="550" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartDateFocus_PointClick">
                 <Series>
-                    <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" ColorField="Color" />
+                    <f:ChartSeries Key="amount" Type="Line" Name="访问量" DataValueField="Amount" DataColorField="Color" />
                 </Series>
             </f:Chart>
         </Items>
@@ -33,7 +33,7 @@
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
-            <li><code>DataKeyField</code> 折线点提交完整日期，例如 2026-09-03，后台按该日期填写日期选择器。</li>
+            <li><code>DataIDField</code> 折线点提交完整日期，例如 2026-09-03，后台按该日期填写日期选择器。</li>
             <li><code>OnClick</code> 查询按钮读取日期选择器，和点选共用同一条记录查询。</li>
         </ul>
     </section>

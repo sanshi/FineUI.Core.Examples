@@ -16,13 +16,13 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
 
         protected void ChartDailyVisits_PointClick(object sender, ChartPointEventArgs e)
         {
-            var details = DailyVisitData.FindVisit(e.DataKey);
+            var details = DailyVisitData.FindVisit(e.PointID);
             if (details == null)
             {
                 return;
             }
 
-            labVisitDate.Text = "日期：" + e.DataKey;
+            labVisitDate.Text = "日期：" + e.PointID;
             labVisitCount.Text = "访问量：" + details.Visits;
             labConversionCount.Text = "转化量：" + details.Conversions;
             var rate = (details.Conversions * 100.0 / details.Visits).ToString("0.0", CultureInfo.InvariantCulture);

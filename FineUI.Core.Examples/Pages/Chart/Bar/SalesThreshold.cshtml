@@ -1,7 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Chart.Bar.SalesThresholdModel
 @{
-    ViewBag.SourceFiles = "~/Pages/Chart/Data/RegionSalesData.cs;~/Pages/Chart/Data/ChartDataRows.cs";
+    ViewBag.SourceFiles = "~/Pages/Chart/Data/ChartDataRows.cs";
     ViewBag.Title = "金额门槛筛选柱状图";
 }
 
@@ -15,26 +15,32 @@
             </f:Toolbar>
         </Toolbars>
         <Items>
-            <f:SimpleForm IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
+            <f:SimpleForm IsFluid="true" MaxWidth="240" ShowHeader="false" ShowBorder="false" LabelWidth="84">
                 <Items>
-                    <f:NumberBox ID="nbxMinimum" Label="最低金额（元）" NoDecimal="true" NoNegative="true" />
-                    <f:Button ID="btnFilter" Text="筛选" OnClick="btnFilter_Click" />
+                    <f:DropDownList ID="ddlMinimum" Label="最低金额" OnSelectedIndexChanged="ddlMinimum_SelectedIndexChanged">
+                        <f:ListItem Text="全部区域" Value="0" Selected="true" />
+                        <f:ListItem Text="4,500 元及以上" Value="4500" />
+                        <f:ListItem Text="20,000 元及以上" Value="20000" />
+                        <f:ListItem Text="40,000 元及以上" Value="40000" />
+                        <f:ListItem Text="68,000 元及以上" Value="68000" />
+                        <f:ListItem Text="70,000 元及以上" Value="70000" />
+                    </f:DropDownList>
                 </Items>
             </f:SimpleForm>
-            <f:Chart ID="ChartSalesThreshold" Height="550" CategoryField="Category">
+            <f:Chart ID="ChartSalesThreshold" Height="550" DataCategoryField="Category">
                 <Series>
-                    <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" ValueField="Amount" />
+                    <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" DataValueField="Amount" />
                 </Series>
             </f:Chart>
         </Items>
     </f:Panel>
 
-    <p>输入最低销售额并点击「筛选」，只保留达到门槛的区域。输入 0 显示全部，超出所有区域金额时显示空结果。</p>
+    <p>选择最低销售额后立即筛选，只保留达到门槛的区域。选择「全部区域」可恢复全部柱子。</p>
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
-            <li><code>NumberBox</code> 后台校验输入为非负整数。门槛包含等于该金额的区域。</li>
-            <li><code>OnClick</code> 在点击筛选后一次性更新柱图和命中数。</li>
+            <li><code>DropDownList</code> 预设金额作为下拉项的值。筛选包含等于门槛的区域，例如选择 68,000 元时保留华东。</li>
+            <li><code>OnSelectedIndexChanged</code> 选项改变时更新柱图和命中数。选择 70,000 元可查看空结果。</li>
         </ul>
     </section>
 }

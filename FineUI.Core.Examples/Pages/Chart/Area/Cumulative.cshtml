@@ -20,9 +20,9 @@
                     <f:CheckBox ID="cbxCumulative" ShowLabel="false" Text="按月累计" OnCheckedChanged="cbxCumulative_CheckedChanged" />
                 </Items>
             </f:SimpleForm>
-            <f:Chart ID="ChartCumulativeSales" Height="550" CategoryField="Category">
+            <f:Chart ID="ChartCumulativeSales" Height="550" DataCategoryField="Category">
                 <Series>
-                    <f:ChartSeries Key="amount" Type="Area" Name="销售额（元）" ValueField="Amount" />
+                    <f:ChartSeries Key="amount" Type="Area" Name="销售额（元）" DataValueField="Amount" />
                 </Series>
             </f:Chart>
         </Items>

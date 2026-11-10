@@ -5,10 +5,10 @@
 }
 
 @section body {
-    <f:Chart ID="ChartLineSmooth" Height="550" CategoryField="Category"
+    <f:Chart ID="ChartLineSmooth" Height="550" DataCategoryField="Category"
         ShowTooltip="false">
         <Series>
-            <f:ChartSeries Key="value" Type="Line" Name="数值" ValueField="Value" Smooth="true" />
+            <f:ChartSeries Key="value" Type="Line" Name="数值" DataValueField="Value" Smooth="true" />
         </Series>
     </f:Chart>
     <p>开启平滑后，数据点之间以曲线连接。<a href="https://echarts.apache.org/examples/zh/editor.html?c=line-smooth" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

@@ -5,7 +5,7 @@
 }
 
 @section body {
-    <f:Chart ID="ChartCombo" Height="550" CategoryField="Category" ShowLegend="true" AxisTickAlignWithLabel="true" AxisPointerType="cross"
+    <f:Chart ID="ChartCombo" Height="550" DataCategoryField="Category" ShowLegend="true" AxisTickAlignWithLabel="true" AxisPointerType="cross"
         ShowSaveAsImage="true" Palette="#5070dd,#b6d634,#505372">
         <YAxis>
             <f:ChartValueAxis Name="Evaporation" Position="right"
@@ -16,9 +16,9 @@
                 AlignTicks="true" LineColor="#505372" LabelFormatter="{value} °C" />
         </YAxis>
         <Series>
-            <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" ValueField="Evaporation" />
-            <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" ValueField="Precipitation" YAxisIndex="1" />
-            <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" ValueField="Temperature" YAxisIndex="2" />
+            <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" DataValueField="Evaporation" />
+            <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" DataValueField="Precipitation" YAxisIndex="1" />
+            <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" DataValueField="Temperature" YAxisIndex="2" />
         </Series>
     </f:Chart>
     <p>蒸发量、降水量和温度使用三条独立数值轴。两条右轴分别显示毫升，左轴显示摄氏度。<a href="https://echarts.apache.org/examples/zh/editor.html?c=multiple-y-axis" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

@@ -5,18 +5,18 @@
 }
 
 @section body {
-    <f:Chart ID="ChartBarStackedHorizontal" Height="550" CategoryField="Category"
+    <f:Chart ID="ChartBarStackedHorizontal" Height="550" DataCategoryField="Category"
         Horizontal="true" ShowLegend="true" AxisPointerType="shadow">
         <Series>
-            <f:ChartSeries Key="direct" Type="Bar" Name="Direct" ValueField="Direct" Stack="total"
+            <f:ChartSeries Key="direct" Type="Bar" Name="Direct" DataValueField="Direct" Stack="total"
                 ShowLabel="true" FocusSeries="true" />
-            <f:ChartSeries Key="mailAd" Type="Bar" Name="Mail Ad" ValueField="MailAd" Stack="total"
+            <f:ChartSeries Key="mailAd" Type="Bar" Name="Mail Ad" DataValueField="MailAd" Stack="total"
                 ShowLabel="true" FocusSeries="true" />
-            <f:ChartSeries Key="affiliateAd" Type="Bar" Name="Affiliate Ad" ValueField="AffiliateAd"
+            <f:ChartSeries Key="affiliateAd" Type="Bar" Name="Affiliate Ad" DataValueField="AffiliateAd"
                 Stack="total" ShowLabel="true" FocusSeries="true" />
-            <f:ChartSeries Key="videoAd" Type="Bar" Name="Video Ad" ValueField="VideoAd" Stack="total"
+            <f:ChartSeries Key="videoAd" Type="Bar" Name="Video Ad" DataValueField="VideoAd" Stack="total"
                 ShowLabel="true" FocusSeries="true" />
-            <f:ChartSeries Key="searchEngine" Type="Bar" Name="Search Engine" ValueField="SearchEngine"
+            <f:ChartSeries Key="searchEngine" Type="Bar" Name="Search Engine" DataValueField="SearchEngine"
                 Stack="total" ShowLabel="true" FocusSeries="true" />
         </Series>
     </f:Chart>

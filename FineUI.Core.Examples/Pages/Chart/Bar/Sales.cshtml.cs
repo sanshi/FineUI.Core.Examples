@@ -30,9 +30,9 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
         protected void ChartSales_PointClick(object sender, ChartPointEventArgs e)
         {
             // 月份来自浏览器，例如 2026-09。只查询属于示例订单范围的月份。
-            if (SalesOrderData.HasMonth(e.DataKey))
+            if (SalesOrderData.HasMonth(e.PointID))
             {
-                BindOrders(e.DataKey);
+                BindOrders(e.PointID);
             }
         }
 

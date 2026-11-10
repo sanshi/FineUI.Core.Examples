@@ -23,7 +23,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
         protected void ChartRegionSales_PointClick(object sender, ChartPointEventArgs e)
         {
             // 只有区域可继续钻取。上海等城市的键没有下一级数据，保留当前城市明细。
-            var cities = RegionSalesData.CityTotals(e.DataKey);
+            var cities = RegionSalesData.CityTotals(e.PointID);
             if (cities.Length == 0)
             {
                 return;
@@ -31,7 +31,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
 
             ChartRegionSales.DataSource = cities;
             ChartRegionSales.DataBind();
-            ToolbarTextChartScope.Text = RegionSalesData.RegionName(e.DataKey) + " · 城市销售额";
+            ToolbarTextChartScope.Text = RegionSalesData.RegionName(e.PointID) + " · 城市销售额";
             btnBack.Enabled = true;
         }
 

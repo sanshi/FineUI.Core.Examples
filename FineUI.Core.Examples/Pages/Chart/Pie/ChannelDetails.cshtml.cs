@@ -22,13 +22,13 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
         protected void ChartChannelDetails_PointClick(object sender, ChartPointEventArgs e)
         {
             var seriesKey = e.SeriesKey;
-            var dataKey = e.DataKey;
-            if (seriesKey == "amount" && ChannelVisitData.ChannelName(dataKey) != null)
+            var pointId = e.PointID;
+            if (seriesKey == "amount" && ChannelVisitData.ChannelName(pointId) != null)
             {
-                var rows = ChannelVisitData.ChannelTrend(dataKey);
+                var rows = ChannelVisitData.ChannelTrend(pointId);
                 GridChannelMonths.DataSource = rows;
                 GridChannelMonths.DataBind();
-                ToolbarTextChartScope.Text = ChannelDetailsSummary(dataKey, rows);
+                ToolbarTextChartScope.Text = ChannelDetailsSummary(pointId, rows);
             }
         }
 

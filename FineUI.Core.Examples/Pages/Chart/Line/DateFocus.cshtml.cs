@@ -20,13 +20,13 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         protected void ChartDateFocus_PointClick(object sender, ChartPointEventArgs e)
         {
             var seriesKey = e.SeriesKey;
-            var dataKey = e.DataKey;
-            if (seriesKey == "amount" && DailyVisitData.FindVisit(dataKey) != null)
+            var pointId = e.PointID;
+            if (seriesKey == "amount" && DailyVisitData.FindVisit(pointId) != null)
             {
-                dpFocus.Text = dataKey;
-                ChartDateFocus.DataSource = DailyFocus(dataKey);
+                dpFocus.Text = pointId;
+                ChartDateFocus.DataSource = DailyFocus(pointId);
                 ChartDateFocus.DataBind();
-                ToolbarTextChartScope.Text = VisitFocusSummary(dataKey);
+                ToolbarTextChartScope.Text = VisitFocusSummary(pointId);
             }
         }
 
@@ -42,10 +42,10 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         {
             return DailyVisitData.DailyVisits().Select(row => new
             {
-                row.Key,
+                row.Id,
                 row.Category,
                 row.Amount,
-                Color = row.Key == key ? "#d9480f" : ""
+                Color = row.Id == key ? "#d9480f" : ""
             }).ToArray();
         }
 

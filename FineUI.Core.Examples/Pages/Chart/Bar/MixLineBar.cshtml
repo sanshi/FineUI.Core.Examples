@@ -5,16 +5,16 @@
 }
 
 @section body {
-    <f:Chart ID="ChartBarMixLineBar" Height="550" CategoryField="Category"
+    <f:Chart ID="ChartBarMixLineBar" Height="550" DataCategoryField="Category"
         ShowLegend="true" AxisPointerType="cross" ShowSaveAsImage="true">
         <YAxis>
             <f:ChartValueAxis Name="Precipitation" Position="left" Min="0" Max="250" Interval="50" LabelFormatter="{value} ml" />
             <f:ChartValueAxis Name="Temperature" Position="right" Min="0" Max="25" Interval="5" LabelFormatter="{value} °C" />
         </YAxis>
         <Series>
-            <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" ValueField="Evaporation" />
-            <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" ValueField="Precipitation" />
-            <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" ValueField="Temperature" YAxisIndex="1" />
+            <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" DataValueField="Evaporation" />
+            <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" DataValueField="Precipitation" />
+            <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" DataValueField="Temperature" YAxisIndex="1" />
         </Series>
     </f:Chart>
     <p>蒸发量和降水量共用左侧毫升轴，温度折线读取右侧摄氏度轴。<a href="https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

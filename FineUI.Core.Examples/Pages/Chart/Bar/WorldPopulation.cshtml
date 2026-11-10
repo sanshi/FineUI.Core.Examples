@@ -5,11 +5,11 @@
 }
 
 @section body {
-    <f:Chart ID="ChartBarWorldPopulation" Height="550" CategoryField="Category"
+    <f:Chart ID="ChartBarWorldPopulation" Height="550" DataCategoryField="Category"
         Horizontal="true" Title="World Population" TitleAlign="Left" ShowLegend="true" AxisPointerType="shadow" ValueAxisBoundaryGap="0%,1%">
         <Series>
-            <f:ChartSeries Key="population2011" Type="Bar" Name="2011" ValueField="Population2011" />
-            <f:ChartSeries Key="population2012" Type="Bar" Name="2012" ValueField="Population2012" />
+            <f:ChartSeries Key="population2011" Type="Bar" Name="2011" DataValueField="Population2011" />
+            <f:ChartSeries Key="population2012" Type="Bar" Name="2012" DataValueField="Population2012" />
         </Series>
     </f:Chart>
     <p>两组横向条形分别表示 2011 年和 2012 年的数据。左侧是分类，横轴显示人口数。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

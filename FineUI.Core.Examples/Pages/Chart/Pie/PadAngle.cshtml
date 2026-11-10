@@ -5,12 +5,12 @@
 }
 
 @section body {
-    <f:Chart ID="ChartPiePadAngle" Height="550" CategoryField="Category"
+    <f:Chart ID="ChartPiePadAngle" Height="550" DataCategoryField="Category"
         ShowLegend="true" LegendTop="5%" PieRadius="40%,70%" PieAvoidLabelOverlap="false" PiePadAngle="5"
         PieBorderRadius="10" PieShowLabel="false" PieLabelPosition="center" PieEmphasisLabelSize="40"
         PieEmphasisLabelFontWeight="bold">
         <Series>
-            <f:ChartSeries Key="source" Type="Pie" Name="Access From" ValueField="Value" />
+            <f:ChartSeries Key="source" Type="Pie" Name="Access From" DataValueField="Value" />
         </Series>
     </f:Chart>
     <p>相邻扇区留出 5° 的间隙，扇区边角使用 10 像素圆角。指向扇区可在环形中央显示名称。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-padAngle" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

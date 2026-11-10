@@ -8,12 +8,12 @@ namespace FineUI.Core.Examples.Pages.Chart
     {
         internal static string Name(MonthlyValues[] source, string key)
         {
-            return Array.Find(source, item => item.Key == key)?.Name;
+            return Array.Find(source, item => item.Id == key)?.Name;
         }
 
         internal static ChartRow[] Totals(MonthlyValues[] source)
         {
-            return source.Select(item => new ChartRow(item.Key, item.Name, item.Values.Sum())).ToArray();
+            return source.Select(item => new ChartRow(item.Id, item.Name, item.Values.Sum())).ToArray();
         }
 
         internal static ChartRow[] Trend(MonthlyValues[] selected)
@@ -33,12 +33,12 @@ namespace FineUI.Core.Examples.Pages.Chart
         {
             public MonthlyValues(string key, string name, params int[] values)
             {
-                Key = key;
+                Id = key;
                 Name = name;
                 Values = values;
             }
 
-            public string Key { get; }
+            public string Id { get; }
             public string Name { get; }
             public int[] Values { get; }
         }
@@ -47,12 +47,12 @@ namespace FineUI.Core.Examples.Pages.Chart
         {
             public ChartRow(string key, string category, int amount)
             {
-                Key = key;
+                Id = key;
                 Category = category;
                 Amount = amount;
             }
 
-            public string Key { get; }
+            public string Id { get; }
             public string Category { get; }
             public int Amount { get; }
         }
