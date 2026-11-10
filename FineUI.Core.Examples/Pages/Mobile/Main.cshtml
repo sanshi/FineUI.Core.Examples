@@ -330,13 +330,12 @@
                 return;
             }
 
-            // 点击一级菜单和二级菜单
-            $('.mydatalist').on('click', '.f-datalist-item', function (event) {
-                event.preventDefault();
-                var itemEl = $(this), datalist = F(itemEl.closest('.f-datalist').attr('id'));
+            $('.mydatalist').on('click', '.f-datalist-item', function () {
+                var itemEl = $(this);
+                var datalist = F(itemEl.closest('.f-datalist').attr('id'));
                 var itemData = datalist.getItemData(itemEl);
 
-                // 这是一个目录，则改变网址的HASH值（hashchange驱动页面变化）
+                // 目录项通过 hash 切换菜单，例如进入「表单控件」。登录页等链接由浏览器直接打开。
                 if (!itemData.href) {
                     window.location.hash = '#' + encodeURIComponent(itemData.level);
                 }
