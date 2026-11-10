@@ -8,7 +8,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
         {
             if (!IsPostBack)
             {
-                ChartChannels.DataSource = ChartInteractionData.ChannelTotals();
+                ChartChannels.DataSource = ChannelVisitData.ChannelTotals();
                 ChartChannels.DataBind();
                 BindTrend(null);
             }
@@ -16,13 +16,13 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
 
         private void BindTrend(string channelKey)
         {
-            var channel = channelKey == null ? "全部渠道" : ChartInteractionData.ChannelName(channelKey);
+            var channel = channelKey == null ? "全部渠道" : ChannelVisitData.ChannelName(channelKey);
             if (channel == null)
             {
                 return;
             }
 
-            ChartChannelTrend.DataSource = ChartInteractionData.ChannelTrend(channelKey);
+            ChartChannelTrend.DataSource = ChannelVisitData.ChannelTrend(channelKey);
             ChartChannelTrend.DataBind();
             ToolbarTextChartScope.Text = channel + " · 月度访问趋势";
         }

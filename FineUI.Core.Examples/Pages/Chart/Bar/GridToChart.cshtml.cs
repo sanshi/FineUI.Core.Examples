@@ -8,7 +8,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
         {
             if (!IsPostBack)
             {
-                GridRegions.DataSource = ChartInteractionData.RegionTotals();
+                GridRegions.DataSource = RegionSalesData.RegionTotals();
                 GridRegions.DataBind();
                 BindRegion("east");
             }
@@ -16,13 +16,13 @@ namespace FineUI.Core.Examples.Pages.Chart.Bar
 
         private void BindRegion(string regionKey)
         {
-            var region = ChartInteractionData.RegionName(regionKey);
+            var region = RegionSalesData.RegionName(regionKey);
             if (region == null)
             {
                 return;
             }
 
-            ChartRegionMonths.DataSource = ChartInteractionData.RegionTrend(regionKey);
+            ChartRegionMonths.DataSource = RegionSalesData.RegionTrend(regionKey);
             ChartRegionMonths.DataBind();
             ToolbarTextChartScope.Text = region + " · 月度销售额";
         }

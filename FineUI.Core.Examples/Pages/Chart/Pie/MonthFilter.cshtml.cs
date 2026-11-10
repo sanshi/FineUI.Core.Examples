@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using ChartRow = FineUI.Core.Examples.Pages.Chart.ChartDataRows.ChartRow;
 
 namespace FineUI.Core.Examples.Pages.Chart.Pie
 {
@@ -8,23 +10,29 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
         {
             if (!IsPostBack)
             {
-                var rows = ChartInteractionData.ChannelDistribution("all");
+                var rows = ChannelVisitData.ChannelTotals();
                 ChartChannelMonth.DataSource = rows;
                 ChartChannelMonth.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.DistributionSummary("all", rows);
+                ToolbarTextChartScope.Text = DistributionSummary("all", rows);
             }
         }
 
         protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             var month = ddlMonth.SelectedValue;
-            var rows = ChartInteractionData.ChannelDistribution(month);
+            var rows = month == "all" ? ChannelVisitData.ChannelTotals() : ChannelVisitData.ChannelTotals(month);
             if (rows.Length > 0)
             {
                 ChartChannelMonth.DataSource = rows;
                 ChartChannelMonth.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.DistributionSummary(month, rows);
+                ToolbarTextChartScope.Text = DistributionSummary(month, rows);
             }
+        }
+
+        private static string DistributionSummary(string month, ChartRow[] rows)
+        {
+            var range = month == "all" ? "全部月份" : Array.Find(ChannelVisitData.ChannelTrend(), row => row.Key == month)?.Category;
+            return $"{range} · 总访问量 {rows.Sum(row => row.Amount)}";
         }
     }
 }

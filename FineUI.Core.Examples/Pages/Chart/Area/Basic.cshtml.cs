@@ -1,8 +1,8 @@
 using System;
 
-namespace FineUI.Core.Examples.Pages.Chart
+namespace FineUI.Core.Examples.Pages.Chart.Area
 {
-    public partial class AreaModel : PageBase
+    public partial class BasicModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

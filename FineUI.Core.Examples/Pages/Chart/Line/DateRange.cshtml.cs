@@ -1,5 +1,7 @@
 using System;
 using System.Globalization;
+using System.Linq;
+using ChartRow = FineUI.Core.Examples.Pages.Chart.ChartDataRows.ChartRow;
 
 namespace FineUI.Core.Examples.Pages.Chart.Line
 {
@@ -9,14 +11,14 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         {
             if (!IsPostBack)
             {
-                dpVisitRange.Text = ChartInteractionData.FirstDate + " - " + ChartInteractionData.LastDate;
-                BindVisits(ChartInteractionData.FirstDate, ChartInteractionData.LastDate);
+                dpVisitRange.Text = DailyVisitData.FirstDate + " - " + DailyVisitData.LastDate;
+                BindVisits(DailyVisitData.FirstDate, DailyVisitData.LastDate);
             }
         }
 
         private void BindVisits(string start, string end)
         {
-            var visits = ChartInteractionData.DailyVisits(start, end);
+            var visits = DailyVisitData.DailyVisits(start, end);
             if (visits == null)
             {
                 // 保留上一次有效查询。例如开始日期为 9 月 8 日、结束日期为 9 月 3 日时只更新提示。
@@ -26,7 +28,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
 
             ChartVisitRange.DataSource = visits;
             ChartVisitRange.DataBind();
-            ToolbarTextChartScope.Text = ChartInteractionData.VisitSummary(visits);
+            ToolbarTextChartScope.Text = VisitSummary(visits);
         }
 
         protected void dpVisitRange_TextChanged(object sender, EventArgs e)
@@ -34,6 +36,11 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
             BindVisits(
                 dpVisitRange.RangeStartDate?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
                 dpVisitRange.RangeEndDate?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+        }
+
+        private static string VisitSummary(ChartRow[] rows)
+        {
+            return rows.Length == 0 ? "所选日期内没有访问数据" : $"{rows.Length} 天 · 访问量 {rows.Sum(row => row.Amount)}";
         }
     }
 }

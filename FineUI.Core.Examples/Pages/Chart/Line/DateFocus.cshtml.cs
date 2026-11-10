@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace FineUI.Core.Examples.Pages.Chart.Line
 {
@@ -9,10 +10,10 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
             if (!IsPostBack)
             {
                 dpFocus.Text = "2026-09-01";
-                var rows = ChartInteractionData.DailyFocus(ChartInteractionData.FirstDate);
+                var rows = DailyFocus(DailyVisitData.FirstDate);
                 ChartDateFocus.DataSource = rows;
                 ChartDateFocus.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.VisitFocusSummary(ChartInteractionData.FirstDate);
+                ToolbarTextChartScope.Text = VisitFocusSummary(DailyVisitData.FirstDate);
             }
         }
 
@@ -20,21 +21,38 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         {
             var seriesKey = e.SeriesKey;
             var dataKey = e.DataKey;
-            if (seriesKey == "amount" && ChartInteractionData.FindVisit(dataKey) != null)
+            if (seriesKey == "amount" && DailyVisitData.FindVisit(dataKey) != null)
             {
                 dpFocus.Text = dataKey;
-                ChartDateFocus.DataSource = ChartInteractionData.DailyFocus(dataKey);
+                ChartDateFocus.DataSource = DailyFocus(dataKey);
                 ChartDateFocus.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.VisitFocusSummary(dataKey);
+                ToolbarTextChartScope.Text = VisitFocusSummary(dataKey);
             }
         }
 
         protected void btnFocus_Click(object sender, EventArgs e)
         {
             var date = dpFocus.Text;
-            ChartDateFocus.DataSource = ChartInteractionData.DailyFocus(date);
+            ChartDateFocus.DataSource = DailyFocus(date);
             ChartDateFocus.DataBind();
-            ToolbarTextChartScope.Text = ChartInteractionData.VisitFocusSummary(date);
+            ToolbarTextChartScope.Text = VisitFocusSummary(date);
+        }
+
+        private static object DailyFocus(string key)
+        {
+            return DailyVisitData.DailyVisits().Select(row => new
+            {
+                row.Key,
+                row.Category,
+                row.Amount,
+                Color = row.Key == key ? "#d9480f" : ""
+            }).ToArray();
+        }
+
+        private static string VisitFocusSummary(string key)
+        {
+            var details = DailyVisitData.FindVisit(key);
+            return details == null ? "所选日期没有访问数据" : $"{key} · 访问量 {details.Visits} · 转化量 {details.Conversions}";
         }
     }
 }

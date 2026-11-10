@@ -1,7 +1,7 @@
 @page
 @model FineUI.Core.Examples.Pages.Chart.Line.MetricSwitchModel
 @{
-    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.SourceFiles = "~/Pages/Chart/Data/DailyVisitData.cs;~/Pages/Chart/Data/ChartDataRows.cs";
     ViewBag.Title = "单选切换折线指标";
 }
 
@@ -17,7 +17,7 @@
         <Items>
             <f:SimpleForm IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                 <Items>
-                    <f:RadioButtonList ID="rblMetric" Label="指标" ColumnNumber="2" OnSelectedIndexChanged="rblMetric_SelectedIndexChanged">
+                    <f:RadioButtonList ID="rblMetric" Label="指标" AutoColumnWidth="true" OnSelectedIndexChanged="rblMetric_SelectedIndexChanged">
                         <f:RadioItem Text="访问量" Value="visits" Selected="true" />
                         <f:RadioItem Text="转化量" Value="conversions" />
                     </f:RadioButtonList>

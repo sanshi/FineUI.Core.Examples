@@ -1,3 +1,4 @@
+using System.Globalization;
 using System;
 
 namespace FineUI.Core.Examples.Pages.Chart.Line
@@ -8,14 +9,14 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         {
             if (!IsPostBack)
             {
-                ChartDailyVisits.DataSource = ChartInteractionData.DailyVisits();
+                ChartDailyVisits.DataSource = DailyVisitData.DailyVisits();
                 ChartDailyVisits.DataBind();
             }
         }
 
         protected void ChartDailyVisits_PointClick(object sender, ChartPointEventArgs e)
         {
-            var details = ChartInteractionData.FindVisit(e.DataKey);
+            var details = DailyVisitData.FindVisit(e.DataKey);
             if (details == null)
             {
                 return;
@@ -24,7 +25,8 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
             labVisitDate.Text = "日期：" + e.DataKey;
             labVisitCount.Text = "访问量：" + details.Visits;
             labConversionCount.Text = "转化量：" + details.Conversions;
-            labConversionRate.Text = "转化率：" + details.Rate;
+            var rate = (details.Conversions * 100.0 / details.Visits).ToString("0.0", CultureInfo.InvariantCulture);
+            labConversionRate.Text = "转化率：" + rate + "%";
             WindowVisitDetails.Show();
         }
     }

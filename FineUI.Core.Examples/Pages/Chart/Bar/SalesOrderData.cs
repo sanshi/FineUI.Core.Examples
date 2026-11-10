@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FineUI.Core.Examples.Pages.Chart
+namespace FineUI.Core.Examples.Pages.Chart.Bar
 {
-    public static class ChartSamples
+    public static class SalesOrderData
     {
         private static readonly SaleOrder[] Orders =
         {

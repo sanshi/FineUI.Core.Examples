@@ -1,6 +1,6 @@
 using System;
 
-namespace FineUI.Core.Examples.Pages.Chart
+namespace FineUI.Core.Examples.Pages.Chart.Bar
 {
     public partial class CombinationModel : PageBase
     {

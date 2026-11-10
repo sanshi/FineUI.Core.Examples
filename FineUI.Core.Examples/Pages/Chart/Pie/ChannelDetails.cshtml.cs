@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using ChartRow = FineUI.Core.Examples.Pages.Chart.ChartDataRows.ChartRow;
 
 namespace FineUI.Core.Examples.Pages.Chart.Pie
 {
@@ -8,12 +10,12 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
         {
             if (!IsPostBack)
             {
-                var rows = ChartInteractionData.ChannelTotals();
+                var rows = ChannelVisitData.ChannelTotals();
                 ChartChannelDetails.DataSource = rows;
                 ChartChannelDetails.DataBind();
-                GridChannelMonths.DataSource = new ChartInteractionData.ChartRow[0];
+                GridChannelMonths.DataSource = new ChartRow[0];
                 GridChannelMonths.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.ChannelDetailsSummary(null, null);
+                ToolbarTextChartScope.Text = ChannelDetailsSummary(null, null);
             }
         }
 
@@ -21,21 +23,26 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
         {
             var seriesKey = e.SeriesKey;
             var dataKey = e.DataKey;
-            if (seriesKey == "amount" && ChartInteractionData.ChannelName(dataKey) != null)
+            if (seriesKey == "amount" && ChannelVisitData.ChannelName(dataKey) != null)
             {
-                var rows = ChartInteractionData.ChannelTrend(dataKey);
+                var rows = ChannelVisitData.ChannelTrend(dataKey);
                 GridChannelMonths.DataSource = rows;
                 GridChannelMonths.DataBind();
-                ToolbarTextChartScope.Text = ChartInteractionData.ChannelDetailsSummary(dataKey, rows);
+                ToolbarTextChartScope.Text = ChannelDetailsSummary(dataKey, rows);
             }
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            var rows = new ChartInteractionData.ChartRow[0];
+            var rows = new ChartRow[0];
             GridChannelMonths.DataSource = rows;
             GridChannelMonths.DataBind();
-            ToolbarTextChartScope.Text = ChartInteractionData.ChannelDetailsSummary(null, rows);
+            ToolbarTextChartScope.Text = ChannelDetailsSummary(null, rows);
+        }
+
+        private static string ChannelDetailsSummary(string key, ChartRow[] rows)
+        {
+            return key == null ? "请选择一个渠道" : $"{ChannelVisitData.ChannelName(key)} · 六个月访问量 {rows.Sum(row => row.Amount)}";
         }
     }
 }
