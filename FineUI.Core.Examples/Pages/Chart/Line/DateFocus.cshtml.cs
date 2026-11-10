@@ -9,30 +9,28 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
         {
             if (!IsPostBack)
             {
-                dpFocus.Text = "2026-09-01";
-                var rows = DailyFocus(DailyVisitData.FirstDate);
-                ChartDateFocus.DataSource = rows;
-                ChartDateFocus.DataBind();
-                ToolbarTextChartScope.Text = VisitFocusSummary(DailyVisitData.FirstDate);
+                dpFocus.Text = DailyVisitData.FirstDate;
+                BindDateFocus(DailyVisitData.FirstDate);
             }
         }
 
         protected void ChartDateFocus_PointClick(object sender, ChartPointEventArgs e)
         {
-            var seriesKey = e.SeriesKey;
             var pointId = e.PointID;
-            if (seriesKey == "amount" && DailyVisitData.FindVisit(pointId) != null)
+            if (DailyVisitData.FindVisit(pointId) != null)
             {
                 dpFocus.Text = pointId;
-                ChartDateFocus.DataSource = DailyFocus(pointId);
-                ChartDateFocus.DataBind();
-                ToolbarTextChartScope.Text = VisitFocusSummary(pointId);
+                BindDateFocus(pointId);
             }
         }
 
-        protected void btnFocus_Click(object sender, EventArgs e)
+        protected void dpFocus_TextChanged(object sender, EventArgs e)
         {
-            var date = dpFocus.Text;
+            BindDateFocus(dpFocus.Text);
+        }
+
+        private void BindDateFocus(string date)
+        {
             ChartDateFocus.DataSource = DailyFocus(date);
             ChartDateFocus.DataBind();
             ToolbarTextChartScope.Text = VisitFocusSummary(date);
@@ -45,6 +43,8 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
                 row.Id,
                 row.Category,
                 row.Amount,
+                // 只在选中的日期显示标记和数值，其余日期的访问趋势由主折线保留。
+                FocusAmount = row.Id == key ? (int?)row.Amount : null,
                 Color = row.Id == key ? "#d9480f" : ""
             }).ToArray();
         }

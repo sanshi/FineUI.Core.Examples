@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.StackNormalizationModel
+@{
+    ViewBag.Title = "堆叠柱状图的归一化";
+}
+
+@section body {
+    <f:Chart ID="ChartBarStackNormalization" Height="550" DataCategoryField="Category"
+        ShowLegend="true" LegendSelectedMode="false">
+        <Series>
+            <f:ChartSeries Key="direct" Type="Bar" Name="Direct" DataValueField="Direct" Stack="total" BarWidth="60%"
+                ShowLabel="true" DataLabelField="DirectLabel" />
+            <f:ChartSeries Key="mailAd" Type="Bar" Name="Mail Ad" DataValueField="MailAd" Stack="total" BarWidth="60%"
+                ShowLabel="true" DataLabelField="MailAdLabel" />
+            <f:ChartSeries Key="affiliateAd" Type="Bar" Name="Affiliate Ad" DataValueField="AffiliateAd" Stack="total"
+                BarWidth="60%" ShowLabel="true" DataLabelField="AffiliateAdLabel" />
+            <f:ChartSeries Key="videoAd" Type="Bar" Name="Video Ad" DataValueField="VideoAd" Stack="total" BarWidth="60%"
+                ShowLabel="true" DataLabelField="VideoAdLabel" />
+            <f:ChartSeries Key="searchEngine" Type="Bar" Name="Search Engine" DataValueField="SearchEngine" Stack="total"
+                BarWidth="60%" ShowLabel="true" DataLabelField="SearchEngineLabel" />
+        </Series>
+    </f:Chart>
+
+    <p>同一天各渠道访问量除以当天总量，柱高合计为 1，每段标出相应的百分比。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-stack-normalization" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataLabelField</code> 柱高使用小数，例如星期一 Direct 约为 0.062，标签字段则提供 6.2%。</li>
+            <li><code>LegendSelectedMode</code> 设为 false，让图例只说明颜色，点击时保留各来源，柱高仍为 1。</li>
+        </ul>
+    </section>
+}

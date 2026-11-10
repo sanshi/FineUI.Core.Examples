@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.NegativeModel
+@{
+    ViewBag.Title = "正负条形图";
+}
+
+@section body {
+    <f:Chart ID="ChartBarNegative" Height="550" DataCategoryField="Category"
+        Horizontal="true" ShowLegend="true" ShowAxisTick="false" AxisPointerType="shadow"
+        LegendData="Profit,Expenses,Income">
+        <Series>
+            <f:ChartSeries Key="profit" Type="Bar" Name="Profit" DataValueField="Profit" ShowLabel="true" LabelPosition="inside"
+                FocusSeries="true" />
+            <f:ChartSeries Key="income" Type="Bar" Name="Income" DataValueField="Income" Stack="Total" ShowLabel="true"
+                FocusSeries="true" />
+            <f:ChartSeries Key="expenses" Type="Bar" Name="Expenses" DataValueField="Expenses" Stack="Total" ShowLabel="true"
+                LabelPosition="left" FocusSeries="true" />
+        </Series>
+    </f:Chart>
+
+    <p>Profit 单独显示，Income 和 Expenses 在同一组中分别向零线的两侧延伸。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-negative" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>LegendData</code> 按 Profit、Expenses、Income 显示图例，系列仍按声明顺序绘制。</li>
+            <li><code>ShowAxisTick</code> 设为 false 隐藏分类轴短刻度，保留 Mon 到 Sun 的分类标签。</li>
+            <li><code>LabelPosition</code> Profit 的数值放在条内，Expenses 的数值放在负值条的左侧。</li>
+        </ul>
+    </section>
+}

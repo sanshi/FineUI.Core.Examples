@@ -7,7 +7,6 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
 	{
 		protected FineUI.Core.ToolbarText ToolbarTextChartScope;
 		protected FineUI.Core.DatePicker dpFocus;
-		protected FineUI.Core.Button btnFocus;
 		protected FineUI.Core.Chart ChartDateFocus;
 	}
 }

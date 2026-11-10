@@ -22,12 +22,11 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
                 return;
             }
 
-            labVisitDate.Text = "日期：" + e.PointID;
-            labVisitCount.Text = "访问量：" + details.Visits;
-            labConversionCount.Text = "转化量：" + details.Conversions;
+            labVisitDate.Text = e.PointID;
+            labVisitCount.Text = details.Visits.ToString(CultureInfo.InvariantCulture);
+            labConversionCount.Text = details.Conversions.ToString(CultureInfo.InvariantCulture);
             var rate = (details.Conversions * 100.0 / details.Visits).ToString("0.0", CultureInfo.InvariantCulture);
-            labConversionRate.Text = "转化率：" + rate + "%";
-            WindowVisitDetails.Show();
+            labConversionRate.Text = rate + "%";
         }
     }
 }

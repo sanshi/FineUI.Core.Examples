@@ -1,0 +1,55 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.LabelAlignModel
+@{
+    ViewBag.Title = "饼图标签对齐";
+}
+
+@section body {
+    <h2 style="text-align: center; font-size: 18px; margin: 0;">Pie label alignTo</h2>
+    <f:Panel Layout="Block" BlockConfigSpace="0" IsFluid="true" ShowHeader="false" ShowBorder="false">
+        <Items>
+            <f:Panel BlockLG="4" Height="550" Layout="Fit" ShowHeader="false" ShowBorder="false">
+                <Items>
+                    <f:Chart ID="ChartPieLabelAlignNone" DataCategoryField="Category"
+                        ShowTooltip="false" PieRadius="25%" TitleTop="75%"
+                        Subtitle="@("alignTo: \"none\" (default)")" PieLabelAlignTo="none" PieLabelBleedMargin="5">
+                        <Series>
+                            <f:ChartSeries Key="fruit" Type="Pie" DataValueField="Value" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+            <f:Panel BlockLG="4" Height="550" Layout="Fit" ShowHeader="false" ShowBorder="false">
+                <Items>
+                    <f:Chart ID="ChartPieLabelAlignLine" DataCategoryField="Category"
+                        ShowTooltip="false" PieRadius="25%" TitleTop="75%"
+                        Subtitle="@("alignTo: \"labelLine\"")" PieLabelAlignTo="labelLine" PieLabelBleedMargin="5">
+                        <Series>
+                            <f:ChartSeries Key="fruit" Type="Pie" DataValueField="Value" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+            <f:Panel BlockLG="4" Height="550" Layout="Fit" ShowHeader="false" ShowBorder="false">
+                <Items>
+                    <f:Chart ID="ChartPieLabelAlignEdge" DataCategoryField="Category"
+                        ShowTooltip="false" PieRadius="25%" TitleTop="75%" Subtitle="@("alignTo: \"edge\"")"
+                        PieLabelAlignTo="edge" PieLabelEdgeDistance="20">
+                        <Series>
+                            <f:ChartSeries Key="fruit" Type="Pie" DataValueField="Value" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+    <p>三张饼图使用相同的水果数据，用于对照外侧标签的三种对齐方式。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-alignTo" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>PieLabelAlignTo</code> none 让标签跟随引导线，labelLine 对齐引导线端点，edge 将标签对齐绘图区的边缘。</li>
+            <li><code>PieLabelBleedMargin / PieLabelEdgeDistance</code> 前两种模式保留 5 像素边界间距，edge 模式让标签距绘图区边缘 20 像素。</li>
+        </ul>
+    </section>
+}

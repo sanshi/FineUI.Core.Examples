@@ -6,7 +6,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Line
 	public partial class PointDetailsModel
 	{
 		protected FineUI.Core.Chart ChartDailyVisits;
-		protected FineUI.Core.Window WindowVisitDetails;
+		protected FineUI.Core.SimpleForm SimpleFormVisitDetails;
 		protected FineUI.Core.Label labVisitDate;
 		protected FineUI.Core.Label labVisitCount;
 		protected FineUI.Core.Label labConversionCount;

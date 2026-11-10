@@ -1,0 +1,26 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.ScrollableLegendModel
+@{
+    ViewBag.Title = "可滚动的图例";
+}
+
+@section body {
+    <f:Chart ID="ChartPieScrollableLegend" Height="550" DataCategoryField="Category"
+        Title="同名数量统计" Subtitle="纯属虚构" ShowLegend="true" LegendPosition="Right" LegendType="scroll"
+        LegendRight="10" LegendTop="20" LegendBottom="20" TooltipFormatter="@("{a} <br/>{b} : {c} ({d}%)")"
+        PieCenter="40%,50%" PieEmphasisShadow="true">
+        <Series>
+            <f:ChartSeries Key="names" Type="Pie" Name="姓名" DataValueField="Value" />
+        </Series>
+    </f:Chart>
+
+    <p>图表沿用官网的随机姓名生成规则，共生成 50 项。右侧图例可翻页，指向扇区可查看姓名、数量和占比。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-legend" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>LegendType</code> 设为 scroll 时，放不下的图例可以用箭头翻页。</li>
+            <li><code>LegendRight / LegendTop / LegendBottom</code> 分别留出 10、20、20 像素，让图例有明确的可滚动区域。</li>
+            <li><code>TooltipFormatter</code> 用 {a} 显示系列名，{b} 显示姓名，{c} 显示数量，{d} 显示占比。</li>
+        </ul>
+    </section>
+}

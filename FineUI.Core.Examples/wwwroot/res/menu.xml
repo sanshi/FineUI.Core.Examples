@@ -2283,6 +2283,9 @@
 			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/Chart/Bar/TickAlign" />
 			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/Chart/Bar/Background" />
 			<TreeNode Text="单柱配色" NavigateUrl="~/Chart/Bar/PointColor" />
+			<TreeNode Text="对象数组的输入格式" NavigateUrl="~/Chart/Bar/ObjectArray" />
+			<TreeNode Text="正负条形图" NavigateUrl="~/Chart/Bar/Negative" />
+			<TreeNode Text="堆叠柱状图的归一化" NavigateUrl="~/Chart/Bar/StackNormalization" />
 			<TreeNode Text="堆叠条形图" NavigateUrl="~/Chart/Bar/StackedHorizontal" />
 			<TreeNode Text="瀑布图（柱状图模拟）" NavigateUrl="~/Chart/Bar/Waterfall" />
 			<TreeNode Text="柱条间距" NavigateUrl="~/Chart/Bar/Spacing" />
@@ -2325,6 +2328,8 @@
 			<TreeNode Text="环形图" NavigateUrl="~/Chart/Pie/Doughnut" />
 			<TreeNode Text="半环形图" NavigateUrl="~/Chart/Pie/HalfDoughnut" />
 			<TreeNode Text="饼图扇区间隙" NavigateUrl="~/Chart/Pie/PadAngle" />
+			<TreeNode Text="可滚动的图例" NavigateUrl="~/Chart/Pie/ScrollableLegend" />
+			<TreeNode Text="饼图标签对齐" NavigateUrl="~/Chart/Pie/LabelAlign" />
 			<TreeNode Text="圆角环形图" NavigateUrl="~/Chart/Pie/RoundedDoughnut" />
 			<TreeNode Text="南丁格尔玫瑰图" NavigateUrl="~/Chart/Pie/Rose" />
 			<TreeNode Text="数据联动">
