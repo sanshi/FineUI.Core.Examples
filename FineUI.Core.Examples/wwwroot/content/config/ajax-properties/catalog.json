@@ -8809,6 +8809,36 @@
     },
     {
       "control": "GridCommand",
+      "property": "Icon",
+      "method": null,
+      "owner": "GridCommand",
+      "type": "Icon get/set",
+      "description": "预定义图标",
+      "effect": "response",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。把内置图片图标换为另一枚举值，例如从 Pencil 换成 Add。文字优先于图片；已设置 IconUrl 时优先用该地址。None 移除枚举指定的图片。 更新属于当前响应，下一轮后台按服务器声明读取该项。"
+    },
+    {
+      "control": "GridCommand",
+      "property": "IconFont",
+      "method": "setIconFont",
+      "owner": "GridCommand",
+      "type": "IconFont get/set",
+      "description": "预定义图标字体",
+      "effect": "response",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。把字体图标换为另一枚举值，例如从 Pencil 换成 Info。命令无文字和图片时显示字体图标。None 清除枚举图标，可沿用自定义图标类；Java 也接受 null。 更新属于当前响应，下一轮后台按服务器声明读取该项。"
+    },
+    {
+      "control": "GridCommand",
+      "property": "IconFontClass",
+      "method": null,
+      "owner": "GridCommand",
+      "type": "string get/set",
+      "description": "自定义图标字体的样式类",
+      "effect": "response",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。更改自定义字体图标类。仅当命令没有文字、图片和预设字体图标时采用此类；空值移除自定义类。 更新属于当前响应，下一轮后台按服务器声明读取该项。"
+    },
+    {
+      "control": "GridCommand",
       "property": "Text",
       "method": "setText",
       "owner": "GridCommand",
@@ -8849,6 +8879,16 @@
     },
     {
       "control": "GridCommand",
+      "property": "ToolTipPosition",
+      "method": null,
+      "owner": "GridCommand",
+      "type": "ToolTipPosition get/set",
+      "description": "提示文本的位置",
+      "effect": "interaction",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。有 FineUI 浮动提示时，下次悬停使用新的弹出位置，例如 TopStart。Undefined 沿用默认位置。浏览器原生提示的位置由浏览器决定。 更新属于当前响应，下一轮后台按服务器声明读取该项。"
+    },
+    {
+      "control": "GridCommand",
       "property": "ToolTipRaw",
       "method": "setToolTipRaw",
       "owner": "GridCommand",
@@ -8866,6 +8906,16 @@
       "description": "把 ToolTip 设为可信 HTML 的便捷写法：赋值时同时设置 ToolTip 和 ToolTipRaw=true；读取时若已标记可信则返回 RawHtml、否则返回 null",
       "effect": "response",
       "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。用 RawHtml 同时设置命令提示和可信标记。new RawHtml(\"\") 保留空提示及 true 标记；传 null 同时清空提示、取消标记。可信 HTML 标记适用于 FineUI 浮动提示，浏览器原生 title 始终按文字显示。"
+    },
+    {
+      "control": "GridCommand",
+      "property": "ToolTipType",
+      "method": null,
+      "owner": "GridCommand",
+      "type": "ToolTipType get/set",
+      "description": "提示文本类型",
+      "effect": "interaction",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。有提示文字时，下次悬停按新类型显示。Title 采用浏览器原生文字提示，Qtip 采用 FineUI 浮动提示。 更新属于当前响应，下一轮后台按服务器声明读取该项。"
     },
     {
       "control": "GroupField",
