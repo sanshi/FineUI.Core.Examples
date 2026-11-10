@@ -1,11 +1,11 @@
 <Project>
   <PropertyGroup>
-    <FineUIReleaseVersion>16.1.2</FineUIReleaseVersion>
+    <FineUIReleaseVersion>16.2.0</FineUIReleaseVersion>
     <Version>$(FineUIReleaseVersion)</Version>
-    <AssemblyVersion>16.1.2.0</AssemblyVersion>
-    <FileVersion>16.1.2.0</FileVersion>
+    <AssemblyVersion>16.2.0.0</AssemblyVersion>
+    <FileVersion>16.2.0.0</FileVersion>
     <InformationalVersion>$(FineUIReleaseVersion)</InformationalVersion>
-    <FineUIPackageVersion Condition="'$(FineUIPackageVersion)' == ''">16.1.2</FineUIPackageVersion>
+    <FineUIPackageVersion Condition="'$(FineUIPackageVersion)' == ''">16.2.0</FineUIPackageVersion>
     <FineUIUseLocalSource Condition="'$(FineUIUseLocalSource)' == ''">false</FineUIUseLocalSource>
   </PropertyGroup>
 
