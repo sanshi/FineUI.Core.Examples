@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Line.DateRangeModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "日期范围筛选折线图";
+}
+
+@section body {
+    <f:Panel IsFluid="true" Title="每日访问趋势" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:ToolbarText ID="ToolbarTextChartScope" />
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:SimpleForm ID="SimpleFormDateRange" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="78">
+                <Items>
+                    <f:DatePicker ID="dpVisitRange" Label="日期范围" DateFormatString="yyyy-MM-dd"
+                        DisplayType="DayRange" EnableEdit="false" OnTextChanged="dpVisitRange_TextChanged" />
+                </Items>
+            </f:SimpleForm>
+            <f:Chart ID="ChartVisitRange" Height="550" CategoryField="Category">
+                <Series>
+                    <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" />
+                </Series>
+            </f:Chart>
+        </Items>
+    </f:Panel>
+
+    <p>在日期范围选择器中选完起止日期，折线和访问量汇总会自动更新。演示数据覆盖 2026 年 9 月 1 日至 12 日。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DisplayType="DayRange"</code> 在同一个弹层中选择开始和结束日期，两端都计入统计。选完第二个日期时触发更新。</li>
+            <li><code>DataBind()</code> 同一批查询结果同时用于绘制折线、计算天数和访问量。</li>
+        </ul>
+    </section>
+}

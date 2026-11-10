@@ -1,0 +1,48 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.TrendLinkModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "饼图联动趋势图";
+}
+
+@section body {
+    <f:Panel Layout="Block" BlockConfigSpace="16" IsFluid="true" ShowHeader="false" ShowBorder="false">
+        <Items>
+            <f:Panel BlockLG="5" Height="550" Layout="Fit" Title="渠道访问占比" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+                <Items>
+                    <f:Chart ID="ChartChannels" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartChannels_PointClick">
+                        <Series>
+                            <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+            <f:Panel BlockLG="7" Height="550" Layout="Fit" Title="月度访问趋势" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+                <Toolbars>
+                    <f:Toolbar Position="Top">
+                        <Items>
+                            <f:Button ID="btnAllChannels" Text="查看全部渠道" OnClick="btnAllChannels_Click" CssClass="marginr" />
+                            <f:ToolbarText ID="ToolbarTextChartScope" />
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+                <Items>
+                    <f:Chart ID="ChartChannelTrend" CategoryField="Category">
+                        <Series>
+                            <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+    <p>饼图显示各渠道的访问占比。点击扇区，右侧折线显示该渠道的月度趋势。「查看全部渠道」恢复总趋势。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataKeyField="Key"</code> 扇区的业务键是渠道编号，例如 search 表示搜索。</li>
+            <li><code>OnPointClick</code> 后台按渠道刷新趋势图。饼图继续展示全部渠道，以便换选。</li>
+        </ul>
+    </section>
+}

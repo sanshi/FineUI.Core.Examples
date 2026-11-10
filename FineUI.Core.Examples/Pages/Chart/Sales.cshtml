@@ -1,12 +1,13 @@
 @page
 @model FineUI.Core.Examples.Pages.Chart.SalesModel
 @{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartSamples.cs";
     ViewBag.Title = "图表绑定与 Grid 联动";
 }
 @section body {
     <f:Panel Layout="Block" BlockConfigSpace="16" IsFluid="true" ShowHeader="false" ShowBorder="false">
         <Items>
-            <f:Panel BlockLG="7" ShowHeader="true" ShowBorder="true" Title="月度销售额（元）" BodyPadding="8">
+            <f:Panel BlockLG="7" Height="550" Layout="Fit" ShowHeader="true" ShowBorder="true" Title="月度销售额（元）" BodyPadding="8">
                 <Toolbars>
                     <f:Toolbar Position="Top">
                         <Items>
@@ -16,7 +17,7 @@
                     </f:Toolbar>
                 </Toolbars>
                 <Items>
-                    <f:Chart ID="ChartSales" Height="286" CategoryField="Category"
+                    <f:Chart ID="ChartSales" CategoryField="Category"
                         DataKeyField="Month" OnPointClick="ChartSales_PointClick">
                         <Series>
                             <f:ChartSeries Key="sales" Type="Bar" Name="销售额" ValueField="Amount" />
@@ -24,7 +25,7 @@
                     </f:Chart>
                 </Items>
             </f:Panel>
-            <f:Grid ID="GridOrders" BlockLG="5" Height="386" Title="订单明细" ShowHeader="true" ShowBorder="true">
+            <f:Grid ID="GridOrders" BlockLG="5" Height="550" Title="订单明细" ShowHeader="true" ShowBorder="true">
                 <Toolbars>
                     <f:Toolbar Position="Top">
                         <Items>

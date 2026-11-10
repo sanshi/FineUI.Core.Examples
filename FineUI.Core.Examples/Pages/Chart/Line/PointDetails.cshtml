@@ -1,0 +1,35 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Line.PointDetailsModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "点击折线点查看详情";
+}
+
+@section body {
+    <f:Panel IsFluid="true" Title="每日访问量" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+        <Items>
+            <f:Chart ID="ChartDailyVisits" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartDailyVisits_PointClick">
+                <Series>
+                    <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" />
+                </Series>
+            </f:Chart>
+        </Items>
+    </f:Panel>
+    <f:Window ID="WindowVisitDetails" Title="访问详情" Hidden="true" IsModal="true" EnableClose="true" Width="320" Height="210" BodyPadding="16">
+        <Items>
+            <f:Label ID="labVisitDate" ShowLabel="false" />
+            <f:Label ID="labVisitCount" ShowLabel="false" />
+            <f:Label ID="labConversionCount" ShowLabel="false" />
+            <f:Label ID="labConversionRate" ShowLabel="false" />
+        </Items>
+    </f:Window>
+
+    <p>点击折线上的日期数据点，弹出当日访问量、转化量和转化率。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataKeyField="Key"</code> 以完整日期识别记录，例如 2026-09-03。</li>
+            <li><code>OnPointClick</code> 后台按日期读取完整记录，填充详情 Window，再打开窗口。</li>
+        </ul>
+    </section>
+}

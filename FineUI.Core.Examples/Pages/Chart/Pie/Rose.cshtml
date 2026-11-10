@@ -1,0 +1,28 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.RoseModel
+@{
+    ViewBag.Title = "南丁格尔玫瑰图";
+}
+
+@section body {
+    <f:Chart ID="ChartPieRose" Height="550" CategoryField="Category"
+        ShowTooltip="false" PieRoseType="area" PieRadius="50%">
+        <Series>
+            <f:ChartSeries Key="value" Type="Pie" Name="value" ValueField="Value" />
+        </Series>
+    </f:Chart>
+    <p>五个扇区角度相同，数值较大的扇区向外伸得更远。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/pie/rose/" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>PieRoseType="area"</code>
+                用等角扇区比较半径。若设为 radius，角度也会随数值变化。
+            </li>
+            <li>
+                <code>PieRadius="50%"</code>
+                外半径取容器短边的一半再乘以 50%，和原例的默认半径一致。
+            </li>
+        </ul>
+    </section>
+}

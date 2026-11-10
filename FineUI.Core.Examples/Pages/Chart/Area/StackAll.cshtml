@@ -1,0 +1,31 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Area.StackAllModel
+@{
+    ViewBag.Title = "正负值堆叠面积图";
+}
+
+@section body {
+    <f:Chart ID="ChartAreaStackAll" Height="550" CategoryField="Category"
+        ShowTooltip="false">
+        <Series>
+            <f:ChartSeries Key="baseline" Type="Line" Name="stack" ValueField="Baseline"
+                Stack="stack" StackStrategy="all" />
+            <f:ChartSeries Key="change" Type="Area" Name="stack" ValueField="Change"
+                Stack="stack" StackStrategy="all" />
+        </Series>
+    </f:Chart>
+    <p>面积系列绘制第二组数据叠加到基准折线后的结果，正负值可以相抵。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>Stack="stack"</code>
+                将基准折线和填充面积放入同一个堆叠组，面积系列在基准折线之后声明。
+            </li>
+            <li>
+                <code>StackStrategy="all"</code>
+                允许异号值相加。第 4 类的基准值 −1 加上变动值 1，得到 0。默认同号堆叠下，第二个值会从零单独累计。
+            </li>
+        </ul>
+    </section>
+}

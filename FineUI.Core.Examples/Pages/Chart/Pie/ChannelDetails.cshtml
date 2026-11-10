@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.ChannelDetailsModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "饼图扇区联动渠道明细表";
+}
+
+@section body {
+    <f:Panel IsFluid="true" Layout="Block" BlockConfigSpace="16" ShowHeader="false" ShowBorder="false">
+        <Items>
+            <f:Panel BlockLG="6" Height="550" Layout="Fit" Title="访问渠道占比" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+                <Items>
+                    <f:Chart ID="ChartChannelDetails" CategoryField="Category" DataKeyField="Key" OnPointClick="ReadChannel">
+                        <Series>
+                            <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                        </Series>
+                    </f:Chart>
+                </Items>
+            </f:Panel>
+            <f:Grid ID="GridChannelMonths" BlockLG="6" Title="月度访问明细" ShowHeader="true" ShowBorder="true" Height="550">
+                <Toolbars>
+                    <f:Toolbar Position="Top">
+                        <Items>
+                            <f:Button ID="btnClear" Text="清除选择" OnClick="ClearChannel" CssClass="marginr" />
+                            <f:ToolbarText ID="ToolbarTextChartScope" />
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+                <Columns>
+                    <f:RenderField DataField="Category" HeaderText="月份" ExpandUnusedSpace="true" />
+                    <f:RenderField DataField="Amount" HeaderText="访问量" Width="100" TextAlign="Right" />
+                </Columns>
+            </f:Grid>
+        </Items>
+    </f:Panel>
+
+    <p>点击渠道扇区，明细表显示该渠道六个月的访问量。点击「清除选择」恢复空明细，饼图继续展示全部渠道。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataKeyField</code> 扇区提交渠道编号，例如 search 表示搜索。</li>
+            <li><code>OnPointClick</code> 按渠道查询月度记录，刷新 Grid 和当前选择说明。</li>
+        </ul>
+    </section>
+}

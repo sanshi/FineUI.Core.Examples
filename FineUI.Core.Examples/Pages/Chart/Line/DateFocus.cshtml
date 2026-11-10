@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Line.DateFocusModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "折线图与日期选择器双向联动";
+}
+
+@section body {
+    <f:Panel IsFluid="true" Title="每日访问量" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:ToolbarText ID="ToolbarTextChartScope" />
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:SimpleForm IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
+                <Items>
+                    <f:DatePicker ID="dpFocus" Label="日期" DateFormatString="yyyy-MM-dd" />
+                    <f:Button ID="btnFocus" Text="查看当天" OnClick="ReadDate" />
+                </Items>
+            </f:SimpleForm>
+            <f:Chart ID="ChartDateFocus" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="FocusDate">
+                <Series>
+                    <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" ColorField="Color" />
+                </Series>
+            </f:Chart>
+        </Items>
+    </f:Panel>
+
+    <p>点击折线上的日期点会填写日期并显示当天数据。也可以直接在日期选择器中选择一天，再点击「查看当天」。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataKeyField</code> 折线点提交完整日期，例如 2026-09-03，后台按该日期填写日期选择器。</li>
+            <li><code>OnClick</code> 查询按钮读取日期选择器，和点选共用同一条记录查询。</li>
+        </ul>
+    </section>
+}

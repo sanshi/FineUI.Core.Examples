@@ -1,0 +1,35 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.DrillDownModel
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "柱状图钻取与返回";
+}
+
+@section body {
+    <f:Panel IsFluid="true" Title="区域销售分析" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+        <Toolbars>
+            <f:Toolbar Position="Top">
+                <Items>
+                    <f:Button ID="btnBack" Text="返回区域" OnClick="btnBack_Click" Enabled="false" CssClass="marginr" />
+                    <f:ToolbarText ID="ToolbarTextChartScope" />
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:Chart ID="ChartRegionSales" Height="550" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartRegionSales_PointClick">
+                <Series>
+                    <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" ValueField="Amount" />
+                </Series>
+            </f:Chart>
+        </Items>
+    </f:Panel>
+
+    <p>先查看各区域的销售额，再点击区域柱钻取城市明细。「返回区域」恢复汇总。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>DataKeyField="Key"</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
+            <li><code>OnPointClick</code> 后台在同一张图表中重绑城市数据；城市是末级，点击后保持当前视图。</li>
+        </ul>
+    </section>
+}

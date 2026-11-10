@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.SpacingModel
+@{
+    ViewBag.Title = "柱条间距";
+}
+
+@section body {
+    <f:Chart ID="ChartBarSpacing" Height="550" CategoryField="Category"
+        ShowTooltip="false">
+        <Series>
+            <f:ChartSeries Key="first" Type="Bar" Name="first" ValueField="First"
+                BarGap="20%" BarCategoryGap="40%" />
+            <f:ChartSeries Key="second" Type="Bar" Name="second" ValueField="Second" />
+        </Series>
+    </f:Chart>
+    <p>比较同一个分类里两根柱之间的间距，以及相邻分类的柱组之间的间距。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/bar/basic-bar/#柱条间距" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>BarGap="20%"</code>
+                同一分类内两根柱之间的空隙，设为柱宽的 20%。
+            </li>
+            <li>
+                <code>BarCategoryGap="40%"</code>
+                从分类带中留出 40% 作为相邻柱组之间的空隙。同一分类轴上，最后一个显式设置该项的柱系列决定整组布局。
+            </li>
+        </ul>
+    </section>
+}

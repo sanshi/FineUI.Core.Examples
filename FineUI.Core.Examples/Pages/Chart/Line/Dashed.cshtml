@@ -1,0 +1,33 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Line.DashedModel
+@{
+    ViewBag.Title = "虚线折线图";
+}
+
+@section body {
+    <f:Chart ID="ChartLineDashed" Height="550" CategoryField="Category"
+        ShowTooltip="false">
+        <Series>
+            <f:ChartSeries Key="value" Type="Line" Name="value" ValueField="Value"
+                LineColor="#008000" LineWidth="4" LineType="dashed" />
+        </Series>
+    </f:Chart>
+    <p>用粗绿色虚线连接五个分类的数据点。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/line/basic-line/#折线的样式" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>LineType="dashed"</code>
+                把连线画成虚线，可与线宽和颜色同时设置。
+            </li>
+            <li>
+                <code>LineWidth="4"</code>
+                将线宽设为 4 像素。
+            </li>
+            <li>
+                <code>LineColor="#008000"</code>
+                设置连线的绿色，数据点标记继续使用系列颜色。
+            </li>
+        </ul>
+    </section>
+}
