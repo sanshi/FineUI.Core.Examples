@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.Pages.GridMove.RowSortModel
+@{
+    ViewBag.Title = "行移动（拖拽排序）";
+}
+
+@section body {
+    <f:Grid ID="Grid1" IsFluid="true" Title="任务优先级" DataIDField="Id" DataTextField="Name">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" Width="70" />
+            <f:RenderField ColumnID="Name" HeaderText="任务" DataField="Name" ExpandUnusedSpace="true" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="rowmove" Handler="onRowOrderChanged" />
+            <f:Listener Event="dataload" Handler="onRowOrderChanged" />
+        </Listeners>
+    </f:Grid>
+    <f:Button ID="btnReset" Text="恢复初始顺序" OnClick="btnReset_Click" />
+    <f:Label ID="labReset" />
+    <p>拖动行左侧的手柄，将任务放到目标行的上方或下方。松手后更新顺序，刷新页面恢复初始顺序。</p>
+    <p id="rowSortResult" aria-live="polite"></p>
+}
+
+@section script {
+    <script>
+        function onRowOrderChanged(event) {
+            // 用稳定的行 ID 记录顺序，业务需要时可将这组 ID 提交给后台保存。
+            const rowIds = this.data.map(row => row.id);
+            document.getElementById('rowSortResult').textContent = '当前顺序：' + rowIds.join('、');
+        }
+    </script>
+}
