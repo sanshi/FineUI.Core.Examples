@@ -6015,7 +6015,7 @@
       "type": "string get/set",
       "description": "允许上传的文件类型（仅部分浏览器支持）",
       "effect": "response",
-      "note": "更新文件选择框的 accept，下一次选择文件使用新过滤条件，保留当前已选文件。"
+      "note": "保留当前已选文件。下一次打开文件选择框或向已启用的拖放区投放文件时使用新过滤条件。"
     },
     {
       "control": "FileUpload",
