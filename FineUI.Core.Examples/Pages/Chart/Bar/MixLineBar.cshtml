@@ -7,10 +7,10 @@
 @section body {
     <f:Chart ID="ChartBarMixLineBar" Height="550" CategoryField="Category"
         ShowLegend="true" AxisPointerType="cross" ShowSaveAsImage="true">
-        <YAxes>
+        <YAxis>
             <f:ChartValueAxis Name="Precipitation" Position="left" Min="0" Max="250" Interval="50" LabelFormatter="{value} ml" />
             <f:ChartValueAxis Name="Temperature" Position="right" Min="0" Max="25" Interval="5" LabelFormatter="{value} °C" />
-        </YAxes>
+        </YAxis>
         <Series>
             <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" ValueField="Evaporation" />
             <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" ValueField="Precipitation" />
@@ -18,4 +18,21 @@
         </Series>
     </f:Chart>
     <p>蒸发量和降水量共用左侧毫升轴，温度折线读取右侧摄氏度轴。<a href="https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>&lt;YAxis&gt;</code>、<code>YAxisIndex="1"</code>
+                两组柱形使用默认的第 0 轴，温度折线使用第 1 轴。
+            </li>
+            <li>
+                <code>Min="0"</code>、<code>Max="25"</code>、<code>Interval="5"</code>
+                右侧温度轴从 0 到 25，每 5 度一个刻度。左侧水量轴从 0 到 250，每 50 毫升一个刻度。
+            </li>
+            <li>
+                <code>AxisPointerType="cross"</code>
+                悬停时显示十字提示线，可同时查看当天柱形和折线的数据。
+            </li>
+        </ul>
+    </section>
 }

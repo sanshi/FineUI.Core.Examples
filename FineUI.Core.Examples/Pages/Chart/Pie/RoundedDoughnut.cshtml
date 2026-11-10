@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Pie.RoundedDoughnutModel
+@{
+    ViewBag.Title = "圆角环形图";
+}
+
+@section body {
+    <f:Chart ID="ChartPieRoundedDoughnut" Height="550" CategoryField="Category"
+        ShowLegend="true" LegendTop="5%" PieRadius="40%,70%" PieAvoidLabelOverlap="false"
+        PieBorderRadius="10" PieBorderColor="#fff" PieBorderWidth="2" PieShowLabel="false"
+        PieLabelPosition="center" PieEmphasisLabelSize="40" PieEmphasisLabelFontWeight="bold">
+        <Series>
+            <f:ChartSeries Key="source" Type="Pie" Name="Access From" ValueField="Value" />
+        </Series>
+    </f:Chart>
+    <p>扇区设置 10 像素圆角和 2 像素白色描边。指向扇区时，名称显示在环形中央。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-borderRadius" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>PieBorderRadius="10"</code>
+                把每块扇区的角处理为 10 像素圆角。
+            </li>
+            <li>
+                <code>PieBorderColor="#fff"</code>、<code>PieBorderWidth="2"</code>
+                沿扇区的圆角轮廓绘制 2 像素白色描边。
+            </li>
+        </ul>
+    </section>
+}

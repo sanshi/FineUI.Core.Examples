@@ -2283,6 +2283,8 @@
 			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/Chart/Bar/TickAlign" />
 			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/Chart/Bar/Background" />
 			<TreeNode Text="单柱配色" NavigateUrl="~/Chart/Bar/PointColor" />
+			<TreeNode Text="堆叠条形图" NavigateUrl="~/Chart/Bar/StackedHorizontal" />
+			<TreeNode Text="瀑布图（柱状图模拟）" NavigateUrl="~/Chart/Bar/Waterfall" />
 			<TreeNode Text="世界人口总量 - 条形图" NavigateUrl="~/Chart/Bar/WorldPopulation" />
 			<TreeNode Text="多 Y 轴示例" NavigateUrl="~/Chart/Combination" />
 			<TreeNode Text="折柱混合" NavigateUrl="~/Chart/Bar/MixLineBar" />
@@ -2291,15 +2293,21 @@
 		<TreeNode Text="折线图">
 			<TreeNode Text="基础折线图" NavigateUrl="~/Chart/Line" />
 			<TreeNode Text="平滑折线图" NavigateUrl="~/Chart/Line/Smooth" />
+			<TreeNode Text="堆叠折线图" NavigateUrl="~/Chart/Line/Stacked" />
+			<TreeNode Text="阶梯折线图" NavigateUrl="~/Chart/Line/Step" />
 		</TreeNode>
 		<TreeNode Text="面积图">
 			<TreeNode Text="基础面积图" NavigateUrl="~/Chart/Area" />
 			<TreeNode Text="堆叠面积图" NavigateUrl="~/Chart/Area/Stacked" />
+			<TreeNode Text="渐变堆叠面积图" NavigateUrl="~/Chart/Area/GradientStacked" />
+			<TreeNode Text="双色填充面积图" NavigateUrl="~/Chart/Area/FillColor" />
 		</TreeNode>
 		<TreeNode Text="饼图">
 			<TreeNode Text="基础饼图" NavigateUrl="~/Chart/Pie" />
 			<TreeNode Text="环形图" NavigateUrl="~/Chart/Pie/Doughnut" />
 			<TreeNode Text="半环形图" NavigateUrl="~/Chart/Pie/HalfDoughnut" />
+			<TreeNode Text="饼图扇区间隙" NavigateUrl="~/Chart/Pie/PadAngle" />
+			<TreeNode Text="圆角环形图" NavigateUrl="~/Chart/Pie/RoundedDoughnut" />
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">

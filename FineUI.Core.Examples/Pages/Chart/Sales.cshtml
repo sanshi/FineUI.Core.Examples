@@ -42,4 +42,17 @@
         </Items>
     </f:Panel>
     <p>点击月份柱可查看当月订单。「最近两个月」同时缩小图表和明细的范围，「显示全部」恢复六个月。页面使用演示订单数据。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>DataKeyField="Month"</code>
+                点击月份柱时传递业务键，例如 2026-09。横轴上的「9 月」只用于显示。
+            </li>
+            <li>
+                <code>OnPointClick="ChartSales_PointClick"</code>
+                将点击交给后台处理，用月份业务键筛选订单并更新 Grid。
+            </li>
+        </ul>
+    </section>
 }

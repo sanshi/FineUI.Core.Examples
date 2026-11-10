@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Area.GradientStackedModel
+@{
+    ViewBag.Title = "渐变堆叠面积图";
+}
+
+@section body {
+    <f:Chart ID="ChartAreaGradientStacked" Height="550" CategoryField="Category"
+        Title="Gradient Stacked Area Chart" TitleAlign="Left" Palette="#80FFA5,#00DDFF,#37A2FF,#FF0087,#FFBF00"
+        ShowLegend="true" CategoryBoundaryGap="false" AxisPointerType="cross" AxisPointerLabelColor="#6a7985"
+        ShowSaveAsImage="true">
+        <Series>
+            <f:ChartSeries Key="line1" Type="Area" Name="Line 1" ValueField="Line1" Stack="Total" Smooth="true"
+                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#80ffa5,#01bfec" FocusSeries="true" />
+            <f:ChartSeries Key="line2" Type="Area" Name="Line 2" ValueField="Line2" Stack="Total" Smooth="true"
+                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#00ddff,#4d77ff" FocusSeries="true" />
+            <f:ChartSeries Key="line3" Type="Area" Name="Line 3" ValueField="Line3" Stack="Total" Smooth="true"
+                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#37a2ff,#7415db" FocusSeries="true" />
+            <f:ChartSeries Key="line4" Type="Area" Name="Line 4" ValueField="Line4" Stack="Total" Smooth="true"
+                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#ff0087,#87009d" FocusSeries="true" />
+            <f:ChartSeries Key="line5" Type="Area" Name="Line 5" ValueField="Line5" Stack="Total" Smooth="true"
+                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#ffbf00,#e03e4c" FocusSeries="true"
+                ShowLabel="true" />
+        </Series>
+    </f:Chart>
+    <p>五组数据按天堆叠，每组用两种颜色从上到下渐变。隐藏轮廓线和数据点标记，顶层保留数值标签。<a href="https://echarts.apache.org/examples/zh/editor.html?c=area-stack-gradient" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>AreaGradient="#80ffa5,#01bfec"</code>
+                第一层从上方的浅绿过渡到下方的蓝色，其余各层分别设置自己的两端颜色。
+            </li>
+            <li>
+                <code>AreaOpacity="0.8"</code>
+                将每层渐变填充的不透明度设为 80%。
+            </li>
+            <li>
+                <code>LineWidth="0"</code>、<code>ShowSymbol="false"</code>
+                隐藏轮廓线和数据点标记，保留渐变填充。
+            </li>
+        </ul>
+    </section>
+}

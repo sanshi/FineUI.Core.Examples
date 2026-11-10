@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.Pages.Chart.Bar.StackedHorizontalModel
+@{
+    ViewBag.Title = "堆叠条形图";
+}
+
+@section body {
+    <f:Chart ID="ChartBarStackedHorizontal" Height="550" CategoryField="Category"
+        Horizontal="true" ShowLegend="true" AxisPointerType="shadow">
+        <Series>
+            <f:ChartSeries Key="direct" Type="Bar" Name="Direct" ValueField="Direct" Stack="total"
+                ShowLabel="true" FocusSeries="true" />
+            <f:ChartSeries Key="mailAd" Type="Bar" Name="Mail Ad" ValueField="MailAd" Stack="total"
+                ShowLabel="true" FocusSeries="true" />
+            <f:ChartSeries Key="affiliateAd" Type="Bar" Name="Affiliate Ad" ValueField="AffiliateAd"
+                Stack="total" ShowLabel="true" FocusSeries="true" />
+            <f:ChartSeries Key="videoAd" Type="Bar" Name="Video Ad" ValueField="VideoAd" Stack="total"
+                ShowLabel="true" FocusSeries="true" />
+            <f:ChartSeries Key="searchEngine" Type="Bar" Name="Search Engine" ValueField="SearchEngine"
+                Stack="total" ShowLabel="true" FocusSeries="true" />
+        </Series>
+    </f:Chart>
+    <p>同一天的访问来源沿横轴堆叠，每段显示原始数值。指向条形可突出对应的来源系列。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li>
+                <code>Horizontal="true"</code>、<code>Stack="total"</code>
+                同一天的五个来源在横向累加成一根条形。
+            </li>
+            <li>
+                <code>ShowLabel="true"</code>
+                在每段条形内显示该来源的原始值，例如星期二的 302 和 832。
+            </li>
+            <li>
+                <code>FocusSeries="true"</code>
+                指向一段条形时，突出整张图中对应的访问来源。
+            </li>
+        </ul>
+    </section>
+}
