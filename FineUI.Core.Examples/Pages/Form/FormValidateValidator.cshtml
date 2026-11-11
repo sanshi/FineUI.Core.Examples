@@ -17,14 +17,7 @@
             <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnRegister_Click"></f:Button>
         </Items>
     </f:SimpleForm>
-    <br>
-    <br>
-    注：
-    <ul>
-        <li>
-            提交表单时客户端验证[密码]必须为 6 个字符，否则标记为无效。
-        </li>
-    </ul>
+
 
 
 }
@@ -42,4 +35,27 @@
         }
     </script>
 
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示用客户端自定义验证函数检查密码长度，要求恰好输入 6 个字符。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>执行自定义验证</h3>
+        <ol>
+            <li>
+                用户名保持有值，密码输入“123”，点击“注册”。<br />
+                结果：密码框显示“密码必须为 6 个字符！”，浏览器阻止回发。
+            </li>
+            <li>
+                关闭验证提示，将密码改为“123456”，再次点击“注册”。<br />
+                结果：长度检查通过后才回发，后台显示当前用户名和密码。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ValidatorFunction</code>：指定 passwordValidator；函数读取当前密码，符合条件返回 true，否则返回错误文字。</li>
+            <li><code>Required</code>：密码框设为 true，空值仍按必填规则检查。</li>
+            <li><code>_ValidateForms</code>：注册按钮指定 SimpleForm1，包含必填和自定义验证，通过后才回发。</li>
+        </ul>
+    </section>
 }

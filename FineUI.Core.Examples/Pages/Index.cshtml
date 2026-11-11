@@ -76,7 +76,7 @@
                                         <span class="breadcrumb-last">首页</span>
                                     </div>
                                     <div class="breadcrumb-icons">
-                                        <a data-qtip="查看源代码" href="#" data-breadcrumb-action="source"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
+                                        <a data-qtip="查看页面描述和源代码" aria-label="示例详情" href="#" data-breadcrumb-action="source"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
                                         <a data-qtip="刷新本页" href="#" data-breadcrumb-action="refresh"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
                                         <a data-qtip="在新标签页中打开" href="#" data-breadcrumb-action="new-window"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
                                     </div>
@@ -194,26 +194,31 @@
                             </div>
                         </div>
                     </f:ContentPanel>
-                    <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" InkBarPosition="Bottom" BoxFlex="1" ShowBorder="true"
-                        EnableTabCloseMenu="true" EnableTabMove="true" EnableTabWheelScroll="true">
-                        <Tabs>
-                            <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="@Url.Content("~/Basic/Main")">
-                            </f:Tab>
-                        </Tabs>
-                        <Tools>
-                            <f:Tool IconFont="_Code" CssClass="tabtool viewcode" ToolTip="查看源代码" ID="toolSourceCode" ClickHandler="onToolSourceCodeClick"></f:Tool>
-                            <f:Tool IconFont="_Refresh" CssClass="tabtool" ToolTip="刷新本页" ID="toolRefresh" ClickHandler="onToolRefreshClick"></f:Tool>
-                            <f:Tool IconFont="_NewTab" CssClass="tabtool" ToolTip="在新标签页中打开" ID="toolNewWindow" ClickHandler="onToolNewWindowClick"></f:Tool>
-                        </Tools>
-                    </f:TabStrip>
+                    <f:Panel CssClass="source-code-viewer-workspace" ID="panelExampleWorkspace" Layout="Region" BoxFlex="1" ShowBorder="false" ShowHeader="false">
+                        <Items>
+                            <f:TabStrip ID="mainTabStrip" CssClass="centerregion" RegionPosition="Center" ShowInkBar="true" InkBarPosition="Bottom" ShowBorder="true"
+                                EnableTabCloseMenu="true" EnableTabMove="true" EnableTabWheelScroll="true">
+                                <Tabs>
+                                    <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="@Url.Content("~/Basic/Main")">
+                                    </f:Tab>
+                                </Tabs>
+                                <Tools>
+                                    <f:Tool IconFont="_Code" CssClass="tabtool viewcode" ToolTip="查看页面描述和源代码" ID="toolSourceCode" ClickHandler="onToolSourceCodeClick"></f:Tool>
+                                    <f:Tool IconFont="_Refresh" CssClass="tabtool" ToolTip="刷新本页" ID="toolRefresh" ClickHandler="onToolRefreshClick"></f:Tool>
+                                    <f:Tool IconFont="_NewTab" CssClass="tabtool" ToolTip="在新标签页中打开" ID="toolNewWindow" ClickHandler="onToolNewWindowClick"></f:Tool>
+                                </Tools>
+                            </f:TabStrip>
+                            <f:Panel ID="panelExampleDetails" RegionPosition="Bottom" Height="360" MinHeight="220"
+                                     RegionSplit="true" RegionSplitWidth="1" RegionSplitIcon="false" Hidden="true" ShowHeader="false" ShowBorder="false" EnableDefaultCorner="false"
+                                     EnableIFrame="true">
+                            </f:Panel>
+                        </Items>
+                    </f:Panel>
                 </Items>
             </f:Panel>
         </Items>
     </f:Panel>
 
-    <f:Window ID="windowSourceCode" IconFont="_Code" Title="源代码" Hidden="true" EnableIFrame="true"
-              IsModal="true" Width="1000" Height="600" EnableClose="true" EnableMaximize="true" EnableResize="true">
-    </f:Window>
     <f:Window ID="windowThemeRoller" Title="主题仓库" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/Home/Themes")" ClearIFrameAfterClose="false"
               IsModal="true" Width="850" Height="600" EnableClose="true" EnableMaximize="true" EnableResize="true" WindowPosition="Center">
     </f:Window>
@@ -268,11 +273,12 @@
         var PARAMS = {
             mainPanel: 'mainPanel',
             mainTabStrip: 'mainTabStrip',
+            exampleWorkspace: 'panelExampleWorkspace',
+            exampleDetails: 'panelExampleDetails',
             treeMenu: 'treeMenu',
             sidebarRegion: 'sidebarRegion',
             btnCollapseSidebar: 'btnCollapseSidebar',
             tabHomepage: 'tabHomepage',
-            windowSourceCode: 'windowSourceCode',
             windowThemeRoller: 'windowThemeRoller',
             windowLoadingSelector: 'windowLoadingSelector',
             windowApplyTrial: 'windowApplyTrial',

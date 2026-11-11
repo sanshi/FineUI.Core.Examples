@@ -63,22 +63,11 @@ function onSearchBlur(event) {
     }
 }
 
-// 点击标题栏工具图标 - 查看源代码
+// 点击标题栏工具图标，切换页面描述和源代码的显示状态。
 function onToolSourceCodeClick(event) {
-    var activeTab = F(PARAMS.mainTabStrip).getActiveTab();
-    var iframeWnd;
-    var iframeUrl;
-    if (activeTab.iframe) {
-        iframeWnd = activeTab.getIFrameWindow();
-        iframeUrl = activeTab.getIFrameUrl();
+    if (window.FineUISourceCodeViewer) {
+        window.FineUISourceCodeViewer.toggle();
     }
-
-    var files = [iframeUrl];
-    var sourcefilesNode = $(iframeWnd.document).find('head meta[name=sourcefiles]');
-    if (sourcefilesNode.length) {
-        $.merge(files, sourcefilesNode.attr('content').split(';'));
-    }
-    F(PARAMS.windowSourceCode).show(PARAMS.sourceUrl + '?files=' + encodeURIComponent(files.join(';')));
 }
 
 // 点击标题栏工具图标 - 在新标签页中打开

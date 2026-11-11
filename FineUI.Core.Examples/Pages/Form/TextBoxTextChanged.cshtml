@@ -21,5 +21,30 @@
     <br>
     <f:Label ID="labResult2"></f:Label>
 
+
 }
 
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>对比文本改变和失去焦点这两种事件触发后台处理的时机。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入变化后更新</h3>
+        <ul>
+            <li>
+                在“文本框一（文本改变事件）”中输入“hello”。<br />
+                结果：文本改变后自动回发，后台读取当前文本，下方显示“文本框一：hello”。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-keyboard" aria-hidden="true"></i>离开字段后更新</h3>
+        <ul>
+            <li>
+                在“文本框二（失去焦点事件）”中输入“world”，然后点击页面空白处。<br />
+                结果：失去焦点后回发，后台读取当前文本，下方显示“文本框二：world”。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnTextChanged</code>：文本变化事件，后台读取当前输入并更新对应标签。</li>
+            <li><code>OnBlur</code>：失去焦点时回发处理，不随每次输入立即更新。</li>
+        </ul>
+    </section>
+}

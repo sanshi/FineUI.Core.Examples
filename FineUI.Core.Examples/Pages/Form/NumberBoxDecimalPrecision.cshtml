@@ -26,7 +26,37 @@
             </f:Toolbar>
         </Toolbars>
     </f:SimpleForm>
-    <br />
-    注：为数字输入框设置了TrimEndZero=false，所以不会去掉末尾的零（比如精度为3时，会显示0.360，而不是0.36）。
+
 }
 
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在同一个数字输入框中切换 1、2、3 位小数，同时调整增减步长并保留末尾的零。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>切换精度和步长</h3>
+        <ol>
+            <li>
+                输入“0.36”，点击“修改精度为 3”。<br />
+                结果：回发后由后台将小数位数设为 3、步长设为 0.001，输入框显示 0.360。
+            </li>
+            <li>
+                点击向上的增减图标。<br />
+                结果：数值变为 0.361。
+            </li>
+            <li>
+                点击“修改精度为 1”。<br />
+                结果：回发后由后台改为 1 位小数和 0.1 的步长，当前值显示为 0.4。
+            </li>
+            <li>
+                点击“修改精度为 2”，再点击“提交表单”。<br />
+                结果：回发后由后台改为 2 位小数和 0.01 的步长，输入框显示 0.40；提交后由后台显示当前数字值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DecimalPrecision</code>：控制小数位数，三个按钮分别设置为 1、2、3。</li>
+            <li><code>Increment</code>：随精度分别设置为 0.1、0.01、0.001。</li>
+            <li><code>TrimEndZero</code>：设为 false，0.36 在 3 位精度下显示为 0.360。</li>
+            <li><code>OnClick</code>：按钮回发后由后台修改精度和步长。</li>
+        </ul>
+    </section>
+}

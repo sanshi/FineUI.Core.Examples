@@ -92,9 +92,7 @@
     <br />
     <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" OnClick="btnSubmitAll_Click" _ValidateForms="Form1,Form2"></f:Button>
     <f:Button ID="btnResetAll" Text="重置表单1和表单2" ClickHandler="onResetAllClick"></f:Button>
-    <br>
-    <br>
-    注：下拉列表设置属性 Required="true" 和 AutoSelectFirstItem="false"，这样初始没有选中值，提交表单时不能为空。
+
 
 
 }
@@ -116,4 +114,39 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示分别重置某个表单或同时重置两个表单，恢复初始值并清除验证错误。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>只重置一个表单</h3>
+        <ol>
+            <li>
+                在表单 1 填写文本、选择下拉项并勾选复选框，同时在表单 2 填写一些内容。<br />
+                结果：两组表单各自保留当前输入。
+            </li>
+            <li>
+                点击“重置表单1”。<br />
+                结果：表单 1 恢复初始状态：文本为空、下拉项未选、复选框未选中；表单 2 的输入保持不变。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>清除错误并重置全部</h3>
+        <ol>
+            <li>
+                点击“验证两个表单并提交”。<br />
+                结果：未填写的必填项和格式错误显示在对应字段上。
+            </li>
+            <li>
+                关闭验证提示，点击“重置表单1和表单2”。<br />
+                结果：两个表单都恢复初始值，验证错误清除；重置在浏览器完成，无需回发。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ClickHandler</code>：重置按钮绑定客户端函数，分别调用 Form1.reset()、Form2.reset()。</li>
+            <li><code>AutoSelectFirstItem</code>：下拉列表设为 false，使初始状态可以没有选中项。</li>
+            <li><code>EmptyText</code>：未选择时显示“请选择一项”或“请选择审批人”。</li>
+            <li><code>_ValidateForms</code>：指定 Form1 或 Form2 验证单个表单，指定 Form1,Form2 同时验证两个表单。</li>
+        </ul>
+    </section>
 }

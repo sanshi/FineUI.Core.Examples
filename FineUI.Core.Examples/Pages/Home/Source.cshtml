@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Source";
     var F = Html.F();
+    bool showDescription = HttpContext.Request.Query["description"] == "1";
 }
 
 @section head {
@@ -11,9 +12,6 @@
         iframe {
             padding: 0px;
             margin: 0px;
-        }
-		.f-tab-header .f-panel-title-text {
-            font-family: Consolas, Courier New, monospace;
         }
     </style>
 }
@@ -60,7 +58,20 @@
 
 @section body {
 
-    <f:TabStrip TabPosition="Top" ShowBorder="false" ID="TabStrip1" IsViewPort="true" ShowInkBar="true" InkBarPosition="Bottom"></f:TabStrip>
+    <f:TabStrip TabPosition="Top" ShowBorder="false" ID="TabStrip1" CssClass="centerregion" EnableDefaultCorner="false" IsViewPort="true" ShowInkBar="true" InkBarPosition="Bottom" EnableTabWheelScroll="true">
+        <Tabs>
+            @if (showDescription)
+            {
+                <f:Tab ID="tabDescription" Title="页面描述" AutoScroll="true" BodyPadding="28">
+                    <Content>
+                        <article id="exampleDescriptionContent" class="example-description">
+                        </article>
+                    </Content>
+                </f:Tab>
+            }
+        </Tabs>
+
+    </f:TabStrip>
 
     @{
         string files = HttpContext.Request.Query["files"];

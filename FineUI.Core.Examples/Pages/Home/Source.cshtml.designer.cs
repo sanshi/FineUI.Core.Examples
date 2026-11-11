@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.Home
 	public partial class SourceModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab tabDescription;
 	}
 }

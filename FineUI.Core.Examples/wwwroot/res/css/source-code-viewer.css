@@ -1,0 +1,118 @@
+/* 分隔条默认透明，工作区使用内容背景，避免透出 Pure_Black 首页的深色底板。 */
+.source-code-viewer-workspace {
+    background-color: var(--f-content-background-color);
+}
+
+/* 细线标出两块内容的边界，透明命中区向两侧各扩展 4px，方便鼠标抓住 1px 分隔条。 */
+.source-code-viewer-workspace .f-region-split {
+    z-index: 2100;
+    background-color: var(--f-content-bg-darken-5-d20);
+}
+
+.source-code-viewer-workspace .f-region-split::before {
+    content: "";
+    position: absolute;
+}
+
+.source-code-viewer-workspace .f-region-split-bottom::before {
+    inset: -4px 0;
+}
+
+.source-code-viewer-workspace .f-region-split-right::before {
+    inset: 0 -4px;
+}
+
+.source-code-viewer-launcher {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 900;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--f-default-border-color);
+    border-radius: 50%;
+    color: var(--f-content-text-color);
+    background: var(--f-content-background-color);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--f-content-text-color) 16%, transparent);
+    cursor: pointer;
+}
+
+.source-code-viewer-launcher .f-iconfont {
+    font-size: 20px;
+}
+
+.source-code-viewer-launcher:hover {
+    color: var(--f-hover-text-color);
+    border-color: var(--f-hover-border-color);
+    background: var(--f-hover-background-color);
+}
+
+.source-code-viewer-launcher:focus-visible {
+    outline: 2px solid var(--f-primary-background-color);
+    outline-offset: 3px;
+}
+
+.example-description {
+    color: var(--f-content-text-color);
+    font-size: 14px;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.example-description p {
+    margin: 0 0 18px;
+}
+
+.example-description h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 8px;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.example-description h3 .f-iconfont {
+    flex: none;
+    width: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.example-description ul,
+.example-description ol {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.example-description li + li {
+    margin-top: 10px;
+}
+
+.example-description .example-description-properties li + li {
+    margin-top: 6px;
+}
+
+.example-description code {
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: var(--f-content-text-color);
+    background: var(--f-content-bg-darken-5);
+    font-size: 0.93em;
+}
+
+.example-description code::selection {
+    color: var(--f-primary-text-color);
+    background: var(--f-primary-background-color);
+}
+
+@media (max-width: 700px) {
+    .source-code-viewer-launcher {
+        right: 16px;
+        bottom: 16px;
+    }
+}

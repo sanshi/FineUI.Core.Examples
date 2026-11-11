@@ -64,17 +64,7 @@
     <br />
     <f:Button ID="btnShowHideFormRow2" Text="显示隐藏第二行" CssClass="marginr" ClickHandler="onToggleFormRow2Click"></f:Button>
     <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" ClickHandler="onToggleFormRow3Click"></f:Button>
-    <br>
-    <br>
-    注：
-    <ul>
-        <li>
-            对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility）
-        </li>
-        <li>
-            对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility）
-        </li>
-    </ul>
+
 
 
 }
@@ -100,4 +90,44 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示隐藏单个字段或整行，并对比保留空白位置与释放布局空间这两种隐藏方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>隐藏单个字段</h3>
+        <ul>
+            <li>
+                点击“显示隐藏[标题]”。<br />
+                结果：浏览器直接隐藏“标题”，原来的位置仍为空白，同行的“流水号”不向左补位。
+            </li>
+            <li>
+                点击“显示隐藏[电话]”。<br />
+                结果：浏览器直接隐藏“电话”，释放其占用空间，同一行的“申请人”向左补位。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>隐藏整行</h3>
+        <ul>
+            <li>
+                点击“显示隐藏第二行”。<br />
+                结果：“电话、申请人”整行隐藏并释放高度，后面的行向上补位。
+            </li>
+            <li>
+                点击“显示隐藏第三行（隐藏后显示空白行）”。<br />
+                结果：“编号、电子邮箱”整行隐藏，仍保留一整行空白。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>恢复显示</h3>
+        <ul>
+            <li>
+                再次点击对应的显示隐藏按钮。<br />
+                结果：相应字段或整行恢复显示；各次切换都在浏览器完成，无需回发。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>HideMode</code>：标题和第三行设为 Visibility，隐藏后占位；电话和第二行使用默认 Display，隐藏后释放空间。</li>
+            <li><code>ClickHandler</code>：按钮绑定客户端函数，调用对应控件的 toggleVisible() 切换显示。</li>
+        </ul>
+    </section>
 }

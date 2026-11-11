@@ -38,12 +38,13 @@ namespace FineUI.Core.Examples.Pages
 		protected FineUI.Core.MenuCheckBox MenuLangZHUEY;
 		protected FineUI.Core.MenuButton MenuExamples;
 		protected FineUI.Core.MenuText menuTextCopyright;
+		protected FineUI.Core.Panel panelExampleWorkspace;
 		protected FineUI.Core.TabStrip mainTabStrip;
 		protected FineUI.Core.Tab tabHomepage;
 		protected FineUI.Core.Tool toolSourceCode;
 		protected FineUI.Core.Tool toolRefresh;
 		protected FineUI.Core.Tool toolNewWindow;
-		protected FineUI.Core.Window windowSourceCode;
+		protected FineUI.Core.Panel panelExampleDetails;
 		protected FineUI.Core.Window windowThemeRoller;
 		protected FineUI.Core.Window windowLoadingSelector;
 		protected FineUI.Core.Window windowApplyTrial;

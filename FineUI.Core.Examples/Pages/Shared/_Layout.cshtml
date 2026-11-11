@@ -1,4 +1,4 @@
-﻿@{
+@{
     var F = Html.F();
 
     bool isDarkerBG = (ViewBag.IsDarkerBG != null ? (bool)ViewBag.IsDarkerBG : false);
@@ -18,6 +18,21 @@
     @F.RenderCss()
 
     <link rel="stylesheet" type="text/css" href="~/res/css/common.css?v@(GlobalConfig.ProductVersion)" />
+    <link rel="stylesheet" href="~/res/css/source-code-viewer.css?v@(GlobalConfig.ProductVersion)" />
+
+
+    @if (Context.Request.Path.StartsWithSegments("/Home/Source"))
+    {
+        <meta name="fineui-source-code-viewer" content="source" />
+    }
+    else if (Context.Request.Path.StartsWithSegments("/Home/SourceFile"))
+    {
+        <meta name="fineui-source-code-viewer" content="file" />
+    }
+    else if (!Context.Request.Path.StartsWithSegments("/Home/Download"))
+    {
+        <meta name="fineui-example-source" content="@Url.Content("~/Home/Source")" />
+    }
 
     @RenderSection("head", false)
 </head>
@@ -28,11 +43,17 @@
 
     @RenderSection("body", true)
 
+    <template id="example-description">
+        @RenderSection("exampleDescription", false)
+    </template>
+
     @F.RenderScript()
 
     <script type="text/javascript" src="~/res/js/common.js?v@(GlobalConfig.ProductVersion)"></script>
 
     @RenderSection("script", false)
+
+    <script src="~/res/js/source-code-viewer.js?v@(GlobalConfig.ProductVersion)"></script>
 
 </body>
 </html>

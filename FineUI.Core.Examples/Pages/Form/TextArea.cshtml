@@ -18,5 +18,32 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
+
 }
 
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示多行文本框随内容增减自动调整高度，并将高度限制在 100 到 600 像素之间。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>随内容调整高度</h3>
+        <ol>
+            <li>
+                选中并删除文本框中的全部内容。<br />
+                结果：输入框缩小到最小高度 100 像素。
+            </li>
+            <li>
+                连续输入或粘贴多行文字。<br />
+                结果：输入框逐渐增高，达到 600 像素后不再增高，更多内容可在框内滚动阅读。
+            </li>
+            <li>
+                再次删除部分文字。<br />
+                结果：输入框随内容减少而降低；所有高度调整都在浏览器完成，无需回发。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AutoGrowHeight</code>：设为 true，按内容自动调整高度。</li>
+            <li><code>AutoGrowHeightMin</code>：设为 100，内容很少时也保留此高度。</li>
+            <li><code>AutoGrowHeightMax</code>：设为 600，内容较多时不再继续增高。</li>
+        </ul>
+    </section>
+}
