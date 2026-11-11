@@ -24,8 +24,6 @@
 			</TreeNode>
 			<TreeNode Text="图标字体（FontAwesome）" NavigateUrl="~/config/IconFontsFA">
 			</TreeNode>
-			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/Other/CssStyle">
-			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表单" IconFont="_Edit">
@@ -2604,8 +2602,6 @@
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="释放window.F命名空间" NavigateUrl="~/Other/NoConflict">
-		</TreeNode>
 		<TreeNode Text="旧脚本兼容（禁用脚本 CSP）" Expanded="false">
 			<TreeNode Text="启动脚本：首次显示与回发" NavigateUrl="~/Other/LegacyScripts/StartupScript" />
 			<TreeNode Text="预启动脚本与启动脚本的顺序" NavigateUrl="~/Other/LegacyScripts/PreStartupScript" />
@@ -2636,6 +2632,12 @@
 			<TreeNode Text="选项卡切换" NavigateUrl="~/Other/Compatibility/TabIndexChanged" />
 			<TreeNode Text="同页混合事件" NavigateUrl="~/Other/Compatibility/MixedEvents" />
 			<TreeNode Text="动态表单与旧 OnPost" NavigateUrl="~/Other/Compatibility/DynamicOnPost" />
+		</TreeNode>
+		<TreeNode Text="杂项">
+			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/Other/CssStyle">
+			</TreeNode>
+			<TreeNode Text="释放window.F命名空间" NavigateUrl="~/Other/NoConflict">
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 </Tree>
