@@ -8839,6 +8839,16 @@
     },
     {
       "control": "GridCommand",
+      "property": "IconUrl",
+      "method": "setIconUrl",
+      "owner": "GridCommand",
+      "type": "string get/set",
+      "description": "自定义图片地址，默认 null；非空时优先于 Icon，null 或空串回退到枚举图片。",
+      "effect": "response",
+      "note": "适用于普通表格中模板已声明的行命令，使用唯一且稳定的列 ID 和命令名称。所属表格不能使用单元格编辑、表头过滤、树、模拟树、行分组、大数据或卡片模式，列也不能带编辑器或过滤控件。自定义图片地址非空时优先于 Icon，与两个标签属性的声明顺序无关。传 null 或空串后回退到 Icon；文字优先于图片。更新属于当前响应，下一轮后台从服务器声明重新取得原值。"
+    },
+    {
+      "control": "GridCommand",
       "property": "Text",
       "method": "setText",
       "owner": "GridCommand",
