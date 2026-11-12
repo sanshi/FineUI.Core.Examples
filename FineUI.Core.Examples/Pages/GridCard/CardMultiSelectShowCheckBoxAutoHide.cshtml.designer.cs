@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.GridCard
 	public partial class CardMultiSelectShowCheckBoxAutoHideModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRowsClient;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

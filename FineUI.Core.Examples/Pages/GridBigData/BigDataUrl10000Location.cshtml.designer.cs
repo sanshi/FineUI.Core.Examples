@@ -7,6 +7,7 @@ namespace FineUI.Core.Examples.Pages.GridBigData
 	{
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.NumberBox nbRowNumber;
+		protected FineUI.Core.Button btnGoToRow;
 		protected FineUI.Core.Label labCurrentPosition;
 	}
 }

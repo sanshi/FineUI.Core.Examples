@@ -39,7 +39,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
         }
 
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnSwitchDataUrlServer_Click(object sender, EventArgs e)
         {
             LoadData();
         }

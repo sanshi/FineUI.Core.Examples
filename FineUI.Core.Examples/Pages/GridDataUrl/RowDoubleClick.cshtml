@@ -36,3 +36,16 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>双击通过网址加载的记录，把当前行标识与文字提交到后台事件。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>从当前异步记录读取事件参数</h3>
+    <ul>
+        <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>首行<strong>姓名</strong>。<br />结果：后台提示本次行号、行标识与<strong>姓名</strong>；参数来自当前加载记录，不是把显示序号当作业务主键。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>OnRowDoubleClick / DataKeyNames</code>（<strong>网址数据加载与页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：按当前节点的行对象或提交键值取得主键与<strong>姓名</strong>；本页只显示收到的事件参数。</li>
+    </ul>
+</section>
+}

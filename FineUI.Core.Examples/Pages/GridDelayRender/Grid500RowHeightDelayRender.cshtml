@@ -45,24 +45,7 @@
 	
 	
     <br />
-    注：
-    <ul>
-        <li>
-            启用延迟渲染的表格需满足如下条件：
-            <ul>
-                <li>每行的行高相同（FixedRowHeight=true）。</li>
-                <li>表格高度固定或者位于布局中。</li>
-            </ul>
-        </li>
-        <li>
-            延迟渲染表格有一定局限性。
-            <ul>
-                <li>不支持树表格、行分组。</li>
-                <li>不支持复杂的特性（比如单元格编辑、单元格合并...）。</li>
-                <li>不支持模板列中放置输入字段（比如文本输入框、下拉列表、复选框列表...）。</li>
-            </ul>
-        </li>
-    </ul>
+
 
 }
 
@@ -109,4 +92,37 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>固定行高下延后创建未进入视口的数据行，滚动时继续渲染。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>滚动时补上尚未渲染的行</h3>
+    <ol>
+        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="500行（行高固定，延迟渲染）">500行（行高固定，延迟渲染）</strong>后滚动到靠后记录，再返回顶部。<br />结果：起初使用占位区域表示尚未绘制部分，滚动时逐步补出记录；数据已加载，延迟的是行界面创建，并不是向后台分批查询。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>
+            启用延迟渲染的表格需满足如下条件：
+            <ul>
+                <li>每行的行高相同（FixedRowHeight=true）。</li>
+                <li>表格高度固定或者位于布局中。</li>
+            </ul>
+        </li>
+        <li>
+            延迟渲染表格有一定局限性。
+            <ul>
+                <li>不支持树表格、行分组。</li>
+                <li>不支持复杂的特性（比如单元格编辑、单元格合并...）。</li>
+                <li>不支持模板列中放置输入字段（比如文本输入框、下拉列表、复选框列表...）。</li>
+            </ul>
+        </li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="500行（行高固定，延迟渲染）">500行（行高固定，延迟渲染）</strong>）：初始为 <code>true</code>，固定各行高度，便于计算可视位置。</li>
+        <li><code>EnableDelayRender</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="500行（行高固定，延迟渲染）">500行（行高固定，延迟渲染）</strong>）：初始为 <code>true</code>，未进入视口的行延后创建。</li>
+    </ul>
+</section>
 }

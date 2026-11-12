@@ -6,5 +6,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
 	public partial class ChangeDataUrlDatabasePagingModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnSwitchDataUrl;
+		protected FineUI.Core.Button btnSwitchDataUrlServer;
 	}
 }

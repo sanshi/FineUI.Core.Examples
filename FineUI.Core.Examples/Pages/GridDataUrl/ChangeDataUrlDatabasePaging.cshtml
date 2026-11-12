@@ -24,9 +24,9 @@
     <br>
     <br>
 
-    <f:Button Text="切换网址数据源" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
+    <f:Button ID="btnSwitchDataUrl" Text="切换网址数据源" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
 
-    <f:Button Text="切换网址数据源（服务器端）" CssClass="marginr" OnClick="Button2_Click"></f:Button>
+    <f:Button ID="btnSwitchDataUrlServer" Text="切换网址数据源（服务器端）" CssClass="marginr" OnClick="btnSwitchDataUrlServer_Click"></f:Button>
 
 
 
@@ -56,4 +56,19 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在浏览器或后台切换数据地址，重新加载另一组记录，并回到新数据源第一页。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换地址后核对当前数据</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSwitchDataUrl" title="切换网址数据源">切换网址数据源</strong>。<br />结果：脚本改用另一数据地址重新加载，原记录被替换，总行数和当前页码按新数据源更新。</li>
+        <li>再点击<strong class="example-control-reference" data-example-control="btnSwitchDataUrlServer" title="切换网址数据源（服务器端）">切换网址数据源（服务器端）</strong>。<br />结果：按钮先回发，由后台设置新 DataUrl；浏览器随后请求该地址取得数据。页索引回到 0，不把旧源末页页码带入新源。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataUrl</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：地址变化后请求新来源，避免只改字段而仍显示旧数据。</li>
+        <li><code>loadDataUrl</code>（<strong>网址数据加载与页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：客户端入口同时更换地址并加载记录；后台入口设置 DataUrl 后由浏览器执行请求。</li>
+    </ul>
+</section>
 }

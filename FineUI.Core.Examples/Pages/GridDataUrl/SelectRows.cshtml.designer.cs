@@ -6,5 +6,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
 	public partial class SelectRowsModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRows;
+		protected FineUI.Core.Button btnSelectNamedRows;
 	}
 }

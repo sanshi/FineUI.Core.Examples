@@ -71,3 +71,18 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>从网址加载完整记录，同时显示当前页费用合计。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>翻页时核对统计范围</h3>
+    <ol>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>费用合计，再点击下一页。<br />结果：浏览器对已经取得的完整数据分页。合计只针对当前页，随换页重新计算。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，加载完整数据，换页由浏览器完成。</li>
+        <li><code>dataload / setSummaryData</code>（<strong>合计数据与费用列</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：数据加载或内存换页后，脚本从当前页起止索引逐行求和，再更新合计；不会把完整数组全部累加。</li>
+    </ul>
+</section>
+}

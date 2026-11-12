@@ -126,3 +126,19 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在卡片模式下选择排序字段与方向，切换到表格后保留同一排序结果。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过排序菜单重排卡片</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSort" title="排序（排序图标）">排序（排序图标）</strong>，把字段选为<strong>姓名</strong>，再切换升序或降序。<br />结果：字段和方向交给后台重新排序并绑定，卡片顺序及排序说明同步更新。</li>
+        <li>点击显示模式切换图标。<br />结果：同一份已排序记录改用表格或卡片显示，不因改显示模式丢弃排序规则。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Gender</code>，保存当前排序字段。</li>
+        <li><code>SortDirection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>ASC</code>，保存升降序，菜单切换后使用新的方向。</li>
+    </ul>
+</section>
+}

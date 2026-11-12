@@ -19,7 +19,7 @@ namespace FineUI.Core.Examples.Pages.GridDataUrl
 
 
         
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnSelectNamedRows_Click(object sender, EventArgs e)
         {
             Grid1.SelectedRowIDArray = new string[] { "102", "106", "108" };
         }

@@ -77,3 +77,17 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>异步数据到达后，只为符合性别条件的单元格设置样式。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>根据当前加载字段设置外观</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>男性与女性的<strong>性别</strong>单元格。<br />结果：男性的<strong>性别</strong>格使用 color1 样式，同一行其他列及女性<strong>性别</strong>格不套用该样式；数据值不改变。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction / params.cellCls</code>（<strong>性别列渲染函数</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在客户端取得本次实际行值后应用样式，异步请求结果不必先走服务器逐行绑定。</li>
+    </ul>
+</section>
+}

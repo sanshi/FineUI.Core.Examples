@@ -26,7 +26,7 @@
     </f:Grid>
     <br />
 
-    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button ID="btnShowSelectedRowsClient" Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
 
     <f:Button Text="选中第 2, 6, 8 行（客户端）" CssClass="marginr" ClickHandler="onSelectRowsClick"></f:Button>
     <br>
@@ -63,4 +63,20 @@
     </script>
 
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>按需显示卡片复选入口，保留当前已选卡片的可辨识状态。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按本页规则选择卡片</h3>
+    <ol>
+        <li>依次点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>前两张卡片的选择框。<br />结果：两张卡片同时保留选择；再操作一张卡片可取消对应项，不改变卡片资料。</li>
+        <li>把鼠标移入与移出未选卡片。<br />结果：未选项选择入口按需出现，已选项保持可识别，选择集合不随鼠标离开而清空。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRowsClient" title="选中了哪些行（客户端）">选中了哪些行（客户端）</strong>。<br />结果：提示当前选中卡片对应的记录，不把卡片位置当作业务主键。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>CheckBoxSelectAutoHide</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，让复选入口按当前交互状态自动显示或隐藏。</li>
+    </ul>
+</section>
 }

@@ -36,3 +36,17 @@
     <script src="~/res/js/gridcard.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在卡片有数据与无数据之间重新绑定，核对卡片创建与空数据提示。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空后重新显示卡片</h3>
+    <ol>
+        <li>连续点击<strong class="example-control-reference" data-example-control="Button1" title="重新绑定表格">重新绑定表格</strong>。<br />结果：本页在空数据与示例记录之间切换；空数据时不残留旧卡片，重新绑定记录后按卡片渲染函数重新生成内容。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataSource / DataBind / EmptyText</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：重新绑定替换当前记录，空数据使用本页配置的提示内容，不把旧卡片当作新结果。</li>
+    </ul>
+</section>
+}

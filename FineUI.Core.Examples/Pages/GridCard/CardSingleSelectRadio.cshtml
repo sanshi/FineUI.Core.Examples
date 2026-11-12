@@ -26,7 +26,7 @@
     </f:Grid>
     <br />
 
-    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button ID="btnShowSelectedRowsClient" Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
 
     <f:Button Text="选中第 6 行（客户端）" CssClass="marginr" ClickHandler="onSelectRowsClick"></f:Button>
     <br>
@@ -63,4 +63,19 @@
     </script>
 
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用单选框外观选择一张卡片，选择另一张时取消原选择。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>核对单选约束</h3>
+    <ol>
+        <li>依次点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>前两张卡片的选择框。<br />结果：第二张被选中时第一张自动取消，当前至多选中一条。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRowsClient" title="选中了哪些行（客户端）">选中了哪些行（客户端）</strong>。<br />结果：提示当前选中卡片对应的记录，不把卡片位置当作业务主键。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>CheckBoxSelectDisplayType</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Radio</code>，采用 Radio 外观，配合单选配置使用。</li>
+    </ul>
+</section>
 }

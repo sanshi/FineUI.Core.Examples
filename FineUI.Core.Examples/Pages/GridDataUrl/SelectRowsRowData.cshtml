@@ -24,15 +24,15 @@
     <br>
     <br>
 
-    <f:Button Text="选中了哪些行" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
+    <f:Button ID="btnShowSelectedRows" Text="选中了哪些行" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
 
-    <f:Button Text="选中[陈飞]，[彭博]，[唐超]所在的行" OnClick="Button2_Click"></f:Button>
+    <f:Button ID="btnSelectNamedRows" Text="选中[陈飞]，[彭博]，[唐超]所在的行" OnClick="btnSelectNamedRows_Click"></f:Button>
     <br>
     <br>
 
     <br />
     <br />
-    注：表格默认选中了[康颖颖]，[徐鹏]所在的行。
+
 
 }
 
@@ -64,4 +64,20 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在异步加载的表格中取得选中记录的完整行值，直接显示姓名、性别与专业。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>读取实际加载行中的字段</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSelectNamedRows" title="选中[陈飞]，[彭博]，[唐超]所在的行">选中[陈飞]，[彭博]，[唐超]所在的行</strong>。<br />结果：选择切换到陈飞、彭博、唐超对应的行，按主键 102、106、108 定位，不把它们解释为当前行序号。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRows" title="选中了哪些行">选中了哪些行</strong>。<br />结果：浏览器通过 getSelectedRows(true) 取得行对象，在提示中列出各行<strong>姓名</strong>、<strong>性别</strong>和专业；异步数据不需要先在后台绑定成静态 Rows。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：表格默认选中了[康颖颖]，[徐鹏]所在的行。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>getSelectedRows(true)</code>（<strong>网址数据加载与页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：返回包含 id、text 与 values 的实际已加载行对象。</li>
+    </ul>
+</section>
 }

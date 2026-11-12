@@ -39,3 +39,19 @@
     <script src="~/res/js/gridcard.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把学生头像、状态与成绩组织为个人卡片，用额外行属性提供展示资料。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看头像与成绩卡片</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>第一张卡片，再调整示例可用宽度。<br />结果：头像、姓名、<strong>状态</strong>徽章与成绩对应同一条记录；查看详情只是携带用户编号的示例链接，项目未提供实际详情页面。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Card</code>，使用 Card 渲染记录，分页与选择仍基于同一组行数据。</li>
+        <li><code>CardRendererFunction</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：根据当前行生成卡片内容，可调用列渲染结果取得格式化文字。</li>
+        <li><code>DataAttributeFields</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Name,Gender,Avatar,EntranceYear,Status</code>，把头像、姓名和<strong>状态</strong>等字段作为行附加属性提供给卡片模板。</li>
+    </ul>
+</section>
+}
