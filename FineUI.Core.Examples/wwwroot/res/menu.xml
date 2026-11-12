@@ -805,7 +805,7 @@
 			</TreeNode>
 			<TreeNode Text="序号列（自定义宽度）" NavigateUrl="~/Grid/RowNumberWidth">
 			</TreeNode>
-			<TreeNode Text="序号列（靠左显示）" NavigateUrl="~/Grid/RowNumberAlign">
+			<TreeNode Text="序号列（靠右显示）" NavigateUrl="~/Grid/RowNumberAlign">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="行命令">
@@ -876,7 +876,7 @@
 			<TreeNode Text="编辑器类型">
 				<TreeNode Text="数字编辑框（初始为空）" NavigateUrl="~/GridEditor/NumberBoxEmpty">
 				</TreeNode>
-				<TreeNode Text="数字编辑框（初始为空，允许小数，新增删除）" NavigateUrl="~/GridEditor/Decimal">
+				<TreeNode Text="数字编辑框（允许小数和空值）" NavigateUrl="~/GridEditor/Decimal">
 				</TreeNode>
 				<TreeNode Text="多行文本框" NavigateUrl="~/GridEditor/TextArea">
 				</TreeNode>
@@ -942,7 +942,7 @@
 				</TreeNode>
 				<TreeNode Text="单元格编辑（Enter纵向导航，自动滚动）" NavigateUrl="~/GridEditor/VerticalEnterScrollbar">
 				</TreeNode>
-				<TreeNode Text="单元格编辑（Enter纵向导航，最后自动点击保存按钮）" NavigateUrl="~/GridEditor/VerticalEnterToSave">
+				<TreeNode Text="单元格编辑（Enter横向导航，最后自动点击保存按钮）" NavigateUrl="~/GridEditor/VerticalEnterToSave">
 				</TreeNode>
 				<TreeNode Text="单元格编辑（Tab键只是可编辑单元格之间导航）" NavigateUrl="~/GridEditor/TabEditableCell">
 				</TreeNode>
@@ -1290,7 +1290,7 @@
 			</TreeNode>
 			<TreeNode Text="树表格（禁用双击展开树节点）" NavigateUrl="~/GridTree/ExpandOnDblClick">
 			</TreeNode>
-			<TreeNode Text="树表格（树序号，3000个节点）" NavigateUrl="~/GridTree/GridTreeLargeData">
+			<TreeNode Text="树表格（树序号，3500个节点）" NavigateUrl="~/GridTree/GridTreeLargeData">
 			</TreeNode>
 			<TreeNode Text="展开行">
 				<TreeNode Text="树表格（展开指定行）" NavigateUrl="~/GridTree/ExpandRows">
@@ -1345,7 +1345,7 @@
 			<TreeNode Text="列锁定">
 				<TreeNode Text="树表格（列锁定）" NavigateUrl="~/GridTree/LockColumn">
 				</TreeNode>
-				<TreeNode Text="树表格（列锁定，3000个节点）" NavigateUrl="~/GridTree/LockColumnLargeData">
+				<TreeNode Text="树表格（列锁定，3500个节点）" NavigateUrl="~/GridTree/LockColumnLargeData">
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>

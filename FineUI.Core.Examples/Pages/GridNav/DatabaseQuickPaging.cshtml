@@ -26,6 +26,25 @@
     <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
     <br />
     <br />
+
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在当前页边界继续导航时自动翻页，使用后台按页数据。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从当前页末行继续向下</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>第一页最后一行，按向下箭头。<br />结果：表格切到第二页并选中该页第一行；翻页回发后后台只提供目标页记录。</li>
+        <li>在第二页第一行按向上箭头。<br />结果：返回上一页并把选择移到上一页末行；鼠标滚轮同样可用于行导航。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul>
         <li>
             本示例启用了QuickPaging，可以通过上下按键和鼠标滚轮（需设置MouseWheelSelection="true"）快速切换分页，分页后自动选中第一项或者最后一项。
@@ -36,12 +55,11 @@
             </ul>
         </li>
     </ul>
-
-}
-
-
-@section script {
-
-    <script src="~/res/js/grid.js"></script>
-
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>QuickPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，在行导航越过当前页边界时切换分页。</li>
+        <li><code>MouseWheelSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，让滚轮参与选择行的移动。</li>
+        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，本页按页提供数据，总记录数另行设置。</li>
+    </ul>
+</section>
 }

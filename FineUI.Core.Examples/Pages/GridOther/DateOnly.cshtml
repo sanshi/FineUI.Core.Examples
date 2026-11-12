@@ -34,3 +34,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>分别绑定只有日期与只有时间的数据，在各自列中保留对应精度。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较日期列与时间列</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>仅日期</strong>与<strong>仅时间</strong>两列。<br />结果：日期显示为 yyyy-MM-dd，时间显示为 HH:mm:ss；日期列不附加时间，时间列不补出日期。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataField / FieldType</code>（<strong>日期与时间列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：各列读取本端日期或时间字段；日期与时间分别绑定，不把它们合成一个完整时间戳。</li>
+        <li><code>RendererArgument</code>（<strong>日期与时间列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：日期格式为 <code>yyyy-MM-dd</code>，时间格式为 <code>HH:mm:ss</code>。</li>
+    </ul>
+</section>
+}

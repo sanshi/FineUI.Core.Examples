@@ -27,7 +27,7 @@
     <f:Button ID="Button2" Text="还原[入学年份]" OnClick="Button2_Click"></f:Button>
     <br>
     <br>
-    注：后台通过注册 JavaScript 代码来改变列的宽度和标题文本。
+
 
 }
 
@@ -50,4 +50,20 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过页面脚本修改入学年份列的标题和宽度，再恢复原配置。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改并还原列标题与宽度</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="修改[入学年份]的标题文本和宽度">修改[入学年份]的标题文本和宽度</strong>。<br />结果：本页脚本把<strong><strong>入学年份</strong></strong>改为<strong><strong>入学年份</strong></strong>（已修改），宽度改为 200；按钮回发后，后台通知浏览器执行列修改函数。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="还原[入学年份]">还原[入学年份]</strong>。<br />结果：标题恢复<strong>入学年份</strong>，宽度恢复 120，数据仍保留。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：后台通过注册 JavaScript 代码来改变列的宽度和标题文本。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>setText / setWidth</code>（<strong>入学年份列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：页面脚本取得对应列，分别设置标题与宽度；这是客户端方法更新专题。</li>
+    </ul>
+</section>
 }

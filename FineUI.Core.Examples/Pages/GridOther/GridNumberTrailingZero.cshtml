@@ -35,3 +35,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在数字格式化后省略小数末尾的零，同时保留有意义的小数位。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较整数与小数的格式化结果</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格（尾零省略）">表格（尾零省略）</strong>中工资、绩点等数值列。<br />结果：整数绩点显示为 2 而不是 2.00；带非零小数的值仍保留有效小数，工资的千分位分隔继续存在。省略尾零只改变显示，不改源数值。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Renderer / RendererArgument</code>（<strong>数值列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（尾零省略）">表格（尾零省略）</strong>）：按列选择 Number 渲染及格式字符串，例如 <code>N2</code> 表示带分组分隔的两位小数。</li>
+        <li><code>TrimZero</code>（<strong>启用尾零省略的数值列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（尾零省略）">表格（尾零省略）</strong>）：初始为 <code>true</code>，删除格式化结果末尾不影响数值意义的零及多余小数点。</li>
+    </ul>
+</section>
+}

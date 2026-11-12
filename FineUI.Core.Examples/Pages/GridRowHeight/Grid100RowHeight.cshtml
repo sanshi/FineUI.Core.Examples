@@ -97,3 +97,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用固定行高显示记录，长文字在统一高度内换行。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对行高一致性</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高相同）">100行（行高相同）</strong>比较不同描述长度的记录，再向下滚动。<br />结果：各行使用同一套固定高度，滚动后后续记录也保持等高；长文字不会无限撑大单独一行，超出范围的内容受可用高度限制。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高相同）">100行（行高相同）</strong>）：初始为 <code>true</code>，初始为 <code>true</code>，按统一行高显示记录。</li>
+        <li><code>RowHeightLines</code>（<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高相同）">100行（行高相同）</strong>）：初始为 <code>3</code>，初始为 <code>3</code>，为行内容预留三行文字对应的高度，再结合当前行密度计算。</li>
+        <li><code>CSS</code>（<strong>单元格文字</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高相同）">100行（行高相同）</strong>）：单元格长文字允许按列宽换行；换行样式与固定行高分别配置。</li>
+    </ul>
+</section>
+}

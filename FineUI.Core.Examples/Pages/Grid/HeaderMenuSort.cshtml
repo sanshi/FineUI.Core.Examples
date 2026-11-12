@@ -30,3 +30,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>保留表头菜单，但移除其中的升序与降序操作。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看精简后的表头菜单</h3>
+    <ul>
+        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>任一可用列标题的下拉菜单。<br />结果：列显示等菜单项仍可使用，菜单中没有升序或降序项；本页只限制菜单里的排序入口。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableHeaderMenu</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，保留表头菜单。</li>
+        <li><code>EnableHeaderMenuSort</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始为 <code>false</code>，不生成菜单排序项。</li>
+    </ul>
+</section>
+}

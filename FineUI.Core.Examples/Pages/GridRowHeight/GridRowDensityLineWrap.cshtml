@@ -67,3 +67,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过行密度菜单调整行内间距，同时保留长文字换行。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换行密度</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>标题栏的齿轮，选择超大间距，再改回普通。<br />结果：浏览器直接更新行密度，行内上下间距和最终行高相应变化；数据不变，也不为间距调整重新查询。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>setRowDensity</code>（<strong>行密度菜单与表格脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：菜单把 <code>small</code>、<code>normal</code>、<code>large</code>、<code>xlarge</code> 传给表格，初始选择普通。</li>
+        <li><code>FixedRowHeight</code>（<strong>表格行高配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：本页不启用固定行高，由实际内容与间距决定每行高度。</li>
+        <li><code>CSS</code>（<strong>单元格文字</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：单元格长文字允许按列宽换行；换行样式与固定行高分别配置。</li>
+    </ul>
+</section>
+}

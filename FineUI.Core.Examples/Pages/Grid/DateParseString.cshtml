@@ -33,3 +33,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把指定格式的日期字符串解析成日期，再按另一种格式显示。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照日期的输入与显示格式</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中的入学日期。<br />结果：源数据使用月/日/年字符串，首行最终显示为 2000-09-01；解析格式与显示格式分别设置，不把原字符串直接当成已格式化日期。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DateParseString</code>（<strong>日期列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>MM/dd/yyyy</code>，说明源字符串的月份、日期与年份顺序。</li>
+        <li><code>RendererArgument</code>（<strong>日期列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>yyyy-MM-dd</code>，决定解析成功后的显示形式。</li>
+    </ul>
+</section>
+}

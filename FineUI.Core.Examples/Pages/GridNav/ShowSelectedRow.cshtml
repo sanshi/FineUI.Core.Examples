@@ -23,14 +23,7 @@
     </f:Grid>
     <br>
     <br>
-    注：
-    <ul>
-        <li>方向键改变选中的单元格</li>
-        <li>Tab键转到当前行的下一个单元格（如果当前位于某一行的最后一个单元格，则会跳转到下一行的第一个单元格）</li>
-        <li>Shift+Tab键回退到当前行的上一个单元格（如果当前位于某一行的第一个单元格，则会跳转到上一行的最后一个单元格）</li>
-        <li>ShowSelectedRow=false：禁用表格行的选中样式</li>
-        <li>EnableRowHoverState=false：禁用表格行的鼠标焦点样式</li>
-    </ul>
+
 
 }
 
@@ -39,4 +32,27 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>只显示当前单元格的选择框，关闭整行选中与悬停强调。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>点击不同单元格核对选择框</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>第一行<strong>姓名</strong>单元格，再点击另一行的<strong>入学年份</strong>单元格。<br />结果：选择框跟随被点击的单元格，整行不出现普通选择底色，鼠标移过行也没有悬停强调。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>方向键改变选中的单元格</li>
+        <li>Tab键转到当前行的下一个单元格（如果当前位于某一行的最后一个单元格，则会跳转到下一行的第一个单元格）</li>
+        <li>Shift+Tab键回退到当前行的上一个单元格（如果当前位于某一行的第一个单元格，则会跳转到上一行的最后一个单元格）</li>
+        <li>ShowSelectedRow=false：禁用表格行的选中样式</li>
+        <li>EnableRowHoverState=false：禁用表格行的鼠标焦点样式</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ShowSelectedCell</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，开启当前单元格的可见选择边框。</li>
+        <li><code>ShowSelectedRow</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始为 <code>false</code>，不显示普通整行选中高亮。</li>
+        <li><code>EnableRowHoverState</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始为 <code>false</code>，不显示整行悬停强调。</li>
+    </ul>
+</section>
 }

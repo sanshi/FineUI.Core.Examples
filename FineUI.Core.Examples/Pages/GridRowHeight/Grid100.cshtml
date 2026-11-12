@@ -97,3 +97,18 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让每行随长文字内容自动增高，短记录与长记录可以采用不同高度。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较长短内容的行高</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高不同）">100行（行高不同）</strong>比较不同描述长度的记录，再向下滚动。<br />结果：长文字行比短文字行更高，行高按内容计算；文字按列宽完整折行。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>FixedRowHeight</code>（<strong>表格行高配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高不同）">100行（行高不同）</strong>）：本页不启用固定行高，由实际内容与间距决定每行高度。</li>
+        <li><code>CSS</code>（<strong>单元格文字</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="100行（行高不同）">100行（行高不同）</strong>）：单元格长文字允许按列宽换行；换行样式与固定行高分别配置。</li>
+    </ul>
+</section>
+}
