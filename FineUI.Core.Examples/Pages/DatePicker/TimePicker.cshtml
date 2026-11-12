@@ -19,9 +19,6 @@
         </Items>
     </f:SimpleForm>
     <br />
-    <f:Button ID="btnToggleClickAction" Text="切换输入区点击弹出" OnClick="btnToggleClickAction_Click"></f:Button>
-    <f:Label ID="labClickAction" Text="输入区点击弹出：开启" ShowLabel="false"></f:Label>
-    <br />
     <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
     </f:Label>
 
@@ -62,19 +59,8 @@
                 结果：浏览器验证通过后回发，后台读取本页日期或时间值，更新结果标签。
             </li>
         </ol>
-        <h3><i class="f-icon f-iconfont f-iconfont-keyboard" aria-hidden="true"></i>切换输入区点击弹出</h3>
-        <ol>
-            <li>
-                点击“切换输入区点击弹出”，再点击日期或时间的输入区。<br />
-                结果：输入区点击弹出的开关被反转；关闭时输入区不弹出，右侧下拉图标仍可打开。
-            </li>
-            <li>
-                再次点击切换按钮，然后点击输入区。<br />
-                结果：重新开启后输入区可直接弹出选择面板；EnableEdit=false 仍禁止手工键入。
-            </li>
-        </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>注：可在后台切换是否点击输入区打开面板；关闭后仍可点击右侧按钮，当前选中值保持不变。<br> 注：本示例通过EnableEdit属性控制日期和时间选择器不可编辑。</p>
+        <p>本示例通过 EnableEdit=false 控制日期和时间选择器不可手工编辑，使用下拉面板完成选择。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
             <li><code>Text</code>：时间字段以 HH:mm 字符串保存当前选择，例如09:30；旁边的日期字段独立保存日期。</li>

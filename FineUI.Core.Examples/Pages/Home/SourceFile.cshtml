@@ -6,6 +6,7 @@
 }
 
 @section head {
+    <script src="~/res/js/source-code-filter.js"></script>
 
     @*<link href="~/res/google-code-prettify/prettify.css" rel="stylesheet" />*@
     @{
@@ -167,7 +168,8 @@ private string GetOutputHTML(string file)
 
     // 读取文件内容
     string content = System.IO.File.ReadAllText(filePath, System.Text.Encoding.UTF8);
-    return "<pre class=\"prettyprint linenums\">" + System.Net.WebUtility.HtmlEncode(content) + "</pre>"; // linenums
+    string markupAttribute = fileType == "cshtml" ? " data-example-page-source" : String.Empty;
+    return "<pre class=\"prettyprint linenums\"" + markupAttribute + ">" + System.Net.WebUtility.HtmlEncode(content) + "</pre>"; // linenums
 }
 }
 
@@ -191,6 +193,7 @@ private string GetOutputHTML(string file)
 
         F.ready(function () {
 
+            FineUISourceCodeFilter.filterDocument();
             prettyPrint();
 
 

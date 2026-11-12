@@ -9,8 +9,6 @@ namespace FineUI.Core.Examples.Pages.DatePicker
 		protected FineUI.Core.DatePicker DatePicker1;
 		protected FineUI.Core.TimePicker TimePicker1;
 		protected FineUI.Core.Button btnSubmit;
-		protected FineUI.Core.Button btnToggleClickAction;
-		protected FineUI.Core.Label labClickAction;
 		protected FineUI.Core.Label labResult;
 	}
 }
