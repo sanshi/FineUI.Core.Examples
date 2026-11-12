@@ -24,7 +24,7 @@
     <br>
     <br>
 
-    <f:Button Text="选择需要导出的列" ClickHandler="onOpenWindow1Click">
+    <f:Button ID="btnOpenWindow1" Text="选择需要导出的列" ClickHandler="onOpenWindow1Click">
     </f:Button>
 
     <f:Window ID="Window1" Title="选择需要导出的列" Hidden="true" EnableIFrame="true" IFrameUrl="~/Grid/ExcelSelectColumnsIFrame"
@@ -58,4 +58,20 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>导出前在选择窗体中勾选需要的列，文件只包含本次选择的字段。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>选择导出字段</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow1" title="选择需要导出的列">选择需要导出的列</strong>，在窗体中取消<strong>姓名</strong>列的勾选。<br />结果：列选择保留在窗体内，主表的<strong>姓名</strong>列仍显示；这里选择的是导出字段。</li>
+        <li>点击选择窗体中的导出入口。<br />结果：子页面把选中的列交给父页面导出处理，后台按该清单生成 myexcel.xls；文件中不再包含取消的<strong>姓名</strong>列。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>exportToExcel / columns</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：选择窗体把列标识数组交给父页面，后台按允许导出的实际列生成内容。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="第 1 个窗口（选择需要导出的列）">第 1 个窗口（选择需要导出的列）</strong>）：初始为 <code>true</code>，使用独立子页显示可导出的列与勾选入口。</li>
+    </ul>
+</section>
 }

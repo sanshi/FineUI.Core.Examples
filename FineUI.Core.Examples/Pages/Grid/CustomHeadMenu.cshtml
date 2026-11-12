@@ -116,3 +116,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用表头旁自定义图标打开业务过滤菜单，以入学年份与在校状态筛选数据。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按业务选项过滤记录</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>是否在校表头旁的过滤图标，选择在校或离校。<br />结果：后台按所选状态筛选记录，对应表头文字加粗；选择全部可取消这一列的限制。</li>
+        <li>打开入学年份旁的过滤菜单，选择入学年份大于2002。<br />结果：年份条件与当前在校条件一起应用；选择该菜单的全部只取消年份限制，不清掉另一列条件。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableHeaderMenu</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，隐藏标准表头菜单，由自定义过滤图标打开本页业务菜单。</li>
+        <li><code>custom-filter / custom-filtered</code>（<strong>自定义表头与页面 CSS</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：前者标识过滤入口，后者在有条件时加粗列标题；筛选仍由菜单对应处理函数完成。</li>
+    </ul>
+</section>
+}

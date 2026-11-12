@@ -24,8 +24,8 @@
     <br>
     <br>
 
-    <f:Button MarginRight="5" Text="导出为Excel文件（GET请求）" ClickHandler="onButton1Click"></f:Button>
-    <f:Button MarginRight="5" Text="导出为Excel文件（POST请求）" ClickHandler="onButton2Click"></f:Button>
+    <f:Button ID="btnExportExcelGet" MarginRight="5" Text="导出为Excel文件（GET请求）" ClickHandler="onButton1Click"></f:Button>
+    <f:Button ID="btnExportExcelPost" MarginRight="5" Text="导出为Excel文件（POST请求）" ClickHandler="onButton2Click"></f:Button>
 
 
     <!-- 隐藏表单，用于自定义POST请求 -->
@@ -76,4 +76,20 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把行内尚未保存的成绩输入带入导出，对照 GET 与自定义 POST 两种请求。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>让导出包含当前输入</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>首行<strong>语文成绩</strong>输入框填写<code>9999</code>，点击<strong class="example-control-reference" data-example-control="btnExportExcelGet" title="导出为Excel文件（GET请求）">导出为Excel文件（GET请求）</strong>。<br />结果：脚本按行标识收集当前输入，GET 请求把 JSON 放入查询参数；下载文件中首行<strong>语文成绩</strong>为 9999。</li>
+        <li>再修改输入，并点击<strong class="example-control-reference" data-example-control="btnExportExcelPost" title="导出为Excel文件（POST请求）">导出为Excel文件（POST请求）</strong>。<br />结果：相同输入集合改由隐藏表单 POST 提交，导出反映最新值；无需先把输入保存到数据源。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>getUserInputs</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：读取实际输入框的当前值，以行标识区分记录，不只使用首次绑定的成绩。</li>
+        <li><code>GET / POST</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：GET 查询参数有长度限制，不适合大量输入；POST 把 JSON 放入表单字段后提交，二者都让浏览器接收附件。</li>
+    </ul>
+</section>
 }

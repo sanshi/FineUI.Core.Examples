@@ -78,3 +78,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在表格各行直接显示性别单选项，提交时按行读取当前选择。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改行内选择并读取</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>首行把<strong>性别</strong>改为男。<br />结果：这一行显示新<strong>性别</strong>，同行选项保持单选，其他行的选择保留。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="获取用户输入的分组值">获取用户输入的分组值</strong>。<br />结果：客户端按行标识、<strong>姓名</strong>及当前输入收集数据并提交，后台显示各行读取结果；没有保存数据源的处理。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：按每行数据生成常驻输入或选择元素，页面脚本从实际行元素读取用户输入。</li>
+        <li><code>F.customEvent</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：将各行输入交给后台读取；输入不会因为仅修改 DOM 就自动写回源数据。</li>
+    </ul>
+</section>
+}

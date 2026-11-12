@@ -25,5 +25,23 @@
     <br><br>
     <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
 
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>动态开启与关闭数据库分页，并核对页大小及分页入口。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：启用分页，回到第一页，每页 5 行，提供 3、5、10 的页大小选项；后台重新读取本页记录并提供总数。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <p>示例用数据工具模拟数据库查询。开启分页后只读取当前页，并设置总记录数；关闭分页时重新读取全部数据，不能把已加载的一页当成完整数据。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowPaging / PageSize / PageIndex</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改分页（数据库数据）">动态修改分页（数据库数据）</strong>）：分页启用后使用指定页大小与从 0 开始的页索引；关闭分页则恢复不分页显示。</li>
+        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="动态修改分页（数据库数据）">动态修改分页（数据库数据）</strong>）：初始为 <code>true</code>，启用后按当前页码与页大小从后台读取记录。</li>
+    </ul>
+</section>
 }

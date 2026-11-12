@@ -27,5 +27,21 @@
     <br><br>
     <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
 
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用代码动态创建表格列，再把数据按字段绑定到这些列。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>核对动态生成的列</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="增删列与多表头">增删列与多表头</strong>的<strong>姓名</strong>、性别与<strong>入学年份</strong>等列。<br />结果：列来自后台创建代码，而不是模板中逐列声明；显示值仍按每列的数据字段读取。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <p>用列集合直接替换为多表头，也可清空后恢复。这里使用已有字段，不重新查询数据；增加新的业务字段时应重新绑定。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Columns / DataSource</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="增删列与多表头">增删列与多表头</strong>）：先创建或替换列集合，再绑定与该结构相符的数据；列标识与数据字段分别承担定位和取值职责。</li>
+    </ul>
+</section>
 }

@@ -108,3 +108,20 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>组合文本、数字、日期、布尔和多选过滤字段，同时筛选不同列。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>让不同列条件共同生效</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>入学年份</strong>列表头过滤菜单输入<code>2008</code>，保留本页的大于操作符并点击过滤面板的确定。<br />结果：过滤条件回发，后台按本页匹配规则筛选示例数据并重新绑定，下方同步显示过滤参数。年份条件按数值比较。</li>
+        <li>再在<strong>所学专业</strong>过滤中选择化学系或物理系并应用。<br />结果：结果同时满足当前年份条件与专业选择；多选专业内部匹配其中一项即可，其他已设置列仍参与过滤。</li>
+        <li>清除其中一列的条件。<br />结果：只取消这一列的限制，其他列条件继续生效；清空全部条件后恢复完整示例数据。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，统一启用表格过滤处理，各列配置自己的过滤字段。</li>
+        <li><code>Filter / Field / Operator</code>（<strong>各列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：文本、数字、日期、布尔及选项列分别使用对应输入和比较方式，后台或本页脚本按字段类型解释条件。</li>
+    </ul>
+</section>
+}

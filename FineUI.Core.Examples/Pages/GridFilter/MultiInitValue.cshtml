@@ -38,7 +38,7 @@
     </f:Button>
     <br />
     <br />
-    注：页面初始化时执行了服务器端过滤，因此需要为相关列定义 ColumnID 属性。
+
     <br />
     <br />
 
@@ -51,4 +51,20 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>初次加载即应用表头过滤条件，并允许由后台按钮替换整组条件。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>核对初始过滤与后续替换</h3>
+    <ol>
+        <li>刚打开页面时查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>及对应过滤入口。<br />结果：<strong>姓名</strong>已带有包含张或国的两个条件，记录已经按这些条件筛选；再次打开过滤区域可看到相同的当前条件。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnUpdateFilteredData" title="后台更新过滤数据">后台更新过滤数据</strong>。<br />结果：后台先清除旧过滤，再设置新条件并重新绑定；<strong>姓名</strong>条件改为包含婷婷或国。过滤入口、记录和下方参数同步更新。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：页面初始化时执行了服务器端过滤，因此需要为相关列定义 ColumnID 属性。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ColumnFilteredData / FilteredData</code>（<strong>列过滤状态与表格过滤集合</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始条件在首次绑定前设置；替换时清除旧集合，避免新旧条件意外叠加。</li>
+    </ul>
+</section>
 }

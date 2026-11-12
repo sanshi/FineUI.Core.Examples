@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 	public partial class ExcelSelectColumnsModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnOpenWindow1;
 		protected FineUI.Core.Window Window1;
 	}
 }

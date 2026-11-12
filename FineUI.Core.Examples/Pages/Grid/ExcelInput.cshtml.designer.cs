@@ -6,5 +6,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 	public partial class ExcelInputModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnExportExcelGet;
+		protected FineUI.Core.Button btnExportExcelPost;
 	}
 }

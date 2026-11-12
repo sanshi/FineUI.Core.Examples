@@ -21,14 +21,7 @@
     </f:Grid>
     <br>
     <br>
-    注：
-    <ul>
-        <li><strong>本示例自定义UP/DOWN按键事件，所以禁用表格的ArrowKeySelection属性</strong></li>
-        <li>使用 Enter、Tab 或者 Down 键选中下一行</li>
-        <li>使用 Up 键选中上一行</li>
-        <li>遍历文本框时同时选中所在的行</li>
-        <li>点击输入框会选中文本</li>
-    </ul>
+
 
     <f:Button Text="获取用户输入的分组值" ID="Button1" ClickHandler="onGetInputsClick"></f:Button>
 
@@ -109,4 +102,20 @@
 
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用自定义上下键移动分组输入框，并同步选中对应行。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按当前页面规则移动输入位置</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>靠前记录的<strong>分组</strong>输入框，按向下、向上方向键。<br />结果：目标输入框原文字被选中，表格行选择同时移动到该行，不把输入位置留在旧行。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>keydown / preventDefault</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：页面自行确定目标输入框并阻止相应按键的默认行为，不以浏览器默认 Tab 顺序代替本页导航。</li>
+        <li><code>ArrowKeySelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，关闭表格原有的方向键选行，交由本页输入框回调安排输入与行选择。</li>
+        <li><code>selectRow</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：导航时选中目标行，使输入框所在行与表格选择一致。</li>
+    </ul>
+</section>
 }

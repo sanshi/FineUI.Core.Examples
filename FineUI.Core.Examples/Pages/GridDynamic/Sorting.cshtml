@@ -26,5 +26,27 @@
     <br><br>
     <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
 
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在运行中启用或关闭浏览器排序，并切换单列与多列排序规则。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：启用<strong>入学年份</strong>降序排序；浏览器按新规则排列已加载记录。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>改用多列排序</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="Button4" title="按年份、姓名多列排序">按年份、姓名多列排序</strong>。<br />结果：按<strong>入学年份</strong>降序排列，同一年份再按<strong>姓名</strong>升序排列；不是后一次字段替换前一次字段。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <p>首次关闭排序，回发后开启并按入学年份降序排列。这里使用完整内存数据；数据库排序应在排序事件中查询并绑定结果。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowSorting / SortingMulti</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改排序">动态修改排序</strong>）：决定是否接受表头排序，以及采用单列还是多列规则。</li>
+        <li><code>SortField / SortDirection / SortFieldArray</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改排序">动态修改排序</strong>）：单列规则使用字段与方向，多列规则按字段、方向成对排列；本页多列规则先年份降序，再<strong>姓名</strong>升序。</li>
+    </ul>
+</section>
 }

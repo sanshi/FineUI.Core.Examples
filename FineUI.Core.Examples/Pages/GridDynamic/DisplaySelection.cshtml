@@ -25,5 +25,23 @@
     <br><br>
     <f:Label ID="LabelResult" Text="修改后再次回发，核对后台取得的当前配置。" />
 
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过后台配置切换复选框多选、行分隔线与交替行颜色，并读取实际配置。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：显示复选框选择列并允许多选，关闭行分隔线、打开交替行颜色；再次选择记录可核对新的选择方式。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <p>直接设置表格属性即可改变选择列和外观，不需要重新赋值 Columns 或绑定数据。可先选中多行，再切回单选。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableCheckBoxSelect / EnableMultiSelect</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="修改表格显示与选择方式">修改表格显示与选择方式</strong>）：分别决定选择列是否显示及是否允许同时选中多行。</li>
+        <li><code>EnableRowLines / EnableAlternateRowColor</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="修改表格显示与选择方式">修改表格显示与选择方式</strong>）：分别控制行分隔线和交替行颜色；按钮修改后独立回发仍可读取这些配置。</li>
+    </ul>
+</section>
 }

@@ -46,3 +46,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>为姓名过滤提供等于、包含、开始于和结束于操作符，在表头下方直接切换。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>保持输入并改变比较方式</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>姓名</strong>列下方内联过滤区输入<code>国</code>，选择包含并按 Enter 应用条件。<br />结果：保留<strong>姓名</strong>任意位置包含国的记录。</li>
+        <li>保留输入国，将操作符改为开始于或结束于并应用。<br />结果：改按<strong>姓名</strong>开头或末尾匹配，过滤参数中的操作符随之变化；输入相同不代表过滤结果一定相同。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Filter.Operator</code>（<strong>姓名列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：使用下拉选项提供 equal、contain、start、end，本页匹配函数分别解释各个操作符。</li>
+    </ul>
+</section>
+}

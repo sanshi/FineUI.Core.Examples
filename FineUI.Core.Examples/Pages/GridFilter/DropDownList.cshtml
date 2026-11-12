@@ -47,3 +47,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过多选下拉列表过滤所学专业，保留任一所选专业的记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按多个专业筛选</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>所学专业</strong>列表头过滤菜单选择化学系和物理系，再点击过滤面板的确定。<br />结果：提交的是专业值数组；匹配化学系或物理系任意一项的记录保留，不要求同一学生同时属于两个专业。</li>
+        <li>清除本列过滤条件。<br />结果：取消专业限制并恢复其他条件允许显示的记录；没有其他条件时恢复全表。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Filter.Field</code>（<strong>所学专业列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：采用允许多选的 DropDownList；空选择表示未指定专业，不创建空字符串占位选项。</li>
+    </ul>
+</section>
+}
