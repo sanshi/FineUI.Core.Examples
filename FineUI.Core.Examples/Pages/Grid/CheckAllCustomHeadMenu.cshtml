@@ -129,3 +129,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在选择列表头增加菜单，按奇偶行或在校状态等条件批量选择记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用表头选择菜单</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>选择列表头的下拉图标，再选择<strong>选中奇数行</strong>或<strong>选中偶数行</strong>。<br />结果：浏览器按本页记录顺序计算目标主键并选中；打开菜单不会连带触发表头全选。</li>
+        <li>再次打开菜单，尝试<strong>反选</strong>或<strong>选中在校生</strong>。<br />结果：选择结果按新的菜单条件更新，可用本页读取选择的按钮核对。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>CheckBoxSelectWidth</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>60</code>，为表头复选框和菜单图标预留宽度。</li>
+        <li><code>selectRows</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：菜单把计算出的业务主键集合交给选择方法，不模拟逐行点击。</li>
+    </ul>
+</section>
+}

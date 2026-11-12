@@ -27,11 +27,7 @@
 
     <br />
     <br />
-    注：
-    <ul>
-        <li>本示例禁止选择入学年份大于等于 2008 的行。</li>
-        <li>借助于表格的服务端行绑定事件，将原本写在客户端（RowDataBoundFunction="onGrid1RowDataBound"）中的业务逻辑移到服务端（OnRowDataBound="Grid1_RowDataBound"）。</li>
-    </ul>
+
 
 }
 
@@ -40,4 +36,19 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在后台按行决定是否允许选择，并把不可选行显示为禁用外观。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>限制指定记录的选择</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中入学年份大于等于 2008 的行复选框，再选择一条允许选择的记录。<br />结果：受限制的记录不会因点击新增选择，允许选择的记录正常勾选；不可选行同时呈现灰色禁用外观。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RowSelectable</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：后台按当前行数据给出可选结果；只有命中限制的记录被禁止选择。</li>
+        <li><code>DisableUnselectableRows</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，给不可选记录增加禁用外观，选择限制由逐行可选状态决定。</li>
+    </ul>
+</section>
 }

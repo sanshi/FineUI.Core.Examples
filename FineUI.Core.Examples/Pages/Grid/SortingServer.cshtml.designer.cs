@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.Grid
 	public partial class SortingServerModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnSortEntranceYearDescending;
 	}
 }

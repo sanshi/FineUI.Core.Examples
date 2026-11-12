@@ -10,5 +10,6 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 		protected FineUI.Core.Button btnClearSelection;
 		protected FineUI.Core.Button btnReadSelection;
 		protected FineUI.Core.Label labServerSelection;
+		protected FineUI.Core.Button btnShowSelectedRows;
 	}
 }

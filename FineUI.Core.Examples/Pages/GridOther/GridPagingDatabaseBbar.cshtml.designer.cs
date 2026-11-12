@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.GridOther
 	public partial class GridPagingDatabaseBbarModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRows;
 	}
 }

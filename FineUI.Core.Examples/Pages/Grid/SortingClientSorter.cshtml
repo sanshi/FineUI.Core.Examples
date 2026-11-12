@@ -53,3 +53,16 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用自定义比较函数切换所学专业列的排序规则，对照文字顺序与字符个数排序。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换专业排序规则</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="DropDownList1" title="[所学专业]列的排序方式">所学专业列的排序方式</strong>选择按字符个数，再点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>所学专业</strong>列标题。<br />结果：专业名称按长度排列；切换回按字母顺序并再次排序后，改用文字比较规则。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SorterFunction</code>（<strong>所学专业</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>majorSorter</code>，比较函数读取当前排序方式，返回文字比较结果或字符数之差。</li>
+    </ul>
+</section>
+}

@@ -27,18 +27,7 @@
 
     <br />
     <br />
-        注：
-    <ul>
-        <li>
-            禁止选择入学年份大于等于 2008 的行；
-        </li>
-        <li>
-            默认选中[董婷婷]和[彭博]所在的行；
-        </li>
-        <li>
-            禁用行的[所学专业]列为文本，其他为超链接。
-        </li>
-    </ul>
+
 
 }
 
@@ -68,4 +57,21 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在客户端行绑定时禁止指定记录被选择，并把不可选行显示为禁用外观。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照预选记录与不可选限制</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中入学年份大于等于 2008 的行复选框，再选择一条允许选择的记录。<br />结果：受限制的记录不会因点击新增选择，允许选择的记录正常勾选；不可选行同时呈现灰色禁用外观。</li>
+        <li>从初始状态点击表头全选框。<br />结果：全选只新增允许选择的行；初始已选中的不可选行仍保留，不把其他不可选行加入选择。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RowDataBoundFunction / unselectable</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：行绑定函数按入学年份设置不可选标记，不影响其他记录。</li>
+        <li><code>DisableUnselectableRows</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，给不可选记录增加禁用外观，选择限制由逐行可选状态决定。</li>
+        <li><code>SelectedRowIDArray</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>103,105</code>，指定初次加载已选的业务主键；预选状态与之后是否允许用户改变选择分别处理。</li>
+    </ul>
+</section>
 }

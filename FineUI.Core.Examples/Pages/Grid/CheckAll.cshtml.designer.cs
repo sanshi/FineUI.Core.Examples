@@ -6,6 +6,8 @@ namespace FineUI.Core.Examples.Pages.Grid
 	public partial class CheckAllModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRowsClient;
+		protected FineUI.Core.Button btnSelectRows;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

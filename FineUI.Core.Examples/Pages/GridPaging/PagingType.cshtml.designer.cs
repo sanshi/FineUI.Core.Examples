@@ -8,6 +8,7 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 		protected FineUI.Core.Grid Grid1;
 		protected FineUI.Core.CheckBox cbxShowPagingMessage;
 		protected FineUI.Core.ButtonGroup bgPagingType;
+		protected FineUI.Core.Button btnNumber;
 		protected FineUI.Core.DropDownList ddlMaxPagingNumberButton;
 	}
 }

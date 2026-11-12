@@ -50,7 +50,7 @@ namespace FineUI.Core.Examples.Pages.Grid
         }
 
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnSortEntranceYearDescending_Click(object sender, EventArgs e)
         {
             Grid1.SortField = "EntranceYear";
             Grid1.SortDirection = "DESC";

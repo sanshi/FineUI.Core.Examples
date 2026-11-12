@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.GridPaging
 	public partial class ClearSelectionBeforePagingDetailsModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRows;
 	}
 }
