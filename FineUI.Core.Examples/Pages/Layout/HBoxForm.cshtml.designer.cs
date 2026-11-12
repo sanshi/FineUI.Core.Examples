@@ -19,5 +19,6 @@ namespace FineUI.Core.Examples.Pages.Layout
 		protected FineUI.Core.DatePicker DatePicker2;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
+		protected FineUI.Core.Panel PanelExample4;
 	}
 }

@@ -57,21 +57,21 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>通过浏览器 window.confirm确认后才改变选择，取消时保留原项。</p>
+        <p>通过浏览器 <code>window.confirm</code>确认后才改变选择，取消时保留原项。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>确认后才改变选择</h3>
         <ol>
             <li>
-                展开下拉列表，点击“可选择项8”，在确认对话框中选择“取消”。<br />
+                展开<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>，点击<strong>可选择项8</strong>，在确认对话框中选择<code>取消</code>。<br />
                 结果：此次选择被撤销，输入区继续显示原来的选择。
             </li>
             <li>
-                再次选择“可选择项8”，在确认对话框中选择“确定”。<br />
-                结果：确认后选中该项，值为 Value8；本页使用浏览器自带的确认对话框。
+                再次选择<code>可选择项8</code>，在确认对话框中选择<code>确定</code>。<br />
+                结果：确认后选中该项，值为 <code>Value8</code>；本页使用浏览器自带的确认对话框。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>beforeselect</code>：改变选择前执行；取消时返回 false。异步 F.confirm 的回调中再完成确认后的选择。</li>
+            <li><code>beforeselect</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：改变选择前执行；取消时返回 <code>false</code>。异步 <code>F.confirm</code> 的回调中再完成确认后的选择。</li>
         </ul>
     </section>
 }

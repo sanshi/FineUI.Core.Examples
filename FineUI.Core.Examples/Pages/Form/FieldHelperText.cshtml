@@ -45,26 +45,26 @@ function getHelperText() {
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>验证和清除错误</h3>
         <ol>
             <li>
-                联系邮箱保持为空，点击“验证表单”。<br />
+                <strong class="example-control-reference" data-example-control="tbxEmail" title="联系邮箱">联系邮箱</strong>保持为空，点击<strong class="example-control-reference" data-example-control="btnValidate" title="验证表单">验证表单</strong>。<br />
                 结果：字段下方出现必填错误，原有填写说明仍然可见。
             </li>
             <li>
-                点击“清除错误”。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClear" title="清除错误">清除错误</strong>。<br />
                 结果：清除邮箱的错误标记，填写说明保留，不提交表单。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改填写说明</h3>
         <ul>
             <li>
-                在申请说明中输入文字，按需选择附件，然后点击“修改填写说明”。<br />
-                结果：回发后，后台把邮箱说明改为“请填写部门公共邮箱，便于同事接收后续通知。”；已输入内容和已选文件保留。
+                在<strong class="example-control-reference" data-example-control="txaNotes" title="申请说明">申请说明</strong>中输入文字，按需选择附件，然后点击<strong class="example-control-reference" data-example-control="btnUpdate" title="修改填写说明">修改填写说明</strong>。<br />
+                结果：回发后，后台把邮箱说明改为<code>请填写部门公共邮箱，便于同事接收后续通知。</code>；已输入内容和已选文件保留。
             </li>
             <li>
-                点击“读取填写说明”。<br />
+                点击<strong class="example-control-reference" data-example-control="btnRead" title="读取填写说明">读取填写说明</strong>。<br />
                 结果：后台读取当前说明，显示到结果标签。
             </li>
             <li>
-                点击“清空填写说明”。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClearHelper" title="清空填写说明">清空填写说明</strong>。<br />
                 结果：后台移除邮箱说明，输入值保持不变。
             </li>
         </ul>
@@ -72,10 +72,10 @@ function getHelperText() {
         <p>填写说明始终显示，校验失败时错误显示在其下方。更新或清空说明会重新布局，并保留当前输入和文件选择。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>HelperText</code>：字段下方的填写说明，可以修改或清空。</li>
-            <li><code>MessageTarget</code>：设为 Under，把验证错误显示在字段下方。</li>
-            <li><code>isValid()</code>：客户端检查表单并显示字段错误。</li>
-            <li><code>clearInvalid()</code>：只清除错误标记，不清空输入或说明。</li>
+            <li><code>HelperText</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="联系邮箱">联系邮箱</strong>、<strong class="example-control-reference" data-example-control="txaNotes" title="申请说明">申请说明</strong>、<strong class="example-control-reference" data-example-control="fuAttachment" title="附件">附件</strong>）：字段下方的填写说明，可以修改或清空。</li>
+            <li><code>MessageTarget</code>（<strong class="example-control-reference" data-example-control="Form1" title="联系信息">联系信息</strong>）：设为 <code>Under</code>，把验证错误显示在字段下方。</li>
+            <li><code>isValid()</code>（<strong class="example-control-reference" data-example-control="Form1" title="联系信息">联系信息</strong>）：客户端检查表单并显示字段错误。</li>
+            <li><code>clearInvalid()</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="联系邮箱">联系邮箱</strong>）：只<strong class="example-control-reference" data-example-control="btnClear" title="清除错误">清除错误</strong>标记，不清空输入或说明。</li>
         </ul>
     </section>
 }

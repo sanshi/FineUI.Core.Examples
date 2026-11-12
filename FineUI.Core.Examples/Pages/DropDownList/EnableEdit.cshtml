@@ -42,21 +42,21 @@
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入筛选并匹配</h3>
         <ol>
             <li>
-                在输入区清除原文字，输入“可选项5”，再确认匹配项。<br />
+                在输入区清除原文字，输入<code>可选项5</code>，再确认匹配项。<br />
                 结果：可匹配的第五项成为选择；列表外文字不能成为有效选项。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>注：下拉列表的属性设置为EnableEdit=true（ForceSelection默认为true），可以在输入文本以过滤下拉项。 <br> <br> 测试用例（初始文本："可选项1"）：</p>
+        <p>注：<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>的属性设置为<code>EnableEdit</code>=<code>true</code>（<code>ForceSelection</code>默认为<code>true</code>），可以在输入文本以过滤下拉项。 <br /> <br /> 测试用例（初始文本："可选项<code>1</code>"）：</p>
         <ul>
-            <li> 依次删除："1项"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项1（值：Value1）" </li>
+            <li> 依次删除："<code>1</code>项"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项<code>1</code>（值：<code>Value1</code>）" </li>
             <li> 依次删除全部文本；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："无选中项" </li>
-            <li> 依次删除："1项"；然后再依次输入："项5"；按回车键；点击获取选中项按钮："选中项：可选项5（值：Value5）" </li>
-            <li> 依次删除："1项"；然后再依次输入："项5"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项5（值：Value5）" </li>
+            <li> 依次删除："<code>1</code>项"；然后再依次输入："项<code>5</code>"；按回车键；点击获取选中项按钮："选中项：可选项<code>5</code>（值：<code>Value5</code>）" </li>
+            <li> 依次删除："<code>1</code>项"；然后再依次输入："项<code>5</code>"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项<code>5</code>（值：<code>Value5</code>）" </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableEdit</code>：允许直接在输入区键入筛选文本。 本页声明值为 true。</li>
+            <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：允许直接在输入区键入筛选文本。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

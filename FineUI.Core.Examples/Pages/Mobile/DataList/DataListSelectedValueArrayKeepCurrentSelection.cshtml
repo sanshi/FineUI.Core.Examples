@@ -40,3 +40,24 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示移动列表连续点击累加选择，并通过按钮读取、设置或清空当前集合。</p>
+    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>修改并读取选择</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>点击<code>中国</code>，再点击<code>法国</code>。<br />结果：两个项目可以累加到当前集合，不需要按键盘修饰键。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSubmit" title="获取选中项">获取选中项</strong>。<br />结果：读取当前项目值或值数组，提示与列表现在的选择一致。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnClearSelection" title="清空选择">清空选择</strong>。<br />结果：移除当前选择高亮，列表项目仍然保留。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSetSelection" title="设置选择">设置选择</strong>。<br />结果：按本页按钮指定的稳定项值设置选择。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnRebindSelection" title="重绑并选中">重绑并选中</strong>。<br />结果：先替换列表数据，再按新集合中的稳定项值恢复本页指定选择。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableSelect</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：允许点击列表项目进行选择。 本页使用<code>true</code>。</li>
+        <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：使用稳定的项目值记录当前选择，不依赖显示顺序。</li>
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：允许选择集合包含多个项目。 本页使用<code>true</code>。</li>
+        <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：设为 <code>true</code>，连续点击时保留已有选择。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
+}

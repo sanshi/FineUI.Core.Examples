@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.TabStrip
 	public partial class ButtonIconTopHBoxModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Toolbar ToolbarExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

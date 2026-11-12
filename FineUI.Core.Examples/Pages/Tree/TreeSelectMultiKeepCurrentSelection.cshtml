@@ -53,3 +53,21 @@
     
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示连续点击节点累加选择，并切换是否保留原有选中项。</p>
+    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>累加并读取选择</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>连续点击两个不同节点。<br />结果：不按 <code>Ctrl</code> 也能保留原选择并继续累加；再次点击已选节点可按本页规则调整集合。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnToggleKeepSelection" title="切换连续点击累加选择">切换连续点击累加选择</strong>。<br />结果：后台切换保留选择设置，状态文字随之改变；再次点击时使用新规则。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSelectOthers" title="继续选中[合肥市]和[黄山市]">继续选中[合肥市]和[黄山市]</strong>。<br />结果：后台保留当前集合，再加入按钮指定的合肥市、黄山市。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：允许当前选择包含多个节点。 本页使用<code>true</code>。</li>
+        <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：设为 <code>true</code>，连续点击时保留之前的选择。 本页使用<code>true</code>。</li>
+        <li><code>SelectedNodeIDArray</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：保存并更新当前节点标识集合。</li>
+    </ul>
+</section>
+}

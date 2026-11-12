@@ -40,7 +40,7 @@
               IsModal="true" BodyPadding="10px" Layout="VBox" BoxConfigSpace="5"
               PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
         <Items>
-            <f:ButtonGroup MarginBottom="10" Layout="VBox" Vertical="true">
+            <f:ButtonGroup ID="ButtonGroupExample1" MarginBottom="10" Layout="VBox" Vertical="true">
                 <f:Button ID="Button1" Size="Large" Text="相册" ClickHandler="onOpenAlbumClick"></f:Button>
                 <f:Button ID="Button2" Size="Large" Text="拍照" ClickHandler="onTakeAPictureClick"></f:Button>
             </f:ButtonGroup>
@@ -77,4 +77,22 @@
 
     </script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在底部动作面板中用垂直按钮组组织操作。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>选择动作或取消</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="动作面板">动作面板</strong>。<br />结果：面板贴底并使用当前视口宽度，背景出现遮罩。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="拍照">拍照</strong>。<br />结果：浏览器隐藏面板并显示本页动作提示；示例并未真的调用设备相机。</li>
+        <li>再次打开<strong class="example-control-reference" data-example-control="btnOpenWindow" title="动作面板">动作面板</strong>，点击<strong class="example-control-reference" data-example-control="Button3" title="取消">取消</strong>。<br />结果：只隐藏动作面板，不执行相册或拍照动作。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>PositionY</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗口">窗口</strong>）：窗体贴底显示。 本页使用<code>Bottom</code>。</li>
+        <li><code>PercentWidth</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗口">窗口</strong>）：窗体占当前视口全部宽度。 本页使用<code>100%</code>。</li>
+        <li><code>Vertical</code>（<strong class="example-control-reference" data-example-control="ButtonGroupExample1" title="按钮组">按钮组</strong>）：把相册与拍照放在纵向按钮组中。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
 }

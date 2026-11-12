@@ -7,7 +7,7 @@
 
 @section body {
 
-    <f:ButtonGroup EnablePressGroup="true">
+    <f:ButtonGroup ID="ButtonGroupExample1" EnablePressGroup="true">
         <f:Button ID="btnIcon1" Text="图标在左侧" EnablePress="true" Pressed="true" Icon="Email" />
         <f:Button ID="btnIcon2" Text="图标在右侧" EnablePress="true" IconAlign="Right" Icon="Star" />
         <f:Button ID="Button7" Text="图标在左侧" EnablePress="true" IconFont="_Home" />
@@ -41,7 +41,7 @@
         </Items>
     </f:ButtonGroup>
     <br />
-    <f:Label Text="可以不选（AllowNonePress=true）："></f:Label>
+    <f:Label ID="LabelExample3" Text="可以不选（AllowNonePress=true）："></f:Label>
     <f:ButtonGroup ID="ButtonGroup4" EnablePressGroup="true" AllowNonePress="true" OnPressChanged="ButtonGroup4_PressChanged">
         <f:Button ID="Button15" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
         <f:Button ID="Button16" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
@@ -49,7 +49,7 @@
         <f:Button ID="Button18" Text="按钮四" EnablePress="true" Size="Large" IconAlign="Bottom" IconFont="_Phone" />
     </f:ButtonGroup>
     <br />
-    <f:Label Text="可以多选（AllowMultiPress=true）："></f:Label>
+    <f:Label ID="LabelExample4" Text="可以多选（AllowMultiPress=true）："></f:Label>
     <f:ButtonGroup ID="ButtonGroup5" EnablePressGroup="true" AllowMultiPress="true" OnPressChanged="ButtonGroup5_PressChanged">
         <f:Button ID="Button19" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
         <f:Button ID="Button20" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
@@ -71,24 +71,24 @@
                 结果：新按钮按下，同组原来的按钮释放。
             </li>
             <li>
-                在“可以不选”组再次点击已按下的按钮。<br />
+                在<strong class="example-control-reference" data-example-control="LabelExample3" title="可以不选（AllowNonePress=true）">可以不选</strong>组再次点击已按下的按钮。<br />
                 结果：该按钮释放，整组可以没有按下项；后台回发后显示本组当前按下按钮的提示。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>允许多选并读取状态</h3>
         <ul>
             <li>
-                在“可以多选”组依次点击不同按钮。<br />
+                在<strong class="example-control-reference" data-example-control="LabelExample4" title="可以多选（AllowMultiPress=true）">可以多选</strong>组依次点击不同按钮。<br />
                 结果：多个按钮可以同时按下，变化事件回发后由后台列出当前按下的按钮文字。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnablePressGroup</code>：开启组内按下规则。</li>
-            <li><code>Pressed</code>：指定按钮初始按下状态。</li>
-            <li><code>AllowNonePress</code>：设为 true，允许取消最后一个按下项。</li>
-            <li><code>AllowMultiPress</code>：设为 true，允许同时按下多个按钮。</li>
-            <li><code>OnPressChanged</code>：组内状态变化时读取并显示当前按下项。</li>
+            <li><code>EnablePressGroup</code>（本页全部按钮组，如<strong class="example-control-reference" data-example-control="ButtonGroupExample1" title="第 1 个按钮组">第 1 个按钮组</strong>）：开启组内按下规则。</li>
+            <li><code>Pressed</code>（<strong class="example-control-reference" data-example-control="btnIcon1" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 6 个按钮（图标在下面）">第 6 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="Button11" title="第 11 个按钮">第 11 个按钮</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 4 个按钮组的按钮二">第 4 个按钮组的按钮二</strong>、<strong class="example-control-reference" data-example-control="Button17" title="第 5 个按钮组的按钮三">第 5 个按钮组的按钮三</strong>、<strong class="example-control-reference" data-example-control="Button22" title="第 6 个按钮组的按钮四">第 6 个按钮组的按钮四</strong>）：指定按钮初始按下状态。</li>
+            <li><code>AllowNonePress</code>（<strong class="example-control-reference" data-example-control="ButtonGroup4" title="第 5 个按钮组">第 5 个按钮组</strong>）：设为 <code>true</code>，允许取消最后一个按下项。</li>
+            <li><code>AllowMultiPress</code>（<strong class="example-control-reference" data-example-control="ButtonGroup5" title="第 6 个按钮组">第 6 个按钮组</strong>）：设为 <code>true</code>，允许同时按下多个按钮。</li>
+            <li><code>OnPressChanged</code>（<strong class="example-control-reference" data-example-control="ButtonGroup3" title="第 4 个按钮组">第 4 个按钮组</strong>、<strong class="example-control-reference" data-example-control="ButtonGroup4" title="第 5 个按钮组">第 5 个按钮组</strong>、<strong class="example-control-reference" data-example-control="ButtonGroup5" title="第 6 个按钮组">第 6 个按钮组</strong>）：组内状态变化时读取并显示当前按下项。</li>
         </ul>
     </section>
 }

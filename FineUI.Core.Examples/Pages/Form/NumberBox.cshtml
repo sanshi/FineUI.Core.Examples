@@ -32,47 +32,47 @@
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>检查数值范围</h3>
         <ol>
             <li>
-                在“0 到 9 的整数”中输入“10”，然后移开焦点。<br />
-                结果：该字段提示不能大于 9；此时即使点击“提交表单”也无法通过验证。
+                在<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>中输入<code>10</code>，然后移开焦点。<br />
+                结果：该字段提示不能大于 <code>9</code>；此时即使点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>也无法通过验证。
             </li>
             <li>
-                将该字段改为“8”。<br />
-                结果：该值符合 0 到 9 的整数规则，范围错误消失；其余必填字段仍需填写。
+                将该字段改为<code>8</code>。<br />
+                结果：该值符合 <strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>规则，范围错误消失；其余必填字段仍需填写。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>使用增减操作</h3>
         <ul>
             <li>
-                在“0 到 9 的整数”中输入“8”，点击向下的增减图标。<br />
-                结果：数值变为 7；点击向上的图标可变回 8，也可使用键盘上下方向键。
+                在<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>中输入<code>8</code>，点击向下的增减图标。<br />
+                结果：数值变为 <code>7</code>；点击向上的图标可变回 <code>8</code>，也可使用键盘上下方向键。
             </li>
             <li>
-                在“0 到 1 之间的小数”中输入“0.35”，点击向上的增减图标。<br />
-                结果：数值按 0.01 的步长变为 0.36。
+                在<strong class="example-control-reference" data-example-control="NumberBox4" title="0 到 1 之间的小数（Increment=0.01）">0 到 1 之间的小数</strong>中输入<code>0.35</code>，点击向上的增减图标。<br />
+                结果：数值按 <code>0.01</code> 的步长变为 <code>0.36</code>。
             </li>
             <li>
-                在“任意整数（ShowTrigger=false）”中输入“-8”。<br />
+                在<strong class="example-control-reference" data-example-control="NumberBox5" title="任意整数（ShowTrigger=false）">任意整数（ShowTrigger=false）</strong>中输入<code>-8</code>。<br />
                 结果：可以输入负整数，输入框不显示增减图标。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>验证后提交</h3>
         <ul>
             <li>
-                前三个字段依次输入“8”“99”“0.35”，点击“提交表单”。<br />
+                前三个字段依次输入<code>8</code><code>99</code><code>0.35</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
                 结果：必填、整数和范围检查均通过，才回发到后台，显示读取到的表单字段值。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>MinValue</code>：设置下限；第一个字段和小数字段均为 0。</li>
-            <li><code>MaxValue</code>：设置上限；第一个字段为 9，小数字段为 1。</li>
-            <li><code>NoDecimal</code>：整数输入框设为 true，不接受小数。</li>
-            <li><code>NoNegative</code>：前三个字段设为 true，不接受负数；最后一个整数框允许负数。</li>
-            <li><code>DecimalPrecision</code>：小数字段使用 2 位小数。</li>
-            <li><code>Increment</code>：小数字段设为 0.01，每次增减百分之一。</li>
-            <li><code>ShowTrigger</code>：最后一个整数框设为 false，隐藏增减图标。</li>
-            <li><code>Required</code>：前三个字段设为 true，提交前必须填写。</li>
-            <li><code>_ValidateForms</code>：指定 SimpleForm1，验证通过后才回发。</li>
+            <li><code>MinValue</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>）：设置下限；<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">第一个字段</strong>和小数字段均为 <code>0</code>。</li>
+            <li><code>MaxValue</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>）：设置上限；<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">第一个字段</strong>为 <code>9</code>，小数字段为 <code>1</code>。</li>
+            <li><code>NoDecimal</code>（本页全部数字输入框，如<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>）：整数输入框设为 <code>true</code>，不接受小数。</li>
+            <li><code>NoNegative</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>、<strong class="example-control-reference" data-example-control="NumberBox3" title="非负整数">非负整数</strong>、<strong class="example-control-reference" data-example-control="NumberBox4" title="0 到 1 之间的小数（Increment=0.01）">0 到 1 之间的小数（Increment=0.01）</strong>）：前三个字段设为 <code>true</code>，不接受负数；最后一个整数框允许负数。</li>
+            <li><code>DecimalPrecision</code>（<strong class="example-control-reference" data-example-control="NumberBox4" title="0 到 1 之间的小数（Increment=0.01）">0 到 1 之间的小数（Increment=0.01）</strong>）：小数字段使用 <code>2</code> 位小数。</li>
+            <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="NumberBox4" title="0 到 1 之间的小数（Increment=0.01）">0 到 1 之间的小数（Increment=0.01）</strong>）：小数字段设为 <code>0.01</code>，每次增减百分之一。</li>
+            <li><code>ShowTrigger</code>（<strong class="example-control-reference" data-example-control="NumberBox5" title="任意整数（ShowTrigger=false）">任意整数（ShowTrigger=false）</strong>）：最后一个整数框设为 <code>false</code>，隐藏增减图标。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="0 到 9 的整数">0 到 9 的整数</strong>、<strong class="example-control-reference" data-example-control="NumberBox3" title="非负整数">非负整数</strong>、<strong class="example-control-reference" data-example-control="NumberBox4" title="0 到 1 之间的小数（Increment=0.01）">0 到 1 之间的小数（Increment=0.01）</strong>）：前三个字段设为 <code>true</code>，提交前必须填写。</li>
+            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>）：指定 <code>SimpleForm1</code>，验证通过后才回发。</li>
         </ul>
     </section>
 }

@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 	public partial class NoTitleModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample1;
 		protected FineUI.Core.TabStrip TabStrip2;
 		protected FineUI.Core.Tab Tab1;
 		protected FineUI.Core.Label Label1;

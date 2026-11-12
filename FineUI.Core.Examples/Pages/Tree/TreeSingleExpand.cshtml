@@ -50,3 +50,19 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示同级目录互斥展开，并切换单节点展开与双击展开规则。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>比较展开规则</h3>
+    <ol>
+        <li>先展开<strong class="example-control-reference" data-example-control="Tree1" title="树控件（EnableSingleExpand）">树控件（EnableSingleExpand）</strong>的<code>安徽省</code>，再展开同级的<code>河南省</code>。<br />结果：河南省展开时，安徽省自动折叠；互斥范围是同级节点，不会折叠整棵树。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnToggleExpandOptions" title="切换展开规则">切换展开规则</strong>。<br />结果：后台切换当前展开设置，并更新页面上的状态文字；再次展开同级目录时按新规则执行。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableSingleExpand</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件（EnableSingleExpand）">树控件（EnableSingleExpand）</strong>）：初始为 <code>true</code>，同级目录最多保持一个展开。 本页使用<code>true</code>。</li>
+        <li><code>EnableSingleClickExpand</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件（EnableSingleExpand）">树控件（EnableSingleExpand）</strong>）：本页关闭单击文字展开；可用展开图标或双击目录文字。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
+}

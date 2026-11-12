@@ -63,16 +63,16 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示停止输入 1 秒后自动搜索、点击图标立即搜索，以及清空关键词取消搜索。</p>
+        <p>演示停止输入 <code>1</code> 秒后自动搜索、点击图标立即搜索，以及清空关键词取消搜索。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>输入后自动搜索</h3>
         <ol>
             <li>
-                在“搜索用户名”输入框中输入“demo”，停止输入并等待 1 秒。<br />
-                结果：客户端确认文本变化后回发，后台显示包含关键词 demo 的搜索提示；本例用提示演示操作，没有查询数据。
+                在<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>输入框中输入<code>demo</code>，停止输入并等待 <code>1</code> 秒。<br />
+                结果：客户端确认文本变化后回发，后台显示包含关键词 <code>demo</code> 的搜索提示；本例用提示演示操作，没有查询数据。
             </li>
             <li>
                 继续修改关键词，再停止输入。<br />
-                结果：从最后一次变化重新等待 1 秒；文本与上次处理值相同时不重复处理。
+                结果：从最后一次变化重新等待 <code>1</code> 秒；文本与上次处理值相同时不重复处理。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>手动搜索和清空</h3>
@@ -88,10 +88,10 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AutoShowClearIcon</code>：设为 true，有内容时显示清空图标。</li>
-            <li><code>OnTrigger1Click</code>：处理清空图标点击，后台显示取消搜索提示。</li>
-            <li><code>OnTrigger2Click</code>：处理搜索图标点击，后台读取当前关键词并显示提示。</li>
-            <li><code>F.customEvent()</code>：客户端等待 1000 毫秒且文本变化后，发送 TwinTriggerBox1_Change 事件通知后台。</li>
+            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：设为 <code>true</code>，有内容时显示清空图标。</li>
+            <li><code>OnTrigger1Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：处理清空图标点击，后台显示取消搜索提示。</li>
+            <li><code>OnTrigger2Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：处理搜索图标点击，后台读取当前关键词并显示提示。</li>
+            <li><code>F.customEvent()</code>（<strong>页面客户端配置</strong>）：客户端等待 <code>1000</code> 毫秒且文本变化后，发送 <code>TwinTriggerBox1</code><code>_Change</code> 事件通知后台。</li>
         </ul>
     </section>
 }

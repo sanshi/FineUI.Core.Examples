@@ -53,17 +53,17 @@
                 结果：翻页回发后由后台只返回当前页数据；第一页的选择继续保留。
             </li>
             <li>
-                在第二页找到“董超”，只有未选中时才勾选，再获取下拉框选中值。<br />
-                结果：结果同时包含前后两页的人员，包括 103 和 108，不会只剩第二页。
+                在第二页找到“董超”，只有未选中时才勾选，再获取<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">下拉框</strong>选中值。<br />
+                结果：结果同时包含前后两页的人员，包括 <code>103</code> 和 <code>108</code>，不会只剩第二页。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AllowPaging</code>：为弹出表格提供分页工具栏。 本页声明值为 true。</li>
-            <li><code>IsDatabasePaging</code>：为 true 时后台按当前页加载；为 false 时浏览器对已加载数据分页。 本页声明值为 true。</li>
-            <li><code>PageSize</code>：决定每页显示多少条数据。 本页声明值为 5。</li>
-            <li><code>KeepCurrentSelection</code>：在继续选择或翻页时保留已有选择。 本页声明值为 true。</li>
-            <li><code>OnPageIndexChanged</code>：翻页后重新取得当前页数据并绑定。 本页声明值为 Grid1_PageIndexChanged。</li>
+            <li><code>AllowPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为弹出表格提供分页工具栏。 本页声明值为 <code>true</code>。</li>
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为 <code>true</code> 时后台按当前页加载；为 <code>false</code> 时浏览器对已加载数据分页。 本页声明值为 <code>true</code>。</li>
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：决定每页显示多少条数据。 本页声明值为 <code>5</code>。</li>
+            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+            <li><code>OnPageIndexChanged</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：翻页后重新取得当前页数据并绑定。 本页声明值为 <code>Grid1</code><code>_PageIndexChanged</code>。</li>
         </ul>
     </section>
 }

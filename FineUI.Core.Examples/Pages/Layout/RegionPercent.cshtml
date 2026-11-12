@@ -56,3 +56,20 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示按百分比分配侧边区域，在容器尺寸改变后重新计算中心剩余空间。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整页面与区域尺寸</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>改变浏览器宽度和高度。<br />结果：左右区域按本页 <code>30%</code> 配置分配宽度，上下区域按 <code>20%</code> 配置分配高度，中心使用剩余空间。</li>
+        <li>拖动分隔条或使用侧边区域的折叠入口。<br />结果：当前区域的尺寸或可见状态变化，中心区域重新布局，其它内容保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>）：外层使用 <code>Region</code>。 本页使用<code>Region</code>。</li>
+        <li><code>RegionPercent</code>（<strong class="example-control-reference" data-example-control="panelTopRegion" title="顶部面板">顶部面板</strong>、<strong class="example-control-reference" data-example-control="panelLeftRegion" title="左侧面板（有提示信息）">左侧面板（有提示信息）</strong>、<strong class="example-control-reference" data-example-control="panelRightRegion" title="右侧面板">右侧面板</strong>、<strong class="example-control-reference" data-example-control="panelBottomRegion" title="底部面板">底部面板</strong>）：子区域以百分比参与当前容器的尺寸分配。 本页各组分别使用<code>20%</code>、<code>30%</code>。</li>
+        <li><code>RegionSplit</code>（<strong class="example-control-reference" data-example-control="panelTopRegion" title="顶部面板">顶部面板</strong>、<strong class="example-control-reference" data-example-control="panelLeftRegion" title="左侧面板（有提示信息）">左侧面板（有提示信息）</strong>、<strong class="example-control-reference" data-example-control="panelRightRegion" title="右侧面板">右侧面板</strong>、<strong class="example-control-reference" data-example-control="panelBottomRegion" title="底部面板">底部面板</strong>）：指定侧边区域可以拖动分隔条。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
+}

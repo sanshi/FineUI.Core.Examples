@@ -77,3 +77,19 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在浏览器或后台动态添加 <code>iframe</code> 标签，并删除指定标签。</p>
+    <h3><i class="f-iconfont f-iconfont-refresh" aria-hidden="true"></i>添加、关闭与重新添加</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnAddTab1" title="DeepSeek官网（客户端代码）">DeepSeek官网（客户端代码）</strong>。<br />结果：浏览器添加并激活对应 <code>iframe</code> 标签；外部网站是否允许嵌入由网站自身策略决定。</li>
+        <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>关闭刚添加的标签，再点击同一个新增按钮。<br />结果：按本页按钮逻辑重新显示或创建指定标签，不会影响其它已有标签。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnAddTab3" title="DeepSeek官网（服务端代码）">DeepSeek官网（服务端代码）</strong>。<br />结果：按钮回发，由后台生成并下发新标签配置，再激活对应页面。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>addTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：按指定 <code>ID</code>、标题及 <code>iframe</code> 地址添加标签。</li>
+        <li><code>RemoveTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：按指定 <code>ID</code> 移除标签。</li>
+    </ul>
+</section>
+}

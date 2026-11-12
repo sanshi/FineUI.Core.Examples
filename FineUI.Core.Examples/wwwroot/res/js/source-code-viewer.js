@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+    var viewerScriptUrl = document.currentScript.src;
 
     // 纯 JavaScript 示例异步加载此资源；若页面已经就绪，立即初始化，避免入口和恢复监听缺失。
     function whenPageReady(callback) {
@@ -45,6 +46,9 @@
         var content = document.getElementById('exampleDescriptionContent');
         if (content && connection.description) {
             content.replaceChildren(document.importNode(connection.description, true));
+            if (connection.regionMode) {
+                connection.initializeControlReferences(content);
+            }
         }
         document.title = '页面描述和源代码 · ' + connection.title;
         document.addEventListener('keydown', onSourcePageKeyDown);
@@ -109,6 +113,10 @@
     var currentExample;
     var currentAddress;
     var watchedFrame;
+    var watchedNestedFrame;
+    var watchedContainerWindow;
+    var referenceController;
+    var referenceModulePromise;
     var preferredWidth = 480;
     var preferredHeight = 360;
     var regionPosition = 'bottom';
@@ -177,6 +185,9 @@
     }
 
     function closeDetails() {
+        if (referenceController) {
+            referenceController.clearHighlight();
+        }
         pendingOpen = false;
         if (detailsHost) {
             detailsHost.hide();
@@ -330,12 +341,13 @@
     }
 
     function onExampleFrameLoad(event) {
-        if ((pendingOpen || (detailsHost && !detailsHost.hidden)) && watchedFrame) {
-            openDetails(watchedFrame.contentWindow);
+        if ((pendingOpen || (detailsHost && !detailsHost.hidden)) && watchedContainerWindow) {
+            openDetails(watchedContainerWindow);
         }
     }
 
     function watchExample(exampleWindow) {
+        watchedContainerWindow = exampleWindow;
         var frame = exampleWindow.frameElement;
         if (frame === watchedFrame) {
             return;
@@ -349,11 +361,34 @@
         }
     }
 
+    function resolveExampleWindow(containerWindow) {
+        var preview = containerWindow.document.querySelector('meta[name="fineui-example-frame"]');
+        var frame = preview && containerWindow.document.querySelector(preview.content);
+        if (frame !== watchedNestedFrame) {
+            if (watchedNestedFrame) {
+                watchedNestedFrame.removeEventListener('load', onExampleFrameLoad);
+            }
+            watchedNestedFrame = frame;
+            if (watchedNestedFrame) {
+                watchedNestedFrame.addEventListener('load', onExampleFrameLoad);
+            }
+        }
+        // 手机预览已有 iframe，只跟随其中的实际示例；尚未加载时等待它的 load，不显示预览容器源码。
+        return preview ? frame && frame.contentWindow : containerWindow;
+    }
+
     function openDetails(exampleWindow) {
+        if (referenceController) {
+            referenceController.clearHighlight();
+        }
         var address;
         try {
             // 新页签刚激活时可能仍是 about:blank，先监听加载，实际示例就绪后再更新详情。
             watchExample(exampleWindow);
+            exampleWindow = resolveExampleWindow(exampleWindow);
+            if (!exampleWindow) {
+                return;
+            }
             address = new URL(exampleWindow.location.href);
             if (address.origin !== window.location.origin) {
                 return;
@@ -380,6 +415,10 @@
 
         // 同一示例只显示已有区域或窗口，不重新加载源码，也不移动主演示 iframe。
         if (currentAddress !== viewerAddress) {
+            if (referenceController) {
+                referenceController.dispose();
+                referenceController = null;
+            }
             currentAddress = viewerAddress;
             detailsHost.setIFrameUrl(viewerAddress);
         }
@@ -420,14 +459,54 @@
             return null;
         }
         var description = currentExample.document.getElementById('example-description');
+        var connectedExample = currentExample;
         return {
             description: description ? description.content : null,
             title: currentExample.document.title,
             regionMode: regionMode,
             getPosition: getPosition,
             switchPosition: switchPosition,
+            initializeControlReferences: function (content) {
+                if (!regionMode || !content.querySelector('[data-example-control]')) {
+                    return;
+                }
+                loadControlReferenceModule().then(function () {
+                    if (currentExample !== connectedExample || content.ownerDocument !== detailsHost.getIFrameWindow().document) {
+                        return;
+                    }
+                    if (referenceController) {
+                        referenceController.dispose();
+                    }
+                    referenceController = window.FineUIExampleControlReferences.initialize(content, {
+                        getExampleWindow: function () {
+                            return regionMode && currentExample === connectedExample && !detailsHost.hidden
+                                ? connectedExample : null;
+                        }
+                    });
+                }).catch(function () {
+                    // 定位资源不可用时保留原生强调文字，页面描述仍可正常阅读。
+                });
+            },
             close: closeDetails
         };
+    }
+
+    function loadControlReferenceModule() {
+        // 只在 Region 查看器请求定位时加载；Window 描述使用原生 strong，不依赖这些资源。
+        if (!referenceModulePromise) {
+            referenceModulePromise = new Promise(function (resolve, reject) {
+                var script = document.createElement('script');
+                script.src = new URL('example-control-reference.js', viewerScriptUrl).href;
+                script.addEventListener('load', resolve, { once: true });
+                script.addEventListener('error', function () {
+                    referenceModulePromise = null;
+                    script.remove();
+                    reject(new Error('控件引用资源加载失败。'));
+                }, { once: true });
+                document.head.appendChild(script);
+            });
+        }
+        return referenceModulePromise;
     }
 
     function onOpenDetailsClick(event) {
@@ -454,6 +533,11 @@
     function closeFromExample(exampleWindow) {
         if (currentExample === exampleWindow && detailsHost && !detailsHost.hidden) {
             closeDetails();
+            return;
+        }
+        // 手机示例隔着预览页访问框架，逐层传递 Escape，不额外创建查看器。
+        if (parent !== window && parent.FineUISourceCodeViewer) {
+            parent.FineUISourceCodeViewer.closeFromExample(exampleWindow);
         }
     }
 

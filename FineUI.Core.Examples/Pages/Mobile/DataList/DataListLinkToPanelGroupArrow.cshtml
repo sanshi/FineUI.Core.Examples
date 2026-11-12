@@ -76,3 +76,23 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示按项目控制可点击状态与右侧箭头，并从可用项目进入详情。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>进入详情并返回列表</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>点击中国项，对照欧洲组的右侧箭头。<br />结果：中国项被本页配置为不可点击，不进入详情；只有指定组显示箭头。</li>
+        <li>在<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>点击一个可用的国家项目。<br />结果：浏览器把该项目的标题、图片及介绍填入详情面板，再滑入对应详情；不会固定显示第一次点击的项目。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button4" title="后退">后退</strong>。<br />结果：滑回原列表，分组与列表项目继续保留，可以进入另一项。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>el.on(&quot;click&quot;, …)</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：本页把点击委托给列表中的实际链接或详情按钮，根据当前项内容更新详情面板。</li>
+        <li><code>EnableGroup</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：按本页地区分组显示组头。 本页使用<code>true</code>。</li>
+        <li><code>Group</code>（<strong>列表项目</strong>，位于<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：为项目指定亚洲、欧洲、美洲等分组。</li>
+        <li><code>ShowArrow</code>（<strong>列表项目</strong>，位于<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：只为本页指定组的项目显示右侧箭头。</li>
+        <li><code>NavigateUrl</code>（<strong>列表项目</strong>，位于<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：中国项未设置链接，脚本只响应其它项的链接点击。</li>
+    </ul>
+</section>
+}

@@ -44,33 +44,33 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>对比文本变化和日历选中两种事件，让结束日期自动设为开始日期后3天。</p>
+        <p>对比文本变化和日历选中两种事件，让结束日期自动设为开始日期后<code>3</code>天。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>文本变化时联动</h3>
         <ol>
             <li>
-                在第一组开始日期输入明天的日期，使用yyyy-MM-dd完整格式。<br />
-                结果：输入改变后即触发回发，不必先移开焦点；后台将结束日期改为开始日期后3天。
+                在第一组开始日期输入明天的日期，使用<code>yyyy</code>-<code>MM</code>-<code>dd</code>完整格式。<br />
+                结果：输入改变后即触发回发，不必先移开焦点；后台将结束日期改为开始日期后<code>3</code>天。
             </li>
             <li>
                 再从第一组日历中选择今天。<br />
-                结果：同一变化处理读取新开始日期，结束日期改为今天后第3天。
+                结果：同一变化处理读取新开始日期，结束日期改为今天后第<code>3</code>天。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>仅日历选中时联动</h3>
         <ol>
             <li>
                 在第二组开始日期手工输入明天的日期，再移开焦点。<br />
-                结果：不会因为手工输入触发OnDateSelect，第二组结束日期尚未联动。
+                结果：不会因为手工输入触发<code>OnDateSelect</code>，第二组结束日期尚未联动。
             </li>
             <li>
                 打开第二组日历，从面板中选择今天。<br />
-                结果：选中日期事件回发，第二组结束日期变为今天后第3天。
+                结果：选中日期事件回发，第二组结束日期变为今天后第<code>3</code>天。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnTextChanged</code>：第一组在文字改变时回发，手工输入和面板选择都可使结束日期变为开始日期后3天。</li>
-            <li><code>OnDateSelect</code>：第二组仅在面板选中日期时回发；手工输入不会执行此联动。</li>
+            <li><code>OnTextChanged</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="简单表单（OnTextChanged）的开始日期">简单表单（OnTextChanged）的开始日期</strong>）：第一组在文字改变时回发，手工输入和面板选择都可使结束日期变为<strong class="example-control-reference" data-example-control="DatePicker1" title="简单表单（OnTextChanged）的开始日期">开始日期</strong>后<code>3</code>天。</li>
+            <li><code>OnDateSelect</code>（<strong class="example-control-reference" data-example-control="DatePicker3" title="简单表单（OnDateSelect）的开始日期">简单表单（OnDateSelect）的开始日期</strong>）：第二组仅在面板选中日期时回发；手工输入不会执行此联动。</li>
         </ul>
     </section>
 }

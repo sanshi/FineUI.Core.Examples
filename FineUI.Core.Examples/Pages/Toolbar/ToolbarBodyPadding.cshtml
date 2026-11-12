@@ -96,5 +96,26 @@
         </Toolbars>
     </f:Panel>
     <br />
-    <p>BodyPadding 设置工具栏中 <code>.f-panel-body</code> 节点的内边距。例如 <code>8</code> 表示四周各 8px，<code>8px 12px</code> 表示上下各 8px、左右各 12px。默认不增加该节点的内边距，仅创建控件时生效；工具栏原有的外层内边距仍然保留。</p>
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示工具栏主体内边距如何影响按钮、填充项、换行及 <code>HBox</code> 布局的可用空间。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>比较外缘留白与剩余空间</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="PanelDefault" title="默认内边距">默认内边距</strong>及其它标有不同内边距的工具栏。<br />结果：默认值和零内边距保持本页默认效果；显式内边距在四周预留空间，按钮、填充项和换行都在剩余区域计算。</li>
+        <li>缩小浏览器宽度，重点查看窄工具栏和显式 <code>HBox</code> 一组。<br />结果：窄工具栏按可用空间换行，<code>HBox</code> 中可伸展的项目占据扣除内边距后的剩余宽度。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>BodyPadding 设置工具栏中 <code>.f-panel-body</code> 节点的内边距。例如 <code>8</code> 表示四周各 8px，<code>8px 12px</code> 表示上下各 8px、左右各 12px。默认不增加该节点的内边距，仅创建控件时生效；工具栏原有的外层内边距仍然保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>BodyPadding</code>（本页各工具栏，如<strong class="example-control-reference" data-example-control="ToolbarZero" title="第 2 个工具栏">第 2 个工具栏</strong>）：支持单值、上下左右或四边分别设置；本页给出多种写法。 本页各组分别使用<code>0</code>、<code>12</code>、<code>8px 16px</code>、<code>3px 17px 11px 29px</code>。</li>
+        <li><code>ToolbarAlign</code>（<strong class="example-control-reference" data-example-control="ToolbarRight" title="第 4 个工具栏">第 4 个工具栏</strong>、<strong class="example-control-reference" data-example-control="ToolbarCenter" title="第 5 个工具栏">第 5 个工具栏</strong>）：在有内边距时仍按剩余内容区对齐。 本页各组分别使用<code>Right</code>、<code>Center</code>。</li>
+        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="LastHBox" title="第 8 个工具栏的第二项">第 8 个工具栏的第二项</strong>）：显式 <code>HBox</code> 中的可伸展按钮使用剩余宽度。 本页使用<code>1</code>。</li>
+    </ul>
+</section>
 }

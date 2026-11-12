@@ -89,33 +89,33 @@
         <h3><i class="f-icon f-iconfont f-iconfont-star" aria-hidden="true"></i>选择评分与只读对照</h3>
         <ul>
             <li>
-                在第一组评分点击第 5 颗星。<br />
-                结果：评分改为 5，五颗星都点亮。
+                在<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 组评分">第一组评分</strong>点击第 <code>5</code> 颗星。<br />
+                结果：评分改为 <code>5</code>，五颗星都点亮。
             </li>
             <li>
-                对照第二组半星评分，并尝试点击第三组只读评分。<br />
-                结果：第二组显示 3.5 的半星；第三组仍保持 2，不接受点击修改。
+                对照<strong class="example-control-reference" data-example-control="NumberBox2" title="第 2 组评分">第二组半星评分</strong>，并尝试点击<strong class="example-control-reference" data-example-control="NumberBox3" title="第 3 组评分">第三组只读评分</strong>。<br />
+                结果：第二组显示 <code>3.5</code> 的半星；第三组仍保持 <code>2</code>，不接受点击修改。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更新评分并显示文字</h3>
         <ul>
             <li>
-                点击最下方“更新”。<br />
-                结果：回发后，后台将最后一组评分加 1，超过 5 后回到 0。
+                点击最下方<strong class="example-control-reference" data-example-control="Button1" title="更新">更新</strong>。<br />
+                结果：回发后，后台将最后一组评分加 <code>1</code>，超过 <code>5</code> 后回到 <code>0</code>。
             </li>
             <li>
                 对照字母、汉字、笑脸等评分与带文字评分。<br />
-                结果：评分可使用自定义字符或图标，带文字评分显示数值或自定义描述，例如初始 3 分显示 normal。
+                结果：评分可使用自定义字符或图标，带文字评分显示数值或自定义描述，例如初始 <code>3</code> 分显示 <code>normal</code>。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DisplayType</code>：设为 Rate，显示评分。</li>
-            <li><code>RateAllowHalf</code>：设为 true 时支持半分。</li>
-            <li><code>Readonly</code>：为 true 时保持显示但不能点击修改。</li>
-            <li><code>RateCount</code>：控制评分项数，本页包含 10 项图标评分。</li>
-            <li><code>RateAllowClear</code>：为 false 时再次点击当前值不能清空。</li>
-            <li><code>RateTextRendererFunction</code>：把评分值转换为 normal 等说明文字。</li>
+            <li><code>DisplayType</code>（本页全部评分控件，如<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 组评分">第 1 组评分</strong>）：设为 <code>Rate</code>，显示评分。</li>
+            <li><code>RateAllowHalf</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="第 2 组评分">第 2 组评分</strong>、<strong class="example-control-reference" data-example-control="NumberBox11" title="第 11 组评分">第 11 组评分</strong>）：设为 <code>true</code> 时支持半分。</li>
+            <li><code>Readonly</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="第 3 组评分">第 3 组评分</strong>）：为 <code>true</code> 时保持显示但不能点击修改。</li>
+            <li><code>RateCount</code>（<strong class="example-control-reference" data-example-control="NumberBox7" title="第 7 组评分">第 7 组评分</strong>、<strong class="example-control-reference" data-example-control="NumberBox8" title="第 8 组评分">第 8 组评分</strong>、<strong class="example-control-reference" data-example-control="NumberBox9" title="第 9 组评分">第 9 组评分</strong>）：控制评分项数，本页包含 <code>10</code> 项图标评分。</li>
+            <li><code>RateAllowClear</code>（<strong class="example-control-reference" data-example-control="NumberBox4" title="第 4 组评分">第 4 组评分</strong>）：为 <code>false</code> 时再次点击当前值不能清空。</li>
+            <li><code>RateTextRendererFunction</code>（<strong class="example-control-reference" data-example-control="NumberBox10" title="第 10 组评分">第 10 组评分</strong>）：把评分值转换为 <code>normal</code> 等说明文字。</li>
         </ul>
     </section>
 }

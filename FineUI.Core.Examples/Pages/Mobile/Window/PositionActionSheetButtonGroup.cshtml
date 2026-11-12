@@ -79,3 +79,21 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在底部动作面板中并排放置等宽的分组操作按钮。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>选择动作或取消</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="动作面板">动作面板</strong>。<br />结果：面板贴底并使用当前视口宽度，背景出现遮罩。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="拍照">拍照</strong>。<br />结果：浏览器隐藏面板并显示本页动作提示；示例并未真的调用设备相机。</li>
+        <li>再次打开<strong class="example-control-reference" data-example-control="btnOpenWindow" title="动作面板">动作面板</strong>，点击<strong class="example-control-reference" data-example-control="Button3" title="取消">取消</strong>。<br />结果：只隐藏动作面板，不执行相册或拍照动作。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>PositionY</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗口">窗口</strong>）：窗体贴底显示。 本页使用<code>Bottom</code>。</li>
+        <li><code>PercentWidth</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗口">窗口</strong>）：窗体占当前视口全部宽度。 本页使用<code>100%</code>。</li>
+        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="Button1" title="相册">相册</strong>、<strong class="example-control-reference" data-example-control="Button2" title="拍照">拍照</strong>）：两个动作按钮在组内等分宽度。 本页使用<code>1</code>。</li>
+    </ul>
+</section>
+}

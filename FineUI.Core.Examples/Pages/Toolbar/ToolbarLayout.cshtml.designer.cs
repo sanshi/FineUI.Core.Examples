@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 	public partial class ToolbarLayoutModel
 	{
 		protected FineUI.Core.Panel Panel1;
+		protected FineUI.Core.Toolbar ToolbarExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button5;

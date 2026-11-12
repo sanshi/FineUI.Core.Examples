@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
+    <f:Panel ID="PanelExample1" IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
         <Toolbars>
             <f:Toolbar>
                 <Items>
@@ -87,4 +87,23 @@
         });
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示菜单中的互斥语言选择和可同时勾选的站点集合，并读取最新结果。</p>
+    <h3><i class="f-iconfont f-iconfont-check-box" aria-hidden="true"></i>选择语言与多个站点</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnLangMenu" title="系统语言">系统语言</strong>。<br />结果：浏览器展开语言菜单。</li>
+        <li>选择<strong>简体中文</strong>。<br />结果：同组其它语言取消勾选，变化事件回发，后台更新当前语言结果。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSiteMenu" title="喜欢的站点">喜欢的站点</strong>。<br />结果：浏览器展开可以多选的站点菜单。</li>
+        <li>勾选<strong>microsoft.com</strong>，再取消勾选。<br />结果：其它站点的勾选继续保留，结果集合随本次操作加入或移除对应站点。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHCN" title="第 2 个复选菜单项">第 2 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHTW" title="第 3 个复选菜单项">第 3 个复选菜单项</strong>）：语言菜单项使用相同组名，形成互斥选择；站点项不分同一互斥组。 本页使用<code>MenuLang</code>。</li>
+        <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteBaidu" title="第 4 个复选菜单项">第 4 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteGoogle" title="第 5 个复选菜单项">第 5 个复选菜单项</strong>）：声明初始勾选状态，与菜单项的可用状态区分。 本页使用<code>true</code>。</li>
+        <li><code>OnCheckedChanged</code>（本页各复选菜单项，如<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>）：勾选变化后读取当前状态并更新本页结果。 本页各组分别使用<code>MenuLang_CheckedChanged</code>、<code>MenuSite_CheckedChanged</code>。</li>
+    </ul>
+</section>
 }

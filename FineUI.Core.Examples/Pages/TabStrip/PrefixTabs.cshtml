@@ -75,3 +75,18 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示把打开页面的菜单按钮放在标签标题之前，并在同一容器中新增标签。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>从标题栏前部打开新页</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnOpenPages" title="在新的选项卡中打开新页面">在新的选项卡中打开新页面</strong>。<br />结果：浏览器展开标题栏前部的菜单，已有标签标题仍排列在按钮之后。</li>
+        <li>选择菜单中的<strong class="example-control-reference" data-example-control="Button1" title="打开DeepSeek官网（tab1_iframe）">打开DeepSeek官网（tab1_iframe）</strong>。<br />结果：菜单项回发，后台按指定 <code>ID</code> 新建或更新 <code>iframe</code> 标签并激活它。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>PrefixTabs</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：把本页菜单按钮配置在标签标题列表之前。</li>
+        <li><code>AddTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：在当前容器中打开菜单指定的页面。</li>
+    </ul>
+</section>
+}

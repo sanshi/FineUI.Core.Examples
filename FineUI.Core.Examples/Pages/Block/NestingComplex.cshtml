@@ -20,9 +20,9 @@
 
 @section body {
 
-    <f:Panel IsFluid="true" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+    <f:Panel ID="PanelExample1" IsFluid="true" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
         <Items>
-            <f:Panel BlockMD="12" BlockLG="4" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+            <f:Panel ID="PanelExample2" BlockMD="12" BlockLG="4" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
                 <Items>
                     <f:Panel BlockMD="6" BlockLG="12" Height="200"
                              ShowBorder="true" ShowHeader="true" Title="1">
@@ -32,7 +32,7 @@
                     </f:Panel>
                 </Items>
             </f:Panel>
-            <f:Panel BlockMD="12" BlockLG="8" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+            <f:Panel ID="PanelExample5" BlockMD="12" BlockLG="8" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
                 <Items>
                     <f:Panel BlockSM="6" BlockMD="3" Height="150"
                              ShowBorder="true" ShowHeader="true" Title="3">
@@ -51,7 +51,7 @@
                     </f:Panel>
                 </Items>
             </f:Panel>
-            <f:Panel BlockMD="12" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
+            <f:Panel ID="PanelExample11" BlockMD="12" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
                 <Items>
                     <f:Panel BlockMD="4" Height="200"
                              ShowBorder="true" ShowHeader="true" Title="8">
@@ -71,4 +71,20 @@
     </f:Panel>
 
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示组合多层嵌套的 <code>Block</code> 布局。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="PanelExample1" title="第 1 个面板">第 1 个面板</strong>，从外到内对照面板编号，并缩小浏览器。<br />结果：每层都以自己的内容宽度分配子块，各组按自身设置换行，编号和内容保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="PanelExample1" title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample5" title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample11" title="第 11 个面板">第 11 个面板</strong>）：父容器使用 <code>Block</code>，按可用宽度排列内容块。 本页使用<code>Block</code>。</li>
+        <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页各组分别使用<code>12</code>、<code>6</code>、<code>3</code>、<code>4</code>。</li>
+        <li><code>BlockConfigSpace</code>（<strong class="example-control-reference" data-example-control="PanelExample1" title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample5" title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample11" title="第 11 个面板">第 11 个面板</strong>）：父容器中相邻块之间的间隔。 本页使用<code>20</code>。</li>
+    </ul>
+</section>
 }

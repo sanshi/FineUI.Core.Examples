@@ -65,3 +65,18 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示用节点勾选事件递归全选或取消当前目录的子孙节点。</p>
+    <h3><i class="f-iconfont f-iconfont-check-box" aria-hidden="true"></i>递归勾选当前分支</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>勾选<code>河南省</code>。<br />结果：该目录及它的可勾选子孙节点一起勾选，其它省份不受影响。</li>
+        <li>再次取消<code>河南省</code>的勾选。<br />结果：同一分支的可勾选子孙节点一起取消。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：显示树复选框。 本页使用<code>true</code>。</li>
+        <li><code>nodecheck</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：客户端处理当前节点的勾选变化，并递归更新它的子孙节点。</li>
+    </ul>
+</section>
+}

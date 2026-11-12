@@ -5,12 +5,15 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 {
 	public partial class ToolbarItemSpaceModel
 	{
+		protected FineUI.Core.Panel PanelExample1;
+		protected FineUI.Core.Toolbar ToolbarExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;
 		protected FineUI.Core.Button Button4;
 		protected FineUI.Core.Button Button5;
 		protected FineUI.Core.Button Button6;
+		protected FineUI.Core.Toolbar ToolbarExample3;
 		protected FineUI.Core.Button Button7;
 		protected FineUI.Core.Button Button8;
 		protected FineUI.Core.Button Button9;

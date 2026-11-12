@@ -5,6 +5,8 @@ namespace FineUI.Core.Examples.Pages.Block
 {
 	public partial class FormModel
 	{
+		protected FineUI.Core.Panel PanelExample1;
+		protected FineUI.Core.Panel PanelExample2;
 		protected FineUI.Core.Panel Panel1;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.CheckBox CheckBox1;
@@ -26,6 +28,7 @@ namespace FineUI.Core.Examples.Pages.Block
 		protected FineUI.Core.DropDownList DropDownList3;
 		protected FineUI.Core.NumberBox NumberBox1;
 		protected FineUI.Core.TextArea TextArea1;
+		protected FineUI.Core.Panel PanelExample6;
 		protected FineUI.Core.Button btnSubmitForm3;
 	}
 }

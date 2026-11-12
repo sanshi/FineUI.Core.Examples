@@ -69,3 +69,19 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示通过树节点点击触发自定义回发，并在指定节点回发前要求确认。</p>
+    <h3><i class="f-iconfont f-iconfont-edit" aria-hidden="true"></i>指定节点先确认再处理</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>点击遂平县。<br />结果：本页客户端把节点 <code>ID</code> 传给自定义事件，后台更新结果标签。</li>
+        <li>点击西平县，先取消确认，再重新点击并确认。<br />结果：取消时不继续处理；确认后才执行本页对应节点的动作。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>nodeclick</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：读取本次点击的节点 <code>ID</code>，只处理本页指定的节点。</li>
+        <li><code>F.customEvent()</code>（<strong>节点点击处理脚本</strong>）：确认通过后把事件名称与节点 <code>ID</code> 发送给后台，不在普通目录点击时回发。</li>
+    </ul>
+</section>
+}

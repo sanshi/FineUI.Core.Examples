@@ -14,6 +14,10 @@ namespace FineUI.Core.Examples.Pages.FormTable
 		protected FineUI.Core.TextArea TextArea1;
 		protected FineUI.Core.Button btnSubmitForm1;
 		protected FineUI.Core.Form Form2;
+		protected FineUI.Core.Panel PanelExample1;
+		protected FineUI.Core.Panel PanelExample2;
+		protected FineUI.Core.Panel PanelExample3;
+		protected FineUI.Core.TextBox TextBoxExample5;
 		protected FineUI.Core.Button btnSubmitForm2;
 	}
 }

@@ -9,6 +9,7 @@ namespace FineUI.Core.Examples.Pages.Form
 		protected FineUI.Core.Image imgPhoto;
 		protected FineUI.Core.TextBox tbxUserName;
 		protected FineUI.Core.TextBox tbxEmail;
+		protected FineUI.Core.Toolbar ToolbarExample1;
 		protected FineUI.Core.FileUpload filePhoto;
 		protected FineUI.Core.Button btnSubmit;
 		protected FineUI.Core.Label labResult;

@@ -94,27 +94,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
     <br>
     <br />
-        注：启用微型模式时，请同时启用如下属性：
-    <ul>
-        <li>
-            MiniMode="true"
-        </li>
-        <li>
-            HideHScrollbar="true"
-        </li>
-        <li>
-            HideVScrollbar="true"
-        </li>
-        <li>
-            ExpanderToRight="true"
-        </li>
-        <li>
-            HeaderStyle="true"
-        </li>
-        <li>
-            Width="60px" （建议微型模式的最小宽度为60px）
-        </li>
-    </ul>
+
     <br />
 
 }
@@ -193,3 +173,34 @@
 
 
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示树导航的微型模式、滚动条显示、展开图标位置和标题栏样式。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>切换导航外观</h3>
+    <ul>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxHideHScrollbar" title="隐藏水平滚动条">隐藏水平滚动条</strong>，再取消勾选。<br />结果：开启后隐藏横向滚动条，关闭后恢复本页横向滚动条规则。</li>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxHideVScrollbar" title="隐藏垂直滚动条">隐藏垂直滚动条</strong>，再取消勾选。<br />结果：开启后隐藏纵向滚动条，关闭后恢复本页纵向滚动条规则。</li>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxExpanderToRight" title="折叠图标移到右侧">折叠图标移到右侧</strong>，再取消勾选。<br />结果：目录展开图标移动到右侧，取消后恢复原位置。</li>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxHeaderStyle" title="启用标题栏样式">启用标题栏样式</strong>，再取消勾选。<br />结果：当前树标题按本页对应样式切换，节点数据不变。</li>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxMiniMode" title="启用微型模式">启用微型模式</strong>，再取消勾选。<br />结果：树切换微型导航外观，保留当前节点数据，取消后恢复完整文字导航。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li><code>MiniMode</code>="<code>true</code>"</li>
+        <li><code>HideHScrollbar</code>="<code>true</code>"</li>
+        <li><code>HideVScrollbar</code>="<code>true</code>"</li>
+        <li><code>ExpanderToRight</code>="<code>true</code>"</li>
+        <li><code>HeaderStyle</code>="<code>true</code>"</li>
+        <li><code>Width</code>="<code>60px</code>" （建议微型模式的最小宽度为<code>60px</code>）</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>MiniMode</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树">树</strong>）：由对应复选框在浏览器切换，保留树数据及当前选择。 本页使用<code>false</code>。</li>
+        <li><code>HideHScrollbar</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树">树</strong>）：由对应复选框在浏览器切换，保留树数据及当前选择。 本页使用<code>false</code>。</li>
+        <li><code>HideVScrollbar</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树">树</strong>）：由对应复选框在浏览器切换，保留树数据及当前选择。 本页使用<code>false</code>。</li>
+        <li><code>ExpanderToRight</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树">树</strong>）：由对应复选框在浏览器切换，保留树数据及当前选择。 本页使用<code>false</code>。</li>
+        <li><code>HeaderStyle</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树">树</strong>）：由对应复选框在浏览器切换，保留树数据及当前选择。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
+}

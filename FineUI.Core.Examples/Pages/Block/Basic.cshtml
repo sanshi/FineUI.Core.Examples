@@ -24,57 +24,7 @@
 
 @section body {
 
-    <f:ContentPanel ID="Panel8" IsFluid="true" ShowBorder="true" EnableCollapse="false" BodyPadding="10" ShowHeader="false">
-        <h4>响应式布局</h4>
-        为了丰富页面显示效果，我们引入了业界流行的响应式布局。和 Bootstrap 的 CSS3 媒体查询实现不同，FineUI 完全通过 JavaScript 来实现响应式布局，不仅可以融入现有的布局系统，而且更加灵活。
-        <br />
-        我们将容器分成了 12 块（可以自定义），然后定义子项在不同屏幕中的块大小，使其总和等于 12，从而在手机、平板、桌面和大尺寸屏幕中显示不同的布局。
-        <br />
-        <h4>布局规则</h4>
-        <ol>
-            <li>父容器定义 Layout=Block 属性。</li>
-            <li>
-                子项通过 BlockMD=6 定义块的响应宽度。
-                <ul>
-                    <li>
-                        后缀 MD 代表不同的屏幕尺寸（Block、BlockSM、BlockMD、BlockLG）。
-                    </li>
-                    <li>属性 6 代表子项占据的宽度（6-12）。</li>
-                    <li>多个子项的宽度总和等于 12，则占据一行，多余的子项会另起一行。</li>
-                </ul>
-            </li>
-        </ol>
-        <br />
-        <h4>响应规则</h4>
-        <table class="result" style="width: 100%;">
-            <tr>
-                <td></td>
-                <td style="font-weight: normal;">超小屏幕（手机）</td>
-                <td style="font-weight: normal;">小屏幕（平板）</td>
-                <td style="font-weight: normal;">中等屏幕（桌面）</td>
-                <td style="font-weight: normal;">大屏幕（大尺寸显示器）</td>
-            </tr>
-            <tr>
-                <td>屏幕尺寸</td>
-                <td>&lt; 768px</td>
-                <td>&gt;= 768px</td>
-                <td>&gt;= 992px</td>
-                <td>&gt;= 1200px</td>
-            </tr>
-            <tr>
-                <td>子项属性</td>
-                <td>Block</td>
-                <td>BlockSM</td>
-                <td>BlockMD</td>
-                <td>BlockLG</td>
-            </tr>
-            <tr>
-                <td>响应行为</td>
-                <td>始终水平排列</td>
-                <td colspan="3">当前屏幕水平排列，小于临界值层叠排列</td>
-            </tr>
-        </table>
-    </f:ContentPanel>
+
     <br>
     <br>
     中等屏幕水平排列，小屏幕层叠排列：
@@ -161,4 +111,28 @@
 
 
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示对比不同屏幕临界值下的列数和子项占比。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="Panel5" title="第 1 个面板">第 1 个面板</strong>，缩小浏览器，再逐步放大到桌面和大屏宽度。<br />结果：子项按各自 <code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code> 配置重新分行；未达到对应临界值时按较小屏幕的配置排列。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>响应式布局由 JavaScript 根据容器宽度计算，可与其它布局嵌套；默认一行分成 <code>12</code> 块，也可自定义总块数。子项块数之和超过一行时，后续项目另起一行。</li>
+        <li><code>Block</code> 对所有宽度生效；<code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code> 分别从 <code>768px</code>、<code>992px</code>、<code>1200px</code> 起生效。未达到临界值时，使用较小宽度区间的设置，没有较小区间设置则层叠排列。</li>
+        <li>例如 <code>BlockMD=6</code> 表示中等及以上宽度占半行；配合 <code>BlockLG=4</code> 后，大屏改为每行三项。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel5" title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel2" title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel9" title="第 8 个面板">第 8 个面板</strong>）：父容器使用 <code>Block</code>，按可用宽度排列内容块。 本页使用<code>Block</code>。</li>
+        <li><code>BlockSM</code>（<strong class="example-control-reference" data-example-control="Panel10" title="第 9 个面板">第 9 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel11" title="第 10 个面板">第 10 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel12" title="第 11 个面板">第 11 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页各组分别使用<code>6</code>、<code>12</code>。</li>
+        <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel6" title="第 2 个面板">第 2 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页各组分别使用<code>6</code>、<code>12</code>、<code>9</code>、<code>3</code>。</li>
+        <li><code>BlockLG</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel1" title="第 5 个面板">第 5 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页使用<code>4</code>。</li>
+        <li><code>BlockConfigSpace</code>（<strong class="example-control-reference" data-example-control="Panel9" title="第 8 个面板">第 8 个面板</strong>）：父容器中相邻块之间的间隔。 本页使用<code>10</code>。</li>
+    </ul>
+</section>
 }

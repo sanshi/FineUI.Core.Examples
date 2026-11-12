@@ -102,29 +102,29 @@
 }
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>把树的复选框状态同步到自定义下拉框。</p>
+        <p>把树的复选框状态同步到自定义<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>勾选树节点</h3>
         <ol>
             <li>
-                展开下拉树，勾选“河南省”下的“驻马店市”。<br />
-                结果：该节点加入现有选择，对应值为 zhumadian；单纯点击节点文字与勾选复选框是不同操作。
+                展开<strong class="example-control-reference" data-example-control="SimpleForm1" title="下拉树">下拉树</strong>，勾选<code>河南省</code>下的“驻马店市”。<br />
+                结果：该节点加入现有选择，对应值为 <code>zhumadian</code>；单纯点击节点文字与勾选复选框是不同操作。
             </li>
             <li>
-                点击面板外空白处收起，再点击“获取下拉框的选中值”。<br />
+                点击面板外空白处收起，再点击<strong class="example-control-reference" data-example-control="btnGetSelection" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                 结果：回发后由后台显示当前树节点文字和标识。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
         <p>注：</p>
         <ul>
-            <li>自定义数据来源时（CustomData=true），需要同时设置 Value 和 Text 属性来初始化下拉框。</li>
-            <li>下拉框的值对应于树控件的复选框，而不是树控件的选中项。</li>
+            <li>自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>。</li>
+            <li><strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>的值对应于树控件的复选框，而不是树控件的选中项。</li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>setValue(value, text)</code>：自定义面板完成选择后同时写入业务值和显示文字；多选时传入一一对应的数组。</li>
-            <li><code>CustomData</code>：通过页面脚本同步值和文字，而非直接采用默认数据控件的选中项。 本页声明值为 true。</li>
-            <li><code>EnableCheckBox</code>：为树显示复选框，选择集合来自勾选状态。 本页声明值为 true。</li>
+            <li><code>setValue(value, text)</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：自定义面板完成选择后同时写入业务值和显示文字；多选时传入一一对应的数组。</li>
+            <li><code>CustomData</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：通过页面脚本同步值和文字，而非直接采用默认数据控件的选中项。 本页声明值为 <code>true</code>。</li>
+            <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control="Tree1" title="Tree">Tree</strong>）：为树显示复选框，选择集合来自勾选状态。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

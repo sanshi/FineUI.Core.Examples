@@ -94,3 +94,22 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示移动通知对话框的加载状态、持续显示与显式关闭。</p>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>对照自动通知与常驻通知</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="第 1 个按钮（通知对话框）">第 1 个按钮（通知对话框）</strong>。<br />结果：本页显示普通通知，按其持续时间结束。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="通知对话框（正在加载）">通知对话框（正在加载）</strong>。<br />结果：显示对应加载动画及本页文字样式。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button5" title="显示通知对话框">显示通知对话框</strong>。<br />结果：显示客户端管理的常驻通知。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button6" title="关闭通知对话框">关闭通知对话框</strong>。<br />结果：明确关闭前面显示的通知。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DisplayMilliseconds</code>（<strong>对话框配置</strong>）：控制普通通知持续时间；需要常驻的本页入口由关闭按钮明确结束。</li>
+        <li><code>MessageIcon</code>（<strong>对话框配置</strong>）：为普通通知或加载状态选择对应标识。</li>
+        <li><code>F.notify()</code>（<strong>通知处理</strong>）：本页客户端入口显示或管理对应通知。</li>
+    </ul>
+</section>
+}

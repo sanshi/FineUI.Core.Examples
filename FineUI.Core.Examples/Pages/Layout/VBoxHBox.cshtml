@@ -65,3 +65,18 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示嵌套纵向和横向盒布局，平分当前页面。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Panel2" title="面板（改变页面大小来观察面板的变化）">面板（改变页面大小来观察面板的变化）</strong>中同时改变浏览器宽度与高度。<br />结果：外层与内层分别按自己的方向平分空间，各组边界随页面尺寸调整。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel2" title="面板（改变页面大小来观察面板的变化）">面板（改变页面大小来观察面板的变化）</strong>、<strong class="example-control-reference" data-example-control="Panel1" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel5" title="第 6 个面板">第 6 个面板</strong>）：父容器使用本页对应的布局方式，决定其直接子项的排列。 本页各组分别使用<code>VBox</code>、<code>HBox</code>。</li>
+        <li><code>BoxFlex</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel1" title="第 2 个面板">第 2 个面板</strong>）：直接子项按此比例分配父容器剩余空间。 本页使用<code>1</code>。</li>
+    </ul>
+</section>
+}

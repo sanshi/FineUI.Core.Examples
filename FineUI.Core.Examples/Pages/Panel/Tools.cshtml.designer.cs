@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Panel
 	public partial class ToolsModel
 	{
 		protected FineUI.Core.Panel Panel1;
+		protected FineUI.Core.Tool ToolExample1;
 		protected FineUI.Core.Tool Tool13;
 		protected FineUI.Core.Tool Tool1;
 		protected FineUI.Core.Tool Tool3;

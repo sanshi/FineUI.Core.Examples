@@ -8,6 +8,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.Accordion
 		protected FineUI.Core.Accordion Accordion1;
 		protected FineUI.Core.Toolbar Toolbar1;
 		protected FineUI.Core.AccordionPane AccordionPane1;
+		protected FineUI.Core.Tool ToolExample1;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.AccordionPane AccordionPane2;
 		protected FineUI.Core.Tool Tool1;

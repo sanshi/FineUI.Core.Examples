@@ -96,18 +96,18 @@
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>有修改时确认离开</h3>
         <ol>
             <li>
-                勾选复选框或修改日期；若本页有可编辑表格，也可单击姓名单元格修改姓名。<br />
+                勾选<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>或修改日期；若本页有可编辑表格，也可单击姓名单元格修改姓名。<br />
                 结果：表单或表格产生未保存的修改标记。
             </li>
             <li>
-                点击“刷新本页面”，在浏览器确认框中选择留在页面。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClose" title="刷新本页面">刷新本页面</strong>，在浏览器确认框中选择留在页面。<br />
                 结果：取消离开后仍留在原页，刚才的输入保留；确认框的样式和文字由浏览器决定。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>保存后清除修改标记</h3>
         <ol>
             <li>
-                给“数字输入框”填写“1”，给“文本输入框”填写“demo”，点击“保存数据”。<br />
+                给<strong class="example-control-reference" data-example-control="NumberBox1" title="数字输入框">数字输入框</strong>填写<code>1</code>，给<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>填写<code>demo</code>，点击<strong class="example-control-reference" data-example-control="btnClosePostBack" title="保存数据">保存数据</strong>。<br />
                 结果：客户端验证通过后回发，后台清除表单修改标记。
             </li>
             <li>
@@ -117,9 +117,9 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>F.beforeUnload()</code>：离开页面前执行检查；返回提示文字表示有未保存修改。</li>
-            <li><code>isDirty()</code>：判断表单当前字段值相对已接受状态是否改变。</li>
-            <li><code>ClearDirty()</code>：保存成功后接受当前表单值作为新基准，不清空输入。</li>
+            <li><code>F.beforeUnload()</code>（<strong>页面客户端配置</strong>）：离开页面前执行检查；返回提示文字表示有未保存修改。</li>
+            <li><code>isDirty()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：判断表单当前字段值相对已接受状态是否改变。</li>
+            <li><code>ClearDirty()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：保存成功后接受当前表单值作为新基准，不清空输入。</li>
         </ul>
     </section>
 }

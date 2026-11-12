@@ -117,32 +117,32 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示将联系人、地址和付款字段分组，并通过复选框切换账单地址的可编辑状态。</p>
+        <p>演示将联系人、地址和付款字段分组，并通过<strong class="example-control-reference" data-example-control="cbxSameAsContactAddress" title="和联系人地址相同">复选框</strong>切换<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>的可编辑状态。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>切换账单地址</h3>
         <ol>
             <li>
-                取消“和联系人地址相同”的勾选。<br />
-                结果：回发后，后台启用账单地址的详细地址、省、市和邮政编码字段。
+                取消<strong class="example-control-reference" data-example-control="cbxSameAsContactAddress" title="和联系人地址相同">和联系人地址相同</strong>的勾选。<br />
+                结果：回发后，后台启用<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>的详细地址、省、市和邮政编码字段。
             </li>
             <li>
                 再次勾选。<br />
-                结果：回发后，后台禁用这四个字段；本例切换的是可用状态，没有自动复制联系人地址的值。
+                结果：回发后，后台禁用这四个字段；本例切换的是可用状态，没有自动复制<strong class="example-control-reference" data-example-control="GroupPanel2" title="联系人地址">联系人地址</strong>的值。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>填写分组字段</h3>
         <ul>
             <li>
-                对照联系人信息、联系人地址、账单地址和付款方式四组内容。<br />
-                结果：组内用横向伸展和固定宽度组合字段，姓名两项、邮箱与电话、卡号与过期时间均可并排显示。
+                对照<strong class="example-control-reference" data-example-control="GroupPanel1" title="联系人信息">联系人信息</strong>、<strong class="example-control-reference" data-example-control="GroupPanel2" title="联系人地址">联系人地址</strong>、<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>和<strong class="example-control-reference" data-example-control="GroupPanel4" title="付款方式">付款方式</strong>四组内容。<br />
+                结果：组内用横向伸展和固定宽度组合字段，姓名两项、邮箱与电话、卡号与<strong class="example-control-reference" data-example-control="DropDownList1" title="过期时间">过期时间</strong>均可并排显示。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Layout</code>：组面板纵向排列，部分行采用 HBox 组合字段。</li>
-            <li><code>BoxFlex</code>：让姓名、邮箱或地址占用剩余宽度。</li>
-            <li><code>Checked</code>：复选框初始选中，账单地址初始禁用。</li>
-            <li><code>Enabled</code>：复选框变化事件回发后更新账单地址字段的可用状态。</li>
-            <li><code>_ValidateForms</code>：提交账单按钮先验证本页表单，不包含真实支付流程。</li>
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="GroupPanel1" title="联系人信息">联系人信息</strong>、<strong class="example-control-reference" data-example-control="Panel2" title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control="Panel1" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="GroupPanel2" title="联系人地址">联系人地址</strong>、<strong class="example-control-reference" data-example-control="Panel4" title="第 3 个面板">第 3 个面板</strong>、<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>、<strong class="example-control-reference" data-example-control="Panel3" title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control="GroupPanel4" title="付款方式">付款方式</strong>、<strong class="example-control-reference" data-example-control="Panel5" title="第 5 个面板">第 5 个面板</strong>）：组面板纵向排列，部分行采用 <code>HBox</code> 组合字段。</li>
+            <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="TextBox2" title="第 1 个文本框">第 1 个文本框</strong>、<strong class="example-control-reference" data-example-control="TextBox4" title="第 2 个文本框">第 2 个文本框</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control="TextBox9" title="第 6 个文本框（省）">第 6 个文本框（省）</strong>、<strong class="example-control-reference" data-example-control="TextBox5" title="第 7 个文本框（市）">第 7 个文本框（市）</strong>、<strong class="example-control-reference" data-example-control="tbxBillingProvince" title="第 10 个文本框（省）">第 10 个文本框（省）</strong>、<strong class="example-control-reference" data-example-control="tbxBillingCity" title="第 11 个文本框（市）">第 11 个文本框（市）</strong>、<strong class="example-control-reference" data-example-control="TextBox14" title="卡号">卡号</strong>）：让姓名、邮箱或地址占用剩余宽度。</li>
+            <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="cbxSameAsContactAddress" title="和联系人地址相同">和联系人地址相同</strong>）：<strong class="example-control-reference" data-example-control="cbxSameAsContactAddress" title="和联系人地址相同">复选框</strong>初始选中，<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>初始禁用。</li>
+            <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="tbxBillingAddress" title="第 9 个文本框（详细地址）">第 9 个文本框（详细地址）</strong>、<strong class="example-control-reference" data-example-control="tbxBillingProvince" title="第 10 个文本框（省）">第 10 个文本框（省）</strong>、<strong class="example-control-reference" data-example-control="tbxBillingCity" title="第 11 个文本框（市）">第 11 个文本框（市）</strong>、<strong class="example-control-reference" data-example-control="tbxBillingPostCode" title="第 12 个文本框（邮政编码）">第 12 个文本框（邮政编码）</strong>）：<strong class="example-control-reference" data-example-control="cbxSameAsContactAddress" title="和联系人地址相同">复选框</strong>变化事件回发后更新<strong class="example-control-reference" data-example-control="GroupPanel3" title="账单地址">账单地址</strong>字段的可用状态。</li>
+            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="Button1" title="提交账单">提交账单</strong>）：<strong class="example-control-reference" data-example-control="Button1" title="提交账单">提交账单</strong>按钮先验证本页表单，不包含真实支付流程。</li>
         </ul>
     </section>
 }

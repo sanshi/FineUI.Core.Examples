@@ -128,3 +128,19 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示通过按钮组切换移动内容，并从菜单即时改变标签切换动画。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>更换动画后继续切页</h3>
+    <ol>
+        <li>打开标题栏中的动画菜单，选择一种动画或无动画。<br />结果：客户端更新当前选项卡的动画开关和类型，不重新创建标签内容。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="ButtonGroup1" title="按钮组">按钮组</strong>中的另一个按钮。<br />结果：对应内容使用刚选择的动画切换；选择无动画时直接显示目标内容。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableAnimation</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：选择无动画时关闭切页动画，其它类型开启。</li>
+        <li><code>AnimationType</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：本页菜单更新当前切换动画类型。</li>
+        <li><code>activate()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：激活按钮所对应的内容标签。</li>
+    </ul>
+</section>
+}

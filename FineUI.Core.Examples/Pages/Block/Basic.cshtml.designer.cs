@@ -5,7 +5,6 @@ namespace FineUI.Core.Examples.Pages.Block
 {
 	public partial class BasicModel
 	{
-		protected FineUI.Core.Panel Panel8;
 		protected FineUI.Core.Panel Panel5;
 		protected FineUI.Core.Panel Panel6;
 		protected FineUI.Core.Label Label4;

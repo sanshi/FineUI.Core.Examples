@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 {
 	public partial class ToolbarMultiModel
 	{
+		protected FineUI.Core.Panel PanelExample1;
 		protected FineUI.Core.Button Button6;
 		protected FineUI.Core.Toolbar Toolbar1;
 		protected FineUI.Core.Toolbar Toolbar2;

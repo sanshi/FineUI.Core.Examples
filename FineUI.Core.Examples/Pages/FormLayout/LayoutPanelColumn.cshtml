@@ -46,7 +46,7 @@
                 <Items>
                     <f:Label ID="Label4" Width="100" CssClass="marginr" ShowLabel="false" Text="工作时间：">
                     </f:Label>
-                    <f:TextBox Width="40" ShowLabel="false" Label="工作时间（小时）" Required="true">
+                    <f:TextBox ID="TextBoxExample2" Width="40" ShowLabel="false" Label="工作时间（小时）" Required="true">
                     </f:TextBox>
                     <f:Label Text="小时" MarginLeft="5" MarginRight="10">
                     </f:Label>
@@ -72,22 +72,22 @@
         <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>固定宽度与比例宽度</h3>
         <ul>
             <li>
-                对照用户名、作息起止时间与上班起止时间这几行。<br />
+                对照用户名、<strong class="example-control-reference" data-example-control="Label1" title="作息起止时间">作息起止时间</strong>与<strong class="example-control-reference" data-example-control="Label3" title="上班起止时间">上班起止时间</strong>这几行。<br />
                 结果：独立标签与输入框并排；一组日期使用固定宽度，另一组按剩余宽度等分。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
         <p>注意：</p>
         <ul>
-            <li> 表单字段的ShowLabel=false，表单验证失败的对话框消息中用到了 Label 属性。 </li>
-            <li> 表单验证失败的错误提示类型是Qtip，而不是默认的Side。 </li>
+            <li> 表单字段的<code>ShowLabel</code>=<code>false</code>，表单验证失败的对话框消息中用到了 Label 属性。 </li>
+            <li> 表单验证失败的错误提示类型是<code>Qtip</code>，而不是默认的<code>Side</code>。 </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Layout</code>：行面板使用 Column，把标签、字段和按钮并排排列。</li>
-            <li><code>Width</code>：为独立标签、用户名及部分日期字段指定固定宽度。</li>
-            <li><code>ColumnWidth</code>：上班起止日期各占剩余宽度的一半。</li>
-            <li><code>ShowLabel</code>：内置标签隐藏，改由行内独立 Label 显示。</li>
+            <li><code>Layout</code>（本页全部面板，如<strong class="example-control-reference" data-example-control="Panel2" title="第 1 个面板">第 1 个面板</strong>）：行面板使用 <code>Column</code>，把标签、字段和按钮并排排列。</li>
+            <li><code>Width</code>（<strong class="example-control-reference" data-example-control="Label2" title="第 1 个标签（用户名）">第 1 个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="TextBox2" title="第 1 个文本框（用户名）">第 1 个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="Label1" title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker1" title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="Label3" title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="Label4" title="工作时间">工作时间</strong>、<strong class="example-control-reference" data-example-control="TextBoxExample2" title="工作时间（小时）">工作时间（小时）</strong>、<strong class="example-control-reference" data-example-control="TextBox3" title="工作时间（分钟）">工作时间（分钟）</strong>）：为独立标签、用户名及部分日期字段指定固定宽度。</li>
+            <li><code>ColumnWidth</code>（<strong class="example-control-reference" data-example-control="DatePicker3" title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker4" title="上班结束时间">上班结束时间</strong>）：上班起止日期各占剩余宽度的一半。</li>
+            <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="Label2" title="第 1 个标签（用户名）">第 1 个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="TextBox2" title="第 1 个文本框（用户名）">第 1 个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="Label1" title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker1" title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="Label3" title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker3" title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="DatePicker4" title="上班结束时间">上班结束时间</strong>、<strong class="example-control-reference" data-example-control="Label4" title="工作时间">工作时间</strong>、<strong class="example-control-reference" data-example-control="TextBoxExample2" title="工作时间（小时）">工作时间（小时）</strong>、<strong class="example-control-reference" data-example-control="TextBox3" title="工作时间（分钟）">工作时间（分钟）</strong>）：内置标签隐藏，改由行内独立 Label 显示。</li>
         </ul>
     </section>
 }

@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Button
 {
 	public partial class ButtonGroupModel
 	{
+		protected FineUI.Core.ButtonGroup ButtonGroupExample1;
 		protected FineUI.Core.Button btnIcon1;
 		protected FineUI.Core.Button btnIcon2;
 		protected FineUI.Core.Button Button7;

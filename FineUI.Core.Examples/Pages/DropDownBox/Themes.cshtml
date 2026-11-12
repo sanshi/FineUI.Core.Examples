@@ -203,29 +203,29 @@
 }
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>用自定义主题缩略图面板为下拉框提供文字和值。</p>
+        <p>用自定义主题缩略图面板为<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>提供文字和值。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>从自定义缩略图面板选择</h3>
         <ol>
             <li>
-                展开下拉框，点击“Pure Green”主题缩略图。<br />
-                结果：脚本写入 Pure Green 的文字和对应主题标识，然后收起面板；本例仅改变下拉选择，不把整站主题切换为绿色。
+                展开<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>，点击<code>Pure Green</code>主题缩略图。<br />
+                结果：脚本写入 <code>Pure</code> <code>Green</code> 的文字和对应主题标识，然后收起面板；本例仅改变下拉选择，不把整站主题切换为绿色。
             </li>
             <li>
-                点击“获取下拉框的选中值”。<br />
+                点击<strong class="example-control-reference" data-example-control="btnGetSelection" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                 结果：回发后由后台显示所选主题的文字和标识。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>注：自定义数据来源时（CustomData=true），需要同时设置 Value 和 Text 属性来初始化下拉框。</p>
+        <p>注：自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>setValue()</code>：自定义面板完成操作后，同时写入业务值和显示文字，并主动收起面板。</li>
-            <li><code>setValue(value, text)</code>：自定义面板完成选择后同时写入业务值和显示文字；多选时传入一一对应的数组。</li>
-            <li><code>EnableMultiSelect</code>：决定下拉框保留单个值还是多个值。 本页声明值为 false。</li>
-            <li><code>Value</code>：指定初始单选值或多选值数组。 本页声明值为 Pure_Black。</li>
-            <li><code>Text</code>：提供初始显示文字；自定义数据或异步数据需要与值一起设置。 本页声明值为 Pure Black。</li>
-            <li><code>MatchFieldWidth</code>：控制弹出面板是否强制匹配字段宽度。 本页声明值为 false。</li>
-            <li><code>CustomData</code>：通过页面脚本同步值和文字，而非直接采用默认数据控件的选中项。 本页声明值为 true。</li>
+            <li><code>setValue()</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：自定义面板完成操作后，同时写入业务值和显示文字，并主动收起面板。</li>
+            <li><code>setValue(value, text)</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：自定义面板完成选择后同时写入业务值和显示文字；多选时传入一一对应的数组。</li>
+            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>false</code>。</li>
+            <li><code>Value</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：指定初始单选值或多选值数组。 本页声明值为 <code>Pure_Black</code>。</li>
+            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：提供初始显示文字；自定义数据或异步数据需要与值一起设置。 本页声明值为 <code>Pure</code> <code>Black</code>。</li>
+            <li><code>MatchFieldWidth</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：控制弹出面板是否强制匹配字段宽度。 本页声明值为 <code>false</code>。</li>
+            <li><code>CustomData</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉框">下拉框</strong>）：通过页面脚本同步值和文字，而非直接采用默认数据控件的选中项。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

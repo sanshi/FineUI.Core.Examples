@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 {
 	public partial class MenuDynamicModel
 	{
+		protected FineUI.Core.Panel PanelExample1;
 		protected FineUI.Core.Toolbar Toolbar1;
 	}
 }

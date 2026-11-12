@@ -8,6 +8,7 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 		protected FineUI.Core.SimpleForm SimpleForm1;
 		protected FineUI.Core.DropDownBox DropDownBox1;
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Label LabelExample1;
 		protected FineUI.Core.DropDownList ddlAtSchool;
 		protected FineUI.Core.Button btnGetSelection;
 		protected FineUI.Core.Label labResult;

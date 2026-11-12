@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 	public partial class IFrameAddTabModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

@@ -11,13 +11,13 @@
 
     <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" Layout="Fit" BodyPadding="10px" IsViewPort="true">
         <Toolbars>
-            <f:Toolbar Title="面板标题" HeaderStyle="true">
+            <f:Toolbar ID="ToolbarExample1" Title="面板标题" HeaderStyle="true">
             </f:Toolbar>
             <f:Toolbar ID="Toolbar1" Position="Bottom" CssClass="f-state-default">
                 <Items>
                     <f:Button ID="Button1" Text="按钮一" Size="Small" EnableDefaultState="false" ClickHandler="onButton1Click"></f:Button>
                     <f:ToolbarFill></f:ToolbarFill>
-                    <f:Button Text="菜单按钮" Size="Small" EnableDefaultState="false" ShowMenuIcon="false">
+                    <f:Button ID="ButtonExample2" Text="菜单按钮" Size="Small" EnableDefaultState="false" ShowMenuIcon="false">
                         <Menu>
                             <f:MenuButton Text="菜单一" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
                             <f:MenuButton Text="菜单二" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
@@ -62,4 +62,20 @@
 
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示移动面板中固定的内容区域与底部工具栏，并处理普通按钮和菜单动作。</p>
+    <h3><i class="f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用底部操作入口</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="按钮一">按钮一</strong>。<br />结果：浏览器显示本页按钮提示，内容面板继续保留。</li>
+        <li>打开底部的菜单按钮，再点击其中一项。<br />结果：菜单显示对应操作，点击后在浏览器提示当前菜单项。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>）：外层使用 <code>Fit</code>，让内容区占据工具栏之外的空间。 本页使用<code>Fit</code>。</li>
+        <li><code>Position</code>（<strong class="example-control-reference" data-example-control="ToolbarExample1" title="面板标题">面板标题</strong>）：工具栏放在底部。</li>
+        <li><code>EnableDefaultState</code>（<strong class="example-control-reference" data-example-control="Button1" title="按钮一">按钮一</strong>、<strong class="example-control-reference" data-example-control="ButtonExample2" title="菜单按钮">菜单按钮</strong>）：本页底部按钮使用简化的默认外观。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
 }

@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 {
 	public partial class ToolbarCustomBgModel
 	{
+		protected FineUI.Core.Panel PanelExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

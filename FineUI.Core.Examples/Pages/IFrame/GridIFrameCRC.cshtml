@@ -143,3 +143,20 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示用客户端渲染函数生成表格行命令，传入当前行信息打开 <code>iframe</code> 窗体。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>使用手工生成的行命令</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="Grid1">Grid1</strong>点击第一行的<strong>编辑</strong>或弹出窗体入口。<br />结果：<code>iframe</code> 窗体打开当前记录，标题或地址包含本次选择的行信息；不会固定打开同一条记录。</li>
+        <li>关闭编辑窗体，再点击该行删除命令。<br />结果：本页显示尚未实现的提示，不把演示命令写成真实删除。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="Grid1">Grid1</strong>）：表格使用稳定的记录 <code>ID</code> 识别当前行。 本页使用<code>Id</code>。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：编辑窗体使用独立子页面。 本页使用<code>true</code>。</li>
+        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
+    </ul>
+</section>
+}

@@ -6,15 +6,20 @@ namespace FineUI.Core.Examples.Pages.Form
 	public partial class FormColumnWidthsModel
 	{
 		protected FineUI.Core.Form Form1;
+		protected FineUI.Core.FormRow FormRowExample1;
 		protected FineUI.Core.Label Label3;
 		protected FineUI.Core.Label Label16;
+		protected FineUI.Core.FormRow FormRowExample2;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.Label Label4;
 		protected FineUI.Core.TextBox TextBox2;
+		protected FineUI.Core.FormRow FormRowExample3;
 		protected FineUI.Core.Label Label2;
 		protected FineUI.Core.DropDownList DropDownList3;
+		protected FineUI.Core.FormRow FormRowExample4;
 		protected FineUI.Core.Label Label5;
 		protected FineUI.Core.NumberBox NumberBox1;
+		protected FineUI.Core.FormRow FormRowExample5;
 		protected FineUI.Core.Label Label6;
 		protected FineUI.Core.TextArea TextArea1;
 		protected FineUI.Core.Panel Panel2;

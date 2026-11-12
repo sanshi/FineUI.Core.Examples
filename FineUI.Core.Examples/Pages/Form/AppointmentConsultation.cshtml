@@ -29,31 +29,31 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示咨询项目改变后更新可预约时间步长，并在提交时核对当前时间是否可用。</p>
+        <p>演示<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>改变后更新可预约时间步长，并在提交时核对当前时间是否可用。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>项目切换重新检查时间</h3>
         <ol>
             <li>
-                常规咨询选择 09:15，再切换为“深度咨询（30 分钟）”。<br />
-                结果：后台将时间步长改为 30 分钟，原来的 09:15 不符合深度咨询可预约时段。
+                常规咨询选择 <code>09:15</code>，再切换为“深度咨询（<code>30</code> 分钟）”。<br />
+                结果：后台将时间步长改为 <code>30</code> 分钟，原来的 <code>09:15</code> 不符合深度咨询可预约时段。
             </li>
             <li>
-                改选 09:30，点击“提交预约”。<br />
-                结果：后台显示深度咨询项目与 09:30 的预约结果。
+                改选 <code>09:30</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交预约">提交预约</strong>。<br />
+                结果：后台显示深度<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>与 <code>09:30</code> 的预约结果。
             </li>
             <li>
-                切回常规咨询，再选择 09:15 并提交。<br />
-                结果：步长恢复为 15 分钟，09:15 可以预约。
+                切回常规咨询，再选择 <code>09:15</code> 并提交。<br />
+                结果：步长恢复为 <code>15</code> 分钟，<code>09:15</code> 可以预约。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>先选 09:15，再切换为深度咨询。后台把时间框的 AJAX 属性 <code>Increment</code> 改为 30， 原来的 09:15 会标为不可选。改选 09:30 后即可提交预约；切回常规咨询，09:15 也可以提交。</p>
+        <p>先选 <code>09:15</code>，再切换为深度咨询。后台把时间框的 <code>AJAX</code> 属性 <code>Increment</code> 改为 <code>30</code>， 原来的 <code>09:15</code> 会标为不可选。改选 <code>09:30</code> 后即可<strong class="example-control-reference" data-example-control="btnSubmit" title="提交预约">提交预约</strong>；切回常规咨询，<code>09:15</code> 也可以提交。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnSelectedIndexChanged</code>：咨询项目变化时回发更新开始时间的规则。</li>
-            <li><code>Increment</code>：常规为 15、深度为 30，后台修改后浏览器立即采用新步长。</li>
-            <li><code>MinTimeText</code>：最早可选 09:00。</li>
-            <li><code>MaxTimeText</code>：最晚可选 10:00。</li>
-            <li><code>Required</code>：开始时间必须有有效值。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>）：<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>变化时回发更新<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>的规则。</li>
+            <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：常规为 <code>15</code>、深度为 <code>30</code>，后台修改后浏览器立即采用新步长。</li>
+            <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最早可选 <code>09:00</code>。</li>
+            <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最晚可选 <code>10:00</code>。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>必须有有效值。</li>
         </ul>
     </section>
 }

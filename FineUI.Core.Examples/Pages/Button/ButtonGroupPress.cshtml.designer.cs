@@ -5,6 +5,7 @@ namespace FineUI.Core.Examples.Pages.Button
 {
 	public partial class ButtonGroupPressModel
 	{
+		protected FineUI.Core.ButtonGroup ButtonGroupExample1;
 		protected FineUI.Core.Button btnIcon1;
 		protected FineUI.Core.Button btnIcon2;
 		protected FineUI.Core.Button Button7;
@@ -26,11 +27,13 @@ namespace FineUI.Core.Examples.Pages.Button
 		protected FineUI.Core.Button Button4;
 		protected FineUI.Core.Button Button5;
 		protected FineUI.Core.Button Button6;
+		protected FineUI.Core.Label LabelExample3;
 		protected FineUI.Core.ButtonGroup ButtonGroup4;
 		protected FineUI.Core.Button Button15;
 		protected FineUI.Core.Button Button16;
 		protected FineUI.Core.Button Button17;
 		protected FineUI.Core.Button Button18;
+		protected FineUI.Core.Label LabelExample4;
 		protected FineUI.Core.ButtonGroup ButtonGroup5;
 		protected FineUI.Core.Button Button19;
 		protected FineUI.Core.Button Button20;

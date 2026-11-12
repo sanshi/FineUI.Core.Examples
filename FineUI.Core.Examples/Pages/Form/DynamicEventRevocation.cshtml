@@ -39,34 +39,34 @@
         <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>撤回前后核对处理次数</h3>
         <ol>
             <li>
-                点击“触发动态按钮事件”。<br />
-                结果：下方显示事件已执行，服务器处理次数从0变为1。
+                点击<strong class="example-control-reference" data-example-control="btnDynamic" data-example-control-deferred="true" title="触发动态按钮事件">触发动态按钮事件</strong>。<br />
+                结果：下方显示事件已执行，服务器处理次数从<code>0</code>变为<code>1</code>。
             </li>
             <li>
-                勾选“本轮撤回动态按钮事件”，再次点击动态按钮。<br />
-                结果：服务器拒绝本次请求，页面显示 HTTP 400 的撤回提示。
+                勾选<strong class="example-control-reference" data-example-control="cbxRevoke" title="本轮撤回动态按钮事件">本轮撤回动态按钮事件</strong>，再次点击动态按钮。<br />
+                结果：服务器拒绝本次请求，页面显示 <code>HTTP</code> <code>400</code> 的撤回提示。
             </li>
             <li>
-                点击“读取服务器处理次数”。<br />
-                结果：次数仍为1，证明拒绝请求没有执行动态按钮业务。
+                点击<strong class="example-control-reference" data-example-control="btnReadCount" title="读取服务器处理次数">读取服务器处理次数</strong>。<br />
+                结果：次数仍为<code>1</code>，证明拒绝请求没有执行动态按钮业务。
             </li>
             <li>
                 取消勾选，再点击动态按钮。<br />
-                结果：事件恢复可用，次数增加为2；复选框仅模拟条件，实际权限必须由服务器校验。
+                结果：事件恢复可用，次数增加为<code>2</code>；<strong class="example-control-reference" data-example-control="cbxRevoke" title="本轮撤回动态按钮事件">复选框</strong>仅模拟条件，实际权限必须由服务器校验。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
         <ul>
             <li>动态按钮仅首次绑定事件，回发无需重复登记。</li>
-            <li>勾选后每轮明确撤回事件，点击返回 HTTP 400；取消勾选后恢复。</li>
-            <li>读取服务器处理次数，确认拒绝时次数不增加。计数保存在 Session 中，刷新本页重置。</li>
-            <li>复选框仅模拟撤回条件，实际业务权限须由服务器判断并校验。</li>
+            <li>勾选后每轮明确撤回事件，点击返回 <code>HTTP</code> <code>400</code>；取消勾选后恢复。</li>
+            <li><strong class="example-control-reference" data-example-control="btnReadCount" title="读取服务器处理次数">读取服务器处理次数</strong>，确认拒绝时次数不增加。计数保存在 <code>Session</code> 中，刷新本页重置。</li>
+            <li><strong class="example-control-reference" data-example-control="cbxRevoke" title="本轮撤回动态按钮事件">复选框</strong>仅模拟撤回条件，实际业务权限须由服务器判断并校验。</li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Events.Add()</code>：创建动态按钮时登记本页的后台事件。</li>
-            <li><code>Events.Remove()</code>：本轮条件要求撤回时明确移除事件，不能仅省略重复登记。</li>
-            <li><code>F.beforeAjaxError()</code>：识别本例预期的 HTTP 400，显示可读提示；处理次数另从服务器读取核对。</li>
+            <li><code>Events.Add()</code>（<strong class="example-control-reference" data-example-control="btnDynamic" data-example-control-deferred="true" title="触发动态按钮事件">触发动态按钮事件</strong>）：创建动态按钮时登记本页的后台事件。</li>
+            <li><code>Events.Remove()</code>（<strong class="example-control-reference" data-example-control="btnDynamic" data-example-control-deferred="true" title="触发动态按钮事件">触发动态按钮事件</strong>）：本轮条件要求撤回时明确移除事件，不能仅省略重复登记。</li>
+            <li><code>F.beforeAjaxError()</code>（<strong>页面客户端配置</strong>）：识别本例预期的 <code>HTTP</code> <code>400</code>，显示可读提示；处理次数另从服务器读取核对。</li>
         </ul>
     </section>
 }

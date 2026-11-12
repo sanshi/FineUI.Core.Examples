@@ -77,3 +77,20 @@
 }
 
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示从底部打开日历面板，选定日期后隐藏面板并显示选择结果。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>在日历中选择日期</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="选择日期">选择日期</strong>。<br />结果：底部动作面板显示本页日历。</li>
+        <li>在<strong class="example-control-reference" data-example-control="Calendar1" title="日历">日历</strong>点击一个可选日期。<br />结果：客户端读取当前日期，隐藏动作面板，并按本页格式显示选择提示。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>PositionY</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗口">窗口</strong>）：选择面板贴底显示。 本页使用<code>Bottom</code>。</li>
+        <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="Calendar1" title="日历">日历</strong>）：按本页 <code>yyyy</code>-<code>MM</code>-<code>dd</code> 格式显示选择结果。 本页使用<code>yyyy-MM-dd</code>。</li>
+        <li><code>select</code>（<strong class="example-control-reference" data-example-control="Calendar1" title="日历">日历</strong>）：日历选择完成后执行本页结果处理。</li>
+    </ul>
+</section>
+}

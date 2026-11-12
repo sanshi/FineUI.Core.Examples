@@ -42,39 +42,39 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示复选框的选中、文字和可用状态修改，并对比客户端操作与后台回发。</p>
+        <p>演示<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>的选中、文字和可用状态修改，并对比客户端操作与后台回发。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>反选、改文字和禁用</h3>
         <ul>
             <li>
-                点击“选择/反选复选框”。<br />
-                结果：回发后由后台反转第一个复选框的选中状态，再点一次恢复。
+                点击<strong class="example-control-reference" data-example-control="btnSelectCheckBox" title="选择/反选复选框">选择/反选复选框</strong>。<br />
+                结果：回发后由后台反转<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">第一个复选框</strong>的选中状态，再点一次恢复。
             </li>
             <li>
-                点击“选择/反选复选框（客户端脚本）”。<br />
-                结果：浏览器直接反选第一个复选框，无需回发。
+                点击<strong class="example-control-reference" data-example-control="btnChangeCheckStatus" title="选择/反选复选框（客户端脚本）">选择/反选复选框（客户端脚本）</strong>。<br />
+                结果：浏览器直接反选<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">第一个复选框</strong>，无需回发。
             </li>
             <li>
-                点击“改变复选框文本”。<br />
-                结果：回发后由后台将第一个复选框的文字改为带当前时间的文本。
+                点击<strong class="example-control-reference" data-example-control="btnChangeText" title="改变复选框文本">改变复选框文本</strong>。<br />
+                结果：回发后由后台将<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">第一个复选框</strong>的文字改为带当前时间的文本。
             </li>
             <li>
-                点击“启用/禁用复选框”。<br />
-                结果：回发后由后台禁用第一个复选框，此时无法直接勾选；再点一次恢复可用。
+                点击<strong class="example-control-reference" data-example-control="btnDisable" title="启用/禁用复选框">启用/禁用复选框</strong>。<br />
+                结果：回发后由后台禁用<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">第一个复选框</strong>，此时无法直接勾选；再点一次恢复可用。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>响应勾选变化</h3>
         <ul>
             <li>
-                直接勾选或取消第二个复选框（OnCheckedChanged）。<br />
+                直接勾选或取消<strong class="example-control-reference" data-example-control="CheckBox2" title="复选框（OnCheckedChanged）">第二个复选框</strong>（<code>OnCheckedChanged</code>）。<br />
                 结果：变化事件回发后，后台读取选中状态，下方显示“复选框的状态：选中”或“复选框的状态：未选中”。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Checked</code>：布尔值表示是否选中，第一个复选框初始为选中。</li>
-            <li><code>Text</code>：复选框旁的文字，本例可改为带时间的文本。</li>
-            <li><code>Enabled</code>：控制是否可用，禁用后不能由用户直接勾选。</li>
-            <li><code>OnCheckedChanged</code>：第二个复选框的选中状态改变时回发，后台更新结果标签。</li>
+            <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>）：布尔值表示是否选中，<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">第一个复选框</strong>初始为选中。</li>
+            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>、<strong class="example-control-reference" data-example-control="CheckBox2" title="复选框（OnCheckedChanged）">复选框（OnCheckedChanged）</strong>）：<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>旁的文字，本例可改为带时间的文本。</li>
+            <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>）：控制是否可用，禁用后不能由用户直接勾选。</li>
+            <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="CheckBox2" title="复选框（OnCheckedChanged）">复选框（OnCheckedChanged）</strong>）：<strong class="example-control-reference" data-example-control="CheckBox2" title="复选框（OnCheckedChanged）">第二个复选框</strong>的选中状态改变时回发，后台更新结果标签。</li>
         </ul>
     </section>
 }

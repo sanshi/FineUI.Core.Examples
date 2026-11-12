@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Layout
 	public partial class RegionMultiRegionsModel
 	{
 		protected FineUI.Core.Panel Panel1;
+		protected FineUI.Core.Panel PanelExample2;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.Label Label4;
 		protected FineUI.Core.Panel panelLeftRegion;

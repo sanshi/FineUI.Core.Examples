@@ -52,3 +52,18 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示初始禁用整个面板，并由面板外的按钮恢复或再次禁用。</p>
+    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>切换整个面板的可用状态</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="启用/禁用面板">启用/禁用面板</strong>。<br />结果：后台启用原先禁用的面板，内部工具栏和内容恢复可操作。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="启用/禁用面板">启用/禁用面板</strong>。<br />结果：整个面板再次禁用，内部控件不再接受普通用户操作，内容仍保留。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>）：外层面板初始设为 <code>false</code>，影响它内部的交互区域。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
+}

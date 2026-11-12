@@ -8,6 +8,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.Window
 		protected FineUI.Core.Panel Panel1;
 		protected FineUI.Core.Button btnOpenWindow;
 		protected FineUI.Core.Window Window1;
+		protected FineUI.Core.ButtonGroup ButtonGroupExample1;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button Button2;
 		protected FineUI.Core.Button Button3;

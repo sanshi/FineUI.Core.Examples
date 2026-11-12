@@ -8,7 +8,7 @@
 
 @section body {
 
-    <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
+    <f:Panel ID="PanelExample1" IsFluid="true" ShowBorder="true" BodyPadding="10" Height="300" Title="面板" EnableCollapse="false">
         <toolbars>
             <f:Toolbar>
                 <Items>
@@ -16,7 +16,7 @@
                     </f:ToolbarText>
                     <f:ToolbarSeparator>
                     </f:ToolbarSeparator>
-                    <f:Button Text="中国科学技术大学">
+                    <f:Button ID="ButtonExample1" Text="中国科学技术大学">
                         <Menu>
                             <f:MenuHyperLink ID="MenuHyperLink1" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院" Icon="Accept">
                             </f:MenuHyperLink>
@@ -43,3 +43,19 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示为菜单项配置图片图标，并在后台删除或更换指定图标。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>更新指定菜单项的图标</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="ButtonExample1" title="中国科学技术大学">中国科学技术大学</strong>，再展开其中的多级菜单。<br />结果：浏览器显示菜单及下级菜单；带链接的菜单项可按配置打开新页面。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="删除[化学与材料科学学院]菜单项的图标">删除[化学与材料科学学院]菜单项的图标</strong>。<br />结果：后台移除指定菜单项图标，重新展开菜单即可对照。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="修改[管理学院]菜单项的图标">修改[管理学院]菜单项的图标</strong>。<br />结果：后台替换指定菜单项图标，菜单文字与链接保持原样。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Icon</code>（<strong class="example-control-reference" data-example-control="MenuHyperLink1" title="第 1 个菜单链接">第 1 个菜单链接</strong>、<strong class="example-control-reference" data-example-control="MenuHyperLink2" title="第 2 个菜单链接">第 2 个菜单链接</strong>）：指定菜单项的图片图标；本页按钮只更新目标菜单项。 本页使用<code>Accept</code>。</li>
+    </ul>
+</section>
+}

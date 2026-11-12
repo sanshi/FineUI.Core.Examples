@@ -21,6 +21,7 @@ namespace FineUI.Core.Examples.Pages.FormLayout
 		protected FineUI.Core.DatePicker DatePicker4;
 		protected FineUI.Core.Panel Panel4;
 		protected FineUI.Core.Label Label4;
+		protected FineUI.Core.TextBox TextBoxExample2;
 		protected FineUI.Core.TextBox TextBox3;
 		protected FineUI.Core.Label Label6;
 		protected FineUI.Core.Button Button1;

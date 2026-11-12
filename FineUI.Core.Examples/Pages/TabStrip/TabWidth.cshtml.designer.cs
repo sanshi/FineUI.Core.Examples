@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 	public partial class TabWidthModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample1;
 		protected FineUI.Core.Label Label1;
 		protected FineUI.Core.Label Label2;
 		protected FineUI.Core.Label Label3;

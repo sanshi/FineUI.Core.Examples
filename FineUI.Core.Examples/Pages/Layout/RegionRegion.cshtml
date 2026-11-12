@@ -62,3 +62,19 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在一个区域内嵌套另一组区域布局，各层分别分配空间。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整区域空间</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>拖动可用的分隔条，再点击侧边区域的折叠入口。<br />结果：被操作区域改变尺寸或折叠，中心区域随剩余空间重新布局；其它区域内容保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>）：外层使用 <code>Region</code> 布局组织各方向的子区域。 本页使用<code>Region</code>。</li>
+        <li><code>RegionPosition</code>（本页各面板，如<strong class="example-control-reference" data-example-control="panelLeftRegion" title="第 2 个面板（左侧面板）">第 2 个面板（左侧面板）</strong>）：指定每个子区域所在的方向，中心区域使用剩余空间。 本页各组分别使用<code>Left</code>、<code>Center</code>。</li>
+        <li><code>RegionSplit</code>（<strong class="example-control-reference" data-example-control="panelLeftRegion" title="第 2 个面板（左侧面板）">第 2 个面板（左侧面板）</strong>、<strong class="example-control-reference" data-example-control="panel3" title="第 5 个面板（左侧面板）">第 5 个面板（左侧面板）</strong>、<strong class="example-control-reference" data-example-control="panel6" title="第 8 个面板（左侧面板）">第 8 个面板（左侧面板）</strong>）：允许对应区域显示可拖动的分隔条。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
+}

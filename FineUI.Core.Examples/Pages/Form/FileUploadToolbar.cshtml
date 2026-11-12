@@ -35,7 +35,7 @@
             </f:TextBox>
         </Items>
         <Toolbars>
-            <f:Toolbar Position="Bottom">
+            <f:Toolbar ID="ToolbarExample1" Position="Bottom">
                 <Items>
                     <f:Button Text="测试按钮"></f:Button>
                     <f:ToolbarFill></f:ToolbarFill>
@@ -58,23 +58,23 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示将文件选择按钮放进工具栏，选定后直接更新头像预览。</p>
+        <p>演示将文件选择按钮放进<strong class="example-control-reference" data-example-control="ToolbarExample1" title="工具栏">工具栏</strong>，选定后直接更新头像预览。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>先上传头像</h3>
         <ol>
             <li>
-                点击“上传个人头像”，选择一张合格图片。<br />
+                点击<strong>上传个人头像</strong>，选择一张合格图片。<br />
                 结果：文件选中事件立即回发；后台校验并保存图片，头像区域由空白图变为新头像，同时清空文件选择。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
         <p>注：</p>
         <ul>
-            <li> 上传个人头像通过 AcceptFileTypes="image/*" 来控制默认显示的文件类型 </li>
+            <li> 上传个人头像通过 <code>AcceptFileTypes</code>="<code>image</code>/*" 来控制默认显示的文件类型 </li>
             <li> <a href="http://stackoverflow.com/questions/181214/file-input-accept-attribute-is-it-useful" target="_blank">AcceptFileTypes 的有效值</a> </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ButtonOnly</code>：只显示上传按钮，不显示文件路径输入框。 本页声明值为 true。</li>
+            <li><code>ButtonOnly</code>（<strong class="example-control-reference" data-example-control="filePhoto" title="上传控件">上传控件</strong>）：只显示上传按钮，不显示文件路径输入框。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

@@ -35,3 +35,20 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在独立子页面选择省份，经后台处理后回填父页面字段。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>选择后回填父页面</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="从列表中选择">从列表中选择</strong>。<br />结果：打开本页配置的 <code>iframe</code> 选择窗体。</li>
+        <li>在子页面选择北京并按该页面的确定入口提交。<br />结果：子页面通过后台处理把北京回填到父页面省份字段，然后关闭选择窗体。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：在窗体内加载省份选择页。 本页使用<code>true</code>。</li>
+        <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：指定选择窗体在哪一层页面显示。 本页使用<code>Parent</code>。</li>
+        <li><code>GetHideReference()</code>（<strong>省份选择子页面</strong>）：子页面找到当前选择窗体及其调用页面，向本页目标字段回填选择。</li>
+    </ul>
+</section>
+}

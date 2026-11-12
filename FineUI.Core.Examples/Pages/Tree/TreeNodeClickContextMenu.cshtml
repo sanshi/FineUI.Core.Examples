@@ -37,7 +37,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
     <br>
     <br>
-    注：在树节点上点击右键菜单时，会触发 nodeclick 事件。
+
 
 
 }
@@ -77,4 +77,22 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示右键节点时也触发本页配置的节点点击处理。</p>
+    <h3><i class="f-iconfont f-iconfont-edit" aria-hidden="true"></i>用右键触发节点事件</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>右键点击<code>遂平县</code>。<br />结果：右键会触发节点配置的点击事件并回发，结果标签显示当前节点标识与名称。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>在树节点上点击右键菜单时，会触发 <code>nodeclick</code> 事件。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>beforenodecontextmenu</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：本页在右键菜单事件前主动触发 <code>nodeclick</code>，使它沿用节点点击处理。</li>
+    </ul>
+</section>
 }

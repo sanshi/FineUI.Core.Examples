@@ -120,8 +120,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>更新附加提示</h3>
         <ul>
             <li>
-                分别悬停两种提示标签，再点击各自的“改变文本的提示信息”按钮。<br />
-                结果：一组通过 ToolTip、另一组通过 Attributes 中的 data-qtip 提供提示，后台修改后重新悬停即可看到新内容。
+                分别悬停两种提示标签，再点击各自的<strong class="example-control-reference" data-example-control="btnChangeTip1" title="第 1 个按钮（改变文本的提示信息）">第 1 个按钮（改变文本的提示信息）</strong>、<strong class="example-control-reference" data-example-control="btnChangeTip2" title="第 2 个按钮（改变文本的提示信息）">第 2 个按钮（改变文本的提示信息）</strong>按钮。<br />
+                结果：一组通过 <code>ToolTip</code>、另一组通过 <code>Attributes</code> 中的 <code>data</code>-<code>qtip</code> 提供提示，后台修改后重新悬停即可看到新内容。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>点击地图热点</h3>
@@ -132,14 +132,14 @@
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>通过 Attributes 属性设置图片的 usemap 属性：</p>
+        <p>通过 <code>Attributes</code> 属性设置图片的 <code>usemap</code> 属性：</p>
         <p>图片来源：<a href="http://www.sbsm.gov.cn/article/zxbs/dtfw/" target="_blank">http://www.sbsm.gov.cn/article/zxbs/dtfw/</a></p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Attributes</code>：给控件目标元素附加属性，本页使用 data-qtip 和 usemap。</li>
-            <li><code>ToolTip</code>：用控件属性设置提示信息，与直接附加 data-qtip 的方式作对照。</li>
-            <li><code>usemap</code>：把地图图片关联到 ChinaMap 的热点定义。</li>
-            <li><code>data-province</code>：每个热点保存对应省份名称，点击函数据此显示提示。</li>
+            <li><code>Attributes</code>（<strong class="example-control-reference" data-example-control="Label2" title="提示信息（Attributes属性）">提示信息（Attributes属性）</strong>、<strong class="example-control-reference" data-example-control="imgChina" title="图片">图片</strong>）：给控件目标元素附加属性，本页使用 <code>data</code>-<code>qtip</code> 和 <code>usemap</code>。</li>
+            <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="Label1" title="提示信息（ToolTip属性）">提示信息（ToolTip属性）</strong>）：用控件属性设置<strong class="example-control-reference" data-example-control="Label1" title="提示信息（ToolTip属性）">提示信息</strong>，与直接附加 <code>data</code>-<code>qtip</code> 的方式作对照。</li>
+            <li><code>usemap</code>（<strong class="example-control-reference" data-example-control="imgChina" title="图片">图片</strong>）：把地图图片关联到 <code>ChinaMap</code> 的热点定义。</li>
+            <li><code>data-province</code>（<strong>中国地图中的热点</strong>）：每个热点保存对应省份名称，点击函数据此显示提示。</li>
         </ul>
     </section>
 }

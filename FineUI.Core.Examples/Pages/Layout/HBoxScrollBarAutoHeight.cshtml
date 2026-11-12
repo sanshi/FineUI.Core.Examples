@@ -31,7 +31,27 @@
 
     <br />
     <br />
-    注：反复缩小页面宽度，使得面板出现横向滚动条，此时面板的高度应保持不变。
+
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示组合横向滚动与内容自然高度。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条">面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条</strong>中缩窄容器并横向滚动，对照较高子项。<br />结果：子项宽度保持，横向溢出可滚动；内容高度按本页自动高度设置计算。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>反复缩小页面宽度，使得面板出现横向滚动条，此时面板的高度应保持不变。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条">面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条</strong>）：父容器使用本页对应的布局方式，决定其直接子项的排列。 本页使用<code>HBox</code>。</li>
+        <li><code>AutoScroll</code>（<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条">面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条</strong>）：内容超出该容器时允许滚动查看。 本页使用<code>true</code>。</li>
+        <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条">面板（Layout=HBox AutoScroll=true），宽度变小时可能出现横向滚动条</strong>）：显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
+    </ul>
+</section>
+}

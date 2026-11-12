@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.FormTable
 	public partial class TableStyleFileUploadModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
+		protected FineUI.Core.SimpleForm SimpleFormExample2;
 		protected FineUI.Core.TextBox tbxUserName;
 		protected FineUI.Core.FileUpload filePhoto;
 		protected FineUI.Core.Button btnSubmit;

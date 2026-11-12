@@ -29,23 +29,23 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示组合选择日期和时间，时间列表限制在08:30到20:30、每30分钟一项。</p>
+        <p>演示组合选择日期和时间，时间列表限制在<code>08:30</code>到<code>20:30</code>、每<code>30</code>分钟一项。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期</h3>
         <ol>
             <li>
-                点击“日期”字段右侧的下拉图标。<br />
+                点击<strong class="example-control-reference" data-example-control="DatePicker1" title="日期">日期</strong>字段右侧的下拉图标。<br />
                 结果：显示本页日期面板；输入框当前值仍可对照查看。
             </li>
             <li>
-                在面板中选择今天之后第5天。<br />
+                在面板中选择今天之后第<code>5</code>天。<br />
                 结果：所选值回填输入框。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>在限定时间列表中选择</h3>
         <ul>
             <li>
-                打开“时间”字段的下拉列表，选择“09:30”。<br />
-                结果：列表只提供08:30到20:30的半小时时间点；选择后时间回填字段。日期与时间是两个独立字段。
+                打开<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>字段的下拉列表，选择<code>09:30</code>。<br />
+                结果：列表只提供<code>08:30</code>到<code>20:30</code>的半小时时间点；选择后时间回填字段。日期与时间是两个独立字段。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>验证并读取当前值</h3>
@@ -55,20 +55,20 @@
                 结果：满足必填及本页已设置的日期或时间范围限制。
             </li>
             <li>
-                点击“提交表单”。<br />
+                点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
                 结果：浏览器验证通过后回发，后台读取本页日期或时间值，更新结果标签。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>本示例通过 EnableEdit=false 控制日期和时间选择器不可手工编辑，使用下拉面板完成选择。</p>
+        <p>本示例通过 <code>EnableEdit</code>=<code>false</code> 控制日期和时间选择器不可手工编辑，使用下拉面板完成选择。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Text</code>：时间字段以 HH:mm 字符串保存当前选择，例如09:30；旁边的日期字段独立保存日期。</li>
-            <li><code>Increment</code>：设为30分钟，列表每半小时提供一个时间点。</li>
-            <li><code>MinTimeText</code>：时间列表的最早选项为08:30，包含该边界值。</li>
-            <li><code>MaxTimeText</code>：时间列表的最晚选项为20:30，包含该边界值。</li>
-            <li><code>EnableEdit</code>：设为 false，通过下拉列表选择时间，不能手工输入列表之外的值。</li>
-            <li><code>Required</code>：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
+            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>）：时间字段以 <code>HH</code>:<code>mm</code> 字符串保存当前选择，例如<code>09:30</code>；旁边的日期字段独立保存日期。</li>
+            <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>）：设为<code>30</code>分钟，列表每半小时提供一个时间点。</li>
+            <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>）：时间列表的最早选项为<code>08:30</code>，包含该边界值。</li>
+            <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>）：时间列表的最晚选项为<code>20:30</code>，包含该边界值。</li>
+            <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>）：设为 <code>false</code>，通过下拉列表选择时间，不能手工输入列表之外的值。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
         </ul>
     </section>
 }

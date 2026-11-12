@@ -45,3 +45,18 @@
 
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示只替换指定节点的子树，并在两套子节点数据之间切换。</p>
+    <h3><i class="f-iconfont f-iconfont-refresh" aria-hidden="true"></i>替换当前子树</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnUpdateNode" title="更新节点[驻马店市]">更新节点[驻马店市]</strong>。<br />结果：当前驻马店节点的旧子树被替换为另一套子节点，并展开更新后的目录；树的其它分支继续保留。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnUpdateNode" title="更新节点[驻马店市]">更新节点[驻马店市]</strong>。<br />结果：再次切换子树数据，不会把新旧两套子节点重复追加在一起。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>LoadData()</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：把一组节点作为指定目录的新子树加载，替换该目录原来的子节点。</li>
+        <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：保留目录的展开能力，允许原来没有子项的节点加载子树。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
+}

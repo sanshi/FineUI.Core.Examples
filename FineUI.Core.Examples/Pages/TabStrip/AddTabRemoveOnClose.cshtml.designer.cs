@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.TabStrip
 	public partial class AddTabRemoveOnCloseModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample1;
 		protected FineUI.Core.Button btnAddTab1;
 		protected FineUI.Core.Button btnAddTab2;
 		protected FineUI.Core.Button btnRemoveTab1;
