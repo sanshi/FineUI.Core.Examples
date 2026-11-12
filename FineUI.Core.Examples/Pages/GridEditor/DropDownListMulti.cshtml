@@ -56,7 +56,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br />
-    注：[兴趣爱好]列的编辑器属性TopSpaceFirst=true，优先在上部空间显示弹出框。
+
 
 }
 
@@ -78,4 +78,20 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把可多选的下拉列表用作兴趣爱好单元格编辑器，显示名称并保存多项值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在同一单元格选择多个兴趣</h3>
+    <ul>
+        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>兴趣爱好</strong>编辑器，选中两项后结束编辑，再次打开。<br />结果：单元格显示多个兴趣名称；重新编辑时对应选项仍被选中，取消其中一项后只保留其余项。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：[兴趣爱好]列的编辑器属性TopSpaceFirst=true，优先在上部空间显示弹出框。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="ddlHobby" title="兴趣爱好列的下拉列表">兴趣爱好列的下拉列表</strong>）：初始为 <code>true</code>，同一个下拉编辑器可同时保留多个选项。</li>
+        <li><code>RendererFunction</code>（<strong>兴趣爱好列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：把保存的多项值转换为对应选项文字，显示文字与实际值分别处理。</li>
+    </ul>
+</section>
 }

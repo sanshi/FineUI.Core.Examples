@@ -51,10 +51,7 @@
 
     <br>
     为了正确的显示和编辑时间，请注意如下属性：
-    <ul>
-        <li>入学日期列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm"</li>
-        <li>入学日期的编辑表单字段（DatePicker）：DateFormatString="yyyy-MM-dd HH:mm" ShowTime="true" ShowSecond="false"</li>
-    </ul>
+
 
 }
 
@@ -62,4 +59,24 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在单元格日期编辑器中同时选择日期和时间，显示精度保留到分钟，不显示秒。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改日期与时间</h3>
+    <ul>
+        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>入学日期</strong>，同时调整日期与时间，再结束编辑。<br />结果：单元格按年月日、时分显示结果；重新进入编辑时可继续调整同样精度的时间。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li><strong>入学日期</strong>列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm"</li>
+        <li><strong><strong>入学日期</strong></strong>的编辑表单字段（DatePicker）：DateFormatString="yyyy-MM-dd HH:mm" ShowTime="true" ShowSecond="false"</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate" title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>true</code>，在日期弹层中显示时间选择区。</li>
+        <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate" title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>yyyy-MM-dd HH:mm</code>，编辑器按本页格式读取与回显完整日期时间。</li>
+        <li><code>RendererArgument</code>（<strong>入学日期</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>yyyy-MM-dd HH:mm</code>，单元格采用与编辑器一致的日期时间显示精度。</li>
+    </ul>
+</section>
 }

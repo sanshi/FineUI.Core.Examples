@@ -51,14 +51,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-        说明：
-    <ul>
-        <li>方向键在单元格之间导航（非编辑状态）</li>
-        <li>回车键使单元格进入编辑状态</li>
-        <li>ESC键取消单元格的编辑状态</li>
-        <li>Tab键进入下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li>Shift+Tab键回退到上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-    </ul>
+
 
 }
 
@@ -66,4 +59,34 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>编辑文本、选择、数字、日期和布尔单元格，提交本轮修改后由后台更新示例数据。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用各类单元格编辑器</h3>
+    <ul>
+        <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>的<strong>姓名</strong>单元格，输入<code>测试姓名</code>并结束编辑。<br />结果：单元格显示新<strong>姓名</strong>并进入已修改状态；此时是浏览器中的待提交修改。</li>
+        <li>编辑<strong>性别</strong>并选择女，修改<strong>入学年份</strong>为范围内的整数，再通过日期编辑器选择<strong><strong>入学日期</strong></strong>。<br />结果：下拉列显示所选文字，数字列保留整数，日期列按本页日期格式显示，各种编辑器分别检查自己的输入。</li>
+        <li>切换<strong>是否在校</strong>列的复选框。<br />结果：该行的布尔值在勾选与未勾选之间改变，不代表选择或取消整行。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>提交修改并重新绑定</h3>
+    <ul>
+        <li>完成一项或多项修改后点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：后台读取本轮变更，更新本示例的数据并重新绑定，下方显示修改明细；重新显示后的单元格保留已保存的值。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>方向键在单元格之间导航（非编辑状态）</li>
+        <li>回车键使单元格进入编辑状态</li>
+        <li>ESC键取消单元格的编辑状态</li>
+        <li>Tab键进入下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
+        <li>Shift+Tab键回退到上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowCellEditing</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：初始为 <code>true</code>，启用表格的单元格编辑能力。</li>
+        <li><code>ClicksToEdit</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：初始为 <code>2</code>，决定需要单击还是双击才能进入编辑。</li>
+        <li><code>Editor</code>（<strong>可编辑的数据列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：每个可编辑数据列声明对应的输入控件，表格用该控件读取与回写单元格值。</li>
+    </ul>
+</section>
 }

@@ -66,3 +66,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让专业单元格与其文本编辑器都居中显示，进入和结束编辑时保持一致的文字位置。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照显示态与编辑态的对齐</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>所学专业</strong>列，单击进入编辑，再输入文字并离开。<br />结果：普通单元格与输入框中的文字都居中，不会因为进入编辑而突然改为左对齐。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>TextAlign</code>（<strong>所学专业</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>Center</code>，控制该列普通单元格中的文字对齐。</li>
+        <li><code>CSS</code>（<strong>所学专业列的文本编辑器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：本页的编辑器样式把输入框文字也设为居中；列对齐与编辑器内部样式分别控制。</li>
+    </ul>
+</section>
+}

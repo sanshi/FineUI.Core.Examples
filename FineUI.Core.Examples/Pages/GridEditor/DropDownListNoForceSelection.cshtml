@@ -69,3 +69,16 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>允许专业下拉编辑器接收列表以外的输入，不强制用户只能选择已有专业。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入不存在于列表中的专业</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>打开<strong>所学专业</strong>编辑器，直接输入<code>新的专业名称</code>并结束编辑。<br />结果：输入文字保留为该单元格的新值，不会因为没有同名选项而退回旧值；已有选项仍可直接选择。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="ddlMajor" title="所学专业列的下拉列表">所学专业列的下拉列表</strong>）：初始为 <code>false</code>，允许把用户输入的文字作为单元格值。</li>
+    </ul>
+</section>
+}

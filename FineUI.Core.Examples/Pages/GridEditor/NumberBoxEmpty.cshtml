@@ -18,7 +18,7 @@
             </f:RenderField>
             <f:RenderField HeaderText="学费" ColumnID="XueFei" DataField="XueFei" FieldType="Int">
                 <Editor>
-                    <f:NumberBox NoDecimal="true" NoNegative="true"></f:NumberBox>
+                    <f:NumberBox ID="NumberBoxExample2" NoDecimal="true" NoNegative="true"></f:NumberBox>
                 </Editor>
             </f:RenderField>
             <f:RenderField HeaderText="住宿费" ColumnID="ZhusuFei" DataField="ZhusuFei" FieldType="Int">
@@ -51,15 +51,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-    注：
-    <ul>
-        <li>
-            年份[2017]和[2018]的初始费用都为空（DBNull.Value）。
-        </li>
-        <li>
-            也可以将某个现有数字更新为空。
-        </li>
-    </ul>
+
 
 }
 
@@ -99,4 +91,30 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让空费用用空白显示，编辑数值后动态重算同一行的合计。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>填写与清空费用</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>找到费用为空的记录，单击<strong>学费</strong>并输入<code>500</code>，再离开单元格。<br />结果：<strong>学费</strong>显示 500，该行<strong>合计</strong>立即按各项费用重算；空项按本页的计算规则参与<strong>合计</strong>。</li>
+        <li>清空刚才的费用并结束编辑。<br />结果：费用单元格恢复空白，<strong>合计</strong>重新计算，不把空费用强制显示为 0。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>
+            <strong>年份</strong>[2017]和[2018]的初始费用都为空（DBNull.Value）。
+        </li>
+        <li>
+            也可以将某个现有数字更新为空。
+        </li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>NoDecimal</code>（<strong class="example-control-reference" data-example-control="NumberBoxExample2" title="学费列的数字输入框">学费列的数字输入框</strong>）：初始为 <code>true</code>，费用编辑器只接收整数金额。</li>
+        <li><code>NoNegative</code>（<strong class="example-control-reference" data-example-control="NumberBoxExample2" title="学费列的数字输入框">学费列的数字输入框</strong>）：初始为 <code>true</code>，费用编辑器不接收负数。</li>
+        <li><code>RendererFunction</code>（<strong>合计列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：<strong>合计</strong>列从当前行各项费用计算结果，修改后重新渲染该行的<strong>合计</strong>。</li>
+    </ul>
+</section>
 }

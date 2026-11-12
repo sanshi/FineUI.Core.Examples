@@ -89,3 +89,19 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把兴趣代码与显示名称分别保存，分页下拉表格中不在当前页的已选项仍可正确回显。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>跨下拉表格分页选择并回显</h3>
+    <ol>
+        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>兴趣爱好</strong>编辑器，在弹出的表格中选中两项，可在不同分页分别选择，再结束编辑。<br />结果：单元格显示所选兴趣名称，实际值保留对应<strong>代码</strong>集合；本页同时更新隐藏的显示名称字段，回显不依赖当前分页是否包含这些记录。</li>
+        <li>再次进入同一<strong>兴趣爱好</strong>单元格。<br />结果：自定义设置函数把原来的值及对应名称交给编辑器，即使部分选项不在当前页，显示与已选状态仍能正确恢复。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：初始为 <code>true</code>，允许下拉编辑器保留多项值。</li>
+        <li><code>EditSetterFunction</code>（<strong>下拉编辑器所在列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：进入编辑时同时提供选项值和显示文字，不能只依靠当前页数据查名称。</li>
+        <li><code>EditGetterFunction</code>（<strong>下拉编辑器所在列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：结束编辑时写回兴趣<strong>代码</strong>，并更新 HobbyText 供单元格渲染；两个字段在同一次操作中保持一致。</li>
+    </ul>
+</section>
+}

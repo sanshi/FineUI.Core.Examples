@@ -10,6 +10,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 		protected FineUI.Core.DropDownList ddlGender;
 		protected FineUI.Core.NumberBox nbxEntranceYear;
 		protected FineUI.Core.DatePicker dpEntranceDate;
+		protected FineUI.Core.DropDownBox DropDownBoxExample1;
 		protected FineUI.Core.CheckBoxList cblHobby;
 		protected FineUI.Core.Button btnSubmit;
 		protected FineUI.Core.Label labResult;

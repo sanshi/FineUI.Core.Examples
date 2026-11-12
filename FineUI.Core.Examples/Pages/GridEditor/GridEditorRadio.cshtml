@@ -66,3 +66,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在可编辑表格中对照普通布尔列与只允许选中一条记录的单选列。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换测试列中的单选项</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的测试列先选择一行，再选择另一行。<br />结果：第二行的测试项选中时取消第一行；普通<strong>是否在校</strong>列仍按各行自己的布尔值切换，两种列不混为同一选择集合。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DisplayType</code>（<strong>测试列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：测试列使用 Radio，正文选择在该列内互斥；它区别于表格整行的单选配置。</li>
+    </ul>
+</section>
+}

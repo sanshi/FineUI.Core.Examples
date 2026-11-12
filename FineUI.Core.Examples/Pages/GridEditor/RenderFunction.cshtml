@@ -84,3 +84,17 @@
     </script>
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把编辑后的性别、专业代码转换为名称，并按两位小数和千分位显示工资。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>编辑后按列格式重新显示</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>修改<strong>性别</strong>或<strong>所学专业</strong>，再把<strong>工资</strong>输入为<code>12345.6</code>并结束编辑。<br />结果：下拉列显示所选项的文字，<strong>工资</strong>显示为 12,345.60；渲染后的显示文字与单元格保留的实际值分开。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction</code>（<strong>性别、所学专业及工资列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：下拉列按值查文字，<strong>工资</strong>列使用固定两位小数再添加千分位，不把格式化字符串直接当作输入数值。</li>
+    </ul>
+</section>
+}

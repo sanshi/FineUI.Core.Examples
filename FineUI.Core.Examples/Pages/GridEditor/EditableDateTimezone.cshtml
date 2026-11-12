@@ -30,16 +30,8 @@
     <br />
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
-    <p>
-        可编辑日期列示例（本表格设置了 <code>StoreDateAsString="false"</code>，单元格里存的是 Date 对象）。
-        <br />
-        数据以带时区偏移的 UTC ISO 字符串（<code>2026-06-19T00:00:00+00:00</code>）下发，在东八区会被解析为本地 <b>08:00</b>。<br />
-        <b>历史问题</b>：用鼠标重新选择“同一天”（未做任何修改），加载值（本地 08:00）与日历选出的值（本地 00:00）按时间戳比较不相等，会被<b>误标为已修改</b>（左上角小红标）。<br />
-        <b>现已修复</b>：日期列的脏值判定改为按列的显示格式（此处为 <code>yyyy-MM-dd</code>，只到“天”）比较，重选同一天不再被标记为已修改。
-    </p>
-    <p>
-        <b>说明</b>：<code>StoreDateAsString</code> 的全局默认值为 <code>true</code>（对应全局配置项 <code>GridStoreDateAsString</code>），也是<b>推荐</b>的方式——此时单元格存的是格式化后的日期字符串，天然规避本例的时区问题，<b>不建议修改</b>。本示例仅为演示 <code>false</code> 场景下的问题与修复，才特意设为 <code>false</code>。
-    </p>
+
+
 
 }
 
@@ -53,4 +45,32 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>日期列保存为 Date 对象时，重新选择同一天不产生修改标记，真正换一天才计入变更。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照同一天与不同日期</h3>
+    <ol>
+        <li>从初始状态单击<strong class="example-control-reference" data-example-control="Grid1" title="计划日期（单击编辑，重选同一天不标记为已修改）">计划日期（单击编辑，重选同一天不标记为已修改）</strong>的<strong>计划日期</strong>，重新选择原来的同一天并离开单元格。<br />结果：日期仍按原来的年月日显示，不出现新增的修改标记；UTC 加载值与本地日历值的小时差异不会被误判为改了日期。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnShowModified" title="显示已修改的数据（getModifiedData）">显示已修改的数据（getModifiedData）</strong>，再把该单元格改为另一天并重新读取。<br />结果：重选同一天时修改记录为空；真正改到另一天后，修改记录包含该行的新日期。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>
+        <b>说明</b>：<code>StoreDateAsString</code> 的全局默认值为 <code>true</code>（对应全局配置项 <code>GridStoreDateAsString</code>），也是<b>推荐</b>的方式——此时单元格存的是格式化后的日期字符串，天然规避本例的时区问题，<b>不建议修改</b>。本示例仅为演示 <code>false</code> 场景下的问题与修复，才特意设为 <code>false</code>。
+    </p>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>日期与时区</h3>
+<p>
+        可编辑日期列示例（本表格设置了 <code>StoreDateAsString="false"</code>，单元格里存的是 Date 对象）。
+        <br />
+        数据以带时区偏移的 UTC ISO 字符串（<code>2026-06-19T00:00:00+00:00</code>）下发，在东八区会被解析为本地 <b>08:00</b>。<br />
+        <b>历史问题</b>：用鼠标重新选择“同一天”（未做任何修改），加载值（本地 08:00）与日历选出的值（本地 00:00）按时间戳比较不相等，会被<b>误标为已修改</b>（左上角小红标）。<br />
+        <b>现已修复</b>：日期列的脏值判定改为按列的显示格式（此处为 <code>yyyy-MM-dd</code>，只到“天”）比较，重选同一天不再被标记为已修改。
+    </p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>StoreDateAsString</code>（<strong class="example-control-reference" data-example-control="Grid1" title="计划日期（单击编辑，重选同一天不标记为已修改）">计划日期（单击编辑，重选同一天不标记为已修改）</strong>）：初始为 <code>false</code>，专门对照 Date 对象中的时间与显示日期；通常保持默认字符串存储即可。</li>
+        <li><code>RendererArgument</code>（<strong>计划日期</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="计划日期（单击编辑，重选同一天不标记为已修改）">计划日期（单击编辑，重选同一天不标记为已修改）</strong>）：初始为 <code>yyyy-MM-dd</code>，日期列按显示格式比较到天，不把同一天中不同小时当成日期改变。</li>
+    </ul>
+</section>
 }

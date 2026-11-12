@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.GridEditor
 	public partial class NumberBoxEmptyModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.NumberBox NumberBoxExample2;
 		protected FineUI.Core.Button btnSubmit;
 		protected FineUI.Core.Label labResult;
 	}

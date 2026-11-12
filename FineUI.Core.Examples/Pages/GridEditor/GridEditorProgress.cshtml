@@ -102,3 +102,17 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把数值列渲染为进度条，通过按钮调整进度并保留为单元格数据。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>调整并重绘进度</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="[进度条1]加5%">[进度条1]加5%</strong>，再点击<strong class="example-control-reference" data-example-control="Button3" title="[进度条1]减5%">[进度条1]减5%</strong>。<br />结果：本页脚本按按钮方向调整<strong>进度条1</strong>的值，进度宽度与文字随新值重新绘制；<strong>进度条2</strong>保留独立显示配置。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>F.progressHtml</code>（<strong>进度条列的渲染函数</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：由单元格当前数值生成进度条 HTML，两列分别配置文字显示位置与高度。</li>
+        <li><code>updateCellValue</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：按钮更新正文列中的数值，再由渲染函数生成新的进度条；不是只改图形宽度。</li>
+    </ul>
+</section>
+}

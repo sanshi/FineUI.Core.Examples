@@ -52,15 +52,8 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-    注：这个示例高亮所有[入学年份]大于等于 2003 的姓名，并在入学年份改变时更新姓名的高亮显示。
-    <ul>
-        <li>
-            如何在 RendererFunction 中获取其他列的值
-        </li>
-        <li>
-            如何注册表格的 afteredit 事件，并通过 ColumnID 相关的 CSS 类来获取列
-        </li>
-    </ul>
+
+
 }
 
 @section script {
@@ -92,4 +85,30 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>姓名的高亮依赖同一行的入学年份，年份编辑完成后立即更新姓名单元格样式。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改另一列并更新姓名样式</h3>
+    <ul>
+        <li>把<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>某行的<strong>入学年份</strong>改为<code>2002</code>，再改为<code>2003</code>。<br />结果：小于 2003 时<strong>姓名</strong>不高亮，大于等于 2003 时增加本页的高亮样式；<strong>姓名</strong>文字本身不因样式判断而改值。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：这个示例高亮所有[入学年份]大于等于 2003 的姓名，并在入学年份改变时更新姓名的高亮显示。</p>
+    <ul>
+        <li>
+            如何在 RendererFunction 中获取其他列的值
+        </li>
+        <li>
+            如何注册表格的 afteredit 事件，并通过 ColumnID 相关的 CSS 类来获取列
+        </li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction</code>（<strong>姓名</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>renderName</code>，初次渲染时读取同一行 EntranceYear 决定<strong>姓名</strong>样式。</li>
+        <li><code>afteredit</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：<strong>入学年份</strong>编辑完成后重设<strong>姓名</strong>单元格的样式，不只等待下一次整表绑定。</li>
+        <li><code>updateCellValue</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：用 Name.cls 指定要更新的<strong>姓名</strong>单元格样式，数值变化与样式更新在同一行对应。</li>
+    </ul>
+</section>
 }

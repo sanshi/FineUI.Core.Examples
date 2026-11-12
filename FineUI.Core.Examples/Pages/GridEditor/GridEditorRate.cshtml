@@ -105,3 +105,17 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在表格正文中显示只读、五星与自定义半分评分，用户操作直接写回评分列数值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照三种评分列</h3>
+    <ul>
+        <li>尝试点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>只读评分</strong>，再在<strong>五星评分</strong>或<strong>自定义评分</strong>列点击一个分值。<br />结果：<strong>只读评分</strong>不因点击改变；可修改评分按点击位置更新，五星列显示对应说明文字，自定义列使用奖杯图标并允许半分。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>F.rateHtml</code>（<strong>评分列的渲染函数</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：分别配置只读、评分文字、自定义图标和半分能力，以当前单元格值生成评分显示。</li>
+        <li><code>F.rateEvents</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：通过表格容器接收评分动作，再定位到本次行和列，更新相应单元格值。</li>
+    </ul>
+</section>
+}
