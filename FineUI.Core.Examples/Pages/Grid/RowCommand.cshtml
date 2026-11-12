@@ -83,3 +83,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过客户端行命令事件读取本次点击的记录和列信息。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>处理当前行命令</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>某行中的文字按钮或图标命令；出现确认框时选择确认。<br />结果：浏览器读取本次行及列数据，提示显示当前记录和命令信息；本页用结果提示演示处理，不代表已执行真实删除。</li>
+        <li>点击带确认提示的另一个命令，选择取消。<br />结果：取消后不继续执行命令处理；确认后才进入对应客户端或后台回调。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>CommandName</code>（<strong>行命令</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为各个命令提供独立的业务标识，回调按本次名称区分动作。</li>
+        <li><code>getRowData</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：事件发生时读取当前行数据，不使用首次渲染时缓存的行位置。</li>
+    </ul>
+</section>
+}

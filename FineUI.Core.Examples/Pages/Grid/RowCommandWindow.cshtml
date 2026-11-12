@@ -25,5 +25,20 @@
     <f:Window ID="Details" Title="客户详情" Width="500" Height="300"
               IsModal="true" EnableIFrame="true" Hidden="true" />
 
-    <p>点击“查看客户”打开该行的客户详情：网址参数取自 <code>Slug</code>，窗体标题取自 <code>DisplayName</code>。</p>
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>由行命令按当前记录的不同字段分别生成详情网址与窗体标题。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按当前行打开详情</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>第一行的<strong>查看客户</strong>，关闭后再打开另一行。<br />结果：每次打开都读取本次行数据，网址参数取自 <code>Slug</code>，标题文字取自 <code>DisplayName</code>；切换记录后不会沿用前一行参数。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>WindowIFrameUrlFields / WindowIFrameUrlFormatString</code>（<strong>行命令</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>）：从当前行的指定字段取值，填入详情网址中的参数位置。</li>
+        <li><code>WindowTitleFields / WindowTitleFormatString</code>（<strong>行命令</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>）：标题独立从指定字段取值，可以与网址字段不同。</li>
+    </ul>
+</section>
 }

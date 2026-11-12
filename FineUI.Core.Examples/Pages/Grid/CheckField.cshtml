@@ -24,7 +24,7 @@
     <br>
 
     <f:Button Text="选中了哪些行" MarginRight="5" ClickHandler="onNotifySelectedRowsClick"></f:Button>
-    <f:Button Text="选中行复选框的状态" ClickHandler="onNotifyCheckFieldStatusClick"></f:Button>
+    <f:Button ID="btnShowCheckFieldStatus" Text="选中行复选框的状态" ClickHandler="onNotifyCheckFieldStatusClick"></f:Button>
 
 
 }
@@ -75,4 +75,19 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>对照只读与可修改的复选框列，读取所选记录修改后的正文值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照两种是否在校列</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中第二个是否在校列的复选框，再尝试第一个同名列。<br />结果：第二列可在勾选和未勾选间切换，第一列只显示数据中的原始状态，不接受点击修改。</li>
+        <li>选中刚才修改的行，点击<strong class="example-control-reference" data-example-control="btnShowCheckFieldStatus" title="选中行复选框的状态">选中行复选框的状态</strong>。<br />结果：浏览器读取所选行当前的正文复选框值，提示中包含修改后的勾选状态。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RenderAsStaticField</code>（<strong>两个是否在校列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：第一个是否在校列初始为 true，仅展示值；第二个初始为 false，允许点击切换。</li>
+        <li><code>ColumnID</code>（<strong>第二个是否在校列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>AtSchool2</code>，把可修改的单元格值与只读对照列区分；两列虽然初次绑定同一字段，后续修改仍可独立读取。</li>
+    </ul>
+</section>
 }

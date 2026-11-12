@@ -52,3 +52,16 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过行单击的自定义回发传递当前记录的主键和姓名。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>触发当前行事件</h3>
+    <ul>
+        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中某条记录的姓名单元格。<br />结果：客户端把行、列及文字等本轮参数交给自定义事件，后台读取后提示当前记录。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>F.customEvent</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：由客户端回调主动提交本次行事件参数，后台不依靠首次加载时保存的行位置。</li>
+    </ul>
+</section>
+}

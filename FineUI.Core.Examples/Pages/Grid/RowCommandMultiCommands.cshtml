@@ -47,3 +47,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在同一个单元格中放入多个图标命令，每个入口使用独立的命令名称。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照命令外观与对应结果</h3>
+    <ul>
+        <li>分别点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>同一行中的文字或图标命令，出现确认框时先确认。<br />结果：命令回发后，提示显示所点记录和命令信息；改变显示外观或同列排列，不会把多个入口合并为同一命令。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Commands</code>（<strong>操作列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在同一数据列中声明多个命令，各自保留 CommandName。</li>
+    </ul>
+</section>
+}
