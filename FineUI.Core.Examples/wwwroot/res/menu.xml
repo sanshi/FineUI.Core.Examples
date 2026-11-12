@@ -650,12 +650,8 @@
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表格" IconFont="_Table">
-		<TreeNode Text="基本用法与数据绑定">
+		<TreeNode Text="基本用法">
 			<TreeNode Text="表格" NavigateUrl="~/Grid/Grid">
-			</TreeNode>
-			<TreeNode Text="绑定到二级属性" NavigateUrl="~/GridOther/ComplexProperty">
-			</TreeNode>
-			<TreeNode Text="长整型精度（主键为BIGINT）" NavigateUrl="~/GridOther/LongPrecision">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="分页">
@@ -800,6 +796,16 @@
 			<TreeNode Text="复选框列（单选，单选框样式）" NavigateUrl="~/Grid/CheckFieldRadio">
 			</TreeNode>
 			<TreeNode Text="右键菜单(全选复选框列）" NavigateUrl="~/GridOther/CheckBoxFieldContextMenu">
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="序号列">
+			<TreeNode Text="序号列（内存分页）" NavigateUrl="~/Grid/RowNumberPaging">
+			</TreeNode>
+			<TreeNode Text="序号列（数据库分页）" NavigateUrl="~/Grid/RowNumberPagingDatabase">
+			</TreeNode>
+			<TreeNode Text="序号列（自定义宽度）" NavigateUrl="~/Grid/RowNumberWidth">
+			</TreeNode>
+			<TreeNode Text="序号列（靠左显示）" NavigateUrl="~/Grid/RowNumberAlign">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="行命令">
@@ -1133,6 +1139,18 @@
 			<TreeNode Text="导出文件（多表头）" NavigateUrl="~/Grid/ExcelGroupField">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="列宽度">
+			<TreeNode Text="各列宽度固定" NavigateUrl="~/Grid/Width">
+			</TreeNode>
+			<TreeNode Text="自适应列（一列）" NavigateUrl="~/Grid/WidthExpandUnusedSpace">
+			</TreeNode>
+			<TreeNode Text="自适应列（多列）" NavigateUrl="~/Grid/WidthBoxFlex">
+			</TreeNode>
+			<TreeNode Text="各列宽度自适应" NavigateUrl="~/Grid/WidthForcefit">
+			</TreeNode>
+			<TreeNode Text="各列宽度自适应（最小列宽度）" NavigateUrl="~/Grid/WidthForceFitMinWidth">
+			</TreeNode>
+		</TreeNode>
 		<TreeNode Text="列锁定">
 			<TreeNode Text="列锁定" NavigateUrl="~/GridLockColumn/LockColumn">
 			</TreeNode>
@@ -1171,6 +1189,26 @@
 				</TreeNode>
 				<TreeNode Text="右侧锁定（列拖拽排序）" NavigateUrl="~/GridLockColumn/RightSaveLockedAndOrderColumnMove" IsEnterprise="true">
 				</TreeNode>
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="标题栏">
+			<TreeNode Text="隐藏标题栏" NavigateUrl="~/Grid/HeaderHide">
+			</TreeNode>
+			<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/Grid/HeaderChangeTextWidth">
+			</TreeNode>
+			<TreeNode Text="标题栏自动换行" NavigateUrl="~/Grid/HeaderWrap">
+			</TreeNode>
+			<TreeNode Text="标题栏自动换行（多行文本省略）" NavigateUrl="~/Grid/HeaderWrapLineClamp">
+			</TreeNode>
+			<TreeNode Text="禁用表头菜单" NavigateUrl="~/Grid/HeaderDisableMenu">
+			</TreeNode>
+			<TreeNode Text="列管理菜单" NavigateUrl="~/Grid/HeaderCustomMenu">
+			</TreeNode>
+			<TreeNode Text="禁用表头排序菜单项" NavigateUrl="~/Grid/HeaderMenuSort">
+			</TreeNode>
+			<TreeNode Text="标题栏（提示信息）" NavigateUrl="~/Grid/HeaderToolTip">
+			</TreeNode>
+			<TreeNode Text="标题栏样式（表格列的Attributes属性）" Version="12.2" NavigateUrl="~/Grid/HeaderColumnAttributes">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="多表头">
@@ -1346,6 +1384,78 @@
 				<TreeNode Text="行分组（数据库分页与排序，分组合计，当前页合计）" NavigateUrl="~/GridRowGroup/DatabaseSortingSummaryCurrentPage" IsEnterprise="true">
 				</TreeNode>
 				<TreeNode Text="行分组（数据库分页与排序，分组合计，全部页合计）" NavigateUrl="~/GridRowGroup/DatabaseSortingSummaryAllPage" IsEnterprise="true">
+				</TreeNode>
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="行与列样式">
+			<TreeNode Text="列样式" NavigateUrl="~/Grid/StyleColumnClass">
+			</TreeNode>
+			<TreeNode Text="行样式（行渲染函数）" NavigateUrl="~/Grid/StyleRowRenderer">
+			</TreeNode>
+			<TreeNode Text="行样式（客户端行绑定函数）" NavigateUrl="~/Grid/StyleRowDataBound">
+			</TreeNode>
+			<!--<TreeNode Text="行样式（客户端行绑定函数）" NavigateUrl="~/Grid/RowDataBoundRowClass">
+		</TreeNode>-->
+			<TreeNode Text="行样式（服务端行绑定事件/RowCssClass）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundServer">
+			</TreeNode>
+			<TreeNode Text="行样式（服务端行绑定事件/RowAttributes）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundServerRowAttributes">
+			</TreeNode>
+			<TreeNode Text="单元格样式（列渲染函数）" NavigateUrl="~/Grid/StyleCellRenderer">
+			</TreeNode>
+			<TreeNode Text="单元格样式（列渲染函数，单元格属性）" NavigateUrl="~/Grid/StyleCellRendererAttrs">
+			</TreeNode>
+			<TreeNode Text="单元格样式（客户端行绑定函数）" NavigateUrl="~/Grid/RowDataBoundCellClass">
+			</TreeNode>
+			<TreeNode Text="空白单元格（客户端行绑定函数）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundEmptyCell">
+			</TreeNode>
+			<TreeNode Text="文本居中显示" NavigateUrl="~/GridOther/CenterColumn">
+			</TreeNode>
+			<TreeNode Text="启用文字选择" NavigateUrl="~/GridOther/TextSelection">
+			</TreeNode>
+			<TreeNode Text="文字垂直靠上显示" NavigateUrl="~/GridOther/TextTop">
+			</TreeNode>
+			<TreeNode Text="列分割线" NavigateUrl="~/GridOther/ColumnLines">
+			</TreeNode>
+			<TreeNode Text="自动换行" NavigateUrl="~/GridOther/LineWrap">
+			</TreeNode>
+			<TreeNode Text="自动换行（多行文本省略）" NavigateUrl="~/GridOther/LineWrapLineClamp">
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="行密度和行高度">
+			<TreeNode Text="行密度">
+				<TreeNode Text="行密度" NavigateUrl="~/GridRowHeight/GridRowDensity">
+				</TreeNode>
+				<TreeNode Text="行密度（自动换行）" NavigateUrl="~/GridRowHeight/GridRowDensityLineWrap">
+				</TreeNode>
+				<TreeNode Text="行密度（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridRowDensityLineWrapLineClamp">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="行高固定">
+				<TreeNode Text="行高固定" NavigateUrl="~/GridRowHeight/GridFixedRowHeight">
+				</TreeNode>
+				<TreeNode Text="行高固定（一键设置行高，自动换行）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLinesLineWrap">
+				</TreeNode>
+				<TreeNode Text="行高固定（一键设置行高，自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLinesLineWrapLineClamp">
+				</TreeNode>
+				<TreeNode Text="行高固定（手工设置行高，自动换行）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLineWrap">
+				</TreeNode>
+				<TreeNode Text="行高固定（手工设置行高，自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLineWrapLineClamp">
+				</TreeNode>
+				<TreeNode Text="行高固定与行密度（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowDensity">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="自动换行（100行数据）">
+				<TreeNode Text="行高不同（自动换行）" NavigateUrl="~/GridRowHeight/Grid100">
+				</TreeNode>
+				<TreeNode Text="行高不同（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/Grid100LineClamp">
+				</TreeNode>
+				<TreeNode Text="行高不同（自动换行，列锁定）" NavigateUrl="~/GridRowHeight/Grid100LockColumn">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行）" NavigateUrl="~/GridRowHeight/Grid100RowHeight">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/Grid100RowHeightLineClamp">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行，列锁定）" NavigateUrl="~/GridRowHeight/Grid100LockColumnRowHeight">
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>
@@ -1553,7 +1663,29 @@
 			<TreeNode Text="卡片模式（重新绑定）" NavigateUrl="~/GridCard/CardRebind">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="显示与样式">
+		<TreeNode Text="快捷导航">
+			<!--<TreeNode Text="文件目录浏览" NavigateUrl="~/GridCard/CardFolderFile">
+				</TreeNode>-->
+			<TreeNode Text="显示选中单元格" NavigateUrl="~/GridNav/ShowSelectedCell">
+			</TreeNode>
+			<TreeNode Text="显示选中单元格（不显示选中行）" NavigateUrl="~/GridNav/ShowSelectedRow">
+			</TreeNode>
+			<TreeNode Text="鼠标滚轮（选中行）" NavigateUrl="~/GridNav/MouseWheel">
+			</TreeNode>
+			<TreeNode Text="鼠标滚轮（选中单元格）" NavigateUrl="~/GridNav/MouseWheelShowSelectedCell">
+			</TreeNode>
+			<TreeNode Text="键盘导航（Tab纵向导航）" NavigateUrl="~/GridNav/VerticalTab">
+			</TreeNode>
+			<TreeNode Text="内存分页（快速切换分页）" NavigateUrl="~/GridNav/QuickPaging">
+			</TreeNode>
+			<TreeNode Text="数据库分页（快速切换分页）" NavigateUrl="~/GridNav/DatabaseQuickPaging">
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="杂项">
+			<TreeNode Text="绑定到二级属性" NavigateUrl="~/GridOther/ComplexProperty">
+			</TreeNode>
+			<TreeNode Text="长整型精度（主键为BIGINT）" NavigateUrl="~/GridOther/LongPrecision">
+			</TreeNode>
 			<TreeNode Text="单元格显示与格式化">
 				<TreeNode Text="日期列（字符串数据，DateParseString）" NavigateUrl="~/Grid/DateParseString">
 				</TreeNode>
@@ -1583,138 +1715,6 @@
 				</TreeNode>
 				<TreeNode Text="提示信息（cellAttrs）" NavigateUrl="~/GridOther/ToolTipCellAttrs">
 				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="列宽度">
-				<TreeNode Text="各列宽度固定" NavigateUrl="~/Grid/Width">
-				</TreeNode>
-				<TreeNode Text="自适应列（一列）" NavigateUrl="~/Grid/WidthExpandUnusedSpace">
-				</TreeNode>
-				<TreeNode Text="自适应列（多列）" NavigateUrl="~/Grid/WidthBoxFlex">
-				</TreeNode>
-				<TreeNode Text="各列宽度自适应" NavigateUrl="~/Grid/WidthForcefit">
-				</TreeNode>
-				<TreeNode Text="各列宽度自适应（最小列宽度）" NavigateUrl="~/Grid/WidthForceFitMinWidth">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="序号列">
-				<TreeNode Text="序号列（内存分页）" NavigateUrl="~/Grid/RowNumberPaging">
-				</TreeNode>
-				<TreeNode Text="序号列（数据库分页）" NavigateUrl="~/Grid/RowNumberPagingDatabase">
-				</TreeNode>
-				<TreeNode Text="序号列（自定义宽度）" NavigateUrl="~/Grid/RowNumberWidth">
-				</TreeNode>
-				<TreeNode Text="序号列（靠左显示）" NavigateUrl="~/Grid/RowNumberAlign">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="标题栏">
-				<TreeNode Text="隐藏标题栏" NavigateUrl="~/Grid/HeaderHide">
-				</TreeNode>
-				<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/Grid/HeaderChangeTextWidth">
-				</TreeNode>
-				<TreeNode Text="标题栏自动换行" NavigateUrl="~/Grid/HeaderWrap">
-				</TreeNode>
-				<TreeNode Text="标题栏自动换行（多行文本省略）" NavigateUrl="~/Grid/HeaderWrapLineClamp">
-				</TreeNode>
-				<TreeNode Text="禁用表头菜单" NavigateUrl="~/Grid/HeaderDisableMenu">
-				</TreeNode>
-				<TreeNode Text="列管理菜单" NavigateUrl="~/Grid/HeaderCustomMenu">
-				</TreeNode>
-				<TreeNode Text="禁用表头排序菜单项" NavigateUrl="~/Grid/HeaderMenuSort">
-				</TreeNode>
-				<TreeNode Text="标题栏（提示信息）" NavigateUrl="~/Grid/HeaderToolTip">
-				</TreeNode>
-				<TreeNode Text="标题栏样式（表格列的Attributes属性）" Version="12.2" NavigateUrl="~/Grid/HeaderColumnAttributes">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="行与列样式">
-				<TreeNode Text="列样式" NavigateUrl="~/Grid/StyleColumnClass">
-				</TreeNode>
-				<TreeNode Text="行样式（行渲染函数）" NavigateUrl="~/Grid/StyleRowRenderer">
-				</TreeNode>
-				<TreeNode Text="行样式（客户端行绑定函数）" NavigateUrl="~/Grid/StyleRowDataBound">
-				</TreeNode>
-				<!--<TreeNode Text="行样式（客户端行绑定函数）" NavigateUrl="~/Grid/RowDataBoundRowClass">
-			</TreeNode>-->
-				<TreeNode Text="行样式（服务端行绑定事件/RowCssClass）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundServer">
-				</TreeNode>
-				<TreeNode Text="行样式（服务端行绑定事件/RowAttributes）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundServerRowAttributes">
-				</TreeNode>
-				<TreeNode Text="单元格样式（列渲染函数）" NavigateUrl="~/Grid/StyleCellRenderer">
-				</TreeNode>
-				<TreeNode Text="单元格样式（列渲染函数，单元格属性）" NavigateUrl="~/Grid/StyleCellRendererAttrs">
-				</TreeNode>
-				<TreeNode Text="单元格样式（客户端行绑定函数）" NavigateUrl="~/Grid/RowDataBoundCellClass">
-				</TreeNode>
-				<TreeNode Text="空白单元格（客户端行绑定函数）" Version="12.1" NavigateUrl="~/Grid/StyleRowDataBoundEmptyCell">
-				</TreeNode>
-				<TreeNode Text="文本居中显示" NavigateUrl="~/GridOther/CenterColumn">
-				</TreeNode>
-				<TreeNode Text="启用文字选择" NavigateUrl="~/GridOther/TextSelection">
-				</TreeNode>
-				<TreeNode Text="文字垂直靠上显示" NavigateUrl="~/GridOther/TextTop">
-				</TreeNode>
-				<TreeNode Text="列分割线" NavigateUrl="~/GridOther/ColumnLines">
-				</TreeNode>
-				<TreeNode Text="自动换行" NavigateUrl="~/GridOther/LineWrap">
-				</TreeNode>
-				<TreeNode Text="自动换行（多行文本省略）" NavigateUrl="~/GridOther/LineWrapLineClamp">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="行密度和行高度">
-				<TreeNode Text="行密度">
-					<TreeNode Text="行密度" NavigateUrl="~/GridRowHeight/GridRowDensity">
-					</TreeNode>
-					<TreeNode Text="行密度（自动换行）" NavigateUrl="~/GridRowHeight/GridRowDensityLineWrap">
-					</TreeNode>
-					<TreeNode Text="行密度（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridRowDensityLineWrapLineClamp">
-					</TreeNode>
-				</TreeNode>
-				<TreeNode Text="行高固定">
-					<TreeNode Text="行高固定" NavigateUrl="~/GridRowHeight/GridFixedRowHeight">
-					</TreeNode>
-					<TreeNode Text="行高固定（一键设置行高，自动换行）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLinesLineWrap">
-					</TreeNode>
-					<TreeNode Text="行高固定（一键设置行高，自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLinesLineWrapLineClamp">
-					</TreeNode>
-					<TreeNode Text="行高固定（手工设置行高，自动换行）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLineWrap">
-					</TreeNode>
-					<TreeNode Text="行高固定（手工设置行高，自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowHeightLineWrapLineClamp">
-					</TreeNode>
-					<TreeNode Text="行高固定与行密度（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/GridFixedRowHeightRowDensity">
-					</TreeNode>
-				</TreeNode>
-				<TreeNode Text="自动换行（100行数据）">
-					<TreeNode Text="行高不同（自动换行）" NavigateUrl="~/GridRowHeight/Grid100">
-					</TreeNode>
-					<TreeNode Text="行高不同（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/Grid100LineClamp">
-					</TreeNode>
-					<TreeNode Text="行高不同（自动换行，列锁定）" NavigateUrl="~/GridRowHeight/Grid100LockColumn">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行）" NavigateUrl="~/GridRowHeight/Grid100RowHeight">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行，多行文本省略）" NavigateUrl="~/GridRowHeight/Grid100RowHeightLineClamp">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行，列锁定）" NavigateUrl="~/GridRowHeight/Grid100LockColumnRowHeight">
-					</TreeNode>
-				</TreeNode>
-			</TreeNode>
-		</TreeNode>
-		<TreeNode Text="快捷导航">
-			<!--<TreeNode Text="文件目录浏览" NavigateUrl="~/GridCard/CardFolderFile">
-				</TreeNode>-->
-			<TreeNode Text="显示选中单元格" NavigateUrl="~/GridNav/ShowSelectedCell">
-			</TreeNode>
-			<TreeNode Text="显示选中单元格（不显示选中行）" NavigateUrl="~/GridNav/ShowSelectedRow">
-			</TreeNode>
-			<TreeNode Text="鼠标滚轮（选中行）" NavigateUrl="~/GridNav/MouseWheel">
-			</TreeNode>
-			<TreeNode Text="鼠标滚轮（选中单元格）" NavigateUrl="~/GridNav/MouseWheelShowSelectedCell">
-			</TreeNode>
-			<TreeNode Text="键盘导航（Tab纵向导航）" NavigateUrl="~/GridNav/VerticalTab">
-			</TreeNode>
-			<TreeNode Text="内存分页（快速切换分页）" NavigateUrl="~/GridNav/QuickPaging">
-			</TreeNode>
-			<TreeNode Text="数据库分页（快速切换分页）" NavigateUrl="~/GridNav/DatabaseQuickPaging">
 			</TreeNode>
 		</TreeNode>
 	</TreeNode>
@@ -2027,7 +2027,7 @@
 				<TreeNode Text="窗体（侧边窗体）" NavigateUrl="~/Window/Side" IsEnterprise="true">
 				</TreeNode>
 			</TreeNode>
-			<TreeNode Text="组合用法">
+			<TreeNode Text="杂项">
 				<TreeNode Text="窗体（标题栏工具）" NavigateUrl="~/Window/Tools" Version="16.2.0"></TreeNode>
 				<TreeNode Text="窗体（工具栏）" NavigateUrl="~/Window/Toolbar">
 				</TreeNode>
@@ -2050,9 +2050,7 @@
 			</TreeNode>
 		</TreeNode>
 	</TreeNode>
-	<TreeNode Text="布局" IconFont="_Layout">
-		<TreeNode Text="Fit" NavigateUrl="~/Layout/Fit">
-		</TreeNode>
+	<TreeNode Text="面板与布局" IconFont="_Layout">
 		<TreeNode Text="面板控件">
 			<TreeNode Text="面板" NavigateUrl="~/Panel/Panel">
 			</TreeNode>
@@ -2076,6 +2074,8 @@
 				<TreeNode Text="面板（背景图片）" NavigateUrl="~/Panel/BgImage">
 				</TreeNode>
 			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="Fit 布局" NavigateUrl="~/Layout/Fit">
 		</TreeNode>
 		<TreeNode Text="Block 响应式布局">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/Block/Dashboard">
