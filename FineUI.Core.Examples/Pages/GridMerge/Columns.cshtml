@@ -29,7 +29,7 @@
     </f:Grid>
     <br>
     <br>
-    注：由于[注册日期]是时间对象。为了合并，需要修改数据源，只保留注册日期对象的年月日！
+
     <br>
     <br>
 
@@ -49,4 +49,19 @@
         }
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>合并指定列中连续相同的值，其他列保留逐行显示。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看相邻相同值的显示</h3>
+    <ul>
+        <li>沿<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong><strong>所学专业</strong></strong>、<strong>分组</strong>和<strong>注册日期</strong>等配置列逐行查看合并边界。<br />结果：指定列连续相同值合为一格，不相邻相同值不会跨记录强行合成；源记录数量不因此减少。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：由于[注册日期]是时间对象。为了合并，需要修改数据源，只保留注册日期对象的年月日！</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>mergeColumns</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：传入目标列标识数组，合并指定列；数据加载完成后调用。</li>
+    </ul>
+</section>
 }

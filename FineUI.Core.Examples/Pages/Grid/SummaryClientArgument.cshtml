@@ -47,3 +47,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>浏览器计算当前页各数值列的平均值，并按指定数字格式显示结果。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>当前数据改变后重新统计</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>学费</strong>与<strong>GPA</strong>统计，再点击下一页。<br />结果：浏览器对当前加载记录计算各列平均值，新页加载后重新计算，不包含未加载的其他页。N2 显示两位小数并使用分组符号，F3 显示三位固定小数。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SummaryType</code>（<strong>学费与GPA列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：统计列采用 Avg，从当前页数值计算平均值。</li>
+        <li><code>SummaryTypeArgument</code>（<strong>学费与GPA列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：分别采用 N2、F3 对计算后的平均值格式化，格式只影响显示，不改变统计范围。</li>
+    </ul>
+</section>
+}

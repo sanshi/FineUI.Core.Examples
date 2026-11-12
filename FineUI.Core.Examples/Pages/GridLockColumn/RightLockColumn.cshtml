@@ -37,3 +37,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让指定列固定在右侧，横向滚动时仍能识别当前记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>横向滚动对照锁定位置</h3>
+    <ul>
+        <li>横向滚动<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>。<br />结果：右侧锁定列留在右侧，左侧锁定列仍固定在左侧，普通列随滚动移动；表头与正文保持对应。</li>
+        <li>在允许锁定的列表头菜单切换锁定或解锁。<br />结果：目标列按菜单操作进入或退出锁定区域，其他列数据保留。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowColumnLocking</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，启用表格的锁定区域与列锁定操作。</li>
+        <li><code>EnableLock / Locked / LockedPosition</code>（<strong>列锁定配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：EnableLock 决定该列能否通过菜单锁定，Locked 表示初始是否锁定，LockedPosition 指定 right 位置。</li>
+    </ul>
+</section>
+}

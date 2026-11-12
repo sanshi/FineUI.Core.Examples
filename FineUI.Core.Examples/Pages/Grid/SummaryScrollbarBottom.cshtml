@@ -44,3 +44,18 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在双向滚动表格中把合计固定到底部。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照滚动与合计位置</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>内部上下滚动，再左右滚动。<br />结果：合计保持在可视区域底部，各统计值仍与对应列对齐，正文可独立纵向滚动。</li>
+        <li>切换下一页。<br />结果：正文记录切换，合计保持全部数据范围的费用总计。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SummaryPosition</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Bottom</code>，Flow 跟随记录，Top 或 Bottom 将合计放在相应固定区域；本页采用上方说明的位置。</li>
+        <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>350</code>，限定表格视口，让更多记录通过正文内部滚动查看。</li>
+    </ul>
+</section>
+}

@@ -89,3 +89,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在锁定区域编辑与新增记录，编辑器定位到实际锁定单元格。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>编辑锁定单元格与新行</h3>
+    <ol>
+        <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>左侧锁定的<strong>姓名</strong>单元格，输入<code>锁定列测试</code>并结束编辑。<br />结果：编辑器在当前锁定格打开，结束后原行显示新<strong>姓名</strong>；普通区域仍与该行对齐。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>，填写新行后点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：后台按增改状态更新示例数据并重新绑定，锁定列和可编辑列继续保留。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowCellEditing</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：初始为 <code>true</code>，在已启用锁定的表格上接受单元格编辑。</li>
+        <li><code>Locked</code>（<strong>姓名列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：列进入锁定区域后仍可使用为其配置的编辑器。</li>
+    </ul>
+</section>
+}

@@ -47,3 +47,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>由浏览器按列统计配置计算当前加载页费用合计。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>当前数据改变后重新统计</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>学费</strong>与<strong>学杂费</strong>统计，再点击下一页。<br />结果：浏览器对当前加载记录计算各列总和，新页加载后重新计算，不包含未加载的其他页。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SummaryType</code>（<strong>学费与学杂费列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：费用列采用 Sum，浏览器从当前行数值计算合计。</li>
+    </ul>
+</section>
+}

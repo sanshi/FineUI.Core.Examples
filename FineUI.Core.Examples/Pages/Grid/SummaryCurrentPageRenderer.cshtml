@@ -57,3 +57,16 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>为当前页合计单元格设置专用样式，区分统计结果与普通行的显示。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>样式跟随当前页合计</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>当前页费用单元格与合计行，再切换下一页。<br />结果：合计行采用本页渲染样式，统计按当前页记录重新计算；普通正文不因合计样式改变含义。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>SummaryRendererFunction</code>（<strong>费用列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：仅为合计单元格生成专用显示或样式，不代替后台提供当前页统计。</li>
+    </ul>
+</section>
+}

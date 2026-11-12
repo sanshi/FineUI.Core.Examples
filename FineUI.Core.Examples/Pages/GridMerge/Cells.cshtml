@@ -27,7 +27,7 @@
     </f:Grid>
     <br>
     <br>
-    注：单元格合并和行扩展列不能同时存在（行扩展列时表格的每一行都是table结构）！
+
     <br>
     <br>
 
@@ -59,4 +59,19 @@
         }
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>按起始行、列和跨越范围合并指定单元格，不以字段相同自动推断。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对指定的跨行跨列范围</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong><strong>入学年份</strong></strong>、<strong>所学专业</strong>和分组附近的单元格边界。<br />结果：本页指定的起始格跨越多行，分组区域还同时跨列；周围未列入配置的单元格保留原布局，合并只改变显示。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：单元格合并和行扩展列不能同时存在（行扩展列时表格的每一行都是table结构）！</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>mergeCells / rowId / columnId / rowspan / colspan</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：按稳定行标识与列标识指定左上角，rowspan 和 colspan 给出跨度；数据加载后重新应用合并范围。</li>
+    </ul>
+</section>
 }

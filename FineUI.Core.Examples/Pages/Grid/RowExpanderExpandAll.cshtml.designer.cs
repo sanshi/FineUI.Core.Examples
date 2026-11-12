@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Grid
 	public partial class RowExpanderExpandAllModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnToggleRowExpanders;
 		protected FineUI.Core.Button Button1;
 		protected FineUI.Core.Button btnExpandRowExpanders;
 		protected FineUI.Core.Button btnCollapseRowExpanders;

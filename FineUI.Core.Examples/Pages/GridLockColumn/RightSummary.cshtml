@@ -53,3 +53,19 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在右侧锁定布局中显示合计行，换页后保持合计与列对齐。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>滚动与换页时核对合计</h3>
+    <ol>
+        <li>横向滚动<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>，对照表头、正文及合计行。<br />结果：右侧锁定列停留在右侧，已有左侧锁定列也保持固定，普通列与其合计一起滚动；合计值仍位于对应费用列下。</li>
+        <li>点击分页栏下一页。<br />结果：后台读取新页记录；本页全量费用合计保持，不把新页局部金额误当成总计。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableSummary</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，显示与锁定列及普通列对应的合计区域。</li>
+        <li><code>SummaryPosition</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Bottom</code>，按本页位置把合计行固定到表格底部。</li>
+        <li><code>SummaryData</code>（<strong>表格合计数据</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：后台提供完整示例数据的费用统计；分页只切换正文记录，不缩小统计范围。</li>
+    </ul>
+</section>
+}
