@@ -35,3 +35,22 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在初次加载时显示列表之外的自定义文字，以及真实选项与自定义初值的组合。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>查看后台提供的初始文字</h3>
+        <ol>
+            <li>
+                初次打开页面。<br />
+                结果：输入区显示“可选项1, 可选项4, 初始自定义值1”，即使尚未选择列表项也保留这段初始文字。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectedValueArray</code>：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+            <li><code>ForceSelection</code>：为 false 时允许保存列表之外的用户输入；为 true 时需要匹配现有选项。 本页声明值为 false。</li>
+            <li><code>Text</code>：提供本页的初始显示文字。</li>
+        </ul>
+    </section>
+}

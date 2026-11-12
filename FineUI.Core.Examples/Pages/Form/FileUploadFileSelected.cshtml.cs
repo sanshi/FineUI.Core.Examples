@@ -55,8 +55,9 @@ namespace FineUI.Core.Examples.Pages.Form
                 return;
             }
 
-            labResult.Text = "用户名：" + tbxUserName.Text + "<br/>" +
-                    "邮箱：" + tbxEmail.Text + "<br/>" +
+            // 结果保留头像等固定 HTML，用户名和邮箱先编码，避免用户输入被当作标签解析。
+            labResult.Text = "用户名：" + HtmlEncode(tbxUserName.Text) + "<br/>" +
+                    "邮箱：" + HtmlEncode(tbxEmail.Text) + "<br/>" +
                     "<p>头像：<br /><img src=\"" + imgPhoto.ImageUrl + "\" /></p>";
 
             // 清空表单字段（清空上传控件，否则提交表单时会再次上传！）

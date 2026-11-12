@@ -18,8 +18,28 @@
             <f:Button ID="Button2" Text="设置 HTML 编辑器的内容" OnClick="Button2_Click"></f:Button>
         </Items>
     </f:SimpleForm>
-    <br />
-    注：FineUI中使用的富文本编辑器可以在UMEditor、UEditor、CKEditor、TinyMCE中间选择，通过控件属性就能简单切换。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示接入旧版 UMEditor，并提供与编辑器配套的脚本、样式和资源路径。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>加载旧版编辑器</h3>
+        <ol>
+            <li>
+                打开页面，等待正文区域加载完成。<br />
+                结果：正文区域使用 UMEditor 的工具栏与编辑界面，资源由本页指定的旧编辑器目录提供。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：FineUI中使用的富文本编辑器可以在UMEditor、UEditor、CKEditor、TinyMCE中间选择，通过控件属性就能简单切换。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Editor</code>：本页使用 UMEditor（纯 JS 配置值 umeditor） 编辑器。</li>
+            <li><code>BasePath</code>：指定第三方 UMEditor 的资源目录，页面必须提供与编辑器版本配套的脚本和样式。</li>
+        </ul>
+    </section>
+}

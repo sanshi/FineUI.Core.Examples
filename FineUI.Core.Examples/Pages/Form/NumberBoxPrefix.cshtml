@@ -25,3 +25,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在数值前后显示货币符号或百分号，并在重新输入后保留格式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入后保留符号</h3>
+        <ul>
+            <li>
+                在“人民币”中输入 999，然后移开焦点。<br />
+                结果：显示为 ￥999；初始长数字按千分位分组。
+            </li>
+            <li>
+                在“百分比”中输入 10.5，然后移开焦点。<br />
+                结果：显示为 10.5%，符号不需要用户手动输入。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>NumberPrefix</code>：人民币和美元字段分别使用 ￥、$。</li>
+            <li><code>NumberSuffix</code>：百分比字段使用 %，只控制显示单位，不自动除以 100。</li>
+        </ul>
+    </section>
+}

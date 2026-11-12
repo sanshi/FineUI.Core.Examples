@@ -19,3 +19,36 @@
     </f:Label>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在页面内直接选择日期。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期</h3>
+        <ul>
+            <li>
+                在面板中选择今天之后第5天。<br />
+                结果：面板高亮当前选择。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>响应选择事件</h3>
+        <ul>
+            <li>
+                改变当前日期并完成选择。<br />
+                结果：触发本页选择事件回发，后台读取当前选择并更新下方结果。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>由按钮设置选择</h3>
+        <ul>
+            <li>
+                点击日历下方以“选中”开头的按钮。<br />
+                结果：后台把日历改为按钮文字标明的日期；面板高亮随之更新，下方显示当前值。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 yyyy-MM-dd。</li>
+            <li><code>OnDateSelect</code>：完成日历选择后回发，后台读取当前选择并更新结果标签。</li>
+            <li><code>SelectedDate</code>：设置当前选中值，显示和高亮随当前值更新。</li>
+        </ul>
+    </section>
+}

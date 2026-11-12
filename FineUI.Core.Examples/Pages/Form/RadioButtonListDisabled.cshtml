@@ -52,3 +52,28 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>对比禁用选项与可用选项，禁用只限制用户直接操作。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>检查禁用选项</h3>
+        <ol>
+            <li>
+                点击列表一中禁用的“可选项 1”。<br />
+                结果：用户点击不能改变该选项的选中状态。
+            </li>
+            <li>
+                选择列表一的“可选项 2”，再点击获取选中项按钮。<br />
+                结果：显示当前选择 value2。
+            </li>
+            <li>
+                点击“选中上面列表中的第一项”。<br />
+                结果：代码赋值可以更新禁用项的选中状态；禁用仍阻止用户直接点击修改。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Enabled</code>：列表项为 false 时，用户不能直接选择；后台设置选择不受用户点击限制。 本页声明值为 false。</li>
+        </ul>
+    </section>
+}

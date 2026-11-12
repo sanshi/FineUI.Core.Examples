@@ -41,3 +41,36 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>对比按钮的后台点击、客户端点击，以及后台更换客户端回调后的行为。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>比较两类点击事件</h3>
+        <ul>
+            <li>
+                点击“服务器端事件”。<br />
+                结果：按钮回发，后台显示“这是服务器端事件”。
+            </li>
+            <li>
+                点击“客户端事件”。<br />
+                结果：浏览器直接弹出“这是客户端事件”，无需回发。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更换客户端处理函数</h3>
+        <ol>
+            <li>
+                点击“客户端事件（可被服务端改变）”，关闭提示。<br />
+                结果：浏览器弹出“这是原来的客户端事件”。
+            </li>
+            <li>
+                点击“改变上个按钮的客户端事件”，再点前一个按钮。<br />
+                结果：后台回发更新回调名称，此后浏览器弹出“客户端事件已改变！”。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnClick</code>：声明后台点击处理方法，点击时发起请求。</li>
+            <li><code>ClickHandler</code>：声明客户端函数名，后台也可将它改为另一个已定义函数。</li>
+        </ul>
+    </section>
+}

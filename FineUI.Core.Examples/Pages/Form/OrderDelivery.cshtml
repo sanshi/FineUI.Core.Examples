@@ -22,5 +22,40 @@
         </Items>
     </f:SimpleForm>
 
-    <p>选择快递配送时，后台把收货地址设为必填。<code>ShowRedStar</code> 让标签立即显示星号，<code>Required</code> 在提交订单时校验空地址。切回门店自提，留空地址也可提交。</p>
+
+
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示配送方式改变后动态切换收货地址的必填规则和星号。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>自提与快递的不同要求</h3>
+        <ol>
+            <li>
+                保持“门店自提”，收货地址为空，点击“提交订单”。<br />
+                结果：后台显示“订单已提交：门店自提”。
+            </li>
+            <li>
+                改选“快递配送”，地址仍为空，再提交。<br />
+                结果：后台先更新地址为必填并显示红星；空地址会被验证阻止。
+            </li>
+            <li>
+                填写收货地址后再次提交。<br />
+                结果：后台显示快递配送和当前收货地址。
+            </li>
+            <li>
+                切回门店自提并清空地址。<br />
+                结果：必填与星号取消，可以再次以空地址提交。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>选择快递配送时，后台把收货地址设为必填。<code>ShowRedStar</code> 让标签立即显示星号，<code>Required</code> 在提交订单时校验空地址。切回门店自提，留空地址也可提交。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnSelectedIndexChanged</code>：配送方式变化时回发更新地址规则。</li>
+            <li><code>Required</code>：仅快递配送时要求收货地址。</li>
+            <li><code>ShowRedStar</code>：与必填规则一起更新，立即反映在标签上。</li>
+            <li><code>_ValidateForms</code>：提交前使用当前必填规则检查 Form1。</li>
+        </ul>
+    </section>
 }

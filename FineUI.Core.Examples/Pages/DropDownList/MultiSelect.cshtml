@@ -33,3 +33,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示同时保留多个选项，并以数组读取当前选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>同时选择多个选项</h3>
+        <ol>
+            <li>
+                展开列表，依次选择两个可用项，再收起面板。<br />
+                结果：输入区同时保留这两个选择，再次点击已选项可以取消它。
+            </li>
+            <li>
+                点击本页获取选中项的按钮。<br />
+                结果：后台结果中包含当前保留的多个值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectedValueArray</code>：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+            <li><code>EnableMultiSelect</code>：允许保留多个选中值。 本页声明值为 true。</li>
+        </ul>
+    </section>
+}

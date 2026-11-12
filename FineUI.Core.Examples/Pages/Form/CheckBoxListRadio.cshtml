@@ -51,3 +51,24 @@
     </script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>通过变化事件将复选框列表限制为最多选中一项。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>只保留新勾选项</h3>
+        <ol>
+            <li>
+                勾选“可选项 1”。<br />
+                结果：原来选中的“可选项 2”取消，仅保留第一项，提示中包含 value1。
+            </li>
+            <li>
+                再次取消“可选项 1”。<br />
+                结果：列表允许没有选中项；提示显示当前无选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Listener Event=&quot;change&quot;</code>：勾选新项时把整个列表的选中值改为该项，取消原选择；不是使用内置单选限制属性。</li>
+            <li><code>SelectedValueArray</code>：后台收到变化通知后读取当前选中值数组并显示提示，实际限制逻辑由客户端完成。</li>
+        </ul>
+    </section>
+}

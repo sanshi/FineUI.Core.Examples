@@ -60,3 +60,35 @@
 }
 
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮分组的互斥按下、允许全部取消和允许多选三种状态规则。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>互斥与允许取消</h3>
+        <ul>
+            <li>
+                在第一组点击原本未按下的按钮。<br />
+                结果：新按钮按下，同组原来的按钮释放。
+            </li>
+            <li>
+                在“可以不选”组再次点击已按下的按钮。<br />
+                结果：该按钮释放，整组可以没有按下项；后台回发后显示本组当前按下按钮的提示。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>允许多选并读取状态</h3>
+        <ul>
+            <li>
+                在“可以多选”组依次点击不同按钮。<br />
+                结果：多个按钮可以同时按下，变化事件回发后由后台列出当前按下的按钮文字。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnablePressGroup</code>：开启组内按下规则。</li>
+            <li><code>Pressed</code>：指定按钮初始按下状态。</li>
+            <li><code>AllowNonePress</code>：设为 true，允许取消最后一个按下项。</li>
+            <li><code>AllowMultiPress</code>：设为 true，允许同时按下多个按钮。</li>
+            <li><code>OnPressChanged</code>：组内状态变化时读取并显示当前按下项。</li>
+        </ul>
+    </section>
+}

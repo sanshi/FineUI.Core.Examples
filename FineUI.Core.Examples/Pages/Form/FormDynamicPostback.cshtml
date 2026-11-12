@@ -10,9 +10,42 @@
     <br />
     <f:Panel ID="Panel1" Title="新增控件区域" ShowHeader="true" BodyPadding="10" />
     <f:Label ID="labResult" Text="尚未追加控件" />
-    <ul class="compatibility-notes">
-        <li>点击追加后，后台创建备注输入框和提交按钮，立即放入上方面板。</li>
-        <li>输入备注并点击新增按钮提交，再修改备注并提交，观察结果及输入值。</li>
-        <li>重复点击追加不会创建同名控件；新按钮只在创建时登记事件。</li>
-    </ul>
+
+
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮回发时追加备注字段和新按钮，并在后续多次提交中保留动态控件和当前输入。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>追加后连续提交</h3>
+        <ol>
+            <li>
+                点击“追加备注输入框和按钮”。<br />
+                结果：新增控件区域出现“备注”输入框和“提交新增备注”按钮，提示已追加。
+            </li>
+            <li>
+                备注输入“第一条备注”，点击“提交新增备注”。<br />
+                结果：下方显示“已提交：第一条备注”，输入框仍保留这段文字。
+            </li>
+            <li>
+                将备注改为“修改后的备注”，再次点击新增按钮。<br />
+                结果：显示新的提交结果；继续使用同一组动态控件。
+            </li>
+            <li>
+                再次点击追加按钮。<br />
+                结果：提示控件已存在，不重复创建同名字段或按钮。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>点击追加后，后台创建备注输入框和提交按钮，立即放入上方面板。</li>
+            <li>输入备注并点击新增按钮提交，再修改备注并提交，观察结果及输入值。</li>
+            <li>重复点击追加不会创建同名控件；新按钮只在创建时登记事件。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Items.Add()</code>：将新创建的备注和按钮加入已有 Panel 的 items；不是另开一个页面。</li>
+            <li><code>Events.Add()</code>：在创建动态按钮时登记提交事件，后续回发仍能使用。</li>
+        </ul>
+    </section>
 }

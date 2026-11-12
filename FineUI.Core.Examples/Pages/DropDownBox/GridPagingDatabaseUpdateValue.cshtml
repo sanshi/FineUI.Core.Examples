@@ -49,3 +49,30 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>按需加载当前页人员数据并保留跨页选择，按钮请求后台替换选中人员。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
+        <ol>
+            <li>
+                点击“更新下拉框的值为[张娟娟,叶鹏]”。<br />
+                结果：回发后由后台把当前选择替换为按钮指定的人名或语言；输入区和重新展开的选择状态同步更新。
+            </li>
+            <li>
+                再点击“获取下拉框的选中值”。<br />
+                结果：读取结果反映刚更新的选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空当前选择</h3>
+        <ol>
+            <li>
+                点击“清空下拉框的值”，再获取当前选中值。<br />
+                结果：输入文字、选择值及标签被清除，读取结果显示下拉框为空。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Value</code>：按钮处理后更新下拉框当前选中值，显示文字随本页的选中数据同步更新。</li>
+        </ul>
+    </section>
+}

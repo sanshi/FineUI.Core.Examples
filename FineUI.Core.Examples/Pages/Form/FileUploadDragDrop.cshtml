@@ -16,6 +16,35 @@
     </f:SimpleForm>
     <f:Label ID="labPhotoResult"></f:Label>
     <f:Label ID="labPhotosResult"></f:Label>
-    <p>拖入 JPG、JPEG、PNG 或 GIF 图片，也可以点击拖放区选择。每次选择会替换该区域中上一次选择的图片，提交前可逐项移除。</p>
-    <p>点击「提交文件」后，服务器按字段分别校验并回显文件名。</p>
+
+
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示拖放选择单张或多张图片，移除待选文件后统一提交。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>拖入并移除文件</h3>
+        <ol>
+            <li>
+                将 cover.png 拖入“单张图片”，将 first.jpg、second.png 一起拖入“多张图片”。<br />
+                结果：两个区域分别显示当前待提交的文件；重复选择会替换该区域上一批文件。
+            </li>
+            <li>
+                在多张图片列表中移除 first.jpg。<br />
+                结果：仅剩 second.png 等待提交。
+            </li>
+            <li>
+                点击“提交文件”。<br />
+                结果：后台分别显示收到的单张和多张文件名，并清空两个区域的选择；本页核验文件，不生成图片预览。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>拖入 JPG、JPEG、PNG 或 GIF 图片，也可以点击拖放区选择。每次选择会替换该区域中上一次选择的图片，提交前可逐项移除。</p>
+        <p>点击「提交文件」后，服务器按字段分别校验并回显文件名。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableDragDrop</code>：可将本地文件拖入选择区域。 本页“单张图片”声明值为 true。</li>
+            <li><code>Multiple</code>：是否允许一次选择多个文件。 本页“多张图片”声明值为 true。</li>
+        </ul>
+    </section>
 }

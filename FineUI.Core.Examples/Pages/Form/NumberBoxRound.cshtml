@@ -21,3 +21,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>对比数字输入框在相同精度下采用四舍五入和直接截断的结果。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>比较两位小数处理</h3>
+        <ul>
+            <li>
+                对照两个字段的初始值 1.2367。<br />
+                结果：默认四舍五入显示 1.24，禁用四舍五入的字段显示 1.23。
+            </li>
+            <li>
+                分别在两个字段输入 1.245，然后移开焦点。<br />
+                结果：第一个显示 1.25，第二个截断为 1.24。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableRound</code>：默认开启四舍五入；第二个字段设为 false，直接截断超出精度的小数。</li>
+            <li><code>DecimalPrecision</code>：本页使用两位小数。</li>
+        </ul>
+    </section>
+}

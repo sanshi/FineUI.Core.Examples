@@ -25,3 +25,29 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示标签、链接和图片的悬停提示，并对比自动隐藏与点击其它位置才关闭的提示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>悬停查看提示</h3>
+        <ul>
+            <li>
+                将鼠标分别停在“中国科学技术大学”文字、链接和地球图片上。<br />
+                结果：浏览器显示各自的提示内容，文字和链接的提示还带有标题。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>保留提示</h3>
+        <ul>
+            <li>
+                悬停到带边框的标志图片，随后移开鼠标。<br />
+                结果：“不会自动消失的提示框”继续显示；点击页面其它位置后关闭。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ToolTip</code>：悬停时显示的提示内容。</li>
+            <li><code>ToolTipTitle</code>：提示框的标题。</li>
+            <li><code>ToolTipAutoHide</code>：最后一张图片设为 false，移开鼠标后仍保留提示。</li>
+        </ul>
+    </section>
+}

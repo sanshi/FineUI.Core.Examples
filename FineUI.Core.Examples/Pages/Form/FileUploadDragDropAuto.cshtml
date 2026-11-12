@@ -12,5 +12,30 @@
         </Items>
     </f:SimpleForm>
     <f:Label ID="labResult"></f:Label>
-    <p>拖入或点击选择 JPG、JPEG、PNG、GIF 图片后会立即上传，每张图片最多 2 MB。服务器会回显收到的文件名，校验失败时保留本次选择。</p>
+
+
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>选定图片后立即上传整批文件，失败保留待处理列表，成功后收起。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>拖入后立即上传</h3>
+        <ol>
+            <li>
+                将 first.jpg、second.png 两张合格图片拖到“图片”区域。<br />
+                结果：选定后立即回发，后台显示收到的文件名，成功后文件选择被清空。
+            </li>
+            <li>
+                重新拖入一张不符合限制的文件。<br />
+                结果：后台将错误标记到上传控件，本批文件保留，可修正后再选。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>拖入或点击选择 JPG、JPEG、PNG、GIF 图片后会立即上传，每张图片最多 2 MB。服务器会回显收到的文件名，校验失败时保留本次选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableDragDrop</code>：可将本地文件拖入选择区域。 本页“图片”声明值为 true。</li>
+            <li><code>OnFileSelected</code>：选定文件后立即请求后台处理。 本页“图片”声明值为 filePhotos_FileSelected。</li>
+        </ul>
+    </section>
 }

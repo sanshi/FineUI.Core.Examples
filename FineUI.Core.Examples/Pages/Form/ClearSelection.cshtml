@@ -113,9 +113,8 @@
             </f:SimpleForm>
         </Items>
     </f:Panel>
-    <br />
-    <p>七类控件都使用 ClearSelection 清空选择，数据保留，禁用项的旧选择也会清除。</p>
-    <p>树的清空选择只取消节点高亮，保留节点勾选和展开状态；取消勾选请使用树区域内的按钮。</p>
+
+
 }
 
 @section script {
@@ -126,4 +125,37 @@
             }
         }
     </script>
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示七类选择控件统一清空、清空后重新赋值，并区分树节点选中与勾选。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>清空后读取选择</h3>
+        <ol>
+            <li>
+                点击“清空全部选择”，再点击“读取当前选择”。<br />
+                结果：按钮回发后由后台清空七类控件的选择，读取结果中各类选中数量和表格当前单元格为0；选项数据保留，树勾选仍保留。
+            </li>
+            <li>
+                点击“清空后重新选中甲”，再读取当前选择。<br />
+                结果：同一轮先清空再赋值后，七类控件均选中甲；清空动作不会覆盖后面的赋值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>单独取消树勾选</h3>
+        <ul>
+            <li>
+                点击树区的“取消树节点勾选”，再读取当前选择。<br />
+                结果：树勾选数量变为0；节点高亮与勾选是两个独立状态，清空选择不等于清空勾选。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>七类控件都使用 ClearSelection 清空选择，数据保留，禁用项的旧选择也会清除。</p>
+        <p>树的清空选择只取消节点高亮，保留节点勾选和展开状态；取消勾选请使用树区域内的按钮。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ClearSelection()</code>：清空表格、下拉选择框、下拉列表、DataList、树、复选框列表和单选框列表的选中状态，不删除数据。</li>
+            <li><code>UncheckAllNodes()</code>：单独取消树节点勾选；树的选中、高亮和展开状态独立。</li>
+            <li><code>SelectedValueArray</code>：清空后仍可重新赋值；本例使用稳定值 a 选中“甲”。</li>
+        </ul>
+    </section>
 }

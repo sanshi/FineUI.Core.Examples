@@ -18,3 +18,31 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示双触发器的搜索与取消。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>搜索后再取消</h3>
+        <ol>
+            <li>
+                在“搜索用户名”中输入“admin”，点击搜索图标。<br />
+                结果：回发后，后台显示当前关键词的搜索提示，并显示清空图标；本页用提示演示搜索动作。
+            </li>
+            <li>
+                点击清空图标。<br />
+                结果：回发后，后台显示取消搜索提示，输入清空且清空图标隐藏。
+            </li>
+            <li>
+                保持输入为空，点击搜索图标。<br />
+                结果：回发后，后台提示先输入关键词，不执行有关键词的搜索动作。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Trigger1Icon</code>：第一个图标用于清空并取消搜索。</li>
+            <li><code>Trigger2Icon</code>：第二个图标用于立即搜索。</li>
+            <li><code>ShowTrigger1</code>：初始为 false，搜索成功后显示，取消后隐藏。</li>
+            <li><code>OnTrigger2Click</code>：搜索图标的后台事件读取当前关键词。</li>
+        </ul>
+    </section>
+}

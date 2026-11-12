@@ -20,3 +20,45 @@
     </f:Label>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在页面内直接选择日期范围。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期范围</h3>
+        <ul>
+            <li>
+                依次将起点和终点选择为今天之后第5天到第10天。<br />
+                结果：面板高亮当前选择，范围显示起止两个值。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>响应选择事件</h3>
+        <ul>
+            <li>
+                改变当前日期范围并完成选择。<br />
+                结果：触发本页选择事件回发，后台读取当前选择并更新下方结果。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-right" aria-hidden="true"></i>只修改范围起点</h3>
+        <ul>
+            <li>
+                保持起点早于终点，点击“开始日期后移一天”。<br />
+                结果：后台将范围起点后移一天，终点保持不变；起点到达终点后不再后移。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>由按钮设置选择</h3>
+        <ul>
+            <li>
+                点击日历下方以“选中”开头的按钮。<br />
+                结果：后台把日历改为按钮文字标明的日期范围；面板高亮随之更新，下方显示当前值。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 yyyy-MM-dd。</li>
+            <li><code>DisplayType</code>：本页采用日期范围面板，选择起点和终点。</li>
+            <li><code>RangeStartDate</code>：设置范围起点，与终点共同组成当前范围。</li>
+            <li><code>RangeEndDate</code>：设置范围终点，与起点共同组成当前范围。</li>
+            <li><code>OnDateSelect</code>：完成日历选择后回发，后台读取当前选择并更新结果标签。</li>
+        </ul>
+    </section>
+}

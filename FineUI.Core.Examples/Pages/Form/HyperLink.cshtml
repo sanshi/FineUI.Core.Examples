@@ -34,3 +34,30 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示普通超链接、带 HTML 样式的链接，以及启用后只执行提示的链接。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-link" aria-hidden="true"></i>对照链接内容和目标</h3>
+        <ul>
+            <li>
+                对照“新窗口打开百度首页”和 Google 链接。<br />
+                结果：都配置为在新标签页打开；Google 的局部文字使用红色 HTML 样式。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>启用后执行客户端动作</h3>
+        <ul>
+            <li>
+                点击“启用/禁用最后一个链接”，再点击“点击弹出对话框”。<br />
+                结果：按钮先回发启用链接，点击链接后浏览器直接弹出提示，本例取消占位链接的默认跳转。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>NavigateUrl</code>：普通链接指向实际地址，动作链接使用 #。</li>
+            <li><code>Target</code>：普通链接设为 _blank，在新标签页打开。</li>
+            <li><code>EncodeText</code>：设为 false 时可在链接文字中使用固定 HTML。</li>
+            <li><code>ClickHandler</code>：动作链接弹出提示并阻止默认跳转。</li>
+        </ul>
+    </section>
+}

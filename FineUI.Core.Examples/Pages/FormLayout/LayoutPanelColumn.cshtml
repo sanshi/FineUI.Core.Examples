@@ -59,17 +59,35 @@
             <f:Button ID="Button1" Text="提交表单" _ValidateForms="Form1" ValidateMessageBox="true" OnClick="btnSubmit_Click"></f:Button>
         </Items>
     </f:Form>
-    <br>
-    注意：
-    <ul>
-        <li>
-            表单字段的ShowLabel=false，表单验证失败的对话框消息中用到了 Label 属性。
-        </li>
-        <li>
-            表单验证失败的错误提示类型是Qtip，而不是默认的Side。
-        </li>
-    </ul>
+
+
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示用列布局组合独立标签、输入框、按钮和日期区间，同时保留字段验证。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>固定宽度与比例宽度</h3>
+        <ul>
+            <li>
+                对照用户名、作息起止时间与上班起止时间这几行。<br />
+                结果：独立标签与输入框并排；一组日期使用固定宽度，另一组按剩余宽度等分。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注意：</p>
+        <ul>
+            <li> 表单字段的ShowLabel=false，表单验证失败的对话框消息中用到了 Label 属性。 </li>
+            <li> 表单验证失败的错误提示类型是Qtip，而不是默认的Side。 </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>：行面板使用 Column，把标签、字段和按钮并排排列。</li>
+            <li><code>Width</code>：为独立标签、用户名及部分日期字段指定固定宽度。</li>
+            <li><code>ColumnWidth</code>：上班起止日期各占剩余宽度的一半。</li>
+            <li><code>ShowLabel</code>：内置标签隐藏，改由行内独立 Label 显示。</li>
+        </ul>
+    </section>
+}

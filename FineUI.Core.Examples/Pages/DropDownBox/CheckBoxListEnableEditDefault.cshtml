@@ -47,3 +47,22 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板内多选编程语言，允许输入列表之外的文字，以自定义文字作为初值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>核对初始自由输入</h3>
+        <ol>
+            <li>
+                初次打开页面，查看输入区。<br />
+                结果：输入区显示“初始自定义值”；点击获取值时按用户输入文字处理。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableEdit</code>：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 true。</li>
+            <li><code>SetUserInput()</code>：直接提供列表之外的输入文字，首次加载即可显示；不用伪造列表项。</li>
+            <li><code>SetSelection()</code>：同时提供初始业务值和显示文字，让真实选项与自定义文字按位置对应。</li>
+        </ul>
+    </section>
+}

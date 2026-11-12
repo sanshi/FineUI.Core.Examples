@@ -58,3 +58,20 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示由工具图标触发隐藏的文件选择框。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>先上传头像</h3>
+        <ol>
+            <li>
+                点击表单标题栏的“上传头像”工具图标，选择一张合格图片。<br />
+                结果：文件选中事件立即回发；后台校验并保存图片，头像区域由空白图变为新头像，同时清空文件选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Hidden</code>：隐藏上传字段，由工具图标触发系统选择对话框。 本页声明值为 true。</li>
+        </ul>
+    </section>
+}

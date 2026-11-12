@@ -71,3 +71,34 @@
 
 
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮上的状态徽标、数字和文字徽标，以及不同类型和动画。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更新数字徽标</h3>
+        <ul>
+            <li>
+                对照按钮上的小点、3、10、new、hot 等徽标。<br />
+                结果：没有文字的徽标显示状态点，有文字的徽标显示数字或短词；不同类型和动画可同时使用。
+            </li>
+            <li>
+                连续点击“徽标数字加一”。<br />
+                结果：回发后，后台将数字徽标从 10 改为 11、12，按钮图标保持不变。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>徽标与图标一起使用</h3>
+        <ul>
+            <li>
+                点击“自定义图标（点击修改图标）”。<br />
+                结果：回发后，后台切换图片，徽标继续显示，不因图标更新而消失。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Badge</code>：设为 true，显示按钮徽标。</li>
+            <li><code>BadgeText</code>：徽标的数字或文字，空时显示状态点。</li>
+            <li><code>BadgeType</code>：使用错误、警告、成功等主题配色。</li>
+            <li><code>BadgeAnimationType</code>：指定 processing、fade、move、shake 等对应动画。</li>
+        </ul>
+    </section>
+}

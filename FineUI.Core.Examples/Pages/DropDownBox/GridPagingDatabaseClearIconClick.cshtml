@@ -44,3 +44,20 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>按需加载当前页人员数据并保留跨页选择，点击清空图标后回发处理。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>点击清空图标</h3>
+        <ol>
+            <li>
+                确保已有选择，点击输入区清空图标。<br />
+                结果：当前选择被清空，后台清空事件显示“你点击了清空图标”。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AutoShowClearIcon</code>：有内容时显示清空全部选择的图标。 本页声明值为 true。</li>
+            <li><code>OnClearIconClick</code>：清空动作完成后请求后台处理。 本页声明值为 DropDownBox1_ClearIconClick。</li>
+        </ul>
+    </section>
+}

@@ -37,3 +37,20 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示必填与可空两组数字的关联比较，后一个值必须大于等于前一个。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>可空组也按关系验证</h3>
+        <ul>
+            <li>
+                数字框 3 输入 30，数字框 4 输入 29，提交。<br />
+                结果：数字框 4 提示应大于等于数字框 3；可空不表示填写后免于比较。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Required</code>：前两个字段必填，后两个允许为空。</li>
+        </ul>
+    </section>
+}

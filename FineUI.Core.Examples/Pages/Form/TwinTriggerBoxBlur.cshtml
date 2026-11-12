@@ -18,9 +18,8 @@
             </f:TwinTriggerBox>
         </Items>
     </f:SimpleForm>
-    <br />
-    <br />
-    注：文本输入框失去焦点时，触发后台搜索事件。
+
+
 
 }
 
@@ -54,3 +53,26 @@
     </script>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示双触发器的搜索与取消，并在输入变化后离开字段时自动处理。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>失去焦点后处理</h3>
+        <ol>
+            <li>
+                在“搜索用户名”中输入“lisi”，再点击页面空白处。<br />
+                结果：回发后，后台显示当前关键词的搜索提示，并显示清空图标；本页用提示演示搜索动作。
+            </li>
+            <li>
+                再次聚焦输入框，不修改文字就离开。<br />
+                结果：当前值与上次处理值相同，不重复触发变化处理。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：文本输入框失去焦点时，触发后台搜索事件。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>blur</code>：客户端只在失焦且文字与上次不同后发起处理，避免未改值时重复执行。</li>
+        </ul>
+    </section>
+}

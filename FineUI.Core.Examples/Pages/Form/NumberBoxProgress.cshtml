@@ -92,3 +92,28 @@
     </script>
 
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示把数字值显示为进度条，并对比进度文字位置和条形高度。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>批量改变进度</h3>
+        <ul>
+            <li>
+                点击“50%”。<br />
+                结果：浏览器把八个进度条都改为 50%，进度宽度和可见文字一起更新，无需回发。
+            </li>
+            <li>
+                分别点击“0%”和“100%”。<br />
+                结果：所有进度条分别显示空进度和满进度；右侧文字与内嵌文字采用同一个数值。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DisplayType</code>：设为 Progress，把数字值显示为进度条。</li>
+            <li><code>ProgressTextVisible</code>：控制是否显示百分比文字。</li>
+            <li><code>ProgressTextInside</code>：后四个进度条设为 true，把文字放入条内。</li>
+            <li><code>ProgressHeight</code>：部分进度条设为 15，比较不同条形高度。</li>
+            <li><code>setValue()</code>：客户端按钮统一更新全部进度条。</li>
+        </ul>
+    </section>
+}

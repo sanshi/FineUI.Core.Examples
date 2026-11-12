@@ -26,7 +26,8 @@
     position: fixed;
     right: 24px;
     bottom: 24px;
-    z-index: 900;
+    /* 独立页本身可能就是模态窗口，入口仍须能越过示例的遮罩。查看器打开时会隐藏入口。 */
+    z-index: 2147483647;
     display: grid;
     place-items: center;
     width: 44px;
@@ -38,6 +39,10 @@
     background: var(--f-content-background-color);
     box-shadow: 0 4px 16px color-mix(in srgb, var(--f-content-text-color) 16%, transparent);
     cursor: pointer;
+}
+
+.source-code-viewer-launcher[hidden] {
+    display: none;
 }
 
 .source-code-viewer-launcher .f-iconfont {

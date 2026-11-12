@@ -18,3 +18,20 @@
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示日期时间初始为空，选择或点击快捷按钮后才写入值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期时间</h3>
+        <ul>
+            <li>
+                先观察初始面板尚未高亮日期，再在面板中选择今天之后第5天09时30分。<br />
+                结果：面板高亮当前选择。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectedDate</code>：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋选中值；用户选择或点击快捷按钮后才产生当前值。</li>
+        </ul>
+    </section>
+}

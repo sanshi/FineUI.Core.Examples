@@ -80,3 +80,27 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>将复选列表显示为开关，并对比默认、自定义状态文字。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-power-off" aria-hidden="true"></i>切换开关选项</h3>
+        <ol>
+            <li>
+                切换列表一的第一个开关。<br />
+                结果：该项的选中状态改变，其它开关独立保持当前状态。
+            </li>
+            <li>
+                切换带状态文字的列表四开关。<br />
+                结果：状态文字随开关在“是”和“否”间改变。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DisplayType</code>：使用开关外观，选择值仍是复选列表的多值集合。 本页“列表一”声明值为 Switch。</li>
+            <li><code>SwitchTextVisible</code>：显示开关状态文字。 本页“列表三（选中项改变事件）”声明值为 true。</li>
+            <li><code>SwitchOnText</code>：开关开启状态的文字。 本页“列表四（竖排）”声明值为 是。</li>
+            <li><code>SwitchOffText</code>：开关关闭状态的文字。 本页“列表四（竖排）”声明值为 否。</li>
+        </ul>
+    </section>
+}

@@ -19,3 +19,21 @@
     </f:Label>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示日期时间范围初始为空，选择或点击快捷按钮后才写入值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期时间范围</h3>
+        <ul>
+            <li>
+                先观察初始面板尚未高亮日期，再依次将起点和终点选择为今天之后第5天09时30分到第10天10时30分。<br />
+                结果：面板高亮当前选择，范围显示起止两个值。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RangeStartDate</code>：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
+            <li><code>RangeEndDate</code>：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
+        </ul>
+    </section>
+}

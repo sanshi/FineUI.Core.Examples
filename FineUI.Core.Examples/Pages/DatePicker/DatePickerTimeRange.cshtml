@@ -22,3 +22,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示通过输入框弹出的面板只选择时间范围，无需选择日期。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择时间范围</h3>
+        <ol>
+            <li>
+                点击“时间范围”字段右侧的下拉图标。<br />
+                结果：显示本页时间范围面板，可同时调整时、分；输入框当前值仍可对照查看。
+            </li>
+            <li>
+                依次将起点和终点选择为09时30分到10时30分。<br />
+                结果：所选值回填输入框，范围显示起止两个值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 HH:mm:ss。</li>
+            <li><code>DisplayType</code>：本页采用时间范围面板，选择起点和终点。</li>
+        </ul>
+    </section>
+}

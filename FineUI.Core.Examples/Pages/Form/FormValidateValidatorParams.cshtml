@@ -23,17 +23,8 @@
             <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" OnClick="btnRegister_Click"></f:Button>
         </Items>
     </f:SimpleForm>
-    <br>
-    <br>
-    注：
-    <ul>
-        <li>
-            [输入框一]的最大长度为 3 个字符。
-        </li>
-        <li>
-            [输入框二]的最大长度为 6 个字符。
-        </li>
-    </ul>
+
+
 
 
 }
@@ -54,4 +45,35 @@
         }
     </script>
 
+}
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示两个文本框共用同一个验证函数，通过各自参数设置不同的最大长度。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>使用字段自己的长度上限</h3>
+        <ol>
+            <li>
+                输入框一填写 abcd，输入框二填写 abc，点击“注册”。<br />
+                结果：输入框一提示最多 3 个字符，浏览器阻止后续提交。
+            </li>
+            <li>
+                关闭提示，将输入框一改为 abc，再点击“注册”。<br />
+                结果：两个长度规则通过后回发，后台显示当前表单值。
+            </li>
+            <li>
+                再将输入框二改为 abcdefg 并提交。<br />
+                结果：它按自己的上限提示最多 6 个字符，不会沿用第一个字段的 3。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：</p>
+        <ul>
+            <li> [输入框一]的最大长度为 3 个字符。 </li>
+            <li> [输入框二]的最大长度为 6 个字符。 </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ValidatorFunction</code>：两个输入框都使用 inputValidator，符合规则返回 true，失败返回错误文字。</li>
+            <li><code>data-maxlength</code>：本页在字段属性中分别设置为 3、6，函数读取各自的值。</li>
+        </ul>
+    </section>
 }

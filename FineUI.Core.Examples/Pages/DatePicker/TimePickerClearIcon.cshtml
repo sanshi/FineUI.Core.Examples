@@ -21,10 +21,32 @@
     <br />
     <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
     </f:Label>
-    <br />
-    <br />
-    注：本示例通过EnableEdit属性控制日期和时间选择器不可编辑。
+
+
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示日期和时间字段的清空图标，清空后仍须重新选择才能通过必填验证。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>清空后重新选择</h3>
+        <ol>
+            <li>
+                在已有日期或时间时点击字段中的清空图标。<br />
+                结果：字段变为空，清空图标消失；必填规则仍保留。
+            </li>
+            <li>
+                点击“提交表单”，再重新选择日期和时间后提交。<br />
+                结果：空字段先显示必填错误；重新选择有效值后才能继续处理。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本示例通过EnableEdit属性控制日期和时间选择器不可编辑。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AutoShowClearIcon</code>：有值时显示清空图标；点击后清空字段并隐藏图标，必填规则继续生效。</li>
+        </ul>
+    </section>
+}

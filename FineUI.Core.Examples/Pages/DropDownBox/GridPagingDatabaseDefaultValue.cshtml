@@ -36,8 +36,8 @@
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
-    <br />
-    注：通过 Values 和 Text 属性来设置下拉框的初始值（由于初始值可能不在第一页，所以需要指定 Text 属性）。
+
+
 
 }
 
@@ -46,4 +46,23 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示对应节点或人员尚未加载时，仍显示由后台提供的初始业务值和文字。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>先显示尚未加载项的初始选择</h3>
+        <ol>
+            <li>
+                初次打开时查看输入区，再展开面板查看当前页的数据。<br />
+                结果：输入区已经显示初始文字，不要求初始项先出现在当前页的数据中。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：通过 Values 和 Text 属性来设置下拉框的初始值（由于初始值可能不在第一页，所以需要指定 Text 属性）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>_Values</code>：指定初始多选值。 本页声明值为 115,105。</li>
+            <li><code>_Texts</code>：为初始值提供对应文字，尤其适用于尚未加载到当前页的数据。 本页声明值为 董国,吴颖颖。</li>
+        </ul>
+    </section>
 }

@@ -31,8 +31,34 @@
     <br>
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
-    <br />
-    注：列表项的值不能为空字符串。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板内单选编程语言。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>从面板选择编程语言</h3>
+        <ol>
+            <li>
+                点击下拉箭头展开面板，选择“Ruby”。<br />
+                结果：Ruby 替换原来的单选项，对应值为 ruby。
+            </li>
+            <li>
+                点击“获取下拉框的选中值”。<br />
+                结果：回发后由后台显示包含 Ruby 和 ruby 的当前选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：列表项的值不能为空字符串。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataControlID</code>：指定弹出面板中提供选择数据的控件。 本页声明值为 RadioButtonList1。</li>
+            <li><code>EnableMultiSelect</code>：决定下拉框保留单个值还是多个值。 本页声明值为 false。</li>
+            <li><code>Value</code>：指定初始单选值或多选值数组。 本页声明值为 js。</li>
+            <li><code>ColumnNumber</code>：控制弹出单选或复选列表的列数。 本页声明值为 1。</li>
+        </ul>
+    </section>
+}

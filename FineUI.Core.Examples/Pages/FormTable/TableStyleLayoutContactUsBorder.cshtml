@@ -45,3 +45,22 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示把联系表单的字段组织成表格风格的标签与输入区域。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照字段排列</h3>
+        <ol>
+            <li>
+                在“姓、名”填写联系人，邮箱输入 reader&#64;example.com，填写主题和消息正文。<br />
+                结果：姓名字段并排，其余字段纵向排列；本页通过样式去掉单元格边框。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ColumnWidth</code>：姓与名各占一半宽度。</li>
+            <li><code>EnableTableStyle</code>：启用表格风格；去边框页另外通过本页 CSS 修改单元格边线。</li>
+            <li><code>border-width</code>：本页的表格风格补充样式去掉字段边线，保留原来的布局结构。</li>
+        </ul>
+    </section>
+}

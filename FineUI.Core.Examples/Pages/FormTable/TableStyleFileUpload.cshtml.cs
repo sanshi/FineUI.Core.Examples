@@ -38,8 +38,9 @@ namespace FineUI.Core.Examples.Pages.FormTable
                 // 保存到 wwwroot 之外的目录，图片地址指向公共下载页（/Home/Download，带 inline=1 内联显示）
                 string savedName = SaveUploadFile(filePhoto);
 
+                // 结果保留头像等固定 HTML，用户名先编码，避免用户输入被当作标签解析。
                 labResult.Text = "<p>文件路径：" + HtmlEncode(originalName) + "</p>" +
-                    "<p>用户名：" + tbxUserName.Text + "</p>" +
+                    "<p>用户名：" + HtmlEncode(tbxUserName.Text) + "</p>" +
                     "<p>头像：<br /><img src=\"" + GetImageUrl(savedName) + "\" /></p>";
 
                 // 清空表单字段（清空上传控件，否则提交表单时会再次上传！）

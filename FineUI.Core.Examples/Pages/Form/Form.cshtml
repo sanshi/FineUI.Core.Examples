@@ -112,3 +112,35 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示分别验证一个表单或同时验证两个表单，验证范围由提交按钮指定。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>只验证当前表单</h3>
+        <ol>
+            <li>
+                点击表单 1 的“验证此表单并提交”。<br />
+                结果：空的必填选择和文本会阻止提交；表单 2 的字段不影响这次检查。
+            </li>
+            <li>
+                关闭提示，在表单 1 勾选复选框、开关和单选框，选择一个下拉项并输入文本，再次提交。<br />
+                结果：通过后仅提交并显示表单 1 的当前字段值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>同时验证两组字段</h3>
+        <ol>
+            <li>
+                点击“验证两个表单并提交”。<br />
+                结果：两个表单都参与验证；表单 2 需要有效邮箱、审批人、0 到 1000 的非负整数数量和说明。
+            </li>
+            <li>
+                关闭提示，补齐两个表单的必填项，再点击同一按钮。<br />
+                结果：后台收到请求后显示两个表单的字段值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>_ValidateForms</code>：单表单按钮分别指定 Form1 或 Form2，联合按钮指定 Form1,Form2。</li>
+        </ul>
+    </section>
+}

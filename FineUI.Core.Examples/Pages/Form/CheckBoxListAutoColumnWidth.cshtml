@@ -59,9 +59,8 @@
             </f:Toolbar>
         </Toolbars>
     </f:SimpleForm>
-    <br>
-    <br>
-    注：注意复选框列表中每一项的宽度不相同。
+
+
 
 
 }
@@ -83,4 +82,24 @@
 
 
     </script>
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按选项文字的实际长度自动分配列表列宽，避免长短选项按等宽排列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>比较长短选项</h3>
+        <ol>
+            <li>
+                对照列表中较长的第一项与较短的“可选项 2”。<br />
+                结果：各项按自身文字宽度排布，长文字项比短文字项占用更大宽度。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：注意复选框列表中每一项的宽度不相同。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ColumnNumber</code>：决定列表分为几列。 本页“列表二（三列）”声明值为 3。</li>
+            <li><code>AutoColumnWidth</code>：选项宽度按各项文字内容调整。 本页“列表一”声明值为 true。</li>
+        </ul>
+    </section>
 }

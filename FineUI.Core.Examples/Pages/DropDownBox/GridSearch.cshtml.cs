@@ -47,7 +47,8 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
 
         protected void ttbSearch_Trigger2Click(object sender, EventArgs e)
         {
-            ttbSearch.ShowTrigger1 = false;
+            // 搜索后保留清空入口，让用户可以一键恢复完整列表。
+            ttbSearch.ShowTrigger1 = true;
 
             LoadData();
         }

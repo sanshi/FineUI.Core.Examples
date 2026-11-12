@@ -66,3 +66,26 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>组合在校状态下拉过滤和专业列表头过滤。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>组合下拉与表头过滤</h3>
+        <ol>
+            <li>
+                在弹出面板的“是否在校”下拉中选择“离校”。<br />
+                结果：后台按离校状态重新加载表格。
+            </li>
+            <li>
+                在“所学专业”列菜单启用过滤，选择“包含”并输入专业关键词。<br />
+                结果：专业条件与在校状态一起应用；这里过滤的是“所学专业”列，不是姓名列。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AllowFilters</code>：允许通过表头菜单设置过滤。 本页声明值为 true。</li>
+            <li><code>OnFilterChanged</code>：过滤条件变化后重新加载匹配行。 本页声明值为 Grid1_FilterChanged。</li>
+            <li><code>OnSelectedIndexChanged</code>：筛选下拉框改变后重新加载表格，保留本页的其它过滤条件。</li>
+        </ul>
+    </section>
+}

@@ -27,11 +27,15 @@ namespace FineUI.Core.Examples.Pages.DropDownBox
             // 选中项会带有对应的值，自由输入只有文字，按选中项数量区分两种情况。
             if (DropDownBox1.Values.Length > 0)
             {
-                labResult.Text = String.Format("下拉框文本：{0}（值：{1}）", DropDownBox1.Text, DropDownBox1.Value);
+                // 用户输入按文字回显，先编码动态文字，避免结果区把输入当作 HTML 标签解析。
+                labResult.Text = String.Format(
+                    "下拉框文本：{0}（值：{1}）",
+                    HtmlEncode(DropDownBox1.Text),
+                    HtmlEncode(DropDownBox1.Value));
             }
             else
             {
-                labResult.Text = String.Format("用户输入值：{0}", DropDownBox1.Text);
+                labResult.Text = String.Format("用户输入值：{0}", HtmlEncode(DropDownBox1.Text));
             }
         }
 

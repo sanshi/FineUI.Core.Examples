@@ -49,10 +49,34 @@
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
-    <br />
-    注：通过 Values 和 Text 属性来设置下拉框的初始值（由于页面初始化时树控件数据并没有全部载入，所以需要指定 Text 属性）。
+
+
 
 }
 
 
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示对应节点或人员尚未加载时，仍显示由后台提供的初始业务值和文字。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>尚未加载时保留初值</h3>
+        <ol>
+            <li>
+                初次打开页面，先点击获取选中值按钮。<br />
+                结果：结果包含“河南省”“安徽省”“西平县”；西平县的子树尚未展开也能显示文字。
+            </li>
+            <li>
+                再展开驻马店市。<br />
+                结果：加载出“西平县”后，其默认选择仍被保留。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：通过 Values 和 Text 属性来设置下拉框的初始值（由于页面初始化时树控件数据并没有全部载入，所以需要指定 Text 属性）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>_Values</code>：指定初始多选值。 本页声明值为 henan,anhui,xiping。</li>
+            <li><code>_Texts</code>：为初始值提供对应文字，尤其适用于尚未加载到当前页的数据。 本页声明值为 河南省,安徽省,西平县。</li>
+        </ul>
+    </section>
+}

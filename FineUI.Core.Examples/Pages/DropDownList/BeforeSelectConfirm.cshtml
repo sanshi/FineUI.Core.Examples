@@ -70,3 +70,24 @@
     </script>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>通过异步 F.confirm确认后才改变选择，取消时保留原项。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>确认后才改变选择</h3>
+        <ol>
+            <li>
+                展开下拉列表，点击“可选择项8”，在确认对话框中选择“取消”。<br />
+                结果：此次选择被撤销，输入区继续显示原来的选择。
+            </li>
+            <li>
+                再次选择“可选择项8”，在确认对话框中选择“确定”。<br />
+                结果：确认后选中该项，值为 Value8；本页异步确认完成后才继续选中操作。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>beforeselect</code>：改变选择前执行；取消时返回 false。异步 F.confirm 的回调中再完成确认后的选择。</li>
+        </ul>
+    </section>
+}

@@ -25,3 +25,22 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示将DataTable转换为下拉选项，分别指定显示文字和业务值字段。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>对照绑定后的选项</h3>
+        <ol>
+            <li>
+                展开下拉列表，查看本页加载的选项。<br />
+                结果：选项来自本页数据源；显示文字和业务值按本页的绑定方式生成。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataTextField</code>：从指定字段取得选中后显示的文字。 本页声明值为 MyText。</li>
+            <li><code>DataValueField</code>：从指定字段取得稳定的选项值。 本页声明值为 MyValue。</li>
+            <li><code>DataSource</code>：提供本页绑定的数据集合，绑定后生成选项。</li>
+        </ul>
+    </section>
+}

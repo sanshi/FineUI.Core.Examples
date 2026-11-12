@@ -87,3 +87,28 @@
 
     </script>
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>通过客户端按钮全选或按专业批量选择人员。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>按条件批量选择</h3>
+        <ol>
+            <li>
+                展开面板，点击“全选化学系”。<br />
+                结果：客户端只选中专业为化学系的人员。
+            </li>
+            <li>
+                点击“全选材料系（保持已选中项）”。<br />
+                结果：材料系人员加入已有选择，前面选中的化学系人员继续保留。
+            </li>
+            <li>
+                点击“全选”。<br />
+                结果：当前表格内可选人员全部选中。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>syncToBox()</code>：脚本批量操作弹出数据控件后，把新的选择文字和值同步回下拉输入区。</li>
+            <li><code>DataControlID</code>：指定弹出面板中提供选择数据的控件。 本页声明值为 Grid1。</li>
+        </ul>
+    </section>
+}

@@ -36,3 +36,24 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示数字增减图标的叠放、平铺、分离和隐藏方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>比较位置并增减数值</h3>
+        <ul>
+            <li>
+                对照 Stack、Tile、None、Separate 四个字段。<br />
+                结果：增减图标分别叠放、平铺、隐藏、分居两侧，数字输入规则保持一致。
+            </li>
+            <li>
+                在初始为 20 的 Tile 字段点击加号，再点击减号。<br />
+                结果：浏览器依次将数值改为 21、20；自定义图标仍调用相同增减动作，无需回发。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>TriggerType</code>：控制图标位置，本页对比 Stack、Tile、Separate。</li>
+        </ul>
+    </section>
+}

@@ -25,3 +25,21 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示选择日期时间时隐藏秒列，只显示和读取到分钟。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>只选择小时和分钟</h3>
+        <ol>
+            <li>
+                展开日期选择面板，查看并选择小时和分钟。<br />
+                结果：时间区域不显示秒列，所选日期时间的显示文字也不包含秒。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 yyyy-MM-dd HH:mm。</li>
+            <li><code>ShowSecond</code>：设为 false，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。</li>
+        </ul>
+    </section>
+}

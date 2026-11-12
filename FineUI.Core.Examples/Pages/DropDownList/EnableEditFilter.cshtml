@@ -29,8 +29,8 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
-    <br />
-    注：用户输入文本时，会从第一个字符开始匹配（尝试输入字符：选）。
+
+
 
 }
 
@@ -46,4 +46,23 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示用自定义过滤函数改变输入文字与列表项的匹配方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>使用自定义过滤</h3>
+        <ol>
+            <li>
+                清空输入文字，再输入“可选项5”。<br />
+                结果：下拉面板只保留匹配第五项的结果，不匹配的第一项被隐藏。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：用户输入文本时，会从第一个字符开始匹配（尝试输入字符：选）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>FilterFunction</code>：按本页函数返回的结果过滤下拉项。 本页声明值为 filterDropDownList1。</li>
+        </ul>
+    </section>
 }

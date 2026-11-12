@@ -104,6 +104,7 @@
 
     var detailsHost;
     var windowHost;
+    var launcher;
     var regionMode = false;
     var currentExample;
     var currentAddress;
@@ -215,6 +216,9 @@
             listeners: {
                 hide: function (event) {
                     pendingOpen = false;
+                    if (launcher) {
+                        launcher.hidden = false;
+                    }
                     savePreferences();
                     restoreFocus();
                 }
@@ -379,6 +383,10 @@
             currentAddress = viewerAddress;
             detailsHost.setIFrameUrl(viewerAddress);
         }
+        if (launcher && detailsHost === windowHost) {
+            // 示例窗口的遮罩不能挡住入口；查看器自己的模态窗口打开后则收起入口，避免穿透遮罩。
+            launcher.hidden = true;
+        }
         detailsHost.show();
         updateRegionSize();
         savePreferences();
@@ -464,6 +472,7 @@
             button.appendChild(icon);
             button.addEventListener('click', onOpenDetailsClick);
             document.body.appendChild(button);
+            launcher = button;
         }
         var workspace = getWorkspace();
         if (workspace) {

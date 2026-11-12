@@ -52,3 +52,28 @@
     </script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>对比独立单选框的状态切换、分组互斥和变化事件。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>同组只选一项</h3>
+        <ol>
+            <li>
+                在“单选框（分组）”中选择“可选项 2”。<br />
+                结果：第二项选中，第一项取消。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮切换</h3>
+        <ol>
+            <li>
+                点击“选中分组单选框中的下一个”。<br />
+                结果：回发后由后台选中分组中的下一项，并取消原来选中项。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>GroupName</code>：名称相同的单选框互斥，不同分组相互独立。 本页“单选框（分组）”声明值为 MyRadioGroup1。</li>
+            <li><code>Checked</code>：指定单选框的初始选中状态。 本页“单选框（分组）”声明值为 true。</li>
+            <li><code>OnCheckedChanged</code>：用户改变当前分组选择后回发并显示结果。 本页“单选框（选中改变事件）”声明值为 rbtnAuto_CheckedChanged。</li>
+        </ul>
+    </section>
+}

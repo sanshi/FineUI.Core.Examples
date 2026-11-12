@@ -31,10 +31,31 @@
     </f:SimpleForm>
     <f:Label ID="labResult" EncodeText="false" CssClass="result">
     </f:Label>
-    <br>
-    <br>
-    <br />
-    注：由于浏览器安全限制，部分浏览器下只显示文件名（1.png）或者假路径（C:\fakepath\1.png）。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>填写用户名并上传个人头像，后台校验文件后显示图片结果。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>校验并上传头像</h3>
+        <ol>
+            <li>
+                用户名输入 tom，选择一张合格图片，再点击“提交”。<br />
+                结果：后台校验并保存图片，下方显示用户名 tom、文件名和头像，成功后清空表单和文件选择。
+            </li>
+            <li>
+                重新填写用户名，选择不符合类型或大小限制的文件，再提交。<br />
+                结果：后台提示具体校验错误，清空无效文件选择，不把该文件保存为头像。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：由于浏览器安全限制，部分浏览器下只显示文件名（1.png）或者假路径（C:\fakepath\1.png）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Required</code>：限制为空时能否通过表单验证。 本页“个人头像”声明值为 true。</li>
+        </ul>
+    </section>
+}

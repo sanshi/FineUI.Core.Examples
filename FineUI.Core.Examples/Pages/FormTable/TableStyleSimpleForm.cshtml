@@ -17,9 +17,28 @@
         </Items>
     </f:SimpleForm>
     <f:Button ID="btnSubmit" Text="注册" OnClick="btnSubmit_Click" _ValidateForms="SimpleForm1" ValidateTarget="Top" MarginTop="5"></f:Button>
-    <br>
-    <br>
-    注：<strong>启用EnableTableStyle时，必须去除BodyPadding属性</strong>，并建议设置MessageTarget=Qtip。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示表格风格中标签、输入区域和单元格边线的对齐。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照表格风格的字段排列</h3>
+        <ol>
+            <li>
+                对照本页各组字段的标签区域、输入区域与单元格边线。<br />
+                结果：不同字段放在各自单元格中，标签与输入区按表格布局对齐；操作按钮保留在原来的位置。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：<strong>启用EnableTableStyle时，必须去除BodyPadding属性</strong>，并建议设置MessageTarget=Qtip。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableTableStyle</code>：启用表格风格；表单去掉正文内边距，避免单元格与外框错开。</li>
+            <li><code>MessageTarget</code>：使用 Qtip 提示错误，避免错误文字挤占表格布局。</li>
+        </ul>
+    </section>
+}

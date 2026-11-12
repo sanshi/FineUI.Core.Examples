@@ -26,8 +26,32 @@
             </f:Toolbar>
         </Toolbars>
     </f:SimpleForm>
-    <br />
-    注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。
+
+
 }
 
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>为声明的列表项和数据绑定产生的列表项分别设置悬停提示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看每个选项的提示</h3>
+        <ol>
+            <li>
+                将鼠标移到列表一的“可选项 1”。<br />
+                结果：显示“这是第一个选项的提示信息”。
+            </li>
+            <li>
+                将鼠标移到列表二的“数据绑定值 1”。<br />
+                结果：该数据项的提示显示“数据绑定值 1（值：item1）”；本页在数据绑定事件中为每项补充提示。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Attributes[&quot;data-qtip&quot;]</code>：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
+            <li><code>OnItemDataBound</code>：每个数据项绑定时补充对应选项的提示。 本页“列表二（一列）”声明值为 CheckBoxList2_ItemDataBound。</li>
+        </ul>
+    </section>
+}

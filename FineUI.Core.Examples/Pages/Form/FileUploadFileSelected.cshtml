@@ -42,3 +42,20 @@
     </f:Label>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示选定文件后立即上传，无需等待整个表单提交。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>先上传头像</h3>
+        <ol>
+            <li>
+                点击“上传个人头像”，选择一张合格图片。<br />
+                结果：文件选中事件立即回发；后台校验并保存图片，头像区域由空白图变为新头像，同时清空文件选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnFileSelected</code>：选定文件后立即请求后台处理。 本页声明值为 filePhoto_FileSelected。</li>
+        </ul>
+    </section>
+}

@@ -26,3 +26,20 @@
     <f:Button ID="Button1" Text="中国科学技术大学（和上一个按钮共享同一个菜单）" MenuID="Menu1"></f:Button>
 
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示两个菜单按钮通过同一个菜单标识共用菜单内容。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>从两个按钮打开同一个菜单</h3>
+        <ol>
+            <li>
+                点击第一个菜单按钮，关闭菜单后再点击另一个。<br />
+                结果：两个按钮打开同一个菜单实例，菜单项内容统一维护。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>MenuID</code>：两个按钮都引用 Menu1，共享菜单内容。</li>
+        </ul>
+    </section>
+}

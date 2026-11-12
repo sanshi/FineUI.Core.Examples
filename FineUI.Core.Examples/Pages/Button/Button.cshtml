@@ -33,3 +33,39 @@
     <f:Button ID="Button3" Text="大按钮" Size="Large" />
 
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮的颜色、大小、可用状态、按下状态和悬停提示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>启用后再点击</h3>
+        <ol>
+            <li>
+                点击“启用后面的按钮”。<br />
+                结果：回发后，后台启用原先禁用的按钮，并修改其文字。
+            </li>
+            <li>
+                点击刚启用的按钮。<br />
+                结果：回发后，后台显示“你点击了刚刚启用的按钮”的提示。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换按下状态和提示</h3>
+        <ul>
+            <li>
+                点击“改变后面按钮的按下状态”。<br />
+                结果：回发后，后台反转后一个按钮的按下外观，再次点击可恢复。
+            </li>
+            <li>
+                将鼠标停在“这个按钮有提示信息（点击改变提示信息）”上，点击后再悬停。<br />
+                结果：先显示初始提示，再显示修改后的提示内容；页面还可对照不同颜色和尺寸按钮。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ButtonColor</code>：选择主、成功、危险、警告、信息等主题颜色。</li>
+            <li><code>Size</code>：控制按钮尺寸，同页对照多种大小。</li>
+            <li><code>Enabled</code>：初始为 false 的按钮不能点击，后台可改为 true。</li>
+            <li><code>Pressed</code>：表示持续按下的外观，切换后按钮文字保持不变。</li>
+            <li><code>ToolTip</code>：鼠标悬停显示的提示文字，可在点击后更新。</li>
+        </ul>
+    </section>
+}

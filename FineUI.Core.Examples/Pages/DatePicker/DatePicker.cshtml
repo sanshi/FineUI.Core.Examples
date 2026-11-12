@@ -23,3 +23,39 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示通过输入框弹出的面板选择日期。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期</h3>
+        <ol>
+            <li>
+                点击“开始日期”字段右侧的下拉图标。<br />
+                结果：显示本页日期面板；输入框当前值仍可对照查看。
+            </li>
+            <li>
+                在面板中选择今天之后第5天。<br />
+                结果：所选值回填输入框。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>验证并读取当前值</h3>
+        <ol>
+            <li>
+                填写本页所有必填日期或时间，让结束值晚于开始值。<br />
+                结果：满足必填和本页比较规则；结束值等于或早于开始值时，比较字段显示错误。
+            </li>
+            <li>
+                点击“提交表单”。<br />
+                结果：浏览器验证通过后回发，后台读取本页日期或时间值，更新结果标签。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 yyyy-MM-dd。</li>
+            <li><code>SelectedDate</code>：设置当前选中值，显示和高亮随当前值更新。</li>
+            <li><code>CompareControl</code>：结束字段引用同组开始字段，校验时读取该字段当前值进行比较。</li>
+            <li><code>CompareOperator</code>：本页要求结束值严格大于开始值；相等或更早时不能通过验证。</li>
+            <li><code>Required</code>：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
+        </ul>
+    </section>
+}

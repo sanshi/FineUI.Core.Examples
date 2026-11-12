@@ -25,7 +25,29 @@
             </f:Toolbar>
         </Toolbars>
     </f:SimpleForm>
-    <br />
-    注：三种方式（数据绑定 + DataTextRaw、OnItemDataBound、手工构建 Items）实现的功能与安全性完全等价，区别只是数据供给方式。
-    三者都只信任图标模板骨架与 URL，数据字段（名称）均经 HtmlEncode 转义，杜绝 XSS。
+
+
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>用带国旗图标的选项展示可信 HTML 文本的几种数据供给方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择带图标的国家</h3>
+        <ol>
+            <li>
+                在第一组中选择德国国旗对应的选项。<br />
+                结果：第一组仅选中德国，值为 de；其它组保持自己的选择。
+            </li>
+            <li>
+                点击“获取选中值”。<br />
+                结果：回发后由后台显示当前各组的选中数据；本页实际提供 3 组列表。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：三种方式（数据绑定 + DataTextRaw、OnItemDataBound、手工构建 Items）实现的功能与安全性完全等价，区别只是数据供给方式。 三者都只信任图标模板骨架与 URL，数据字段（名称）均经 HtmlEncode 转义，杜绝 XSS。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataTextRaw</code>：固定国旗 HTML 按可信内容输出，动态国家名称仍应先编码；普通字符串不会因此自动获得可信身份。</li>
+        </ul>
+    </section>
 }

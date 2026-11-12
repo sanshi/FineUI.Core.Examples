@@ -120,3 +120,37 @@
     </script>
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示表单或可编辑表格有未保存修改时，在离开页面前提示确认，保存后清除修改标记。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>有修改时确认离开</h3>
+        <ol>
+            <li>
+                勾选复选框或修改日期；若本页有可编辑表格，也可单击姓名单元格修改姓名。<br />
+                结果：表单或表格产生未保存的修改标记。
+            </li>
+            <li>
+                点击“刷新本页面”，在浏览器确认框中选择留在页面。<br />
+                结果：取消离开后仍留在原页，刚才的输入保留；确认框的样式和文字由浏览器决定。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>保存后清除修改标记</h3>
+        <ol>
+            <li>
+                给“数字输入框”填写“1”，给“文本输入框”填写“demo”，点击“保存数据”。<br />
+                结果：客户端验证通过后回发，后台处理提交的表格修改并重新绑定数据，同时清除表单修改标记。
+            </li>
+            <li>
+                再次刷新；保存后不要再改字段。<br />
+                结果：当前已无待保存修改时，不再因为该表单或表格弹出放弃修改提示；继续修改后会重新提示。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>F.beforeUnload()</code>：离开页面前执行检查；返回提示文字表示有未保存修改。</li>
+            <li><code>ClearDirty()</code>：保存成功后接受当前表单值作为新基准，不清空输入。</li>
+            <li><code>getModifiedData()</code>：另外检查可编辑表格的新增、修改或删除记录，不能只检查表单字段。</li>
+        </ul>
+    </section>
+}

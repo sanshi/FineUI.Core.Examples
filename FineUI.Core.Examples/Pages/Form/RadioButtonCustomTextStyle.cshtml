@@ -53,9 +53,8 @@
         </Items>
     </f:SimpleForm>
 
-    <br />
-    <br />
-    注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的单选框文字变红。
+
+
 
 }
 
@@ -71,4 +70,23 @@
 
     </script>
 
+}
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示用 CSS 根据单选框的选中状态改变对应文字颜色。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>选中后改变文字样式</h3>
+        <ol>
+            <li>
+                选中另一个单选项，再切换回原选项。<br />
+                结果：选中的选项文字变红，取消选中的文字恢复普通样式。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的单选框文字变红。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>:has()</code>：从包含已选中 input 的字段单元格匹配文字标签。</li>
+            <li><code>:checked</code>：仅匹配当前选中的输入元素，使文字样式随选中状态变化。</li>
+        </ul>
+    </section>
 }

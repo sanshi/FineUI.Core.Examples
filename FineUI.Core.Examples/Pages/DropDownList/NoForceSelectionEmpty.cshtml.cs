@@ -23,11 +23,15 @@ namespace FineUI.Core.Examples.Pages.DropDownList
         {
             if (!String.IsNullOrEmpty(DropDownList1.SelectedValue))
             {
-                labResult.Text = String.Format("选中项：{0}（值：{1}）", DropDownList1.Text, DropDownList1.SelectedValue);
+                // 用户输入按文字回显，先编码动态文字，避免结果区把输入当作 HTML 标签解析。
+                labResult.Text = String.Format(
+                    "选中项：{0}（值：{1}）",
+                    HtmlEncode(DropDownList1.Text),
+                    HtmlEncode(DropDownList1.SelectedValue));
             }
             else
             {
-                labResult.Text = String.Format("用户输入值：{0}", DropDownList1.Text);
+                labResult.Text = String.Format("用户输入值：{0}", HtmlEncode(DropDownList1.Text));
             }
         }
 

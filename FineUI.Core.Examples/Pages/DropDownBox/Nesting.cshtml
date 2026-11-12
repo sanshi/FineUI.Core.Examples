@@ -71,3 +71,30 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在外层选人面板内嵌套性别和专业下拉框，筛选人员后回填外层选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>先筛专业，再选人员</h3>
+        <ol>
+            <li>
+                展开外层下拉框，再展开里面的“专业”下拉框，勾选“化学系”。<br />
+                结果：内层保留所选专业；收起专业面板后按化学系过滤外层表格。
+            </li>
+            <li>
+                在过滤结果中选择“陈飞”，再点击面板外空白处收起，点击获取值按钮。<br />
+                结果：外层结果显示陈飞，业务值为 102。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>通过性别继续筛选</h3>
+        <ol>
+            <li>
+                重新展开外层面板，在“性别”中选择“女”。<br />
+                结果：表格只显示满足当前性别与专业条件的人员；内层面板的选择不直接成为外层人员值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataControlID</code>：指定弹出面板中提供选择数据的控件。 本页声明值为 Grid1。</li>
+        </ul>
+    </section>
+}

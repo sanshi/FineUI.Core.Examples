@@ -33,10 +33,29 @@
     </f:SimpleForm>
     <f:Label ID="labResult" EncodeText="false" CssClass="result">
     </f:Label>
-    <br>
-    <br>
-    <br />
-    注：为了观察Ajax提示信息，提交按钮动作在后台都会睡眠 1 秒钟。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示上传请求期间使用自定义遮罩文字，结束后自动收起。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>观察请求期间的上传提示</h3>
+        <ol>
+            <li>
+                填写用户名并选择合格图片，点击提交按钮。<br />
+                结果：请求处理期间显示本页设置的上传提示，处理完成后收起；后台特意等待一秒，便于观察。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：为了观察Ajax提示信息，提交按钮动作在后台都会睡眠 1 秒钟。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AjaxLoadingType</code>：控制等待请求时使用遮罩。 本页声明值为 Mask。</li>
+            <li><code>ShowAjaxLoadingMaskText</code>：在遮罩中显示提示文字。 本页声明值为 true。</li>
+            <li><code>AjaxLoadingMaskText</code>：请求等待期间显示的文字。 本页声明值为 正在导入数据，请稍后...。</li>
+        </ul>
+    </section>
+}

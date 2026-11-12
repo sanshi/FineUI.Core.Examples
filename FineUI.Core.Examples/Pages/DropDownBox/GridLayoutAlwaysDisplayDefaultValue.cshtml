@@ -65,10 +65,8 @@
 
 
 
-    <br />
-    <br />
-    注：通过 Values 和 Text 属性来设置下拉框的初始值（由于初始值可能不在第一页，所以需要指定 Text 属性）。
-    <br />
+
+
 }
 
 
@@ -86,3 +84,28 @@
 }
 
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>让带筛选的选人表格始终显示，并保留预设的人员选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>打开页面即可操作</h3>
+        <ol>
+            <li>
+                初次打开页面。<br />
+                结果：筛选与表格面板已经显示，无需先点击下拉箭头；选择数据仍通过关联下拉框统一保存。
+            </li>
+            <li>
+                初次打开时直接查看输入区的已选文字。<br />
+                结果：初始业务值与显示文字一起提供，即使对应人员不在当前页也能显示初始选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：通过 Values 和 Text 属性来设置下拉框的初始值（由于初始值可能不在第一页，所以需要指定 Text 属性）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AlwaysDisplayPopPanel</code>：让弹出面板保持可见，选择和筛选不依赖再次展开。 本页声明值为 true。</li>
+            <li><code>_Values</code>：指定初始多选值。 本页声明值为 115,105。</li>
+            <li><code>_Texts</code>：为初始值提供对应文字，尤其适用于尚未加载到当前页的数据。 本页声明值为 董国,吴颖颖。</li>
+        </ul>
+    </section>
+}

@@ -43,3 +43,27 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>按需加载当前页人员数据并保留跨页选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>继续跨页选择</h3>
+        <ol>
+            <li>
+                刷新当前示例以回到未过滤的初始状态，在第一页找到“金婷婷”；只有该行未选中时才勾选，然后点击分页条的下一页。<br />
+                结果：翻页回发后由后台只返回当前页数据；第一页的选择继续保留。
+            </li>
+            <li>
+                在第二页找到“董超”，只有未选中时才勾选，再获取下拉框选中值。<br />
+                结果：结果同时包含前后两页的人员，包括 103 和 108，不会只剩第二页。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AllowPaging</code>：为弹出表格提供分页工具栏。 本页声明值为 true。</li>
+            <li><code>IsDatabasePaging</code>：为 true 时后台按当前页加载；为 false 时浏览器对已加载数据分页。 本页声明值为 true。</li>
+            <li><code>PageSize</code>：决定每页显示多少条数据。 本页声明值为 5。</li>
+            <li><code>KeepCurrentSelection</code>：在继续选择或翻页时保留已有选择。 本页声明值为 true。</li>
+            <li><code>OnPageIndexChanged</code>：翻页后重新取得当前页数据并绑定。 本页声明值为 Grid1_PageIndexChanged。</li>
+        </ul>
+    </section>
+}

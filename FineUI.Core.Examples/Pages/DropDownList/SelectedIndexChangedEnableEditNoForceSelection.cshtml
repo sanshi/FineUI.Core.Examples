@@ -30,29 +30,8 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
-    <br />
-    <br />
-    测试用例：
-    <ul>
-        <li>
-            初始文本：可选项1；在文本输入框依次删除：1，项；<strong class="highlight">不会</strong>触发回发事件
-        </li>
-        <li>
-            初始文本：可选项1；在文本输入框依次删除：1，项；然后在页面上点击一下，使得文本框失去焦点；显示文本：可选；触发回发事件（<strong class="highlight">用户输入值：可选</strong>）
-        </li>
-        <li>
-            初始文本：可选项1；在文本输入框依次删除：1，项；然后再依次输入：项，5；按回车键；显示文本：可选项5；触发回发事件（<strong class="highlight">选中项：可选项5（值：Value5）</strong>）
-        </li>
-        <li>
-            初始文本：可选项1；在文本输入框依次删除：1，项；然后再依次输入：项，5；然后在页面上点击一下，使得文本框失去焦点；显示文本：可选项5；触发回发事件（<strong class="highlight">用户输入值：可选项5</strong>）
-        </li>
-        <li>
-            初始文本：可选项1；点击触发图标，显示下拉列表；点击：可选项5；显示文本：可选项5；触发回发事件
-        </li>
-        <li>
-            初始文本：可选项1；点击按钮：选中[可选项6]；显示文本：可选项6；<strong class="highlight">不会</strong>触发回发事件
-        </li>
-    </ul>
+
+
 
 
 
@@ -60,3 +39,36 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示自由输入确认或失焦时的选择变化回发。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>响应选择变化</h3>
+        <ol>
+            <li>
+                在下拉面板改选另一项。<br />
+                结果：选择变化后自动回发，后台用本次选择更新结果；无需再点获取按钮。
+            </li>
+            <li>
+                从初始状态在输入区输入“自己的选项”，按 Enter 确认。<br />
+                结果：后台变化事件显示本次提交的自定义文字，无需再点击获取按钮。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>测试用例：</p>
+        <ul>
+            <li> 初始文本：可选项1；在文本输入框依次删除：1，项；<strong>不会</strong>触发回发事件 </li>
+            <li> 初始文本：可选项1；在文本输入框依次删除：1，项；然后在页面上点击一下，使得文本框失去焦点；显示文本：可选；触发回发事件（<strong>用户输入值：可选</strong>） </li>
+            <li> 初始文本：可选项1；在文本输入框依次删除：1，项；然后再依次输入：项，5；按回车键；显示文本：可选项5；触发回发事件（<strong>选中项：可选项5（值：Value5）</strong>） </li>
+            <li> 初始文本：可选项1；在文本输入框依次删除：1，项；然后再依次输入：项，5；然后在页面上点击一下，使得文本框失去焦点；显示文本：可选项5；触发回发事件（<strong>选中项：可选项5（值：Value5）</strong>） </li>
+            <li> 初始文本：可选项1；点击触发图标，显示下拉列表；点击：可选项5；显示文本：可选项5；触发回发事件 </li>
+            <li> 初始文本：可选项1；点击按钮：选中[可选项6]；显示文本：可选项6；<strong>不会</strong>触发回发事件 </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableEdit</code>：允许直接在输入区键入筛选文本。 本页声明值为 true。</li>
+            <li><code>ForceSelection</code>：为 false 时允许保存列表之外的用户输入；为 true 时需要匹配现有选项。 本页声明值为 false。</li>
+            <li><code>OnSelectedIndexChanged</code>：选择变化时处理当前值。 本页声明值为 DropDownList1_SelectedIndexChanged。</li>
+        </ul>
+    </section>
+}

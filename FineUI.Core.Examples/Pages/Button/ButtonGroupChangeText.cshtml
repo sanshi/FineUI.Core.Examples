@@ -38,3 +38,29 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮分组内文字变长、按钮隐藏与恢复后，分组重新计算布局。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改文字与显示状态</h3>
+        <ul>
+            <li>
+                点击“修改[按钮四]的文本”。<br />
+                结果：后台给按钮四追加当前时间，再次点击恢复原文字，分组随文字宽度调整。
+            </li>
+            <li>
+                点击“显示隐藏[按钮四]”。<br />
+                结果：后台隐藏或恢复按钮四，分组边框及其它按钮重新衔接。
+            </li>
+            <li>
+                在下一组对“按钮八”执行相同操作。<br />
+                结果：同样可以更新文字和显示状态，不需重新创建分组。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Text</code>：后台在原按钮上更新文字。</li>
+            <li><code>Hidden</code>：隐藏组内按钮并释放其布局空间。</li>
+        </ul>
+    </section>
+}

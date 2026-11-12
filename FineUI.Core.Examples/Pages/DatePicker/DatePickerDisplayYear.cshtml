@@ -27,3 +27,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示通过输入框弹出的面板只选择年份。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择年份</h3>
+        <ol>
+            <li>
+                点击“开始年份”字段右侧的下拉图标。<br />
+                结果：显示本页年份面板；输入框当前值仍可对照查看。
+            </li>
+            <li>
+                在面板中选择明年。<br />
+                结果：所选值回填输入框。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DateFormatString</code>：控制选中值的文字格式；本页使用 yyyy。</li>
+            <li><code>DisplayType</code>：本页采用年份面板，一次选择一个值。</li>
+        </ul>
+    </section>
+}

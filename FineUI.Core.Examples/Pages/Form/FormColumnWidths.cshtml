@@ -71,16 +71,39 @@
             </f:FormRow>
         </Rows>
     </f:Form>
-    <br>
-    <br>
-    注：假设行的总宽度是 100px，行的属性 ColumnWidths="20px 50% 50%"，则：
-    <ul>
-        <li>第一个字段宽度：20px</li>
-        <li>第二个字段宽度：40px</li>
-        <li>第三个字段宽度：40px</li>
-    </ul>
+
+
 
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示一行内混用固定宽度和百分比，让编号列固定、其余字段按比例伸展。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照固定列与伸展列</h3>
+        <ul>
+            <li>
+                对照每行开头的编号与后面的字段。<br />
+                结果：编号区域使用 20 像素宽度，其余一列占满或两列等分剩余空间。
+            </li>
+            <li>
+                调整浏览器宽度，再填写邮箱、审批人、申请数量和描述。<br />
+                结果：编号仍保持固定宽度，输入区域随容器伸缩，原输入不丢失。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：假设行的总宽度是 100px，行的属性 ColumnWidths="20px 50% 50%"，则：</p>
+        <ul>
+            <li>第一个字段宽度：20px</li>
+            <li>第二个字段宽度：40px</li>
+            <li>第三个字段宽度：40px</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ColumnWidths</code>：本页使用 20px 50% 50% 或 20px 100%。</li>
+            <li><code>IsFluid</code>：表单随父容器伸缩。</li>
+        </ul>
+    </section>
+}

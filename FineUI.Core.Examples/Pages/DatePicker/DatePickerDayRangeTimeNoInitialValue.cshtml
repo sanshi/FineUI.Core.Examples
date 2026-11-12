@@ -22,3 +22,25 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示日期时间范围初始为空，完成选择后才写入值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期时间范围</h3>
+        <ol>
+            <li>
+                先观察初始输入框为空，再点击“日期范围”字段右侧的下拉图标。<br />
+                结果：显示本页日期时间范围面板，可同时调整时、分；输入框当前值仍可对照查看。
+            </li>
+            <li>
+                依次将起点和终点选择为今天之后第5天09时30分到第10天10时30分。<br />
+                结果：所选值回填输入框，范围显示起止两个值。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RangeStartDate</code>：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
+            <li><code>RangeEndDate</code>：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
+        </ul>
+    </section>
+}

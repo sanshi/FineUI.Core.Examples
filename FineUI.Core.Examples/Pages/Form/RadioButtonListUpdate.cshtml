@@ -53,3 +53,34 @@
 
    
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>重新绑定单选列表的数据并同时指定新的选中项，也可反复填充和清空。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更新后读取选择</h3>
+        <ol>
+            <li>
+                点击“更新列表一”。<br />
+                结果：回发后由后台替换为 4 个“数据绑定值”选项，并选中 value1。
+            </li>
+            <li>
+                点击“获取列表一的选中项”。<br />
+                结果：显示更新后的当前选中值 value1。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>反复填充和清空</h3>
+        <ol>
+            <li>
+                列表四为空时点击“更新列表四（可反复操作）”。<br />
+                结果：列表四填入选项并出现默认选择。
+            </li>
+            <li>
+                再点同一个按钮。<br />
+                结果：列表四全部选项清空；继续点击可以重新填充。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataSource</code>：提供新数据后重新绑定，再设置当前选中值；获取按钮读取本次选择。</li>
+        </ul>
+    </section>
+}

@@ -32,10 +32,46 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
-    <br>
-    <br>
-    注：可在后台切换是否点击输入区打开面板；关闭后仍可点击右侧按钮，当前选中值保持不变。<br />
-    注：列表项的值不能为空字符串。
+
+
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板中单项选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择并读取当前项</h3>
+        <ol>
+            <li>
+                展开下拉列表，选择“可选择项8”。<br />
+                结果：输入区显示该选项，原来的单选项被替换。
+            </li>
+            <li>
+                点击“获取此下拉列表的选中项”。<br />
+                结果：回发后由后台显示当前文字和选中值，其中包含 Value8；后台读取本次选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
+        <ol>
+            <li>
+                点击“选中[可选项6]”。<br />
+                结果：回发后由后台用按钮指定的选项替换当前选择，输入区同步显示对应文字。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>切换输入区展开方式</h3>
+        <ol>
+            <li>
+                点击“切换输入区点击弹出”，再点击下拉输入区域。<br />
+                结果：输入区点击弹出的启用状态切换，页面状态标签显示开启或关闭；右侧触发图标仍可展开列表。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：可在后台切换是否点击输入区打开面板；关闭后仍可点击右侧按钮，当前选中值保持不变。<br> 注：列表项的值不能为空字符串。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableClickAction</code>：后台切换点击输入区域能否展开，不改变触发图标的功能。</li>
+            <li><code>SelectedValue</code>：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+        </ul>
+    </section>
+}

@@ -44,3 +44,24 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示弹出选择面板与输入框的宽度关系。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照输入框和弹出面板的宽度</h3>
+        <ol>
+            <li>
+                展开下拉面板，对照它与输入框的左右边界。<br />
+                结果：面板是否与输入框等宽由本页 MatchFieldWidth 配置决定，选择行为不受宽度设置影响。
+            </li>
+            <li>
+                缩窄浏览器，再展开靠右侧的下拉面板。<br />
+                结果：可以对照右侧空间不足时弹层相对输入框的水平位置。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>MatchFieldWidth</code>：控制弹出面板是否强制匹配字段宽度。 本页声明值为 false。</li>
+        </ul>
+    </section>
+}

@@ -31,3 +31,36 @@
         }
     </script>
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示链接外观的按钮如何触发客户端或后台动作，以及禁用后阻止点击。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-link" aria-hidden="true"></i>客户端与后台点击</h3>
+        <ul>
+            <li>
+                点击“客户端事件”。<br />
+                结果：浏览器弹出客户端提示，无需回发。
+            </li>
+            <li>
+                关闭提示后点击“服务器端事件”。<br />
+                结果：请求交给后台处理，页面显示服务器端事件提示。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>启用原先禁用的链接</h3>
+        <ol>
+            <li>
+                点击“启用/禁用最后一个链接按钮”。<br />
+                结果：后台反转最后一个链接按钮的可用状态。
+            </li>
+            <li>
+                启用后点击“客户端事件（初始禁用）”。<br />
+                结果：浏览器执行它的客户端提示；再次禁用后不能触发。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ClickHandler</code>：绑定客户端动作函数。</li>
+            <li><code>OnClick</code>：绑定后台处理方法。</li>
+            <li><code>Enabled</code>：为 false 时不可点击，后台更新后恢复。</li>
+        </ul>
+    </section>
+}

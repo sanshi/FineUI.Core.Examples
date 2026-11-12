@@ -29,26 +29,34 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
-    <br>
-    注：下拉列表的属性设置为EnableEdit=true（ForceSelection默认为true），可以在输入文本以过滤下拉项。
-    <br>
-    <br>
-    测试用例（初始文本："可选项1"）：
-    <ul>
-        <li>
-            依次删除："1项"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项1（值：Value1）"
-        </li>
-        <li>
-            依次删除全部文本；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："无选中项"
-        </li>
-        <li>
-            依次删除："1项"；然后再依次输入："项5"；按回车键；点击获取选中项按钮："选中项：可选项5（值：Value5）"
-        </li>
-        <li>
-            依次删除："1项"；然后再依次输入："项5"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项5（值：Value5）"
-        </li>
-    </ul>
+
+
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板中单项选择，键入文字筛选并匹配已有项。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入筛选并匹配</h3>
+        <ol>
+            <li>
+                在输入区清除原文字，输入“可选项5”，再确认匹配项。<br />
+                结果：可匹配的第五项成为选择；列表外文字不能成为有效选项。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：下拉列表的属性设置为EnableEdit=true（ForceSelection默认为true），可以在输入文本以过滤下拉项。 <br> <br> 测试用例（初始文本："可选项1"）：</p>
+        <ul>
+            <li> 依次删除："1项"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项1（值：Value1）" </li>
+            <li> 依次删除全部文本；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："无选中项" </li>
+            <li> 依次删除："1项"；然后再依次输入："项5"；按回车键；点击获取选中项按钮："选中项：可选项5（值：Value5）" </li>
+            <li> 依次删除："1项"；然后再依次输入："项5"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项5（值：Value5）" </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableEdit</code>：允许直接在输入区键入筛选文本。 本页声明值为 true。</li>
+        </ul>
+    </section>
+}

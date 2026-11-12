@@ -25,3 +25,26 @@
 
 
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示按钮展开多级菜单。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>展开和浏览子菜单</h3>
+        <ol>
+            <li>
+                点击“中国科学技术大学”按钮。<br />
+                结果：显示“化学与材料科学学院”和“管理学院”等菜单项。
+            </li>
+            <li>
+                将鼠标移到“管理学院”。<br />
+                结果：显示“工商管理系”“统计与金融系”子菜单；这些链接配置为在新标签页打开各自地址。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Menu</code>：按钮中的 Menu 声明一级及多级子菜单。</li>
+            <li><code>NavigateUrl</code>：链接菜单项指向实际页面地址。</li>
+            <li><code>Target</code>：本页链接设置为 _blank，使用新的浏览器标签页。</li>
+        </ul>
+    </section>
+}

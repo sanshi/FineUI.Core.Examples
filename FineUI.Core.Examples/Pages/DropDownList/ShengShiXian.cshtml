@@ -24,10 +24,37 @@
     <br />
     <f:Label ID="labResult" EncodeText="false" ShowLabel="false" CssStyle="font-weight:bold;">
     </f:Label>
-    <br />
 
-    注：本示例无需在后台维持Items属性的状态，所以设置下拉列表的PersistItems=false。
+
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>从省份逐级加载地区市和县区，切换上级后重置下级选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>逐级选择地区</h3>
+        <ol>
+            <li>
+                先选择省份“安徽”。<br />
+                结果：地区市列表加载安徽的数据并变为可选；原来的下级选择被清除。
+            </li>
+            <li>
+                选择“合肥市”，再选择“包河区”，点击提交按钮。<br />
+                结果：结果显示“您选择的省市县：安徽 | 合肥市 | 包河区”。
+            </li>
+            <li>
+                切换到另一个省份。<br />
+                结果：地区市和县区按新省份重新加载，不再保留安徽的下级选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本示例无需在后台维持Items属性的状态，所以设置下拉列表的PersistItems=false。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnSelectedIndexChanged</code>：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
+            <li><code>SelectedValue</code>：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+        </ul>
+    </section>
+}

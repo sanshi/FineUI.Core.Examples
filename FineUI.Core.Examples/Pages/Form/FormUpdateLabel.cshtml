@@ -120,3 +120,48 @@
 
     </script>
 }
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在浏览器更新字段标签和验证规则，并立即影响后续输入检查。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>改标签和邮箱规则</h3>
+        <ul>
+            <li>
+                点击“更新[固定电话]标签”。<br />
+                结果：电话字段的标签变为“移动电话”，原显示值保持不变。
+            </li>
+            <li>
+                点击“去除[电子邮箱]必填项”。<br />
+                结果：邮箱红星消失，空邮箱不再按必填规则报错。
+            </li>
+            <li>
+                点击“去除[电子邮箱]的正则表达式验证”。<br />
+                结果：邮箱的格式规则被移除，后续验证不再要求邮件地址格式。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>改长度、数字和日期限制</h3>
+        <ul>
+            <li>
+                点击“去除[描述]的最少5个字符限制”。<br />
+                结果：描述仍受其它已声明规则约束，但不再要求至少 5 个字符。
+            </li>
+            <li>
+                点击“将[申请数量]的最大值100改为10”，然后输入 11 并移开焦点。<br />
+                结果：数量按新的上限 10 显示错误。
+            </li>
+            <li>
+                点击“限制[审批时间]的最大时间为今天”。<br />
+                结果：之后的日期超过新的上限时不可通过验证；全部操作在浏览器完成，无需回发。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>setFieldLabel()</code>：直接修改字段标签。</li>
+            <li><code>setRequired()</code>：修改必填规则，本页设为 false。</li>
+            <li><code>setRedStar()</code>：同步去掉必填星号，和必填校验分别控制。</li>
+            <li><code>setRegexPattern()</code>：传空字符串移除邮箱格式规则。</li>
+            <li><code>setMinLength()</code>：传 undefined 移除最小长度。</li>
+            <li><code>setMaxValue()</code>：为数字或日期字段设置新的上限。</li>
+        </ul>
+    </section>
+}

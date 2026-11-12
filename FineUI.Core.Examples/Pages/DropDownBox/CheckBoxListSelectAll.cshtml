@@ -81,3 +81,24 @@
     </script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板内多选编程语言，支持全选和清空。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>全选与清空</h3>
+        <ol>
+            <li>
+                展开面板后点击“全选”。<br />
+                结果：所有编程语言项都被选中，下拉框显示完整选择集合。
+            </li>
+            <li>
+                点击“清空”。<br />
+                结果：全部选择被清除，再获取值时显示下拉框为空。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>syncToBox()</code>：脚本批量操作弹出数据控件后，把新的选择文字和值同步回下拉输入区。</li>
+            <li><code>DataControlID</code>：指定弹出面板中提供选择数据的控件。 本页声明值为 CheckBoxList1。</li>
+        </ul>
+    </section>
+}

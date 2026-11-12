@@ -44,3 +44,19 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>按需加载当前页人员数据并保留跨页选择，清空图标一次移除全部选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>一次清空全部选择</h3>
+        <ol>
+            <li>
+                先选择至少一项，收起面板后点击输入框右侧的清空图标。<br />
+                结果：输入区的全部已选内容被清空；没有内容后，清空图标自动隐藏。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AutoShowClearIcon</code>：有内容时显示清空全部选择的图标。 本页声明值为 true。</li>
+        </ul>
+    </section>
+}

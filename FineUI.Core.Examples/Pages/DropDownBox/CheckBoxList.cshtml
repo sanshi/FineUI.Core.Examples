@@ -44,3 +44,38 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在下拉面板内多选编程语言。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check-box-checked" aria-hidden="true"></i>从面板选择编程语言</h3>
+        <ol>
+            <li>
+                点击下拉箭头展开面板，选择“Ruby”。<br />
+                结果：Ruby 加入已有选择，对应值为 ruby。
+            </li>
+            <li>
+                点击“获取下拉框的选中值”。<br />
+                结果：回发后由后台显示包含 Ruby 和 ruby 的当前选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
+        <ol>
+            <li>
+                点击“选中[php,basic]”。<br />
+                结果：回发后由后台把当前选择替换为按钮指定的人名或语言；输入区和重新展开的选择状态同步更新。
+            </li>
+            <li>
+                再点击“获取下拉框的选中值”。<br />
+                结果：读取结果反映刚更新的选择。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataControlID</code>：指定弹出面板中提供选择数据的控件。 本页声明值为 CheckBoxList1。</li>
+            <li><code>EnableMultiSelect</code>：决定下拉框保留单个值还是多个值。 本页声明值为 true。</li>
+            <li><code>_Values</code>：指定初始多选值。 本页声明值为 js,php。</li>
+            <li><code>ColumnNumber</code>：控制弹出单选或复选列表的列数。 本页声明值为 3。</li>
+        </ul>
+    </section>
+}

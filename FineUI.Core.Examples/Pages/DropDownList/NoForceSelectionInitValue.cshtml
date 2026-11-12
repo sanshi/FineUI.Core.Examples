@@ -31,14 +31,41 @@
     <br />
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
-    <br>
-    下拉列表的属性设置为：
-    <ul>
-        <li>AutoSelectFirstItem="false"：初始不强制选中第一项</li>
-        <li>EnableEdit="true"：可以手工编辑</li>
-        <li>ForceSelection="false"：用户输入值</li>
-    </ul>
+
+
 
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在初次加载时显示列表之外的自定义文字，以及真实选项与自定义初值的组合。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>核对自定义初始文字</h3>
+        <ol>
+            <li>
+                打开页面后查看输入区。<br />
+                结果：初始显示“初始自定义值”，可保留不在现有列表中的文字。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>设置自由输入文字</h3>
+        <ol>
+            <li>
+                点击“更新为[用户输入值]”。<br />
+                结果：回发后由后台把字段文字更新为“用户输入值”，后续获取可按自由输入读取。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>下拉列表的属性设置为：</p>
+        <ul>
+            <li>AutoSelectFirstItem="false"：初始不强制选中第一项</li>
+            <li>EnableEdit="true"：可以手工编辑</li>
+            <li>ForceSelection="false"：用户输入值</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ForceSelection</code>：为 false 时允许保存列表之外的用户输入；为 true 时需要匹配现有选项。 本页声明值为 false。</li>
+            <li><code>Text</code>：提供本页的初始显示文字。</li>
+        </ul>
+    </section>
+}
