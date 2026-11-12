@@ -46,3 +46,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在每个年份分组后显示该组语文与数学成绩平均值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照分组明细与统计值</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>一个年份分组的明细及其后统计区域。<br />结果：各组平均（分组）按这一组的成绩计算，不把其他年份成绩混入。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RowGroupSummary</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，为分组创建专用统计行。</li>
+        <li><code>RowGroupSummaryType</code>（<strong>语文与数学成绩列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：成绩列使用 Avg，只读取当前组的数值。</li>
+    </ul>
+</section>
+}

@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.GridTree
 	public partial class GridTreeModel
 	{
 		protected FineUI.Core.Grid Grid1;
+		protected FineUI.Core.Button btnShowSelectedRows;
 	}
 }

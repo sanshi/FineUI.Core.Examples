@@ -104,3 +104,17 @@
     </script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>复用同一个编辑页签前先确认是否放弃原页内容，避免直接覆盖正在编辑的记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>替换编辑页前先确认</h3>
+    <ol>
+        <li>在框架主页面打开本例，点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>某行的编辑入口，再打开另一条记录。<br />结果：已有编辑页签时先询问是否放弃，确认后才改用新记录；取消则保留原编辑页。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>addExampleTab / id</code>（<strong>框架页签调用</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：通过框架页面提供的函数打开页签，id 决定复用哪一个标签；本例需要在框架中操作。</li>
+        <li><code>refreshWhenExist / confirmWhenExist</code>（<strong>编辑页签配置</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：行内编辑的 refreshWhenExist 初始为 <code>false</code>，配合确认文字，已打开时经确认才更新；新增入口不设置确认文字，已存在时保留原页。</li>
+    </ul>
+</section>
+}

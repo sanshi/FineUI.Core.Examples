@@ -29,7 +29,7 @@
 
     <br />
     <br />
-    注：本树表格默认选中 [common] 和 [menu.xml] 的复选框。
+
 }
 
 
@@ -70,4 +70,21 @@
         }
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>首次绑定即恢复指定树节点的勾选，不依赖用户逐项点击。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>核对初始勾选</h3>
+    <ol>
+        <li>刚打开页面，展开已配置的目录并查看勾选状态。<br />结果：本页指定的父节点与子节点已勾选，二者按各自初始配置显示。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnGetCheckedValues" title="获取选中的复选框">获取选中的复选框</strong>。<br />结果：客户端读取已勾选树节点并交给后台，在结果区域显示标识与<strong>名称</strong>；没有勾选时显示对应提示。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：本树表格默认选中 [common] 和 [menu.xml] 的复选框。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>rowData.checked</code>（<strong>行绑定处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：行绑定时按稳定节点标识设置初始勾选，必要的父目录同时展开。</li>
+        <li><code>getCheckedRows</code>（<strong>读取勾选的页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：读取树复选框结果，不使用 getSelectedRows 代替节点勾选。</li>
+    </ul>
+</section>
 }

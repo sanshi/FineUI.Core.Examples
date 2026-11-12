@@ -24,7 +24,7 @@
 
     <br />
     <br />
-    注：用于测试展开折叠节点时的性能。
+
 }
 
 
@@ -32,4 +32,19 @@
 
     <script src="~/res/js/grid.js"></script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>为大量树节点显示树序号，展开折叠时保持节点的绝对次序编号。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照展开前后的编号</h3>
+    <ol>
+        <li>记下<strong class="example-control-reference" data-example-control="Grid1" title="树表格（3500个节点）">树表格（3500个节点）</strong>一个目录及其后面节点的序号，展开再折叠该目录。<br />结果：后代按树数据中的位置显示编号，折叠只隐藏后代，不把后续节点重新压成连续可见行号。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：用于测试展开折叠节点时的性能。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableTreeNumber</code>（<strong>序号列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格（3500个节点）">树表格（3500个节点）</strong>）：序号列按整棵树的次序编号，包含当前折叠的后代。</li>
+    </ul>
+</section>
 }

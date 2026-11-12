@@ -38,7 +38,7 @@
 
     <br />
     <br />
-    注：本目录中的示例仅在主选项卡标签为[多标签页]时有效。
+
 }
 
 
@@ -104,4 +104,19 @@
 
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>从行内编辑入口打开相应记录页签，用不同记录标识区分编辑页。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按页签标识打开记录</h3>
+    <ol>
+        <li>在框架主页面打开本例，点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>某行的编辑入口，再打开另一条记录。<br />结果：每条记录使用自己的编辑页签标识；同一记录已打开时复用对应页签，不把另一条记录内容混入。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：本目录中的示例仅在主选项卡标签为[多标签页]时有效。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>addExampleTab / id</code>（<strong>框架页签调用</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：通过框架页面提供的函数打开页签，id 决定复用哪一个标签；本例需要在框架中操作。</li>
+    </ul>
+</section>
 }

@@ -26,7 +26,7 @@
     <f:Button ID="btnRefresh" Text="刷新本页面（请先点击保存按钮）" ClickHandler="onRefreshClick" />
     <br />
     <f:Label ID="labReset" />
-    <p>拖动表格最左列的六点手柄调整行顺序。点击保存数据后，刷新页面会加载最近一次保存的顺序。恢复初始顺序后也可以再次保存。</p>
+
     <p id="rowSortResult" aria-live="polite"></p>
 }
 
@@ -48,4 +48,23 @@
             window.location.reload();
         }
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>拖动行调整记录顺序，先在浏览器重排，再按本页保存入口确认顺序。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>拖动后保存或恢复顺序</h3>
+    <ol>
+        <li>拖动<strong class="example-control-reference" data-example-control="Grid1" title="学生信息">学生信息</strong>一行的拖动手柄到另一行之前或之后。<br />结果：记录顺序随落点改变，行标识和这一行的字段值保留，不把单元格内容拆到其他行。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSaveToDB" title="保存数据">保存数据</strong>后再刷新页面。<br />结果：客户端提交当前行标识顺序，后台在当前会话保存；刷新按该顺序重新绑定。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnReset" title="恢复初始顺序">恢复初始顺序</strong>，再尝试拖动。<br />结果：重新绑定初始记录顺序，行拖动仍可使用；恢复数据不会关闭页面声明的拖动能力。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>拖动表格最左列的六点手柄调整行顺序。点击保存数据后，刷新页面会加载最近一次保存的顺序。恢复初始顺序后也可以再次保存。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableRowMove</code>（<strong class="example-control-reference" data-example-control="Grid1" title="学生信息">学生信息</strong>）：初始为 <code>true</code>，显示可用于重排行的拖动入口。</li>
+        <li><code>rowmove / data</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="学生信息">学生信息</strong>）：移动结束后遍历实际行记录的 id 取得顺序，不把显示序号当作稳定业务主键。</li>
+    </ul>
+</section>
 }

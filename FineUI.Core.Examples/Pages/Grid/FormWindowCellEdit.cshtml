@@ -85,7 +85,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
     <br>
     <br>
-    注：初始[性别]和[入学日期]列处于隐藏状态。
+
 
 }
 
@@ -191,4 +191,22 @@
 
     </script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把窗体编辑先作为表格待提交修改，点击全部保存后才交给后台。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>区分保存到表格与提交后台</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>某行的编辑入口，将<strong class="example-control-reference" data-example-control="tbxFormUserName" title="表单的姓名">表单的姓名</strong>改为<code>待保存的名字</code>，点击<strong class="example-control-reference" data-example-control="btnSave" title="保存到表格">保存到表格</strong>。<br />结果：窗体关闭，浏览器把表单值写入原行并显示修改标记；这一步没有提交后台。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSaveAll" title="全部保存">全部保存</strong>。<br />结果：后台读取全部待提交变更并更新示例数据，重新绑定后修改标记清除；没有变化时提示表格数据没有变化。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：初始[性别]和[入学日期]列处于隐藏状态。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>updateCellValue / addNewRecord</code>（<strong>联动处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>）：窗体操作按是否已有行标识选择修改或新增，本页先积累在浏览器。</li>
+        <li><code>GetModifiedData</code>（<strong>后台保存处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>）：全部保存时统一读取待新增、待删除及修改记录，按状态更新示例数据。</li>
+    </ul>
+</section>
 }

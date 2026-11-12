@@ -93,3 +93,18 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>只为目录显示关注复选框，读取已关注目录，文件行不提供这个操作。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>关注目录并读取名单</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong><strong>关注目录</strong>列勾选一个目录，再查看文件行。<br />结果：目录可切换关注状态，文件行的关注复选框隐藏；树展开与关注状态分别处理。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="关注的目录列表">关注的目录列表</strong>。<br />结果：提示列出正文关注复选框已勾选的目录标识和<strong>名称</strong>，不把整行选择当作关注状态。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction / cellCls</code>（<strong>关注目录列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：按<strong>类型</strong>为非文件夹单元格添加隐藏样式，保留树列本身。</li>
+    </ul>
+</section>
+}

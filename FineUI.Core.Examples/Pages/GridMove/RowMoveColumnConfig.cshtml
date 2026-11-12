@@ -236,3 +236,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在配置窗体中调整列顺序、显隐与标题，立即更新主表并保存配置。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>通过列清单调整主表</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnColumnConfig" title="列配置">列配置</strong>，在配置表格选中一个列项，点击<strong class="example-control-reference" data-example-control="btnMoveUp" title="上移">上移</strong>或<strong class="example-control-reference" data-example-control="btnMoveDown" title="下移">下移</strong>。<br />结果：列清单顺序改变，主表采用同一顺序；配置项以列标识对应主表列，不移动学生记录。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnShowHide" title="显示隐藏">显示隐藏</strong>，再点击<strong class="example-control-reference" data-example-control="btnChangeHeaderText" title="修改标题">修改标题</strong>输入<code>自定义标题</code>并确认。<br />结果：主表对应列立即隐藏或<strong>显示</strong>，<strong>标题</strong>按输入更新；本页保存这些配置，刷新后按保存结果恢复。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnResetColumnConfig" title="还原默认值">还原默认值</strong>。<br />结果：列顺序、<strong>标题</strong>与<strong>显示</strong>状态恢复本页预设，学生记录本身不因配置恢复而改写。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ColumnID / Hidden / HeaderText</code>（<strong>列配置与主表列集合</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：配置表格按列标识保存顺序、显隐及文字，更新主表完整列集合后重新布局。</li>
+    </ul>
+</section>
+}

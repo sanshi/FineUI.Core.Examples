@@ -44,3 +44,17 @@
 
 </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>首次展开待加载目录时才请求子节点，不在首屏传输全部后代。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>展开时取得当前分支</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>标记为待加载目录的展开图标。<br />结果：节点展开触发回发，后台根据当前 RowID 返回这个目录的子节点，加载结果归入原父行。</li>
+        <li>收起该目录后再展开。<br />结果：已经取得的子节点继续可见，不重复追加相同记录；尚未加载的其他目录仍各自按需读取。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>OnRowLazyLoad / LoadData</code>（<strong>延迟加载处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：给待加载节点标记 lazy 状态，收到父行标识后只提供相应分支数据。</li>
+    </ul>
+</section>
+}

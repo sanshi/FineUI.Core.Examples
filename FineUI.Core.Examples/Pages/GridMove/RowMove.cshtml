@@ -76,3 +76,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过上移、下移按钮调整单条记录的顺序，并单独保存排列结果。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>移动并保存记录顺序</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>选择第二行，点击<strong class="example-control-reference" data-example-control="btnMoveUp" title="选中行上移">选中行上移</strong>，再点击<strong class="example-control-reference" data-example-control="btnMoveDown" title="选中行下移">选中行下移</strong>。<br />结果：选中记录向上或向下移动一个位置，选择继续指向原记录；位于边界时不能继续越界。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSaveToDB" title="保存数据">保存数据</strong>后再刷新。<br />结果：后台保存当前行标识排列，刷新时按保存结果重新绑定；仅点击移动不会自动执行保存。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，仅选择一行进行移动。</li>
+        <li><code>moveRowUp / moveRowDown</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：改变实际记录顺序，后续保存提交稳定行标识列表。</li>
+    </ul>
+</section>
+}

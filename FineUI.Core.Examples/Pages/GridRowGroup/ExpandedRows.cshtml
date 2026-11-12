@@ -25,7 +25,7 @@
     <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
     <br />
     <br />
-    注：本表格默认折叠[入学年份]为 2000 和 2008 的两个行分组。
+
 }
 
 
@@ -47,4 +47,19 @@
 
     </script>
 
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>首次加载只折叠指定年份分组，其他组继续展开。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对初始折叠范围</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的年份<strong>分组</strong>，再点击一个折叠组的展开入口。<br />结果：2000 与 2008 两组初始折叠，其他组展开；单独打开一组不会改变其他组状态。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：本表格默认折叠[入学年份]为 2000 和 2008 的两个行分组。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>rowData.expanded</code>（<strong>分组行绑定处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：行绑定时对指定<strong>分组</strong>设置 false，其他组保留展开。</li>
+    </ul>
+</section>
 }
