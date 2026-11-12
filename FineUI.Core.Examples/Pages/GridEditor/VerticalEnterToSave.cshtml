@@ -54,13 +54,7 @@
 
     <br>
     快捷键说明：
-    <ul>
-        <li>方向键在单元格之间导航（非编辑状态）</li>
-        <li>ESC 键取消单元格的编辑状态</li>
-        <li>Enter、Tab 键进入垂直方向的下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li>Shift+Enter、Shift+Tab 键回退到垂直方向的上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li>在最后一个单元格按下 Enter 或者 ESC 键，会触发[保存数据]按钮的点击事件</li>
-    </ul>
+
 
 }
 
@@ -84,3 +78,22 @@
     </script>
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过 Enter 与 Tab 横向编辑导航，最后一格没有后续目标时自动点击保存。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>到达最后一格后自动保存</h3>
+    <ol>
+        <li>编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>一条记录的<strong>姓名</strong>，按 Enter。<br />结果：结束当前编辑后移到同一行的下一列；按键采用当前表格的 Tab 导航方向。</li>
+        <li>进入最后一行的<strong>所学专业</strong>，修改内容后按 Enter。<br />结果：导航回调检测到没有下一个单元格，主动点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>；后台读取修改数据、保存到示例数据并重新绑定。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>非编辑状态可用方向键移动单元格；Enter 进入编辑，ESC 取消当前编辑。Shift 与导航键组合时按相反方向移动。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>TabVerticalNavigate</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>false</code>，确定 Tab 导航方向，Enter 在本页沿用这个方向。</li>
+        <li><code>EnterSameAsTab</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>true</code>，使 Enter 采用与 Tab 相同的导航规则。</li>
+        <li><code>beforetabedit</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：<strong>所学专业</strong>列没有下一个单元格时触发保存，并返回 false 取消继续导航；不是在按 ESC 取消编辑时保存。</li>
+    </ul>
+</section>
+}

@@ -90,11 +90,7 @@
 
     <br>
     <br>
-    注：
-    <ul>
-        <li>姓名列的内部数据其实是用户编码，通过 RendererFunction 来转换为姓名</li>
-        <li>编码到姓名的转换是通过查询下拉表格数据来完成的，因此如果表格存在分页，这种方式就无效了</li>
-    </ul>
+
 }
 
 @section script {
@@ -183,4 +179,25 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>从下拉表格选择一个用户，把标识、姓名及关联资料一起回填到当前编辑行。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择用户并回填关联字段</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>。<br />结果：表格创建待编辑新行，接下来的选择回填作用于这条行。</li>
+        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从下拉表格中选择用户）">表格（进入编辑状态后，从下拉表格中选择用户）</strong>的<strong>编码</strong>单元格，打开<strong class="example-control-reference" data-example-control="DropDownBox1" title="第 2 个数据列（姓名）列的下拉框">第 2 个数据列（姓名）列的下拉框</strong>的下拉入口。<br />结果：显示供选择的用户表格，当前主表编辑行保持不变。</li>
+        <li>在下拉用户表格选择首行张萍萍，再结束编辑。<br />结果：当前行回填张萍萍及其<strong>性别</strong>、年份、专业等资料；<strong>编码</strong>保留所选用户标识 101，显示文字与<strong>编码</strong>分别取值。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li><strong>姓名</strong>列的内部数据其实是用户<strong>编码</strong>，通过 RendererFunction 来转换为<strong>姓名</strong></li>
+        <li><strong>编码</strong>到<strong>姓名</strong>的转换是通过查询下拉表格数据来完成的，因此如果表格存在分页，这种方式就无效了</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="第 2 个数据列（姓名）列的下拉框">第 2 个数据列（姓名）列的下拉框</strong>）：使用内嵌用户表格提供选项，不把显示<strong>姓名</strong>当作稳定业务标识。</li>
+        <li><code>RendererFunction / updateCellValue</code>（<strong>编码列与选择回调</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从下拉表格中选择用户）">表格（进入编辑状态后，从下拉表格中选择用户）</strong>）：按<strong>编码</strong>取显示<strong>姓名</strong>，选中用户后一次更新关联列。</li>
+    </ul>
+</section>
 }

@@ -56,3 +56,17 @@
     <script src="~/res/js/grid.js"></script>
 
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>同时使用行扩展内容和单元格自动保存，展开信息与编辑区域分开操作。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>展开描述后编辑或增删记录</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>一行左侧的展开图标。<br />结果：该行下方显示扩展描述，原有单元格仍保留在主行。</li>
+        <li>修改<strong><strong>所学专业</strong></strong>并结束编辑。<br />结果：结束编辑自动回发保存并重新绑定；行扩展入口仍存在，不被编辑器取代。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RowExpanderField</code>（<strong>行扩展列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：在主行下方放置额外内容，不把它作为普通可编辑数据列。</li>
+    </ul>
+</section>
+}

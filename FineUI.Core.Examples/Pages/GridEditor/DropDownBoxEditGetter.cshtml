@@ -182,3 +182,19 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>从下拉表格选择一个用户，把标识、姓名及关联资料一起回填到当前编辑行，用自定义取值器分开处理姓名与编码。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择用户并回填关联字段</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>。<br />结果：表格创建待编辑新行，接下来的选择回填作用于这条行。</li>
+        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从下拉表格中选择用户）">表格（进入编辑状态后，从下拉表格中选择用户）</strong>的<strong>姓名</strong>单元格，打开<strong class="example-control-reference" data-example-control="DropDownBox1" title="第 1 个数据列（姓名）列的下拉框">第 1 个数据列（姓名）列的下拉框</strong>的下拉入口。<br />结果：显示供选择的用户表格，当前主表编辑行保持不变。</li>
+        <li>在下拉用户表格选择首行张萍萍，再结束编辑。<br />结果：当前行回填张萍萍及其<strong>性别</strong>、年份、专业等资料；<strong>编码</strong>保留所选用户标识 101，显示文字与<strong>编码</strong>分别取值。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="第 1 个数据列（姓名）列的下拉框">第 1 个数据列（姓名）列的下拉框</strong>）：使用内嵌用户表格提供选项，不把显示<strong>姓名</strong>当作稳定业务标识。</li>
+        <li><code>EditGetterFunction / EditSetterFunction</code>（<strong>姓名列</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从下拉表格中选择用户）">表格（进入编辑状态后，从下拉表格中选择用户）</strong>）：取值时返回<strong>姓名</strong>文字，进入编辑时使用行内<strong>编码</strong>恢复对应选项；两个方向配套处理。</li>
+    </ul>
+</section>
+}

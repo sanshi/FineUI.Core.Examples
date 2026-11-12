@@ -68,20 +68,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br />
-    注：
-    <ul>
-        <li>当有数据变化时（删除行，新增行，修改单元格），关闭当前页面前会有提示框。</li>
-        <li>
-            关闭当前页面的几种情况：
-            <ul>
-                <li>点击当前页面所在选项卡的关闭图标</li>
-                <li>点击浏览器右上角的关闭按钮</li>
-                <li>点击浏览器的刷新按钮，或者 F5 刷新页面</li>
-            </ul>
 
-        </li>
-
-    </ul>
 }
 
 @section script {
@@ -150,4 +137,33 @@
         }
 
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>存在未保存的增删改时，在离开示例前提醒确认，避免直接丢弃编辑。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>离开前检查未保存记录</h3>
+    <ol>
+        <li>修改<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>一个<strong>姓名</strong>并结束编辑，再尝试刷新或关闭当前示例。<br />结果：离开检查发现未提交记录后请求确认；取消离开时保留当前页面及修改。浏览器自带确认框的文字与是否允许弹出由浏览器决定。</li>
+        <li>先保存或重置本轮修改，再尝试离开。<br />结果：没有待保存的变化时，本页不再因表格编辑请求确认。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>当有数据变化时（删除行，新增行，修改单元格），关闭当前页面前会有提示框。</li>
+        <li>
+            关闭当前页面的几种情况：
+            <ul>
+                <li>点击当前页面所在选项卡的关闭图标</li>
+                <li>点击浏览器右上角的关闭按钮</li>
+                <li>点击浏览器的刷新按钮，或者 F5 刷新页面</li>
+            </ul>
+
+        </li>
+
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>F.beforeUnload / getModifiedData</code>（<strong>页面离开检查</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：只有存在待新增、待删除或已修改记录时返回提醒；浏览器关闭与框架页签关闭采用各自的离开提示。</li>
+    </ul>
+</section>
 }

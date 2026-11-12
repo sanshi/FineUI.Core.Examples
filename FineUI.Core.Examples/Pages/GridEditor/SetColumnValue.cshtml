@@ -89,3 +89,17 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>一次更新整列的年份或布尔值，让每条记录使用指定的新值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>批量更新整列</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="btnUpdateEntranceYear" title="[入学年份]全部更新为2008">[入学年份]全部更新为2008</strong>。<br />结果：各行<strong>入学年份</strong>立即变为 2008，并作为本轮修改等待保存。</li>
+        <li>分别点击<strong class="example-control-reference" data-example-control="btnUpdateAtSchoolTrue" title="[是否在校]全部更新为TRUE">[是否在校]全部更新为TRUE</strong>与<strong class="example-control-reference" data-example-control="btnUpdateAtSchoolFalse" title="[是否在校]全部更新为FALSE">[是否在校]全部更新为FALSE</strong>。<br />结果：<strong>是否在校</strong>整列依次全部勾选、全部取消，其他列的数据保留。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>getRowEls / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：遍历当前记录，分别按 EntranceYear 与 AtSchool 列标识更新；操作在浏览器中完成。</li>
+    </ul>
+</section>
+}

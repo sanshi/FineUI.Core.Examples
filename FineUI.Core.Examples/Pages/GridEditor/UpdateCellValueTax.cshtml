@@ -66,7 +66,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br />
-    注：编辑[金额（不含税）]、[金额（含税）]、[税额]中的任一列，其他两列的值都会相应的改变。
+
 }
 
 @section script {
@@ -159,4 +159,19 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>按 3% 税率联动计算不含税金额、含税金额与税额。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从任一金额反算其他两项</h3>
+    <ol>
+        <li>编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>一行的<strong>金额（不含税）</strong>为<code>100</code>，再结束编辑。<br />结果：浏览器立即把同一行<strong>金额（含税）</strong>计算为 103.00、<strong>税额</strong>计算为 3.00，计算结果保留两位小数。</li>
+        <li>再从<strong>金额（含税）</strong>或<strong>税额</strong>列修改同一行。<br />结果：按本次改动的列反算另外两列；批量赋值期间暂停相关事件，避免互相触发形成循环。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>afteredit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：只对本次行更新关联金额，以行标识和列标识确定目标。</li>
+        <li><code>F.noEvent</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：在关联赋值期间临时不触发事件，避免金额计算反复相互调用。</li>
+    </ul>
+</section>
 }

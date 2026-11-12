@@ -68,7 +68,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-    注：保存数据前，验证“姓名”不能为空（现有数据可以简单通过 Required="true" 属性来控制，新增数据默认为空的话需要这个客户端验证）。
+
 }
 
 @section script {
@@ -174,4 +174,20 @@
         
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>提交前检查本轮新增与修改记录的姓名，空姓名时停止提交并重新进入该单元格。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>验证失败后回到问题单元格</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>，将新行<strong>姓名</strong>清空并结束编辑。<br />结果：新行暂时保留空<strong>姓名</strong>，等待提交前的统一验证。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：浏览器提示<strong>姓名</strong>不能为空，停止本次保存；关闭提示后重新进入对应<strong>姓名</strong>编辑器。</li>
+        <li>填写<strong>姓名</strong><code>新学生</code>并再次保存。<br />结果：验证通过后才提交，后台读取本轮变更并更新示例数据。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>getModifiedData / startEdit</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：检查待保存记录，跳过删除项；<strong>姓名</strong>为空时停止提交，并重新打开该行<strong>姓名</strong>编辑器。</li>
+        <li><code>Required / 提交前验证</code>（<strong>姓名编辑器与保存处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：编辑器必填验证用于正在编辑的输入；新增记录尚未逐格编辑时仍可能有空<strong>姓名</strong>，因此提交前还要统一检查待保存数据。</li>
+    </ul>
+</section>
 }

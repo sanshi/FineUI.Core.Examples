@@ -106,3 +106,17 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把选中的行交给后台立即删除并重新绑定表格，与仅在浏览器登记待删除记录区分。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>确认后由后台删除记录</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>选择一行或多行，点击<strong class="example-control-reference" data-example-control="btnDelete" title="删除选中行（可删除多行）">删除选中行（可删除多行）</strong>并确认。<br />结果：客户端提交本次选中行的标识，后台从示例数据中移除这些记录并重新绑定；不必再点击普通保存按钮才执行删除。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：删除按数据中的业务主键定位，不用删除后的行序号重新找记录。</li>
+        <li><code>F.customEvent</code>（<strong>删除操作</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：把本次选择交给后台删除处理，返回后用剩余数据重新绑定。</li>
+    </ul>
+</section>
+}

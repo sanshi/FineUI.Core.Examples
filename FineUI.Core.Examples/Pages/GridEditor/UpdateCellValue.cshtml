@@ -73,7 +73,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-    注：编辑[语文成绩]或者[数学成绩]时会同时更新[总成绩]。
+
 
 }
 
@@ -147,4 +147,17 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>修改语文或数学成绩后，立即更新同一行的总成绩。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>用两科成绩重算总成绩</h3>
+    <ol>
+        <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>某行<strong>语文成绩</strong>，输入<code>90</code>，再结束编辑。<br />结果：浏览器读取该行当前<strong>数学成绩</strong>，<strong>总成绩</strong>立即显示 90 加<strong>数学成绩</strong>的结果。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>afteredit / getCellValue / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：在单科结束编辑后读取同一行的两科值，以 TotalScore 列标识更新合计，不需要打开目标编辑器。</li>
+    </ul>
+</section>
 }

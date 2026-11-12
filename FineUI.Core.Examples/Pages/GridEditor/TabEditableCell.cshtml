@@ -45,14 +45,7 @@
 
     <br>
     快捷键说明：
-    <ul>
-        <li>方向键在单元格之间导航（非编辑状态）</li>
-        <li>回车键使单元格进入编辑状态</li>
-        <li>ESC键取消单元格的编辑状态</li>
-        <li>Tab键进入水平方向的下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li>Shift+Tab键回退到垂直方向的上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li><strong>Tab键只在可编辑单元格之间导航</strong></li>
-    </ul>
+
 
 }
 
@@ -62,3 +55,19 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让 Tab 只在可编辑的单元格之间移动，跳过没有编辑器或不允许编辑的列。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>跳过不能编辑的单元格</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>打开一个文本编辑器，连续按 Tab，再按 Shift+Tab。<br />结果：焦点按正向或反向移到下一个可编辑位置，不停在静态展示列上，目标编辑器自动打开。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>非编辑状态可用方向键移动单元格；Enter 进入编辑，ESC 取消当前编辑。Shift 与导航键组合时按相反方向移动。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>TabEditableCell</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>true</code>，将 Tab 的候选目标限定为可编辑单元格。</li>
+    </ul>
+</section>
+}

@@ -52,11 +52,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br>
-    注：
-    <ul>
-        <li>页面加载时[入学年份]列处于隐藏状态</li>
-        <li>保持[入学年份]列的隐藏状态，点击第一个更新按钮，然后点击[保存数据]按钮</li>
-    </ul>
+
 
 }
 
@@ -87,4 +83,23 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>不显示入学年份列时仍更新其数据，并用提示核对隐藏列更新前后的值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更新没有显示出来的列</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="将全部[入学年份]加一">将全部[入学年份]加一</strong>。<br />结果：浏览器遍历记录，把隐藏的<strong>入学年份</strong>逐行加 1；提示列出更新前后的年份，表头仍不出现这列。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>页面加载时[<strong>入学年份</strong>]列处于隐藏状态</li>
+        <li>保持[<strong>入学年份</strong>]列的隐藏状态，点击第一个更新按钮，然后点击[保存数据]按钮</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>updateCellValue</code>（<strong>入学年份列</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：按列标识更新数据，与该列当前是否可见无关。</li>
+        <li><code>Hidden</code>（<strong>入学年份列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>true</code>，隐藏列头与单元格，不删除行中的年份字段。</li>
+    </ul>
+</section>
 }

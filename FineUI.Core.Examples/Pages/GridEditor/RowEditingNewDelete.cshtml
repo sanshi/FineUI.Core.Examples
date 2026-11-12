@@ -127,3 +127,18 @@
 
     </script>
 }
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在整行编辑模式中新增或删除记录，再统一提交本轮行变更。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>新增后直接填写整行</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>。<br />结果：当前行的多个编辑器一起打开，可依次修改<strong>姓名</strong>、<strong>性别</strong>与<strong><strong>入学年份</strong></strong>，不必逐个重新进入单元格编辑。</li>
+        <li>填写该行并点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：本次整行编辑先写回表格，再由后台读取变更更新示例数据；重新绑定后显示新值。</li>
+        <li>选中一条记录，点击<strong class="example-control-reference" data-example-control="btnDelete" title="删除选中行">删除选中行</strong>并确认，再保存。<br />结果：记录先在浏览器登记为待删除，保存时才由后台应用到示例数据；行编辑模式继续保留。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>IsRowEditing</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>true</code>，一个单元格开始编辑时同时显示该行的可用编辑器。</li>
+    </ul>
+</section>
+}

@@ -80,7 +80,7 @@
     <f:Label ID="labResult" EncodeText="false"></f:Label>
 
     <br />
-    注：编辑[语文成绩]或者[数学成绩]时会更新合计行数据。
+
 
 }
 
@@ -162,4 +162,19 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在浏览器中重算成绩合计，使编辑与增删行后的合计反映当前记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>让合计跟随成绩变化</h3>
+    <ul>
+        <li>修改<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>一行的语文或<strong>数学成绩</strong>并结束编辑。<br />结果：afteredit 回调遍历当前记录求和，底部相应成绩合计立即变化，不必先点击保存。</li>
+        <li>选中一行并删除，或新增一行后填写成绩。<br />结果：数据重新加载时也会重算合计，新增值计入总分，已删除行不再计入。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableSummary</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：初始为 <code>true</code>，在底部显示用于承载总分的合计行。</li>
+        <li><code>afteredit / dataload / updateSummaryCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：在编辑与数据加载后重新求和，再把总分写入合计行；强制更新避免出现修改角标。</li>
+    </ul>
+</section>
 }

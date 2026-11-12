@@ -70,7 +70,7 @@
 
     <br />
     <br />
-    注：通过设置行扩展列的 ExpandOnDoubleClick 属性，来禁用双击展开行扩展列。
+
 
 }
 
@@ -131,4 +131,20 @@
         }
 
     </script>
+}
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在保留行扩展内容的同时新增、删除和编辑记录。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>展开描述后编辑或增删记录</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>一行左侧的展开图标。<br />结果：该行下方显示扩展描述，原有单元格仍保留在主行。</li>
+        <li>新增一行或删除选中的行，再点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：后台处理本轮增删改并重新绑定，表格仍保留行扩展列，可继续展开现有记录。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>注：通过设置行扩展列的 ExpandOnDoubleClick 属性，来禁用双击展开行扩展列。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RowExpanderField</code>（<strong>行扩展列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：在主行下方放置额外内容，不把它作为普通可编辑数据列。</li>
+    </ul>
+</section>
 }
