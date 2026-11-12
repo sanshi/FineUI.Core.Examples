@@ -101,9 +101,9 @@
     </ol>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHCN" title="第 2 个复选菜单项">第 2 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHTW" title="第 3 个复选菜单项">第 3 个复选菜单项</strong>）：语言菜单项使用相同组名，形成互斥选择；站点项不分同一互斥组。 本页使用<code>MenuLang</code>。</li>
-        <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteBaidu" title="第 4 个复选菜单项">第 4 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteGoogle" title="第 5 个复选菜单项">第 5 个复选菜单项</strong>）：声明初始勾选状态，与菜单项的可用状态区分。 本页使用<code>true</code>。</li>
-        <li><code>OnCheckedChanged</code>（本页各复选菜单项，如<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>）：勾选变化后读取当前状态并更新本页结果。 本页各组分别使用<code>MenuLang_CheckedChanged</code>、<code>MenuSite_CheckedChanged</code>。</li>
+        <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHCN" title="第 2 个复选菜单项">第 2 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuLangZHTW" title="第 3 个复选菜单项">第 3 个复选菜单项</strong>）：设为<code>MenuLang</code>，语言菜单项使用相同组名，形成互斥选择；站点项不分同一互斥组。</li>
+        <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteBaidu" title="第 4 个复选菜单项">第 4 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control="MenuSiteGoogle" title="第 5 个复选菜单项">第 5 个复选菜单项</strong>）：初始设为<code>true</code>，声明初始勾选状态，与菜单项的可用状态区分。</li>
+        <li><code>OnCheckedChanged</code>（本页各复选菜单项，如<strong class="example-control-reference" data-example-control="MenuLangEnglish" title="第 1 个复选菜单项">第 1 个复选菜单项</strong>）：各组分别设为<code>MenuLang_CheckedChanged</code>、<code>MenuSite_CheckedChanged</code>，勾选变化后读取当前状态并更新本页结果。</li>
     </ul>
 </section>
 }
