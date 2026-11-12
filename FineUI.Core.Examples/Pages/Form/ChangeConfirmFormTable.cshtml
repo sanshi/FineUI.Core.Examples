@@ -6,26 +6,13 @@
 }
 
 
-@section head {
-
-    <style>
-        .steps {
-            border: solid 1px red;
-            padding: 5px;
-        }
-    </style>
-
-}
-
 @section body {
 
-    @{
-        var INTRO_TEXT = "按照如下步骤操作来观察“确认关闭”对话框：<ul><li>编辑本表单（比如选中复选框、修改日期）</li><li>点击弹出窗体右上角关闭图标、关闭按钮、当前选项卡关闭图标、浏览器的关闭按钮或者浏览器的刷新图标，<a target='_blank' href='" + Url.Content("~/res/images/formchangeconfirm.png") + "'>查看图示</a></li><li>弹出确认关闭窗体的对话框</li></ul>";
-    }
+
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" ShowBorder="true" EnableCollapse="false" Title="表单" ShowHeader="true" AutoScroll="true" BodyPadding="10">
         <Items>
-            <f:Label ID="Label2" EncodeText="false" CssClass="steps" Text="@INTRO_TEXT" />
+
             <f:NumberBox ID="NumberBox1" Label="数字输入框" Required="true" ShowRedStar="true" />
             <f:CheckBox ID="CheckBox1" Label="复选框">
             </f:CheckBox>
@@ -146,7 +133,9 @@
                 结果：当前已无待保存修改时，不再因为该表单或表格弹出放弃修改提示；继续修改后会重新提示。
             </li>
         </ol>
-        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+<p>修改后从示例窗口或选项卡离开时，可对照<a href='@Url.Content("~/res/images/formchangeconfirm.png")' target="_blank" rel="noopener">确认关闭图示</a>；刷新或关闭浏览器时，提示样式与文字由浏览器决定。</p>
+<h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
             <li><code>F.beforeUnload()</code>（<strong>页面客户端配置</strong>）：离开页面前执行检查；返回提示文字表示有未保存修改。</li>
             <li><code>ClearDirty()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：保存成功后接受当前表单值作为新基准，不清空输入。</li>

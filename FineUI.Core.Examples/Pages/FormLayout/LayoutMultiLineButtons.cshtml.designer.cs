@@ -11,7 +11,7 @@ namespace FineUI.Core.Examples.Pages.FormLayout
 		protected FineUI.Core.DropDownList DropDownList1;
 		protected FineUI.Core.TextBox TextBox1;
 		protected FineUI.Core.Panel Panel1;
-		protected FineUI.Core.Button ButtonExample1;
+		protected FineUI.Core.Button btnFirst;
 		protected FineUI.Core.Button Button3;
 		protected FineUI.Core.Panel Panel2;
 		protected FineUI.Core.Button btnSubmit;

@@ -13,8 +13,8 @@ namespace FineUI.Core.Examples.Pages.Form
 		protected FineUI.Core.NumberBox NumberBox6;
 		protected FineUI.Core.NumberBox NumberBox7;
 		protected FineUI.Core.NumberBox NumberBox8;
-		protected FineUI.Core.Button ButtonExample1;
-		protected FineUI.Core.Button ButtonExample3;
-		protected FineUI.Core.Button ButtonExample5;
+		protected FineUI.Core.Button btnChangeTo0;
+		protected FineUI.Core.Button btnChangeTo50;
+		protected FineUI.Core.Button btnChangeTo100;
 	}
 }

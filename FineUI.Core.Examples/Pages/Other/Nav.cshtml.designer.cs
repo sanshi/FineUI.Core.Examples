@@ -6,6 +6,6 @@ namespace FineUI.Core.Examples.Pages.Other
 	public partial class NavModel
 	{
 		protected FineUI.Core.Button Button1;
-		protected FineUI.Core.Button ButtonExample5;
+		protected FineUI.Core.Button btnNavRegion;
 	}
 }

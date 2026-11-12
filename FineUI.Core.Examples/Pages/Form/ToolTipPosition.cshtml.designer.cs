@@ -5,11 +5,11 @@ namespace FineUI.Core.Examples.Pages.Form
 {
 	public partial class ToolTipPositionModel
 	{
-		protected FineUI.Core.Button ButtonExample1;
-		protected FineUI.Core.Button ButtonExample2;
-		protected FineUI.Core.Button ButtonExample3;
-		protected FineUI.Core.Button ButtonExample6;
-		protected FineUI.Core.Button ButtonExample7;
-		protected FineUI.Core.Button ButtonExample11;
+		protected FineUI.Core.Button btnTopStart;
+		protected FineUI.Core.Button btnTop;
+		protected FineUI.Core.Button btnTopEnd;
+		protected FineUI.Core.Button btnLeft;
+		protected FineUI.Core.Button btnRight;
+		protected FineUI.Core.Button btnBottom;
 	}
 }

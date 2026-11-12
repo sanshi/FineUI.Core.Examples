@@ -5,7 +5,7 @@ namespace FineUI.Core.Examples.Pages.CSP
 {
 	public partial class ButtonModel
 	{
-		protected FineUI.Core.Button ButtonExample1;
+		protected FineUI.Core.Button btnDefault;
 		protected FineUI.Core.Button btnPrimary;
 		protected FineUI.Core.Button btnChangeEnable;
 		protected FineUI.Core.Button btnEnable;

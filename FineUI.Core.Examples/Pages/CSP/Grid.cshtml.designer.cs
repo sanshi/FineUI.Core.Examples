@@ -6,6 +6,6 @@ namespace FineUI.Core.Examples.Pages.CSP
 	public partial class GridModel
 	{
 		protected FineUI.Core.Grid Grid1;
-		protected FineUI.Core.Button ButtonExample1;
+		protected FineUI.Core.Button btnShowSelectedRows;
 	}
 }

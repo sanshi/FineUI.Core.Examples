@@ -6,7 +6,7 @@ namespace FineUI.Core.Examples.Pages.Toolbar
 	public partial class MenuIconModel
 	{
 		protected FineUI.Core.Panel PanelExample1;
-		protected FineUI.Core.Button ButtonExample1;
+		protected FineUI.Core.Button btnUniversityMenu;
 		protected FineUI.Core.MenuHyperLink MenuHyperLink1;
 		protected FineUI.Core.MenuHyperLink MenuHyperLink2;
 		protected FineUI.Core.MenuHyperLink MenuHyperLink3;

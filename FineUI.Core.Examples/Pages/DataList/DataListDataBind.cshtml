@@ -17,8 +17,8 @@
     <br />
     <f:Label ID="labResult" Text="数据数量：3" />
     <f:HiddenField ID="hfBatch" Text="0" />
-    <p>首次加载绑定北京、上海和广州；重新加载会反序显示这三个城市，并清除已追加的数据。</p>
-    <p>每次追加深圳和杭州，项值带上批次编号，例如 shenzhen-1、shenzhen-2，连续追加也不会重复。</p>
+
+
 }
 
 @section exampleDescription {
@@ -29,6 +29,9 @@
         <li>点击<strong class="example-control-reference" data-example-control="btnAppend" title="追加两个城市">追加两个城市</strong>。<br />结果：在原有三个城市后新增深圳和杭州，数据数量增加两个；再次追加使用新的稳定项值。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnReload" title="重新加载">重新加载</strong>。<br />结果：用重新准备的三项数据替换列表，并把数量与追加批次重置。</li>
     </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>数据与项值</h3>
+<p>首次加载绑定北京、上海和广州；重新加载会反序显示这三个城市，并清除已追加的数据。</p>
+<p>每次追加深圳和杭州，项值带上批次编号，例如 shenzhen-1、shenzhen-2，连续追加也不会重复。</p>
     <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
         <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：初始为<code>Name</code>，使用 <code>Name</code> 字段作为显示文字。</li>

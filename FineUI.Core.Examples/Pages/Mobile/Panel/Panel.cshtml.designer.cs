@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.Pages.Mobile.Panel
 		protected FineUI.Core.Toolbar ToolbarExample1;
 		protected FineUI.Core.Toolbar Toolbar1;
 		protected FineUI.Core.Button Button1;
-		protected FineUI.Core.Button ButtonExample2;
+		protected FineUI.Core.Button btnMenu;
 		protected FineUI.Core.Panel ContentPanel2;
 	}
 }

@@ -6,7 +6,6 @@ namespace FineUI.Core.Examples.Pages.Form
 	public partial class ChangeConfirmFormModel
 	{
 		protected FineUI.Core.SimpleForm SimpleForm1;
-		protected FineUI.Core.Label Label2;
 		protected FineUI.Core.NumberBox NumberBox1;
 		protected FineUI.Core.CheckBox CheckBox1;
 		protected FineUI.Core.TextBox TextBox1;
