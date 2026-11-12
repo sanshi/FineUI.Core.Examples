@@ -6,6 +6,7 @@ namespace FineUI.Core.Examples.Pages.Chart.Pie
 	public partial class TrendLinkModel
 	{
 		protected FineUI.Core.Chart ChartChannels;
+		protected FineUI.Core.Panel PanelExample3;
 		protected FineUI.Core.Button btnAllChannels;
 		protected FineUI.Core.ToolbarText ToolbarTextChartScope;
 		protected FineUI.Core.Chart ChartChannelTrend;

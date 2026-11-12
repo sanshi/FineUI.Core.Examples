@@ -24,10 +24,7 @@
     <br />
     <br />
     注：
-    <ul>
-        <li>示例站已全局开启严格 CSP 和 nonce，本页不需要重复设置。框架会为页面模板中的普通内联 <code>&lt;script&gt;</code> 自动添加本次请求的 nonce。</li>
-        <li>说明：<a target="_blank" href="https://fineui.com/docs/#/FineUICore_RazorForms/1700_CSP_nonce">CSP 与 nonce 的配置和用法</a></li>
-    </ul>
+
 
 }
 
@@ -41,4 +38,27 @@
 
     </script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在严格 CSP 下分别执行具名客户端函数、后台链接按钮事件和确认后的回发。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-link" aria-hidden="true"></i>对照链接动作</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="lbServer" title="链接按钮 - 服务器端事件">链接按钮 - 服务器端事件</strong>。<br />结果：回发执行后台事件并显示业务提示。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="lbConfirm" title="链接按钮 - 确认后回发">链接按钮 - 确认后回发</strong>。<br />结果：先显示确认框，确认后才执行后台事件并显示提示。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="lbClient" title="链接按钮 - 客户端脚本">链接按钮 - 客户端脚本</strong>。<br />结果：执行具名客户端函数并显示提示，不回发。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>示例站已全局开启严格 CSP 和 nonce，本页不需要重复设置。框架会为页面模板中的普通内联 <code>&lt;script&gt;</code> 自动添加本次请求的 nonce。</li>
+        <li>说明：<a target="_blank" href="https://fineui.com/docs/#/FineUICore_RazorForms/1700_CSP_nonce">CSP 与 nonce 的配置和用法</a></li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="lbClient" title="链接按钮 - 客户端脚本">链接按钮 - 客户端脚本</strong>）：初始为 <code>onShowClientMsgClick</code>，指定按钮点击时执行的客户端处理函数。</li>
+        <li><code>ConfirmText</code>（<strong class="example-control-reference" data-example-control="lbConfirm" title="链接按钮 - 确认后回发">链接按钮 - 确认后回发</strong>）：初始为 <code>确定要继续吗？</code>，点击后先显示确认内容，确认后才执行操作。</li>
+        <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="lbServer" title="链接按钮 - 服务器端事件">链接按钮 - 服务器端事件</strong>、<strong class="example-control-reference" data-example-control="lbConfirm" title="链接按钮 - 确认后回发">链接按钮 - 确认后回发</strong>）：初始为 <code>lbServer_Click</code>、<code>lbConfirm_Click</code>，指定按钮回发后执行的后台事件。</li>
+    </ul>
+</section>
 }

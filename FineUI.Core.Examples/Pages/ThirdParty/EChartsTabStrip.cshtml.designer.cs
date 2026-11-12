@@ -6,5 +6,6 @@ namespace FineUI.Core.Examples.Pages.ThirdParty
 	public partial class EChartsTabStripModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample1;
 	}
 }

@@ -6,6 +6,8 @@ namespace FineUI.Core.Examples.Pages.Other.Compatibility
 	public partial class TabIndexChangedModel
 	{
 		protected FineUI.Core.TabStrip TabStrip1;
+		protected FineUI.Core.Tab TabExample2;
+		protected FineUI.Core.Tab TabExample3;
 		protected FineUI.Core.Button btnNext;
 		protected FineUI.Core.Label labResult;
 	}

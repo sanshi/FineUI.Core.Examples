@@ -71,3 +71,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>重新打开窗体时保留上次关闭前的位置与尺寸。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>对照本页窗体效果</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>。显示窗体，拖动标题栏并调整边缘大小，关闭后再点击保持关闭时位置和大小的显示按钮。<br />结果：窗体沿用关闭前的位置和尺寸；显式指定最大化或新尺寸的按钮仍按指定参数显示。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>KeepLastPosition</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>true</code>，关闭后再次打开时，沿用关闭前的位置。</li>
+        <li><code>KeepLastSize</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>true</code>，关闭后再次打开时，沿用关闭前的尺寸。</li>
+        <li><code>EnableResize</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>true</code>，控制是否允许拖动窗体边缘调整大小。</li>
+    </ul>
+</section>
+}

@@ -37,3 +37,19 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把两个 UEditor 放在不同选项卡，验证切换、布局和内容相互独立。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>切换后保持各自内容</h3>
+    <ol>
+        <li>切换到<strong class="example-control-reference" data-example-control="Tab2" title="选项卡二">选项卡二</strong>，在<strong class="example-control-reference" data-example-control="HtmlEditor2" title="编辑器二">编辑器二</strong>追加 <code>第二页内容</code>。<br />结果：<strong class="example-control-reference" data-example-control="HtmlEditor2" title="编辑器二">编辑器二</strong>显示并接受输入；填充布局使用当前标签的可用区域。</li>
+        <li>切回选项卡一，再切到<strong class="example-control-reference" data-example-control="Tab2" title="选项卡二">选项卡二</strong>。<br />结果：两个编辑器分别保留自己的内容，切换不重新清空。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Tab1" title="选项卡一">选项卡一</strong>、<strong class="example-control-reference" data-example-control="Tab2" title="选项卡二">选项卡二</strong>）：初始为 <code>Anchor</code>、<code>Fit</code>，规定容器内子控件的排列和空间分配方式。</li>
+        <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="编辑器一">编辑器一</strong>、<strong class="example-control-reference" data-example-control="HtmlEditor2" title="编辑器二">编辑器二</strong>）：初始为 <code>Full</code>、<code>Basic</code>，选择编辑器的工具栏组合。</li>
+    </ul>
+</section>
+}

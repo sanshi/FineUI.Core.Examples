@@ -12,22 +12,24 @@
                 LineColor="#008000" LineWidth="4" LineType="dashed" />
         </Series>
     </f:Chart>
-    <p>用粗绿色虚线连接五个分类的数据点。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/line/basic-line/#折线的样式" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li>
-                <code>LineType="dashed"</code>
-                把连线画成虚线，可与线宽和颜色同时设置。
-            </li>
-            <li>
-                <code>LineWidth="4"</code>
-                将线宽设为 4 像素。
-            </li>
-            <li>
-                <code>LineColor="#008000"</code>
-                设置连线的绿色，数据点标记继续使用系列颜色。
-            </li>
-        </ul>
-    </section>
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>通过线型、颜色和粗细配置改变折线外观。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照虚线折线图</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="ChartLineDashed" title="图表">图表</strong>中的分类、数值和形状。<br />结果：用粗绿色虚线连接五个分类的数据点。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/line/basic-line/#折线的样式" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>LineType</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartLineDashed" title="图表">图表</strong>）：初始为 <code>dashed</code>，把连线画成虚线，可与线宽和颜色同时设置。</li>
+        <li><code>LineWidth</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartLineDashed" title="图表">图表</strong>）：初始为 <code>4</code>，将线宽设为 4 像素。</li>
+        <li><code>LineColor</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartLineDashed" title="图表">图表</strong>）：初始为 <code>#008000</code>，设置连线的绿色，数据点标记继续使用系列颜色。</li>
+    </ul>
+</section>
 }

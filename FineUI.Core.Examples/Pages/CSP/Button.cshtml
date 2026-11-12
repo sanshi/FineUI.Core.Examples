@@ -8,7 +8,7 @@
 @section body {
 
 
-    <f:Button Text="缺省按钮" CssClass="marginr" />
+    <f:Button ID="ButtonExample1" Text="缺省按钮" CssClass="marginr" />
     <f:Button ID="btnPrimary" Text="主按钮" ButtonColor="Primary" />
     <br />
     <br />
@@ -32,10 +32,7 @@
     <br />
     <br />
     注：
-    <ul>
-        <li>示例站已全局开启严格 CSP 和 nonce，本页不需要重复设置。框架会为页面模板中的普通内联 <code>&lt;script&gt;</code> 自动添加本次请求的 nonce。</li>
-        <li>说明：<a target="_blank" href="https://fineui.com/docs/#/FineUICore_RazorForms/1700_CSP_nonce">CSP 与 nonce 的配置和用法</a></li>
-    </ul>
+
 
 }
 
@@ -49,4 +46,27 @@
 
     </script>
 
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在本页 CSP 策略下执行后台按钮更新，验证启用状态与按下状态。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>验证按钮状态更新</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="btnChangeEnable" title="启用后面的按钮">启用后面的按钮</strong>。<br />结果：后台把禁用按钮改为可用，再点击该按钮可显示业务通知。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnChangePressed" title="改变后面按钮的按下状态">改变后面按钮的按下状态</strong>。<br />结果：后台切换另一个按钮的按下状态，连续点击可来回切换。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>示例站已全局开启严格 CSP 和 nonce，本页不需要重复设置。框架会为页面模板中的普通内联 <code>&lt;script&gt;</code> 自动添加本次请求的 nonce。</li>
+        <li>说明：<a target="_blank" href="https://fineui.com/docs/#/FineUICore_RazorForms/1700_CSP_nonce">CSP 与 nonce 的配置和用法</a></li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="btnEnable" title="禁用的按钮">禁用的按钮</strong>）：初始为 <code>false</code>，控制按钮是否接受操作。</li>
+        <li><code>EnablePress</code>（<strong class="example-control-reference" data-example-control="btnPressed" title="按下的按钮">按下的按钮</strong>）：初始为 <code>true</code>，允许按钮保持按下或抬起状态。</li>
+        <li><code>Pressed</code>（<strong class="example-control-reference" data-example-control="btnPressed" title="按下的按钮">按下的按钮</strong>）：初始为 <code>true</code>，指定按钮当前的按下状态。</li>
+        <li><code>CSP</code>（<strong class="example-control-reference" data-example-control="ButtonExample1" title="缺省按钮">缺省按钮</strong>）：页面脚本按本端策略执行；本例关注实际按钮回发与状态更新，不需要把业务处理写成内联事件属性。</li>
+    </ul>
+</section>
 }

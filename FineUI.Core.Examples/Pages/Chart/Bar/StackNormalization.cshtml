@@ -21,12 +21,23 @@
         </Series>
     </f:Chart>
 
-    <p>同一天各渠道访问量除以当天总量，柱高合计为 1，每段标出相应的百分比。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-stack-normalization" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li><code>DataLabelField</code> 柱高使用小数，例如星期一 Direct 约为 0.062，标签字段则提供 6.2%。</li>
-            <li><code>LegendSelectedMode</code> 设为 false，让图例只说明颜色，点击时保留各来源，柱高仍为 1。</li>
-        </ul>
-    </section>
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把各分类内的数值归一化后堆叠，并用标签显示原始占比。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠柱状图的归一化</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="ChartBarStackNormalization" title="图表">图表</strong>中的分类、数值和形状。<br />结果：同一天各渠道访问量除以当天总量，柱高合计为 1，每段标出相应的百分比。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-stack-normalization" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataLabelField</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartBarStackNormalization" title="图表">图表</strong>）：柱高使用小数，例如星期一 Direct 约为 0.062，标签字段则提供 6.2%。</li>
+        <li><code>LegendSelectedMode</code>（<strong class="example-control-reference" data-example-control="ChartBarStackNormalization" title="图表">图表</strong>）：设为 false，让图例只说明颜色，点击时保留各来源，柱高仍为 1。</li>
+    </ul>
+</section>
 }

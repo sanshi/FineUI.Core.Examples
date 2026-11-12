@@ -50,16 +50,16 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示打开移动模态登录窗体，在遮罩上方完成字段验证和示例登录。</p>
-    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>在窗体内验证并登录</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>在窗体内验证并登录</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="打开登录窗体">打开登录窗体</strong>。<br />结果：浏览器显示登录窗体和遮罩，背景页面暂时不能操作。</li>
         <li>在窗体内先留空字段点击<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>，再把用户名和密码都填为<code>admin</code>后登录。<br />结果：空值先由浏览器阻止；有效输入才回发，后台按本页示例账号比对并显示结果，不代表建立了真实认证会话。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>IsModal</code>（<strong class="example-control-reference" data-example-control="Window1" title="登录窗体">登录窗体</strong>）：设为<code>true</code>，登录窗体显示遮罩，限制背景交互。</li>
-        <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：设为<code>Window1</code>，登录前验证本页窗体内的字段。</li>
-        <li><code>ValidateMessageBoxPlain</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：设为<code>true</code>，验证错误使用本页简洁提示框样式。</li>
+        <li><code>IsModal</code>（<strong class="example-control-reference" data-example-control="Window1" title="登录窗体">登录窗体</strong>）：初始为<code>true</code>，登录窗体显示遮罩，限制背景交互。</li>
+        <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：初始为<code>Window1</code>，登录前验证本页窗体内的字段。</li>
+        <li><code>ValidateMessageBoxPlain</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：初始为<code>true</code>，验证错误使用本页简洁提示框样式。</li>
     </ul>
 </section>
 }

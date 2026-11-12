@@ -1,5 +1,7 @@
 (function () {
     'use strict';
+    // noConflict 示例会把全局 F 恢复为原来的值；查看器持有框架本身，仍能创建窗口和操作选项卡。
+    var F = window.FineUI || window.F;
     var viewerScriptUrl = document.currentScript.src;
 
     // 纯 JavaScript 示例异步加载此资源；若页面已经就绪，立即初始化，避免入口和恢复监听缺失。
@@ -105,6 +107,7 @@
     if (!sourceAddress) {
         return;
     }
+    var nativeSourceHost = document.querySelector('meta[name="fineui-native-source-host"]');
 
     var detailsHost;
     var windowHost;
@@ -232,6 +235,9 @@
                     }
                     savePreferences();
                     restoreFocus();
+                    if (nativeSourceHost && parent.FineUISourceViewerNative) {
+                        parent.FineUISourceViewerNative.close();
+                    }
                 }
             }
         });
@@ -570,6 +576,10 @@
         }
         window.addEventListener('resize', onViewportResize);
         document.addEventListener('keydown', onKeyDown);
+        // 传统 HTML 对照页不加载 FineUI 运行时；只在用户打开查看器时，用同源辅助页承载 F.Window。
+        if (nativeSourceHost && parent !== window) {
+            openDetails(parent);
+        }
     });
 
     window.FineUISourceCodeViewer = {

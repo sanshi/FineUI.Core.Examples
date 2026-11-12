@@ -20,22 +20,24 @@
                 Stack="total" ShowLabel="true" FocusSeries="true" />
         </Series>
     </f:Chart>
-    <p>同一天的访问来源沿横轴堆叠，每段显示原始数值。指向条形可突出对应的来源系列。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li>
-                <code>Horizontal="true"</code>、<code>Stack="total"</code>
-                同一天的五个来源在横向累加成一根条形。
-            </li>
-            <li>
-                <code>ShowLabel="true"</code>
-                在每段条形内显示该来源的原始值，例如星期二的 302 和 832。
-            </li>
-            <li>
-                <code>FocusSeries="true"</code>
-                指向一段条形时，突出整张图中对应的访问来源。
-            </li>
-        </ul>
-    </section>
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把同一天的多个来源横向堆叠，比较总量及各部分数值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠条形图</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="ChartBarStackedHorizontal" title="图表">图表</strong>中的分类、数值和形状。<br />结果：同一天的访问来源沿横轴堆叠，每段显示原始数值。指向条形可突出对应的来源系列。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Horizontal / Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartBarStackedHorizontal" title="图表">图表</strong>）：初始分别为 <code>true</code>、<code>total</code>，同一天的五个来源在横向累加成一根条形。</li>
+        <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="ChartBarStackedHorizontal" title="图表">图表</strong>）：初始为 <code>true</code>，在每段条形内显示该来源的原始值，例如星期二的 302 和 832。</li>
+        <li><code>FocusSeries</code>（<strong class="example-control-reference" data-example-control="ChartBarStackedHorizontal" title="图表">图表</strong>）：初始为 <code>true</code>，指向一段条形时，突出整张图中对应的访问来源。</li>
+    </ul>
+</section>
 }

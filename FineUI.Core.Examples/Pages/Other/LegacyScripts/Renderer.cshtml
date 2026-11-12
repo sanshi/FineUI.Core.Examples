@@ -15,8 +15,24 @@
     </f:Grid>
     <br />
     <f:Button ID="btnReload" Text="回发重新加载" OnClick="btnReload_Click" />
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用旧内联函数渲染表格列，重新绑定后继续应用该函数。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="旧内联渲染函数">旧内联渲染函数</strong>中，对照初始客户文字，再点击<strong class="example-control-reference" data-example-control="btnReload" title="回发重新加载">回发重新加载</strong>。<br />结果：初始显示客户甲（旧渲染），重新加载后显示客户乙（旧渲染）。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul class="compatibility-notes">
         <li>RendererFunction 保留完整函数正文；后台重新加载后仍使用同一渲染规则。</li>
         <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
     </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RendererFunction</code>（<strong class="example-control-reference" data-example-control="Grid1" title="旧内联渲染函数">旧内联渲染函数</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+    </ul>
+</section>
 }

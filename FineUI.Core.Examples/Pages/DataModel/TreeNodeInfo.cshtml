@@ -72,3 +72,19 @@
     </script>
 
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把勾选节点的标识与文字绑定到强类型对象列表，在后台读取。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>提交勾选的节点</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>勾选合肥市，再点击<strong class="example-control-reference" data-example-control="btnGetCheckedValues" title="获取选中的项">获取选中的项</strong>。<br />结果：后台读取节点列表，在<strong class="example-control-reference" data-example-control="labResult" title="标签">标签</strong>显示合肥市及 hefei 标识。</li>
+        <li>取消全部勾选后再次读取。<br />结果：结果改为没有复选框选中的节点，不沿用上次列表。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：初始为 <code>true</code>，显示节点复选框，让用户勾选多个节点。</li>
+        <li><code>IList&lt;TreeNodeInfo&gt;</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：按钮回调收集勾选节点，后台按本页参数类型读取节点标识和文字。</li>
+    </ul>
+</section>
+}

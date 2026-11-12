@@ -15,8 +15,24 @@
             <f:Label ID="labResult" Text="尚未提交" />
         </Items>
     </f:SimpleForm>
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>在每次发送回发前计算旧参数表达式，读取最新输入值。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="脚本表达式参数">脚本表达式参数</strong>中，输入第一条备注后提交，再改成第二条备注并重新提交。<br />结果：后台结果分别显示第一条和第二条备注，不缓存第一次表达式的结果。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul class="compatibility-notes">
         <li>Parameter 的旧字符串表达式在发送请求前求值，修改输入后再次提交可取得新值。</li>
         <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
     </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Parameter</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="脚本表达式参数">脚本表达式参数</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+    </ul>
+</section>
 }

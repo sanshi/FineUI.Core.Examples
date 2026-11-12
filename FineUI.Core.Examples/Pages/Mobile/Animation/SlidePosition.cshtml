@@ -93,17 +93,17 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示用四个方向的滑动效果切换移动面板，并保留返回入口。</p>
-    <h3><i class="f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换并返回原面板</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换并返回原面板</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="Button1" title="转到面板 2（向左滑动）">转到面板 2（向左滑动）</strong>。<br />结果：浏览器通过本页四个方向的滑动动画显示面板二，不重新加载已有面板内容。</li>
         <li>点击<strong class="example-control-reference" data-example-control="Button4" title="后退">后退</strong>。<br />结果：使用本页返回动画恢复面板一，原来的内容继续保留。</li>
         <li>从初始面板分别尝试其余方向按钮。<br />结果：按钮指定的向左、向右、向上或向下动画分别生效，返回按本页相反方向执行。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
         <li><code>F.slideLeft()</code>（<strong>面板切换脚本</strong>）：把当前面板切换为目标面板，使用本页四个方向的滑动效果。</li>
         <li><code>F.slideRight()</code>（<strong>面板切换脚本</strong>）：沿返回方向恢复上一面板。</li>
-        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Panel2" title="第 2 个面板">第 2 个面板</strong>）：设为<code>true</code>，待显示面板初始隐藏，由本页切换脚本管理可见状态。</li>
+        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Panel2" title="第 2 个面板">第 2 个面板</strong>）：初始为<code>true</code>，待显示面板初始隐藏，由本页切换脚本管理可见状态。</li>
     </ul>
 </section>
 }

@@ -28,12 +28,22 @@
         </Items>
     </f:Panel>
 
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
     <p>勾选「按月累计」，面积图每个点显示从 4 月到该月的销售额合计。取消勾选恢复每月独立金额。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li><code>OnCheckedChanged</code> 用当前复选状态选择本月值或截至当月累计值。</li>
-            <li><code>DataBind</code> 累计由后台按月份顺序计算。例如 4 月与 5 月相加后才得到 5 月的累计值。</li>
-        </ul>
-    </section>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换累计口径</h3>
+    <ol>
+        <li>勾选<strong class="example-control-reference" data-example-control="cbxCumulative" title="按月累计">按月累计</strong>。<br />结果：后台重新计算每个点：显示从 4 月到该月的累计销售额，汇总口径同步改变。</li>
+        <li>取消勾选。<br />结果：恢复每个月各自的独立金额。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="cbxCumulative" title="按月累计">按月累计</strong>）：用当前复选状态选择本月值或截至当月累计值。</li>
+        <li><code>DataBind</code>（<strong class="example-control-reference" data-example-control="ChartCumulativeSales" title="图表">图表</strong>）：累计由后台按月份顺序计算。例如 4 月与 5 月相加后才得到 5 月的累计值。</li>
+    </ul>
+</section>
 }

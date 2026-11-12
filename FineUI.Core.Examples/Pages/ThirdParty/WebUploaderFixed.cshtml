@@ -244,3 +244,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>按固定论文段落逐项上传和替换文件，每行使用自己的上传入口与限制。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>按论文段落分别上传</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="论文分段上传">论文分段上传</strong>的目录、引言、正文或参考文献行点击上传，选择一个符合该行限制的非空文件。<br />结果：文件只关联到所操作的段落，行内显示进度与完成状态；完成后可下载该行文件。</li>
+        <li>点击某行的删除并确认。<br />结果：仅删除该段落已上传的文件，其它段落保留。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>WebUploader.create</code>（<strong class="example-control-reference" data-example-control="Grid1" title="论文分段上传">论文分段上传</strong>）：本页为每个上传区域建立独立实例，配置上传地址、文件类型和大小限制。</li>
+        <li><code>uploadProgress / uploadSuccess</code>（<strong class="example-control-reference" data-example-control="Grid1" title="论文分段上传">论文分段上传</strong>）：把上传进度和结果反馈到对应表格行；实际文件是否成功保存以服务器结果为准。</li>
+    </ul>
+</section>
+}

@@ -12,18 +12,23 @@
             <f:ChartSeries Key="population2012" Type="Bar" Name="2012" DataValueField="Population2012" />
         </Series>
     </f:Chart>
-    <p>两组横向条形分别表示 2011 年和 2012 年的数据。左侧是分类，横轴显示人口数。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li>
-                <code>Horizontal="true"</code>
-                把国家和地区放在纵轴，把人口数放在横轴。
-            </li>
-            <li>
-                <code>ValueAxisBoundaryGap="0%,1%"</code>
-                数值轴的起点不留白，末端额外留出数值跨度的 1%。
-            </li>
-        </ul>
-    </section>
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>用两组横向条形比较不同年份的人口数，分类与数值轴交换方向。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照世界人口总量 - 条形图</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="ChartBarWorldPopulation" title="World Population">World Population</strong>中的分类、数值和形状。<br />结果：两组横向条形分别表示 2011 年和 2012 年的数据。左侧是分类，横轴显示人口数。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Horizontal</code>（<strong class="example-control-reference" data-example-control="ChartBarWorldPopulation" title="World Population">World Population</strong>）：初始为 <code>true</code>，把国家和地区放在纵轴，把人口数放在横轴。</li>
+        <li><code>ValueAxisBoundaryGap</code>（<strong class="example-control-reference" data-example-control="ChartBarWorldPopulation" title="World Population">World Population</strong>）：初始为 <code>0%,1%</code>，数值轴的起点不留白，末端额外留出数值跨度的 1%。</li>
+    </ul>
+</section>
 }

@@ -10,8 +10,24 @@
     <br />
     <f:Button ID="btnLoad" Text="加载部门" OnClick="btnLoad_Click" CssClass="marginr" />
     <f:Button ID="btnExpand" Text="展开研发部门" OnClick="btnExpand_Click" />
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>使用旧脚本引用加载树数据，再展开指定节点。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Tree1" title="旧树脚本">旧树脚本</strong>中，先点击<strong class="example-control-reference" data-example-control="btnLoad" title="加载部门">加载部门</strong>，再点击<strong class="example-control-reference" data-example-control="btnExpand" title="展开研发部门">展开研发部门</strong>。<br />结果：先显示研发部门节点，展开后显示客户端组；再次加载与展开仍可使用。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul class="compatibility-notes">
-        <li>先加载节点，再点击展开研发部门；旧 GetLoadDataReference 和 GetExpandNodeReference 仍可交给启动脚本执行。</li>
+        <li>先加载节点，再点击<strong class="example-control-reference" data-example-control="btnExpand" title="展开研发部门">展开研发部门</strong>；旧 GetLoadDataReference 和 GetExpandNodeReference 仍可交给启动脚本执行。</li>
         <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
     </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>GetLoadDataReference / GetExpandNodeReference</code>（<strong class="example-control-reference" data-example-control="Tree1" title="旧树脚本">旧树脚本</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+    </ul>
+</section>
 }

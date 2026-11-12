@@ -44,20 +44,20 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示给 <code>iframe</code> 窗体的内联页面设置标题、安全沙箱和来源策略，并只更新指定属性。</p>
-    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>更新与移除指定 iframe 属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>更新与移除指定 iframe 属性</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="Button1" title="弹出窗体">弹出窗体</strong>。<br />结果：本页窗体加载独立子页。</li>
         <li>在开发者工具中查看窗体内部的 <code>iframe</code> 元素。<br />结果：<code>title</code>、<code>sandbox</code>、<code>referrerpolicy</code> 位于 <code>iframe</code> 上，不改变外层标题和布局。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnUpdateIFrameTitle" title="服务端更新 IFrame 标题">服务端更新 IFrame 标题</strong>。<br />结果：只更新 <code>iframe</code> 的 <code>title</code>，沙箱与来源策略继续保留。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnRemoveIFrameReferrerPolicy" title="服务端移除 IFrame 来源策略">服务端移除 IFrame 来源策略</strong>。<br />结果：只移除 <code>referrerpolicy</code>，<code>title</code> 和 <code>sandbox</code> 不变。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul>
         <li><code>title</code>、<code>sandbox</code> 和 <code>referrerpolicy</code> 设置在窗体内部的 <code>iframe</code> 元素上，不改变页面外观。打开浏览器开发者工具查看 <code>Window1</code> 下的 <code>iframe</code>；更新标题只改 <code>title</code>，移除来源策略只删除 <code>referrerpolicy</code>，其余属性保留。</li>
     </ul>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：设为<code>true</code>，窗体内容由独立子页面提供。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：初始为<code>true</code>，窗体内容由独立子页面提供。</li>
         <li><code>IFrameAttributes</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：本页设置 <code>title</code>、<code>sandbox</code> 与 <code>referrerpolicy</code>；后续只更新或删除指定键。</li>
     </ul>
 </section>

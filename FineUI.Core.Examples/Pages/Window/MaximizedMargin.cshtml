@@ -49,3 +49,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>让最大化窗体在四周保留外边距，避免贴住整个视口。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>对照本页窗体效果</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control="Window1" title="窗体（最大化时外边距为 50px）">窗体（最大化时外边距为 50px）</strong>。点击标题栏还原图标，再次最大化。<br />结果：最大化时四周仍保留 50px 空间，还原后回到普通尺寸。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Maximized</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体（最大化时外边距为 50px）">窗体（最大化时外边距为 50px）</strong>）：初始为 <code>true</code>，控制窗体初次显示时是否最大化。</li>
+        <li><code>IsModal</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体（最大化时外边距为 50px）">窗体（最大化时外边距为 50px）</strong>）：初始为 <code>true</code>，显示窗体遮罩，限制对遮罩后方内容的操作。</li>
+        <li><code>.f-window-maximized</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体（最大化时外边距为 50px）">窗体（最大化时外边距为 50px）</strong>）：本页 CSS 设置 margin: 50px，让最大化窗体四周各保留 50px。</li>
+    </ul>
+</section>
+}

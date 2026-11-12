@@ -55,3 +55,18 @@
 
 }
 
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>捕获页面全局 JavaScript 错误，并显示错误信息，区分本地脚本和后台返回脚本。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>分别触发脚本错误</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="客户端的JavaScript错误">客户端的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="Button4" title="服务器返回的JavaScript错误">服务器返回的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>window.onerror</code>（<strong class="example-control-reference" data-example-control="Button1" title="客户端的JavaScript错误">客户端的JavaScript错误</strong>）：捕获未处理的 JavaScript 错误并显示信息，不把异常当作正常业务结果。</li>
+    </ul>
+</section>
+}

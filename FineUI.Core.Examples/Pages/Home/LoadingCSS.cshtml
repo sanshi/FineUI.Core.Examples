@@ -68,7 +68,7 @@
     @{
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("<ul class=\"main\">");
+        sb.Append("<ul class=\"main\" id=\"exampleConfigurationContent\">");
         for (int i = 1; i <= 6; i++)
         {
             sb.AppendFormat("<li class=\"\"><div class=\"f-widget-content\"><div class=\"f-loading-css f-loading-css-{0}\"></div></div><div class=\"title\">{0}</div></li>", i);
@@ -116,4 +116,18 @@
             });
         });
     </script>
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>预览六种纯 CSS 加载动画，并保存当前选择供后续页面加载使用。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>选择加载动画</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="exampleConfigurationContent" title="配置示例">加载动画列表</strong>点击编号 3。<br />结果：当前项切换为第 3 种动画，选择写入 Loading_CSS Cookie；刷新页面后仍保持该选中项。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Loading_CSS</code>（<strong class="example-control-reference" data-example-control="exampleConfigurationContent" title="配置示例">配置示例</strong>）：通过 Cookie 保存选中的动画编号，页面重新加载时读取；不是 GIF 图片资源。</li>
+    </ul>
+</section>
 }

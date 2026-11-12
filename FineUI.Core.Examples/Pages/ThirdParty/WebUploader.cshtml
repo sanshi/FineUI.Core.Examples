@@ -222,3 +222,19 @@
         });
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把 WebUploader 上传进度与 FineUI 表格结合，演示选文件、上传和删除。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>上传与删除文件</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="btnSelectFiles" title="选择文件上传">选择文件上传</strong>，选择符合限制的非空文件。<br />结果：浏览器把文件加入上传列表并显示进度；服务器接收成功后行内状态更新。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="btnDelete" title="删除选中文件">删除选中文件</strong>。<br />结果：未选中记录时提示先选择；选中后需要确认，确认后删除对应文件记录。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>WebUploader.create</code>（<strong class="example-control-reference" data-example-control="Grid1" title="文件上传">文件上传</strong>）：本页为每个上传区域建立独立实例，配置上传地址、文件类型和大小限制。</li>
+        <li><code>uploadProgress / uploadSuccess</code>（<strong class="example-control-reference" data-example-control="Grid1" title="文件上传">文件上传</strong>）：把上传进度和结果反馈到对应表格行；实际文件是否成功保存以服务器结果为准。</li>
+    </ul>
+</section>
+}

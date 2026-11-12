@@ -47,17 +47,17 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示把起止日期字段放在表格工具栏中，先验证日期再加载示例数据。</p>
-    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>验证日期并加载数据</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>验证日期并加载数据</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="btnSearch" title="查询">查询</strong>。<br />结果：日期为空或结束日期不大于开始日期时显示验证错误，不继续执行查询按钮处理。</li>
         <li>将<strong class="example-control-reference" data-example-control="dpStartDate" title="第 1 个日期选择框（销毁统计时间段）">第 1 个日期选择框（销毁统计时间段）</strong>设为<code>2026-06-10</code>，将第二个日期字段设为<code>2026-06-11</code>，再点击<strong class="example-control-reference" data-example-control="btnSearch" title="查询">查询</strong>。<br />结果：验证通过后才回发，后台把示例数据绑定到表格；本页未按日期条件查询数据库。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnClearDate" title="重置起止时间">重置起止时间</strong>。<br />结果：两个日期恢复初始状态，同时清空本页表格数据。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="dpEndDate" title="第 2 个日期选择框（销毁统计时间段）">第 2 个日期选择框（销毁统计时间段）</strong>）：设为<code>dpStartDate</code>，结束日期以开始日期为比较对象。</li>
-        <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="dpEndDate" title="第 2 个日期选择框（销毁统计时间段）">第 2 个日期选择框（销毁统计时间段）</strong>）：设为<code>GreaterThan</code>，结束日期必须大于开始日期。</li>
-        <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSearch" title="查询">查询</strong>）：设为<code>Toolbar1</code>，查询按钮先验证工具栏中的日期字段。</li>
+        <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="dpEndDate" title="第 2 个日期选择框（销毁统计时间段）">第 2 个日期选择框（销毁统计时间段）</strong>）：初始为<code>dpStartDate</code>，结束日期以开始日期为比较对象。</li>
+        <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="dpEndDate" title="第 2 个日期选择框（销毁统计时间段）">第 2 个日期选择框（销毁统计时间段）</strong>）：初始为<code>GreaterThan</code>，结束日期必须大于开始日期。</li>
+        <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSearch" title="查询">查询</strong>）：初始为<code>Toolbar1</code>，查询按钮先验证工具栏中的日期字段。</li>
     </ul>
 </section>
 }

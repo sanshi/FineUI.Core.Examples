@@ -139,17 +139,17 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示收集移动表单各字段的错误，按自定义列表显示，并只在验证通过后处理登录。</p>
-    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>集中列出字段错误</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>集中列出字段错误</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>。<br />结果：空表单显示电子邮箱和密码的必填错误列表，不继续回发。</li>
         <li>在<strong class="example-control-reference" data-example-control="tbxUserName" title="电子邮箱">电子邮箱</strong>输入<code>x</code>，密码输入<code>y</code>，再次登录。<br />结果：错误列表改为邮箱格式错误，不把已填写的邮箱继续报告为必填错误。</li>
         <li>邮箱改为<code>admin&#64;fineui.com</code>，密码改为<code>admin</code>后登录。<br />结果：浏览器验证通过后才回发，后台读取密码并显示本页示例结果。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>RegexPattern</code>（<strong class="example-control-reference" data-example-control="tbxUserName" title="电子邮箱">电子邮箱</strong>）：设为<code>EMAIL</code>，邮箱字段使用本页邮箱格式规则。</li>
+        <li><code>RegexPattern</code>（<strong class="example-control-reference" data-example-control="tbxUserName" title="电子邮箱">电子邮箱</strong>）：初始为<code>EMAIL</code>，邮箱字段使用本页邮箱格式规则。</li>
         <li><code>isValid()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：先检查字段，再由本页处理函数收集错误信息。</li>
-        <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：设为<code>onLoginClick</code>，登录入口在浏览器控制是否继续执行后续处理。</li>
+        <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnLogin" title="登录">登录</strong>）：初始为<code>onLoginClick</code>，登录入口在浏览器控制是否继续执行后续处理。</li>
     </ul>
 </section>
 }

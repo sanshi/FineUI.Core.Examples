@@ -70,18 +70,18 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示不可由用户选择的节点仍可由后台设置为初始选中。</p>
-    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>区分展开与选择</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>区分展开与选择</h3>
     <ol>
         <li>初次打开时核对<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>的<code>河南省</code>。<br />结果：河南省已由后台设为选中，即使它不允许用户主动选择。</li>
         <li>在<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>点击河南省，再点击可选的子节点。<br />结果：不可选目录不会因点击而新增选择，可选子节点正常加入当前选择集合。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul>
         <li>本示例默认禁用[河南省]和[安徽省]两个节点，默认选中[河南省]和[驻马店市]两个节点。</li>
     </ul>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：设为<code>true</code>，允许当前选择包含多个节点。</li>
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：初始为<code>true</code>，允许当前选择包含多个节点。</li>
         <li><code>Selectable</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control="Tree1" title="树控件">树控件</strong>）：指定节点设为 <code>false</code>，禁止用户把它加入选择；不取消后台明确设置的初值。</li>
     </ul>
 </section>

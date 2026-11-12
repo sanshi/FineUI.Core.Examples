@@ -17,22 +17,24 @@
             <f:ChartSeries Key="temperature" Type="Line" Name="Temperature" DataValueField="Temperature" YAxisIndex="1" />
         </Series>
     </f:Chart>
-    <p>蒸发量和降水量共用左侧毫升轴，温度折线读取右侧摄氏度轴。<a href="https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li>
-                <code>&lt;YAxis&gt;</code>、<code>YAxisIndex="1"</code>
-                两组柱形使用默认的第 0 轴，温度折线使用第 1 轴。
-            </li>
-            <li>
-                <code>Min="0"</code>、<code>Max="25"</code>、<code>Interval="5"</code>
-                右侧温度轴从 0 到 25，每 5 度一个刻度。左侧水量轴从 0 到 250，每 50 毫升一个刻度。
-            </li>
-            <li>
-                <code>AxisPointerType="cross"</code>
-                悬停时显示十字提示线，可同时查看当天柱形和折线的数据。
-            </li>
-        </ul>
-    </section>
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把柱状系列与折线系列组合，并为温度折线使用单独的数值轴。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照折柱混合</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control="ChartBarMixLineBar" title="图表">图表</strong>中的分类、数值和形状。<br />结果：蒸发量和降水量共用左侧毫升轴，温度折线读取右侧摄氏度轴。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <a href="https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code> / YAxisIndex</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartBarMixLineBar" title="图表">图表</strong>）：初始为 <code>1</code>，两组柱形使用默认的第 0 轴，温度折线使用第 1 轴。</li>
+        <li><code>Min / Max / Interval</code>（<strong class="example-control-reference" data-example-control="ChartBarMixLineBar" title="图表">图表</strong>）：初始分别为 <code>0</code>、<code>25</code>、<code>5</code>，右侧温度轴从 0 到 25，每 5 度一个刻度。左侧水量轴从 0 到 250，每 50 毫升一个刻度。</li>
+        <li><code>AxisPointerType</code>（<strong class="example-control-reference" data-example-control="ChartBarMixLineBar" title="图表">图表</strong>）：初始为 <code>cross</code>，悬停时显示十字提示线，可同时查看当天柱形和折线的数据。</li>
+    </ul>
+</section>
 }

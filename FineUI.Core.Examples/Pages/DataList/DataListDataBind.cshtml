@@ -24,15 +24,15 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示把对象数据绑定为列表，重新加载时替换项目，追加时保留已有项目。</p>
-    <h3><i class="f-iconfont f-iconfont-refresh" aria-hidden="true"></i>区分重新加载与追加</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>区分重新加载与追加</h3>
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="btnAppend" title="追加两个城市">追加两个城市</strong>。<br />结果：在原有三个城市后新增深圳和杭州，数据数量增加两个；再次追加使用新的稳定项值。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnReload" title="重新加载">重新加载</strong>。<br />结果：用重新准备的三项数据替换列表，并把数量与追加批次重置。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：设为<code>Name</code>，使用 <code>Name</code> 字段作为显示文字。</li>
-        <li><code>DataValueField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：设为<code>Id</code>，使用 <code>Id</code> 字段作为稳定的项目值。</li>
+        <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：初始为<code>Name</code>，使用 <code>Name</code> 字段作为显示文字。</li>
+        <li><code>DataValueField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：初始为<code>Id</code>，使用 <code>Id</code> 字段作为稳定的项目值。</li>
         <li><code>LoadData()</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：替换当前项目集合。</li>
         <li><code>AppendData()</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：在末尾追加项目，不清除已有列表。</li>
     </ul>

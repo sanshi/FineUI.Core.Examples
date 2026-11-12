@@ -12,6 +12,7 @@ namespace FineUI.Core.Examples.Pages.Window
 		protected FineUI.Core.ToolbarText ToolbarText4;
 		protected FineUI.Core.ToolbarSeparator ToolbarSeparator1;
 		protected FineUI.Core.Button Button1;
+		protected FineUI.Core.Toolbar ToolbarExample2;
 		protected FineUI.Core.Button btnChangeText;
 		protected FineUI.Core.Button btnClose;
 	}

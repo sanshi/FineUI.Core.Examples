@@ -28,12 +28,21 @@
         </Items>
     </f:Panel>
 
+
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
     <p>点击折线上的日期点，右侧表单显示当天的访问量、转化量和转化率。</p>
-    <section aria-label="关键属性">
-        <p><strong>关键属性</strong></p>
-        <ul>
-            <li><code>DataIDField="Id"</code> 以完整日期识别记录，例如 2026-09-03。</li>
-            <li><code>OnPointClick</code> 按日期读取完整记录，更新只读表单中的 Label。</li>
-        </ul>
-    </section>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>读取某一天的详情</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control="ChartDailyVisits" title="图表">图表</strong>中的一个日期数据点。<br />结果：后台按该日期更新右侧详情中的日期、<strong class="example-control-reference" data-example-control="labVisitCount" title="访问量">访问量</strong>、转化量和<strong class="example-control-reference" data-example-control="labConversionRate" title="转化率">转化率</strong>；点击另一点可再次更新。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="ChartDailyVisits" title="图表">图表</strong>）：初始为 <code>Id</code>，以完整日期识别记录，例如 2026-09-03。</li>
+        <li><code>OnPointClick</code>（<strong class="example-control-reference" data-example-control="ChartDailyVisits" title="图表">图表</strong>）：按日期读取完整记录，更新只读表单中的 Label。</li>
+    </ul>
+</section>
 }

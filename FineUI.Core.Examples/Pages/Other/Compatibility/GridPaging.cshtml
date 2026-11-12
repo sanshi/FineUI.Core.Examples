@@ -14,10 +14,26 @@
             F.RenderField().HeaderText("编号").DataField("Id").Width(100),
             F.RenderField().HeaderText("客户名称").DataField("Name").ExpandUnusedSpace(true)))
     <f:Label ID="labResult" Text="第 1 页" />
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>把表格分页请求交给旧 OnPost，按页读取数据并返回当前页信息。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>中，点击下一页，再点击上一页。<br />结果：每页显示相应的 5 条记录，结果从第 1 页变为第 2 页再恢复。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul class="compatibility-notes">
         <li>分页沿用 RazorPages 的页码和字段参数，通过 UIHelper 加载当前页数据。</li>
         <li>首屏在 OnGet 查询，翻页时只在 OnPostPageChanged 查询对应页。</li>
         <li>示例使用 15 条内存记录模拟数据库分页。</li>
         <li>固定列结构使用流式 API，不必为每个列单独设置 ID。</li>
     </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>IsDatabasePaging / PageSize / OnPageIndexChanged</code>（<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+    </ul>
+</section>
 }

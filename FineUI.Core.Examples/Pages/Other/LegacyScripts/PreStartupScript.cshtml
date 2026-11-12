@@ -10,8 +10,24 @@
     <f:Button ID="btnRun" Text="追加回发启动记录" OnClick="btnRun_Click" />
     <br /><br />
     <f:Label ID="labResult" />
+
+}
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>对照预启动脚本、首屏启动脚本和回发启动脚本的执行顺序。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="btnRun" title="追加回发启动记录">追加回发启动记录</strong>中，查看初始记录，再点击<strong class="example-control-reference" data-example-control="btnRun" title="追加回发启动记录">追加回发启动记录</strong>。<br />结果：初始为首屏预启动 → 首屏启动；点击后只追加回发启动，预启动不重复。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul class="compatibility-notes">
         <li>RegisterPreStartupScript 是已废弃的首屏接口，只在页面初次输出时准备数据；回发使用 RegisterStartupScript。</li>
         <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
     </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>RegisterPreStartupScript / RegisterStartupScript</code>（<strong class="example-control-reference" data-example-control="btnRun" title="追加回发启动记录">追加回发启动记录</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+    </ul>
+</section>
 }

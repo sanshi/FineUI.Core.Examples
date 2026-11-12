@@ -60,20 +60,20 @@
 @section exampleDescription {
 <section aria-label="页面描述">
     <p>演示拖动标签调整顺序、用滚轮浏览溢出的标题，并区分按位置和固定 <code>ID</code> 切页。</p>
-    <h3><i class="f-iconfont f-iconfont-sort" aria-hidden="true"></i>排序后继续操作</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>排序后继续操作</h3>
     <ol>
         <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>的<code>工作草稿</code>输入文字，再把<code>客户档案</code>标题拖到最前面。<br />结果：只调整标签顺序，原标签中的草稿内容继续保留。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnFirst" title="打开排序后的第一项">打开排序后的第一项</strong>。<br />结果：后台按新顺序激活第一项，结果文字显示客户档案。</li>
         <li>点击<strong class="example-control-reference" data-example-control="btnHome" title="回到工作首页">回到工作首页</strong>。<br />结果：仍按固定页签 <code>ID</code> 回到工作首页，不受拖动后的序号影响。</li>
         <li>把鼠标移到标题栏后滚动滚轮。<br />结果：标题超出宽度时可以沿标题栏浏览，内容区域不被替换。</li>
     </ol>
-    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
     <ul>
         <li>在首页填写草稿，将“客户档案”拖到“工作首页”前，再点击“打开排序后的第一项”。点击“回到工作首页”可继续编辑草稿。把鼠标放在标题上滚动可浏览后面的页签，点击标题才会切页。</li>
     </ul>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableTabMove</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：设为<code>true</code>，允许拖动标题改变标签顺序。</li>
+        <li><code>EnableTabMove</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：初始为<code>true</code>，允许拖动标题改变标签顺序。</li>
         <li><code>Tabs</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：后台读取的集合顺序与浏览器调整后的顺序一致。</li>
         <li><code>ActiveTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：按固定页签标识激活目标页，与按索引激活区分。</li>
     </ul>
