@@ -37,8 +37,12 @@
         var availableHeight = targetDocument.documentElement.clientHeight;
         var margin = 10;
 
-        // 字段可能位于带滚动条的面板内，能否完整显示要同时受内层面板和 iframe 视口的尺寸限制。
+        // 页面根节点按 iframe 的真实视口计算。绝对定位的面板可能铺满 548px，而 body 内容盒只有 48px，不能据此判定面板放不下。
+        // 字段位于内层滚动面板时，再按该面板的可视范围限制尺寸。
         for (var parent = target.parentElement; parent; parent = parent.parentElement) {
+            if (parent === targetDocument.body || parent === targetDocument.documentElement) {
+                break;
+            }
             var parentStyle = targetWindow.getComputedStyle(parent);
             if (/(auto|scroll|hidden|clip)/.test(parentStyle.overflowX) && parent.clientWidth > 0) {
                 availableWidth = Math.min(availableWidth, parent.clientWidth);
@@ -62,11 +66,12 @@
             target.style.setProperty(name, Math.max(margin, existingMargin) + 'px', 'important');
         });
         try {
-            // 整个表单高于可视区域时优先露出上边缘，不能为了显示底部而把标题滚到视口上方。
+            // 548px 的面板恰好放进 548px 的 iframe 时，不能扣掉留白后将它误判为超大控件。
+            // 只有控件本身超出可视区域才强制对齐上边缘；其余就近滚动，避免带动已完整显示的外层框架。
             target.scrollIntoView({
                 behavior: 'instant',
-                block: bounds.height > availableHeight - margin * 2 ? 'start' : 'nearest',
-                inline: bounds.width > availableWidth - margin * 2 ? 'start' : 'nearest'
+                block: bounds.height > availableHeight ? 'start' : 'nearest',
+                inline: bounds.width > availableWidth ? 'start' : 'nearest'
             });
         } finally {
             originalMargins.forEach(function (original) {
