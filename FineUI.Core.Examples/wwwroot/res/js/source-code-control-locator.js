@@ -55,7 +55,7 @@
             return { name: name, value: target.style.getPropertyValue(name), priority: target.style.getPropertyPriority(name) };
         });
 
-        // 外框向外延伸 4px。滚动时至少留 10px，例如标题框原来贴在 y=0，定位后应从 y=10 开始。
+        // 有滚动空间时至少留 10px，例如标题框原来贴在 y=0，定位后应从 y=10 开始，便于辨认整个控件。
         // scroll-margin 只影响滚动对齐，不占布局空间；保留页面原有的更大边距，并在滚动后恢复行内声明。
         marginNames.forEach(function (name) {
             var existingMargin = parseFloat(computedStyle.getPropertyValue(name)) || 0;

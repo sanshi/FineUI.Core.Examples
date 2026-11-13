@@ -1,6 +1,6 @@
 /*
  * 源码查看器中的控件定位样式，由 source-code-control-locator.js 按需加载。
- * 描述区使用带下划线的引用按钮；示例区使用不占布局空间的高亮外框和居中提示。
+ * 描述区使用带下划线的引用按钮；示例区使用不占布局空间的内侧高亮框和居中提示。
  * 示例页面的引用标记仍使用 example-control-reference 和 data-example-control。
  */
 
@@ -34,8 +34,10 @@
     z-index: 2147483646;
     box-sizing: border-box;
     border-radius: 3px;
-    outline: 2px solid var(--f-primary-background-color);
-    outline-offset: 2px;
+    /* 1px 边线紧贴控件边缘，主题色阴影向内渐淡；控件占满 iframe 时也不会被裁剪。 */
+    outline: 1px solid var(--f-primary-background-color);
+    outline-offset: -1px;
+    box-shadow: inset 0 0 8px 2px color-mix(in srgb, var(--f-primary-background-color) 55%, transparent);
     pointer-events: none;
 }
 
