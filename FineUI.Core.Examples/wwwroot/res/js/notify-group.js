@@ -1,6 +1,6 @@
 /**
  * 把连续弹出的通知按高度排成一组，关闭其中一条时自动补齐空位。
- * 由消息分类中的通知分组示例按需引入，依赖 FineUI、jQuery 及 notify-group 对应样式。
+ * 由消息分类中的通知分组示例按需引入，并配合 notify-group 对应样式。
  * 页面调用 showNotifyGroup(options, newestOnTop)，options 是 F.notify 的配置；true 表示新消息放最上方，否则追加到底部。
  * 本文件维护当前页面自己的通知队列，引入时不自动弹出消息。
  */

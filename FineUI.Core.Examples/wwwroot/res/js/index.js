@@ -1,6 +1,6 @@
 /**
  * 各类项目入口页共用的导航行为：连接左侧菜单与主选项卡，折叠侧边栏，刷新、打开或关闭业务页。
- * 由 Examples、EmptyProject、QuickStart 和 AppBox 的框架入口加载，依赖 FineUI、jQuery、入口页 PARAMS 及侧边栏宽度 CSS 变量。
+ * 由 Examples、EmptyProject、QuickStart 和 AppBox 的框架入口加载，使用入口页 PARAMS 及侧边栏宽度 CSS 变量。
  * PARAMS 保存当前页面真实控件 ID，子页可通过父框架调用 addExampleTab、activeTabAndRefresh 等函数。
  * F.ready 中只初始化一次菜单与选项卡；项目可用 configureIndexPage 和 onIndexPageReady 扩展该过程。
  */

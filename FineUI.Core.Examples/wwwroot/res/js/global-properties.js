@@ -1,6 +1,6 @@
 /**
  * 全局配置查询页的交互：按分类和关键词筛选配置，展开详情，并生成当前产品对应的配置写法。
- * 由 Config/GlobalProperties 等配置清单页面引入，依赖 FineUI、jQuery 和 configPropertyCatalog 元素。
+ * 由 Config/GlobalProperties 等配置清单页面引入，使用 configPropertyCatalog 元素读取页面配置。
  * 该元素通过 data-grid、data-category、data-search、data-count 指定实际控件 ID，data-format 指定配置语法；清单来自自身 JSON 或 data-url。
  * 引入后由 F.ready 自动初始化一次；页面将 onConfig 开头的函数绑定到控件事件，将 ConfigPropertyQuery 的渲染函数绑定到表格列。
  */

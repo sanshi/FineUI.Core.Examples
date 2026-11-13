@@ -1,6 +1,6 @@
 /**
  * 表格卡片模式示例的共用渲染函数，把同一行记录显示为字段卡片，或带头像、状态和成绩的资料卡片。
- * 由 GridCard 下的示例按需引入，依赖 FineUI、jQuery 和页面中的卡片样式。
+ * 由 GridCard 下的示例按需引入，并配合页面中的卡片样式。
  * 通过 CardRendererFunction="renderCard"、CardRendererFunction="renderCardWithAvatar" 或对应的 cardRenderer 配置使用，框架逐行传入 params。
  * 头像卡片的查看详情链接仅演示携带用户编号，示例项目没有提供对应的业务详情页。
  */

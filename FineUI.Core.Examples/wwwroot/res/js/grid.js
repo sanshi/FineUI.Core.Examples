@@ -1,6 +1,6 @@
 /**
  * 学生表格示例的共用显示与选择辅助函数，包括性别、专业链接、分组图标、徽章、头像、评分、行扩展和选择结果通知。
- * 由各表格示例按需引入 res/js/grid.js，依赖 FineUI 和 jQuery；加载时同时登记本文件使用的中英文资源键。
+ * 由各表格示例按需引入 res/js/grid.js，加载时同时登记本文件使用的中英文资源键。
  * 列通过 RendererFunction 或 renderer 引用对应函数，选择按钮通过点击回调调用 notifySelectedRows(gridId)。
  * 渲染函数要求页面提供相应的数据字段；表格 ID 作为参数传入，Pro 使用服务器输出的 ClientID。
  */

@@ -1,6 +1,6 @@
 /**
  * 通用通知辅助函数，供移动示例、错误提示及其他业务页面显示居中的短消息。
- * 页面在 FineUI 加载后引入 res/js/common.js，再调用 showCenterNotify(message, messageIcon)。
+ * 页面引入 res/js/common.js，再调用 showCenterNotify(message, messageIcon)。
  * 本文件只声明函数，不会在加载时创建通知；通知显示三秒，也可点击遮罩关闭。
  */
 

@@ -1,6 +1,6 @@
 /**
  * 页面描述和源代码查看器的共同入口，负责打开、关闭、跟随活动示例，以及连接示例与源码页。
- * 由示例公共布局、框架入口、源码页及原生示例辅助页加载，依赖 FineUI；用 FineUI 或 F 获取运行时，兼容释放全局 F 的示例。
+ * 由示例公共布局、框架入口、源码页及原生示例辅助页加载；用 FineUI 或 F 获取运行时，兼容释放全局 F 的示例。
  * 示例或框架用 meta[name="fineui-example-source"] 指定源码查看页；框架另通过 PARAMS 指定工作区和详情 Region，源码页使用 fineui-source-code-viewer 元信息区分自身角色。
  * 框架工具调用 FineUISourceCodeViewer.toggle()，宽度足够时显示底部或右侧 Region；独立示例由自动创建的右下角按钮打开 F.Window。
  * 源码页通过父页面 FineUISourceCodeViewer.connect(window) 取得描述与关闭操作，Region 中有引用时再加载 source-code-control-locator.js。
