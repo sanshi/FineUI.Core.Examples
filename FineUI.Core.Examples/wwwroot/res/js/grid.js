@@ -1,3 +1,9 @@
+/**
+ * 学生表格示例的共用显示与选择辅助函数，包括性别、专业链接、分组图标、徽章、头像、评分、行扩展和选择结果通知。
+ * 由各表格示例按需引入 res/js/grid.js，依赖 FineUI 和 jQuery；加载时同时登记本文件使用的中英文资源键。
+ * 列通过 RendererFunction 或 renderer 引用对应函数，选择按钮通过点击回调调用 notifySelectedRows(gridId)。
+ * 渲染函数要求页面提供相应的数据字段；表格 ID 作为参数传入，Pro 使用服务器输出的 ClientID。
+ */
 
 // 多语言支持
 window._R = F.getResource;
@@ -15,7 +21,10 @@ F.setResources({
     "GridMajor": "专业"
 });
 
-// 表格列 - 用户状态
+/**
+ * 把学生状态 1、2、3、4 渲染为优秀、良好、补考、重修徽章，并为部分状态增加动画。
+ * 作为状态列的 RendererFunction 或 renderer；value 为状态值，返回可直接显示的 jQuery 元素。
+ */
 function renderStatus(value, params) {
     value = parseInt(value, 10);
 
@@ -54,7 +63,10 @@ function renderStatus(value, params) {
         .append($('<span>').text(badgeText));
 }
 
-// 表格列 - 用户基本信息
+/**
+ * 把头像、姓名、性别和入学年份组合为一块用户资料。
+ * 作为资料列的渲染函数；params.rowData.attrs 须提供 Avatar、Name、Gender、EntranceYear，value 不参与显示。
+ */
 function renderUserProfile(value, params) {
     var rowAttrs = params.rowData.attrs;
     var desc = renderGender(rowAttrs['Gender']) + ' · 入学年份：' + rowAttrs['EntranceYear'];
@@ -68,7 +80,10 @@ function renderUserProfile(value, params) {
             .append($('<div>').addClass('desc').text(desc)));
 }
 
-// 表格列 - 评分
+/**
+ * 以只读点赞图标显示评分，用户不能在该显示区域改变分数。
+ * 作为评分列渲染函数传入数值 value，返回 F.rateHtml 生成的内容。
+ */
 function renderRate1(value) {
     return F.rateHtml(value, {
         readonly: true,
@@ -78,12 +93,18 @@ function renderRate1(value) {
 
 
 
-// 文本 - 性别
+/**
+ * 把 1 或男转换为当前语言的男性文字，其余值显示女性文字。
+ * 可作为性别列渲染函数，也可由其他渲染函数调用 renderGender(value)。
+ */
 function renderGender(value, params) {
     return (value == 1 || value === '男') ? _R('Male') : _R('Female');
 }
 
-// 超链接标签 - 所学专业
+/**
+ * 把非空专业名称显示为新窗口打开的搜索链接，并提供完整文字提示。
+ * 作为专业列渲染函数；名称分别按 HTML 和 URL 规则编码，空字符串返回空内容。
+ */
 function renderMajor(value, params) {
     if (value === '') {
         return ''; // 如果专业值为空，则不显示超链接
@@ -97,7 +118,10 @@ function renderMajor(value, params) {
     });
 }
 
-// 图片标签 - 分组
+/**
+ * 按分组值显示 res/images/16 下的对应图标，空字符串不显示图片。
+ * 作为分组列渲染函数；例如值 1 对应 1.png，返回图片的 jQuery 元素。
+ */
 function renderGroup(value, params) {
     if (value === '') {
         return ''; // 如果分组值为空，则不显示图标
@@ -109,7 +133,10 @@ function renderGroup(value, params) {
     });
 }
 
-// HTML - 行扩展列
+/**
+ * 生成一行的姓名和简介详情，放在该行的展开区域。
+ * 绑定到行扩展列；value 是简介，params.rowData.values.Name 是姓名，本例按 HTML 组合演示内容。
+ */
 function renderExpander(value, params) {
     var rowData = params.rowData;
     return $('<div>').addClass('expander')
@@ -117,14 +144,20 @@ function renderExpander(value, params) {
         .append($('<p>').html('<strong>' + _R('IntroPrefix') + '</strong>' + value));
 }
 
-// 超链接标签 - 删除图标
+/**
+ * 生成带删除图标的行内链接，供页面自己的点击处理识别。
+ * 作为操作列渲染函数使用；本函数只生成入口，点击后的确认、回发或删除由页面另行处理。
+ */
 function renderDeleteAction(value, params) {
     return $('<a>').addClass('action-btn delete').attr('href', '#')
         .append($('<img>').addClass('f-grid-cell-icon').attr('src', F.resolveUrl('/res/icon/delete.png')).attr('alt', 'Delete'));
 }
 
 
-// 公共方法 - 显示通知框
+/**
+ * 在顶层页面上方显示选择结果等长消息，不额外占用图标空间。
+ * 由本文件的选择结果函数调用，也可调用 showNotify(content)；要显示已生成的表格 HTML 时传入 F.rawHtml(html)。
+ */
 function showNotify(content) {
     // 消息正文可能会比较长，所以不显示前面的图标（messageIcon: ''）
     F.notify({
@@ -137,21 +170,20 @@ function showNotify(content) {
     });
 }
 
-// 「选中了哪些行」按钮的 click 事件处理函数（标签上写 ClickHandler="onNotifySelectedRowsClick"）。
-//
-// 前提就写死在这一行里：本页有且只有一个表格，它的 id 就是 Grid1。示例页面都满足这个前提，所以能共用
-// 这一个函数；自己的页面不满足时别改这个共享文件，在页面脚本区包一层，把表格的客户端 id 传给
-// 下面的 notifySelectedRows。
-//
-// FineUI.Pro 还多一条前提：它的客户端 id 是渲染后的 ClientID，而每个控件都是命名容器——表格只要嵌在
-// 别的控件里（面板 / 窗体 / 表单 / 选项卡），或者页面用了母版页、用户控件，id 就不再是 Grid1，
-// 这个函数直接不适用。此时在页面里包一层，把渲染后的 id 传进来。
+/**
+ * 为客户端 ID 恰好是 Grid1 的单表格页面显示当前选择。
+ * 按钮可声明 ClickHandler="onNotifySelectedRowsClick"；其他 ID 请在页面回调中调用 notifySelectedRows(actualClientId)。
+ * Pro 的嵌套控件应使用服务器输出的 ClientID，不拼接面板或表单前缀。
+ */
 function onNotifySelectedRowsClick(event) {
     notifySelectedRows('Grid1');
 }
 
-// 公共方法 - 通过消息框展示表格选中的行
-// 参数 gridId 是表格的客户端 id：各端页面上写什么 id 就是什么；FineUI.Pro 在命名容器里要传 ClientID。
+/**
+ * 读取表格当前选中行，用通知表格显示主键、文字及已存在的性别、专业列；未选择时给出提示。
+ * 调用 notifySelectedRows(gridId, additionalColumns)；gridId 为实际客户端 ID，additionalColumns 可省略。
+ * 附加列示例：[{ columnId: 'AtSchool', text: '是否在校' }]；读取当前行数据，不向后台提交或保存。
+ */
 function notifySelectedRows(gridId, additionalColumns) {
     var grid = F(gridId);
     additionalColumns = additionalColumns || [];

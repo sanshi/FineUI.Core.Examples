@@ -1,11 +1,23 @@
+/**
+ * 表格卡片模式示例的共用渲染函数，把同一行记录显示为字段卡片，或带头像、状态和成绩的资料卡片。
+ * 由 GridCard 下的示例按需引入，依赖 FineUI、jQuery 和页面中的卡片样式。
+ * 通过 CardRendererFunction="renderCard"、CardRendererFunction="renderCardWithAvatar" 或对应的 cardRenderer 配置使用，框架逐行传入 params。
+ * 头像卡片的查看详情链接仅演示携带用户编号，示例项目没有提供对应的业务详情页。
+ */
 
+/**
+ * 为卡片示例的性别列把数值 1 显示为男，其余显示为女。
+ * 配置为该列的渲染函数，renderCard 可通过 params.renderer 取得这个显示结果。
+ */
 function renderGender(value) {
     return value == 1 ? '男' : '女';
 }
 
-// https://fineui.com/js/api/global.html##F_Grid_cardRenderer
-// params.rowData: 当前行数据
-// params.renderer: 获取列渲染值的回调函数（如果列定义了渲染函数，通过此参数获取列渲染之后的值）
+/**
+ * 按表格现有列定义生成编号、姓名、日期等字段卡片，复用各列已配置的格式化结果。
+ * 作为 cardRenderer 或 CardRendererFunction 使用；params.rowData 是当前行，params.renderer(columnId) 取得对应列显示内容。
+ * 参数参考：https://fineui.com/js/api/global.html##F_Grid_cardRenderer
+ */
 function renderCard(params) {
     var rowId = params.rowData.id;
     var renderer = params.renderer;
@@ -24,6 +36,10 @@ function renderCard(params) {
 }
 
 
+/**
+ * 生成包含头像、状态徽章、语文、数学和总分的学生资料卡片。
+ * 作为卡片渲染函数；行 attrs 提供 Avatar、Name、Status、EntranceYear，values 提供 Major、ChineseScore、MathScore、TotalScore。
+ */
 function renderCardWithAvatar(params) {
     var rowId = params.rowData.id;
 
@@ -66,7 +82,10 @@ function renderCardWithAvatar(params) {
             .append(badgeEl));
 
 
-    // 创建成绩子元素
+    /**
+     * 为当前卡片生成一个带科目样式的成绩块。
+     * 仅在头像卡片内部调用，例如 createScoreEl(rowValues.ChineseScore, 'chinese')；scoreType 同时决定样式与标题。
+     */
     function createScoreEl(scoreValue, scoreType) {
         var scoreTitle = '';
         if (scoreType === 'chinese') {

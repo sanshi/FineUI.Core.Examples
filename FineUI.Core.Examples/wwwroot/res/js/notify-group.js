@@ -1,3 +1,9 @@
+/**
+ * 把连续弹出的通知按高度排成一组，关闭其中一条时自动补齐空位。
+ * 由消息分类中的通知分组示例按需引入，依赖 FineUI、jQuery 及 notify-group 对应样式。
+ * 页面调用 showNotifyGroup(options, newestOnTop)，options 是 F.notify 的配置；true 表示新消息放最上方，否则追加到底部。
+ * 本文件维护当前页面自己的通知队列，引入时不自动弹出消息。
+ */
 
 // 通知对话框分组
 (function () {
@@ -6,7 +12,10 @@
     // _notifies: 存放当前正在显示的对话框列表
     var _orderNumber = 1, _notifySpace = 5, _notifies = [];
 
-    // 对话框关闭处理函数
+    /**
+     * 通知关闭时移出队列，把后续通知向上移动，消除留下的空位。
+     * 由 showNotifyGroup 登记为通知 hide 回调；this 是正在关闭的通知实例。
+     */
     function onNotifyHide() {
         // 先清空之前尚未完成的动画
         clearNotifiesAnimation();
@@ -33,7 +42,10 @@
         }
     }
 
-    // 所有对话框下移
+    /**
+     * 在顶部插入新通知前，把已有通知按新消息高度整体下移。
+     * 内部调用 moveNotifiesDown(newNotify, fn)；所有移动完成后执行 fn，再显示新消息，避免重叠。
+     */
     function moveNotifiesDown(newNotify, fn) {
         // 先清空之前尚未完成的动画
         clearNotifiesAnimation();
@@ -61,7 +73,10 @@
         }
     }
 
-    // 停止动画，并回调
+    /**
+     * 完成队列里尚未结束的位移动画，再按最终位置计算下一次排布。
+     * 由添加和关闭通知的内部流程调用，避免用户快速操作时使用动画中间位置。
+     */
     function clearNotifiesAnimation() {
         var count = _notifies.length;
         if (count) {
@@ -75,7 +90,10 @@
         }
     }
 
-    // 获取对话框元素的top属性
+    /**
+     * 计算追加到底部的新通知位置，包含已有消息高度和消息间距。
+     * 内部调用 calcNotifyTop()；队列为空时返回顶部预留的间距。
+     */
     function calcNotifyTop() {
         var top = _notifySpace;
         if (_notifies.length) {
@@ -85,7 +103,11 @@
         return top;
     }
 
-    // 公开方法
+    /**
+     * 创建一条分组通知，并根据插入方向维护已有通知的位置。
+     * 调用示例：showNotifyGroup({ message: '保存完成' }, true)。
+     * 会更新传入 options 的定位、样式和 hide 监听；newestOnTop 为 true 时先等待旧消息下移，再显示新消息。
+     */
     window.showNotifyGroup = function (options, newestOnTop) {
         // 创建一个消息对话框实例
         $.extend(options, {

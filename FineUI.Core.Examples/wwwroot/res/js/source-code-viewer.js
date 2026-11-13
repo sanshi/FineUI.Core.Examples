@@ -1,10 +1,22 @@
+/**
+ * 页面描述和源代码查看器的共同入口，负责打开、关闭、跟随活动示例，以及连接示例与源码页。
+ * 由示例公共布局、框架入口、源码页及原生示例辅助页加载，依赖 FineUI；用 FineUI 或 F 获取运行时，兼容释放全局 F 的示例。
+ * 示例或框架用 meta[name="fineui-example-source"] 指定源码查看页；框架另通过 PARAMS 指定工作区和详情 Region，源码页使用 fineui-source-code-viewer 元信息区分自身角色。
+ * 框架工具调用 FineUISourceCodeViewer.toggle()，宽度足够时显示底部或右侧 Region；独立示例由自动创建的右下角按钮打开 F.Window。
+ * 源码页通过父页面 FineUISourceCodeViewer.connect(window) 取得描述与关闭操作，Region 中有引用时再加载 source-code-control-locator.js。
+ * 脚本自动登记初始化和 Escape 处理，并用 localStorage 记录 Region 的展开状态、位置及用户拖动尺寸。
+ */
+
 (function () {
     'use strict';
     // noConflict 示例会把全局 F 恢复为原来的值；查看器持有框架本身，仍能创建窗口和操作选项卡。
     var F = window.FineUI || window.F;
     var viewerScriptUrl = document.currentScript.src;
 
-    // 纯 JavaScript 示例异步加载此资源；若页面已经就绪，立即初始化，避免入口和恢复监听缺失。
+    /**
+     * 在文档和 FineUI 都准备完成后初始化查看器，兼容异步加载脚本及已经就绪的页面。
+     * 内部调用 whenPageReady(callback)；HTML 仍在解析时先等待 DOMContentLoaded，避免错过后续内联脚本登记的控件。
+     */
     function whenPageReady(callback) {
         // HTML 尚未接收完整时，后面的内联脚本可能还没有登记创建控件的回调，先等页面解析完。
         if (document.readyState === 'loading') {
@@ -29,6 +41,10 @@
     }
 
 
+    /**
+     * 让源码页连接打开它的查看器，插入页面描述，并在 Region 中增加换位与关闭工具。
+     * 由 source 角色页面的就绪流程调用；独立打开源码页时没有父连接，仍保留原有源文件显示。
+     */
     function initializeSourcePage() {
         var tabsAddress = document.querySelector('meta[name="fineui-source-tabs"]');
         var tabs = F(tabsAddress ? tabsAddress.content : 'TabStrip1');
@@ -55,6 +71,10 @@
         document.title = '页面描述和源代码 · ' + connection.title;
         document.addEventListener('keydown', onSourcePageKeyDown);
 
+        /**
+         * 在聚合源码页按 Escape 时关闭与之关联的查看器。
+         * 源码页连接建立后登记到 document.keydown，通过本次 connection.close() 关闭。
+         */
         function onSourcePageKeyDown(event) {
             if (event.key === 'Escape') {
                 connection.close();
@@ -82,6 +102,10 @@
             tabs.doLayout();
         }
 
+        /**
+         * 根据详情区当前在下方或右侧，更新换位工具的方向图标、提示及可访问名称。
+         * 由源码页初始化或换位后调用；方向通过当前连接的 getPosition() 读取。
+         */
         function updatePositionTool() {
             var isBottom = connection.getPosition() === 'bottom';
             var label = isBottom ? '移到右侧' : '移到下方';
@@ -91,12 +115,20 @@
             tool.el.attr('aria-label', label);
         }
 
+        /**
+         * 把框架详情区从下方移到右侧，或从右侧移回下方，再更新工具提示。
+         * 绑定到 Region 源码选项卡的换位工具 click，通过当前连接调用 switchPosition()。
+         */
         function onPositionClick(event) {
             connection.switchPosition();
             updatePositionTool();
         }
     }
 
+    /**
+     * 让单个源文件 iframe 中的 Escape 也能关闭父级查看器。
+     * 仅在 file 角色页面登记到 keydown；父页须提供 FineUISourceCodeViewer.close。
+     */
     function onSourceFileKeyDown(event) {
         if (event.key === 'Escape' && parent !== window && parent.FineUISourceCodeViewer) {
             parent.FineUISourceCodeViewer.close();
@@ -128,11 +160,19 @@
     var pendingOpen = false;
     var preferenceKey = 'FineUI.SourceCodeViewer.' + sourceAddress.content;
 
+    /**
+     * 判断实际示例是否提供了非空页面描述，避免创建空白描述标签。
+     * 内部调用 needsDescriptionTab(exampleWindow)，读取示例的 example-description 模板。
+     */
     function needsDescriptionTab(exampleWindow) {
         var description = exampleWindow.document.getElementById('example-description');
         return description && description.content.textContent.trim().length > 0;
     }
 
+    /**
+     * 取得当前框架中承载主演示和详情区的工作区控件。
+     * 内部调用 getWorkspace()；通过 PARAMS.exampleWorkspace 查找，独立示例没有工作区时返回 null。
+     */
     function getWorkspace() {
         if (window.PARAMS && PARAMS.exampleWorkspace) {
             return F(PARAMS.exampleWorkspace);
@@ -140,12 +180,20 @@
         return null;
     }
 
+    /**
+     * 校验保存的尺寸，防止损坏或过大的存储值破坏详情布局。
+     * 恢复偏好时传入原值；仅接受 1 到 8192 的有限数值并取整，不合法时返回 undefined。
+     */
     function readPreferredSize(value) {
         return typeof value === 'number' && Number.isFinite(value) && value >= 1 && value <= 8192
             ? Math.round(value)
             : undefined;
     }
 
+    /**
+     * 恢复详情是否展开、所在方向和用户拖动尺寸，同时兼容旧存储键。
+     * 在框架工作区初始化后调用；存储不可用或内容损坏时继续采用当前默认值。
+     */
     function restorePreferences() {
         try {
             var preferences = JSON.parse(window.localStorage.getItem(preferenceKey)
@@ -164,6 +212,10 @@
         }
     }
 
+    /**
+     * 保存框架详情布局，让刷新后继续使用相同位置与尺寸。
+     * 打开、关闭、换位或拖动后调用；只保存偏好尺寸，不保存表单内容，也不把窗口缩小时的临时限制当成用户选择。
+     */
     function savePreferences() {
         if (!getWorkspace()) {
             return;
@@ -181,12 +233,20 @@
         }
     }
 
+    /**
+     * 把焦点交回打开查看器前仍然存在的元素，便于继续操作示例。
+     * 由关闭流程调用；原元素已从页面移除时不尝试聚焦。
+     */
     function restoreFocus() {
         if (returnFocus && returnFocus.isConnected) {
             returnFocus.focus();
         }
     }
 
+    /**
+     * 关闭当前详情承载控件，清除示例高亮，并保存关闭状态和恢复焦点。
+     * 由连接对象的 close、框架工具及 Escape 流程调用；只隐藏承载控件，保留已加载的源码 iframe 供下次使用。
+     */
     function closeDetails() {
         if (referenceController) {
             referenceController.clearHighlight();
@@ -199,6 +259,10 @@
         restoreFocus();
     }
 
+    /**
+     * 在当前详情区的显示和隐藏之间切换。
+     * 作为 FineUISourceCodeViewer.toggle() 对外提供，供框架的源码工具按钮调用。
+     */
     function toggleDetails() {
         if (pendingOpen || (detailsHost && !detailsHost.hidden)) {
             closeDetails();
@@ -207,6 +271,10 @@
         }
     }
 
+    /**
+     * 为独立示例或较窄的框架创建可调整大小的模态源码窗口。
+     * 由 ensureHost 首次需要 Window 时调用；窗口初始隐藏，真正打开时再设置并加载源码地址。
+     */
     function createWindow() {
         windowHost = F.create({
             type: 'Window',
@@ -243,6 +311,10 @@
         });
     }
 
+    /**
+     * 按工作区可用尺寸限制详情区宽高，同时为主演示保留空间。
+     * Region 打开、换位或工作区 resize 后调用；仅限制实际显示尺寸，不覆盖用户偏好尺寸。
+     */
     function updateRegionSize() {
         if (!regionMode || !detailsHost || detailsHost.hidden) {
             return;
@@ -272,6 +344,10 @@
         }
     }
 
+    /**
+     * 把同一轮连续尺寸变化合并为一次详情布局更新。
+     * 绑定到工作区 resize；通过 requestAnimationFrame 调用 updateRegionSize，避免重复重排。
+     */
     function onWorkspaceResize(event) {
         if (sizeUpdateFrame) {
             window.cancelAnimationFrame(sizeUpdateFrame);
@@ -282,6 +358,10 @@
         });
     }
 
+    /**
+     * 窗口变窄时降低源码窗口的最小宽高，保持关闭等操作仍在可视区域。
+     * 登记到浏览器 resize；窗口已创建时更新约束，已显示时再重新布局。
+     */
     function onViewportResize(event) {
         if (!windowHost) {
             return;
@@ -294,6 +374,10 @@
         }
     }
 
+    /**
+     * 为本次打开选择 Region 或 Window，并在承载方式变化时要求重新加载对应源码页。
+     * 由 openDetails 调用；工作区宽度至少 800px 才使用 Region，已显示时不因浏览器缩放搬动正在阅读的内容。
+     */
     function ensureHost() {
         if (detailsHost && !detailsHost.hidden) {
             return;
@@ -321,6 +405,10 @@
         regionMode = !!useRegion;
     }
 
+    /**
+     * 把用户拖动后的 Region 宽度或高度记录为下一次打开的偏好。
+     * 绑定到详情 Region 的 splitdrag，也通过 FineUISourceCodeViewer.rememberSize() 提供；只记录当前方向的尺寸。
+     */
     function rememberSize() {
         if (regionMode && detailsHost) {
             if (regionPosition === 'right') {
@@ -332,6 +420,10 @@
         }
     }
 
+    /**
+     * 在 Region 的 bottom 与 right 之间切换，更新尺寸限制并保存偏好。
+     * 由源码页连接调用 switchPosition()，返回当前方向；Window 模式不改变承载位置。
+     */
     function switchPosition() {
         if (regionMode && detailsHost) {
             regionPosition = regionPosition === 'bottom' ? 'right' : 'bottom';
@@ -342,16 +434,28 @@
         return regionPosition;
     }
 
+    /**
+     * 让源码页读取父框架详情区方向，以便设置换位工具。
+     * 通过 connect 返回的连接对象调用 getPosition()，返回 bottom 或 right。
+     */
     function getPosition() {
         return regionPosition;
     }
 
+    /**
+     * 示例 iframe 加载或重新导航后，更新仍处于打开状态的详情内容。
+     * 由 watchExample 和手机预览跟随过程登记到 load；不会因为普通示例加载就自动打开已关闭的详情。
+     */
     function onExampleFrameLoad(event) {
         if ((pendingOpen || (detailsHost && !detailsHost.hidden)) && watchedContainerWindow) {
             openDetails(watchedContainerWindow);
         }
     }
 
+    /**
+     * 跟踪当前示例容器的 iframe 加载，换标签时移除旧 iframe 的监听。
+     * 由 openDetails(exampleWindow) 内部调用，传入主选项卡中的容器窗口。
+     */
     function watchExample(exampleWindow) {
         watchedContainerWindow = exampleWindow;
         var frame = exampleWindow.frameElement;
@@ -367,6 +471,10 @@
         }
     }
 
+    /**
+     * 手机预览已有内部 iframe 时取得真正的示例窗口，并监听其后续导航。
+     * 内部传入容器窗口；fineui-example-frame 元信息提供 iframe 选择器，尚未创建实际 iframe 时返回空值。
+     */
     function resolveExampleWindow(containerWindow) {
         var preview = containerWindow.document.querySelector('meta[name="fineui-example-frame"]');
         var frame = preview && containerWindow.document.querySelector(preview.content);
@@ -383,6 +491,10 @@
         return preview ? frame && frame.contentWindow : containerWindow;
     }
 
+    /**
+     * 为指定同源示例显示描述和源码，收集附加源文件，并复用同一示例已经加载的查看器。
+     * 内部调用 openDetails(exampleWindow)；先解析手机预览的实际子页，跨域、空白页或源码辅助页不作为普通示例处理。
+     */
     function openDetails(exampleWindow) {
         if (referenceController) {
             referenceController.clearHighlight();
@@ -437,6 +549,10 @@
         savePreferences();
     }
 
+    /**
+     * 取得框架主选项卡中当前 iframe 示例的窗口。
+     * 内部调用 getActiveExample()；没有 PARAMS.mainTabStrip、活动项或 iframe 时返回空值。
+     */
     function getActiveExample() {
         if (!window.PARAMS || !PARAMS.mainTabStrip) {
             return null;
@@ -446,6 +562,10 @@
         return activeTab && activeTab.iframe ? activeTab.getIFrameWindow() : null;
     }
 
+    /**
+     * 打开框架当前活动示例的查看器；示例尚未就绪时记下待打开状态。
+     * 作为 FineUISourceCodeViewer.open() 对外提供，主要用于框架入口；独立页按钮直接走 openDetails(window)。
+     */
     function openActiveExample() {
         pendingOpen = true;
         var exampleWindow = getActiveExample();
@@ -454,12 +574,21 @@
         }
     }
 
+    /**
+     * 详情已经打开或等待打开时，让它跟随框架的新活动示例。
+     * 绑定到主选项卡 tabchange，也作为 FineUISourceCodeViewer.follow() 提供；详情关闭时不主动打开。
+     */
     function followActiveExample() {
         if (pendingOpen || (detailsHost && !detailsHost.hidden)) {
             openActiveExample();
         }
     }
 
+    /**
+     * 给当前源码 iframe 建立与父查看器的连接，防止旧源码页继续操作新示例。
+     * 源码页调用 parent.FineUISourceCodeViewer.connect(window)；校验实际 iframe 后返回描述、标题、方向与关闭操作，否则返回 null。
+     * 连接的 initializeControlReferences(content) 只在 Region 中按需启用控件定位，并再次核对连接是否仍有效。
+     */
     function connectViewer(viewerWindow) {
         if (!detailsHost || detailsHost.getIFrameWindow() !== viewerWindow || !currentExample) {
             return null;
@@ -483,7 +612,7 @@
                     if (referenceController) {
                         referenceController.dispose();
                     }
-                    referenceController = window.FineUIExampleControlReferences.initialize(content, {
+                    referenceController = window.FineUISourceCodeControlLocator.initialize(content, {
                         getExampleWindow: function () {
                             return regionMode && currentExample === connectedExample && !detailsHost.hidden
                                 ? connectedExample : null;
@@ -497,12 +626,16 @@
         };
     }
 
+    /**
+     * 只在 Region 的描述需要控件定位时加载定位脚本，并复用正在进行的加载。
+     * 由连接内部调用，返回 Promise；失败时清除缓存，允许下次请求重试，Window 模式不触发该加载。
+     */
     function loadControlReferenceModule() {
         // 只在 Region 查看器请求定位时加载；Window 描述使用原生 strong，不依赖这些资源。
         if (!referenceModulePromise) {
             referenceModulePromise = new Promise(function (resolve, reject) {
                 var script = document.createElement('script');
-                script.src = new URL('example-control-reference.js', viewerScriptUrl).href;
+                script.src = new URL('source-code-control-locator.js', viewerScriptUrl).href;
                 script.addEventListener('load', resolve, { once: true });
                 script.addEventListener('error', function () {
                     referenceModulePromise = null;
@@ -515,10 +648,18 @@
         return referenceModulePromise;
     }
 
+    /**
+     * 从独立示例右下角按钮打开当前页的描述和源码窗口。
+     * 作为自动创建的入口按钮 click 回调，调用 openDetails(window)。
+     */
     function onOpenDetailsClick(event) {
         openDetails(window);
     }
 
+    /**
+     * 处理示例或框架中的 Escape，关闭本地查看器，或把关闭请求传给父框架。
+     * 登记到 document.keydown；其他控件已经阻止默认行为时不接管，跨域父页面无法访问时保留页面行为。
+     */
     function onKeyDown(event) {
         if (event.key !== 'Escape' || event.defaultPrevented) {
             return;
@@ -536,6 +677,10 @@
         }
     }
 
+    /**
+     * 接收实际示例发来的关闭请求，只关闭仍与该示例关联的查看器。
+     * 子页可调用父框架 FineUISourceCodeViewer.closeFromExample(window)；手机预览跨多层 iframe 时继续向上转交。
+     */
     function closeFromExample(exampleWindow) {
         if (currentExample === exampleWindow && detailsHost && !detailsHost.hidden) {
             closeDetails();

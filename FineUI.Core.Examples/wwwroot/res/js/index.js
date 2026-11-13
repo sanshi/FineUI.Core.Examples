@@ -1,4 +1,9 @@
-// 入口页公共脚本：只放 Examples、EmptyProject、QuickStart 和 AppBox 都能使用的行为。
+/**
+ * 各类项目入口页共用的导航行为：连接左侧菜单与主选项卡，折叠侧边栏，刷新、打开或关闭业务页。
+ * 由 Examples、EmptyProject、QuickStart 和 AppBox 的框架入口加载，依赖 FineUI、jQuery、入口页 PARAMS 及侧边栏宽度 CSS 变量。
+ * PARAMS 保存当前页面真实控件 ID，子页可通过父框架调用 addExampleTab、activeTabAndRefresh 等函数。
+ * F.ready 中只初始化一次菜单与选项卡；项目可用 configureIndexPage 和 onIndexPageReady 扩展该过程。
+ */
 
 // 获取后台定义的侧边栏宽度
 var SIDEBAR_WIDTH_CONSTANT = parseInt($('html').css('--sidebar-width'), 10);
@@ -8,17 +13,26 @@ var SIDEBAR_MINIMODE_WIDTH_CONSTANT = parseInt($('html').css('--sidebar-minimode
 // _sidebarWidth变量会随着用户拖动分隔条而改变
 var _sidebarWidth = SIDEBAR_WIDTH_CONSTANT;
 
-// 点击主题仓库
+/**
+ * 打开入口页配置的主题选择窗口。
+ * 绑定到主题入口的 click；窗口客户端 ID 由 PARAMS.windowThemeRoller 提供。
+ */
 function onThemeSelectClick(event) {
     F(PARAMS.windowThemeRoller).show();
 }
 
-// 点击折叠/展开按钮
+/**
+ * 切换桌面入口的侧边栏折叠状态。
+ * 绑定到侧边栏折叠按钮；加载 mobileview.js 后，同名入口改由移动视图逻辑接管。
+ */
 function onFoldClick(event) {
     toggleSidebar();
 }
 
-// 设置折叠按钮的状态
+/**
+ * 让折叠按钮的图标与侧边栏状态一致，不单独改变侧边栏宽度。
+ * 调用 setFoldButtonStatus(true) 表示已收起，false 表示已展开，通常由侧边栏或移动视图内部调用。
+ */
 function setFoldButtonStatus(collapsed) {
     var foldButton = F(PARAMS.btnCollapseSidebar);
     if (collapsed) {
@@ -28,22 +42,34 @@ function setFoldButtonStatus(collapsed) {
     }
 }
 
-// 获取折叠按钮的状态
+/**
+ * 从折叠按钮当前图标读取是否处于收起状态。
+ * 内部调用 getFoldButtonStatus()，返回布尔值，供 toggleSidebar 和移动视图判断下一步操作。
+ */
 function getFoldButtonStatus() {
     return F(PARAMS.btnCollapseSidebar).iconFont === 'f-iconfont-unfold';
 }
 
-// 展开侧边栏
+/**
+ * 展开侧边栏，恢复用户最近拖动后的宽度。
+ * 页面脚本可直接调用 expandSidebar()，内部按展开状态调用 toggleSidebar。
+ */
 function expandSidebar() {
     toggleSidebar(false);
 }
 
-// 折叠侧边栏
+/**
+ * 把侧边栏收为微型菜单，保留菜单导航入口。
+ * 页面脚本可直接调用 collapseSidebar()，内部按折叠状态调用 toggleSidebar。
+ */
 function collapseSidebar() {
     toggleSidebar(true);
 }
 
-// 折叠/展开侧边栏
+/**
+ * 切换完整菜单与微型菜单，同时更新宽度、分隔条拖动和折叠图标。
+ * toggleSidebar() 切换当前状态；传 true 明确收起，传 false 明确展开；重复设置同一状态不再重绘。
+ */
 function toggleSidebar(collapsed) {
     var sidebarRegion = F(PARAMS.sidebarRegion);
     var treeMenu = F(PARAMS.treeMenu);
@@ -75,12 +101,18 @@ function toggleSidebar(collapsed) {
     });
 }
 
-// 侧边栏分隔条拖动事件
+/**
+ * 记录侧边栏拖动后的宽度，使下次展开时恢复这个宽度。
+ * 绑定到侧边 Region 的 splitdrag；this 是被拖动的侧边区域。
+ */
 function onSidebarSplitDrag(event) {
     _sidebarWidth = this.width;
 }
 
-// 点击标题栏工具图标 - 刷新
+/**
+ * 刷新当前活动选项卡中的 iframe 页面。
+ * 绑定到主选项卡标题栏的刷新工具；当前项不是 iframe 时不执行刷新。
+ */
 function onToolRefreshClick(event) {
     var activeTab = F(PARAMS.mainTabStrip).getActiveTab();
     if (activeTab.iframe) {
@@ -88,12 +120,19 @@ function onToolRefreshClick(event) {
     }
 }
 
-// 添加标签页（通过href在树中查找）
+/**
+ * 按菜单中的页面地址查找并打开主选项卡，复用菜单标题等配置。
+ * 调用 addExampleTabByHref(href, actived)；href 为菜单地址，actived 交给 F.addMainTabByHref 决定是否激活。
+ */
 function addExampleTabByHref(href, actived) {
     F.addMainTabByHref(F(PARAMS.mainTabStrip), F(PARAMS.treeMenu), href, actived);
 }
 
-// 添加标签页
+/**
+ * 用一组明确的选项在主框架打开业务选项卡，并复用同 ID 的现有页面。
+ * 推荐传对象，例如 addExampleTab({ id: 'orders', iframeUrl: '/orders', title: '订单' })。
+ * 也兼容旧的位置参数 id、iframeUrl、title、icon、createToolbar、refreshWhenExist、iconFont；实际创建行为由 F.addMainTab 处理。
+ */
 function addExampleTab(tabOptions) {
     if (typeof (tabOptions) === 'string') {
         tabOptions = {
@@ -109,18 +148,27 @@ function addExampleTab(tabOptions) {
     F.addMainTab(F(PARAMS.mainTabStrip), tabOptions);
 }
 
-// 关闭选中标签页
+/**
+ * 请求关闭当前活动选项卡，保留控件自身的关闭检查。
+ * 由子页或框架脚本调用 removeActiveTab()；调用时须存在活动选项卡。
+ */
 function removeActiveTab() {
     F(PARAMS.mainTabStrip).getActiveTab().close();
 }
 
-// 获取当前激活选项卡的ID
+/**
+ * 取得当前活动选项卡 ID，便于子页保存来源或完成后返回。
+ * 调用 getActiveTabId()；没有活动项时返回空字符串。
+ */
 function getActiveTabId() {
     var activeTab = F(PARAMS.mainTabStrip).getActiveTab();
     return activeTab ? activeTab.id : '';
 }
 
-// 激活选项卡，并刷新其中的内容
+/**
+ * 返回指定选项卡、刷新其 iframe，再关闭原来的活动项。
+ * 子页完成操作后调用 activeTabAndRefresh(tabId)；目标不存在时不执行，原活动项应是待关闭的另一个页签。
+ */
 function activeTabAndRefresh(tabId) {
     var mainTabStrip = F(PARAMS.mainTabStrip);
     var targetTab = mainTabStrip.getTab(tabId);
@@ -132,7 +180,10 @@ function activeTabAndRefresh(tabId) {
     }
 }
 
-// 激活选项卡，并更新父选项卡中的内容
+/**
+ * 返回指定选项卡，让其 iframe 执行 updatePage(param1)，再关闭原活动项。
+ * 调用 activeTabAndUpdate(tabId, param1)；目标页须提供 updatePage 函数，原活动项应是待关闭的另一个页签。
+ */
 function activeTabAndUpdate(tabId, param1) {
     var mainTabStrip = F(PARAMS.mainTabStrip);
     var targetTab = mainTabStrip.getTab(tabId);
@@ -144,7 +195,10 @@ function activeTabAndUpdate(tabId, param1) {
     }
 }
 
-// 通知框
+/**
+ * 在顶层页面中央显示三秒的信息通知。
+ * 框架或子页脚本调用 notify(msg)；与 common.js 的遮罩通知用途不同，本函数不额外启用模态遮罩。
+ */
 function notify(msg) {
     F.notify({
         message: msg,

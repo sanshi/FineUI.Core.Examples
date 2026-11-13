@@ -1,8 +1,17 @@
+/**
+ * 在显示页面源码时移除页面描述声明，使开发人员集中阅读示例控件和脚本。
+ * 由各产品的单文件源码页在语法着色前引入，页面标记需要过滤的 pre[data-example-page-source]。
+ * 调用 FineUISourceCodeFilter.filterDocument() 批量处理已标记源码；也可调用 filter(source) 取得过滤后的字符串。
+ * 支持 Razor 的 exampleDescription 区段、HTML 描述模板及 Thymeleaf 描述片段；不重新序列化页面，也不负责 HTML 安全过滤。
+ */
+
 (function () {
     'use strict';
 
-    // 源码页只展示示例的实现；例如去掉 @section exampleDescription 整块，保留前后的控件和脚本。
-    // 直接按原始文本删除对应区间，不用 DOM 重新序列化 Razor 或模板，避免改变标签大小写及转义。
+    /**
+     * 从页面源码文本中删去描述声明，保留原控件、脚本和文本格式。
+     * 调用 FineUISourceCodeFilter.filter(source)，source 为原始源码字符串，返回新字符串；脚本、样式及注释中的同名文字不当作页面声明删除。
+     */
     function filter(source) {
         var ranges = [];
         var tags = [];
@@ -15,6 +24,10 @@
             }
         }
 
+        /**
+         * 为当前描述开标签找到匹配的结束位置，正确跨过同名嵌套标签。
+         * 只在 filter 内部调用，index 指向已扫描的 tags 项；找不到完整闭合位置时返回 -1，保留原文。
+         */
         function closingTag(index) {
             var opening = tags[index];
             var depth = 1;
@@ -31,6 +44,10 @@
             return -1;
         }
 
+        /**
+         * 把描述所在区间加入删除清单，并在描述独占一组行时连同缩进与行尾一起删除。
+         * 只在 filter 内部调用，start、end 为原始字符串偏移；不使用 DOM 重写相邻源码。
+         */
         function addRange(start, end) {
             // 描述独占一组行时连同缩进和行尾一起删除，避免源码留下大片空白或把相邻行粘到一起。
             var lineStart = source.lastIndexOf('\n', start - 1) + 1;
@@ -88,6 +105,10 @@
         return result + source.slice(position);
     }
 
+    /**
+     * 只过滤标记为页面标签源码的 pre，避免误删后台类、JS、CSS 中用于讲解的文字。
+     * 单文件源码页在语法着色前调用 FineUISourceCodeFilter.filterDocument()；未带 data-example-page-source 的内容保持原样。
+     */
     function filterDocument() {
         // 后台类、JS 和 CSS 的源码没有这个标记，即使正文提到描述模板，也不会被当成页面声明删除。
         document.querySelectorAll('pre[data-example-page-source]').forEach(function (element) {

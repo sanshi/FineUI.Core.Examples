@@ -1,3 +1,10 @@
+/**
+ * 为不加载 FineUI 的原生 HTML 对照页提供源码入口，避免为了一个按钮就给演示页引入整套控件运行时。
+ * 原生页通过 meta[name="fineui-native-source-window"] 指定同源查看器辅助页，并在 body 准备好后引入本文件及查看器 CSS。
+ * 脚本只在独立顶层页面创建右下角入口；点击后加载辅助 iframe，由辅助页内的 source-code-viewer.js 显示 F.Window。
+ * 辅助页关闭窗口时调用父页 FineUISourceViewerNative.close()，移除 iframe 并把焦点还给入口按钮。
+ */
+
 (function () {
     'use strict';
 
@@ -30,6 +37,10 @@
     launcher.addEventListener('click', open);
     document.body.appendChild(launcher);
 
+    /**
+     * 加载原生页面配置的查看器辅助 iframe，并临时隐藏入口，避免重复打开。
+     * 仅作为角落入口按钮的 click 回调使用；辅助页地址来自 fineui-native-source-window 元信息。
+     */
     function open() {
         if (frame) {
             return;
@@ -44,6 +55,10 @@
         frame.focus();
     }
 
+    /**
+     * 移除查看器辅助 iframe，重新显示入口并恢复焦点。
+     * 对外通过 FineUISourceViewerNative.close() 调用，通常由辅助页窗口的关闭流程调用；未打开时可重复调用。
+     */
     function close() {
         if (!frame) {
             return;

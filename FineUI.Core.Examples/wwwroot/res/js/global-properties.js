@@ -1,3 +1,10 @@
+/**
+ * 全局配置查询页的交互：按分类和关键词筛选配置，展开详情，并生成当前产品对应的配置写法。
+ * 由 Config/GlobalProperties 等配置清单页面引入，依赖 FineUI、jQuery 和 configPropertyCatalog 元素。
+ * 该元素通过 data-grid、data-category、data-search、data-count 指定实际控件 ID，data-format 指定配置语法；清单来自自身 JSON 或 data-url。
+ * 引入后由 F.ready 自动初始化一次；页面将 onConfig 开头的函数绑定到控件事件，将 ConfigPropertyQuery 的渲染函数绑定到表格列。
+ */
+
 window.ConfigPropertyQuery = (function () {
     'use strict';
 
@@ -10,6 +17,10 @@ window.ConfigPropertyQuery = (function () {
     let expandedName = '';
     let searchTimer;
 
+    /**
+     * 把配置初始值转换为可阅读的文字，区分空字符串与没有文字的显示效果。
+     * 初始化清单时调用 formatInitialValue(value)；例如空字符串显示为双引号并注明空字符串，布尔值显示为 true 或 false。
+     */
     function formatInitialValue(value) {
         if (value === '') {
             return '""（空字符串）';
@@ -20,6 +31,10 @@ window.ConfigPropertyQuery = (function () {
         return JSON.stringify(value);
     }
 
+    /**
+     * 为一项配置生成可复制的写法，处理 properties、XML、JavaScript 或 JSON 的语法差异。
+     * 由 renderDetail 生成详情时调用；row.example 提供示例值，页面 data-format 决定输出格式。
+     */
     function formatExample(row) {
         if (exampleFormat === 'properties') {
             const value = Array.isArray(row.example) ? row.example.join(',') : String(row.example);
@@ -37,17 +52,29 @@ window.ConfigPropertyQuery = (function () {
         return key + ': ' + JSON.stringify(row.example, null, 2);
     }
 
+    /**
+     * 生成配置名称单元格，已废弃的配置加删除线，名称按文本插入。
+     * 作为列渲染函数使用 ConfigPropertyQuery.renderName；name 是清单中唯一的配置名。
+     */
     function renderName(name) {
         const row = propertiesByName.get(name);
         return row.obsolete ? $('<s>').text(name) : $('<span>').text(name);
     }
 
+    /**
+     * 生成配置的完整说明、类型、初始值、可选项和写法，废弃项改为显示迁移说明。
+     * 绑定到行扩展列的 RendererFunction 或 renderer；通过 params.rowId 查找配置，返回 jQuery 元素。
+     */
     function renderDetail(value, params) {
         // 行 ID 始终是配置名。WebForms 为扩展列单独生成字段名，传入的单元格值可能为空。
         const row = propertiesByName.get(params.rowId);
         const detail = $('<div>').addClass('config-property-detail');
         detail.append($('<h3>').append(renderName(row.name)));
 
+        /**
+         * 向当前配置详情追加一项文字说明，标签和内容均按文本处理。
+         * 仅供 renderDetail 内部调用，例如 addLine('类型', row.valueType)。
+         */
         function addLine(label, value) {
             detail.append($('<p>').append($('<strong>').text(label + '：'), document.createTextNode(value)));
         }
@@ -68,6 +95,10 @@ window.ConfigPropertyQuery = (function () {
         return detail;
     }
 
+    /**
+     * 把当前分类、关键词和展开项写回地址，复制该地址可恢复同一查询结果。
+     * 由筛选和展开处理调用；使用 replaceState 更新 category、q、property，不新增历史记录。
+     */
     function updateAddress() {
         const url = new URL(window.location.href);
         const filters = {
@@ -85,6 +116,10 @@ window.ConfigPropertyQuery = (function () {
         window.history.replaceState(null, '', url);
     }
 
+    /**
+     * 按当前筛选条件重载配置表格，并在需要时翻到目标配置所在页、展开详情。
+     * 内部调用 render(requestedName)；传配置名用于恢复分享地址，传空字符串表示只刷新筛选结果。
+     */
     function render(requestedName) {
         const category = categoryField.getValue();
         const words = searchField.getValue().trim().toLowerCase().split(/\s+/).filter(Boolean);
@@ -110,11 +145,19 @@ window.ConfigPropertyQuery = (function () {
         updateAddress();
     }
 
+    /**
+     * 合并连续输入引起的搜索，只在最后一次变化后等待 120 毫秒再查询。
+     * 页面的 change 回调通过 ConfigPropertyQuery.queueSearch() 调用，避免每个按键都重载表格。
+     */
     function queueSearch() {
         window.clearTimeout(searchTimer);
         searchTimer = window.setTimeout(() => render(''), 120);
     }
 
+    /**
+     * 从地址恢复分类、关键词及展开项，保证通过历史记录返回时也能看到对应配置。
+     * 由初始化和 popstate 调用；取消设置筛选控件时排队的搜索，防止目标详情被再次收起。
+     */
     function readAddress() {
         const params = new URLSearchParams(window.location.search);
         const category = params.get('category');
@@ -126,6 +169,10 @@ window.ConfigPropertyQuery = (function () {
         render(params.get('property'));
     }
 
+    /**
+     * 读取配置清单并连接页面上的筛选框、表格和数量提示，然后恢复地址中的查询条件。
+     * 本文件已用 F.ready(ConfigPropertyQuery.initialize) 登记调用；页面应在引入前准备 configPropertyCatalog，无需再手工调用。
+     */
     async function initialize() {
         const element = document.getElementById('configPropertyCatalog');
         const config = element.dataset;
@@ -165,6 +212,10 @@ window.ConfigPropertyQuery = (function () {
         window.addEventListener('popstate', readAddress);
     }
 
+    /**
+     * 记录当前展开的配置名，使分享地址与实际详情状态一致。
+     * 由行展开和收起回调调用，例如 ConfigPropertyQuery.recordExpansion(rowId, true) 表示该配置已展开。
+     */
     function recordExpansion(name, expanded) {
         if (expanded) {
             expandedName = name;
@@ -177,18 +228,34 @@ window.ConfigPropertyQuery = (function () {
     return { initialize, queueSearch, renderName, renderDetail, recordExpansion };
 })();
 
+/**
+ * 分类或关键词改变时安排一次延迟筛选。
+ * 将本函数绑定到分类下拉框、搜索框的 change 事件。
+ */
 function onConfigQueryChange() {
     ConfigPropertyQuery.queueSearch();
 }
 
+/**
+ * 点击配置行时切换该行的详情展开状态。
+ * 绑定到表格 rowclick；this 是当前表格，rowId 是作为行标识的配置名。
+ */
 function onConfigRowClick(event, rowId) {
     this.toggleRowExpanders([rowId]);
 }
 
+/**
+ * 详情展开后把配置名记入地址。
+ * 绑定到表格 rowexpanderexpand；框架传入 event 和 rowId。
+ */
 function onConfigRowExpand(event, rowId) {
     ConfigPropertyQuery.recordExpansion(rowId, true);
 }
 
+/**
+ * 详情收起后清除该配置对应的地址参数。
+ * 绑定到表格 rowexpandercollapse；只有收起项恰好是已记录的配置时才清除。
+ */
 function onConfigRowCollapse(event, rowId) {
     ConfigPropertyQuery.recordExpansion(rowId, false);
 }

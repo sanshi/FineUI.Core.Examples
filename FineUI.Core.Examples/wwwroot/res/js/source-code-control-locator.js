@@ -1,8 +1,20 @@
+/**
+ * 源码查看器中的控件定位：把页面描述里的控件引用变成按钮，点击后滚动到示例控件并短暂显示高亮外框。
+ * 由 source-code-viewer.js 在 Region 模式且描述含 data-example-control 时按需加载；独立 Window 模式不加载定位模块。
+ * 查看器调用 FineUISourceCodeControlLocator.initialize(content, { getExampleWindow })，content 是描述容器，getExampleWindow 返回仍与该描述关联的同源示例窗口。
+ * 返回控制器提供 clearHighlight() 和 dispose()：前者清除高亮及提示，后者还恢复引用文字并移除监听。
+ * 模块按需加载同名 CSS，不模拟点击、聚焦或赋值；隐藏控件只提示原因，控件较大时优先露出上边缘。
+ */
+
 (function () {
     'use strict';
 
-    var stylesheetUrl = new URL('../css/example-control-reference.css', document.currentScript.src).href;
+    var stylesheetUrl = new URL('../css/source-code-control-locator.css', document.currentScript.src).href;
 
+    /**
+     * 把定位样式加载到指定文档，使描述按钮或示例里的外框使用同一套样式。
+     * 内部调用 addStylesheet(targetDocument, onLoad, onError)；返回 link 节点，由对应控制器在清理时移除。
+     */
     function addStylesheet(targetDocument, onLoad, onError) {
         var link = targetDocument.createElement('link');
         link.rel = 'stylesheet';
@@ -14,6 +26,10 @@
         return link;
     }
 
+    /**
+     * 滚动外层和内层滚动区域，让目标尽量完整显示并留出至少 10px；目标过大时优先显示上边缘。
+     * 由高亮流程调用 scrollTargetIntoView(target)，target 为实际 DOM 元素；临时滚动边距在处理结束后恢复，不改变布局。
+     */
     function scrollTargetIntoView(target) {
         var targetDocument = target.ownerDocument;
         var targetWindow = targetDocument.defaultView;
@@ -63,6 +79,11 @@
         }
     }
 
+    /**
+     * 让一段页面描述具备点击控件引用后定位的能力，并维护本次描述专属的高亮与提示。
+     * 由源码查看器调用 initialize(content, options)；options.getExampleWindow() 应只返回当前仍可定位的示例窗口，否则返回 null。
+     * 返回 clearHighlight 和 dispose；描述切换或销毁时调用 dispose，关闭详情区时可只调用 clearHighlight。
+     */
     function initialize(content, options) {
         var viewerDocument = content.ownerDocument;
         var disposed = false;
@@ -75,6 +96,10 @@
             // 样式不可用时保留原生强调文字，描述仍可正常阅读。
         });
 
+        /**
+         * 样式加载完成后，把描述中的 data-example-control 强调文字替换为可键盘操作的定位按钮。
+         * 仅由 initialize 的样式加载回调调用；初始化已释放时不再替换，原文字保存在 replacements 中以便恢复。
+         */
         function enableReferences() {
             if (disposed) {
                 return;
@@ -94,6 +119,10 @@
             content.addEventListener('click', onReferenceClick);
         }
 
+        /**
+         * 在当前示例可视区域中央短暂提示无法定位的原因，避免消息出现在远离控件的描述区。
+         * 内部调用 showStatus(message)，样式就绪后显示约 2.5 秒；重复定位会先清除上一次提示。
+         */
         function showStatus(message) {
             clearStatus();
             var exampleWindow = options.getExampleWindow();
@@ -125,6 +154,10 @@
             });
         }
 
+        /**
+         * 移除本次定位提示、延迟计时器及为提示加载的样式。
+         * 由新提示、高亮清理或释放流程调用；没有提示时可重复调用。
+         */
         function clearStatus() {
             if (!status) {
                 return;
@@ -135,6 +168,10 @@
             status = null;
         }
 
+        /**
+         * 清除当前高亮、跟随位置的动画帧以及未消失的定位提示。
+         * 由控制器对外提供 clearHighlight()；关闭详情或重新定位时调用，不恢复描述中的定位按钮。
+         */
         function clearHighlight() {
             // 详情区关闭或切换示例时，示例中的提示也要清除，不能留在已无关联的页面上。
             clearStatus();
@@ -148,6 +185,10 @@
             highlight = null;
         }
 
+        /**
+         * 从描述容器的点击事件中找出定位按钮，再按其 data-example-control 解析目标。
+         * 作为描述容器的事件委托回调登记；仅处理当前 content 内部的按钮。
+         */
         function onReferenceClick(event) {
             var reference = event.target.closest('button[data-example-control]');
             if (!reference || !content.contains(reference)) {
@@ -156,6 +197,10 @@
             highlightControl(reference.dataset.exampleControl);
         }
 
+        /**
+         * 查找当前示例里的实际控件，滚动到可见位置并创建约两秒的独立高亮外框。
+         * 内部调用 highlightControl(controlId)，controlId 必须是实际客户端 ID；隐藏或未创建时只提示，不自动显示或创建控件。
+         */
         function highlightControl(controlId) {
             clearHighlight();
             var exampleWindow = options.getExampleWindow();
@@ -210,6 +255,10 @@
                 }
             });
 
+            /**
+             * 在高亮期间跟随目标的位置和尺寸，避免滚动或布局变化后外框停在旧位置。
+             * 由样式加载成功后启动，之后通过 requestAnimationFrame 自己续调；目标移除、隐藏或示例切换时结束并清理。
+             */
             function trackTarget() {
                 var connectedWindow = options.getExampleWindow();
                 if (highlight !== current) {
@@ -230,6 +279,10 @@
             }
         }
 
+        /**
+         * 判断目标当前是否可被定位，排除无矩形、偏移隐藏及 visibility 隐藏的元素。
+         * 内部调用 isVisibleTarget(target)；未激活标签内容不能因为仍有尺寸就当成可见。
+         */
         function isVisibleTarget(target) {
             // 隐藏标签可能被移到屏幕外，仍有矩形；不能把它当作当前可见内容进行定位。
             // 无标题栏的标签则定位其可见内容，不为定位自动切换标签。
@@ -238,6 +291,10 @@
                 && target.ownerDocument.defaultView.getComputedStyle(target).visibility !== 'hidden';
         }
 
+        /**
+         * 释放这一段描述的全部定位资源，并把定位按钮恢复成原来的强调文字。
+         * 由源码查看器在更换描述或示例时调用返回控制器的 dispose()；调用后不再启用本次引用。
+         */
         function dispose() {
             disposed = true;
             clearHighlight();
@@ -251,5 +308,5 @@
         return { clearHighlight: clearHighlight, dispose: dispose };
     }
 
-    window.FineUIExampleControlReferences = { initialize: initialize };
+    window.FineUISourceCodeControlLocator = { initialize: initialize };
 }());

@@ -1,3 +1,9 @@
+/*
+ * 源码查看器中的控件定位样式，由 source-code-control-locator.js 按需加载。
+ * 描述区使用带下划线的引用按钮；示例区使用不占布局空间的高亮外框和居中提示。
+ * 示例页面的引用标记仍使用 example-control-reference 和 data-example-control。
+ */
+
 .example-description button.example-control-reference {
     display: inline;
     margin: 0;
