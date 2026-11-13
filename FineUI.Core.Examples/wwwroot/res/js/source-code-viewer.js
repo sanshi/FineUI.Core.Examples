@@ -519,6 +519,7 @@
         }
 
         returnFocus = document.activeElement;
+        var exampleWindowChanged = currentExample !== exampleWindow;
         currentExample = exampleWindow;
         pendingOpen = false;
         ensureHost();
@@ -531,8 +532,10 @@
         var viewerAddress = sourceAddress.content + '?files=' + encodeURIComponent(files.join(';'))
             + '&description=' + (needsDescriptionTab(exampleWindow) ? '1' : '0');
 
-        // 同一示例只显示已有区域或窗口，不重新加载源码，也不移动主演示 iframe。
-        if (currentAddress !== viewerAddress) {
+        // 同一窗口、同一地址继续复用查看器，不移动主演示 iframe。
+        // 外层手机预览刷新后，即使子页地址仍是 Mobile/Button/Button，内部 iframe 也已重建；
+        // 此时重新加载查看器，让描述引用连接到新子窗口，不能继续使用已关闭的旧窗口。
+        if (currentAddress !== viewerAddress || exampleWindowChanged) {
             if (referenceController) {
                 referenceController.dispose();
                 referenceController = null;
