@@ -55,6 +55,32 @@
     display: none;
 }
 
+/* 满屏操作控件没有空位时，入口仍可触摸打开，也可拖到其他位置让出当前操作。 */
+.source-code-viewer-launcher.source-code-viewer-launcher-movable {
+    touch-action: none;
+    cursor: move;
+}
+
+.source-code-viewer-position-hint {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2147483647;
+    padding: 4px 8px;
+    color: var(--f-content-text-color, #333);
+    background: var(--f-content-background-color, #fff);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.source-code-viewer-position-hint[hidden] {
+    display: none;
+}
+
+.source-code-viewer-launcher:focus-visible + .source-code-viewer-position-hint {
+    outline: 2px solid var(--f-primary-background-color, #1683d8);
+}
+
 .source-code-viewer-launcher .f-iconfont {
     font-size: 20px;
 }

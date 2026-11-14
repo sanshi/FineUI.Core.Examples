@@ -14,6 +14,7 @@
     }
 
     var frame;
+    var viewerScriptUrl = document.currentScript.src;
     var launcher = document.createElement('button');
     launcher.id = 'exampleDetailsLauncher';
     launcher.type = 'button';
@@ -36,6 +37,9 @@
     launcher.appendChild(icon);
     launcher.addEventListener('click', open);
     document.body.appendChild(launcher);
+    var positionScript = document.createElement('script');
+    positionScript.src = new URL('source-code-launcher.js', viewerScriptUrl).href;
+    document.head.appendChild(positionScript);
 
     /**
      * 加载原生页面配置的查看器辅助 iframe，并临时隐藏入口，避免重复打开。

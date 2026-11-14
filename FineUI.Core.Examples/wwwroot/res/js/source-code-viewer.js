@@ -711,6 +711,9 @@
             button.addEventListener('click', onOpenDetailsClick);
             document.body.appendChild(button);
             launcher = button;
+            var positionScript = document.createElement('script');
+            positionScript.src = new URL('source-code-launcher.js', viewerScriptUrl).href;
+            document.head.appendChild(positionScript);
         }
         var workspace = getWorkspace();
         if (workspace) {
