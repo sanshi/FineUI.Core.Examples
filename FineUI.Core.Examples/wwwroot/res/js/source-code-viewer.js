@@ -294,7 +294,6 @@
             iframe: true,
             iframeDelay: true,
             clearIFrameAfterClose: false,
-            reloadIFrameOnShow: false,
             listeners: {
                 hide: function (event) {
                     pendingOpen = false;
