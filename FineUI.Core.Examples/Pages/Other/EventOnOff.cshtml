@@ -84,18 +84,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>给同一个测试按钮动态添加多个点击回调，并分别删除指定回调或全部回调。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>添加与移除回调</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnCustomEvent" title="注册点击事件（1）">注册点击事件（1）</strong>。<br />结果：新增一个普通点击回调，再点测试按钮时结果列表增加该回调记录。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSpecialEvent" title="注册特殊点击事件">注册特殊点击事件</strong>。<br />结果：注册可单独识别的特殊回调；再次点测试按钮时普通与特殊记录都出现。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnDeleteSpecialEvent" title="删除特殊点击事件">删除特殊点击事件</strong>。<br />结果：只移除特殊回调，普通回调继续执行。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnDeleteAll" title="删除全部点击事件">删除全部点击事件</strong>。<br />结果：移除测试按钮的全部点击监听，之后点击不再追加原来的回调记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>on() / off()</code>（<strong class="example-control-reference" data-example-control="btnTest" title="测试按钮">测试按钮</strong>）：向测试按钮注册或取消事件；单独取消时传入原来的同一个函数引用。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>给同一个测试按钮动态添加多个点击回调，并分别删除指定回调或全部回调。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>添加与移除回调</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnCustomEvent"
+                    title="注册点击事件（1）">注册点击事件（1）</strong>。<br />结果：新增一个普通点击回调，再点测试按钮时结果列表增加该回调记录。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSpecialEvent"
+                    title="注册特殊点击事件">注册特殊点击事件</strong>。<br />结果：注册可单独识别的特殊回调；再次点测试按钮时普通与特殊记录都出现。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnDeleteSpecialEvent"
+                    title="删除特殊点击事件">删除特殊点击事件</strong>。<br />结果：只移除特殊回调，普通回调继续执行。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnDeleteAll"
+                    title="删除全部点击事件">删除全部点击事件</strong>。<br />结果：移除测试按钮的全部点击监听，之后点击不再追加原来的回调记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>on() / off()</code>（<strong class="example-control-reference" data-example-control="btnTest"
+                    title="测试按钮">测试按钮</strong>）：向测试按钮注册或取消事件；单独取消时传入原来的同一个函数引用。</li>
+        </ul>
+    </section>
 }

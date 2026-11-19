@@ -10,8 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
         <Items>
-            <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Readonly="false" TriggerIcon="Search"
-                          EmptyText="打开弹出窗口" EnableClickAction="true">
+            <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Readonly="false" TriggerIcon="Search" EmptyText="打开弹出窗口" EnableClickAction="true">
                 <Listeners>
                     <f:Listener Event="triggerclick" Handler="onTriggerBox1TriggerClick"></f:Listener>
                 </Listeners>
@@ -53,10 +52,17 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>TriggerIcon</code>（<strong class="example-control-reference" data-example-control="TriggerBox1" title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>Search</code>，显示搜索图标。</li>
-            <li><code>EnableClickAction</code>（<strong class="example-control-reference" data-example-control="TriggerBox1" title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>true</code>，点击输入区域也触发 <code>triggerclick</code>。</li>
-            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗口">弹出窗口</strong>）：窗口初始为 <code>true</code>；关闭按钮处理后再次隐藏。</li>
-            <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="btnCloseWindow" title="关闭当前窗口">关闭当前窗口</strong>）：窗内按钮绑定后台事件，关闭窗口并回填输入框。</li>
+            <li><code>TriggerIcon</code>（<strong class="example-control-reference" data-example-control="TriggerBox1" title="打开弹出窗口">打开弹出窗口</strong>）：初始为
+                <code>Search</code>，显示搜索图标。
+            </li>
+            <li><code>EnableClickAction</code>（<strong class="example-control-reference" data-example-control="TriggerBox1" title="打开弹出窗口">打开弹出窗口</strong>）：初始为
+                <code>true</code>，点击输入区域也触发 <code>triggerclick</code>。
+            </li>
+            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗口">弹出窗口</strong>）：窗口初始为
+                <code>true</code>；关闭按钮处理后再次隐藏。
+            </li>
+            <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="btnCloseWindow"
+                    title="关闭当前窗口">关闭当前窗口</strong>）：窗内按钮绑定后台事件，关闭窗口并回填输入框。</li>
         </ul>
     </section>
 }

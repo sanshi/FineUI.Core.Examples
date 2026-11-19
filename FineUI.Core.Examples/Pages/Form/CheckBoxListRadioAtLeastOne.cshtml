@@ -8,9 +8,9 @@
 
 @section body {
 
-    <f:SimpleForm ID="SimpleForm1" IsFluid="true"  BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="复选框列表（至少选中一项）">
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="复选框列表（至少选中一项）">
         <Items>
-            <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="2" Label="列表一" >
+            <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="2" Label="列表一">
                 <Items>
                     <f:CheckItem Text="可选项 1" Value="value1" />
                     <f:CheckItem Text="可选项 2" Value="value2" Selected="true" />
@@ -71,8 +71,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Listener Event=&quot;change&quot;</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>）：取消后先检查当前值数组；若已经为空，立即重新选中刚取消的项。此页允许多选，只限制至少保留一项。</li>
-            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>）：后台收到变化通知后读取当前选中值数组并显示提示，实际限制逻辑由客户端完成。</li>
+            <li><code>Listener Event=&quot;change&quot;</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="列表一">列表一</strong>）：取消后先检查当前值数组；若已经为空，立即重新选中刚取消的项。此页允许多选，只限制至少保留一项。</li>
+            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="列表一">列表一</strong>）：后台收到变化通知后读取当前选中值数组并显示提示，实际限制逻辑由客户端完成。</li>
         </ul>
     </section>
 }

@@ -5,20 +5,17 @@
 }
 
 @section body {
-    <f:SimpleForm ID="Form1" Title="预约咨询" IsFluid="true" MaxWidth="450" BodyPadding="16" LabelWidth="104"
-        ShowHeader="true" ShowBorder="true">
+    <f:SimpleForm ID="Form1" Title="预约咨询" IsFluid="true" MaxWidth="450" BodyPadding="16" LabelWidth="104" ShowHeader="true" ShowBorder="true">
         <Items>
-            <f:DropDownList ID="ddlService" Label="咨询项目"
-                OnSelectedIndexChanged="ddlService_SelectedIndexChanged">
+            <f:DropDownList ID="ddlService" Label="咨询项目" OnSelectedIndexChanged="ddlService_SelectedIndexChanged">
                 <Items>
                     <f:ListItem Text="常规咨询（15 分钟）" Value="standard" Selected="true" />
                     <f:ListItem Text="深度咨询（30 分钟）" Value="extended" />
                 </Items>
             </f:DropDownList>
-            <f:TimePicker ID="tpAppointment" Label="开始时间" Text="09:00" MinTimeText="09:00"
-                MaxTimeText="10:00" Increment="15" Required="true" ShowRedStar="true" />
-            <f:Button ID="btnSubmit" Text="提交预约" ButtonColor="Primary" _ValidateForms="Form1"
-                OnClick="btnSubmit_Click" />
+            <f:TimePicker ID="tpAppointment" Label="开始时间" Text="09:00" MinTimeText="09:00" MaxTimeText="10:00" Increment="15" Required="true"
+                ShowRedStar="true" />
+            <f:Button ID="btnSubmit" Text="提交预约" ButtonColor="Primary" _ValidateForms="Form1" OnClick="btnSubmit_Click" />
             <f:Label ID="labResult" ShowLabel="false" Hidden="true" />
         </Items>
     </f:SimpleForm>
@@ -46,14 +43,27 @@
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>先选 <code>09:15</code>，再切换为深度咨询。后台把时间框的 <code>AJAX</code> 属性 <code>Increment</code> 改为 <code>30</code>， 原来的 <code>09:15</code> 会标为不可选。改选 <code>09:30</code> 后即可<strong class="example-control-reference" data-example-control="btnSubmit" title="提交预约">提交预约</strong>；切回常规咨询，<code>09:15</code> 也可以提交。</p>
+        <p>先选 <code>09:15</code>，再切换为深度咨询。后台把时间框的 <code>AJAX</code> 属性 <code>Increment</code> 改为 <code>30</code>， 原来的 <code>09:15</code> 会标为不可选。改选
+            <code>09:30</code> 后即可<strong class="example-control-reference" data-example-control="btnSubmit"
+                title="提交预约">提交预约</strong>；切回常规咨询，<code>09:15</code> 也可以提交。
+        </p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>）：<strong class="example-control-reference" data-example-control="ddlService" title="咨询项目">咨询项目</strong>变化时回发更新<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>的规则。</li>
-            <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：常规为 <code>15</code>、深度为 <code>30</code>，后台修改后浏览器立即采用新步长。</li>
-            <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最早可选 <code>09:00</code>。</li>
-            <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最晚可选 <code>10:00</code>。</li>
-            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>必须有有效值。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlService"
+                    title="咨询项目">咨询项目</strong>）：<strong class="example-control-reference" data-example-control="ddlService"
+                    title="咨询项目">咨询项目</strong>变化时回发更新<strong class="example-control-reference" data-example-control="tpAppointment"
+                    title="开始时间">开始时间</strong>的规则。</li>
+            <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：常规为
+                <code>15</code>、深度为 <code>30</code>，后台修改后浏览器立即采用新步长。
+            </li>
+            <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最早可选
+                <code>09:00</code>。
+            </li>
+            <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：最晚可选
+                <code>10:00</code>。
+            </li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>）：<strong
+                    class="example-control-reference" data-example-control="tpAppointment" title="开始时间">开始时间</strong>必须有有效值。</li>
         </ul>
     </section>
 }

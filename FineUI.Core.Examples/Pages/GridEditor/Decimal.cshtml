@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -59,22 +60,27 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在成绩单元格中编辑小数或空值，保存时保留小数部分。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>编辑小数成绩</h3>
-    <ol>
-        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>语文成绩</strong>并输入<code>88.5</code>，再结束编辑。<br />结果：单元格保留 88.5，不截断为整数；<strong><strong>数学成绩</strong></strong>可按相同方式填写小数。</li>
-        <li>将一个成绩单元格清空，再点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：后台读取本轮修改，将空值与小数写回示例数据并重新绑定，下方显示提交的修改明细。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>成绩可以为小数</li>
-        <li>默认[刘国]和[康颖颖]的成绩未定义（DBNull.Value）</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>NoDecimal</code>（<strong class="example-control-reference" data-example-control="nbChineseScore" title="语文成绩列的数字输入框">语文成绩列的数字输入框</strong>）：初始为 <code>false</code>，允许输入小数成绩。</li>
-        <li><code>FieldType</code>（<strong>语文、数学成绩列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：成绩列使用浮点数类型读取和提交，避免按整数解释小数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在成绩单元格中编辑小数或空值，保存时保留小数部分。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>编辑小数成绩</h3>
+        <ol>
+            <li>单击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>语文成绩</strong>并输入<code>88.5</code>，再结束编辑。<br />结果：单元格保留
+                88.5，不截断为整数；<strong><strong>数学成绩</strong></strong>可按相同方式填写小数。</li>
+            <li>将一个成绩单元格清空，再点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="保存数据">保存数据</strong>。<br />结果：后台读取本轮修改，将空值与小数写回示例数据并重新绑定，下方显示提交的修改明细。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>成绩可以为小数</li>
+            <li>默认[刘国]和[康颖颖]的成绩未定义（DBNull.Value）</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>NoDecimal</code>（<strong class="example-control-reference" data-example-control="nbChineseScore"
+                    title="语文成绩列的数字输入框">语文成绩列的数字输入框</strong>）：初始为 <code>false</code>，允许输入小数成绩。</li>
+            <li><code>FieldType</code>（<strong>语文、数学成绩列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>）：成绩列使用浮点数类型读取和提交，避免按整数解释小数。</li>
+        </ul>
+    </section>
 }

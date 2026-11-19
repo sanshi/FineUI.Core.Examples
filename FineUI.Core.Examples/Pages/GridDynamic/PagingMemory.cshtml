@@ -5,14 +5,11 @@
 }
 
 @section body {
-    <f:Grid ID="Grid1" Title="动态修改分页（内存数据）" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400"
-            DataIDField="Id" DataTextField="Name" AllowPaging="false" IsDatabasePaging="false"
-            IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true"
-            >
+    <f:Grid ID="Grid1" Title="动态修改分页（内存数据）" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400" DataIDField="Id" DataTextField="Name"
+        AllowPaging="false" IsDatabasePaging="false" IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true">
         <Columns>
             <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" SortField="Name" Width="220" />
-            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int"
-                    SortField="EntranceYear" Width="240" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" SortField="EntranceYear" Width="240" />
         </Columns>
         <PageItems>
             <f:Button ID="BusinessButton" Text="业务按钮" OnClick="BusinessButton_Click" />
@@ -30,23 +27,29 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>动态开启与关闭内存分页，并核对页大小及分页入口。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：启用分页，回到第一页，每页 5 行，提供 3、5、10 的页大小选项；浏览器对已经加载的完整数据分页。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更换分页器外观</h3>
-    <ol>
-        <li>先应用分页配置，再点击<strong class="example-control-reference" data-example-control="Button4" title="改为数字按钮分页器">改为数字按钮分页器</strong>。<br />结果：分页栏改为数字按钮形式，仍按当前页大小显示记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>首次加载完整数据，随后切换分页及页大小不再查询数据。分页器中的业务按钮始终保留。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AllowPaging / PageSize / PageIndex</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改分页（内存数据）">动态修改分页（内存数据）</strong>）：分页启用后使用指定页大小与从 0 开始的页索引；关闭分页则恢复不分页显示。</li>
-        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="动态修改分页（内存数据）">动态修改分页（内存数据）</strong>）：初始为 <code>false</code>，加载完整数据，由浏览器完成换页。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>动态开启与关闭内存分页，并核对页大小及分页入口。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：启用分页，回到第一页，每页 5 行，提供 3、5、10
+                的页大小选项；浏览器对已经加载的完整数据分页。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更换分页器外观</h3>
+        <ol>
+            <li>先应用分页配置，再点击<strong class="example-control-reference" data-example-control="Button4"
+                    title="改为数字按钮分页器">改为数字按钮分页器</strong>。<br />结果：分页栏改为数字按钮形式，仍按当前页大小显示记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>首次加载完整数据，随后切换分页及页大小不再查询数据。分页器中的业务按钮始终保留。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AllowPaging / PageSize / PageIndex</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="动态修改分页（内存数据）">动态修改分页（内存数据）</strong>）：分页启用后使用指定页大小与从 0 开始的页索引；关闭分页则恢复不分页显示。</li>
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="动态修改分页（内存数据）">动态修改分页（内存数据）</strong>）：初始为 <code>false</code>，加载完整数据，由浏览器完成换页。</li>
+        </ul>
+    </section>
 }

@@ -37,7 +37,8 @@
                     </f:GroupField>
                 </Columns>
             </f:GroupField>
-            <f:RenderField BoxFlex="1" TextAlign="Center" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="记录时间" />
+            <f:RenderField BoxFlex="1" TextAlign="Center" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                HeaderText="记录时间" />
         </Columns>
     </f:Grid>
     <br>
@@ -52,18 +53,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>显示或隐藏分组及其子列，让多层表头的跨度随可见叶子列重新计算。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换叶子列与整个分组</h3>
-    <ol>
-        <li>从初始状态点击<strong class="example-control-reference" data-example-control="Button1" title="显示/隐藏[河南省/驻马店市]列">显示/隐藏[河南省/驻马店市]列</strong>。<br />结果：原来隐藏的<strong>驻马店市</strong>及其子列显示，<strong>河南省</strong>组头随可见列增加重新分配跨度，数据与对应标题对齐。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="显示/隐藏[安徽省]列">显示/隐藏[安徽省]列</strong>。<br />结果：<strong>安徽省</strong>整个分组及下属列一起隐藏；再次点击恢复，其他分组保持当前状态。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：初始隐藏[河南省]下面的[驻马店]。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Hidden / GroupField.Columns</code>（<strong>安徽省分组与驻马店市分组</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：叶子列与分组都可控制可见性，组头只覆盖当前显示的子列。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>显示或隐藏分组及其子列，让多层表头的跨度随可见叶子列重新计算。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换叶子列与整个分组</h3>
+        <ol>
+            <li>从初始状态点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="显示/隐藏[河南省/驻马店市]列">显示/隐藏[河南省/驻马店市]列</strong>。<br />结果：原来隐藏的<strong>驻马店市</strong>及其子列显示，<strong>河南省</strong>组头随可见列增加重新分配跨度，数据与对应标题对齐。
+            </li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3"
+                    title="显示/隐藏[安徽省]列">显示/隐藏[安徽省]列</strong>。<br />结果：<strong>安徽省</strong>整个分组及下属列一起隐藏；再次点击恢复，其他分组保持当前状态。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：初始隐藏[河南省]下面的[驻马店]。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Hidden / GroupField.Columns</code>（<strong>安徽省分组与驻马店市分组</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：叶子列与分组都可控制可见性，组头只覆盖当前显示的子列。</li>
+        </ul>
+    </section>
 }

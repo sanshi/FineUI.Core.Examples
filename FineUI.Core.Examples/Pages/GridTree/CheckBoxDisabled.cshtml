@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" TreeCheckBox="true" RowDataBoundFunction="onGrid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId" TreeCheckBox="true" RowDataBoundFunction="onGrid1RowDataBound">
         <Columns>
             <f:RowNumberField />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
@@ -72,19 +73,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>禁用指定目录的树复选框，保留其当前勾选状态。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>比较受限与普通节点</h3>
-    <ol>
-        <li>展开<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>的 basic、res 等目录，尝试切换<strong>名称</strong>旁的树复选框。<br />结果：basic 与 res 的复选框不能被用户切换，已勾选与未勾选的初始状态保持；其他节点仍可操作。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnGetCheckedValues" title="获取选中的复选框">获取选中的复选框</strong>。<br />结果：客户端读取已勾选树节点并交给后台，在结果区域显示标识与<strong>名称</strong>；没有勾选时显示对应提示。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：本树表格默认禁用 [basic] 和 [res] 两个目录的复选框。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>rowData.checkboxDisabled</code>（<strong>行绑定处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：本页为 basic 与 res 指定 true，阻止用户切换；独立的 checked 状态仍决定初始是否勾选。</li>
-        <li><code>getCheckedRows</code>（<strong>读取勾选的页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：读取树复选框结果，不使用 getSelectedRows 代替节点勾选。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>禁用指定目录的树复选框，保留其当前勾选状态。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>比较受限与普通节点</h3>
+        <ol>
+            <li>展开<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>的 basic、res
+                等目录，尝试切换<strong>名称</strong>旁的树复选框。<br />结果：basic 与 res 的复选框不能被用户切换，已勾选与未勾选的初始状态保持；其他节点仍可操作。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnGetCheckedValues"
+                    title="获取选中的复选框">获取选中的复选框</strong>。<br />结果：客户端读取已勾选树节点并交给后台，在结果区域显示标识与<strong>名称</strong>；没有勾选时显示对应提示。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本树表格默认禁用 [basic] 和 [res] 两个目录的复选框。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>rowData.checkboxDisabled</code>（<strong>行绑定处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>）：本页为 basic 与 res 指定 true，阻止用户切换；独立的 checked 状态仍决定初始是否勾选。</li>
+            <li><code>getCheckedRows</code>（<strong>读取勾选的页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>）：读取树复选框结果，不使用 getSelectedRows 代替节点勾选。</li>
+        </ul>
+    </section>
 }

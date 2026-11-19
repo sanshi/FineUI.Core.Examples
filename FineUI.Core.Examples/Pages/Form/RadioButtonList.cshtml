@@ -24,7 +24,8 @@
             </f:RadioButtonList>
             <f:Label>
             </f:Label>
-            <f:RadioButtonList ID="rblAutoPostBack" Label="列表三（选中改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="rblAutoPostBack_SelectedIndexChanged">
+            <f:RadioButtonList ID="rblAutoPostBack" Label="列表三（选中改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true"
+                OnSelectedIndexChanged="rblAutoPostBack_SelectedIndexChanged">
                 <f:RadioItem Text="可选项 1（很长很长很长很长很长很长的可选项）" Value="value1" />
                 <f:RadioItem Text="可选项 2" Value="value2" />
                 <f:RadioItem Text="可选项 3" Value="value3" />
@@ -88,11 +89,13 @@
                 结果：回发后由后台选中<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>的第一项。
             </li>
             <li>
-                在<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>改选第三项，再点击<strong class="example-control-reference" data-example-control="btnServerGetSelectedValue" title="获取上面列表的选中项">获取上面列表的选中项</strong>。<br />
+                在<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>改选第三项，再点击<strong
+                    class="example-control-reference" data-example-control="btnServerGetSelectedValue" title="获取上面列表的选中项">获取上面列表的选中项</strong>。<br />
                 结果：回发后由后台显示 <code>value3</code>，第一项会自动取消选中。
             </li>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnClientGetSelectedValue" title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript 脚本）</strong>。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClientGetSelectedValue"
+                    title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript 脚本）</strong>。<br />
                 结果：浏览器直接读取并显示同一个当前值，无需回发。
             </li>
         </ol>
@@ -103,16 +106,28 @@
                 结果：选择变化后回发，后台显示当前选项值，每次仅保留一项选中。
             </li>
             <li>
-                对照<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>。<br />
+                对照<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>和<strong
+                    class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>。<br />
                 结果：同样是单选列表，前者只有一列，后者分为三列并按列向下排列。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="rblAutoPostBack" title="列表三（选中改变事件）">列表三（选中改变事件）</strong>）：读取或设置单个选项值，例如 <code>value1</code>。</li>
-            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="rblAutoPostBack" title="列表三（选中改变事件）">列表三（选中改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>）：控制列数，本页对比一列和三列。</li>
-            <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="rblAutoPostBack" title="列表三（选中改变事件）">列表三（选中改变事件）</strong>）：<strong class="example-control-reference" data-example-control="rblAutoPostBack" title="列表三（选中改变事件）">列表三</strong>选择变化时回发，后台显示当前值。</li>
+            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>、<strong
+                    class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>、<strong
+                    class="example-control-reference" data-example-control="rblAutoPostBack" title="列表三（选中改变事件）">列表三（选中改变事件）</strong>）：读取或设置单个选项值，例如
+                <code>value1</code>。
+            </li>
+            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="rblAutoPostBack"
+                    title="列表三（选中改变事件）">列表三（选中改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四（竖排）</strong>）：控制列数，本页对比一列和三列。</li>
+            <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="rblAutoPostBack"
+                    title="列表三（选中改变事件）">列表三（选中改变事件）</strong>）：<strong class="example-control-reference" data-example-control="rblAutoPostBack"
+                    title="列表三（选中改变事件）">列表三</strong>选择变化时回发，后台显示当前值。</li>
         </ul>
     </section>
 }

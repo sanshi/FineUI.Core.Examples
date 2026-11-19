@@ -44,7 +44,8 @@
             <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="btnSelectSecondRadio_Click"></f:Button>
             <f:Label>
             </f:Label>
-            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1" OnCheckedChanged="rbtnAuto_CheckedChanged">
+            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"
+                OnCheckedChanged="rbtnAuto_CheckedChanged">
             </f:RadioButton>
             <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2" OnCheckedChanged="rbtnAuto_CheckedChanged">
             </f:RadioButton>
@@ -82,11 +83,15 @@
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>文字变红。</p>
+        <p>注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的<strong class="example-control-reference" data-example-control="rbtnSingleRadio"
+                title="可选项">单选框</strong>文字变红。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>:has()</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：从包含已选中 <code>input</code> 的字段单元格匹配文字标签。</li>
-            <li><code>:checked</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：仅匹配当前选中的输入元素，使文字样式随选中状态变化。</li>
+            <li><code>:has()</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong
+                    class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：从包含已选中 <code>input</code> 的字段单元格匹配文字标签。
+            </li>
+            <li><code>:checked</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong
+                    class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：仅匹配当前选中的输入元素，使文字样式随选中状态变化。</li>
         </ul>
     </section>
 }

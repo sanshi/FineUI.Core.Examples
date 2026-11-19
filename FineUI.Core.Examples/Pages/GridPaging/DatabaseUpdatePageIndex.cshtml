@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged">
+        AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -46,16 +46,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由按钮主动把数据库分页表格切到最后一页，同时更新页码与当前页记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>跳转到最后一页</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnUpdatePageIndex" title="转到最后一页">转到最后一页</strong>。<br />结果：后台根据总记录数和页大小计算最后一页索引，设置页码并绑定该页数据。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PageIndex</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：页索引从 0 开始，最后一页取总页数减 1；改变索引时还要加载对应页数据。</li>
-        <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>5</code>，与总记录数一起决定最后一页的位置。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由按钮主动把数据库分页表格切到最后一页，同时更新页码与当前页记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>跳转到最后一页</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnUpdatePageIndex"
+                    title="转到最后一页">转到最后一页</strong>。<br />结果：后台根据总记录数和页大小计算最后一页索引，设置页码并绑定该页数据。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>PageIndex</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：页索引从 0 开始，最后一页取总页数减
+                1；改变索引时还要加载对应页数据。</li>
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>5</code>，与总记录数一起决定最后一页的位置。
+            </li>
+        </ul>
+    </section>
 }

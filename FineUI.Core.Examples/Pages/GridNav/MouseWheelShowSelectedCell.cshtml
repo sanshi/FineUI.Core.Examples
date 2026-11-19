@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            ShowSelectedCell="true" ShowSelectedRow="false" EnableRowHoverState="false" MouseWheelSelection="true">
+        ShowSelectedCell="true" ShowSelectedRow="false" EnableRowHoverState="false" MouseWheelSelection="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -36,20 +36,29 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用鼠标滚轮移动当前选中单元格，只强调当前格。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>用滚轮移动选择</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>第一行<strong>姓名</strong>单元格，把鼠标留在表格内向下、向上滚动。<br />结果：选择沿行方向前后移动，超出可见范围时表格跟随滚动；当前单元格显示边框，不给整行着色。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：选中表格的某一个单元格，滚动鼠标滚轮，观察选中单元格的改变。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ShowSelectedCell</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，开启当前单元格的可见选择边框。</li>
-        <li><code>MouseWheelSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，初始为 <code>true</code>，滚轮用于移动当前行选择。</li>
-        <li><code>ShowSelectedRow</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始为 <code>false</code>，不显示普通整行选中高亮。</li>
-        <li><code>EnableRowHoverState</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始为 <code>false</code>，不显示整行悬停强调。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用鼠标滚轮移动当前选中单元格，只强调当前格。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>用滚轮移动选择</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>第一行<strong>姓名</strong>单元格，把鼠标留在表格内向下、向上滚动。<br />结果：选择沿行方向前后移动，超出可见范围时表格跟随滚动；当前单元格显示边框，不给整行着色。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：选中表格的某一个单元格，滚动鼠标滚轮，观察选中单元格的改变。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ShowSelectedCell</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，开启当前单元格的可见选择边框。
+            </li>
+            <li><code>MouseWheelSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，初始为 <code>true</code>，滚轮用于移动当前行选择。
+            </li>
+            <li><code>ShowSelectedRow</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，初始为 <code>false</code>，不显示普通整行选中高亮。
+            </li>
+            <li><code>EnableRowHoverState</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，初始为 <code>false</code>，不显示整行悬停强调。
+            </li>
+        </ul>
+    </section>
 }

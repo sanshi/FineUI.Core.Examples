@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -29,7 +30,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -39,7 +41,8 @@
                 <Editor>
                     <f:DropDownBox ID="DropDownBox1" EmptyText="请选择" EnableMultiSelect="true" AutoShowClearIcon="true">
                         <PopPanel>
-                            <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" EnableCheckBoxSelect="true" KeepCurrentSelection="true" Hidden="true" DataIDField="Code" DataTextField="Name" EnableMultiSelect="true">
+                            <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" EnableCheckBoxSelect="true" KeepCurrentSelection="true" Hidden="true"
+                                DataIDField="Code" DataTextField="Name" EnableMultiSelect="true">
                                 <Columns>
                                     <f:RowNumberField></f:RowNumberField>
                                     <f:RenderField ColumnID="Code" DataField="Code" HeaderText="代码" />
@@ -86,17 +89,21 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用可多选的下拉表格作为单元格编辑器，按记录代码保存多项兴趣。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在弹出内容中多选</h3>
-    <ol>
-        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>兴趣爱好</strong>编辑器，在弹出的表格中选中两项，再结束编辑。<br />结果：单元格显示所选兴趣名称，实际值保留对应<strong>代码</strong>集合；不把名称和选项<strong>代码</strong>混为同一个字段。</li>
-        <li>再次进入同一<strong>兴趣爱好</strong>单元格。<br />结果：编辑器恢复刚才的选择，可继续增减选项。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：初始为 <code>true</code>，允许下拉编辑器保留多项值。</li>
-        <li><code>PopPanel</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：弹出内容由本页的复选框列表或表格提供，取其中的值与文字作为单元格编辑结果。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用可多选的下拉表格作为单元格编辑器，按记录代码保存多项兴趣。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在弹出内容中多选</h3>
+        <ol>
+            <li>打开<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>兴趣爱好</strong>编辑器，在弹出的表格中选中两项，再结束编辑。<br />结果：单元格显示所选兴趣名称，实际值保留对应<strong>代码</strong>集合；不把名称和选项<strong>代码</strong>混为同一个字段。
+            </li>
+            <li>再次进入同一<strong>兴趣爱好</strong>单元格。<br />结果：编辑器恢复刚才的选择，可继续增减选项。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：初始为 <code>true</code>，允许下拉编辑器保留多项值。</li>
+            <li><code>PopPanel</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：弹出内容由本页的复选框列表或表格提供，取其中的值与文字作为单元格编辑结果。</li>
+        </ul>
+    </section>
 }

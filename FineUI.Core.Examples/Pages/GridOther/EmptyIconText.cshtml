@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" Height="350" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            ShowEmptyIconText="true">
+        ShowEmptyIconText="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -38,17 +38,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在无数据时显示表格内置的图标与提示文字，重新绑定后恢复数据行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
-    <ol>
-        <li>连续点击<strong class="example-control-reference" data-example-control="Button1" title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示内置图标与空数据文案，重新绑定记录后提示消失，数据行恢复。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：默认（不设置 EmptyText、ShowEmptyIconText 为 false）表格为空时显示空白；本例通过 ShowEmptyIconText=&quot;true&quot; 开启内置的「图标 + 文案」空状态。也可在 PageManager 上设置 GridShowEmptyIconText=&quot;true&quot; 全局开启。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ShowEmptyIconText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，开启无数据时的内置图标和文字。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在无数据时显示表格内置的图标与提示文字，重新绑定后恢复数据行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
+        <ol>
+            <li>连续点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示内置图标与空数据文案，重新绑定记录后提示消失，数据行恢复。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：默认（不设置 EmptyText、ShowEmptyIconText 为 false）表格为空时显示空白；本例通过 ShowEmptyIconText=&quot;true&quot; 开启内置的「图标 + 文案」空状态。也可在 PageManager 上设置
+            GridShowEmptyIconText=&quot;true&quot; 全局开启。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ShowEmptyIconText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，开启无数据时的内置图标和文字。
+            </li>
+        </ul>
+    </section>
 }

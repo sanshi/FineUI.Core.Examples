@@ -20,7 +20,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="2" EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -41,7 +42,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -225,19 +227,24 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>结束姓名编辑时用波浪线标出空值，提交前再拦截未填写姓名的记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>标出空值并阻止保存</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>，将新行<strong>姓名</strong>清空并结束编辑。<br />结果：<strong>姓名</strong>单元格出现错误波浪线；这一步由浏览器标记，不向后台保存。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：浏览器提示<strong>姓名</strong>不能为空，停止本次保存；关闭提示后重新进入对应<strong>姓名</strong>编辑器。</li>
-        <li>填写<strong>姓名</strong><code>新学生</code>并再次保存。<br />结果：波浪线清除，验证通过后才提交，后台读取本轮变更并更新示例数据。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>getModifiedData / startEdit</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：检查待保存记录，跳过删除项；<strong>姓名</strong>为空时停止提交，并重新打开该行<strong>姓名</strong>编辑器。</li>
-        <li><code>Required / 提交前验证</code>（<strong>姓名编辑器与保存处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：编辑器必填验证用于正在编辑的输入；新增记录尚未逐格编辑时仍可能有空<strong>姓名</strong>，因此提交前还要统一检查待保存数据。</li>
-        <li><code>updateCellValue / Name.cls</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：<strong>姓名</strong>结束编辑后设置或清除 errortip 样式；重置时还会清掉已添加的错误样式。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>结束姓名编辑时用波浪线标出空值，提交前再拦截未填写姓名的记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>标出空值并阻止保存</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnNew"
+                    title="新增数据">新增数据</strong>，将新行<strong>姓名</strong>清空并结束编辑。<br />结果：<strong>姓名</strong>单元格出现错误波浪线；这一步由浏览器标记，不向后台保存。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="保存数据">保存数据</strong>。<br />结果：浏览器提示<strong>姓名</strong>不能为空，停止本次保存；关闭提示后重新进入对应<strong>姓名</strong>编辑器。</li>
+            <li>填写<strong>姓名</strong><code>新学生</code>并再次保存。<br />结果：波浪线清除，验证通过后才提交，后台读取本轮变更并更新示例数据。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>getModifiedData / startEdit</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：检查待保存记录，跳过删除项；<strong>姓名</strong>为空时停止提交，并重新打开该行<strong>姓名</strong>编辑器。</li>
+            <li><code>Required / 提交前验证</code>（<strong>姓名编辑器与保存处理</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：编辑器必填验证用于正在编辑的输入；新增记录尚未逐格编辑时仍可能有空<strong>姓名</strong>，因此提交前还要统一检查待保存数据。</li>
+            <li><code>updateCellValue / Name.cls</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：<strong>姓名</strong>结束编辑后设置或清除 errortip 样式；重置时还会清掉已添加的错误样式。</li>
+        </ul>
+    </section>
 }

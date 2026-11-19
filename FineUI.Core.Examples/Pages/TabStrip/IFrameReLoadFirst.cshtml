@@ -46,21 +46,25 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示每次激活第一个标签时重新加载它的 <code>iframe</code>，其它标签继续保留已加载内容。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>比较再次激活后的加载时间</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>切到第一个标签，记下子页显示的加载时间。<br />结果：第一个 <code>iframe</code> 按切换事件重新加载，显示本次时间。</li>
-        <li>切回第二个标签，稍后再次切到第一个标签。<br />结果：第一个子页时间更新；第二、第三个标签没有配置这项重新加载动作。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>只有第一个选项卡在每次激活时都重新加载其中的<code>IFrame</code>。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>tabchange</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：仅在激活目标为第一个标签时执行刷新。</li>
-        <li><code>refreshIFrame()</code>（<strong class="example-control-reference" data-example-control="Tab1" title="标签一（每次切换到此选项卡都重新加载IFrame）">标签一（每次切换到此选项卡都重新加载IFrame）</strong>）：重新导航该标签的 <code>iframe</code>，不刷新其它标签。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示每次激活第一个标签时重新加载它的 <code>iframe</code>，其它标签继续保留已加载内容。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>比较再次激活后的加载时间</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>切到第一个标签，记下子页显示的加载时间。<br />结果：第一个
+                <code>iframe</code> 按切换事件重新加载，显示本次时间。
+            </li>
+            <li>切回第二个标签，稍后再次切到第一个标签。<br />结果：第一个子页时间更新；第二、第三个标签没有配置这项重新加载动作。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>只有第一个选项卡在每次激活时都重新加载其中的<code>IFrame</code>。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>tabchange</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：仅在激活目标为第一个标签时执行刷新。
+            </li>
+            <li><code>refreshIFrame()</code>（<strong class="example-control-reference" data-example-control="Tab1"
+                    title="标签一（每次切换到此选项卡都重新加载IFrame）">标签一（每次切换到此选项卡都重新加载IFrame）</strong>）：重新导航该标签的 <code>iframe</code>，不刷新其它标签。</li>
+        </ul>
+    </section>
 }

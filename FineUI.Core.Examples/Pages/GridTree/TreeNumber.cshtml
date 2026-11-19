@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId">
         <Columns>
             <f:RowNumberField EnableTreeNumber="true" />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
@@ -30,15 +31,17 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>按整棵树的位置编号，折叠后代后其他节点的树序号保持不变。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照展开前后的编号</h3>
-    <ol>
-        <li>记下<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>一个目录及其后面节点的序号，展开再折叠该目录。<br />结果：后代按树数据中的位置显示编号，折叠只隐藏后代，不把后续节点重新压成连续可见行号。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableTreeNumber</code>（<strong>序号列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：序号列按整棵树的次序编号，包含当前折叠的后代。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>按整棵树的位置编号，折叠后代后其他节点的树序号保持不变。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照展开前后的编号</h3>
+        <ol>
+            <li>记下<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>一个目录及其后面节点的序号，展开再折叠该目录。<br />结果：后代按树数据中的位置显示编号，折叠只隐藏后代，不把后续节点重新压成连续可见行号。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableTreeNumber</code>（<strong>序号列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>）：序号列按整棵树的次序编号，包含当前折叠的后代。</li>
+        </ul>
+    </section>
 }

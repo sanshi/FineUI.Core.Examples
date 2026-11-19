@@ -7,16 +7,17 @@
 
 
 @section body {
-    
+
     <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" BodyPadding="10" Title="面板" EnableCollapse="false">
-		<Toolbars>
+        <Toolbars>
             <f:Toolbar CssClass="f-state-default">
                 <Items>
                     <f:Button ID="Button1" IconAlign="Top" EnableDefaultState="false" IconFont="_Refresh" Text="刷新"></f:Button>
                     <f:Button ID="Button2" Enabled="false" IconAlign="Top" EnableDefaultState="false" IconFont="_Folder" Text="新建文件夹"></f:Button>
                     <f:Button ID="Button3" IconAlign="Top" EnableDefaultState="false" IconFont="_File" Text="新建文件"></f:Button>
                     <f:Button ID="Button5" IconAlign="Top" EnableDefaultState="false" IconFont="_Download" Text="下载"></f:Button>
-                    <f:FileUpload ID="filePhoto" ButtonIconFont="_Upload" ButtonOnly="true" ButtonText="上传" ButtonIconAlign="Top" ButtonDefaultState="false" OnFileSelected="filePhoto_FileSelected">
+                    <f:FileUpload ID="filePhoto" ButtonIconFont="_Upload" ButtonOnly="true" ButtonText="上传" ButtonIconAlign="Top" ButtonDefaultState="false"
+                        OnFileSelected="filePhoto_FileSelected">
                     </f:FileUpload>
                 </Items>
             </f:Toolbar>
@@ -31,26 +32,32 @@
                 乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
             </p>
             <p>
-                遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone 4S后的第二天与世长辞。
+                遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone
+                4S后的第二天与世长辞。
             </p>
         </Content>
-        
+
     </f:Panel>
 
 }
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示把工具栏按钮及上传按钮的图标放在文字上方。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照垂直图文按钮</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>对照普通按钮和上传入口。<br />结果：图标显示在文字上方，各按钮在同一工具栏中按可用空间排列，禁用项保持不可用。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control="Button1" title="刷新">刷新</strong>、<strong class="example-control-reference" data-example-control="Button2" title="新建文件夹">新建文件夹</strong>、<strong class="example-control-reference" data-example-control="Button3" title="新建文件">新建文件</strong>、<strong class="example-control-reference" data-example-control="Button5" title="下载">下载</strong>）：初始为<code>Top</code>，普通按钮设为 <code>Top</code>，将图标放到文字上方。</li>
-        <li><code>ButtonIconAlign</code>（<strong class="example-control-reference" data-example-control="filePhoto" title="上传控件">上传控件</strong>）：初始为<code>Top</code>，上传控件的内部按钮使用上方图标。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示把工具栏按钮及上传按钮的图标放在文字上方。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照垂直图文按钮</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Panel1"
+                    title="面板">面板</strong>对照普通按钮和上传入口。<br />结果：图标显示在文字上方，各按钮在同一工具栏中按可用空间排列，禁用项保持不可用。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control="Button1" title="刷新">刷新</strong>、<strong
+                    class="example-control-reference" data-example-control="Button2" title="新建文件夹">新建文件夹</strong>、<strong class="example-control-reference"
+                    data-example-control="Button3" title="新建文件">新建文件</strong>、<strong class="example-control-reference" data-example-control="Button5"
+                    title="下载">下载</strong>）：初始为<code>Top</code>，普通按钮设为 <code>Top</code>，将图标放到文字上方。</li>
+            <li><code>ButtonIconAlign</code>（<strong class="example-control-reference" data-example-control="filePhoto"
+                    title="上传控件">上传控件</strong>）：初始为<code>Top</code>，上传控件的内部按钮使用上方图标。</li>
+        </ul>
+    </section>
 }

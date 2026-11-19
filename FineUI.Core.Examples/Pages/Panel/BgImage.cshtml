@@ -48,11 +48,13 @@
 
 @section body {
 
-    <f:Panel ID="Panel1" CssClass="mybgpanel bg1" AutoScroll="true" ShowBorder="false" EnableCollapse="false" BodyPadding="20px" Layout="Column" ShowHeader="false" IsViewPort="true">
+    <f:Panel ID="Panel1" CssClass="mybgpanel bg1" AutoScroll="true" ShowBorder="false" EnableCollapse="false" BodyPadding="20px" Layout="Column"
+        ShowHeader="false" IsViewPort="true">
         <Items>
             <f:Panel ID="Panel24" ColumnWidth="50%" ShowBorder="false" ShowHeader="false" MarginRight="5">
                 <Items>
-                    <f:Panel ID="Panel25" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="本页面背景图片每 5 秒更换一次！<br><br><br><br><br><br>">
+                    <f:Panel ID="Panel25" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5"
+                        Content="本页面背景图片每 5 秒更换一次！<br><br><br><br><br><br>">
                     </f:Panel>
                     <f:Panel ID="Panel26" BodyPadding="10" ShowBorder="true" ShowHeader="false" MarginBottom="5" Content="我的面板<br><br><br><br><br><br>">
                     </f:Panel>
@@ -101,16 +103,18 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示给页面面板铺设背景图片，并按定时器轮换背景样式。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>等待背景轮换</h3>
-    <ul>
-        <li>打开页面，在<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>等待超过 <code>5</code> 秒。<br />结果：背景切到本页下一张图片，前景面板与内容继续保留；随后按相同间隔轮换。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>）：初始为<code>mybgpanel bg1</code>，把本页背景类应用于外层面板。</li>
-        <li><code>setInterval()</code>（<strong>背景轮换脚本</strong>）：本页每 <code>5</code> 秒切换一次背景类，不重新创建前景控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示给页面面板铺设背景图片，并按定时器轮换背景样式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>等待背景轮换</h3>
+        <ul>
+            <li>打开页面，在<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1 个面板</strong>等待超过 <code>5</code>
+                秒。<br />结果：背景切到本页下一张图片，前景面板与内容继续保留；随后按相同间隔轮换。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 1 个面板">第 1
+                    个面板</strong>）：初始为<code>mybgpanel bg1</code>，把本页背景类应用于外层面板。</li>
+            <li><code>setInterval()</code>（<strong>背景轮换脚本</strong>）：本页每 <code>5</code> 秒切换一次背景类，不重新创建前景控件。</li>
+        </ul>
+    </section>
 }

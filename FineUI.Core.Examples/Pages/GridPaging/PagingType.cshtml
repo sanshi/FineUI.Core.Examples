@@ -8,9 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            AllowPaging="true" PageSize="10" IsDatabasePaging="true" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
-            OnPageIndexChanged="Grid1_PageIndexChanged">
+    <f:Grid ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" AllowPaging="true" PageSize="10"
+        IsDatabasePaging="true" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" OnPageIndexChanged="Grid1_PageIndexChanged">
         <Columns>
             <f:RowNumberField EnablePagingNumber="true" Width="60" />
             <f:RenderField DataField="Id" HeaderText="ID" Width="150" />
@@ -25,7 +24,7 @@
     </f:CheckBox>
     <br />
     <br />
-        分页工具栏的类型：
+    分页工具栏的类型：
     <br />
     <br />
     <f:ButtonGroup ID="bgPagingType" EnablePressGroup="true">
@@ -41,7 +40,7 @@
         </Listeners>
     </f:ButtonGroup>
     <br />
-        数字分页按钮的个数：
+    数字分页按钮的个数：
     <br />
     <br />
     <f:DropDownList ID="ddlMaxPagingNumberButton" Width="120">
@@ -94,18 +93,21 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>切换分页栏的箭头、页码输入框和数字按钮组合，并调整分页信息及数字按钮数量。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分页栏组成</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnNumber" title="NumberButton">NumberButton</strong>，再尝试点击其他分页类型按钮。<br />结果：页面重新采用所选分页类型，数字按钮、输入框及箭头随类型变化；仍可通过新分页栏换页。</li>
-        <li>切换<strong class="example-control-reference" data-example-control="cbxShowPagingMessage" title="显示分页信息">显示分页信息</strong>，修改旁边的数字按钮数量选项。<br />结果：分页统计文字及最多显示的数字页码数量随配置变化。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PagingType</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：选择箭头、输入框或数字按钮组成的分页栏。</li>
-        <li><code>ShowPagingMessage</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：控制分页统计文字是否显示。</li>
-        <li><code>MaxPagingNumberButton</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：限制数字分页按钮的数量。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>切换分页栏的箭头、页码输入框和数字按钮组合，并调整分页信息及数字按钮数量。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分页栏组成</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnNumber"
+                    title="NumberButton">NumberButton</strong>，再尝试点击其他分页类型按钮。<br />结果：页面重新采用所选分页类型，数字按钮、输入框及箭头随类型变化；仍可通过新分页栏换页。</li>
+            <li>切换<strong class="example-control-reference" data-example-control="cbxShowPagingMessage"
+                    title="显示分页信息">显示分页信息</strong>，修改旁边的数字按钮数量选项。<br />结果：分页统计文字及最多显示的数字页码数量随配置变化。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>PagingType</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：选择箭头、输入框或数字按钮组成的分页栏。</li>
+            <li><code>ShowPagingMessage</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：控制分页统计文字是否显示。</li>
+            <li><code>MaxPagingNumberButton</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：限制数字分页按钮的数量。
+            </li>
+        </ul>
+    </section>
 }

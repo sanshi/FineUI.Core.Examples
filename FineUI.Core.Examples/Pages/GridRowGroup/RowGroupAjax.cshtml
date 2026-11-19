@@ -7,8 +7,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" Height="500" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            EnableRowGroup="true" DataRowGroupField="EntranceYear">
+    <f:Grid ID="Grid1" IsFluid="true" Height="500" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableRowGroup="true"
+        DataRowGroupField="EntranceYear">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -43,19 +43,27 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由后台切换年份分组、专业分组或关闭分组，重新绑定后可继续读取配置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分组字段并核对状态</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnGroupMajor" title="后台按专业分组">后台按专业分组</strong>，再点击<strong class="example-control-reference" data-example-control="btnReadGroup" title="后台读取分组设置">后台读取分组设置</strong>。<br />结果：后台改用 Major 组织行，标题按专业显示；后续独立回发读取到已启用及当前<strong>分组</strong>字段。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnGroupOff" title="后台关闭分组">后台关闭分组</strong>，再点击<strong class="example-control-reference" data-example-control="btnGroupYear" title="后台按入学年份分组">后台按入学年份分组</strong>。<br />结果：关闭时只显示普通数据行，再按 EntranceYear 恢复年份<strong>分组</strong>；每次切换都重新绑定同一份示例数据。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：表格启用行分组后不支持行扩展列、树表格、列锁定和内存分页。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableRowGroup</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，控制是否生成行<strong>分组</strong>。</li>
-        <li><code>DataRowGroupField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>EntranceYear</code>，提供本次<strong>分组</strong>使用的字段，按钮在年份与专业之间切换。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由后台切换年份分组、专业分组或关闭分组，重新绑定后可继续读取配置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分组字段并核对状态</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnGroupMajor" title="后台按专业分组">后台按专业分组</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnReadGroup" title="后台读取分组设置">后台读取分组设置</strong>。<br />结果：后台改用 Major
+                组织行，标题按专业显示；后续独立回发读取到已启用及当前<strong>分组</strong>字段。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnGroupOff" title="后台关闭分组">后台关闭分组</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnGroupYear" title="后台按入学年份分组">后台按入学年份分组</strong>。<br />结果：关闭时只显示普通数据行，再按
+                EntranceYear 恢复年份<strong>分组</strong>；每次切换都重新绑定同一份示例数据。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：表格启用行分组后不支持行扩展列、树表格、列锁定和内存分页。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableRowGroup</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，控制是否生成行<strong>分组</strong>。
+            </li>
+            <li><code>DataRowGroupField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>EntranceYear</code>，提供本次<strong>分组</strong>使用的字段，按钮在年份与专业之间切换。
+            </li>
+        </ul>
+    </section>
 }

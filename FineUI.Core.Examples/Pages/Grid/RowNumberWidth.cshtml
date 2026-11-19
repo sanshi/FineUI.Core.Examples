@@ -8,12 +8,13 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（数据库分页，切换分页时序号连续）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="10" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（数据库分页，切换分页时序号连续）" DataIDField="Id" DataTextField="Name"
+        EnableCheckBoxSelect="true" AllowPaging="true" PageSize="10" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged">
         <Columns>
             <f:RowNumberField EnablePagingNumber="true" Width="60" />
             <f:RenderField HeaderText="ID" DataField="Id" Width="150" />
-            <f:RenderField HeaderText="时间" DataField="EntranceTime" ExpandUnusedSpace="true" MinWidth="150" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss" />
+            <f:RenderField HeaderText="时间" DataField="EntranceTime" ExpandUnusedSpace="true" MinWidth="150" FieldType="Date" Renderer="Date"
+                RendererArgument="yyyy-MM-dd HH:mm:ss" />
         </Columns>
     </f:Grid>
     <br />
@@ -27,15 +28,17 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>单独设置序号列宽度，使行号与数据列宽度分别控制。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看序号列的独立设置</h3>
-    <ul>
-        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格（数据库分页，切换分页时序号连续）">表格（数据库分页，切换分页时序号连续）</strong>最左侧的序号列。<br />结果：序号列初始宽度为 60，姓名等数据列不会因为设置序号宽度而一起改变。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Width</code>（<strong>序号列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（数据库分页，切换分页时序号连续）">表格（数据库分页，切换分页时序号连续）</strong>）：初始为 <code>60</code>，只分配序号列宽度。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>单独设置序号列宽度，使行号与数据列宽度分别控制。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看序号列的独立设置</h3>
+        <ul>
+            <li>查看<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（数据库分页，切换分页时序号连续）">表格（数据库分页，切换分页时序号连续）</strong>最左侧的序号列。<br />结果：序号列初始宽度为 60，姓名等数据列不会因为设置序号宽度而一起改变。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Width</code>（<strong>序号列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（数据库分页，切换分页时序号连续）">表格（数据库分页，切换分页时序号连续）</strong>）：初始为 <code>60</code>，只分配序号列宽度。</li>
+        </ul>
+    </section>
 }

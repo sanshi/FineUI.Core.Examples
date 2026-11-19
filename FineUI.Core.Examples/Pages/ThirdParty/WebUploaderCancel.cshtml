@@ -25,8 +25,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowHeader="true" ShowBorder="true" Title="文件上传" Height="350"
-            EnableCollapse="false" EnableCheckBoxSelect="false" EmptyText="尚未上传文件" DataIDField="id">
+    <f:Grid ID="Grid1" IsFluid="true" ShowHeader="true" ShowBorder="true" Title="文件上传" Height="350" EnableCollapse="false" EnableCheckBoxSelect="false"
+        EmptyText="尚未上传文件" DataIDField="id">
         <Toolbars>
             <f:Toolbar>
                 <Items>
@@ -254,16 +254,19 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为正在上传的文件提供取消入口，区别于完成后的文件删除。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>取消进行中的上传</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSelectFiles" title="选择文件上传">选择文件上传</strong>选择一个允许上传的较大文件，在进度未完成时点击行内取消上传。<br />结果：当前传输被取消，该行不再继续增加进度；已完成文件不受影响。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>WebUploader.create</code>（<strong class="example-control-reference" data-example-control="Grid1" title="文件上传">文件上传</strong>）：本页为每个上传区域建立独立实例，配置上传地址、文件类型和大小限制。</li>
-        <li><code>cancelFile</code>（<strong class="example-control-reference" data-example-control="Grid1" title="文件上传">文件上传</strong>）：取消当前文件的上传，和删除已上传文件是两种不同操作。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为正在上传的文件提供取消入口，区别于完成后的文件删除。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>取消进行中的上传</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSelectFiles"
+                    title="选择文件上传">选择文件上传</strong>选择一个允许上传的较大文件，在进度未完成时点击行内取消上传。<br />结果：当前传输被取消，该行不再继续增加进度；已完成文件不受影响。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>WebUploader.create</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="文件上传">文件上传</strong>）：本页为每个上传区域建立独立实例，配置上传地址、文件类型和大小限制。</li>
+            <li><code>cancelFile</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="文件上传">文件上传</strong>）：取消当前文件的上传，和删除已上传文件是两种不同操作。</li>
+        </ul>
+    </section>
 }

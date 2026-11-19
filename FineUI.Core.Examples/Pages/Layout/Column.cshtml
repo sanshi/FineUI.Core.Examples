@@ -24,8 +24,8 @@
 
 @section body {
 
-    <f:Panel ID="Panel2" IsFluid="true" Height="250" ShowBorder="true" EnableCollapse="false"
-             BodyPadding="10" Layout="Column" ShowHeader="true" Title="面板（Height=250 Layout=Column）">
+    <f:Panel ID="Panel2" IsFluid="true" Height="250" ShowBorder="true" EnableCollapse="false" BodyPadding="10" Layout="Column" ShowHeader="true"
+        Title="面板（Height=250 Layout=Column）">
         <Items>
             <f:Panel ID="Panel1" Width="200" Height="150" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
@@ -48,8 +48,8 @@
         </Items>
     </f:Panel>
     <br />
-    <f:Panel ID="Panel5" IsFluid="true" Height="250" ShowBorder="true" EnableCollapse="false"
-             BodyPadding="10" Layout="Column" ShowHeader="true" Title="面板（Height=250 Layout=Column）">
+    <f:Panel ID="Panel5" IsFluid="true" Height="250" ShowBorder="true" EnableCollapse="false" BodyPadding="10" Layout="Column" ShowHeader="true"
+        Title="面板（Height=250 Layout=Column）">
         <Items>
             <f:Panel ID="Panel6" Width="200" Height="150" CssClass="columnpanel" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
@@ -72,8 +72,8 @@
         </Items>
     </f:Panel>
     <br />
-    <f:Panel ID="Panel9" IsFluid="true" Height="350" Layout="Column" BodyPadding="10" EnableCollapse="false"
-             ShowBorder="true" ShowHeader="true" Title="面板（Height=350 Layout=Column BodyPadding=5）">
+    <f:Panel ID="Panel9" IsFluid="true" Height="350" Layout="Column" BodyPadding="10" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
+        Title="面板（Height=350 Layout=Column BodyPadding=5）">
         <Items>
             <f:Panel ID="Panel13" ColumnWidth="50%" MarginRight="5" Title="ColumnWidth=50% MarginRight=5" ShowBorder="true" ShowHeader="true">
                 <Items>
@@ -116,8 +116,8 @@
     <br />
     <hr />
     <br />
-    <f:Panel ID="Panel10" IsFluid="true" Height="350" Layout="HBox" EnableCollapse="false"
-             BodyPadding="10" BoxConfigSpace="5" ShowBorder="true" ShowHeader="true" Title="面板（Height=350 Layout=HBox BodyPadding=5 BoxConfigSpace=5）">
+    <f:Panel ID="Panel10" IsFluid="true" Height="350" Layout="HBox" EnableCollapse="false" BodyPadding="10" BoxConfigSpace="5" ShowBorder="true"
+        ShowHeader="true" Title="面板（Height=350 Layout=HBox BodyPadding=5 BoxConfigSpace=5）">
         <Items>
             <f:Panel ID="Panel11" BoxFlex="1" Title="BoxFlex=1" ShowBorder="true" ShowHeader="true">
                 <Items>
@@ -159,16 +159,20 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示按列宽把项目排列在同一行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Panel2" title="第 1 个面板（面板（Height=250 Layout=Column））">第 1 个面板（面板（Height=250 Layout=Column））</strong>中改变浏览器宽度，对照同一行各列。<br />结果：百分比列随容器宽度伸缩，其它列保留本页指定尺寸。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel2" title="第 1 个面板（面板（Height=250 Layout=Column））">第 1 个面板（面板（Height=250 Layout=Column））</strong>）：各组分别设为<code>Column</code>、<code>Fit</code>、<code>HBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
-        <li><code>ColumnWidth</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel4" title="第 3 个面板">第 3 个面板</strong>）：各组分别设为<code>60%</code>、<code>40%</code>、<code>50%</code>，规定当前子项占用的列宽。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示按列宽把项目排列在同一行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Panel2" title="第 1 个面板（面板（Height=250 Layout=Column））">第 1 个面板（面板（Height=250
+                    Layout=Column））</strong>中改变浏览器宽度，对照同一行各列。<br />结果：百分比列随容器宽度伸缩，其它列保留本页指定尺寸。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel2"
+                    title="第 1 个面板（面板（Height=250 Layout=Column））">第 1 个面板（面板（Height=250
+                    Layout=Column））</strong>）：各组分别设为<code>Column</code>、<code>Fit</code>、<code>HBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+            <li><code>ColumnWidth</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel4" title="第 3 个面板">第 3
+                    个面板</strong>）：各组分别设为<code>60%</code>、<code>40%</code>、<code>50%</code>，规定当前子项占用的列宽。</li>
+        </ul>
+    </section>
 }

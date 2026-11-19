@@ -12,9 +12,9 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false">
                 <PopPanel>
-                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true"
-                            OnPageIndexChanged="Grid1_PageIndexChanged">
+                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true" AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true"
+                        KeepCurrentSelection="true" OnPageIndexChanged="Grid1_PageIndexChanged">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -27,8 +27,8 @@
                         <Toolbars>
                             <f:Toolbar Position="Top">
                                 <Items>
-                                    <f:TwinTriggerBox Width="300" EmptyText="在姓名中查找" ShowLabel="false" ID="ttbSearch" ShowTrigger1="false" Trigger1Icon="Clear" Trigger2Icon="Search"
-                                                      OnTrigger1Click="ttbSearch_Trigger1Click" OnTrigger2Click="ttbSearch_Trigger2Click">
+                                    <f:TwinTriggerBox Width="300" EmptyText="在姓名中查找" ShowLabel="false" ID="ttbSearch" ShowTrigger1="false" Trigger1Icon="Clear"
+                                        Trigger2Icon="Search" OnTrigger1Click="ttbSearch_Trigger1Click" OnTrigger2Click="ttbSearch_Trigger2Click">
                                     </f:TwinTriggerBox>
                                 </Items>
                             </f:Toolbar>
@@ -68,8 +68,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnTrigger2Click</code>（<strong class="example-control-reference" data-example-control="ttbSearch" title="在姓名中查找">在姓名中查找</strong>）：搜索触发器读取当前姓名关键词，重新加载符合条件的表格数据。</li>
-            <li><code>OnTrigger1Click</code>（<strong class="example-control-reference" data-example-control="ttbSearch" title="在姓名中查找">在姓名中查找</strong>）：清空触发器移除关键词并恢复未过滤的数据。</li>
+            <li><code>OnTrigger2Click</code>（<strong class="example-control-reference" data-example-control="ttbSearch"
+                    title="在姓名中查找">在姓名中查找</strong>）：搜索触发器读取当前姓名关键词，重新加载符合条件的表格数据。</li>
+            <li><code>OnTrigger1Click</code>（<strong class="example-control-reference" data-example-control="ttbSearch"
+                    title="在姓名中查找">在姓名中查找</strong>）：清空触发器移除关键词并恢复未过滤的数据。</li>
         </ul>
     </section>
 }

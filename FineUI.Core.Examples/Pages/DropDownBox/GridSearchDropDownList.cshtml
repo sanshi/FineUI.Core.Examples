@@ -12,17 +12,17 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false">
                 <PopPanel>
-                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true"
-                            OnPageIndexChanged="Grid1_PageIndexChanged"
-                            AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
+                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true" AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true"
+                        KeepCurrentSelection="true" OnPageIndexChanged="Grid1_PageIndexChanged" AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
                             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
                             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
                             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
-                            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" EnableFilter="true">
+                            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true"
+                                MinWidth="150" EnableFilter="true">
                                 <Filter>
                                     <Operator>
                                         <f:DropDownList>
@@ -83,9 +83,14 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：允许通过表头菜单设置过滤。 本页声明值为 <code>true</code>。</li>
-            <li><code>OnFilterChanged</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：过滤条件变化后重新加载匹配行。 本页声明值为 <code>Grid1</code><code>_FilterChanged</code>。</li>
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlAtSchool" title="第 2 个下拉列表">第 2 个下拉列表</strong>）：筛选<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">下拉框</strong>改变后重新加载表格，保留本页的其它过滤条件。</li>
+            <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：允许通过表头菜单设置过滤。 本页声明值为
+                <code>true</code>。
+            </li>
+            <li><code>OnFilterChanged</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：过滤条件变化后重新加载匹配行。
+                本页声明值为 <code>Grid1</code><code>_FilterChanged</code>。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlAtSchool" title="第 2 个下拉列表">第 2
+                    个下拉列表</strong>）：筛选<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">下拉框</strong>改变后重新加载表格，保留本页的其它过滤条件。</li>
         </ul>
     </section>
 }

@@ -7,7 +7,7 @@
 
 @section body {
 
-        暂不支持！
+    暂不支持！
 
     <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" Layout="VBox" IsViewPort="true" BodyPadding="20">
         <Items>
@@ -17,9 +17,8 @@
                     <f:ListItem Text="表格二（学生，排序）" Value="table2"></f:ListItem>
                 </Items>
             </f:DropDownList>
-            <f:Grid ID="Grid1" DataIDField="Id" BoxFlex="1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）" Height="500" PagingToolbarVisible="true"
-                    OnSort="Grid1_Sort" 
-                    OnPageIndexChanged="Grid1_PageIndexChanged">
+            <f:Grid ID="Grid1" DataIDField="Id" BoxFlex="1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）" Height="500"
+                PagingToolbarVisible="true" OnSort="Grid1_Sort" OnPageIndexChanged="Grid1_PageIndexChanged">
                 <Toolbars>
                     <f:Toolbar>
                         <Items>

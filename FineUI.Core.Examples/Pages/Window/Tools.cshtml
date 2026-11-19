@@ -7,8 +7,8 @@
 
 @section body {
     <f:Button ID="btnShowWindow" Text="显示窗体" ClickHandler="onShowWindowClick"></f:Button>
-    <f:Window ID="Window1" Title="项目详情" Width="500" Height="220" BodyPadding="10"
-              Hidden="false" IsModal="false" EnableMaximize="true" EnableCollapse="false" CustomToolAhead="true">
+    <f:Window ID="Window1" Title="项目详情" Width="500" Height="220" BodyPadding="10" Hidden="false" IsModal="false" EnableMaximize="true" EnableCollapse="false"
+        CustomToolAhead="true">
         <Tools>
             <f:Tool ID="ToolHelp" IconFont="_Question" ToolTip="查看窗体帮助" ClickHandler="onWindowHelpClick"></f:Tool>
         </Tools>
@@ -36,23 +36,36 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在窗体标题栏添加帮助工具图标，并与系统最大化、还原和关闭工具配合使用。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-question" aria-hidden="true"></i>查看窗体帮助</h3>
-    <p>在<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>标题栏点击<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>，<br />结果：浏览器直接显示通知：窗体帮助：点击最大化图标可铺满页面，再次点击可还原；点击关闭图标可隐藏窗体。窗体保持显示，整个操作不发起后台回发。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>与系统工具配合</h3>
-    <ol>
-        <li>从初始状态点击标题栏的<strong>最大化</strong>图标，窗体铺满当前页面；再次点击<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>仍显示帮助通知。点击同一位置的<strong>还原</strong>图标，窗体恢复原尺寸。</li>
-        <li>点击标题栏的<strong>关闭</strong>图标，窗体隐藏；再点击<strong class="example-control-reference" data-example-control="btnShowWindow" title="显示窗体">显示窗体</strong>，窗体重新显示，<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>仍可点击并显示相同通知。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Tools</code>（<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>）：声明标题栏中的自定义帮助工具。</li>
-        <li><code>IconFont</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为 <code>_Question</code>，显示帮助图标。</li>
-        <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为 <code>查看窗体帮助</code>，悬停时说明图标用途。</li>
-        <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为 <code>onWindowHelpClick</code>，点击时只在浏览器显示帮助通知。</li>
-        <li><code>CustomToolAhead</code>（<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>）：初始为 <code>true</code>，帮助工具排在系统工具之前。</li>
-        <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：未设置，帮助图标使用工具控件的默认样式。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在窗体标题栏添加帮助工具图标，并与系统最大化、还原和关闭工具配合使用。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-question" aria-hidden="true"></i>查看窗体帮助</h3>
+        <p>在<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>标题栏点击<strong class="example-control-reference"
+                data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>，<br />结果：浏览器直接显示通知：窗体帮助：点击最大化图标可铺满页面，再次点击可还原；点击关闭图标可隐藏窗体。窗体保持显示，整个操作不发起后台回发。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>与系统工具配合</h3>
+        <ol>
+            <li>从初始状态点击标题栏的<strong>最大化</strong>图标，窗体铺满当前页面；再次点击<strong class="example-control-reference" data-example-control="ToolHelp"
+                    title="查看窗体帮助">查看窗体帮助</strong>仍显示帮助通知。点击同一位置的<strong>还原</strong>图标，窗体恢复原尺寸。</li>
+            <li>点击标题栏的<strong>关闭</strong>图标，窗体隐藏；再点击<strong class="example-control-reference" data-example-control="btnShowWindow"
+                    title="显示窗体">显示窗体</strong>，窗体重新显示，<strong class="example-control-reference" data-example-control="ToolHelp"
+                    title="查看窗体帮助">查看窗体帮助</strong>仍可点击并显示相同通知。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Tools</code>（<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>）：声明标题栏中的自定义帮助工具。</li>
+            <li><code>IconFont</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为
+                <code>_Question</code>，显示帮助图标。
+            </li>
+            <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为
+                <code>查看窗体帮助</code>，悬停时说明图标用途。
+            </li>
+            <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="ToolHelp" title="查看窗体帮助">查看窗体帮助</strong>）：初始为
+                <code>onWindowHelpClick</code>，点击时只在浏览器显示帮助通知。
+            </li>
+            <li><code>CustomToolAhead</code>（<strong class="example-control-reference" data-example-control="Window1" title="项目详情">项目详情</strong>）：初始为
+                <code>true</code>，帮助工具排在系统工具之前。
+            </li>
+            <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="ToolHelp"
+                    title="查看窗体帮助">查看窗体帮助</strong>）：未设置，帮助图标使用工具控件的默认样式。</li>
+        </ul>
+    </section>
 }

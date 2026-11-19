@@ -26,7 +26,8 @@
             <f:FormRow ID="FormRow3" HideMode="Visibility">
                 <Items>
                     <f:Label ID="Label4" Label="编号" Text="200804170006" />
-                    <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址">
+                    <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL"
+                        RegexMessage="请输入有效的邮箱地址">
                     </f:TextBox>
                 </Items>
             </f:FormRow>
@@ -37,7 +38,8 @@
                         <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                         <f:ListItem Text="老大丙" Value="2"></f:ListItem>
                     </f:DropDownList>
-                    <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true" ShowRedStar="true" />
+                    <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true"
+                        ShowRedStar="true" />
                 </Items>
             </f:FormRow>
             <f:FormRow>
@@ -99,22 +101,27 @@
         <ul>
             <li>
                 点击<strong class="example-control-reference" data-example-control="btnShowHideTitle" title="显示隐藏[标题]">显示隐藏[标题]</strong>。<br />
-                结果：浏览器直接隐藏<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>，原来的位置仍为空白，同行的<strong class="example-control-reference" data-example-control="labLiuShuiHao" title="流水号">流水号</strong>不向左补位。
+                结果：浏览器直接隐藏<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>，原来的位置仍为空白，同行的<strong
+                    class="example-control-reference" data-example-control="labLiuShuiHao" title="流水号">流水号</strong>不向左补位。
             </li>
             <li>
                 点击<strong class="example-control-reference" data-example-control="btnShowHidePhone" title="显示隐藏[电话]">显示隐藏[电话]</strong>。<br />
-                结果：浏览器直接隐藏<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>，释放其占用空间，同一行的<strong class="example-control-reference" data-example-control="Label16" title="申请人">申请人</strong>向左补位。
+                结果：浏览器直接隐藏<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>，释放其占用空间，同一行的<strong
+                    class="example-control-reference" data-example-control="Label16" title="申请人">申请人</strong>向左补位。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>隐藏整行</h3>
         <ul>
             <li>
                 点击<strong class="example-control-reference" data-example-control="btnShowHideFormRow2" title="显示隐藏第二行">显示隐藏第二行</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="Label16" title="申请人">申请人</strong>整行隐藏并释放高度，后面的行向上补位。
+                结果：<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference"
+                    data-example-control="Label16" title="申请人">申请人</strong>整行隐藏并释放高度，后面的行向上补位。
             </li>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnShowHideFormRow3" title="显示隐藏第三行（隐藏后显示空白行）">显示隐藏第三行（隐藏后显示空白行）</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="Label4" title="编号">编号</strong>、<strong class="example-control-reference" data-example-control="TextBox2" title="电子邮箱">电子邮箱</strong>整行隐藏，仍保留一整行空白。
+                点击<strong class="example-control-reference" data-example-control="btnShowHideFormRow3"
+                    title="显示隐藏第三行（隐藏后显示空白行）">显示隐藏第三行（隐藏后显示空白行）</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="Label4" title="编号">编号</strong>、<strong class="example-control-reference"
+                    data-example-control="TextBox2" title="电子邮箱">电子邮箱</strong>整行隐藏，仍保留一整行空白。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>恢复显示</h3>
@@ -126,8 +133,16 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>HideMode</code>（<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>、<strong class="example-control-reference" data-example-control="FormRow2" title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="FormRow3" title="第 3 个表单行">第 3 个表单行</strong>）：标题和第三行设为 <code>Visibility</code>，隐藏后占位；电话和第二行使用默认 <code>Display</code>，隐藏后释放空间。</li>
-            <li><code>toggleVisible()</code>（<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>、<strong class="example-control-reference" data-example-control="FormRow2" title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="FormRow3" title="第 3 个表单行">第 3 个表单行</strong>）：在浏览器切换字段或整行的显示状态。</li>
+            <li><code>HideMode</code>（<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>、<strong
+                    class="example-control-reference" data-example-control="FormRow2" title="第 2 个表单行">第 2 个表单行</strong>、<strong
+                    class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference"
+                    data-example-control="FormRow3" title="第 3 个表单行">第 3 个表单行</strong>）：标题和第三行设为 <code>Visibility</code>，隐藏后占位；电话和第二行使用默认
+                <code>Display</code>，隐藏后释放空间。
+            </li>
+            <li><code>toggleVisible()</code>（<strong class="example-control-reference" data-example-control="labTitle" title="标题">标题</strong>、<strong
+                    class="example-control-reference" data-example-control="FormRow2" title="第 2 个表单行">第 2 个表单行</strong>、<strong
+                    class="example-control-reference" data-example-control="labPhone" title="电话">电话</strong>、<strong class="example-control-reference"
+                    data-example-control="FormRow3" title="第 3 个表单行">第 3 个表单行</strong>）：在浏览器切换字段或整行的显示状态。</li>
         </ul>
     </section>
 }

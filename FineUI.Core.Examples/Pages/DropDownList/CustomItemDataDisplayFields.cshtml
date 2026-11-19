@@ -29,7 +29,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="自定义列表项（DataDisplayFields）" ShowHeader="true">
         <Items>
-            <f:DropDownList ID="DropDownList1" DataTextField="Name" DataValueField="Id" _DataDisplayFields="Name,Desc" DataDisplayFormatString="@DDL_DISPLAY_TEMPLATE">
+            <f:DropDownList ID="DropDownList1" DataTextField="Name" DataValueField="Id" _DataDisplayFields="Name,Desc"
+                DataDisplayFormatString="@DDL_DISPLAY_TEMPLATE">
             </f:DropDownList>
             <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="btnGetSelection_Click"></f:Button>
         </Items>
@@ -52,9 +53,12 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>_DataDisplayFields</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：把额外数据字段提供给选项显示模板。 本页声明值为 <code>Name</code>,<code>Desc</code>。</li>
-            <li><code>DataDisplayFormatString</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：自定义下拉面板内选项的显示内容。</li>
-            <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：从指定字段取得选中后显示的文字。 本页声明值为 <code>Name</code>。</li>
+            <li><code>_DataDisplayFields</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：把额外数据字段提供给选项显示模板。 本页声明值为 <code>Name</code>,<code>Desc</code>。</li>
+            <li><code>DataDisplayFormatString</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：自定义下拉面板内选项的显示内容。</li>
+            <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：从指定字段取得选中后显示的文字。 本页声明值为 <code>Name</code>。</li>
         </ul>
     </section>
 }

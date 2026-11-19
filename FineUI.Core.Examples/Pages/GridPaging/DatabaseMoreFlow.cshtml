@@ -26,7 +26,7 @@
 
 @section body {
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            Height="350">
+        Height="350">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -90,17 +90,21 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在固定高度的表格内部追加记录，滚动查看数据时保留表头。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>逐批追加记录</h3>
-    <ol>
-        <li>滚动<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>到末尾，点击<strong>加载更多...</strong>。<br />结果：触发本页加载处理，后台读取下一批记录并追加，已显示的记录仍保留。</li>
-        <li>继续加载，直到没有剩余记录。<br />结果：加载入口变为不可继续加载的状态；不会重复追加最后一批记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AppendData</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：把新一批数据追加到表格；区别于重新绑定时替换现有记录。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>350</code>，限制表格高度，使数据在表格内部滚动，表头保持可见。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在固定高度的表格内部追加记录，滚动查看数据时保留表头。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>逐批追加记录</h3>
+        <ol>
+            <li>滚动<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>到末尾，点击<strong>加载更多...</strong>。<br />结果：触发本页加载处理，后台读取下一批记录并追加，已显示的记录仍保留。</li>
+            <li>继续加载，直到没有剩余记录。<br />结果：加载入口变为不可继续加载的状态；不会重复追加最后一批记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AppendData</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：把新一批数据追加到表格；区别于重新绑定时替换现有记录。</li>
+            <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>350</code>，限制表格高度，使数据在表格内部滚动，表头保持可见。
+            </li>
+        </ul>
+    </section>
 }

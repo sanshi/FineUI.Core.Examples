@@ -9,8 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
-            AllowPaging="true" PageSize="5" IsDatabasePaging="true"
-            AllowSorting="true" SortField="Gender" SortDirection="ASC">
+        AllowPaging="true" PageSize="5" IsDatabasePaging="true" AllowSorting="true" SortField="Gender" SortDirection="ASC">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
@@ -46,16 +45,19 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>把分页与排序统一交给一个自定义回发处理器，避免分别声明两个后台事件。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>统一处理翻页和排序</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的入学年份列标题，再点击下一页。<br />结果：浏览器监听 sorting 与 paging，主动调用自定义回发；后台读取当前页码、排序字段和方向，返回对应记录，两种动作共用同一处理逻辑。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>paging / sorting</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：两个客户端事件调用同一个回调，而不是分别绑定默认的服务器分页与排序事件。</li>
-        <li><code>F.customEvent</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：客户端回调主动发起本页的自定义事件，后台按表格当前分页与排序状态重新查询并绑定。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>把分页与排序统一交给一个自定义回发处理器，避免分别声明两个后台事件。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>统一处理翻页和排序</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的入学年份列标题，再点击下一页。<br />结果：浏览器监听 sorting 与
+                paging，主动调用自定义回发；后台读取当前页码、排序字段和方向，返回对应记录，两种动作共用同一处理逻辑。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>paging / sorting</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：两个客户端事件调用同一个回调，而不是分别绑定默认的服务器分页与排序事件。</li>
+            <li><code>F.customEvent</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：客户端回调主动发起本页的自定义事件，后台按表格当前分页与排序状态重新查询并绑定。</li>
+        </ul>
+    </section>
 }

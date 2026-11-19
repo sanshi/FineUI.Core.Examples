@@ -23,15 +23,11 @@
     <br>
 
 
-    <f:Window ID="Window1" IconUrl="@Url.Content("~/res/images/16/10.png")" Hidden="true"
-              WindowPosition="Center" IsModal="true" Title="窗体一" EnableMaximize="true"
-              EnableResize="true" Target="Self" EnableIFrame="true"
-              Height="550" Width="850" OnClose="Window1_Close">
+    <f:Window ID="Window1" IconUrl="@Url.Content("~/res/images/16/10.png")" Hidden="true" WindowPosition="Center" IsModal="true" Title="窗体一" EnableMaximize="true"
+        EnableResize="true" Target="Self" EnableIFrame="true" Height="550" Width="850" OnClose="Window1_Close">
     </f:Window>
-    <f:Window ID="Window2" IconUrl="@Url.Content("~/res/images/16/11.png")" Hidden="true"
-              IsModal="true" Target="Parent" EnableMaximize="true" EnableResize="true" OnClose="Window2_Close"
-              Title="窗体二" CloseAction="HidePostBack"
-              EnableIFrame="true" Height="550" Width="850">
+    <f:Window ID="Window2" IconUrl="@Url.Content("~/res/images/16/11.png")" Hidden="true" IsModal="true" Target="Parent" EnableMaximize="true" EnableResize="true"
+        OnClose="Window2_Close" Title="窗体二" CloseAction="HidePostBack" EnableIFrame="true" Height="550" Width="850">
     </f:Window>
 
 
@@ -53,23 +49,32 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示在当前页面或父页面弹出 <code>iframe</code> 窗体，并区分普通隐藏与回发关闭。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>比较两种承载位置和关闭动作</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="在本页面弹出IFrame窗体">在本页面弹出IFrame窗体</strong>。<br />结果：当前示例文档显示第一个 <code>iframe</code> 窗体；点击它的关闭图标按本页普通隐藏配置关闭。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="在父页面弹出IFrame窗体">在父页面弹出IFrame窗体</strong>。<br />结果：父页面显示第二个 <code>iframe</code> 窗体；关闭时按本页回发关闭配置通知原页面。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>的右上角关闭图标时，只是简单的隐藏窗体；</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>的右上角关闭图标时，会触发 <code>OnClose</code> 事件（<code>CloseAction</code>=<code>HidePostBack</code>）。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：各组分别设为<code>Self</code>、<code>Parent</code>，各窗体分别指向当前页面或父页面。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>true</code>，窗体内容由独立页面提供。</li>
-        <li><code>CloseAction</code>（<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>HidePostBack</code>，需要关闭后回发的窗体使用对应动作，单纯隐藏不会自动调用后台关闭事件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示在当前页面或父页面弹出 <code>iframe</code> 窗体，并区分普通隐藏与回发关闭。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>比较两种承载位置和关闭动作</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="在本页面弹出IFrame窗体">在本页面弹出IFrame窗体</strong>。<br />结果：当前示例文档显示第一个
+                <code>iframe</code> 窗体；点击它的关闭图标按本页普通隐藏配置关闭。
+            </li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button2" title="在父页面弹出IFrame窗体">在父页面弹出IFrame窗体</strong>。<br />结果：父页面显示第二个
+                <code>iframe</code> 窗体；关闭时按本页回发关闭配置通知原页面。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>的右上角关闭图标时，只是简单的隐藏窗体；</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>的右上角关闭图标时，会触发 <code>OnClose</code>
+                事件（<code>CloseAction</code>=<code>HidePostBack</code>）。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong
+                    class="example-control-reference" data-example-control="Window2"
+                    title="窗体二">窗体二</strong>）：各组分别设为<code>Self</code>、<code>Parent</code>，各窗体分别指向当前页面或父页面。</li>
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong
+                    class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>true</code>，窗体内容由独立页面提供。</li>
+            <li><code>CloseAction</code>（<strong class="example-control-reference" data-example-control="Window2"
+                    title="窗体二">窗体二</strong>）：初始为<code>HidePostBack</code>，需要关闭后回发的窗体使用对应动作，单纯隐藏不会自动调用后台关闭事件。</li>
+        </ul>
+    </section>
 }

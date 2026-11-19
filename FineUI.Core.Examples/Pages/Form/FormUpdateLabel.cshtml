@@ -26,7 +26,8 @@
             <f:FormRow>
                 <Items>
                     <f:Label ID="Label4" Label="编号" Text="200804170006" />
-                    <f:TextBox ID="tbxEmail" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址！">
+                    <f:TextBox ID="tbxEmail" Required="true" ShowRedStar="true" Label="电子邮箱" EmptyText="请输入常用电子邮箱" RegexPattern="EMAIL"
+                        RegexMessage="请输入有效的邮箱地址！">
                     </f:TextBox>
                 </Items>
             </f:FormRow>
@@ -43,7 +44,8 @@
             </f:FormRow>
             <f:FormRow>
                 <Items>
-                    <f:NumberBox ID="nbxApplyNumber" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="100" Required="true" ShowRedStar="true" />
+                    <f:NumberBox ID="nbxApplyNumber" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="100" Required="true"
+                        ShowRedStar="true" />
                 </Items>
             </f:FormRow>
             <f:FormRow>
@@ -146,7 +148,8 @@
                 结果：描述仍受其它已声明规则约束，但不再要求至少 <code>5</code> 个字符。
             </li>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnRemoveValue" title="将[申请数量]的最大值100改为10">将[申请数量]的最大值100改为10</strong>，然后输入 <code>11</code> 并移开焦点。<br />
+                点击<strong class="example-control-reference" data-example-control="btnRemoveValue" title="将[申请数量]的最大值100改为10">将[申请数量]的最大值100改为10</strong>，然后输入
+                <code>11</code> 并移开焦点。<br />
                 结果：数量按新的上限 <code>10</code> 显示错误。
             </li>
             <li>
@@ -156,12 +159,20 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>setFieldLabel()</code>（<strong class="example-control-reference" data-example-control="labPhone" title="固定电话">固定电话</strong>）：直接修改字段标签。</li>
-            <li><code>setRequired()</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="电子邮箱">电子邮箱</strong>）：修改必填规则，本页设为 <code>false</code>。</li>
-            <li><code>setRedStar()</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="电子邮箱">电子邮箱</strong>）：同步去掉必填星号，和必填校验分别控制。</li>
-            <li><code>setRegexPattern()</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="电子邮箱">电子邮箱</strong>）：传空字符串移除邮箱格式规则。</li>
-            <li><code>setMinLength()</code>（<strong class="example-control-reference" data-example-control="taDescription" title="描述">描述</strong>）：传 <code>undefined</code> 移除最小长度。</li>
-            <li><code>setMaxValue()</code>（<strong class="example-control-reference" data-example-control="dpApplyTime" title="审批时间">审批时间</strong>、<strong class="example-control-reference" data-example-control="nbxApplyNumber" title="申请数量">申请数量</strong>）：为数字或日期字段设置新的上限。</li>
+            <li><code>setFieldLabel()</code>（<strong class="example-control-reference" data-example-control="labPhone" title="固定电话">固定电话</strong>）：直接修改字段标签。
+            </li>
+            <li><code>setRequired()</code>（<strong class="example-control-reference" data-example-control="tbxEmail" title="电子邮箱">电子邮箱</strong>）：修改必填规则，本页设为
+                <code>false</code>。
+            </li>
+            <li><code>setRedStar()</code>（<strong class="example-control-reference" data-example-control="tbxEmail"
+                    title="电子邮箱">电子邮箱</strong>）：同步去掉必填星号，和必填校验分别控制。</li>
+            <li><code>setRegexPattern()</code>（<strong class="example-control-reference" data-example-control="tbxEmail"
+                    title="电子邮箱">电子邮箱</strong>）：传空字符串移除邮箱格式规则。</li>
+            <li><code>setMinLength()</code>（<strong class="example-control-reference" data-example-control="taDescription" title="描述">描述</strong>）：传
+                <code>undefined</code> 移除最小长度。
+            </li>
+            <li><code>setMaxValue()</code>（<strong class="example-control-reference" data-example-control="dpApplyTime" title="审批时间">审批时间</strong>、<strong
+                    class="example-control-reference" data-example-control="nbxApplyNumber" title="申请数量">申请数量</strong>）：为数字或日期字段设置新的上限。</li>
         </ul>
     </section>
 }

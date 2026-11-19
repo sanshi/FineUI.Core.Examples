@@ -19,22 +19,21 @@
 
 @section body {
 
-<f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350"
-        AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
-        EnableSummary="true" SummaryPosition="Flow">
-    <Columns>
-        <f:RowNumberField />
-        <f:RenderField HeaderText="姓名" DataField="Name" />
-        <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
-        <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
-        <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
-        <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
-        <f:RenderField HeaderText="学费" DataField="Fee" />
-        <f:RenderField HeaderText="学杂费" DataField="ExtraFee" />
-    </Columns>
-</f:Grid>
-<br />
-<f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350" AllowPaging="true"
+        PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" EnableSummary="true" SummaryPosition="Flow">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="学费" DataField="Fee" />
+            <f:RenderField HeaderText="学杂费" DataField="ExtraFee" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
 
 }
 
@@ -45,16 +44,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在分页数据下方显示全部学生费用合计，正文换页时保留完整统计范围。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>区分正文分页与全量合计</h3>
-    <ol>
-        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong>学费</strong>与<strong>学杂费</strong>合计，再点击下一页。<br />结果：后台只替换正文当前页，合计仍来自完整示例数据，不会变成新页记录之和。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableSummary</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，在表格中创建合计显示区域。</li>
-        <li><code>SummaryData</code>（<strong>表格合计数据</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：后台对完整数据求和，再按列标识提供合计，不以本页行数作为统计范围。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在分页数据下方显示全部学生费用合计，正文换页时保留完整统计范围。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>区分正文分页与全量合计</h3>
+        <ol>
+            <li>查看<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong><strong>学费</strong>与<strong>学杂费</strong>合计，再点击下一页。<br />结果：后台只替换正文当前页，合计仍来自完整示例数据，不会变成新页记录之和。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableSummary</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，在表格中创建合计显示区域。
+            </li>
+            <li><code>SummaryData</code>（<strong>表格合计数据</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：后台对完整数据求和，再按列标识提供合计，不以本页行数作为统计范围。</li>
+        </ul>
+    </section>
 }

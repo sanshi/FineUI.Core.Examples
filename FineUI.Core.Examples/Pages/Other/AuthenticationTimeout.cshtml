@@ -57,27 +57,30 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>拦截后台返回的跳转指令，让用户确认是否离开当前页。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>先注册拦截再触发跳转</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnRegisterHook" title="1. 注册跳转拦截函数">1. 注册跳转拦截函数</strong>。<br />结果：提示拦截函数注册成功。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="2. 点击回发（模拟 Forms Authentication 超时）">2. 点击回发（模拟 Forms Authentication 超时）</strong>。<br />结果：后台模拟登录超时并返回跳转，拦截函数先询问是否继续。</li>
-        <li>先取消，再重新触发并确认。<br />结果：取消时留在原页，确认后才跳转到本页指定的登录地址。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ol>
-        <li>刷新页面</li>
-        <li>点击按钮2 -&gt; 直接跳转到首页</li>
-    </ol>
-    <ol>
-        <li>刷新页面</li>
-        <li>点击按钮1</li>
-        <li>点击按钮2 -&gt; 首先弹出确认框，点击确认后才跳转到首页；如果点击取消，则留在本页</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>F.beforeAjaxSuccess()</code>（<strong class="example-control-reference" data-example-control="btnRegisterHook" title="1. 注册跳转拦截函数">1. 注册跳转拦截函数</strong>）：拦截响应中的跳转动作，通过同步确认结果决定是否继续。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>拦截后台返回的跳转指令，让用户确认是否离开当前页。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>先注册拦截再触发跳转</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnRegisterHook" title="1. 注册跳转拦截函数">1. 注册跳转拦截函数</strong>。<br />结果：提示拦截函数注册成功。
+            </li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button2" title="2. 点击回发（模拟 Forms Authentication 超时）">2. 点击回发（模拟 Forms
+                    Authentication 超时）</strong>。<br />结果：后台模拟登录超时并返回跳转，拦截函数先询问是否继续。</li>
+            <li>先取消，再重新触发并确认。<br />结果：取消时留在原页，确认后才跳转到本页指定的登录地址。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ol>
+            <li>刷新页面</li>
+            <li>点击按钮2 -&gt; 直接跳转到首页</li>
+        </ol>
+        <ol>
+            <li>刷新页面</li>
+            <li>点击按钮1</li>
+            <li>点击按钮2 -&gt; 首先弹出确认框，点击确认后才跳转到首页；如果点击取消，则留在本页</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>F.beforeAjaxSuccess()</code>（<strong class="example-control-reference" data-example-control="btnRegisterHook" title="1. 注册跳转拦截函数">1.
+                    注册跳转拦截函数</strong>）：拦截响应中的跳转动作，通过同步确认结果决定是否继续。</li>
+        </ul>
+    </section>
 }

@@ -20,8 +20,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350" Width="900"
-            AllowPaging="true" PageSize="15" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
-            EnableSummary="true" SummaryPosition="Flow">
+        AllowPaging="true" PageSize="15" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" EnableSummary="true" SummaryPosition="Flow">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -45,17 +44,22 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在双向滚动表格中让合计跟随正文出现在记录末尾。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照滚动与合计位置</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>内部上下滚动，再左右滚动。<br />结果：合计位于记录末尾，需要滚动到末尾查看；横向位置随各列一起变化。</li>
-        <li>切换下一页。<br />结果：正文记录切换，合计保持全部数据范围的费用总计。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SummaryPosition</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Flow</code>，Flow 跟随记录，Top 或 Bottom 将合计放在相应固定区域；本页采用上方说明的位置。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>350</code>，限定表格视口，让更多记录通过正文内部滚动查看。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在双向滚动表格中让合计跟随正文出现在记录末尾。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照滚动与合计位置</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>内部上下滚动，再左右滚动。<br />结果：合计位于记录末尾，需要滚动到末尾查看；横向位置随各列一起变化。</li>
+            <li>切换下一页。<br />结果：正文记录切换，合计保持全部数据范围的费用总计。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SummaryPosition</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>Flow</code>，Flow 跟随记录，Top 或 Bottom 将合计放在相应固定区域；本页采用上方说明的位置。
+            </li>
+            <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>350</code>，限定表格视口，让更多记录通过正文内部滚动查看。
+            </li>
+        </ul>
+    </section>
 }

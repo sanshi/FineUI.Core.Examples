@@ -26,7 +26,7 @@
 @section body {
 
     <f:Grid ID="Grid1" Height="350" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            _EmptyTextRawHtml="@("<div class=\"grid-empty-text\">Oops...一条数据也没有找到！</div>")">
+        _EmptyTextRawHtml="@("<div class=\"grid-empty-text\">Oops...一条数据也没有找到！</div>")">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -57,18 +57,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过绝对定位显示空数据提示，使提示范围不受少量窄列的总宽度限制。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
-    <ol>
-        <li>连续点击<strong class="example-control-reference" data-example-control="Button1" title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示自定义图片与文字，重新绑定记录后提示消失，数据行恢复。提示相对表格可用空间定位，列少时不会被挤在狭窄列宽里。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：初始隐藏了很多列，使得表格的宽度不足以放得下空信息，所以将空信息绝对定位。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：指定无记录时显示的自定义内容。</li>
-        <li><code>CSS</code>（<strong>空数据提示元素</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：空状态内容使用绝对定位，位置以表格内容区为参照。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过绝对定位显示空数据提示，使提示范围不受少量窄列的总宽度限制。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
+        <ol>
+            <li>连续点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示自定义图片与文字，重新绑定记录后提示消失，数据行恢复。提示相对表格可用空间定位，列少时不会被挤在狭窄列宽里。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：初始隐藏了很多列，使得表格的宽度不足以放得下空信息，所以将空信息绝对定位。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：指定无记录时显示的自定义内容。</li>
+            <li><code>CSS</code>（<strong>空数据提示元素</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：空状态内容使用绝对定位，位置以表格内容区为参照。</li>
+        </ul>
+    </section>
 }

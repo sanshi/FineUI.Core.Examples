@@ -26,7 +26,8 @@
             <f:Button ID="btnDisable" CssClass="marginr" Text="启用/禁用复选框" OnClick="btnDisableCheckBox_Click"></f:Button>
             <f:Label>
             </f:Label>
-            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" DisplayType="Switch" Text="复选框（OnCheckedChanged）" OnCheckedChanged="CheckBox2_CheckedChanged">
+            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" DisplayType="Switch" Text="复选框（OnCheckedChanged）"
+                OnCheckedChanged="CheckBox2_CheckedChanged">
             </f:CheckBox>
             <f:Label>
             </f:Label>
@@ -36,7 +37,8 @@
             </f:CheckBox>
             <f:CheckBox ID="CheckBox5" Label="开关文本（图标字体）" DisplayType="Switch" SwitchTextVisible="true">
             </f:CheckBox>
-            <f:CheckBox ID="CheckBox6" CssClass="mycheckbox" Label="开关文本（自定义）" DisplayType="Switch" SwitchTextVisible="true" SwitchOnText="开启" SwitchOffText="关闭">
+            <f:CheckBox ID="CheckBox6" CssClass="mycheckbox" Label="开关文本（自定义）" DisplayType="Switch" SwitchTextVisible="true" SwitchOnText="开启"
+                SwitchOffText="关闭">
             </f:CheckBox>
         </Items>
     </f:SimpleForm>
@@ -74,18 +76,35 @@
         <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比开关内容</h3>
         <ul>
             <li>
-                依次切换下方的<strong class="example-control-reference" data-example-control="CheckBox3" title="开关文本">开关文本</strong><strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>和<strong class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>。<br />
+                依次切换下方的<strong class="example-control-reference" data-example-control="CheckBox3" title="开关文本">开关文本</strong><strong
+                    class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>和<strong
+                    class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>。<br />
                 结果：分别看到默认文字、<code>1</code> / <code>0</code>、勾 / 叉图标，以及开启 / 关闭文字随状态改变；这些外观切换在浏览器完成。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DisplayType</code>（本页全部<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>，如<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>）：初始为 <code>Switch</code>，使用开关外观，当前状态仍由 <code>Checked</code> 表示。</li>
-            <li><code>SwitchTextVisible</code>（<strong class="example-control-reference" data-example-control="CheckBox3" title="开关文本">开关文本</strong>、<strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>）：初始为 <code>true</code>，显示开关内的文字或图标。</li>
-            <li><code>SwitchOnText</code>（<strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>）：开启状态文字，本例使用 <code>1</code> 或“开启”。</li>
-            <li><code>SwitchOffText</code>（<strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>）：关闭状态文字，本例使用 <code>0</code> 或“关闭”。</li>
-            <li><code>SwitchOnTextRawHtml</code>（<strong class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>）：设置开启状态的可信 HTML，本例使用固定勾图标。</li>
-            <li><code>SwitchOffTextRawHtml</code>（<strong class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>）：设置关闭状态的可信 HTML，本例使用固定叉图标。</li>
+            <li><code>DisplayType</code>（本页全部<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>，如<strong
+                    class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>）：初始为 <code>Switch</code>，使用开关外观，当前状态仍由
+                <code>Checked</code> 表示。
+            </li>
+            <li><code>SwitchTextVisible</code>（<strong class="example-control-reference" data-example-control="CheckBox3" title="开关文本">开关文本</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4 个复选框（开关文本（自定义））</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBox5" title="开关文本（图标字体）">开关文本（图标字体）</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6 个复选框（开关文本（自定义））</strong>）：初始为
+                <code>true</code>，显示开关内的文字或图标。
+            </li>
+            <li><code>SwitchOnText</code>（<strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4
+                    个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6
+                    个复选框（开关文本（自定义））</strong>）：开启状态文字，本例使用 <code>1</code> 或“开启”。</li>
+            <li><code>SwitchOffText</code>（<strong class="example-control-reference" data-example-control="CheckBox4" title="第 4 个复选框（开关文本（自定义））">第 4
+                    个复选框（开关文本（自定义））</strong>、<strong class="example-control-reference" data-example-control="CheckBox6" title="第 6 个复选框（开关文本（自定义））">第 6
+                    个复选框（开关文本（自定义））</strong>）：关闭状态文字，本例使用 <code>0</code> 或“关闭”。</li>
+            <li><code>SwitchOnTextRawHtml</code>（<strong class="example-control-reference" data-example-control="CheckBox5"
+                    title="开关文本（图标字体）">开关文本（图标字体）</strong>）：设置开启状态的可信 HTML，本例使用固定勾图标。</li>
+            <li><code>SwitchOffTextRawHtml</code>（<strong class="example-control-reference" data-example-control="CheckBox5"
+                    title="开关文本（图标字体）">开关文本（图标字体）</strong>）：设置关闭状态的可信 HTML，本例使用固定叉图标。</li>
         </ul>
     </section>
 }

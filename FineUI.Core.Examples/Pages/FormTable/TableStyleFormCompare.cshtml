@@ -8,13 +8,15 @@
 
 @section body {
 
-    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelWidth="200" EnableCollapse="false" ShowBorder="true" ShowHeader="true" MessageTarget="Qtip" Title="简单表单">
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelWidth="200" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
+        MessageTarget="Qtip" Title="简单表单">
         <Items>
             <f:SimpleForm ID="SimpleForm3" ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MarginBottom="10">
                 <Items>
                     <f:DatePicker ID="DatePicker1" Label="开始日期" Required="true">
                     </f:DatePicker>
-                    <f:DatePicker ID="DatePicker2" Label="结束日期（大于开始日期）" Required="true" CompareControl="DatePicker1" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期！">
+                    <f:DatePicker ID="DatePicker2" Label="结束日期（大于开始日期）" Required="true" CompareControl="DatePicker1" CompareOperator="GreaterThan"
+                        CompareMessage="结束日期应该大于开始日期！">
                     </f:DatePicker>
                 </Items>
             </f:SimpleForm>
@@ -22,7 +24,8 @@
                 <Items>
                     <f:TextBox ID="TextBox1" Required="true" Label="文本框 1" Text="FineUI.Core">
                     </f:TextBox>
-                    <f:TextBox ID="TextBox2" Required="true" Label="文本框 2（等于文本框 1）" CompareControl="TextBox1" CompareOperator="Equal" CompareMessage="文本框 2 应该等于文本框 1！">
+                    <f:TextBox ID="TextBox2" Required="true" Label="文本框 2（等于文本框 1）" CompareControl="TextBox1" CompareOperator="Equal"
+                        CompareMessage="文本框 2 应该等于文本框 1！">
                     </f:TextBox>
                 </Items>
             </f:SimpleForm>
@@ -30,7 +33,8 @@
                 <Items>
                     <f:NumberBox ID="NumberBox1" Required="true" Label="数字框 1" Text="30">
                     </f:NumberBox>
-                    <f:NumberBox ID="NumberBox2" Required="true" Label="数字框 2（大于等于数字框 1）" CompareControl="NumberBox1" CompareOperator="GreaterThanEqual" CompareMessage="数字框 2 应该大于等于数字框 1!">
+                    <f:NumberBox ID="NumberBox2" Required="true" Label="数字框 2（大于等于数字框 1）" CompareControl="NumberBox1" CompareOperator="GreaterThanEqual"
+                        CompareMessage="数字框 2 应该大于等于数字框 1!">
                     </f:NumberBox>
                 </Items>
             </f:SimpleForm>
@@ -38,7 +42,8 @@
                 <Items>
                     <f:Label ID="Label1" Label="标签 1" Text="88">
                     </f:Label>
-                    <f:NumberBox ID="NumberBox3" Required="true" Label="文本框 3（大于等于标签 1）" CompareControl="Label1" CompareOperator="GreaterThanEqual" CompareType="Int" CompareMessage="文本框 3 应该大于等于标签 1！">
+                    <f:NumberBox ID="NumberBox3" Required="true" Label="文本框 3（大于等于标签 1）" CompareControl="Label1" CompareOperator="GreaterThanEqual"
+                        CompareType="Int" CompareMessage="文本框 3 应该大于等于标签 1！">
                     </f:NumberBox>
                 </Items>
             </f:SimpleForm>
@@ -78,7 +83,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="SimpleForm3" title="第 2 个表单">第 2 个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm2" title="第 3 个表单">第 3 个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm4" title="第 4 个表单">第 4 个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm5" title="第 5 个表单">第 5 个表单</strong>）：各组比较字段放在独立的表格风格表单中。</li>
+            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="SimpleForm3" title="第 2 个表单">第 2
+                    个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm2" title="第 3 个表单">第 3 个表单</strong>、<strong
+                    class="example-control-reference" data-example-control="SimpleForm4" title="第 4 个表单">第 4 个表单</strong>、<strong
+                    class="example-control-reference" data-example-control="SimpleForm5" title="第 5 个表单">第 5 个表单</strong>）：各组比较字段放在独立的表格风格表单中。</li>
         </ul>
     </section>
 }

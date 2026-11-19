@@ -12,8 +12,8 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" MatchFieldWidth="false" EnableMultiSelect="true" _Values="105,108">
                 <PopPanel>
-                    <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            Hidden="true" Width="550" Height="300" EnableMultiSelect="true" KeepCurrentSelection="true">
+                    <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" Hidden="true"
+                        Width="550" Height="300" EnableMultiSelect="true" KeepCurrentSelection="true">
                         <Columns>
                             <f:RenderField HeaderText="姓名" DataField="Name" />
                             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
@@ -57,9 +57,13 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
-            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
-            <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：用复选框列选择表格行。 本页声明值为 <code>true</code>。</li>
+            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
+            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+            <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：用复选框列选择表格行。
+                本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

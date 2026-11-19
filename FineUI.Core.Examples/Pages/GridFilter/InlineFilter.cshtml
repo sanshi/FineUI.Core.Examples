@@ -8,26 +8,26 @@
 
 @section body {
 
-<f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-        AllowFilters="true" InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
-    <Columns>
-        <f:RowNumberField />
-        <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" Width="200" EnableFilter="true" />
-        <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
-        <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
-        <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
-        <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
-        <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
-        <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
-    </Columns>
-</f:Grid>
-<br>
-<br>
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowFilters="true"
+        InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" Width="200" EnableFilter="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <br>
 
-<br />
-<br />
+    <br />
+    <br />
 
-<f:Label ID="labResult" EncodeText="false"></f:Label>
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
 
 }
 
@@ -39,21 +39,28 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>直接在表头下方输入姓名条件，按 Enter 筛选并通过清除入口恢复记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按姓名过滤并清除</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>姓名</strong>列下方内联过滤区输入<code>张</code>，再按 Enter 应用条件。<br />结果：过滤条件回发，后台按本页匹配规则筛选示例数据并重新绑定，下方同步显示过滤参数。<strong>姓名</strong>包含张的记录保留。</li>
-        <li>点击<strong>姓名</strong>过滤输入旁的清除入口。<br />结果：本列不再限制<strong>姓名</strong>；没有其他条件时重新显示全部学生，下方参数也清除对应条件。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：内联过滤字段仅支持文本输入框、数字输入框、日期选择器、下拉列表控件（不支持多条件过滤）。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，启用表格过滤入口与条件变化处理。</li>
-        <li><code>EnableFilter</code>（<strong>姓名列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为该列创建过滤字段；其他未启用过滤的列不额外创建入口。</li>
-        <li><code>OnFilterChanged / FilteredData</code>（<strong>表格过滤处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：条件变化后取得完整过滤参数，再由本页代码筛选并重新绑定数据；控件不会自动生成数据库查询。</li>
-        <li><code>InlineFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，把过滤字段放在列标题下方，支持文本、数字、日期和下拉输入，不支持弹出式多条件过滤。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>直接在表头下方输入姓名条件，按 Enter 筛选并通过清除入口恢复记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按姓名过滤并清除</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>姓名</strong>列下方内联过滤区输入<code>张</code>，再按
+                Enter 应用条件。<br />结果：过滤条件回发，后台按本页匹配规则筛选示例数据并重新绑定，下方同步显示过滤参数。<strong>姓名</strong>包含张的记录保留。</li>
+            <li>点击<strong>姓名</strong>过滤输入旁的清除入口。<br />结果：本列不再限制<strong>姓名</strong>；没有其他条件时重新显示全部学生，下方参数也清除对应条件。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：内联过滤字段仅支持文本输入框、数字输入框、日期选择器、下拉列表控件（不支持多条件过滤）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，启用表格过滤入口与条件变化处理。
+            </li>
+            <li><code>EnableFilter</code>（<strong>姓名列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：为该列创建过滤字段；其他未启用过滤的列不额外创建入口。</li>
+            <li><code>OnFilterChanged / FilteredData</code>（<strong>表格过滤处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：条件变化后取得完整过滤参数，再由本页代码筛选并重新绑定数据；控件不会自动生成数据库查询。</li>
+            <li><code>InlineFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，把过滤字段放在列标题下方，支持文本、数字、日期和下拉输入，不支持弹出式多条件过滤。
+            </li>
+        </ul>
+    </section>
 }

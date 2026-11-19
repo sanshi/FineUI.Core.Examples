@@ -29,7 +29,8 @@
 
     <f:Window ID="Window1" Title="信息录入" IsModal="false" EnableClose="false" EnableResize="true" Width="850" BodyPadding="0" AutoScroll="true">
         <Items>
-            <f:Form ID="Form1" LabelAlign="Right" RedStarPosition="BeforeText" LabelWidth="90" ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
+            <f:Form ID="Form1" LabelAlign="Right" RedStarPosition="BeforeText" LabelWidth="90" ShowBorder="false" ShowHeader="false" EnableTableStyle="true"
+                MessageTarget="Qtip">
                 <Items>
                     <f:Panel ID="Panel2" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigAlign="StretchMax">
                         <Items>
@@ -40,7 +41,8 @@
                                         <f:ListItem Text="男" Value="男" Selected="true" />
                                         <f:ListItem Text="女" Value="女" />
                                     </f:DropDownList>
-                                    <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" EnableEdit="false" ShowRedStar="true" Required="true"></f:DatePicker>
+                                    <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" EnableEdit="false" ShowRedStar="true" Required="true">
+                                    </f:DatePicker>
                                     <f:TextBox ID="tbxAge" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！"></f:TextBox>
                                     <f:DropDownList ID="ddlMarriage" Label="婚姻状况" ShowRedStar="true" Required="true">
                                         <f:ListItem Text="未婚" Value="0" Selected="true" />
@@ -206,7 +208,8 @@
         <Toolbars>
             <f:Toolbar ID="Toolbar1" ToolbarAlign="Right" Position="Bottom">
                 <Items>
-                    <f:Button ID="btnSubmit" IconFont="_Save" Text="保存信息" OnClick="btnSubmit_Click" _ValidateForms="Form1" ValidateMessageBox="false"></f:Button>
+                    <f:Button ID="btnSubmit" IconFont="_Save" Text="保存信息" OnClick="btnSubmit_Click" _ValidateForms="Form1" ValidateMessageBox="false">
+                    </f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -227,9 +230,12 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>LabelWidth</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>）：控制标签宽度，使各行输入对齐。</li>
-            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>）：启用表格风格，边框差异由本页 CSS 控制。</li>
-            <li><code>border-width</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>、<strong class="example-control-reference" data-example-control="Form7" title="第 2 个表单">第 2 个表单</strong>）：本页去掉表格风格的字段边线，列与标签仍按原布局对齐。</li>
+            <li><code>LabelWidth</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>）：控制标签宽度，使各行输入对齐。
+            </li>
+            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1
+                    个表单</strong>）：启用表格风格，边框差异由本页 CSS 控制。</li>
+            <li><code>border-width</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>、<strong
+                    class="example-control-reference" data-example-control="Form7" title="第 2 个表单">第 2 个表单</strong>）：本页去掉表格风格的字段边线，列与标签仍按原布局对齐。</li>
         </ul>
     </section>
 }

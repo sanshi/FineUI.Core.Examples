@@ -95,16 +95,18 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为异步加载的每行绑定编辑与删除入口，用事件委托读取本次操作行资料。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把行内入口交给后台处理</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>首行的编辑图标。<br />结果：页面从入口所属行取得标识和<strong>姓名</strong>，经自定义回发由后台显示操作信息。</li>
-        <li>点击该行删除图标，先取消，再重新点击并确认。<br />结果：取消不提交删除事件；确认后后台显示本次删除动作及行资料，本示例不实际从数据源删除学生。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>RendererFunction / click / F.customEvent</code>（<strong>网址数据加载与页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：先生成行内入口，再由表格容器接收点击并找到当前行；异步重绘后仍可使用同一处理。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为异步加载的每行绑定编辑与删除入口，用事件委托读取本次操作行资料。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把行内入口交给后台处理</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>首行的编辑图标。<br />结果：页面从入口所属行取得标识和<strong>姓名</strong>，经自定义回发由后台显示操作信息。</li>
+            <li>点击该行删除图标，先取消，再重新点击并确认。<br />结果：取消不提交删除事件；确认后后台显示本次删除动作及行资料，本示例不实际从数据源删除学生。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RendererFunction / click / F.customEvent</code>（<strong>网址数据加载与页面脚本</strong>，作用于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格">表格</strong>）：先生成行内入口，再由表格容器接收点击并找到当前行；异步重绘后仍可使用同一处理。</li>
+        </ul>
+    </section>
 }

@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
-            AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
+        AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
         <Columns>
             <f:RowNumberField />
             <f:RenderField For="Students.First().Name" QuickSortField="true" />
@@ -23,7 +23,7 @@
     </f:Grid>
     <br />
     <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
-    
+
 }
 
 
@@ -33,19 +33,29 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为模型表格列指定后台排序字段，点击列头后重新读取排序数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>对照模型与表格显示</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中，点击可排序的列标题，再点击同一列标题。<br />结果：两次回发分别使用相应排序方向，行顺序与排序标记同步改变。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Id</code>，从数据行读取稳定的业务标识，供选择或点击事件使用。</li>
-        <li><code>AllowSorting</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，允许点击列标题请求排序。</li>
-        <li><code>SortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Gender</code>，指定当前排序字段。</li>
-        <li><code>SortDirection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>ASC</code>，指定当前升序或降序。</li>
-        <li><code>QuickSortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：将排序请求映射到实际模型字段，后台按字段和方向重新绑定。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为模型表格列指定后台排序字段，点击列头后重新读取排序数据。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>对照模型与表格显示</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>中，点击可排序的列标题，再点击同一列标题。<br />结果：两次回发分别使用相应排序方向，行顺序与排序标记同步改变。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>Id</code>，从数据行读取稳定的业务标识，供选择或点击事件使用。
+            </li>
+            <li><code>AllowSorting</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，允许点击列标题请求排序。
+            </li>
+            <li><code>SortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>Gender</code>，指定当前排序字段。
+            </li>
+            <li><code>SortDirection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>ASC</code>，指定当前升序或降序。
+            </li>
+            <li><code>QuickSortField</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：将排序请求映射到实际模型字段，后台按字段和方向重新绑定。</li>
+        </ul>
+    </section>
 }

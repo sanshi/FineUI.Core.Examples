@@ -16,8 +16,7 @@
     </f:DropDownList>
     <br>
     <br>
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格一（单选，行扩展列）"
-            DataIDField="Id" DataTextField="Name">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格一（单选，行扩展列）" DataIDField="Id" DataTextField="Name">
     </f:Grid>
     <br>
     <br>
@@ -27,7 +26,7 @@
     <br>
     <br>
 
-    
+
 }
 
 
@@ -38,18 +37,20 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>切换数据类型时由后台重建列集合，同时更新表头、选择方式与绑定字段。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>在两套列结构之间切换</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="DropDownList1" title="切换表格">切换表格</strong>选择另一种表格。<br />结果：选择回发，后台替换整套列和数据：学生表使用单选与行扩展，统计表使用多选、多表头及全选列；旧行选择不会沿用到另一套记录。</li>
-        <li>切回原表格，再执行本页的读取选择操作。<br />结果：列结构与选择方式恢复对应配置；读取的是当前这套数据的选择，不出现另一套表格残留行。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：普通表格可直接修改列和表格属性；单元格编辑、表头过滤及单元格内创建业务控件的复杂表格暂不支持此方式。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Columns / DataSource</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格一（单选，行扩展列）">表格一（单选，行扩展列）</strong>）：先创建或替换列集合，再绑定与该结构相符的数据；列标识与数据字段分别承担定位和取值职责。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>切换数据类型时由后台重建列集合，同时更新表头、选择方式与绑定字段。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>在两套列结构之间切换</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="切换表格">切换表格</strong>选择另一种表格。<br />结果：选择回发，后台替换整套列和数据：学生表使用单选与行扩展，统计表使用多选、多表头及全选列；旧行选择不会沿用到另一套记录。</li>
+            <li>切回原表格，再执行本页的读取选择操作。<br />结果：列结构与选择方式恢复对应配置；读取的是当前这套数据的选择，不出现另一套表格残留行。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：普通表格可直接修改列和表格属性；单元格编辑、表头过滤及单元格内创建业务控件的复杂表格暂不支持此方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Columns / DataSource</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格一（单选，行扩展列）">表格一（单选，行扩展列）</strong>）：先创建或替换列集合，再绑定与该结构相符的数据；列标识与数据字段分别承担定位和取值职责。</li>
+        </ul>
+    </section>
 }

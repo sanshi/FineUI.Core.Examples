@@ -20,8 +20,8 @@
     <br />
 
 
-    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true" EnableCollapse="true" EnableResize="true"
-              IsModal="false" CloseAction="HidePostBack" OnClose="Window1_Close" AutoScroll="true" BodyPadding="10">
+    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true" EnableCollapse="true" EnableResize="true" IsModal="false"
+        CloseAction="HidePostBack" OnClose="Window1_Close" AutoScroll="true" BodyPadding="10">
         <Content>
             <p>
                 <a href="http://tech.163.com/special/jobsdead/" target="_blank"><b>乔布斯</b></a>
@@ -30,7 +30,8 @@
                 乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
             </p>
             <p>
-                遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone 4S后的第二天与世长辞。
+                遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone
+                4S后的第二天与世长辞。
             </p>
         </Content>
         <Listeners>
@@ -72,31 +73,43 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>对照后台与客户端显示、隐藏窗体，并查看关闭回发与附加参数。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>显示与隐藏</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnShowInServer" title="显示窗体（服务端代码）">显示窗体（服务端代码）</strong>。<br />结果：窗体显示。按钮先回发，由后台更新显示状态。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnHideInServer" title="隐藏窗体（服务端代码）">隐藏窗体（服务端代码）</strong>。<br />结果：窗体隐藏。按钮先回发，由后台更新显示状态。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnShowInClient" title="显示窗体（客户端代码）">显示窗体（客户端代码）</strong>。<br />结果：窗体显示。浏览器直接改变显示状态。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnHideInClient" title="隐藏窗体（客户端代码）">隐藏窗体（客户端代码）</strong>。<br />结果：窗体隐藏。浏览器直接改变显示状态。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnHideInClient2" title="隐藏窗体，带回发参数（客户端代码）">隐藏窗体，带回发参数（客户端代码）</strong>。<br />结果：窗体隐藏。隐藏时同时携带本页指定参数回发。</li>
-        <li>重新显示<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>，点击其标题栏关闭图标。<br />结果：窗体隐藏，并按关闭动作配置触发后台关闭事件。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>
-            CloseAction 的默认值为 Hide，关闭窗体时不会触发 OnClose 事件；
-        </li>
-        <li>
-            本示例设置了 CloseAction=HidePostBack，点击窗体关闭按钮或者按下ESC键时，会触发 OnClose 事件。
-        </li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>CloseAction</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>HidePostBack</code>，指定关闭时仅隐藏还是同时触发关闭回发。</li>
-        <li><code>IsModal</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>false</code>，显示窗体遮罩，限制对遮罩后方内容的操作。</li>
-        <li><code>EnableResize</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>true</code>，控制是否允许拖动窗体边缘调整大小。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>对照后台与客户端显示、隐藏窗体，并查看关闭回发与附加参数。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>显示与隐藏</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnShowInServer"
+                    title="显示窗体（服务端代码）">显示窗体（服务端代码）</strong>。<br />结果：窗体显示。按钮先回发，由后台更新显示状态。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnHideInServer"
+                    title="隐藏窗体（服务端代码）">隐藏窗体（服务端代码）</strong>。<br />结果：窗体隐藏。按钮先回发，由后台更新显示状态。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnShowInClient"
+                    title="显示窗体（客户端代码）">显示窗体（客户端代码）</strong>。<br />结果：窗体显示。浏览器直接改变显示状态。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnHideInClient"
+                    title="隐藏窗体（客户端代码）">隐藏窗体（客户端代码）</strong>。<br />结果：窗体隐藏。浏览器直接改变显示状态。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnHideInClient2"
+                    title="隐藏窗体，带回发参数（客户端代码）">隐藏窗体，带回发参数（客户端代码）</strong>。<br />结果：窗体隐藏。隐藏时同时携带本页指定参数回发。</li>
+            <li>重新显示<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>，点击其标题栏关闭图标。<br />结果：窗体隐藏，并按关闭动作配置触发后台关闭事件。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>
+                CloseAction 的默认值为 Hide，关闭窗体时不会触发 OnClose 事件；
+            </li>
+            <li>
+                本示例设置了 CloseAction=HidePostBack，点击窗体关闭按钮或者按下ESC键时，会触发 OnClose 事件。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>CloseAction</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为
+                <code>HidePostBack</code>，指定关闭时仅隐藏还是同时触发关闭回发。
+            </li>
+            <li><code>IsModal</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为
+                <code>false</code>，显示窗体遮罩，限制对遮罩后方内容的操作。
+            </li>
+            <li><code>EnableResize</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为
+                <code>true</code>，控制是否允许拖动窗体边缘调整大小。
+            </li>
+        </ul>
+    </section>
 }

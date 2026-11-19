@@ -9,15 +9,15 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            Height="500" DisplayType="Card" CardRendererFunction="renderCard"
-            AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500" DisplayType="Card"
+        CardRendererFunction="renderCard" AllowSorting="true" SortField="Gender" SortDirection="ASC" OnSort="Grid1_Sort">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
             <f:RenderField HeaderText="性别" DataField="Gender" SortField="Gender" FieldType="Int" RendererFunction="renderGender" />
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" SortField="EntranceYear" FieldType="Int" />
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" SortField="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" SortField="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date"
+                RendererArgument="yyyy-MM-dd" Width="150" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" SortField="AtSchool" RenderAsStaticField="true" />
             <f:RenderField HeaderText="所学专业" DataField="Major" SortField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
             <f:RenderField HeaderText="分组" DataField="Group" SortField="Group" RendererFunction="renderGroup" />
@@ -113,16 +113,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在卡片模式下选择排序字段与方向，重排卡片。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过排序菜单重排卡片</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSort" title="排序（排序图标）">排序（排序图标）</strong>，把字段选为<strong>姓名</strong>，再切换升序或降序。<br />结果：字段和方向交给后台重新排序并绑定，卡片顺序及排序说明同步更新。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Gender</code>，保存当前排序字段。</li>
-        <li><code>SortDirection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>ASC</code>，保存升降序，菜单切换后使用新的方向。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在卡片模式下选择排序字段与方向，重排卡片。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过排序菜单重排卡片</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSort"
+                    title="排序（排序图标）">排序（排序图标）</strong>，把字段选为<strong>姓名</strong>，再切换升序或降序。<br />结果：字段和方向交给后台重新排序并绑定，卡片顺序及排序说明同步更新。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SortField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>Gender</code>，保存当前排序字段。
+            </li>
+            <li><code>SortDirection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>ASC</code>，保存升降序，菜单切换后使用新的方向。
+            </li>
+        </ul>
+    </section>
 }

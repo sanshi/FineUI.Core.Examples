@@ -10,10 +10,8 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（网址数据源，10,000行）" DataIDField="Id" DataTextField="Name"
-            DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=10000&type=simple")"
-            EnableCheckBoxSelect="true" Height="500" EnableBigData="true" EnableBigDataRowTip="false" FixedRowHeight="true"
-            AllowPaging="true" IsDatabasePaging="false" PageSize="120"
-            EnableBigDataRowTip="false" PagingToolbarVisible="true">
+        DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=10000&type=simple")" EnableCheckBoxSelect="true" Height="500" EnableBigData="true" EnableBigDataRowTip="false" FixedRowHeight="true"
+        AllowPaging="true" IsDatabasePaging="false" PageSize="120" EnableBigDataRowTip="false" PagingToolbarVisible="true">
         <Columns>
             <f:RowNumberField Width="50" EnablePagingNumber="true" />
             <f:RenderField HeaderText="姓名" DataField="Name" Width="150" />
@@ -42,18 +40,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在大数据虚拟渲染基础上使用客户端分页，区分当前页加载范围。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>分页与虚拟渲染共同工作</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>下一页，再在当前页内滚动。<br />结果：完整 10000 条数据已加载，浏览器按页大小切换当前页，再按视口渲染本页内容；普通换页不重新读取全部记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：启用大数据，启用分页，每页显示 120 条记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>false</code>，完整数据在浏览器中分页。</li>
-        <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>120</code>，确定每页最大记录数，与视口中实际渲染行数是不同概念。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在大数据虚拟渲染基础上使用客户端分页，区分当前页加载范围。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>分页与虚拟渲染共同工作</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>下一页，再在当前页内滚动。<br />结果：完整 10000 条数据已加载，浏览器按页大小切换当前页，再按视口渲染本页内容；普通换页不重新读取全部记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：启用大数据，启用分页，每页显示 120 条记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>false</code>，完整数据在浏览器中分页。</li>
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>120</code>，确定每页最大记录数，与视口中实际渲染行数是不同概念。</li>
+        </ul>
+    </section>
 }

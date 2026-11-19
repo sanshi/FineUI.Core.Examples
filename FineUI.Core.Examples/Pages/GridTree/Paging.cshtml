@@ -8,21 +8,19 @@
 
 @section body {
 
-<f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name"
-        EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId"
-        Height="400"
-        AllowPaging="true" IsDatabasePaging="true" PageSize="2" OnPageIndexChanged="Grid1_PageIndexChanged">
-    <Columns>
-        <f:RowNumberField EnableTreeNumber="true" />
-        <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
-        <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
-        <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
-        <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" />
-    </Columns>
-</f:Grid>
-<br>
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId" Height="400" AllowPaging="true" IsDatabasePaging="true" PageSize="2" OnPageIndexChanged="Grid1_PageIndexChanged">
+        <Columns>
+            <f:RowNumberField EnableTreeNumber="true" />
+            <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="类型" DataField="Type" Width="150" />
+            <f:RenderField HeaderText="大小" DataField="Size" Width="150" />
+            <f:RenderField HeaderText="修改日期" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br>
 
-<f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
 
 }
 
@@ -33,16 +31,21 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>按顶层分支进行后台分页，同一分支的后代随父节点一起显示。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>以顶层分支为单位换页</h3>
-    <ul>
-        <li>展开<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>当前页目录，再切换下一页。<br />结果：后台按顶层节点页码读取新分支及后代；页<strong>大小</strong>统计顶层节点，不把父子扁平行随意截断。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为 <code>2</code>，控制每页顶层分支数量，实际显示行数还包括它们的后代。</li>
-        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为 <code>true</code>，每次换页提供当前分支及总顶层节点数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>按顶层分支进行后台分页，同一分支的后代随父节点一起显示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>以顶层分支为单位换页</h3>
+        <ul>
+            <li>展开<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>当前页目录，再切换下一页。<br />结果：后台按顶层节点页码读取新分支及后代；页<strong>大小</strong>统计顶层节点，不把父子扁平行随意截断。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为
+                <code>2</code>，控制每页顶层分支数量，实际显示行数还包括它们的后代。
+            </li>
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为
+                <code>true</code>，每次换页提供当前分支及总顶层节点数。
+            </li>
+        </ul>
+    </section>
 }

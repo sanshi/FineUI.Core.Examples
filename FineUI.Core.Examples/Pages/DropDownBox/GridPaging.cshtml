@@ -12,8 +12,9 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false">
                 <PopPanel>
-                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            AllowPaging="true" IsDatabasePaging="false" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true">
+                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true" AllowPaging="true" IsDatabasePaging="false" PageSize="5" Hidden="true" EnableMultiSelect="true"
+                        KeepCurrentSelection="true">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -58,10 +59,16 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AllowPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为弹出表格提供分页工具栏。 本页声明值为 <code>true</code>。</li>
-            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为 <code>true</code> 时后台按当前页加载；为 <code>false</code> 时浏览器对已加载数据分页。 本页声明值为 <code>false</code>。</li>
-            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：决定每页显示多少条数据。 本页声明值为 <code>5</code>。</li>
-            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+            <li><code>AllowPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为弹出表格提供分页工具栏。 本页声明值为
+                <code>true</code>。
+            </li>
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：为 <code>true</code>
+                时后台按当前页加载；为 <code>false</code> 时浏览器对已加载数据分页。 本页声明值为 <code>false</code>。</li>
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：决定每页显示多少条数据。 本页声明值为
+                <code>5</code>。
+            </li>
+            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

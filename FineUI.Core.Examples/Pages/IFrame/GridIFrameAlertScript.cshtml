@@ -9,8 +9,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" Title="表格" IsFluid="true" PageSize="10" ShowBorder="true" AllowPaging="true" IsDatabasePaging="false"
-            ShowHeader="true" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" Height="550">
+    <f:Grid ID="Grid1" Title="表格" IsFluid="true" PageSize="10" ShowBorder="true" AllowPaging="true" IsDatabasePaging="false" ShowHeader="true"
+        EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" Height="550">
         <Toolbars>
             <f:Toolbar ID="Toolbar2">
                 <Items>
@@ -30,17 +30,16 @@
             <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
             <f:RenderField HeaderText="窗口列" EnableHeaderMenu="false">
                 <Commands>
-                    <f:Command CommandName="Action1" Icon="Pencil" ToolTip="编辑" CssClass="mywindowfield"
-                               WindowID="Window1"
-                               WindowIFrameUrlFormatString="@Url.Content("~/IFrame/GridIFrameAlertScript/IFrameWindow?id={0}&name={1}")" _WindowIFrameUrlFields="Id,Name"
-                               WindowTitleFormatString="编辑 - {0}" _WindowTitleFields="Name" />
+                    <f:Command CommandName="Action1" Icon="Pencil" ToolTip="编辑" CssClass="mywindowfield" WindowID="Window1"
+                        WindowIFrameUrlFormatString="@Url.Content("~/IFrame/GridIFrameAlertScript/IFrameWindow?id={0}&name={1}")" _WindowIFrameUrlFields="Id,Name" WindowTitleFormatString="编辑 - {0}"
+                        _WindowTitleFields="Name" />
                 </Commands>
             </f:RenderField>
         </Columns>
     </f:Grid>
 
-    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="800" Height="550"
-              CloseAction="HidePostBack" OnClose="Window1_Close">
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="800"
+        Height="550" CloseAction="HidePostBack" OnClose="Window1_Close">
     </f:Window>
 
 
@@ -61,19 +60,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示子页面保存后在顶层显示提示，确认后通过自定义脚本通知父页。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>确认提示后通知父页</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>点击第一行的<strong>编辑</strong>或弹出窗体入口。<br />结果：<code>iframe</code> 窗体打开当前记录，标题或地址包含本次选择的行信息；不会固定打开同一条记录。</li>
-        <li>在子页面点击保存按钮，再确认顶层提示。<br />结果：提示确认后才执行本页关闭及父页通知逻辑；表格标题显示本次回发参数，本例不因此承诺已保存数据库。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为<code>Id</code>，表格使用稳定的记录 <code>ID</code> 识别当前行。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：初始为<code>true</code>，编辑窗体使用独立子页面。</li>
-        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
-        <li><code>parentWindow</code>（<strong>子页面与父页面交互</strong>）：子页面向正确的父页面发送本页约定的更新通知。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示子页面保存后在顶层显示提示，确认后通过自定义脚本通知父页。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>确认提示后通知父页</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>点击第一行的<strong>编辑</strong>或弹出窗体入口。<br />结果：<code>iframe</code> 窗体打开当前记录，标题或地址包含本次选择的行信息；不会固定打开同一条记录。</li>
+            <li>在子页面点击保存按钮，再确认顶层提示。<br />结果：提示确认后才执行本页关闭及父页通知逻辑；表格标题显示本次回发参数，本例不因此承诺已保存数据库。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：初始为<code>Id</code>，表格使用稳定的记录 <code>ID</code> 识别当前行。</li>
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="弹出窗体">弹出窗体</strong>）：初始为<code>true</code>，编辑窗体使用独立子页面。</li>
+            <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
+            <li><code>parentWindow</code>（<strong>子页面与父页面交互</strong>）：子页面向正确的父页面发送本页约定的更新通知。</li>
+        </ul>
+    </section>
 }

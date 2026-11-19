@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            OnRowClick="Grid1_RowClick" _DataKeyNames="Id,Name">
+        OnRowClick="Grid1_RowClick" _DataKeyNames="Id,Name">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -49,17 +49,19 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在行点击发生前拦截分组列，其他单元格仍可触发行点击处理。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照被拦截的列</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的分组列，再点击同一行的姓名列。<br />结果：分组列的点击在浏览器被取消，不执行后续行点击处理；姓名列仍正常触发并显示该行信息。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：通过 beforerowclick 事件阻止 “分组” 列的行点击事件。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>beforerowclick</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：检查当前点击单元格所属列，命中分组列时返回 false，取消本次行点击。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在行点击发生前拦截分组列，其他单元格仍可触发行点击处理。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照被拦截的列</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的分组列，再点击同一行的姓名列。<br />结果：分组列的点击在浏览器被取消，不执行后续行点击处理；姓名列仍正常触发并显示该行信息。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：通过 beforerowclick 事件阻止 “分组” 列的行点击事件。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>beforerowclick</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：检查当前点击单元格所属列，命中分组列时返回 false，取消本次行点击。</li>
+        </ul>
+    </section>
 }

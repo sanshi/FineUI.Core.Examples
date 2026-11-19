@@ -7,7 +7,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" EnableCheckBoxSelect="true" KeepCurrentSelection="true" RowDataBoundFunction="onGrid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId" EnableCheckBoxSelect="true" KeepCurrentSelection="true" RowDataBoundFunction="onGrid1RowDataBound">
         <Columns>
             <f:RowNumberField />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
@@ -92,21 +93,23 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>选择或取消一个父行时，把相同动作应用到其所有下级行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>让行选择覆盖当前分支</h3>
-    <ul>
-        <li>选择<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>一个父行，再取消这个父行的选择。<br />结果：选中时该分支后代一起选中，取消时一起清除；其他分支的选择保留。这里操作的是整行选择，不是<strong>名称</strong>旁的树复选框。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>本树表格默认展开 [basic] 和 [res] 两个目录</li>
-        <li>注意表格属性：EnableCheckBoxSelect="true" KeepCurrentSelection="true"</li>
-        <li>表格客户端函数 selectRows 的第二个参数，用来指示是否保持现有选中项</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>rowselect / rowdeselect / selectRows / deselectRows</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：递归取得当前行 children，批量更新后代选择；使用 F.noEvent 避免递归触发同类事件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>选择或取消一个父行时，把相同动作应用到其所有下级行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>让行选择覆盖当前分支</h3>
+        <ul>
+            <li>选择<strong class="example-control-reference" data-example-control="Grid1"
+                    title="树表格">树表格</strong>一个父行，再取消这个父行的选择。<br />结果：选中时该分支后代一起选中，取消时一起清除；其他分支的选择保留。这里操作的是整行选择，不是<strong>名称</strong>旁的树复选框。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>本树表格默认展开 [basic] 和 [res] 两个目录</li>
+            <li>注意表格属性：EnableCheckBoxSelect="true" KeepCurrentSelection="true"</li>
+            <li>表格客户端函数 selectRows 的第二个参数，用来指示是否保持现有选中项</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>rowselect / rowdeselect / selectRows / deselectRows</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="树表格">树表格</strong>）：递归取得当前行 children，批量更新后代选择；使用 F.noEvent 避免递归触发同类事件。</li>
+        </ul>
+    </section>
 }

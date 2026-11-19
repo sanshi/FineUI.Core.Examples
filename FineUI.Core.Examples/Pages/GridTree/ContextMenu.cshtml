@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound">
         <Columns>
             <f:RowNumberField EnableTreeNumber="true" />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
@@ -104,17 +105,21 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>右键节点打开自定义树操作菜单，统一展开或折叠当前树数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用树节点右键菜单</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong><strong>名称</strong>单元格点击鼠标右键，选择<strong class="example-control-reference" data-example-control="btnExpandRows" title="展开全部">展开全部</strong>，再选择<strong class="example-control-reference" data-example-control="btnCollapseRows" title="折叠全部">折叠全部</strong>。<br />结果：本页菜单替代默认右键入口；当前树分支按菜单命令统一展开或收起，节点数据不删除。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>rowcontextmenu / expandAllTreeNodes / collapseAllTreeNodes</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：右键处理显示自定义菜单，菜单调用当前表格的树展开与折叠方法。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>右键节点打开自定义树操作菜单，统一展开或折叠当前树数据。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用树节点右键菜单</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong><strong>名称</strong>单元格点击鼠标右键，选择<strong
+                    class="example-control-reference" data-example-control="btnExpandRows" title="展开全部">展开全部</strong>，再选择<strong
+                    class="example-control-reference" data-example-control="btnCollapseRows"
+                    title="折叠全部">折叠全部</strong>。<br />结果：本页菜单替代默认右键入口；当前树分支按菜单命令统一展开或收起，节点数据不删除。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>rowcontextmenu / expandAllTreeNodes / collapseAllTreeNodes</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="树表格">树表格</strong>）：右键处理显示自定义菜单，菜单调用当前表格的树展开与折叠方法。</li>
+        </ul>
+    </section>
 }

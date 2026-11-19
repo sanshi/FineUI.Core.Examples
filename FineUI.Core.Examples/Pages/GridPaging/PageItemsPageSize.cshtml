@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（内存分页）" Height="350" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" 
-        AllowPaging="true" AllowSorting="true" PageSize="5">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（内存分页）" Height="350" DataIDField="Id" DataTextField="Name"
+        EnableCheckBoxSelect="true" AllowPaging="true" AllowSorting="true" PageSize="5">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -38,8 +38,8 @@
     </f:Grid>
     <br />
     <f:Button CssClass="marginr" Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
-        <f:Button CssClass="marginr" ID="btnServerPage" Text="服务端切到第二页" OnClick="btnServerPage_Click"></f:Button>
-        <f:Button ID="btnServerSort" Text="服务端按入学年份降序并回首页" OnClick="btnServerSort_Click"></f:Button>
+    <f:Button CssClass="marginr" ID="btnServerPage" Text="服务端切到第二页" OnClick="btnServerPage_Click"></f:Button>
+    <f:Button ID="btnServerSort" Text="服务端按入学年份降序并回首页" OnClick="btnServerSort_Click"></f:Button>
 
 }
 
@@ -67,20 +67,25 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>使用自定义下拉列表修改页大小，对照浏览器对已有记录重新分页的结果。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改每页记录数</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="ddlPageSize" title="下拉列表">每页记录数</strong>中选择另一项，例如从 5 改为 10 或从 10 改为 20。<br />结果：浏览器按新的页大小重新分页，当前页可显示的记录数和总页数一起变化。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>后台切页与排序</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnServerPage" title="服务端切到第二页">服务端切到第二页</strong>。<br />结果：后台切换到第二页，当前页记录和分页栏一致更新。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnServerSort" title="服务端按入学年份降序并回首页">服务端按入学年份降序并回首页</strong>。<br />结果：后台按入学年份降序排列数据，并回到第一页显示结果。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（内存分页）">表格（内存分页）</strong>）：初始为 <code>5</code>，指定每页最多显示的记录数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>使用自定义下拉列表修改页大小，对照浏览器对已有记录重新分页的结果。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改每页记录数</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="ddlPageSize" title="下拉列表">每页记录数</strong>中选择另一项，例如从 5 改为 10 或从 10 改为
+                20。<br />结果：浏览器按新的页大小重新分页，当前页可显示的记录数和总页数一起变化。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>后台切页与排序</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnServerPage"
+                    title="服务端切到第二页">服务端切到第二页</strong>。<br />结果：后台切换到第二页，当前页记录和分页栏一致更新。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnServerSort"
+                    title="服务端按入学年份降序并回首页">服务端按入学年份降序并回首页</strong>。<br />结果：后台按入学年份降序排列数据，并回到第一页显示结果。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（内存分页）">表格（内存分页）</strong>）：初始为
+                <code>5</code>，指定每页最多显示的记录数。
+            </li>
+        </ul>
+    </section>
 }

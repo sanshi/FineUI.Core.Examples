@@ -7,10 +7,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name"
-            EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId"
-            OnRowDoubleClick="Grid1_RowDoubleClick" _DataKeyNames="Id,Name"
-            TreeExpandOnDblClick="false">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" EnableTree="true" TreeColumn="Name"
+        DataParentIDField="ParentId" OnRowDoubleClick="Grid1_RowDoubleClick" _DataKeyNames="Id,Name" TreeExpandOnDblClick="false">
         <Columns>
             <f:RowNumberField />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />
@@ -36,18 +34,21 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>双击节点仅执行本页行双击处理，树分支仍由展开箭头控制。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>区分双击与树展开</h3>
-    <ol>
-        <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>一个父行。<br />结果：触发行双击回发并显示当前记录资料，分支不会因双击自动展开或折叠。</li>
-        <li>点击同一行<strong>名称</strong>前的展开箭头。<br />结果：分支正常展开或折叠；禁用双击展开不会禁用专用箭头。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：本示例启用了行双击事件（EnableRowDoubleClickEvent），禁用了双击展开树节点（TreeExpandOnDblClick）。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>TreeExpandOnDblClick</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为 <code>false</code>，关闭双击展开，让行双击留给本页业务处理。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>双击节点仅执行本页行双击处理，树分支仍由展开箭头控制。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>区分双击与树展开</h3>
+        <ol>
+            <li>双击<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>一个父行。<br />结果：触发行双击回发并显示当前记录资料，分支不会因双击自动展开或折叠。
+            </li>
+            <li>点击同一行<strong>名称</strong>前的展开箭头。<br />结果：分支正常展开或折叠；禁用双击展开不会禁用专用箭头。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本示例启用了行双击事件（EnableRowDoubleClickEvent），禁用了双击展开树节点（TreeExpandOnDblClick）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>TreeExpandOnDblClick</code>（<strong class="example-control-reference" data-example-control="Grid1" title="树表格">树表格</strong>）：初始为
+                <code>false</code>，关闭双击展开，让行双击留给本页业务处理。
+            </li>
+        </ul>
+    </section>
 }

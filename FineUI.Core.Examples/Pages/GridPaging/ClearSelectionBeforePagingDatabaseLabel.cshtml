@@ -9,8 +9,8 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
-            KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true" ClearSelectionBeforeBinding="false" >
+        AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" KeepCurrentSelection="true"
+        ClearSelectionBeforePaging="false" KeepPagedSelection="true" ClearSelectionBeforeBinding="false">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -86,20 +86,28 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>数据库分页时持续显示来自不同页面的选中行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>跨页累积并直接显示选择</h3>
-    <ol>
-        <li>勾选<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>第一页的一行，再点击下一页。<br />结果：翻页后原来选中的行仍保留在选择集合中；后台只加载新页记录。</li>
-        <li>再勾选第二页的一行。<br />结果：<strong class="example-control-reference" data-example-control="labResult" title="标签">标签</strong>同时显示两页选中的行，并随勾选和取消同步更新。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>Id</code>，跨页选择缓存按业务主键区分记录，避免把不同页面中的相同行位置混为同一条数据。</li>
-        <li><code>ClearSelectionBeforePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，翻页时不清空已有选择。</li>
-        <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，增加选择时保留原先已选中的记录。</li>
-        <li><code>KeepPagedSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，保留不在当前页中的选中记录。</li>
-        <li><code>ClearSelectionBeforeBinding</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，重新绑定当前页时不清空跨页选择。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>数据库分页时持续显示来自不同页面的选中行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>跨页累积并直接显示选择</h3>
+        <ol>
+            <li>勾选<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>第一页的一行，再点击下一页。<br />结果：翻页后原来选中的行仍保留在选择集合中；后台只加载新页记录。</li>
+            <li>再勾选第二页的一行。<br />结果：<strong class="example-control-reference" data-example-control="labResult" title="标签">标签</strong>同时显示两页选中的行，并随勾选和取消同步更新。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为
+                <code>Id</code>，跨页选择缓存按业务主键区分记录，避免把不同页面中的相同行位置混为同一条数据。
+            </li>
+            <li><code>ClearSelectionBeforePaging</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，翻页时不清空已有选择。</li>
+            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，增加选择时保留原先已选中的记录。</li>
+            <li><code>KeepPagedSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为
+                <code>true</code>，保留不在当前页中的选中记录。
+            </li>
+            <li><code>ClearSelectionBeforeBinding</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，重新绑定当前页时不清空跨页选择。</li>
+        </ul>
+    </section>
 }

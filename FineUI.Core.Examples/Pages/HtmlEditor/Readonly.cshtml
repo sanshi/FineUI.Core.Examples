@@ -9,7 +9,7 @@
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="只读与恢复编辑">
         <Items>
             <f:HtmlEditor ID="HtmlEditor1" Label="正文" Height="320" Text="@initialHtml" Readonly="true" ToolbarSet="Basic"></f:HtmlEditor>
-            
+
             <f:TextArea ID="TextArea1" Label="HTML 内容" Height="120" Text="@initialHtml" />
             <f:Button ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
             <f:Button ID="Button2" Text="设置编辑器内容" CssClass="marginr" OnClick="Button2_Click" />
@@ -54,7 +54,9 @@
         <p>只读时允许选择、复制和查看源码；正文和源码均不可修改。可使用下方按钮切换。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Readonly</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：本页初始为 <code>true</code>；客户端 <code>setReadonly()</code>切换是否可编辑，保留正文。</li>
+            <li><code>Readonly</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：本页初始为
+                <code>true</code>；客户端 <code>setReadonly()</code>切换是否可编辑，保留正文。
+            </li>
         </ul>
     </section>
 }

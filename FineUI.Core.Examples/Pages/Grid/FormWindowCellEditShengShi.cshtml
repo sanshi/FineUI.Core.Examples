@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" EnableCollapse="false" Title="表格与表单"
-            DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" EnableCollapse="false" Title="表格与表单" DataIDField="Id" DataTextField="Name"
+        AllowCellEditing="true" ClicksToEdit="2">
         <Toolbars>
             <f:Toolbar ID="Toolbar2" Position="Top">
                 <Items>
@@ -22,8 +22,8 @@
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
             <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Hidden="true" />
             <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                           Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" Hidden="true" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150" Hidden="true" />
             <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" EnableColumnEdit="false" />
             <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
             <f:RenderField HeaderText="省" ColumnID="Sheng" DataField="Sheng" Width="100" RendererFunction="renderSheng" />
@@ -58,8 +58,8 @@
                         <f:RadioItem Text="男" Value="1" />
                         <f:RadioItem Text="女" Value="0" />
                     </f:RadioButtonList>
-                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true"
-                                 MinValue="2000" MaxValue="2025" ShowRedStar="true" Required="true"></f:NumberBox>
+                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" ShowRedStar="true"
+                        Required="true"></f:NumberBox>
                     <f:DatePicker ID="dpFormEntranceDate" Label="入学日期" ShowRedStar="true" Required="true" EnableEdit="false"></f:DatePicker>
                     <f:CheckBox ID="cbFormAtSchool" Label="是否在校"></f:CheckBox>
                     <f:DropDownList ID="ddlFormMajor" Label="所学专业" ShowRedStar="true" Required="true" AutoSelectFirstItem="false">
@@ -278,18 +278,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在编辑窗体中联动省、市选项，先写回表格，最终统一提交修改。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>更换省份后选择所属城市</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>一行的编辑入口，在窗体中改变<strong class="example-control-reference" data-example-control="ddlSheng" title="表单的省">表单的省</strong>。<br />结果：浏览器根据新省份重新加载<strong class="example-control-reference" data-example-control="ddlShi" title="表单的市">表单的市</strong>选项，不保留其他省份的城市候选。</li>
-        <li>选择有效城市，点击<strong class="example-control-reference" data-example-control="btnSave" title="保存到表格">保存到表格</strong>，再点击<strong class="example-control-reference" data-example-control="btnSaveAll" title="全部保存">全部保存</strong>。<br />结果：先在浏览器写回省市编码，表格两列显示相应中文名称并记为待保存；全部保存才回发，由后台应用当前变更。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：初始[性别]和[入学日期]列处于隐藏状态，[省]和[市]两列存的是代码、显示时由渲染函数翻成名称。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>change / loadData / RendererFunction</code>（<strong>省市下拉框与对应表格列</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>）：省变化时装载该省城市，保存值使用业务编码，列渲染根据编码显示中文。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在编辑窗体中联动省、市选项，先写回表格，最终统一提交修改。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>更换省份后选择所属城市</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格与表单">表格与表单</strong>一行的编辑入口，在窗体中改变<strong
+                    class="example-control-reference" data-example-control="ddlSheng" title="表单的省">表单的省</strong>。<br />结果：浏览器根据新省份重新加载<strong
+                    class="example-control-reference" data-example-control="ddlShi" title="表单的市">表单的市</strong>选项，不保留其他省份的城市候选。</li>
+            <li>选择有效城市，点击<strong class="example-control-reference" data-example-control="btnSave" title="保存到表格">保存到表格</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnSaveAll"
+                    title="全部保存">全部保存</strong>。<br />结果：先在浏览器写回省市编码，表格两列显示相应中文名称并记为待保存；全部保存才回发，由后台应用当前变更。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：初始[性别]和[入学日期]列处于隐藏状态，[省]和[市]两列存的是代码、显示时由渲染函数翻成名称。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>change / loadData / RendererFunction</code>（<strong>省市下拉框与对应表格列</strong>，作用于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格与表单">表格与表单</strong>）：省变化时装载该省城市，保存值使用业务编码，列渲染根据编码显示中文。</li>
+        </ul>
+    </section>
 }

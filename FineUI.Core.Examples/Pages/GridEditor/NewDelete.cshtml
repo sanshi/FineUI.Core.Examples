@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name"
-            AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="2" EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -30,7 +30,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -129,22 +130,28 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>先在浏览器新增、删除和编辑记录，再统一保存或撤回本轮未提交变更。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>登记增删改并统一保存</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>，填写新记录需要的内容。<br />结果：表格出现一条临时新增记录，可以继续编辑；此时尚未写入后台。</li>
-        <li>选中一条记录，点击<strong class="example-control-reference" data-example-control="btnDelete" title="删除选中行">删除选中行</strong>并确认。<br />结果：浏览器将它登记为待删除并从当前显示中移除；新增行、删除行和普通修改在本轮分别跟踪。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：后台读取本轮变更，分别应用新增、修改与删除，再重新绑定示例数据，浏览器中的变更标记随绑定清除。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>撤回尚未保存的变化</h3>
-    <ul>
-        <li>在保存前点击<strong class="example-control-reference" data-example-control="btnReset" title="重置表格数据">重置表格数据</strong>并确认。<br />结果：通过客户端撤销恢复上次绑定的状态，未保存的新增和编辑被丢弃，待删除的原记录恢复；已保存到后台的数据不被这个操作回滚。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>addNewRecord</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：在浏览器创建待新增记录并提供初始字段值，保存前保留新增状态。</li>
-        <li><code>deleteSelectedRows</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：登记所选记录的删除，最终处理由本页的保存逻辑决定。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>先在浏览器新增、删除和编辑记录，再统一保存或撤回本轮未提交变更。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>登记增删改并统一保存</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnNew"
+                    title="新增数据">新增数据</strong>，填写新记录需要的内容。<br />结果：表格出现一条临时新增记录，可以继续编辑；此时尚未写入后台。</li>
+            <li>选中一条记录，点击<strong class="example-control-reference" data-example-control="btnDelete"
+                    title="删除选中行">删除选中行</strong>并确认。<br />结果：浏览器将它登记为待删除并从当前显示中移除；新增行、删除行和普通修改在本轮分别跟踪。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="保存数据">保存数据</strong>。<br />结果：后台读取本轮变更，分别应用新增、修改与删除，再重新绑定示例数据，浏览器中的变更标记随绑定清除。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>撤回尚未保存的变化</h3>
+        <ul>
+            <li>在保存前点击<strong class="example-control-reference" data-example-control="btnReset"
+                    title="重置表格数据">重置表格数据</strong>并确认。<br />结果：通过客户端撤销恢复上次绑定的状态，未保存的新增和编辑被丢弃，待删除的原记录恢复；已保存到后台的数据不被这个操作回滚。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>addNewRecord</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：在浏览器创建待新增记录并提供初始字段值，保存前保留新增状态。</li>
+            <li><code>deleteSelectedRows</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：登记所选记录的删除，最终处理由本页的保存逻辑决定。</li>
+        </ul>
+    </section>
 }

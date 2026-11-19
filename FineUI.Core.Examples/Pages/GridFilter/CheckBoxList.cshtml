@@ -8,15 +8,16 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowFilters="true"
+        OnFilterChanged="Grid1_FilterChanged">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
-            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" EnableFilter="true">
+            <f:RenderField ColumnID="Major" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150"
+                EnableFilter="true">
                 <Filter>
                     <Field>
                         <f:CheckBoxList ColumnNumber="1">
@@ -49,16 +50,18 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过复选框列表过滤所学专业，保留任一所选专业的记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按多个专业筛选</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>所学专业</strong>列表头过滤菜单选择化学系和物理系，再点击过滤面板的确定。<br />结果：提交的是专业值数组；匹配化学系或物理系任意一项的记录保留，不要求同一学生同时属于两个专业。</li>
-        <li>清除本列过滤条件。<br />结果：取消专业限制并恢复其他条件允许显示的记录；没有其他条件时恢复全表。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Filter.Field</code>（<strong>所学专业列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：采用 CheckBoxList，多个勾选值作为同一列的可选匹配值。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过复选框列表过滤所学专业，保留任一所选专业的记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按多个专业筛选</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的<strong>所学专业</strong>列表头过滤菜单选择化学系和物理系，再点击过滤面板的确定。<br />结果：提交的是专业值数组；匹配化学系或物理系任意一项的记录保留，不要求同一学生同时属于两个专业。</li>
+            <li>清除本列过滤条件。<br />结果：取消专业限制并恢复其他条件允许显示的记录；没有其他条件时恢复全表。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Filter.Field</code>（<strong>所学专业列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：采用 CheckBoxList，多个勾选值作为同一列的可选匹配值。</li>
+        </ul>
+    </section>
 }

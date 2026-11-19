@@ -37,26 +37,27 @@
             <f:Button ID="btnOpenWindow" Text="选择省市县" ClickHandler="onOpenWindow1Click"></f:Button>
         </Items>
     </f:Panel>
-    <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true"
-              IsModal="true" BodyPadding="10px" Layout="VBox" BoxConfigSpace="5"
-              PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
+    <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true" IsModal="true" BodyPadding="10px"
+        Layout="VBox" BoxConfigSpace="5" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
         <Items>
-            <f:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" BodyPadding="10px" CssClass="f-corner-all"
-                          Layout="VBox" MessageTarget="None" LabelAlign="Right">
+            <f:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" BodyPadding="10px" CssClass="f-corner-all" Layout="VBox" MessageTarget="None"
+                LabelAlign="Right">
                 <Items>
-                    <f:DropDownList ID="ddlSheng" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择省份！" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
+                    <f:DropDownList ID="ddlSheng" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                        CompareMessage="请选择省份！" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
                     </f:DropDownList>
-                    <f:DropDownList ID="ddlShi" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="ddlShi_SelectedIndexChanged">
+                    <f:DropDownList ID="ddlShi" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                        CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="ddlShi_SelectedIndexChanged">
                         <f:ListItem Text="选择地区市" Value="-1"></f:ListItem>
                     </f:DropDownList>
-                    <f:DropDownList ID="ddlXian" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！" Label="县区市" Enabled="false">
+                    <f:DropDownList ID="ddlXian" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！"
+                        Label="县区市" Enabled="false">
                         <f:ListItem Text="选择县区市" Value="-1"></f:ListItem>
                     </f:DropDownList>
                     <f:Panel ShowBorder="false" ShowHeader="false" Layout="HBox">
                         <Items>
                             <f:Button ID="Button3" Width="100" Text="取消" MarginRight="10" ClickHandler="onCloseWindow1Click"></f:Button>
-                            <f:Button ID="Button1" BoxFlex="1" Text="选择" _ValidateForms="SimpleForm1" ValidateMessageBoxPlain="true"
-                                      OnClick="Button1_Click">
+                            <f:Button ID="Button1" BoxFlex="1" Text="选择" _ValidateForms="SimpleForm1" ValidateMessageBoxPlain="true" OnClick="Button1_Click">
                             </f:Button>
                         </Items>
                     </f:Panel>
@@ -84,19 +85,25 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示在底部面板中逐级选择省、市、县，并验证后读取最终组合。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>按上级选择加载下级</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="选择省市县">选择省市县</strong>。<br />结果：底部面板显示三个联动下拉框。</li>
-        <li>在<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>选择<code>安徽</code>，再选择需要的地区市与县区市。<br />结果：省或市变化时回发，后台按当前上级读取下级数据并更新可用状态。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="选择">选择</strong>。<br />结果：先验证本页需要的选择，通过后显示省市县名称组合。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>）：各组分别设为<code>ddlSheng_SelectedIndexChanged</code>、<code>ddlShi_SelectedIndexChanged</code>，省、市变化时更新下一层数据。</li>
-        <li><code>DataValueField</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>、<strong class="example-control-reference" data-example-control="ddlXian" title="县区市">县区市</strong>）：用稳定的地区代码关联上下级数据。</li>
-        <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="Button1" title="选择">选择</strong>）：初始为<code>SimpleForm1</code>，选择按钮先检查当前组合。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示在底部面板中逐级选择省、市、县，并验证后读取最终组合。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>按上级选择加载下级</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnOpenWindow" title="选择省市县">选择省市县</strong>。<br />结果：底部面板显示三个联动下拉框。</li>
+            <li>在<strong class="example-control-reference" data-example-control="ddlSheng"
+                    title="省份">省份</strong>选择<code>安徽</code>，再选择需要的地区市与县区市。<br />结果：省或市变化时回发，后台按当前上级读取下级数据并更新可用状态。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="选择">选择</strong>。<br />结果：先验证本页需要的选择，通过后显示省市县名称组合。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong
+                    class="example-control-reference" data-example-control="ddlShi"
+                    title="地区市">地区市</strong>）：各组分别设为<code>ddlSheng_SelectedIndexChanged</code>、<code>ddlShi_SelectedIndexChanged</code>，省、市变化时更新下一层数据。</li>
+            <li><code>DataValueField</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong
+                    class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>、<strong class="example-control-reference"
+                    data-example-control="ddlXian" title="县区市">县区市</strong>）：用稳定的地区代码关联上下级数据。</li>
+            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="Button1"
+                    title="选择">选择</strong>）：初始为<code>SimpleForm1</code>，选择按钮先检查当前组合。</li>
+        </ul>
+    </section>
 }

@@ -25,7 +25,8 @@
                             <f:Listener Event="change" Handler="onMultiLineChange" />
                         </Listeners>
                     </f:CheckBox>
-                    <f:NumberBox ID="nbMultiLineHeight" NoDecimal="true" NoNegative="true" Label="多行输入框高度" MinValue="80" MaxValue="300" Text="100"></f:NumberBox>
+                    <f:NumberBox ID="nbMultiLineHeight" NoDecimal="true" NoNegative="true" Label="多行输入框高度" MinValue="80" MaxValue="300" Text="100">
+                    </f:NumberBox>
                     <f:CheckBox ID="cbxIsPassword" Checked="false" Hidden="true" Label="是否密码输入框"></f:CheckBox>
                     <f:RadioButtonList ID="rblMessageBoxIcon" Label="消息图标" ColumnNumber="3">
                         <f:RadioItem Value="None" Text="无图标" Selected="true" />
@@ -87,23 +88,32 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过配置表单创建输入对话框，对照多行、单行、必填和回调取值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>按表单配置创建输入框</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="tbxMessage" title="消息提示">消息提示</strong>输入 <code>本次测试内容</code>，在<strong class="example-control-reference" data-example-control="tbxTitle" title="对话框标题">对话框标题</strong>输入 <code>自定义标题</code>，点击<strong class="example-control-reference" data-example-control="btnHello" title="点击弹出输入对话框">点击弹出输入对话框</strong>。<br />结果：按钮回发，后台读取当前字段，新对话框显示填写的消息和标题。</li>
-        <li>更改本页的图标、宽度或弹出位置，再次点击<strong class="example-control-reference" data-example-control="btnHello" title="点击弹出输入对话框">点击弹出输入对话框</strong>。<br />结果：新创建的对话框采用修改后的配置，已有对话框不作为输入字段被同步修改。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换输入方式并返回内容</h3>
-    <ul>
-        <li>切换<strong class="example-control-reference" data-example-control="cbxIsMultiLine" title="是否多行输入框">是否多行输入框</strong>。<br />结果：多行模式显示高度配置；单行模式显示密码选项。</li>
-        <li>填写<strong class="example-control-reference" data-example-control="tbxDefaultValue" title="输入框缺省值">输入框缺省值</strong>并打开输入框，在弹出的输入区修改内容后点击确定。<br />结果：输入框先显示缺省值，确定后通过客户端回调把输入内容显示在通知中；取消不提交该内容。</li>
-        <li>勾选<strong class="example-control-reference" data-example-control="cbxRequired" title="是否必填项">是否必填项</strong>后重新打开，清空弹出的输入内容并点击确定。<br />结果：必填验证阻止空内容确认，保留输入框供继续填写。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Message / Title</code>（<strong class="example-control-reference" data-example-control="tbxMessage" title="消息提示">消息提示</strong>）：从消息与标题字段取值，作为新创建对话框的正文和标题。</li>
-        <li><code>Required / MultiLine / DefaultValue</code>（<strong class="example-control-reference" data-example-control="btnHello" title="点击弹出输入对话框">点击弹出输入对话框</strong>）：分别控制弹出输入区的必填、多行模式和初始输入内容。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过配置表单创建输入对话框，对照多行、单行、必填和回调取值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>按表单配置创建输入框</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="tbxMessage" title="消息提示">消息提示</strong>输入 <code>本次测试内容</code>，在<strong
+                    class="example-control-reference" data-example-control="tbxTitle" title="对话框标题">对话框标题</strong>输入 <code>自定义标题</code>，点击<strong
+                    class="example-control-reference" data-example-control="btnHello"
+                    title="点击弹出输入对话框">点击弹出输入对话框</strong>。<br />结果：按钮回发，后台读取当前字段，新对话框显示填写的消息和标题。</li>
+            <li>更改本页的图标、宽度或弹出位置，再次点击<strong class="example-control-reference" data-example-control="btnHello"
+                    title="点击弹出输入对话框">点击弹出输入对话框</strong>。<br />结果：新创建的对话框采用修改后的配置，已有对话框不作为输入字段被同步修改。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换输入方式并返回内容</h3>
+        <ul>
+            <li>切换<strong class="example-control-reference" data-example-control="cbxIsMultiLine"
+                    title="是否多行输入框">是否多行输入框</strong>。<br />结果：多行模式显示高度配置；单行模式显示密码选项。</li>
+            <li>填写<strong class="example-control-reference" data-example-control="tbxDefaultValue"
+                    title="输入框缺省值">输入框缺省值</strong>并打开输入框，在弹出的输入区修改内容后点击确定。<br />结果：输入框先显示缺省值，确定后通过客户端回调把输入内容显示在通知中；取消不提交该内容。</li>
+            <li>勾选<strong class="example-control-reference" data-example-control="cbxRequired"
+                    title="是否必填项">是否必填项</strong>后重新打开，清空弹出的输入内容并点击确定。<br />结果：必填验证阻止空内容确认，保留输入框供继续填写。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Message / Title</code>（<strong class="example-control-reference" data-example-control="tbxMessage"
+                    title="消息提示">消息提示</strong>）：从消息与标题字段取值，作为新创建对话框的正文和标题。</li>
+            <li><code>Required / MultiLine / DefaultValue</code>（<strong class="example-control-reference" data-example-control="btnHello"
+                    title="点击弹出输入对话框">点击弹出输入对话框</strong>）：分别控制弹出输入区的必填、多行模式和初始输入内容。</li>
+        </ul>
+    </section>
 }

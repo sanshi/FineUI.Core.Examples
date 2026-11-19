@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            AllowColumnLocking="true" Width="1000">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowColumnLocking="true"
+        Width="1000">
         <Columns>
             <f:RowNumberField ColumnID="RowNumber" />
             <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" />
@@ -68,17 +68,21 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>保存列的锁定状态，当前会话刷新后恢复。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>改变配置后刷新核对</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的表头菜单中锁定或解锁一个允许操作的列。<br />结果：客户端列锁定事件把当前列标识及锁定动作回发，后台保存到当前会话的示例配置。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnRefresh" title="刷新本页面（保持列锁定状态）">刷新本页面（保持列锁定状态）</strong>，或刷新当前示例。<br />结果：后台按已保存配置重建显示，锁定状态恢复；本页用会话模拟配置保存，不是已接入业务数据库。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ColumnID / Locked</code>（<strong>列锁定配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：保存稳定列标识和锁定状态；恢复时按列标识对应，不按当前显示索引猜测。</li>
-        <li><code>columnlock / columnunlock</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：这些客户端事件触发本页保存处理，只保存列标识对应的锁定状态。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>保存列的锁定状态，当前会话刷新后恢复。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>改变配置后刷新核对</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的表头菜单中锁定或解锁一个允许操作的列。<br />结果：客户端列锁定事件把当前列标识及锁定动作回发，后台保存到当前会话的示例配置。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnRefresh"
+                    title="刷新本页面（保持列锁定状态）">刷新本页面（保持列锁定状态）</strong>，或刷新当前示例。<br />结果：后台按已保存配置重建显示，锁定状态恢复；本页用会话模拟配置保存，不是已接入业务数据库。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ColumnID / Locked</code>（<strong>列锁定配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：保存稳定列标识和锁定状态；恢复时按列标识对应，不按当前显示索引猜测。</li>
+            <li><code>columnlock / columnunlock</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：这些客户端事件触发本页保存处理，只保存列标识对应的锁定状态。</li>
+        </ul>
+    </section>
 }

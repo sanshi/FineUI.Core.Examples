@@ -128,7 +128,8 @@
         </Items>
     </f:Panel>
 
-    <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" HideOnMaskClick="true" IsModal="true" BodyPadding="10" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom" Hidden="true" Layout="VBox" >
+    <f:Window ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" HideOnMaskClick="true" IsModal="true" BodyPadding="10" PercentWidth="100%"
+        EnableDefaultCorner="false" PositionY="Bottom" Hidden="true" Layout="VBox">
         <Items>
             <f:ContentPanel ID="ContentPanel1" CssClass="themepanel" Height="200" AutoScroll="true" ShowHeader="false">
                 <div id="themecontainer">
@@ -389,22 +390,24 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示移动示例的分级目录、返回导航、按地址恢复当前位置及切换主题。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>逐级打开示例</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="DataList1" title="第 1 个数据列表">第 1 个数据列表</strong>点击一个分类，再点击其中的示例。<br />结果：分类列表逐级切换，最终进入对应移动示例；返回按钮可回到上一层。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>地址记录与主题选择</h3>
-    <ul>
-        <li>进入二级分类后刷新页面。<br />结果：本页按地址中的 <code>hash</code> 恢复对应目录，不必重新从首页逐级查找。</li>
-        <li>点击标题栏的设置入口并选择一个主题预览项。<br />结果：主题标识保存到本页使用的浏览器配置，页面重新加载后显示所选主题。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Items</code>（<strong class="example-control-reference" data-example-control="DataList1" title="第 1 个数据列表">第 1 个数据列表</strong>）：移动目录的数据来自示例菜单，分类与叶子示例分别处理。</li>
-        <li><code>location.hash</code>（<strong>移动导航地址</strong>）：记录当前目录并在刷新时恢复位置。</li>
-        <li><code>Theme</code>（<strong>主题选择配置</strong>）：保存用户选中的主题标识。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示移动示例的分级目录、返回导航、按地址恢复当前位置及切换主题。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>逐级打开示例</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="DataList1" title="第 1 个数据列表">第 1
+                    个数据列表</strong>点击一个分类，再点击其中的示例。<br />结果：分类列表逐级切换，最终进入对应移动示例；返回按钮可回到上一层。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>地址记录与主题选择</h3>
+        <ul>
+            <li>进入二级分类后刷新页面。<br />结果：本页按地址中的 <code>hash</code> 恢复对应目录，不必重新从首页逐级查找。</li>
+            <li>点击标题栏的设置入口并选择一个主题预览项。<br />结果：主题标识保存到本页使用的浏览器配置，页面重新加载后显示所选主题。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Items</code>（<strong class="example-control-reference" data-example-control="DataList1" title="第 1 个数据列表">第 1
+                    个数据列表</strong>）：移动目录的数据来自示例菜单，分类与叶子示例分别处理。</li>
+            <li><code>location.hash</code>（<strong>移动导航地址</strong>）：记录当前目录并在刷新时恢复位置。</li>
+            <li><code>Theme</code>（<strong>主题选择配置</strong>）：保存用户选中的主题标识。</li>
+        </ul>
+    </section>
 }

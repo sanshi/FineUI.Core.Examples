@@ -53,20 +53,30 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>对照声明式确认、客户端确认回调和取消时也回发的处理方式。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>分别确认与取消操作</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnOperation1" title="操作一（ConfirmText）">操作一（ConfirmText）</strong>，分别选择确定和取消。<br />结果：确定后执行该按钮对应操作并显示提示；取消时关闭确认框，不执行该操作。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnOperation2" title="操作二（ClickHandler）">操作二（ClickHandler）</strong>，分别选择确定和取消。<br />结果：确定后执行该按钮对应操作并显示提示；取消时关闭确认框，不执行该操作。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnOperation3" title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>，分别选择确定和取消。<br />结果：确定与取消分别触发对应事件，并显示本次执行或取消操作的提示。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ConfirmText</code>（<strong class="example-control-reference" data-example-control="btnOperation1" title="操作一（ConfirmText）">操作一（ConfirmText）</strong>）：初始为 <code>确认执行操作一？</code>，点击后先显示确认内容，确认后才执行操作。</li>
-        <li><code>ConfirmTarget</code>（<strong class="example-control-reference" data-example-control="btnOperation1" title="操作一（ConfirmText）">操作一（ConfirmText）</strong>）：初始为 <code>Top</code>，指定确认框显示在当前页面还是顶层页面。</li>
-        <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnOperation2" title="操作二（ClickHandler）">操作二（ClickHandler）</strong>、<strong class="example-control-reference" data-example-control="btnOperation3" title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>）：初始为 <code>onOperation2Click</code>、<code>onOperation3Click</code>，指定按钮点击时执行的客户端处理函数。</li>
-        <li><code>ok / cancel</code>（<strong class="example-control-reference" data-example-control="btnOperation3" title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>）：确认和取消使用不同的客户端回调；需要回发时由回调显式发送对应事件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>对照声明式确认、客户端确认回调和取消时也回发的处理方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>分别确认与取消操作</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnOperation1"
+                    title="操作一（ConfirmText）">操作一（ConfirmText）</strong>，分别选择确定和取消。<br />结果：确定后执行该按钮对应操作并显示提示；取消时关闭确认框，不执行该操作。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnOperation2"
+                    title="操作二（ClickHandler）">操作二（ClickHandler）</strong>，分别选择确定和取消。<br />结果：确定后执行该按钮对应操作并显示提示；取消时关闭确认框，不执行该操作。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnOperation3"
+                    title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>，分别选择确定和取消。<br />结果：确定与取消分别触发对应事件，并显示本次执行或取消操作的提示。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ConfirmText</code>（<strong class="example-control-reference" data-example-control="btnOperation1"
+                    title="操作一（ConfirmText）">操作一（ConfirmText）</strong>）：初始为 <code>确认执行操作一？</code>，点击后先显示确认内容，确认后才执行操作。</li>
+            <li><code>ConfirmTarget</code>（<strong class="example-control-reference" data-example-control="btnOperation1"
+                    title="操作一（ConfirmText）">操作一（ConfirmText）</strong>）：初始为 <code>Top</code>，指定确认框显示在当前页面还是顶层页面。</li>
+            <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnOperation2"
+                    title="操作二（ClickHandler）">操作二（ClickHandler）</strong>、<strong class="example-control-reference" data-example-control="btnOperation3"
+                    title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>）：初始为
+                <code>onOperation2Click</code>、<code>onOperation3Click</code>，指定按钮点击时执行的客户端处理函数。
+            </li>
+            <li><code>ok / cancel</code>（<strong class="example-control-reference" data-example-control="btnOperation3"
+                    title="操作三（ClickHandler，点击取消按钮也回发）">操作三（ClickHandler，点击取消按钮也回发）</strong>）：确认和取消使用不同的客户端回调；需要回发时由回调显式发送对应事件。</li>
+        </ul>
+    </section>
 }

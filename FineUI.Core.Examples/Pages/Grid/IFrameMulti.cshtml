@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableMultiSelect="true" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableMultiSelect="true"
+        EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -39,7 +40,7 @@
 
 
     <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true"
-              OnClose="Window1_Close" Target="Top" IsModal="true" Width="850" Height="500">
+        OnClose="Window1_Close" Target="Top" IsModal="true" Width="850" Height="500">
     </f:Window>
 }
 
@@ -99,19 +100,24 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>把多条选中记录的主键和文字一起传入编辑窗体，并在无选择时拦截操作。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>合并所选记录打开窗口</h3>
-    <ol>
-        <li>先不选择记录，点击<strong class="example-control-reference" data-example-control="btnApprove" title="审批数据">审批数据</strong>。<br />结果：浏览器提示至少选择一项，不打开空的批量窗口。</li>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>选中两行，再点击同一按钮。<br />结果：浏览器收集所选记录的主键和文字，编码后放入窗口地址；窗口标题和内容对应这批记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：选择多行数据，然后点击[审批数据]按钮。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>getSelectedRows</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：读取当前选中的记录数据，主键和文字分别组合后传给窗口。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：初始为 <code>true</code>，在窗口内加载带有本批记录参数的独立页面。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>把多条选中记录的主键和文字一起传入编辑窗体，并在无选择时拦截操作。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>合并所选记录打开窗口</h3>
+        <ol>
+            <li>先不选择记录，点击<strong class="example-control-reference" data-example-control="btnApprove" title="审批数据">审批数据</strong>。<br />结果：浏览器提示至少选择一项，不打开空的批量窗口。
+            </li>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>选中两行，再点击同一按钮。<br />结果：浏览器收集所选记录的主键和文字，编码后放入窗口地址；窗口标题和内容对应这批记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：选择多行数据，然后点击[审批数据]按钮。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>getSelectedRows</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：读取当前选中的记录数据，主键和文字分别组合后传给窗口。</li>
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：初始为
+                <code>true</code>，在窗口内加载带有本批记录参数的独立页面。
+            </li>
+        </ul>
+    </section>
 }

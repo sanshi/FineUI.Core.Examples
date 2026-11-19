@@ -4,15 +4,14 @@
     ViewBag.Title = "表格多选与数组参数";
 }
 @section body {
-    <f:Grid ID="Grid1" Title="选择客户" ShowHeader="true" IsFluid="true" Height="230"
-        DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="Model.Rows">
+    <f:Grid ID="Grid1" Title="选择客户" ShowHeader="true" IsFluid="true" Height="230" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+        DataSource="Model.Rows">
         <Columns>
             <f:RenderField HeaderText="客户名称" DataField="Name" ExpandUnusedSpace="true" />
         </Columns>
     </f:Grid>
     <br />
-    <f:Button ID="btnSubmit" Text="读取选择" OnClick="@Url.Handler("ReadSelection")"
-        OnClickParameter1="@(Parameter.FromFunction("selectedIds", "getCompatibilitySelectedIds"))" />
+    <f:Button ID="btnSubmit" Text="读取选择" OnClick="@Url.Handler("ReadSelection")" OnClickParameter1="@(Parameter.FromFunction("selectedIds", "getCompatibilitySelectedIds"))" />
     <div style="margin-top: 10px">
         <f:Label ID="labResult" Text="等待操作" />
     </div>
@@ -27,20 +26,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由参数函数收集表格选中标识，再交给旧 OnPost。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="选择客户">选择客户</strong>中，勾选两条客户记录后点击<strong class="example-control-reference" data-example-control="btnSubmit" title="读取选择">读取选择</strong>。<br />结果：结果显示本次选择的客户标识；改变勾选并再次读取时使用新选择。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>Parameter 通过具名函数读取当前选中行，将 ID 数组绑定到旧 OnPost 方法。</li>
-        <li>取消选择后再次提交，后台得到的是当次选择。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Parameter.FromFunction</code>（<strong class="example-control-reference" data-example-control="Grid1" title="选择客户">选择客户</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由参数函数收集表格选中标识，再交给旧 OnPost。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1" title="选择客户">选择客户</strong>中，勾选两条客户记录后点击<strong
+                    class="example-control-reference" data-example-control="btnSubmit" title="读取选择">读取选择</strong>。<br />结果：结果显示本次选择的客户标识；改变勾选并再次读取时使用新选择。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>Parameter 通过具名函数读取当前选中行，将 ID 数组绑定到旧 OnPost 方法。</li>
+            <li>取消选择后再次提交，后台得到的是当次选择。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Parameter.FromFunction</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="选择客户">选择客户</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

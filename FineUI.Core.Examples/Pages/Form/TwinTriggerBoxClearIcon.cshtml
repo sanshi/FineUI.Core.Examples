@@ -11,7 +11,7 @@
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="表单" ShowHeader="true">
         <Items>
             <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" EmptyText="搜索用户名" Trigger2Icon="Search"
-                              OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click" AutoShowClearIcon="true">
+                OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click" AutoShowClearIcon="true">
                 <Listeners>
                     <f:Listener Event="change" Handler="onTwinTriggerBox1Change"></f:Listener>
                 </Listeners>
@@ -67,7 +67,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>输入后自动搜索</h3>
         <ol>
             <li>
-                在<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>输入框中输入<code>demo</code>，停止输入并等待 <code>1</code> 秒。<br />
+                在<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>输入框中输入<code>demo</code>，停止输入并等待
+                <code>1</code> 秒。<br />
                 结果：客户端确认文本变化后回发，后台显示包含关键词 <code>demo</code> 的搜索提示；本例用提示演示操作，没有查询数据。
             </li>
             <li>
@@ -88,10 +89,14 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：初始为 <code>true</code>，有内容时显示清空图标。</li>
-            <li><code>OnTrigger1Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：处理清空图标点击，后台显示取消搜索提示。</li>
-            <li><code>OnTrigger2Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1" title="搜索用户名">搜索用户名</strong>）：处理搜索图标点击，后台读取当前关键词并显示提示。</li>
-            <li><code>F.customEvent()</code>（<strong>页面客户端配置</strong>）：客户端等待 <code>1000</code> 毫秒且文本变化后，发送 <code>TwinTriggerBox1</code><code>_Change</code> 事件通知后台。</li>
+            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1"
+                    title="搜索用户名">搜索用户名</strong>）：初始为 <code>true</code>，有内容时显示清空图标。</li>
+            <li><code>OnTrigger1Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1"
+                    title="搜索用户名">搜索用户名</strong>）：处理清空图标点击，后台显示取消搜索提示。</li>
+            <li><code>OnTrigger2Click</code>（<strong class="example-control-reference" data-example-control="TwinTriggerBox1"
+                    title="搜索用户名">搜索用户名</strong>）：处理搜索图标点击，后台读取当前关键词并显示提示。</li>
+            <li><code>F.customEvent()</code>（<strong>页面客户端配置</strong>）：客户端等待 <code>1000</code> 毫秒且文本变化后，发送 <code>TwinTriggerBox1</code><code>_Change</code>
+                事件通知后台。</li>
         </ul>
     </section>
 }

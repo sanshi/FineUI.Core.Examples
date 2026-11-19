@@ -103,17 +103,36 @@
                 结果：浏览器把八个进度条都改为 <strong class="example-control-reference" data-example-control="btnChangeTo50" title="50%">50%</strong>，进度宽度和可见文字一起更新，无需回发。
             </li>
             <li>
-                分别点击<strong class="example-control-reference" data-example-control="btnChangeTo0" title="0%">0%</strong>和<strong class="example-control-reference" data-example-control="btnChangeTo100" title="100%">100%</strong>。<br />
+                分别点击<strong class="example-control-reference" data-example-control="btnChangeTo0" title="0%">0%</strong>和<strong
+                    class="example-control-reference" data-example-control="btnChangeTo100" title="100%">100%</strong>。<br />
                 结果：所有进度条分别显示空进度和满进度；右侧文字与内嵌文字采用同一个数值。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DisplayType</code>（本页全部数字输入框，如<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 个数字输入框">第 1 个数字输入框</strong>）：初始为 <code>Progress</code>，把数字值显示为进度条。</li>
-            <li><code>ProgressTextVisible</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="第 3 个数字输入框">第 3 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox4" title="第 4 个数字输入框">第 4 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：控制是否显示百分比文字。</li>
-            <li><code>ProgressTextInside</code>（<strong class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：后四个进度条设为 <code>true</code>，把文字放入条内。</li>
-            <li><code>ProgressHeight</code>（<strong class="example-control-reference" data-example-control="NumberBox4" title="第 4 个数字输入框">第 4 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：部分进度条设为 <code>15</code>，比较不同条形高度。</li>
-            <li><code>setValue()</code>（本页全部数字输入框，如<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 个数字输入框">第 1 个数字输入框</strong>）：客户端按钮统一更新全部进度条。</li>
+            <li><code>DisplayType</code>（本页全部数字输入框，如<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 个数字输入框">第 1
+                    个数字输入框</strong>）：初始为 <code>Progress</code>，把数字值显示为进度条。</li>
+            <li><code>ProgressTextVisible</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="第 3 个数字输入框">第 3
+                    个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox4" title="第 4 个数字输入框">第 4 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：控制是否显示百分比文字。</li>
+            <li><code>ProgressTextInside</code>（<strong class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5
+                    个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：后四个进度条设为
+                <code>true</code>，把文字放入条内。
+            </li>
+            <li><code>ProgressHeight</code>（<strong class="example-control-reference" data-example-control="NumberBox4" title="第 4 个数字输入框">第 4
+                    个数字输入框</strong>、<strong class="example-control-reference" data-example-control="NumberBox5" title="第 5 个数字输入框">第 5 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox6" title="第 6 个数字输入框">第 6 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox7" title="第 7 个数字输入框">第 7 个数字输入框</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox8" title="第 8 个数字输入框">第 8 个数字输入框</strong>）：部分进度条设为
+                <code>15</code>，比较不同条形高度。
+            </li>
+            <li><code>setValue()</code>（本页全部数字输入框，如<strong class="example-control-reference" data-example-control="NumberBox1" title="第 1 个数字输入框">第 1
+                    个数字输入框</strong>）：客户端按钮统一更新全部进度条。</li>
         </ul>
     </section>
 }

@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            AllowFilters="true" InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowFilters="true"
+        InlineFilters="true" OnFilterChanged="Grid1_FilterChanged">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -63,16 +63,19 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>使用数字与日期输入过滤器，按实际数值或日期比较，条件直接显示在列下方。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>分别按年份与日期筛选</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>入学年份</strong>列下方内联过滤区输入<code>2000</code>，保留大于比较并按 Enter 应用条件。<br />结果：过滤条件回发，后台按本页匹配规则筛选示例数据并重新绑定，下方同步显示过滤参数。显示年份大于 2000 的记录，不按文本字母顺序比较。</li>
-        <li>在<strong>注册日期</strong>过滤中选择一个日期并应用。<br />结果：记录进一步按日期条件筛选；清除日期条件只撤销日期限制，已设置的年份条件保留。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Filter.Field</code>（<strong>入学年份与注册日期过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：分别使用 NumberBox 与 DatePicker，让输入类型与匹配数据类型一致；日期按页面格式解析。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>使用数字与日期输入过滤器，按实际数值或日期比较，条件直接显示在列下方。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>分别按年份与日期筛选</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的<strong>入学年份</strong>列下方内联过滤区输入<code>2000</code>，保留大于比较并按 Enter
+                应用条件。<br />结果：过滤条件回发，后台按本页匹配规则筛选示例数据并重新绑定，下方同步显示过滤参数。显示年份大于 2000 的记录，不按文本字母顺序比较。</li>
+            <li>在<strong>注册日期</strong>过滤中选择一个日期并应用。<br />结果：记录进一步按日期条件筛选；清除日期条件只撤销日期限制，已设置的年份条件保留。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Filter.Field</code>（<strong>入学年份与注册日期过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：分别使用 NumberBox 与 DatePicker，让输入类型与匹配数据类型一致；日期按页面格式解析。</li>
+        </ul>
+    </section>
 }

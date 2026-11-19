@@ -35,22 +35,25 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在 RazorForms 中保留流式创建的表单，并对照声明回发和手写回发。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="登录表单">登录表单</strong>中，填写用户名和密码，分别点击登录、<strong class="example-control-reference" data-example-control="btnManualSubmit" title="手写回发登录">手写回发登录</strong>。<br />结果：两种入口调用同一个旧 OnPost 处理方法，读取当前字段并更新结果。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>全局启用 RazorForms，继续使用流式控件、Url.Handler 和 OnPost 登录事件。</li>
-        <li>第二个按钮手写 F.doPostBack 调用同一个 OnPost；固定结构中的匿名说明标签也可连续回发。</li>
-        <li>示例账号为 admin，密码为 admin888。</li>
-        <li>UIHelper 更新即时显示，不保证同步为后台控件持久属性。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Url.Handler / F.doPostBack</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="登录表单">登录表单</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在 RazorForms 中保留流式创建的表单，并对照声明回发和手写回发。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="登录表单">登录表单</strong>中，填写用户名和密码，分别点击登录、<strong
+                    class="example-control-reference" data-example-control="btnManualSubmit" title="手写回发登录">手写回发登录</strong>。<br />结果：两种入口调用同一个旧 OnPost
+                处理方法，读取当前字段并更新结果。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>全局启用 RazorForms，继续使用流式控件、Url.Handler 和 OnPost 登录事件。</li>
+            <li>第二个按钮手写 F.doPostBack 调用同一个 OnPost；固定结构中的匿名说明标签也可连续回发。</li>
+            <li>示例账号为 admin，密码为 admin888。</li>
+            <li>UIHelper 更新即时显示，不保证同步为后台控件持久属性。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Url.Handler / F.doPostBack</code>（<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="登录表单">登录表单</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

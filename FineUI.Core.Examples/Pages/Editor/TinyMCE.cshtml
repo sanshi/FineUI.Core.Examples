@@ -10,8 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="表单">
         <Items>
-            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1" Readonly="true"
-                          Editor="TinyMCE" BasePath="@Url.Content("~/res/third-party/tinymce/")" ToolbarSet="Full" Height="350" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+            <f:HtmlEditor Label="文本编辑器" ID="HtmlEditor1" Readonly="true" Editor="TinyMCE" BasePath="@Url.Content("~/res/third-party/tinymce/")" ToolbarSet="Full" Height="350"
+                Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
             </f:HtmlEditor>
         </Items>
     </f:SimpleForm>
@@ -46,20 +46,26 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>接入 TinyMCE，对照初始只读、客户端切换编辑状态及后台读写 HTML。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>从只读切换到编辑</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Button4" title="取消编辑器只读">取消编辑器只读</strong>。<br />结果：编辑器由只读变为可编辑。</li>
-        <li>在<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>输入 <code>编辑器测试</code>，点击<strong class="example-control-reference" data-example-control="Button1" title="获取编辑器的值">获取编辑器的值</strong>。<br />结果：回发后后台读取当前 HTML，在通知中显示内容。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="设置编辑器的值">设置编辑器的值</strong>。<br />结果：后台预置 HTML 替换当前编辑内容。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="设置编辑器只读">设置编辑器只读</strong>。<br />结果：内容仍可查看，但不能继续键入修改。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>）：初始为 <code>TinyMCE</code>，选择本页使用的第三方富文本编辑器。</li>
-        <li><code>BasePath</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>）：指定编辑器脚本、皮肤等文件的基础路径。</li>
-        <li><code>ReadOnly</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>）：初始为 <code>true</code>，控制用户能否编辑内容；切换为可编辑后才接受输入。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>接入 TinyMCE，对照初始只读、客户端切换编辑状态及后台读写 HTML。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>从只读切换到编辑</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Button4" title="取消编辑器只读">取消编辑器只读</strong>。<br />结果：编辑器由只读变为可编辑。</li>
+            <li>在<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>输入 <code>编辑器测试</code>，点击<strong
+                    class="example-control-reference" data-example-control="Button1" title="获取编辑器的值">获取编辑器的值</strong>。<br />结果：回发后后台读取当前 HTML，在通知中显示内容。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button2" title="设置编辑器的值">设置编辑器的值</strong>。<br />结果：后台预置 HTML 替换当前编辑内容。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3" title="设置编辑器只读">设置编辑器只读</strong>。<br />结果：内容仍可查看，但不能继续键入修改。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>）：初始为
+                <code>TinyMCE</code>，选择本页使用的第三方富文本编辑器。
+            </li>
+            <li><code>BasePath</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1"
+                    title="文本编辑器">文本编辑器</strong>）：指定编辑器脚本、皮肤等文件的基础路径。</li>
+            <li><code>ReadOnly</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文本编辑器">文本编辑器</strong>）：初始为
+                <code>true</code>，控制用户能否编辑内容；切换为可编辑后才接受输入。
+            </li>
+        </ul>
+    </section>
 }

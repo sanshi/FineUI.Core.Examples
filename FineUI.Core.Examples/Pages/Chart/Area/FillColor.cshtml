@@ -5,12 +5,10 @@
 }
 
 @section body {
-    <f:Chart ID="ChartAreaFillColor" Height="550" DataCategoryField="Category"
-        ShowTooltip="false">
+    <f:Chart ID="ChartAreaFillColor" Height="550" DataCategoryField="Category" ShowTooltip="false">
         <Series>
             <f:ChartSeries Key="first" Type="Area" Name="系列一" DataValueField="First" />
-            <f:ChartSeries Key="second" Type="Area" Name="系列二" DataValueField="Second" AreaColor="#ff0"
-                AreaOpacity="0.5" />
+            <f:ChartSeries Key="second" Type="Area" Name="系列二" DataValueField="Second" AreaColor="#ff0" AreaOpacity="0.5" />
         </Series>
     </f:Chart>
 
@@ -18,17 +16,19 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>对照默认面积填充与指定颜色、不透明度的面积填充。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照双色填充面积图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control="ChartAreaFillColor" title="图表">图表</strong>中的分类、数值和形状。<br />结果：第一条系列沿用默认填充，第二条使用 50% 不透明度的黄色。两条折线各自沿用系列配色。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/line/area-line/" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AreaColor / AreaOpacity</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartAreaFillColor" title="图表">图表</strong>）：初始分别为 <code>#ff0</code>、<code>0.5</code>，第二条系列使用 50% 不透明度的黄色填充，折线颜色仍取系列配色。第一条系列保留默认填充。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>对照默认面积填充与指定颜色、不透明度的面积填充。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照双色填充面积图</h3>
+        <ul>
+            <li>对照<strong class="example-control-reference" data-example-control="ChartAreaFillColor"
+                    title="图表">图表</strong>中的分类、数值和形状。<br />结果：第一条系列沿用默认填充，第二条使用 50% 不透明度的黄色。两条折线各自沿用系列配色。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/line/area-line/" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AreaColor / AreaOpacity</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartAreaFillColor"
+                    title="图表">图表</strong>）：初始分别为 <code>#ff0</code>、<code>0.5</code>，第二条系列使用 50% 不透明度的黄色填充，折线颜色仍取系列配色。第一条系列保留默认填充。</li>
+        </ul>
+    </section>
 }

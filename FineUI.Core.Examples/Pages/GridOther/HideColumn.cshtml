@@ -60,19 +60,23 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>切换性别列的显示状态，并读取当前被隐藏的列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换可见性后核对隐藏列表</h3>
-    <ol>
-        <li>从初始状态点击<strong class="example-control-reference" data-example-control="Button3" title="显示/隐藏性别列">显示/隐藏性别列</strong>。<br />结果：后台把初始隐藏的<strong>性别</strong>列显示出来，原有记录与其他列保留；再点一次切回原状态。</li>
-        <li>在<strong>性别</strong>列隐藏时点击<strong class="example-control-reference" data-example-control="Button4" title="获得隐藏列列表">获得隐藏列列表</strong>。<br />结果：提示列出当前隐藏列，其中包含<strong>性别</strong>；显示<strong>性别</strong>列后重新读取，它不再列为隐藏。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：性别列设置了EnableColumnHide=false，所以不能通过标题栏菜单隐藏，但仍然可以通过后台代码隐藏。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Hidden</code>（<strong>性别列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：<strong>性别</strong>列初始隐藏；本页按钮只改变可见性，不删除列或字段数据。</li>
-        <li><code>getHiddenColumns</code>（<strong>读取隐藏列的处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在浏览器读取当前隐藏列，再把列名称显示出来。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>切换性别列的显示状态，并读取当前被隐藏的列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换可见性后核对隐藏列表</h3>
+        <ol>
+            <li>从初始状态点击<strong class="example-control-reference" data-example-control="Button3"
+                    title="显示/隐藏性别列">显示/隐藏性别列</strong>。<br />结果：后台把初始隐藏的<strong>性别</strong>列显示出来，原有记录与其他列保留；再点一次切回原状态。</li>
+            <li>在<strong>性别</strong>列隐藏时点击<strong class="example-control-reference" data-example-control="Button4"
+                    title="获得隐藏列列表">获得隐藏列列表</strong>。<br />结果：提示列出当前隐藏列，其中包含<strong>性别</strong>；显示<strong>性别</strong>列后重新读取，它不再列为隐藏。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：性别列设置了EnableColumnHide=false，所以不能通过标题栏菜单隐藏，但仍然可以通过后台代码隐藏。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Hidden</code>（<strong>性别列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：<strong>性别</strong>列初始隐藏；本页按钮只改变可见性，不删除列或字段数据。</li>
+            <li><code>getHiddenColumns</code>（<strong>读取隐藏列的处理</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：在浏览器读取当前隐藏列，再把列名称显示出来。</li>
+        </ul>
+    </section>
 }

@@ -12,8 +12,8 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" MatchFieldWidth="false" Value="105" EnableMultiSelect="false">
                 <PopPanel>
-                    <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name"
-                            Hidden="true" Width="550" Height="300" EnableMultiSelect="false">
+                    <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" Hidden="true" Width="550" Height="300"
+                        EnableMultiSelect="false">
                         <Columns>
                             <f:RenderField HeaderText="姓名" DataField="Name" />
                             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
@@ -67,11 +67,18 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>false</code>。</li>
-            <li><code>Value</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定初始单选值或多选值数组。 本页声明值为 <code>105</code>。</li>
-            <li><code>MatchFieldWidth</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：控制弹出面板是否强制匹配字段宽度。 本页声明值为 <code>false</code>。</li>
-            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：从数据对象指定字段取得行值。 本页声明值为 <code>Id</code>。</li>
-            <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：从指定字段取得选中后显示的人员名称。 本页声明值为 <code>Name</code>。</li>
+            <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>false</code>。</li>
+            <li><code>Value</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定初始单选值或多选值数组。 本页声明值为 <code>105</code>。</li>
+            <li><code>MatchFieldWidth</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">请从下拉表格中选择</strong>）：控制弹出面板是否强制匹配字段宽度。 本页声明值为 <code>false</code>。</li>
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：从数据对象指定字段取得行值。 本页声明值为
+                <code>Id</code>。
+            </li>
+            <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：从指定字段取得选中后显示的人员名称。
+                本页声明值为 <code>Name</code>。</li>
         </ul>
     </section>
 }

@@ -30,7 +30,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -51,7 +52,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -106,24 +108,32 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在浏览器中切换指定列的可编辑状态，保留其他列的编辑能力。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换入学日期列</h3>
-    <ul>
-        <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>入学日期</strong>，点击<strong class="example-control-reference" data-example-control="btnChangeEntranceDateEditable" title="切换[入学日期]列的可编辑状态">切换[入学日期]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换是否在校列</h3>
-    <ul>
-        <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>是否在校</strong>，点击<strong class="example-control-reference" data-example-control="btnChangeAtSchoolEditable" title="切换[是否在校]列的可编辑状态">切换[是否在校]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换所学专业列</h3>
-    <ul>
-        <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>所学专业</strong>，点击<strong class="example-control-reference" data-example-control="btnChangeMajorEditable" title="切换[所学专业]列的可编辑状态">切换[所学专业]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableColumnEdit</code>（<strong>所学专业</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>false</code>，控制该列是否接受编辑；本页按钮切换这个状态。</li>
-        <li><code>toggleEditable</code>（<strong>页面脚本中的目标列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：从表格取得指定列后切换编辑状态，不需要重新绑定所有记录。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在浏览器中切换指定列的可编辑状态，保留其他列的编辑能力。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换入学日期列</h3>
+        <ul>
+            <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>入学日期</strong>，点击<strong
+                    class="example-control-reference" data-example-control="btnChangeEntranceDateEditable"
+                    title="切换[入学日期]列的可编辑状态">切换[入学日期]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换是否在校列</h3>
+        <ul>
+            <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>是否在校</strong>，点击<strong
+                    class="example-control-reference" data-example-control="btnChangeAtSchoolEditable"
+                    title="切换[是否在校]列的可编辑状态">切换[是否在校]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>切换所学专业列</h3>
+        <ul>
+            <li>先尝试编辑<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>所学专业</strong>，点击<strong
+                    class="example-control-reference" data-example-control="btnChangeMajorEditable"
+                    title="切换[所学专业]列的可编辑状态">切换[所学专业]列的可编辑状态</strong>后再次尝试。<br />结果：脚本立即切换列状态，该列在可编辑与禁止编辑之间切换；再点一次恢复先前状态。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableColumnEdit</code>（<strong>所学专业</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>false</code>，控制该列是否接受编辑；本页按钮切换这个状态。</li>
+            <li><code>toggleEditable</code>（<strong>页面脚本中的目标列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>）：从表格取得指定列后切换编辑状态，不需要重新绑定所有记录。</li>
+        </ul>
+    </section>
 }

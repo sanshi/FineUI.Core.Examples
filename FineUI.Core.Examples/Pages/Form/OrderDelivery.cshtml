@@ -5,19 +5,16 @@
 }
 
 @section body {
-    <f:SimpleForm ID="Form1" Title="订单配送" IsFluid="true" MaxWidth="450" BodyPadding="16" LabelWidth="104"
-        ShowHeader="true" ShowBorder="true">
+    <f:SimpleForm ID="Form1" Title="订单配送" IsFluid="true" MaxWidth="450" BodyPadding="16" LabelWidth="104" ShowHeader="true" ShowBorder="true">
         <Items>
-            <f:DropDownList ID="ddlDelivery" Label="配送方式"
-                OnSelectedIndexChanged="ddlDelivery_SelectedIndexChanged">
+            <f:DropDownList ID="ddlDelivery" Label="配送方式" OnSelectedIndexChanged="ddlDelivery_SelectedIndexChanged">
                 <Items>
                     <f:ListItem Text="门店自提" Value="pickup" Selected="true" />
                     <f:ListItem Text="快递配送" Value="courier" />
                 </Items>
             </f:DropDownList>
             <f:TextBox ID="tbxAddress" Label="收货地址" />
-            <f:Button ID="btnSubmit" Text="提交订单" ButtonColor="Primary" _ValidateForms="Form1"
-                OnClick="btnSubmit_Click" />
+            <f:Button ID="btnSubmit" Text="提交订单" ButtonColor="Primary" _ValidateForms="Form1" OnClick="btnSubmit_Click" />
             <f:Label ID="labResult" ShowLabel="false" Hidden="true" />
         </Items>
     </f:SimpleForm>
@@ -28,11 +25,13 @@
 
 @section exampleDescription {
     <section aria-label="页面描述">
-        <p>演示<strong class="example-control-reference" data-example-control="ddlDelivery" title="配送方式">配送方式</strong>改变后动态切换<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>的必填规则和星号。</p>
+        <p>演示<strong class="example-control-reference" data-example-control="ddlDelivery" title="配送方式">配送方式</strong>改变后动态切换<strong
+                class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>的必填规则和星号。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>自提与快递的不同要求</h3>
         <ol>
             <li>
-                保持“门店自提”，<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>为空，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交订单">提交订单</strong>。<br />
+                保持“门店自提”，<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>为空，点击<strong
+                    class="example-control-reference" data-example-control="btnSubmit" title="提交订单">提交订单</strong>。<br />
                 结果：后台显示“订单已提交：门店自提”。
             </li>
             <li>
@@ -49,13 +48,21 @@
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>选择快递配送时，后台把<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>设为必填。<code>ShowRedStar</code> 让标签立即显示星号，<code>Required</code> 在<strong class="example-control-reference" data-example-control="btnSubmit" title="提交订单">提交订单</strong>时校验空地址。切回门店自提，留空地址也可提交。</p>
+        <p>选择快递配送时，后台把<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>设为必填。<code>ShowRedStar</code>
+            让标签立即显示星号，<code>Required</code> 在<strong class="example-control-reference" data-example-control="btnSubmit"
+                title="提交订单">提交订单</strong>时校验空地址。切回门店自提，留空地址也可提交。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlDelivery" title="配送方式">配送方式</strong>）：<strong class="example-control-reference" data-example-control="ddlDelivery" title="配送方式">配送方式</strong>变化时回发更新地址规则。</li>
-            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>）：仅快递配送时要求<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>。</li>
-            <li><code>ShowRedStar</code>（<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>）：与必填规则一起更新，立即反映在标签上。</li>
-            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="提交订单">提交订单</strong>）：提交前使用当前必填规则检查 <code>Form1</code>。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlDelivery"
+                    title="配送方式">配送方式</strong>）：<strong class="example-control-reference" data-example-control="ddlDelivery"
+                    title="配送方式">配送方式</strong>变化时回发更新地址规则。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>）：仅快递配送时要求<strong
+                    class="example-control-reference" data-example-control="tbxAddress" title="收货地址">收货地址</strong>。</li>
+            <li><code>ShowRedStar</code>（<strong class="example-control-reference" data-example-control="tbxAddress"
+                    title="收货地址">收货地址</strong>）：与必填规则一起更新，立即反映在标签上。</li>
+            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="提交订单">提交订单</strong>）：提交前使用当前必填规则检查
+                <code>Form1</code>。
+            </li>
         </ul>
     </section>
 }

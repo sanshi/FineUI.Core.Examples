@@ -20,8 +20,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name"
-            AllowCellEditing="true" ClicksToEdit="1" IsRowEditing="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="1" IsRowEditing="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -44,7 +44,8 @@
             </f:RenderField>
             <f:RenderField HeaderText="入学年份（不可编辑）" ColumnID="EntranceYear2" DataField="EntranceYear" FieldType="Int" Width="160">
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -76,24 +77,29 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>点击一个单元格时同时打开整行编辑器，连续填写同一条记录的多个字段。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>同时编辑同一行的多个字段</h3>
-    <ol>
-        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>一条记录的<strong>姓名</strong>或其他单元格。<br />结果：当前行的多个编辑器一起打开，可依次修改<strong>姓名</strong>、<strong>性别</strong>与<strong><strong>入学年份</strong></strong>，不必逐个重新进入单元格编辑。</li>
-        <li>填写该行并点击<strong class="example-control-reference" data-example-control="btnSubmit" title="保存数据">保存数据</strong>。<br />结果：本次整行编辑先写回表格，再由后台读取变更更新示例数据；重新绑定后显示新值。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>方向键在单元格之间导航（非编辑状态）</li>
-        <li>回车键使单元格进入编辑状态</li>
-        <li>ESC键取消单元格的编辑状态</li>
-        <li>Tab键进入下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-        <li>Shift+Tab键回退到上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IsRowEditing</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>true</code>，一个单元格开始编辑时同时显示该行的可用编辑器。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>点击一个单元格时同时打开整行编辑器，连续填写同一条记录的多个字段。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>同时编辑同一行的多个字段</h3>
+        <ol>
+            <li>单击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>一条记录的<strong>姓名</strong>或其他单元格。<br />结果：当前行的多个编辑器一起打开，可依次修改<strong>姓名</strong>、<strong>性别</strong>与<strong><strong>入学年份</strong></strong>，不必逐个重新进入单元格编辑。
+            </li>
+            <li>填写该行并点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="保存数据">保存数据</strong>。<br />结果：本次整行编辑先写回表格，再由后台读取变更更新示例数据；重新绑定后显示新值。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>方向键在单元格之间导航（非编辑状态）</li>
+            <li>回车键使单元格进入编辑状态</li>
+            <li>ESC键取消单元格的编辑状态</li>
+            <li>Tab键进入下一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
+            <li>Shift+Tab键回退到上一个单元格（如果单元格可编辑，则使其进入编辑状态）</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>IsRowEditing</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为
+                <code>true</code>，一个单元格开始编辑时同时显示该行的可用编辑器。
+            </li>
+        </ul>
+    </section>
 }

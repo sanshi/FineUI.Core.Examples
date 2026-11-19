@@ -5,8 +5,7 @@
 }
 
 @section body {
-    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="1000" Layout="Block" BlockConfigSpace="20"
-        ShowHeader="false" ShowBorder="false">
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="1000" Layout="Block" BlockConfigSpace="20" ShowHeader="false" ShowBorder="false">
         <Items>
             <f:Panel ID="PanelActions" Block="12" ShowHeader="false" ShowBorder="false">
                 <Items>
@@ -21,15 +20,14 @@
                 </Items>
             </f:Panel>
 
-            <f:Grid ID="Grid1" Block="12" BlockMD="6" Height="220" Title="表格（Grid）" ShowHeader="true" ShowBorder="true"
-                DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" EnableMultiSelect="true"
-                _SelectedRowIDArray="a,b" RowDataBoundFunction="onGridRowDataBound">
+            <f:Grid ID="Grid1" Block="12" BlockMD="6" Height="220" Title="表格（Grid）" ShowHeader="true" ShowBorder="true" DataIDField="Id" DataTextField="Name"
+                EnableCheckBoxSelect="true" EnableMultiSelect="true" _SelectedRowIDArray="a,b" RowDataBoundFunction="onGridRowDataBound">
                 <Columns>
                     <f:RenderField ColumnID="Name" DataField="Name" HeaderText="名称" ExpandUnusedSpace="true" />
                 </Columns>
             </f:Grid>
-            <f:Tree ID="Tree1" Block="12" BlockMD="6" Height="220" Title="树（Tree）" ShowHeader="true" ShowBorder="true"
-                EnableMultiSelect="true" EnableCheckBox="true" _SelectedNodeIDArray="a,b">
+            <f:Tree ID="Tree1" Block="12" BlockMD="6" Height="220" Title="树（Tree）" ShowHeader="true" ShowBorder="true" EnableMultiSelect="true"
+                EnableCheckBox="true" _SelectedNodeIDArray="a,b">
                 <Nodes>
                     <f:TreeNode NodeID="root" Text="分组" Expanded="true" EnableCheckBox="false">
                         <f:TreeNode NodeID="a" Text="甲" Checked="true" />
@@ -45,11 +43,9 @@
                 </Toolbars>
             </f:Tree>
 
-            <f:SimpleForm ID="SimpleFormDropDownList" Block="12" BlockMD="6" Title="下拉列表（DropDownList）"
-                ShowHeader="true" ShowBorder="true" BodyPadding="10">
+            <f:SimpleForm ID="SimpleFormDropDownList" Block="12" BlockMD="6" Title="下拉列表（DropDownList）" ShowHeader="true" ShowBorder="true" BodyPadding="10">
                 <Items>
-                    <f:DropDownList ID="DropDownList1" Label="下拉列表" ShowLabel="false" EnableMultiSelect="true"
-                        MultiSelectMode="Tags" _SelectedValueArray="a,b">
+                    <f:DropDownList ID="DropDownList1" Label="下拉列表" ShowLabel="false" EnableMultiSelect="true" MultiSelectMode="Tags" _SelectedValueArray="a,b">
                         <Items>
                             <f:ListItem Value="a" Text="甲" />
                             <f:ListItem Value="b" Text="乙" />
@@ -57,11 +53,10 @@
                     </f:DropDownList>
                 </Items>
             </f:SimpleForm>
-            <f:SimpleForm ID="SimpleFormDropDownBox" Block="12" BlockMD="6" Title="下拉选择框（DropDownBox）"
-                ShowHeader="true" ShowBorder="true" BodyPadding="10">
+            <f:SimpleForm ID="SimpleFormDropDownBox" Block="12" BlockMD="6" Title="下拉选择框（DropDownBox）" ShowHeader="true" ShowBorder="true" BodyPadding="10">
                 <Items>
-                    <f:DropDownBox ID="DropDownBox1" Label="下拉选择框" ShowLabel="false" DataControlID="CheckBoxList2"
-                        EnableMultiSelect="true" MultiSelectMode="Tags" EnableEdit="true" _Values="a,b" _Texts="甲,乙">
+                    <f:DropDownBox ID="DropDownBox1" Label="下拉选择框" ShowLabel="false" DataControlID="CheckBoxList2" EnableMultiSelect="true"
+                        MultiSelectMode="Tags" EnableEdit="true" _Values="a,b" _Texts="甲,乙">
                         <PopPanel>
                             <f:SimpleForm ID="SimpleForm1" Hidden="true" ShowHeader="false" BodyPadding="10">
                                 <Items>
@@ -78,8 +73,7 @@
                 </Items>
             </f:SimpleForm>
 
-            <f:Panel ID="PanelDataList" Block="12" BlockMD="6" Title="数据列表（DataList）"
-                ShowHeader="true" ShowBorder="true" BodyPadding="10">
+            <f:Panel ID="PanelDataList" Block="12" BlockMD="6" Title="数据列表（DataList）" ShowHeader="true" ShowBorder="true" BodyPadding="10">
                 <Items>
                     <f:DataList ID="DataList1" EnableSelect="true" EnableMultiSelect="true" _SelectedValueArray="a,b">
                         <Items>
@@ -89,8 +83,7 @@
                     </f:DataList>
                 </Items>
             </f:Panel>
-            <f:SimpleForm ID="SimpleFormCheckBoxList" Block="12" BlockMD="6" Title="复选框列表（CheckBoxList）"
-                ShowHeader="true" ShowBorder="true" BodyPadding="10">
+            <f:SimpleForm ID="SimpleFormCheckBoxList" Block="12" BlockMD="6" Title="复选框列表（CheckBoxList）" ShowHeader="true" ShowBorder="true" BodyPadding="10">
                 <Items>
                     <f:CheckBoxList ID="CheckBoxList1" Label="复选框列表" ShowLabel="false" AutoColumnWidth="true" _SelectedValueArray="a,b">
                         <Items>
@@ -100,8 +93,8 @@
                     </f:CheckBoxList>
                 </Items>
             </f:SimpleForm>
-            <f:SimpleForm ID="SimpleFormRadioButtonList" Block="12" BlockMD="6" Title="单选框列表（RadioButtonList）"
-                ShowHeader="true" ShowBorder="true" BodyPadding="10">
+            <f:SimpleForm ID="SimpleFormRadioButtonList" Block="12" BlockMD="6" Title="单选框列表（RadioButtonList）" ShowHeader="true" ShowBorder="true"
+                BodyPadding="10">
                 <Items>
                     <f:RadioButtonList ID="RadioButtonList1" Label="单选框列表" ShowLabel="false" AutoColumnWidth="true" SelectedValue="a">
                         <Items>
@@ -133,18 +126,21 @@
         <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>清空后读取选择</h3>
         <ol>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnClearSelection" title="清空全部选择">清空全部选择</strong>，再点击<strong class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClearSelection" title="清空全部选择">清空全部选择</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
                 结果：按钮回发后由后台清空七类控件的选择，读取结果中各类选中数量和表格当前单元格为<code>0</code>；选项数据保留，树勾选仍保留。
             </li>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnClearAndSelect" title="清空后重新选中甲">清空后重新选中甲</strong>，再<strong class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
+                点击<strong class="example-control-reference" data-example-control="btnClearAndSelect" title="清空后重新选中甲">清空后重新选中甲</strong>，再<strong
+                    class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
                 结果：同一轮先清空再赋值后，七类控件均选中甲；清空动作不会覆盖后面的赋值。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>单独取消树勾选</h3>
         <ul>
             <li>
-                点击树区的<strong class="example-control-reference" data-example-control="btnUncheckNodes" title="取消树节点勾选">取消树节点勾选</strong>，再<strong class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
+                点击树区的<strong class="example-control-reference" data-example-control="btnUncheckNodes" title="取消树节点勾选">取消树节点勾选</strong>，再<strong
+                    class="example-control-reference" data-example-control="btnReadSelection" title="读取当前选择">读取当前选择</strong>。<br />
                 结果：树勾选数量变为<code>0</code>；节点高亮与勾选是两个独立状态，清空选择不等于清空勾选。
             </li>
         </ul>
@@ -153,9 +149,25 @@
         <p>树的清空选择只取消节点高亮，保留节点勾选和展开状态；取消勾选请使用树区域内的按钮。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ClearSelection()</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（Grid）">表格（Grid）</strong>、<strong class="example-control-reference" data-example-control="Tree1" title="树（Tree）">树（Tree）</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList2" title="第 1 个复选框列表">第 1 个复选框列表</strong>、<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control="RadioButtonList1" title="单选框列表">单选框列表</strong>）：清空表格、<strong class="example-control-reference" data-example-control="DropDownBox1" title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<code>DataList</code>、树、<strong class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>和<strong class="example-control-reference" data-example-control="RadioButtonList1" title="单选框列表">单选框列表</strong>的选中状态，不删除数据。</li>
-            <li><code>UncheckAllNodes()</code>（<strong class="example-control-reference" data-example-control="Tree1" title="树（Tree）">树（Tree）</strong>）：单独<strong class="example-control-reference" data-example-control="btnUncheckNodes" title="取消树节点勾选">取消树节点勾选</strong>；树的选中、高亮和展开状态独立。</li>
-            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>）：清空后仍可重新赋值；本例使用稳定值 <code>a</code> 选中<code>甲</code>。</li>
+            <li><code>ClearSelection()</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（Grid）">表格（Grid）</strong>、<strong
+                    class="example-control-reference" data-example-control="Tree1" title="树（Tree）">树（Tree）</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownBox1" title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference"
+                    data-example-control="CheckBoxList2" title="第 1 个复选框列表">第 1 个复选框列表</strong>、<strong class="example-control-reference"
+                    data-example-control="DataList1" title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control="RadioButtonList1"
+                    title="单选框列表">单选框列表</strong>）：清空表格、<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>、<code>DataList</code>、树、<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="复选框列表">复选框列表</strong>和<strong class="example-control-reference" data-example-control="RadioButtonList1"
+                    title="单选框列表">单选框列表</strong>的选中状态，不删除数据。</li>
+            <li><code>UncheckAllNodes()</code>（<strong class="example-control-reference" data-example-control="Tree1"
+                    title="树（Tree）">树（Tree）</strong>）：单独<strong class="example-control-reference" data-example-control="btnUncheckNodes"
+                    title="取消树节点勾选">取消树节点勾选</strong>；树的选中、高亮和展开状态独立。</li>
+            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>）：清空后仍可重新赋值；本例使用稳定值 <code>a</code>
+                选中<code>甲</code>。</li>
         </ul>
     </section>
 }

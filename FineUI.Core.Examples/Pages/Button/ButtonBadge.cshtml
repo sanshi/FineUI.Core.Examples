@@ -22,47 +22,40 @@
 
 @section body {
 
-    <f:Button ID="btnIcon1" Text="图标在左侧" Icon="Email"
-              CssClass="marginr" Badge="true" />
-    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" Icon="Star"
-              CssClass="marginr" Badge="true" BadgeType="Error" BadgeAnimationType="Processing" />
+    <f:Button ID="btnIcon1" Text="图标在左侧" Icon="Email" CssClass="marginr" Badge="true" />
+    <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" Icon="Star" CssClass="marginr" Badge="true" BadgeType="Error" BadgeAnimationType="Processing" />
     <br />
     <br />
-    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" Icon="Email"
-              CssClass="marginr" Badge="true" BadgeType="Warning" />
-    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" Icon="Star"
-              CssClass="marginr" Badge="true" BadgeType="Success" BadgeAnimationType="Fade" />
+    <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" Icon="Email" CssClass="marginr" Badge="true" BadgeType="Warning" />
+    <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" Icon="Star" CssClass="marginr" Badge="true" BadgeType="Success" BadgeAnimationType="Fade" />
     <br />
     <br />
     <f:Button ID="btnCustomIcon" Text="自定义图标（点击修改图标）" IconUrl="~/res/images/16/1.png" CssClass="marginr" Badge="true" OnClick="btnCustomIcon_Click" />
     <br />
     <br />
-        只有图片的按钮：
+    只有图片的按钮：
     <br />
     <br />
-    <f:Button ID="Button1" IconUrl="~/res/images/16/1.png"
-              CssClass="marginr" Badge="true" BadgeText="3" />
-    <f:Button ID="btnBadgeNumber" IconUrl="~/res/images/16/8.png"
-              CssClass="marginr" Badge="true" BadgeText="10" BadgeType="Success" />
+    <f:Button ID="Button1" IconUrl="~/res/images/16/1.png" CssClass="marginr" Badge="true" BadgeText="3" />
+    <f:Button ID="btnBadgeNumber" IconUrl="~/res/images/16/8.png" CssClass="marginr" Badge="true" BadgeText="10" BadgeType="Success" />
     <br />
     <br />
     <f:Button ID="btnChangeBadge" Text="徽标数字加一" OnClick="btnChangeBadge_Click" />
 
     <br />
     <br />
-        大按钮：
+    大按钮：
     <br />
     <br />
-    <f:Button ID="Button3" Size="Large" Text="图标在左侧" Icon="Email"
-              CssClass="marginr custom-badge-color" Badge="true" BadgeText="new" />
-    <f:Button ID="Button4" Size="Large" Text="图标在右侧" IconAlign="Right" Icon="Star"
-              CssClass="marginr" Badge="true" BadgeText="hot" BadgeType="Error" BadgeAnimationType="Move" />
+    <f:Button ID="Button3" Size="Large" Text="图标在左侧" Icon="Email" CssClass="marginr custom-badge-color" Badge="true" BadgeText="new" />
+    <f:Button ID="Button4" Size="Large" Text="图标在右侧" IconAlign="Right" Icon="Star" CssClass="marginr" Badge="true" BadgeText="hot" BadgeType="Error"
+        BadgeAnimationType="Move" />
     <br />
     <br />
-    <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" Icon="Email"
-              CssClass="marginr" Badge="true" BadgeText="88+" BadgeType="Warning" BadgeAnimationType="Processing" />
-    <f:Button ID="Button6" Size="Large" Text="图标在下面" IconAlign="Bottom" Icon="Email"
-              CssClass="marginr" Badge="true" BadgeText="999+" BadgeType="Success" BadgeAnimationType="Shake" />
+    <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" Icon="Email" CssClass="marginr" Badge="true" BadgeText="88+" BadgeType="Warning"
+        BadgeAnimationType="Processing" />
+    <f:Button ID="Button6" Size="Large" Text="图标在下面" IconAlign="Bottom" Icon="Email" CssClass="marginr" Badge="true" BadgeText="999+" BadgeType="Success"
+        BadgeAnimationType="Shake" />
     <br />
     <br />
 }
@@ -95,10 +88,38 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Badge</code>（<strong class="example-control-reference" data-example-control="btnIcon1" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon3" title="第 3 个按钮（图标在上面）">第 3 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="btnCustomIcon" title="自定义图标（点击修改图标）">自定义图标（点击修改图标）</strong>、<strong class="example-control-reference" data-example-control="Button1" title="第 6 个按钮">第 6 个按钮</strong>、<strong class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong class="example-control-reference" data-example-control="Button3" title="第 9 个按钮（图标在左侧）">第 9 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：初始为 <code>true</code>，显示按钮徽标。</li>
-            <li><code>BadgeText</code>（<strong class="example-control-reference" data-example-control="Button1" title="第 6 个按钮">第 6 个按钮</strong>、<strong class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong class="example-control-reference" data-example-control="Button3" title="第 9 个按钮（图标在左侧）">第 9 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：徽标的数字或文字，空时显示状态点。</li>
-            <li><code>BadgeType</code>（<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon3" title="第 3 个按钮（图标在上面）">第 3 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：使用错误、警告、成功等主题配色。</li>
-            <li><code>BadgeAnimationType</code>（<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：指定 <code>processing</code>、<code>fade</code>、<code>move</code>、<code>shake</code> 等对应动画。</li>
+            <li><code>Badge</code>（<strong class="example-control-reference" data-example-control="btnIcon1" title="第 1 个按钮（图标在左侧）">第 1
+                    个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2
+                    个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon3" title="第 3 个按钮（图标在上面）">第 3
+                    个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4
+                    个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="btnCustomIcon"
+                    title="自定义图标（点击修改图标）">自定义图标（点击修改图标）</strong>、<strong class="example-control-reference" data-example-control="Button1" title="第 6 个按钮">第 6
+                    个按钮</strong>、<strong class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong
+                    class="example-control-reference" data-example-control="Button3" title="第 9 个按钮（图标在左侧）">第 9 个按钮（图标在左侧）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：初始为
+                <code>true</code>，显示按钮徽标。
+            </li>
+            <li><code>BadgeText</code>（<strong class="example-control-reference" data-example-control="Button1" title="第 6 个按钮">第 6 个按钮</strong>、<strong
+                    class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong
+                    class="example-control-reference" data-example-control="Button3" title="第 9 个按钮（图标在左侧）">第 9 个按钮（图标在左侧）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：徽标的数字或文字，空时显示状态点。</li>
+            <li><code>BadgeType</code>（<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2
+                    个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon3" title="第 3 个按钮（图标在上面）">第 3
+                    个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4
+                    个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="btnBadgeNumber" title="第 7 个按钮">第 7 个按钮</strong>、<strong
+                    class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10 个按钮（图标在右侧）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11 个按钮（图标在上面）</strong>、<strong
+                    class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12 个按钮（图标在下面）</strong>）：使用错误、警告、成功等主题配色。</li>
+            <li><code>BadgeAnimationType</code>（<strong class="example-control-reference" data-example-control="btnIcon2" title="第 2 个按钮（图标在右侧）">第 2
+                    个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="btnIcon4" title="第 4 个按钮（图标在下面）">第 4
+                    个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="Button4" title="第 10 个按钮（图标在右侧）">第 10
+                    个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="Button5" title="第 11 个按钮（图标在上面）">第 11
+                    个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="Button6" title="第 12 个按钮（图标在下面）">第 12
+                    个按钮（图标在下面）</strong>）：指定 <code>processing</code>、<code>fade</code>、<code>move</code>、<code>shake</code> 等对应动画。</li>
         </ul>
     </section>
 }

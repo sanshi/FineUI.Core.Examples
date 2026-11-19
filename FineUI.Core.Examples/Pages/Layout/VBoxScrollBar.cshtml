@@ -10,20 +10,16 @@
 
 @section body {
 
-    <f:Panel ID="Panel5" IsFluid="true" ShowBorder="true" EnableCollapse="true"
-             Layout="VBox" AutoScroll="true" Margin="24px"
-             ShowHeader="true" Title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条"
-             BoxConfigSpace="5" BodyPadding="5" IsViewPort="true">
+    <f:Panel ID="Panel5" IsFluid="true" ShowBorder="true" EnableCollapse="true" Layout="VBox" AutoScroll="true" Margin="24px" ShowHeader="true"
+        Title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条" BoxConfigSpace="5" BodyPadding="5" IsViewPort="true">
         <Items>
-            <f:Panel ID="Panel1" Title="面板1" Height="300"
-                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+            <f:Panel ID="Panel1" Title="面板1" Height="300" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
                     <f:Label ID="Label1" Text="Height=300">
                     </f:Label>
                 </Items>
             </f:Panel>
-            <f:Panel ID="Panel2" Title="面板2" BoxFlex="1" MinHeight="300"
-                     BodyPadding="10" ShowBorder="true" ShowHeader="false">
+            <f:Panel ID="Panel2" Title="面板2" BoxFlex="1" MinHeight="300" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
                     <f:Label ID="Label3" Text="BoxFlex=1 末项无额外间隔 MinHeight=300">
                     </f:Label>
@@ -37,17 +33,23 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示在纵向内容超过可用高度时滚动查看。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条</strong>中缩小浏览器高度，再向下滚动内容区域。<br />结果：各子项保留自身尺寸，超出部分通过容器纵向滚动查看。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条</strong>）：初始为<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
-        <li><code>AutoScroll</code>（<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条</strong>）：初始为<code>true</code>，内容超出该容器时允许滚动查看。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Panel1" title="面板1">面板1</strong>）：初始为<code>300</code>，显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示在纵向内容超过可用高度时滚动查看。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Panel5" title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox
+                    AutoScroll=true），高度变小时可能出现纵向滚动条</strong>中缩小浏览器高度，再向下滚动内容区域。<br />结果：各子项保留自身尺寸，超出部分通过容器纵向滚动查看。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel5"
+                    title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox
+                    AutoScroll=true），高度变小时可能出现纵向滚动条</strong>）：初始为<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+            <li><code>AutoScroll</code>（<strong class="example-control-reference" data-example-control="Panel5"
+                    title="面板（Layout=VBox AutoScroll=true），高度变小时可能出现纵向滚动条">面板（Layout=VBox
+                    AutoScroll=true），高度变小时可能出现纵向滚动条</strong>）：初始为<code>true</code>，内容超出该容器时允许滚动查看。</li>
+            <li><code>Height</code>（<strong class="example-control-reference" data-example-control="Panel1"
+                    title="面板1">面板1</strong>）：初始为<code>300</code>，显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
+        </ul>
+    </section>
 }

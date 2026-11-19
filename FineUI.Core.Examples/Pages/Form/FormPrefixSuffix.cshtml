@@ -13,7 +13,8 @@
             <f:NumberBox Label="人民币金额" ID="NumberBox2" NoDecimal="true" NoNegative="true" Required="true" EnableSuffix="true" Suffix="万元" />
             <f:NumberBox Label="美元金额" ID="NumberBox6" NoDecimal="true" NoNegative="true" Required="true" EnablePrefix="true" Prefix="$" />
             <f:TextBox Label="文本输入框" ID="TextBox1" Required="true" EnablePrefix="true" Prefix="前缀" EnableSuffix="true" Suffix="后缀" />
-            <f:DropDownList ID="DropDownList1" Label="下拉列表" EnablePrefix="true" Prefix="前缀" EnableSuffix="true" Suffix="后缀" AutoSelectFirstItem="false" Required="true">
+            <f:DropDownList ID="DropDownList1" Label="下拉列表" EnablePrefix="true" Prefix="前缀" EnableSuffix="true" Suffix="后缀" AutoSelectFirstItem="false"
+                Required="true">
                 <f:ListItem Text="可选项1" Value="Value1" />
                 <f:ListItem Text="可选项2" Value="Value2" />
                 <f:ListItem Text="可选项3" Value="Value3" />
@@ -33,20 +34,33 @@
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照附加文字与字段值</h3>
         <ul>
             <li>
-                在<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>输入 <code>8</code>，在<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>输入<code>测试内容</code>。<br />
+                在<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>输入 <code>8</code>，在<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>输入<code>测试内容</code>。<br />
                 结果：金额右侧仍显示“万元”，<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本框</strong>前后的“前缀、后缀”保持显示，输入本身不包含这些附加文字。
             </li>
             <li>
-                对照<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>和<strong class="example-control-reference" data-example-control="filePhoto" title="个人头像">个人头像</strong>字段。<br />
+                对照<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong
+                    class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>和<strong class="example-control-reference"
+                    data-example-control="filePhoto" title="个人头像">个人头像</strong>字段。<br />
                 结果：美元前显示 $，选择和上传字段也能组合附加文字，原选择与上传交互保持可用。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnablePrefix</code>（<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：开启独立前缀区域。</li>
-            <li><code>Prefix</code>（<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：设置前缀文字，例如 $。</li>
-            <li><code>EnableSuffix</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="filePhoto" title="个人头像">个人头像</strong>）：开启独立后缀区域。</li>
-            <li><code>Suffix</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="filePhoto" title="个人头像">个人头像</strong>）：设置后缀文字，例如“万元”。</li>
+            <li><code>EnablePrefix</code>（<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：开启独立前缀区域。</li>
+            <li><code>Prefix</code>（<strong class="example-control-reference" data-example-control="NumberBox6" title="美元金额">美元金额</strong>、<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：设置前缀文字，例如 $。</li>
+            <li><code>EnableSuffix</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>、<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="filePhoto"
+                    title="个人头像">个人头像</strong>）：开启独立后缀区域。</li>
+            <li><code>Suffix</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="人民币金额">人民币金额</strong>、<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本输入框">文本输入框</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="filePhoto"
+                    title="个人头像">个人头像</strong>）：设置后缀文字，例如“万元”。</li>
         </ul>
     </section>
 }

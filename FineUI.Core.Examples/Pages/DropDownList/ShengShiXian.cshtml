@@ -7,15 +7,18 @@
 
 
 @section body {
-    
+
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="中国省市县联动">
         <Items>
-            <f:DropDownList ID="ddlSheng" PersistItems="false" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择省份！" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
+            <f:DropDownList ID="ddlSheng" PersistItems="false" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                CompareMessage="请选择省份！" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
             </f:DropDownList>
-            <f:DropDownList ID="ddlShi" PersistItems="false" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="ddlShi_SelectedIndexChanged">
+            <f:DropDownList ID="ddlShi" PersistItems="false" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="ddlShi_SelectedIndexChanged">
                 <f:ListItem Text="选择地区市" Value="-1"></f:ListItem>
             </f:DropDownList>
-            <f:DropDownList ID="ddlXian" PersistItems="false" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！" Label="县区市" Enabled="false">
+            <f:DropDownList ID="ddlXian" PersistItems="false" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                CompareMessage="请选择县区市！" Label="县区市" Enabled="false">
                 <f:ListItem Text="选择县区市" Value="-1"></f:ListItem>
             </f:DropDownList>
             <f:Button ID="btnSubmit" Text="获取选中的省市县" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnSubmit_Click"></f:Button>
@@ -53,8 +56,11 @@
         <p>注：本示例无需在后台维持<code>Items</code>属性的状态，所以设置下拉列表的<code>PersistItems</code>=<code>false</code>。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
-            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>、<strong class="example-control-reference" data-example-control="ddlXian" title="县区市">县区市</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong
+                    class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
+            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong
+                    class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>、<strong class="example-control-reference"
+                    data-example-control="ddlXian" title="县区市">县区市</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
         </ul>
     </section>
 }

@@ -18,8 +18,9 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" SelectionMessageRendererFunction="selectionMessageRenderer">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="350"
+        EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
+        SelectionMessageRendererFunction="selectionMessageRenderer">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -68,15 +69,18 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>替换表格内置的选择统计文字，用自定义函数呈现当前已选记录数量。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看自定义选择提示</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>勾选两行，再取消其中一行。<br />结果：选择统计区域随当前选择数量重新渲染，显示本页自定义的统计文字。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SelectionMessageRendererFunction</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>selectionMessageRenderer</code>，用选择信息生成自定义统计文字，不改变实际选择的记录。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>替换表格内置的选择统计文字，用自定义函数呈现当前已选记录数量。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看自定义选择提示</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>勾选两行，再取消其中一行。<br />结果：选择统计区域随当前选择数量重新渲染，显示本页自定义的统计文字。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectionMessageRendererFunction</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>selectionMessageRenderer</code>，用选择信息生成自定义统计文字，不改变实际选择的记录。
+            </li>
+        </ul>
+    </section>
 }

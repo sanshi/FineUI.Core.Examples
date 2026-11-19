@@ -5,10 +5,9 @@
 }
 
 @section body {
-    <f:Chart ID="ChartPieRoundedDoughnut" Height="550" DataCategoryField="Category"
-        ShowLegend="true" LegendTop="5%" PieRadius="40%,70%" PieAvoidLabelOverlap="false"
-        PieBorderRadius="10" PieBorderColor="#fff" PieBorderWidth="2" PieShowLabel="false"
-        PieLabelPosition="center" PieEmphasisLabelSize="40" PieEmphasisLabelFontWeight="bold">
+    <f:Chart ID="ChartPieRoundedDoughnut" Height="550" DataCategoryField="Category" ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
+        PieAvoidLabelOverlap="false" PieBorderRadius="10" PieBorderColor="#fff" PieBorderWidth="2" PieShowLabel="false" PieLabelPosition="center"
+        PieEmphasisLabelSize="40" PieEmphasisLabelFontWeight="bold">
         <Series>
             <f:ChartSeries Key="source" Type="Pie" Name="Access From" DataValueField="Value" />
         </Series>
@@ -18,18 +17,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为环形扇区配置圆角和描边，使相邻扇区的边界更清楚。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照圆角环形图</h3>
-    <ul>
-        <li>将鼠标移到<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut" title="图表">图表</strong>中的一个扇区。<br />结果：中央显示该分类名称，同时可对照本页内外半径、圆角或扇区间距。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-borderRadius" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PieBorderRadius</code>（<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut" title="图表">图表</strong>）：初始为 <code>10</code>，把每块扇区的角处理为 10 像素圆角。</li>
-        <li><code>PieBorderColor / PieBorderWidth</code>（<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut" title="图表">图表</strong>）：初始分别为 <code>#fff</code>、<code>2</code>，沿扇区的圆角轮廓绘制 2 像素白色描边。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为环形扇区配置圆角和描边，使相邻扇区的边界更清楚。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照圆角环形图</h3>
+        <ul>
+            <li>将鼠标移到<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut"
+                    title="图表">图表</strong>中的一个扇区。<br />结果：中央显示该分类名称，同时可对照本页内外半径、圆角或扇区间距。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-borderRadius" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>PieBorderRadius</code>（<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut"
+                    title="图表">图表</strong>）：初始为 <code>10</code>，把每块扇区的角处理为 10 像素圆角。</li>
+            <li><code>PieBorderColor / PieBorderWidth</code>（<strong class="example-control-reference" data-example-control="ChartPieRoundedDoughnut"
+                    title="图表">图表</strong>）：初始分别为 <code>#fff</code>、<code>2</code>，沿扇区的圆角轮廓绘制 2 像素白色描边。</li>
+        </ul>
+    </section>
 }

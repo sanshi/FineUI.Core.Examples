@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="2" EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -29,7 +30,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -92,15 +94,17 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>新增记录后直接进入指定列的编辑器，避免先从第一列逐格移动。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>新增后直接编辑所学专业</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增数据">新增数据</strong>。<br />结果：浏览器添加临时新记录，并直接打开新行的<strong>所学专业</strong>编辑器，显示本页提供的初始专业，可立即覆盖输入。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>addNewRecord</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（双击编辑）">表格（双击编辑）</strong>）：本页调用时指定<strong>所学专业</strong>的列标识 Major 作为新增后的编辑位置。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>新增记录后直接进入指定列的编辑器，避免先从第一列逐格移动。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>新增后直接编辑所学专业</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnNew"
+                    title="新增数据">新增数据</strong>。<br />结果：浏览器添加临时新记录，并直接打开新行的<strong>所学专业</strong>编辑器，显示本页提供的初始专业，可立即覆盖输入。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>addNewRecord</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（双击编辑）">表格（双击编辑）</strong>）：本页调用时指定<strong>所学专业</strong>的列标识 Major 作为新增后的编辑位置。</li>
+        </ul>
+    </section>
 }

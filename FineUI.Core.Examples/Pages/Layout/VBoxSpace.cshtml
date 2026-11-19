@@ -6,8 +6,7 @@
 
 @section body {
     @* 两个容器使用相同尺寸和内边距，便于直接比较两种间隔配置的结果。 *@
-    <f:Panel ID="PanelSpace" IsFluid="true" Layout="VBox" Height="210"
-             BodyPadding="10" BoxConfigSpace="10" Title='推荐写法：BoxConfigSpace="10"'>
+    <f:Panel ID="PanelSpace" IsFluid="true" Layout="VBox" Height="210" BodyPadding="10" BoxConfigSpace="10" Title='推荐写法：BoxConfigSpace="10"'>
         <Items>
             <f:Panel ID="SpaceItem1" BoxFlex="1" ShowHeader="false" BodyPadding="4" Content="子项一" />
             <f:Panel ID="SpaceItem2" BoxFlex="1" ShowHeader="false" BodyPadding="4" Content="子项二" />
@@ -15,8 +14,8 @@
         </Items>
     </f:Panel>
     <br />
-    <f:Panel ID="PanelMargins" IsFluid="true" Layout="VBox" Height="210"
-             BodyPadding="10" BoxConfigChildMargin="0 0 10 0" BoxConfigLastChildMargin="0" Title='等效写法：普通子项边距 + 末项边距'>
+    <f:Panel ID="PanelMargins" IsFluid="true" Layout="VBox" Height="210" BodyPadding="10" BoxConfigChildMargin="0 0 10 0" BoxConfigLastChildMargin="0"
+        Title='等效写法：普通子项边距 + 末项边距'>
         <Items>
             <f:Panel ID="MarginsItem1" BoxFlex="1" ShowHeader="false" BodyPadding="4" Content="子项一" />
             <f:Panel ID="MarginsItem2" BoxFlex="1" ShowHeader="false" BodyPadding="4" Content="子项二" />
@@ -27,21 +26,28 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示为纵向排列的相邻面板设置间隔。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="PanelSpace" title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>中对照上下相邻面板的空白，再调整浏览器高度。<br />结果：垂直间隔保持本页设置，剩余高度分配给可伸展子项。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>VBox 中的子项纵向间隔为 10px，最后一个可见子项不留尾部间隔。父容器的 BodyPadding 负责四周留白，子项自身的 Margin 仍可覆盖布局边距。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="PanelSpace" title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>、<strong class="example-control-reference" data-example-control="PanelMargins" title="等效写法：普通子项边距 + 末项边距">等效写法：普通子项边距 + 末项边距</strong>）：初始为<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
-        <li><code>BoxConfigSpace</code>（<strong class="example-control-reference" data-example-control="PanelSpace" title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>）：初始为<code>10</code>，指定同一盒布局内相邻子项的间隔。</li>
-        <li><code>BoxFlex</code>（本页各面板，如<strong class="example-control-reference" data-example-control="SpaceItem1" title="第 2 个面板">第 2 个面板</strong>）：初始为<code>1</code>，直接子项按此比例分配父容器剩余空间。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示为纵向排列的相邻面板设置间隔。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="PanelSpace"
+                    title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>中对照上下相邻面板的空白，再调整浏览器高度。<br />结果：垂直间隔保持本页设置，剩余高度分配给可伸展子项。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>VBox 中的子项纵向间隔为 10px，最后一个可见子项不留尾部间隔。父容器的 BodyPadding 负责四周留白，子项自身的 Margin 仍可覆盖布局边距。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="PanelSpace"
+                    title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>、<strong class="example-control-reference"
+                    data-example-control="PanelMargins" title="等效写法：普通子项边距 + 末项边距">等效写法：普通子项边距 + 末项边距</strong>）：初始为<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。
+            </li>
+            <li><code>BoxConfigSpace</code>（<strong class="example-control-reference" data-example-control="PanelSpace"
+                    title="推荐写法：BoxConfigSpace=&quot;10&quot;">推荐写法：BoxConfigSpace=&quot;10&quot;</strong>）：初始为<code>10</code>，指定同一盒布局内相邻子项的间隔。</li>
+            <li><code>BoxFlex</code>（本页各面板，如<strong class="example-control-reference" data-example-control="SpaceItem1" title="第 2 个面板">第 2
+                    个面板</strong>）：初始为<code>1</code>，直接子项按此比例分配父容器剩余空间。</li>
+        </ul>
+    </section>
 }

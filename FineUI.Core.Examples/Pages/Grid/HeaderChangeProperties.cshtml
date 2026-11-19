@@ -5,8 +5,7 @@
 }
 
 @section body {
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"
-            DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -32,19 +31,24 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由后台修改现有列的标题与宽度，后续回发仍可读取修改后的列配置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改、读取与还原列属性</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="修改[入学年份]的标题文本和宽度">修改[入学年份]的标题文本和宽度</strong>。<br />结果：后台找到<strong>入学年份</strong>列，将标题改为<strong><strong>入学年份</strong></strong>（已修改）、宽度改为 200 像素，现有行数据保留。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前列属性">读取当前列属性</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="还原[入学年份]">还原[入学年份]</strong>。<br />结果：读取结果显示更新后的标题与宽度；还原后标题恢复<strong>入学年份</strong>、宽度恢复 120 像素。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>后台通过 ColumnID 找到列，直接修改 HeaderText 和 Width，即可更新标题文本和列宽。</p>
-    <p>可先勾选几行再修改或还原，观察行数据和选择是否保留；修改后点击“读取当前列属性”，可查看下一次回发读取到的值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>HeaderText / Width</code>（<strong>入学年份列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：按 ColumnID 找到目标列后单独修改显示属性；本页不重新查询数据。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由后台修改现有列的标题与宽度，后续回发仍可读取修改后的列配置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改、读取与还原列属性</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="修改[入学年份]的标题文本和宽度">修改[入学年份]的标题文本和宽度</strong>。<br />结果：后台找到<strong>入学年份</strong>列，将标题改为<strong><strong>入学年份</strong></strong>（已修改）、宽度改为
+                200 像素，现有行数据保留。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前列属性">读取当前列属性</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="Button2"
+                    title="还原[入学年份]">还原[入学年份]</strong>。<br />结果：读取结果显示更新后的标题与宽度；还原后标题恢复<strong>入学年份</strong>、宽度恢复 120 像素。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>后台通过 ColumnID 找到列，直接修改 HeaderText 和 Width，即可更新标题文本和列宽。</p>
+        <p>可先勾选几行再修改或还原，观察行数据和选择是否保留；修改后点击“读取当前列属性”，可查看下一次回发读取到的值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>HeaderText / Width</code>（<strong>入学年份列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：按 ColumnID 找到目标列后单独修改显示属性；本页不重新查询数据。</li>
+        </ul>
+    </section>
 }

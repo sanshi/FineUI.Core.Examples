@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableColumnLines="true" AllowColumnLocking="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableColumnLines="true"
+        AllowColumnLocking="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="ID" DataField="ID" EnableLock="true" Locked="true" />
@@ -46,15 +47,18 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在列锁定布局中合并指定列，横向滚动时保留锁定及合并关系。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看相邻相同值的显示</h3>
-    <ul>
-        <li>沿<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong><strong>所学专业</strong></strong>、分组和<strong>注册日期</strong>等配置列逐行查看合并边界，再横向滚动。<br />结果：锁定列位置保持，合并单元格仍覆盖对应相邻行，普通列可以继续横向滚动。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>mergeColumns</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：传入目标列标识数组，合并指定列；数据加载完成后调用。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在列锁定布局中合并指定列，横向滚动时保留锁定及合并关系。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看相邻相同值的显示</h3>
+        <ul>
+            <li>沿<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong><strong><strong>所学专业</strong></strong>、分组和<strong>注册日期</strong>等配置列逐行查看合并边界，再横向滚动。<br />结果：锁定列位置保持，合并单元格仍覆盖对应相邻行，普通列可以继续横向滚动。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>mergeColumns</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：传入目标列标识数组，合并指定列；数据加载完成后调用。</li>
+        </ul>
+    </section>
 }

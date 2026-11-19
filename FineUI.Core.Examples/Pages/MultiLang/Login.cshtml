@@ -15,7 +15,7 @@
     <div>
         @Html.Raw(_R("Notice"))
     </div>
-    
+
 
     <f:Window Width="350" WindowPosition="GoldenSection" EnableClose="false" IsModal="false" Title="@_R("登录表单")" ID="Window1">
         <Items>
@@ -23,17 +23,17 @@
                 <Items>
                     <f:TextBox ShowRedStar="true" Required="true" Label="@_R("用户名")" MaxLength="20" ID="tbxUserName"></f:TextBox>
                     <f:TextBox ShowRedStar="true" Required="true" TextMode="Password" RequiredMessage="@_R("密码不能为空！")" EnableValidateTrim="false"
-                               Label="@_R("密码")" ID="tbxPassword"
-                               MaxLength="9" MaxLengthMessage="@_R("密码最大为 9 个字符！")"
-                               MinLength="3" MinLengthMessage="@_R("密码最小为 3 个字符！")"
-                               Regex="^(?:[0-9]+[a-zA-Z]|[a-zA-Z]+[0-9])[a-zA-Z0-9]*$" RegexMessage="@_R("密码至少包含一个字母和数字！")"></f:TextBox>
+                        Label="@_R("密码")" ID="tbxPassword" MaxLength="9" MaxLengthMessage="@_R("密码最大为 9 个字符！")" MinLength="3"
+                        MinLengthMessage="@_R("密码最小为 3 个字符！")" Regex="^(?:[0-9]+[a-zA-Z]|[a-zA-Z]+[0-9])[a-zA-Z0-9]*$"
+                        RegexMessage="@_R("密码至少包含一个字母和数字！")"></f:TextBox>
                 </Items>
             </f:SimpleForm>
         </Items>
         <Toolbars>
             <f:Toolbar Position="Bottom" ToolbarAlign="Right" ID="Toolbar1">
                 <Items>
-                    <f:Button OnClick="btnLogin_Click" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="@_R("登录")" ID="btnLogin"></f:Button>
+                    <f:Button OnClick="btnLogin_Click" ValidateTarget="Top" _ValidateForms="SimpleForm1" Type="Submit" Text="@_R("登录")"
+                        ID="btnLogin"></f:Button>
                     <f:Button Type="Reset" Text="@_R("重置")" ID="btnReset"></f:Button>
                 </Items>
             </f:Toolbar>
@@ -45,17 +45,20 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>从本地化资源生成界面文字，对照同一页面的中文和英文。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换界面语言</h3>
-    <ul>
-        <li>使用页面提供的中文、英文语言链接分别进入本页。<br />结果：<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>的标题、字段标签或列头、按钮文字按所选语言重新生成；此操作重新加载页面。</li>
-        <li>在英文界面清空必填字段，再点击登录。<br />结果：验证提示也使用当前语言；标签翻译和验证消息保持一致。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>_R()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：读取当前语言的资源文字，分别用于标题、字段、按钮或节点。</li>
-        <li><code>语言参数</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="表单">表单</strong>）：语言链接重新请求当前页面，由本端语言设置选择资源，不是仅替换一段可见文本。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>从本地化资源生成界面文字，对照同一页面的中文和英文。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换界面语言</h3>
+        <ul>
+            <li>使用页面提供的中文、英文语言链接分别进入本页。<br />结果：<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="表单">表单</strong>的标题、字段标签或列头、按钮文字按所选语言重新生成；此操作重新加载页面。</li>
+            <li>在英文界面清空必填字段，再点击登录。<br />结果：验证提示也使用当前语言；标签翻译和验证消息保持一致。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>_R()</code>（<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="表单">表单</strong>）：读取当前语言的资源文字，分别用于标题、字段、按钮或节点。</li>
+            <li><code>语言参数</code>（<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="表单">表单</strong>）：语言链接重新请求当前页面，由本端语言设置选择资源，不是仅替换一段可见文本。</li>
+        </ul>
+    </section>
 }

@@ -10,8 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
         <Items>
-            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd HH:mm"
-                          Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true" DisplayType="DayRange" ShowTime="true" ShowSecond="false">
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd HH:mm" Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true"
+                DisplayType="DayRange" ShowTime="true" ShowSecond="false">
             </f:DatePicker>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
         </Items>
@@ -35,8 +35,11 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd HH:mm</code>，控制选中值的文字格式。</li>
-            <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：初始为 <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。</li>
+            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd HH:mm</code>，控制选中值的文字格式。</li>
+            <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：初始为
+                <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。
+            </li>
         </ul>
     </section>
 }

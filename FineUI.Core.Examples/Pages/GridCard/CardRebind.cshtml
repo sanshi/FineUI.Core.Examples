@@ -9,15 +9,15 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            Height="500" DisplayType="Card" CardRendererFunction="renderCard"
-            _EmptyTextRawHtml="@("<img src=\"" + Url.Content("~/res/images/no-data-found.png") + "\" alt=\"No Data Found!\"/>")">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500" DisplayType="Card"
+        CardRendererFunction="renderCard" _EmptyTextRawHtml="@("<img src=\"" + Url.Content("~/res/images/no-data-found.png") + "\" alt=\"No Data Found!\"/>")">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
             <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
             <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
@@ -38,15 +38,17 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在卡片有数据与无数据之间重新绑定，核对卡片创建与空数据提示。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空后重新显示卡片</h3>
-    <ol>
-        <li>连续点击<strong class="example-control-reference" data-example-control="Button1" title="重新绑定表格">重新绑定表格</strong>。<br />结果：本页在空数据与示例记录之间切换；空数据时不残留旧卡片，重新绑定记录后按卡片渲染函数重新生成内容。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataSource / DataBind / EmptyText</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：重新绑定替换当前记录，空数据使用本页配置的提示内容，不把旧卡片当作新结果。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在卡片有数据与无数据之间重新绑定，核对卡片创建与空数据提示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空后重新显示卡片</h3>
+        <ol>
+            <li>连续点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="重新绑定表格">重新绑定表格</strong>。<br />结果：本页在空数据与示例记录之间切换；空数据时不残留旧卡片，重新绑定记录后按卡片渲染函数重新生成内容。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataSource / DataBind / EmptyText</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：重新绑定替换当前记录，空数据使用本页配置的提示内容，不把旧卡片当作新结果。</li>
+        </ul>
+    </section>
 }

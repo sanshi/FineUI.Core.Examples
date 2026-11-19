@@ -10,7 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉列表（多选）" ShowHeader="true">
         <Items>
-            <f:DropDownList ID="DropDownList1" EnableMultiSelect="true" EnableEdit="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" MultiSelectMode="Tags" ForceSelection="false">
+            <f:DropDownList ID="DropDownList1" EnableMultiSelect="true" EnableEdit="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
+                MultiSelectMode="Tags" ForceSelection="false">
                 <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
                 <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
                 <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
@@ -53,9 +54,13 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：允许直接在输入区键入筛选文本。 本页声明值为 <code>true</code>。</li>
-            <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。</li>
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：选择变化时处理当前值。 本页声明值为 <code>DropDownList1</code><code>_SelectedIndexChanged</code>。</li>
+            <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：允许直接在输入区键入筛选文本。 本页声明值为 <code>true</code>。</li>
+            <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：为
+                <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。
+            </li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：选择变化时处理当前值。 本页声明值为 <code>DropDownList1</code><code>_SelectedIndexChanged</code>。</li>
         </ul>
     </section>
 }

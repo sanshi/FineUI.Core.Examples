@@ -9,7 +9,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从弹出窗体中选择用户）" Height="500" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从弹出窗体中选择用户）" Height="500" DataIDField="Id" DataTextField="Name"
+        AllowCellEditing="true" ClicksToEdit="1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -34,7 +35,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true"></f:DatePicker>
                 </Editor>
@@ -267,17 +269,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>从 IFrame 选择窗体取得用户资料，按原行标识回填当前表格的预留空白行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把窗体选择回填到原行</h3>
-    <ol>
-        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>的<strong>姓名</strong>单元格，点击<strong class="example-control-reference" data-example-control="tbxEditorName" title="触发器输入框">触发器输入框</strong>的搜索图标。<br />结果：打开选择窗体，并把当前编辑行标识传给子页面，避免回填到其他行。</li>
-        <li>在选择窗体双击张萍萍，或勾选该行后点击选择后关闭。<br />结果：当前行回填张萍萍及其<strong>性别</strong>、年份、专业等资料；子页面调用父页面的更新函数，关闭选择窗体后可继续编辑主表。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="选择用户">选择用户</strong>）：初始为 <code>true</code>，在窗体中加载独立的用户选择页。</li>
-        <li><code>updateGridRow / cancelEdit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>）：子页传回原行标识与字段值，父页先结束当前临时编辑，再更新这一行的关联字段。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>从 IFrame 选择窗体取得用户资料，按原行标识回填当前表格的预留空白行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把窗体选择回填到原行</h3>
+        <ol>
+            <li>单击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>的<strong>姓名</strong>单元格，点击<strong class="example-control-reference"
+                    data-example-control="tbxEditorName" title="触发器输入框">触发器输入框</strong>的搜索图标。<br />结果：打开选择窗体，并把当前编辑行标识传给子页面，避免回填到其他行。</li>
+            <li>在选择窗体双击张萍萍，或勾选该行后点击选择后关闭。<br />结果：当前行回填张萍萍及其<strong>性别</strong>、年份、专业等资料；子页面调用父页面的更新函数，关闭选择窗体后可继续编辑主表。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="选择用户">选择用户</strong>）：初始为
+                <code>true</code>，在窗体中加载独立的用户选择页。
+            </li>
+            <li><code>updateGridRow / cancelEdit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>）：子页传回原行标识与字段值，父页先结束当前临时编辑，再更新这一行的关联字段。</li>
+        </ul>
+    </section>
 }

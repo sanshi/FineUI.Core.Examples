@@ -18,20 +18,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在异步 OnPost 中等待业务操作后更新数量及结果标签。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="数量更新">数量更新</strong>中，输入数量 5，再点击<strong class="example-control-reference" data-example-control="btnSubmit" title="异步增加">异步增加</strong>。<br />结果：等待模拟业务完成后数量变为 6，结果同步显示当前数量；上限为 100。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>异步 OnPost 等待业务处理完成后返回 UIHelper.Result。</li>
-        <li>连续点击时提交最新数量，使用同一 RazorForms 请求队列。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>OnPostIncreaseAsync / UIHelper</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="数量更新">数量更新</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在异步 OnPost 中等待业务操作后更新数量及结果标签。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="数量更新">数量更新</strong>中，输入数量 5，再点击<strong
+                    class="example-control-reference" data-example-control="btnSubmit" title="异步增加">异步增加</strong>。<br />结果：等待模拟业务完成后数量变为 6，结果同步显示当前数量；上限为 100。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>异步 OnPost 等待业务处理完成后返回 UIHelper.Result。</li>
+            <li>连续点击时提交最新数量，使用同一 RazorForms 请求队列。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnPostIncreaseAsync / UIHelper</code>（<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="数量更新">数量更新</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

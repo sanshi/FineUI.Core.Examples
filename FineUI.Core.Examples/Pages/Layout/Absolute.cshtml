@@ -10,8 +10,8 @@
 
 @section body {
 
-    <f:Panel ID="Panel2" IsFluid="true" Height="500" ShowBorder="true" EnableCollapse="false"
-             Layout="Absolute" ShowHeader="true" Title="面板（Height=450 Width=750 Layout=Absolute）">
+    <f:Panel ID="Panel2" IsFluid="true" Height="500" ShowBorder="true" EnableCollapse="false" Layout="Absolute" ShowHeader="true"
+        Title="面板（Height=450 Width=750 Layout=Absolute）">
         <Items>
             <f:Panel ID="Panel1" Width="300" Title="Panel1" Height="300" AbsoluteX="100" BodyPadding="10" AbsoluteY="50" ShowBorder="true" ShowHeader="false">
                 <Items>
@@ -33,17 +33,25 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示通过明确的横、纵坐标把子面板放在父容器的指定位置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照坐标与面板位置</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Panel2" title="面板（Height=450 Width=750 Layout=Absolute）">面板（Height=450 Width=750 Layout=Absolute）</strong>对照两个子面板距左、上边缘的位置。<br />结果：两个子面板分别从本页设定的坐标开始显示，不按普通文档流接到上一面板后面。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel2" title="面板（Height=450 Width=750 Layout=Absolute）">面板（Height=450 Width=750 Layout=Absolute）</strong>）：初始为<code>Absolute</code>，父容器使用 <code>Absolute</code> 布局。</li>
-        <li><code>AbsoluteX</code>（<strong class="example-control-reference" data-example-control="Panel1" title="Panel1">Panel1</strong>、<strong class="example-control-reference" data-example-control="Panel3" title="Panel2">Panel2</strong>）：各组分别设为<code>100</code>、<code>450</code>，本页两个子项分别距父容器左侧 <code>100</code> 与 <code>450</code> 像素。</li>
-        <li><code>AbsoluteY</code>（<strong class="example-control-reference" data-example-control="Panel1" title="Panel1">Panel1</strong>、<strong class="example-control-reference" data-example-control="Panel3" title="Panel2">Panel2</strong>）：各组分别设为<code>50</code>、<code>150</code>，本页两个子项分别距父容器顶部 <code>50</code> 与 <code>150</code> 像素。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示通过明确的横、纵坐标把子面板放在父容器的指定位置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照坐标与面板位置</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Panel2" title="面板（Height=450 Width=750 Layout=Absolute）">面板（Height=450
+                    Width=750 Layout=Absolute）</strong>对照两个子面板距左、上边缘的位置。<br />结果：两个子面板分别从本页设定的坐标开始显示，不按普通文档流接到上一面板后面。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Panel2"
+                    title="面板（Height=450 Width=750 Layout=Absolute）">面板（Height=450 Width=750 Layout=Absolute）</strong>）：初始为<code>Absolute</code>，父容器使用
+                <code>Absolute</code> 布局。
+            </li>
+            <li><code>AbsoluteX</code>（<strong class="example-control-reference" data-example-control="Panel1" title="Panel1">Panel1</strong>、<strong
+                    class="example-control-reference" data-example-control="Panel3"
+                    title="Panel2">Panel2</strong>）：各组分别设为<code>100</code>、<code>450</code>，本页两个子项分别距父容器左侧 <code>100</code> 与 <code>450</code> 像素。</li>
+            <li><code>AbsoluteY</code>（<strong class="example-control-reference" data-example-control="Panel1" title="Panel1">Panel1</strong>、<strong
+                    class="example-control-reference" data-example-control="Panel3"
+                    title="Panel2">Panel2</strong>）：各组分别设为<code>50</code>、<code>150</code>，本页两个子项分别距父容器顶部 <code>50</code> 与 <code>150</code> 像素。</li>
+        </ul>
+    </section>
 }

@@ -5,16 +5,13 @@
 }
 
 @section body {
-    <f:Chart ID="ChartBarNegative" Height="550" DataCategoryField="Category"
-        Horizontal="true" ShowLegend="true" ShowAxisTick="false" AxisPointerType="shadow"
+    <f:Chart ID="ChartBarNegative" Height="550" DataCategoryField="Category" Horizontal="true" ShowLegend="true" ShowAxisTick="false" AxisPointerType="shadow"
         LegendData="Profit,Expenses,Income">
         <Series>
-            <f:ChartSeries Key="profit" Type="Bar" Name="Profit" DataValueField="Profit" ShowLabel="true" LabelPosition="inside"
+            <f:ChartSeries Key="profit" Type="Bar" Name="Profit" DataValueField="Profit" ShowLabel="true" LabelPosition="inside" FocusSeries="true" />
+            <f:ChartSeries Key="income" Type="Bar" Name="Income" DataValueField="Income" Stack="Total" ShowLabel="true" FocusSeries="true" />
+            <f:ChartSeries Key="expenses" Type="Bar" Name="Expenses" DataValueField="Expenses" Stack="Total" ShowLabel="true" LabelPosition="left"
                 FocusSeries="true" />
-            <f:ChartSeries Key="income" Type="Bar" Name="Income" DataValueField="Income" Stack="Total" ShowLabel="true"
-                FocusSeries="true" />
-            <f:ChartSeries Key="expenses" Type="Bar" Name="Expenses" DataValueField="Expenses" Stack="Total" ShowLabel="true"
-                LabelPosition="left" FocusSeries="true" />
         </Series>
     </f:Chart>
 
@@ -23,19 +20,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>组合正负值与横向堆叠，区分收入、支出和独立利润系列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照正负条形图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>中的分类、数值和形状。<br />结果：Profit 单独显示，Income 和 Expenses 在同一组中分别向零线的两侧延伸。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-negative" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>LegendData</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：按 Profit、Expenses、Income 显示图例，系列仍按声明顺序绘制。</li>
-        <li><code>ShowAxisTick</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：设为 false 隐藏分类轴短刻度，保留 Mon 到 Sun 的分类标签。</li>
-        <li><code>LabelPosition</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：Profit 的数值放在条内，Expenses 的数值放在负值条的左侧。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>组合正负值与横向堆叠，区分收入、支出和独立利润系列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照正负条形图</h3>
+        <ul>
+            <li>对照<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>中的分类、数值和形状。<br />结果：Profit 单独显示，Income
+                和 Expenses 在同一组中分别向零线的两侧延伸。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-negative" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>LegendData</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：按
+                Profit、Expenses、Income 显示图例，系列仍按声明顺序绘制。</li>
+            <li><code>ShowAxisTick</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：设为 false
+                隐藏分类轴短刻度，保留 Mon 到 Sun 的分类标签。</li>
+            <li><code>LabelPosition</code>（<strong class="example-control-reference" data-example-control="ChartBarNegative" title="图表">图表</strong>）：Profit
+                的数值放在条内，Expenses 的数值放在负值条的左侧。</li>
+        </ul>
+    </section>
 }

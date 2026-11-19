@@ -8,12 +8,9 @@
     <f:Chart ID="ChartCombo" Height="550" DataCategoryField="Category" ShowLegend="true" AxisTickAlignWithLabel="true" AxisPointerType="cross"
         ShowSaveAsImage="true" Palette="#5070dd,#b6d634,#505372">
         <YAxis>
-            <f:ChartValueAxis Name="Evaporation" Position="right"
-                AlignTicks="true" LineColor="#5070dd" LabelFormatter="{value} ml" />
-            <f:ChartValueAxis Name="Precipitation" Position="right" Offset="80"
-                AlignTicks="true" LineColor="#b6d634" LabelFormatter="{value} ml" />
-            <f:ChartValueAxis Name="温度" Position="left"
-                AlignTicks="true" LineColor="#505372" LabelFormatter="{value} °C" />
+            <f:ChartValueAxis Name="Evaporation" Position="right" AlignTicks="true" LineColor="#5070dd" LabelFormatter="{value} ml" />
+            <f:ChartValueAxis Name="Precipitation" Position="right" Offset="80" AlignTicks="true" LineColor="#b6d634" LabelFormatter="{value} ml" />
+            <f:ChartValueAxis Name="温度" Position="left" AlignTicks="true" LineColor="#505372" LabelFormatter="{value} °C" />
         </YAxis>
         <Series>
             <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" DataValueField="Evaporation" />
@@ -26,20 +23,28 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>让三个系列分别使用独立数值轴，对照不同量纲及轴的位置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照多 Y 轴示例</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>中的分类、数值和形状。<br />结果：蒸发量、降水量和温度使用三条独立数值轴。两条右轴分别显示毫升，左轴显示摄氏度。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=multiple-y-axis" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code> / YAxisIndex / YAxisIndex</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始分别为 <code>1</code>、<code>2</code>，按声明顺序从 0 编号。蒸发量使用第 0 轴，降水量和温度分别使用第 1、2 轴。</li>
-        <li><code>Position / Offset</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始分别为 <code>right</code>、<code>80</code>，将降水量轴放在右侧，并向外移 80 像素，与右侧的蒸发量轴分开。</li>
-        <li><code>AlignTicks</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始为 <code>true</code>，数值范围不同的轴仍对齐刻度线，便于横向对照。</li>
-        <li><code>LabelFormatter</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始为 <code>{value} °C</code>，在温度轴的刻度值后显示 °C。两条水量轴使用 ml。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>让三个系列分别使用独立数值轴，对照不同量纲及轴的位置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照多 Y 轴示例</h3>
+        <ul>
+            <li>对照<strong class="example-control-reference" data-example-control="ChartCombo"
+                    title="图表">图表</strong>中的分类、数值和形状。<br />结果：蒸发量、降水量和温度使用三条独立数值轴。两条右轴分别显示毫升，左轴显示摄氏度。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <a href="https://echarts.apache.org/examples/zh/editor.html?c=multiple-y-axis" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code> / YAxisIndex / YAxisIndex</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartCombo"
+                    title="图表">图表</strong>）：初始分别为 <code>1</code>、<code>2</code>，按声明顺序从 0 编号。蒸发量使用第 0 轴，降水量和温度分别使用第 1、2 轴。</li>
+            <li><code>Position / Offset</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始分别为
+                <code>right</code>、<code>80</code>，将降水量轴放在右侧，并向外移 80 像素，与右侧的蒸发量轴分开。
+            </li>
+            <li><code>AlignTicks</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始为
+                <code>true</code>，数值范围不同的轴仍对齐刻度线，便于横向对照。
+            </li>
+            <li><code>LabelFormatter</code>（<strong class="example-control-reference" data-example-control="ChartCombo" title="图表">图表</strong>）：初始为
+                <code>{value} °C</code>，在温度轴的刻度值后显示 °C。两条水量轴使用 ml。
+            </li>
+        </ul>
+    </section>
 }

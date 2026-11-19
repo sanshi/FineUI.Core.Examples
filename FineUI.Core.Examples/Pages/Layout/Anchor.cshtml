@@ -10,8 +10,7 @@
 
 @section body {
 
-    <f:Panel ID="Panel3" IsFluid="true" Title="面板一（Height=300px)" Height="300" EnableCollapse="false"
-             BodyPadding="10" ShowBorder="true" ShowHeader="true">
+    <f:Panel ID="Panel3" IsFluid="true" Title="面板一（Height=300px)" Height="300" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
         <Items>
             <f:Panel ID="Panel1" ShowBorder="true" Margin="0 0 5 0" BodyPadding="10" ShowHeader="false" Title="面板">
                 <Items>
@@ -39,8 +38,8 @@
         </Items>
     </f:Panel>
     <br />
-    <f:Panel ID="Panel2" IsFluid="true" Height="300" ShowBorder="true" EnableCollapse="false"
-             BodyPadding="10" Layout="Anchor" ShowHeader="true" Title="面板二（Height=300px Width=750px Layout=Anchor）">
+    <f:Panel ID="Panel2" IsFluid="true" Height="300" ShowBorder="true" EnableCollapse="false" BodyPadding="10" Layout="Anchor" ShowHeader="true"
+        Title="面板二（Height=300px Width=750px Layout=Anchor）">
         <Items>
             <f:Panel ID="Panel4" AnchorValue="60% 30%" Margin="0 0 5 0" BodyPadding="10" ShowBorder="true" ShowHeader="false">
                 <Items>
@@ -91,7 +90,8 @@
                     </f:Toolbar>
                 </Toolbars>
                 <Items>
-                    <f:Grid ID="Grid1" Title="表格" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+                    <f:Grid ID="Grid1" Title="表格" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -107,8 +107,8 @@
         </Items>
     </f:Panel>
     <br />
-    <f:Panel ID="Panel7" IsFluid="true" BodyPadding="10" EnableCollapse="false"
-             ShowBorder="true" ShowHeader="true" Height="350" Title="面板四（Width=750px Height=350px Layout=Anchor）" Layout="Anchor">
+    <f:Panel ID="Panel7" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" ShowHeader="true" Height="350"
+        Title="面板四（Width=750px Height=350px Layout=Anchor）" Layout="Anchor">
         <Items>
             <f:Form ID="Form5" ShowBorder="false" AnchorValue="100%" ShowHeader="false">
                 <Rows>
@@ -139,7 +139,8 @@
                     </f:Toolbar>
                 </Toolbars>
                 <Items>
-                    <f:Grid ID="Grid2" Title="Grid2" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+                    <f:Grid ID="Grid2" Title="Grid2" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -161,8 +162,8 @@
     <br />
     <hr />
     <br />
-    <f:Panel ID="Panel9" IsFluid="true" Layout="VBox" EnableCollapse="false"
-             BodyPadding="10" BoxConfigSpace="0" ShowBorder="true" ShowHeader="true" Height="350" Title="面板五（Layout=VBox BoxConfigSpace=0）">
+    <f:Panel ID="Panel9" IsFluid="true" Layout="VBox" EnableCollapse="false" BodyPadding="10" BoxConfigSpace="0" ShowBorder="true" ShowHeader="true"
+        Height="350" Title="面板五（Layout=VBox BoxConfigSpace=0）">
         <Items>
             <f:Form ID="Form6" ShowBorder="false" ShowHeader="false">
                 <Rows>
@@ -193,7 +194,8 @@
                     </f:Toolbar>
                 </Toolbars>
                 <Items>
-                    <f:Grid ID="Grid3" Title="Grid3" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+                    <f:Grid ID="Grid3" Title="Grid3" PageSize="3" ShowBorder="false" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -218,16 +220,23 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示用锚点比例让字段随父容器宽高变化。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Panel3" title="面板一（Height=300px)">面板一（Height=300px)</strong>中缩小和放大浏览器，比较字段与容器边缘的距离。<br />结果：设置锚点的字段按对应比例伸缩，固定尺寸项目保持自身尺寸。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel2" title="面板二（Height=300px Width=750px Layout=Anchor）">面板二（Height=300px Width=750px Layout=Anchor）</strong>）：各组分别设为<code>Anchor</code>、<code>Fit</code>、<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
-        <li><code>AnchorValue</code>（<strong class="example-control-reference" data-example-control="Panel4" title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control="Form2" title="第 2 个表单">第 2 个表单</strong>、<strong class="example-control-reference" data-example-control="Form5" title="第 4 个表单">第 4 个表单</strong>、<strong class="example-control-reference" data-example-control="Panel8" title="第 8 个面板">第 8 个面板</strong>）：各组分别设为<code>60% 30%</code>、<code>100% 70%</code>、<code>100%</code>、<code>100% -72</code>，子项按本页锚点比例随父容器尺寸变化。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示用锚点比例让字段随父容器宽高变化。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Panel3"
+                    title="面板一（Height=300px)">面板一（Height=300px)</strong>中缩小和放大浏览器，比较字段与容器边缘的距离。<br />结果：设置锚点的字段按对应比例伸缩，固定尺寸项目保持自身尺寸。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference" data-example-control="Panel2"
+                    title="面板二（Height=300px Width=750px Layout=Anchor）">面板二（Height=300px Width=750px
+                    Layout=Anchor）</strong>）：各组分别设为<code>Anchor</code>、<code>Fit</code>、<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+            <li><code>AnchorValue</code>（<strong class="example-control-reference" data-example-control="Panel4" title="第 4 个面板">第 4 个面板</strong>、<strong
+                    class="example-control-reference" data-example-control="Form2" title="第 2 个表单">第 2 个表单</strong>、<strong class="example-control-reference"
+                    data-example-control="Form5" title="第 4 个表单">第 4 个表单</strong>、<strong class="example-control-reference" data-example-control="Panel8"
+                    title="第 8 个面板">第 8 个面板</strong>）：各组分别设为<code>60% 30%</code>、<code>100% 70%</code>、<code>100%</code>、<code>100%
+                    -72</code>，子项按本页锚点比例随父容器尺寸变化。</li>
+        </ul>
+    </section>
 }

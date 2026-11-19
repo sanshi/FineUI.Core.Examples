@@ -9,8 +9,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true"
-            DataIDField="Id" DataUrl="@Url.Content("~/GridDataUrl/FilterData")" DataMethod="POST" AllowFilters="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true" DataIDField="Id"
+        DataUrl="@Url.Content("~/GridDataUrl/FilterData")" DataMethod="POST" AllowFilters="true">
         <Columns>
             <f:RowNumberField></f:RowNumberField>
             <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" EnableFilter="true">
@@ -42,7 +42,8 @@
                 </Filter>
             </f:RenderField>
             <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
-            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" HeaderText="所学专业" EnableFilter="true">
+            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" HeaderText="所学专业"
+                EnableFilter="true">
                 <Filter>
                     <Field>
                         <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="1" Required="true">
@@ -74,16 +75,20 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过表头输入条件，用数据请求把过滤参数交给网址接口，再显示匹配记录。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>用条件重新请求异步数据</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong>姓名</strong>过滤中选择包含，输入<code>张</code>并确定。<br />结果：浏览器通过本页配置的 POST 数据请求提交过滤条件，接口返回匹配记录；清除条件后重新取得完整结果。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataMethod</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>POST</code>，使用 POST 向 DataUrl 发送过滤参数，与普通按钮回发分别处理。</li>
-        <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，为启用过滤的列创建条件入口，结果由数据接口筛选返回。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过表头输入条件，用数据请求把过滤参数交给网址接口，再显示匹配记录。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>用条件重新请求异步数据</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong><strong>姓名</strong>过滤中选择包含，输入<code>张</code>并确定。<br />结果：浏览器通过本页配置的 POST 数据请求提交过滤条件，接口返回匹配记录；清除条件后重新取得完整结果。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataMethod</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>POST</code>，使用
+                POST 向 DataUrl 发送过滤参数，与普通按钮回发分别处理。</li>
+            <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，为启用过滤的列创建条件入口，结果由数据接口筛选返回。
+            </li>
+        </ul>
+    </section>
 }

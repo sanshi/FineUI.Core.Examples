@@ -10,8 +10,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/SortingData?data2=true")"
-            AllowSorting="true" SortField="EntranceYear" SortDirection="ASC"
-            AllowPaging="true" IsDatabasePaging="false" PageSize="5">
+        AllowSorting="true" SortField="EntranceYear" SortDirection="ASC" AllowPaging="true" IsDatabasePaging="false" PageSize="5">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" />
@@ -39,18 +38,24 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>使用数据网址分页并排序，区分浏览器处理与接口重新取数。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>分别核对换页与排序动作</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>分页栏下一页，再返回第一页。<br />结果：首次请求完整数组，随后由浏览器在已有记录中换页，不为普通换页重新请求完整数据。</li>
-        <li>点击<strong>姓名</strong>列表头切换排序。<br />结果：浏览器直接排序已经加载的记录，不把每次排序作为页面回发。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，加载完整数据后由浏览器分页。</li>
-        <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>5</code>，限制每页显示记录数。</li>
-        <li><code>IsDatabaseSorting</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：排序使用浏览器已加载的数据。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>使用数据网址分页并排序，区分浏览器处理与接口重新取数。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>分别核对换页与排序动作</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>分页栏下一页，再返回第一页。<br />结果：首次请求完整数组，随后由浏览器在已有记录中换页，不为普通换页重新请求完整数据。</li>
+            <li>点击<strong>姓名</strong>列表头切换排序。<br />结果：浏览器直接排序已经加载的记录，不把每次排序作为页面回发。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，加载完整数据后由浏览器分页。
+            </li>
+            <li><code>PageSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>5</code>，限制每页显示记录数。
+            </li>
+            <li><code>IsDatabaseSorting</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：排序使用浏览器已加载的数据。
+            </li>
+        </ul>
+    </section>
 }

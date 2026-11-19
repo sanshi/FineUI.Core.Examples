@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            EnableCheckBoxSelect="false" ShowSelectedRow="false" EnableAlternateRowColor="false">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="false"
+        ShowSelectedRow="false" EnableAlternateRowColor="false">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -35,18 +35,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>保留行选择逻辑，但不使用整行背景显示选中状态。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照选择与行外观</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的一行，再点击另一行。<br />结果：行点击仍执行选择，但不出现通常的整行选中背景；本页也关闭交替行背景，便于比较。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：本表格不显示选中行，不显示行间隔背景色。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ShowSelectedRow</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，控制整行选中背景是否可见，不取消行选择能力。</li>
-        <li><code>EnableAlternateRowColor</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，关闭交替行背景，便于查看选中外观的区别。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>保留行选择逻辑，但不使用整行背景显示选中状态。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照选择与行外观</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的一行，再点击另一行。<br />结果：行点击仍执行选择，但不出现通常的整行选中背景；本页也关闭交替行背景，便于比较。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本表格不显示选中行，不显示行间隔背景色。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ShowSelectedRow</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，控制整行选中背景是否可见，不取消行选择能力。
+            </li>
+            <li><code>EnableAlternateRowColor</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，关闭交替行背景，便于查看选中外观的区别。
+            </li>
+        </ul>
+    </section>
 }

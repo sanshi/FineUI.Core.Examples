@@ -22,21 +22,24 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在同一页交替调用旧 OnPost 和 RazorForms 控件事件，验证状态与窗体更新。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Window1" title="兼容事件弹窗">兼容事件弹窗</strong>中，交替点击旧事件追加和 <strong class="example-control-reference" data-example-control="btnRazorForms" title="RazorForms 事件追加">RazorForms 事件追加</strong>，再用旧事件打开弹窗、用窗体按钮关闭。<br />结果：两种入口共同追加持久记录，旧事件可以打开后台 Window，RazorForms 事件可以关闭同一实例。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>交替点击前两个按钮，旧 OnPost 和 RazorForms 事件都直接修改后台 Label.Text，后续回发继续保留历史。</li>
-        <li>UIHelper 更新另一个标签的即时提示，不保证同步到服务器属性或按 RazorForms 持久属性恢复。</li>
-        <li>新代码推荐直接操作后台控件实例。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="Window1" title="兼容事件弹窗">兼容事件弹窗</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在同一页交替调用旧 OnPost 和 RazorForms 控件事件，验证状态与窗体更新。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Window1" title="兼容事件弹窗">兼容事件弹窗</strong>中，交替点击旧事件追加和 <strong
+                    class="example-control-reference" data-example-control="btnRazorForms" title="RazorForms 事件追加">RazorForms
+                    事件追加</strong>，再用旧事件打开弹窗、用窗体按钮关闭。<br />结果：两种入口共同追加持久记录，旧事件可以打开后台 Window，RazorForms 事件可以关闭同一实例。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>交替点击前两个按钮，旧 OnPost 和 RazorForms 事件都直接修改后台 Label.Text，后续回发继续保留历史。</li>
+            <li>UIHelper 更新另一个标签的即时提示，不保证同步到服务器属性或按 RazorForms 持久属性恢复。</li>
+            <li>新代码推荐直接操作后台控件实例。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="兼容事件弹窗">兼容事件弹窗</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

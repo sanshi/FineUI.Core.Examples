@@ -7,8 +7,8 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" MaxWidth="620" BodyPadding="10" LabelAlign="Top" Title="选择图片后立即上传">
         <Items>
-            <f:FileUpload ID="filePhotos" Label="图片" ButtonText="选择图片" EnableDragDrop="true" Multiple="true"
-                AcceptFileTypes=".jpg,.jpeg,.png,.gif" OnFileSelected="filePhotos_FileSelected"></f:FileUpload>
+            <f:FileUpload ID="filePhotos" Label="图片" ButtonText="选择图片" EnableDragDrop="true" Multiple="true" AcceptFileTypes=".jpg,.jpeg,.png,.gif"
+                OnFileSelected="filePhotos_FileSelected"></f:FileUpload>
         </Items>
     </f:SimpleForm>
     <f:Label ID="labResult"></f:Label>
@@ -22,7 +22,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>拖入后立即上传</h3>
         <ol>
             <li>
-                将 <code>first.jpg</code>、<code>second.png</code> 两张合格图片拖到<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>区域。<br />
+                将 <code>first.jpg</code>、<code>second.png</code> 两张合格图片拖到<strong class="example-control-reference" data-example-control="filePhotos"
+                    title="图片">图片</strong>区域。<br />
                 结果：选定后立即回发，后台显示收到的文件名，成功后文件选择被清空。
             </li>
             <li>
@@ -31,11 +32,16 @@
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>拖入或点击选择 <code>JPG</code>、<code>JPEG</code>、<code>PNG</code>、<code>GIF</code> 图片后会立即上传，每张图片最多 <code>2</code> <code>MB</code>。服务器会回显收到的文件名，校验失败时保留本次选择。</p>
+        <p>拖入或点击选择 <code>JPG</code>、<code>JPEG</code>、<code>PNG</code>、<code>GIF</code> 图片后会立即上传，每张图片最多 <code>2</code> <code>MB</code>。服务器会回显收到的文件名，校验失败时保留本次选择。
+        </p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableDragDrop</code>（<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>）：可将本地文件拖入选择区域。 本页<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>声明值为 <code>true</code>。</li>
-            <li><code>OnFileSelected</code>（<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>）：选定文件后立即请求后台处理。 本页<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>声明值为 <code>filePhotos</code><code>_FileSelected</code>。</li>
+            <li><code>EnableDragDrop</code>（<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>）：可将本地文件拖入选择区域。
+                本页<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>声明值为 <code>true</code>。</li>
+            <li><code>OnFileSelected</code>（<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>）：选定文件后立即请求后台处理。
+                本页<strong class="example-control-reference" data-example-control="filePhotos" title="图片">图片</strong>声明值为
+                <code>filePhotos</code><code>_FileSelected</code>。
+            </li>
         </ul>
     </section>
 }

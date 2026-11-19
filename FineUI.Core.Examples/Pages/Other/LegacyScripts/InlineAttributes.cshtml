@@ -25,21 +25,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>对照浏览器原生 onclick 与 javascript 地址在禁用脚本 CSP 限制时的执行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="btnInline" title="执行原生 onclick">执行原生 onclick</strong>中，分别点击原生 onclick 按钮和 javascript 链接。<br />结果：结果依次显示内联点击已执行和脚本链接已执行，均不发生业务回发。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>原生 HTML 的 onclick 和 javascript 地址由浏览器执行；这两种写法需要禁用 CSP 脚本限制。</li>
-        <li>AllowDangerousJavaScriptUrl 校验 FineUI 控件的链接属性，不校验直接写入页面的原生 HTML；原生脚本链接由浏览器的 CSP 控制。</li>
-        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>onclick / href</code>（<strong class="example-control-reference" data-example-control="btnInline" title="执行原生 onclick">执行原生 onclick</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>对照浏览器原生 onclick 与 javascript 地址在禁用脚本 CSP 限制时的执行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="btnInline" title="执行原生 onclick">执行原生 onclick</strong>中，分别点击原生 onclick 按钮和
+                javascript 链接。<br />结果：结果依次显示内联点击已执行和脚本链接已执行，均不发生业务回发。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>原生 HTML 的 onclick 和 javascript 地址由浏览器执行；这两种写法需要禁用 CSP 脚本限制。</li>
+            <li>AllowDangerousJavaScriptUrl 校验 FineUI 控件的链接属性，不校验直接写入页面的原生 HTML；原生脚本链接由浏览器的 CSP 控制。</li>
+            <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>onclick / href</code>（<strong class="example-control-reference" data-example-control="btnInline" title="执行原生 onclick">执行原生
+                    onclick</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+        </ul>
+    </section>
 }

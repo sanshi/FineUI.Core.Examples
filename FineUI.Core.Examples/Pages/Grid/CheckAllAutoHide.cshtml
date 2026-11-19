@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" CheckBoxSelectAutoHide="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
+        CheckBoxSelectAutoHide="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -46,15 +47,18 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>让未选行的选择框平时隐藏，在悬停或选中时显示。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照悬停与选中状态</h3>
-    <ol>
-        <li>把鼠标移入<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的一行，勾选后移开鼠标。<br />结果：悬停时显示选择框；选中后仍显示勾选状态，其他未选行的选择框在移开鼠标后隐藏。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>CheckBoxSelectAutoHide</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，根据悬停和选中状态显示选择框，不改变选择结果。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>让未选行的选择框平时隐藏，在悬停或选中时显示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照悬停与选中状态</h3>
+        <ol>
+            <li>把鼠标移入<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的一行，勾选后移开鼠标。<br />结果：悬停时显示选择框；选中后仍显示勾选状态，其他未选行的选择框在移开鼠标后隐藏。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>CheckBoxSelectAutoHide</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，根据悬停和选中状态显示选择框，不改变选择结果。
+            </li>
+        </ul>
+    </section>
 }

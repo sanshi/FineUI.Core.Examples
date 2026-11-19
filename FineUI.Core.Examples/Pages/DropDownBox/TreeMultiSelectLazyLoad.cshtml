@@ -12,8 +12,8 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EnableMultiSelect="true" _Values="henan,anhui">
                 <PopPanel>
-                    <f:Tree ID="Tree1" ShowHeader="false" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true"
-                            AutoLeafIdentification="false" OnNodeLazyLoad="Tree1_NodeLazyLoad">
+                    <f:Tree ID="Tree1" ShowHeader="false" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true" AutoLeafIdentification="false"
+                        OnNodeLazyLoad="Tree1_NodeLazyLoad">
                         <Nodes>
                             <f:TreeNode Text="中国" NodeID="china" Expanded="true">
                                 <f:TreeNode Text="河南省" NodeID="henan" Expanded="true">
@@ -70,8 +70,11 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control="Tree1" title="Tree">Tree</strong>）：为 <code>false</code> 时由页面明确控制叶子节点与延迟加载节点。 本页声明值为 <code>false</code>。</li>
-            <li><code>OnNodeLazyLoad</code>（<strong class="example-control-reference" data-example-control="Tree1" title="Tree">Tree</strong>）：展开尚未加载的节点时，请求后台补充子节点。 本页声明值为 <code>Tree1</code><code>_NodeLazyLoad</code>。</li>
+            <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control="Tree1" title="Tree">Tree</strong>）：为
+                <code>false</code> 时由页面明确控制叶子节点与延迟加载节点。 本页声明值为 <code>false</code>。
+            </li>
+            <li><code>OnNodeLazyLoad</code>（<strong class="example-control-reference" data-example-control="Tree1"
+                    title="Tree">Tree</strong>）：展开尚未加载的节点时，请求后台补充子节点。 本页声明值为 <code>Tree1</code><code>_NodeLazyLoad</code>。</li>
         </ul>
     </section>
 }

@@ -40,7 +40,8 @@
                     <f:Listener Event="presschange" Handler="onButtonGroupPressChange" />
                 </Listeners>
             </f:ButtonGroup>
-            <f:TabStrip ID="TabStrip1" CssClass="mytabstrip" EnableTabCloseMenu="true" BoxFlex="1" ShowBorder="false" ShowTabHeader="false" ActiveTabIndex="1" AnimationType="Fade">
+            <f:TabStrip ID="TabStrip1" CssClass="mytabstrip" EnableTabCloseMenu="true" BoxFlex="1" ShowBorder="false" ShowTabHeader="false" ActiveTabIndex="1"
+                AnimationType="Fade">
                 <Tabs>
                     <f:Tab ID="Tab1" Title="标签一" EnableClose="false" BodyPadding="10px">
                         <Items>
@@ -95,17 +96,21 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示隐藏标签标题栏，用按钮组作为切页入口。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>使用本页切换入口</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="第 1 个按钮（标签一）">第 1 个按钮（标签一）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="第 2 个按钮（标签二）">第 2 个按钮（标签二）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="第 3 个按钮（标签三）">第 3 个按钮（标签三）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ShowTabHeader</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="第 1 个选项卡">第 1 个选项卡</strong>）：初始为<code>false</code>，隐藏标题栏，内容由本页按钮切换。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示隐藏标签标题栏，用按钮组作为切页入口。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>使用本页切换入口</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="第 1 个按钮（标签一）">第 1
+                    个按钮（标签一）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button2" title="第 2 个按钮（标签二）">第 2
+                    个按钮（标签二）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3" title="第 3 个按钮（标签三）">第 3
+                    个按钮（标签三）</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ShowTabHeader</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="第 1 个选项卡">第 1
+                    个选项卡</strong>）：初始为<code>false</code>，隐藏标题栏，内容由本页按钮切换。</li>
+        </ul>
+    </section>
 }

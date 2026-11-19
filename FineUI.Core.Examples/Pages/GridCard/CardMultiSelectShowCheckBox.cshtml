@@ -9,15 +9,15 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            _DataKeyNames="Id,Name,Gender,Major"
-            Height="500" DisplayType="Card" CardRendererFunction="renderCard" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" _DataKeyNames="Id,Name,Gender,Major"
+        Height="500" DisplayType="Card" CardRendererFunction="renderCard" EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" />
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                Width="150" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
             <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
             <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
@@ -66,16 +66,20 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用卡片上的复选框直接多选，不必按住 Ctrl。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按本页规则选择卡片</h3>
-    <ol>
-        <li>依次点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>前两张卡片的选择框。<br />结果：两张卡片同时保留选择；再操作一张卡片可取消对应项，不改变卡片资料。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRowsClient" title="选中了哪些行（客户端）">选中了哪些行（客户端）</strong>。<br />结果：提示当前选中卡片对应的记录，不把卡片位置当作业务主键。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，显示卡片选择框，可直接累积选择。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用卡片上的复选框直接多选，不必按住 Ctrl。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按本页规则选择卡片</h3>
+        <ol>
+            <li>依次点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>前两张卡片的选择框。<br />结果：两张卡片同时保留选择；再操作一张卡片可取消对应项，不改变卡片资料。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRowsClient"
+                    title="选中了哪些行（客户端）">选中了哪些行（客户端）</strong>。<br />结果：提示当前选中卡片对应的记录，不把卡片位置当作业务主键。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，显示卡片选择框，可直接累积选择。
+            </li>
+        </ul>
+    </section>
 }

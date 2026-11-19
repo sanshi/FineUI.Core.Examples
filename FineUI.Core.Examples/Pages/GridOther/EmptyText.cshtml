@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" Height="350" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            _EmptyTextRawHtml="@("<img src=\"" + Url.Content("~/res/images/no-data-found.png") + "\" alt=\"No Data Found!\"/>")">
+        _EmptyTextRawHtml="@("<img src=\"" + Url.Content("~/res/images/no-data-found.png") + "\" alt=\"No Data Found!\"/>")">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -37,17 +37,18 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在数据为空时用自定义内容替代表格行，重新绑定后恢复数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
-    <ol>
-        <li>连续点击<strong class="example-control-reference" data-example-control="Button1" title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示自定义图片与文字，重新绑定记录后提示消失，数据行恢复。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：本表格各列宽度固定，所以会出现横向滚动条。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：指定无记录时显示的自定义内容。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在数据为空时用自定义内容替代表格行，重新绑定后恢复数据。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在有数据与无数据之间切换</h3>
+        <ol>
+            <li>连续点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="重新绑定表格">重新绑定表格</strong>，对照空数据与有数据两种状态。<br />结果：按钮回发后后台切换数据源；无记录时显示自定义图片与文字，重新绑定记录后提示消失，数据行恢复。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：本表格各列宽度固定，所以会出现横向滚动条。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：指定无记录时显示的自定义内容。</li>
+        </ul>
+    </section>
 }

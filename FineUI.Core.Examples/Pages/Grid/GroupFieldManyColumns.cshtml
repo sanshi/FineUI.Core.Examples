@@ -11,7 +11,7 @@
     <f:Button ID="btnCheckColumns" Text="读取后台列数" OnClick="btnCheckColumns_Click" />
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="多级分组表头 + 大量列（约 425 列，验证表头/表体列线对齐）" DataIDField="Id" IsViewPort="true"
-            AllowColumnLocking="true" EnableColumnLines="true">
+        AllowColumnLocking="true" EnableColumnLines="true">
         <Columns>
             <f:RowNumberField />
         </Columns>
@@ -21,17 +21,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用大量多层表头与叶子列核对横向滚动、列线对齐及动态列集合的回发读取。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对多列表头与正文</h3>
-    <ul>
-        <li>横向滚动<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>到靠后月份或数据列，比较组头、列线与正文位置。<br />结果：多层组头覆盖对应的叶子列，正文列边界与标题保持对齐；锁定区域继续留在原侧。</li>
-        <li>连续点击<strong class="example-control-reference" data-example-control="btnCheckColumns" title="读取后台列数">读取后台列数</strong>。<br />结果：每次回发都能读取同一套动态创建列的顶层数与叶子列数，不因首次创建后回发而变成空集合。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>GroupField.Columns / AllColumns</code>（<strong>动态表头集合</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：分组保留父子结构，AllColumns 可遍历实际叶子列；大量列应按唯一列标识区分。</li>
-        <li><code>EnableColumnLines</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，显示列分隔线，便于核对大量列的边界对齐。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用大量多层表头与叶子列核对横向滚动、列线对齐及动态列集合的回发读取。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对多列表头与正文</h3>
+        <ul>
+            <li>横向滚动<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>到靠后月份或数据列，比较组头、列线与正文位置。<br />结果：多层组头覆盖对应的叶子列，正文列边界与标题保持对齐；锁定区域继续留在原侧。</li>
+            <li>连续点击<strong class="example-control-reference" data-example-control="btnCheckColumns"
+                    title="读取后台列数">读取后台列数</strong>。<br />结果：每次回发都能读取同一套动态创建列的顶层数与叶子列数，不因首次创建后回发而变成空集合。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>GroupField.Columns / AllColumns</code>（<strong>动态表头集合</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：分组保留父子结构，AllColumns 可遍历实际叶子列；大量列应按唯一列标识区分。</li>
+            <li><code>EnableColumnLines</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，显示列分隔线，便于核对大量列的边界对齐。
+            </li>
+        </ul>
+    </section>
 }

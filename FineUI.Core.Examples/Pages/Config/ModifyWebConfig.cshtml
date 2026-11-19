@@ -81,15 +81,15 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
             <ul>
                 <li>
                     Theme: 样式主题，内置 10 种主题（默认值：Pure_Black）
-					<ul style="padding-top: 8px;">
-						<li>
-							Pure 主题：Pure_Black, Pure_Green, Pure_Blue, Pure_Purple, Pure_Orange
-						</li>
-						<li>
-							jQueryUI 主题：Cupertino, Start, Dark_Hive, Flick, South_Street
-						</li>
-					</ul>
-				</li>
+                    <ul style="padding-top: 8px;">
+                        <li>
+                            Pure 主题：Pure_Black, Pure_Green, Pure_Blue, Pure_Purple, Pure_Orange
+                        </li>
+                        <li>
+                            jQueryUI 主题：Cupertino, Start, Dark_Hive, Flick, South_Street
+                        </li>
+                    </ul>
+                </li>
                 <li>CustomTheme: 自定义样式主题（custom_default，源代码位于官网示例 /wwwroot/res/themes/ 目录）</li>
                 <li>Language: 控件语言（en/zh_CN/zh_TW，默认值：zh_CN）</li>
                 <li>FormMessageTarget: 表单字段错误提示信息的显示位置（Title/Side/Qtip，默认值：Side）</li>
@@ -105,11 +105,11 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
                 <li>MobileAdaption: 是否启用移动浏览器自适应（默认值：false）</li>
                 <li>EnableAnimation: 是否启用动画（Chrome，Firefox，Edge，Safari浏览器支持动画）（默认值：false）</li>
             </ul>
-			<br />
             <br />
-			<div style="margin-bottom: 5px;">
-				注：移动端（Android、iOS）网站需要启用DisplayMode和MobileAdaption属性（appsettings.json）：
-				<br/>
+            <br />
+            <div style="margin-bottom: 5px;">
+                注：移动端（Android、iOS）网站需要启用DisplayMode和MobileAdaption属性（appsettings.json）：
+                <br />
 <pre>
 {
   "FineUI": {
@@ -119,9 +119,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
   }
 }
 </pre>
-			</div>
-			<br />
-			
+            </div>
+            <br />
+
 
         </li>
         <li><strong>完成。</strong></li>
@@ -133,15 +133,17 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>展示当前开发模式接入 FineUI 所需的服务注册、请求管线和配置文件写法。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>对照项目配置</h3>
-    <ul>
-        <li>按页面中的<strong class="example-control-reference" data-example-control="exampleConfigurationContent" title="配置示例">配置代码</strong>依次核对自己的项目。<br />结果：服务注册、页面入口与 FineUI 配置配套使用；本页展示配置写法，不会修改当前网站设置。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AddFineUI / UseFineUI</code>（<strong class="example-control-reference" data-example-control="exampleConfigurationContent" title="配置示例">配置示例</strong>）：配置必须与当前项目类型一致；本页展示本端实际接入方式，修改配置后需要重新加载或启动自己的项目。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>展示当前开发模式接入 FineUI 所需的服务注册、请求管线和配置文件写法。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>对照项目配置</h3>
+        <ul>
+            <li>按页面中的<strong class="example-control-reference" data-example-control="exampleConfigurationContent"
+                    title="配置示例">配置代码</strong>依次核对自己的项目。<br />结果：服务注册、页面入口与 FineUI 配置配套使用；本页展示配置写法，不会修改当前网站设置。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AddFineUI / UseFineUI</code>（<strong class="example-control-reference" data-example-control="exampleConfigurationContent"
+                    title="配置示例">配置示例</strong>）：配置必须与当前项目类型一致；本页展示本端实际接入方式，修改配置后需要重新加载或启动自己的项目。</li>
+        </ul>
+    </section>
 }

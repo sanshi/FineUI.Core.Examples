@@ -19,10 +19,9 @@
             <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
             <f:RenderField HeaderText="窗口列">
                 <Commands>
-                    <f:Command CommandName="Action1" Text="编辑" CssClass="mywindowfield"
-                               WindowID="Window1"
-                               WindowIFrameUrlFormatString="@Url.Content("~/Grid/IFrameWindow?id={0}&name={1}")" _WindowIFrameUrlFields="Id,Name"
-                               WindowTitleFormatString="编辑 - {0}" _WindowTitleFields="Name" />
+                    <f:Command CommandName="Action1" Text="编辑" CssClass="mywindowfield" WindowID="Window1"
+                        WindowIFrameUrlFormatString="@Url.Content("~/Grid/IFrameWindow?id={0}&name={1}")" _WindowIFrameUrlFields="Id,Name" WindowTitleFormatString="编辑 - {0}"
+                        _WindowTitleFields="Name" />
                 </Commands>
             </f:RenderField>
         </Columns>
@@ -31,7 +30,7 @@
     <br>
 
     <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true"
-              OnClose="Window1_Close" Target="Self" IsModal="true" Width="850" Height="500" Maximized="true">
+        OnClose="Window1_Close" Target="Self" IsModal="true" Width="850" Height="500" Maximized="true">
     </f:Window>
 
 
@@ -45,15 +44,18 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>让行命令打开的编辑窗体初次显示时直接最大化，充分利用当前示例的可用区域。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>打开初始最大化窗体</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中一行的编辑图标。<br />结果：<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>直接以最大化状态显示该行信息；通过标题栏还原入口可恢复普通窗口尺寸。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Maximized</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：初始为 <code>true</code>，初次显示采用最大化状态，不需要打开后再调用最大化方法。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>让行命令打开的编辑窗体初次显示时直接最大化，充分利用当前示例的可用区域。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>打开初始最大化窗体</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中一行的编辑图标。<br />结果：<strong
+                    class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>直接以最大化状态显示该行信息；通过标题栏还原入口可恢复普通窗口尺寸。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Maximized</code>（<strong class="example-control-reference" data-example-control="Window1" title="编辑">编辑</strong>）：初始为
+                <code>true</code>，初次显示采用最大化状态，不需要打开后再调用最大化方法。
+            </li>
+        </ul>
+    </section>
 }

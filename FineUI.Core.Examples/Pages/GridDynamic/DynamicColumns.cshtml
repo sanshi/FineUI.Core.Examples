@@ -7,8 +7,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）"
-            DataIDField="Id" DataTextField="Name">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（动态创建列）" DataIDField="Id" DataTextField="Name">
     </f:Grid>
     <br>
     <br>
@@ -25,15 +24,17 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用代码动态创建表格列，再把数据按字段绑定到这些列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>核对动态生成的列</h3>
-    <ul>
-        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格（动态创建列）">表格（动态创建列）</strong>的姓名、性别与入学年份等列。<br />结果：列来自后台创建代码，而不是模板中逐列声明；显示值仍按每列的数据字段读取。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Columns / DataSource</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（动态创建列）">表格（动态创建列）</strong>）：先创建或替换列集合，再绑定与该结构相符的数据；列标识与数据字段分别承担定位和取值职责。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用代码动态创建表格列，再把数据按字段绑定到这些列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>核对动态生成的列</h3>
+        <ul>
+            <li>查看<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（动态创建列）">表格（动态创建列）</strong>的姓名、性别与入学年份等列。<br />结果：列来自后台创建代码，而不是模板中逐列声明；显示值仍按每列的数据字段读取。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Columns / DataSource</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（动态创建列）">表格（动态创建列）</strong>）：先创建或替换列集合，再绑定与该结构相符的数据；列标识与数据字段分别承担定位和取值职责。</li>
+        </ul>
+    </section>
 }

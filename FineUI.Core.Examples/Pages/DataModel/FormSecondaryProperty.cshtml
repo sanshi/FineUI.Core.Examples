@@ -31,7 +31,8 @@
         <Toolbars>
             <f:Toolbar Position="Bottom">
                 <Items>
-                    <f:Button ID="btnSubmit" CssClass="marginr" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click" OnClickFields="SimpleForm1"></f:Button>
+                    <f:Button ID="btnSubmit" CssClass="marginr" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click" OnClickFields="SimpleForm1">
+                    </f:Button>
                     <f:Button ID="btnReset" Text="重置表单" ClickHandler="onResetClick"></f:Button>
                 </Items>
             </f:Toolbar>
@@ -54,15 +55,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>把学生的基本资料与 Score 对象中的各科成绩一起绑定到表单。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>读取并提交模型值</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="简单表单">简单表单</strong>中，把<strong class="example-control-reference" data-example-control="Student_Score_Chinese" title="语文">语文</strong>改为 <code>90</code>，保留其它成绩，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />结果：后台模型中的 Score.Chinese 更新为 90，其它科目仍保留自己的值，通知展示完整学生数据。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>For</code>（<strong class="example-control-reference" data-example-control="Student_Score_Chinese" title="语文">语文</strong>、<strong class="example-control-reference" data-example-control="Student_Score_Math" title="数学">数学</strong>、<strong class="example-control-reference" data-example-control="Student_Score_Physics" title="物理">物理</strong>）：初始为 <code>Student.Score.Chinese</code>、<code>Student.Score.Math</code>、<code>Student.Score.Physics</code>、<code>Student.Score.Chemistry</code>，绑定模型属性路径，读取初始值、字段名称及验证注解，并在提交时接收字段值。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>把学生的基本资料与 Score 对象中的各科成绩一起绑定到表单。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>读取并提交模型值</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="简单表单">简单表单</strong>中，把<strong
+                    class="example-control-reference" data-example-control="Student_Score_Chinese" title="语文">语文</strong>改为 <code>90</code>，保留其它成绩，点击<strong
+                    class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />结果：后台模型中的 Score.Chinese 更新为
+                90，其它科目仍保留自己的值，通知展示完整学生数据。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>For</code>（<strong class="example-control-reference" data-example-control="Student_Score_Chinese" title="语文">语文</strong>、<strong
+                    class="example-control-reference" data-example-control="Student_Score_Math" title="数学">数学</strong>、<strong class="example-control-reference"
+                    data-example-control="Student_Score_Physics" title="物理">物理</strong>）：初始为
+                <code>Student.Score.Chinese</code>、<code>Student.Score.Math</code>、<code>Student.Score.Physics</code>、<code>Student.Score.Chemistry</code>，绑定模型属性路径，读取初始值、字段名称及验证注解，并在提交时接收字段值。
+            </li>
+        </ul>
+    </section>
 }

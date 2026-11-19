@@ -301,19 +301,21 @@
             </f:TabStrip>
             <f:Panel ID="PanelExample4" BlockMD="6" BlockLG="8" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
                 <Items>
-                    <f:Grid ID="Grid1" CssClass="mygrid responsive-card-grid" BlockMD="12" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="表格示例" 
-                            EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
-                            ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard"
-                            DataIDField="Id" _DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc">
+                    <f:Grid ID="Grid1" CssClass="mygrid responsive-card-grid" BlockMD="12" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
+                        Title="表格示例" EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
+                        ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard" DataIDField="Id"
+                        _DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc">
                         <Columns>
                             <f:RenderField ColumnID="UserProfile" Width="250" RendererFunction="renderUserProfile" HeaderText="基本信息"></f:RenderField>
                             <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
                             <f:RenderField Width="150" ColumnID="Rate1" DataField="Rate1" FieldType="Int" HeaderText="评分" RendererFunction="renderRate1" />
-                            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" HeaderText="所学专业"></f:RenderField>
+                            <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150"
+                                HeaderText="所学专业"></f:RenderField>
                             <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
                         </Columns>
                     </f:Grid>
-                    <f:Form ID="FormExample1" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10" BodyPadding="20" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
+                    <f:Form ID="FormExample1" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10" BodyPadding="20" ShowBorder="true"
+                        ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
                         <Items>
                             <f:Label ID="Label1" BlockMD="6" Label="标签" Text="标签的值">
                             </f:Label>
@@ -326,9 +328,11 @@
                             </f:DropDownList>
                             <f:TextBox ID="TextBox1" BlockMD="6" ShowRedStar="true" Label="文本框" Required="true" Text="">
                             </f:TextBox>
-                            <f:DatePicker BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1" SelectedDate="@DateTime.Parse("2014-07-10")" ShowRedStar="true">
+                            <f:DatePicker BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1"
+                                SelectedDate="@DateTime.Parse("2014-07-10")" ShowRedStar="true">
                             </f:DatePicker>
-                            <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30" Required="true" Text="08:30" EmptyText="请选择时间">
+                            <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30" Required="true"
+                                Text="08:30" EmptyText="请选择时间">
                             </f:TimePicker>
                             <f:CheckBoxList ID="CheckBoxList1" BlockMD="12" Label="复选框列表" ColumnNumber="3">
                                 <f:CheckItem Text="可选项 1" Value="value1" />
@@ -345,12 +349,12 @@
             </f:Panel>
             <f:Panel ID="PanelExample5" BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20" ShowBorder="false" ShowHeader="false">
                 <Items>
-                    <f:Panel ID="PanelExample6" BlockMD="12" BodyPadding="20 20 0 20" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="本站统计" Content="@("<ul class=\"mysitestats\"></ul>")">
+                    <f:Panel ID="PanelExample6" BlockMD="12" BodyPadding="20 20 0 20" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="本站统计"
+                        Content="@("<ul class=\"mysitestats\"></ul>")">
                     </f:Panel>
                     <f:Panel ID="PanelExample7" BlockMD="12" BodyPadding="20" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
                         <Items>
-                            <f:Chart ID="ChartTrafficSources" Height="300" DataCategoryField="Category"
-                                Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
+                            <f:Chart ID="ChartTrafficSources" Height="300" DataCategoryField="Category" Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
                                 ShowLegend="true" LegendPosition="Left" LegendTop="top" PieEmphasisShadow="true" PieCenter="50%,60%">
                                 <Series>
                                     <f:ChartSeries Key="source" Type="Pie" Name="访问来源" DataValueField="Value" />
@@ -424,18 +428,42 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示用 <code>Block</code> 布局组合统计卡片、图表、表格和表单，并在窄屏重新排列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>响应排列与卡片翻面</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control="TabStripExample1" title="选项卡">选项卡</strong>中的统计卡片、图表和表格，再缩小浏览器。<br />结果：各部分按本页块宽度重新分列或层叠，内容仍来自同一组示例数据。</li>
-        <li>点击统计卡片上的信息图标，再点击背面的图标。<br />结果：卡片翻面显示说明，再次点击恢复正面，页面其它组件不被替换。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="TabStripExample1" title="选项卡">选项卡</strong>）：首页外层使用 <code>Block</code> 布局。</li>
-        <li><code>BlockMD</code>（<strong class="example-control-reference" data-example-control="ContentPanelExample1" title="第 1 个内容面板">第 1 个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample2" title="第 2 个内容面板">第 2 个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample3" title="第 3 个内容面板">第 3 个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample4" title="第 4 个内容面板">第 4 个内容面板</strong>、<strong class="example-control-reference" data-example-control="TabStripExample1" title="选项卡">选项卡</strong>、<strong class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample5" title="第 5 个内容面板">第 5 个内容面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample3" title="第 3 个面板">第 3 个面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample6" title="第 6 个内容面板">第 6 个内容面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample4" title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control="Grid1" title="表格示例">表格示例</strong>、<strong class="example-control-reference" data-example-control="FormExample1" title="表单示例">表单示例</strong>、<strong class="example-control-reference" data-example-control="Label1" title="标签">标签</strong>、<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>、<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本框">文本框</strong>、<strong class="example-control-reference" data-example-control="DatePicker1" title="日期">日期</strong>、<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control="TextArea1" title="描述">描述</strong>、<strong class="example-control-reference" data-example-control="PanelExample5" title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample6" title="本站统计">本站统计</strong>、<strong class="example-control-reference" data-example-control="PanelExample7" title="访问来源">访问来源</strong>）：各组分别设为<code>6</code>、<code>12</code>，定义各区域在桌面宽度下的占比。</li>
-        <li><code>ResponsiveCardSize</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格示例">表格示例</strong>）：初始为<code>MD</code>，表格在窄屏使用本页卡片视图。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示用 <code>Block</code> 布局组合统计卡片、图表、表格和表单，并在窄屏重新排列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>响应排列与卡片翻面</h3>
+        <ul>
+            <li>对照<strong class="example-control-reference" data-example-control="TabStripExample1"
+                    title="选项卡">选项卡</strong>中的统计卡片、图表和表格，再缩小浏览器。<br />结果：各部分按本页块宽度重新分列或层叠，内容仍来自同一组示例数据。</li>
+            <li>点击统计卡片上的信息图标，再点击背面的图标。<br />结果：卡片翻面显示说明，再次点击恢复正面，页面其它组件不被替换。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="TabStripExample1" title="选项卡">选项卡</strong>）：首页外层使用
+                <code>Block</code> 布局。
+            </li>
+            <li><code>BlockMD</code>（<strong class="example-control-reference" data-example-control="ContentPanelExample1" title="第 1 个内容面板">第 1
+                    个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample2" title="第 2 个内容面板">第 2
+                    个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample3" title="第 3 个内容面板">第 3
+                    个内容面板</strong>、<strong class="example-control-reference" data-example-control="ContentPanelExample4" title="第 4 个内容面板">第 4
+                    个内容面板</strong>、<strong class="example-control-reference" data-example-control="TabStripExample1" title="选项卡">选项卡</strong>、<strong
+                    class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>、<strong
+                    class="example-control-reference" data-example-control="ContentPanelExample5" title="第 5 个内容面板">第 5 个内容面板</strong>、<strong
+                    class="example-control-reference" data-example-control="PanelExample3" title="第 3 个面板">第 3 个面板</strong>、<strong
+                    class="example-control-reference" data-example-control="ContentPanelExample6" title="第 6 个内容面板">第 6 个内容面板</strong>、<strong
+                    class="example-control-reference" data-example-control="PanelExample4" title="第 4 个面板">第 4 个面板</strong>、<strong
+                    class="example-control-reference" data-example-control="Grid1" title="表格示例">表格示例</strong>、<strong class="example-control-reference"
+                    data-example-control="FormExample1" title="表单示例">表单示例</strong>、<strong class="example-control-reference" data-example-control="Label1"
+                    title="标签">标签</strong>、<strong class="example-control-reference" data-example-control="CheckBox1" title="复选框">复选框</strong>、<strong
+                    class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference"
+                    data-example-control="TextBox1" title="文本框">文本框</strong>、<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期">日期</strong>、<strong class="example-control-reference" data-example-control="TimePicker1" title="时间">时间</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBoxList1" title="复选框列表">复选框列表</strong>、<strong
+                    class="example-control-reference" data-example-control="TextArea1" title="描述">描述</strong>、<strong class="example-control-reference"
+                    data-example-control="PanelExample5" title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference"
+                    data-example-control="PanelExample6" title="本站统计">本站统计</strong>、<strong class="example-control-reference"
+                    data-example-control="PanelExample7" title="访问来源">访问来源</strong>）：各组分别设为<code>6</code>、<code>12</code>，定义各区域在桌面宽度下的占比。</li>
+            <li><code>ResponsiveCardSize</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格示例">表格示例</strong>）：初始为<code>MD</code>，表格在窄屏使用本页卡片视图。</li>
+        </ul>
+    </section>
 }

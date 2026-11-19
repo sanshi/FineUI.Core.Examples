@@ -28,16 +28,16 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500"
-            AllowPaging="true" PageSize="15" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged"
-            EnableSummary="true" SummaryPosition="Bottom" SummaryRowCount="3">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500" AllowPaging="true"
+        PageSize="15" IsDatabasePaging="true" OnPageIndexChanged="Grid1_PageIndexChanged" EnableSummary="true" SummaryPosition="Bottom" SummaryRowCount="3">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
             <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
-            <f:RenderField HeaderText="所学专业" DataField="Major" ColumnID="Major" RendererFunction="renderMajor" MinWidth="150" ExpandUnusedSpace="true" SummaryRendererFunction="majorSummaryRenderer" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" ColumnID="Major" RendererFunction="renderMajor" MinWidth="150" ExpandUnusedSpace="true"
+                SummaryRendererFunction="majorSummaryRenderer" />
             <f:RenderField HeaderText="学费" DataField="Fee" ColumnID="Fee" SummaryType="Min" SummaryRendererFunction="feeSummaryRenderer" />
             <f:RenderField HeaderText="学杂费" DataField="ExtraFee" ColumnID="ExtraFee" SummaryRendererFunction="donateSummaryRenderer" />
         </Columns>
@@ -94,16 +94,20 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在多行合计中分别显示当前加载记录的最小值、最大值与平均值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照多行统计范围</h3>
-    <ul>
-        <li>查看<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>底部各行合计，再切换下一页。<br />结果：三行分别计算最小值、最大值、平均值，统计基于本次加载页，换页后按新页数据更新。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SummaryRowCount</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>3</code>，指定显示的合计行数量，并与各行的统计数据或统计配置对应。</li>
-        <li><code>SummaryRendererFunction / calcSummaryValue</code>（<strong>合计数据及费用列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：根据合计行序号分别计算 min、max、avg，读取当前已加载记录的数值。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在多行合计中分别显示当前加载记录的最小值、最大值与平均值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照多行统计范围</h3>
+        <ul>
+            <li>查看<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>底部各行合计，再切换下一页。<br />结果：三行分别计算最小值、最大值、平均值，统计基于本次加载页，换页后按新页数据更新。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SummaryRowCount</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>3</code>，指定显示的合计行数量，并与各行的统计数据或统计配置对应。
+            </li>
+            <li><code>SummaryRendererFunction / calcSummaryValue</code>（<strong>合计数据及费用列</strong>，位于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格">表格</strong>）：根据合计行序号分别计算 min、max、avg，读取当前已加载记录的数值。</li>
+        </ul>
+    </section>
 }

@@ -9,12 +9,13 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            EnableColumnMove="true" AllowColumnLocking="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableColumnMove="true"
+        AllowColumnLocking="true">
         <Columns>
             <f:RowNumberField ColumnID="RowNumber" />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" Locked="true" EnableLock="false" />
-            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Locked="true" EnableLock="true" />
+            <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Locked="true"
+                EnableLock="true" />
             <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
             <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
             <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" RendererFunction="renderMajor" Width="300" EnableLock="true" />
@@ -100,19 +101,24 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>拖动锁定与普通列调整顺序，保存列位置及锁定配置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>移动列后刷新核对</h3>
-    <ol>
-        <li>将<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>一个允许移动的列标题拖到另一列附近。<br />结果：列头和正文一起采用新顺序，行中的实际字段值仍对应原字段；事件读取最新列清单。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnRefresh" title="刷新本页面（保持列顺序和列锁定状态）">刷新本页面（保持列顺序和列锁定状态）</strong>。<br />结果：后台按当前会话保存的配置创建列，顺序与锁定状态恢复。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：[姓名]列锁定后无法通过表头菜单解锁；[性别]列锁定后仍可通过表头菜单解锁。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableColumnMove</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，允许拖动列标题调整位置。</li>
-        <li><code>columnmove</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：移动后读取列顺序与事件参数；需要恢复锁定时同时保存相应锁定状态。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>拖动锁定与普通列调整顺序，保存列位置及锁定配置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>移动列后刷新核对</h3>
+        <ol>
+            <li>将<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>一个允许移动的列标题拖到另一列附近。<br />结果：列头和正文一起采用新顺序，行中的实际字段值仍对应原字段；事件读取最新列清单。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnRefresh"
+                    title="刷新本页面（保持列顺序和列锁定状态）">刷新本页面（保持列顺序和列锁定状态）</strong>。<br />结果：后台按当前会话保存的配置创建列，顺序与锁定状态恢复。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：[姓名]列锁定后无法通过表头菜单解锁；[性别]列锁定后仍可通过表头菜单解锁。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableColumnMove</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，允许拖动列标题调整位置。
+            </li>
+            <li><code>columnmove</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：移动后读取列顺序与事件参数；需要恢复锁定时同时保存相应锁定状态。</li>
+        </ul>
+    </section>
 }

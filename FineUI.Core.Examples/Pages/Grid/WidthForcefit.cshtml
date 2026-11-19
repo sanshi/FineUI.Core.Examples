@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)" DataIDField="Id" DataTextField="Name" IsViewPort="true" Margin="24" ForceFit="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)" DataIDField="Id"
+        DataTextField="Name" IsViewPort="true" Margin="24" ForceFit="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -29,15 +30,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>按原有列宽比例分配表格空间，使各列随容器宽度一起变化。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>调整可用宽度核对列宽</h3>
-    <ol>
-        <li>缩窄再放宽<strong class="example-control-reference" data-example-control="Grid1" title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)">表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)</strong>所在区域。<br />结果：各列按原宽度比例一起伸缩，内容区随容器重新分配。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ForceFit</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)">表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)</strong>）：初始为 <code>true</code>，开启各列随容器宽度按比例调整。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>按原有列宽比例分配表格空间，使各列随容器宽度一起变化。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>调整可用宽度核对列宽</h3>
+        <ol>
+            <li>缩窄再放宽<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)">表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)</strong>所在区域。<br />结果：各列按原宽度比例一起伸缩，内容区随容器重新分配。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ForceFit</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)">表格（ForceFit=true，各列宽度自适应）(改变页面大小来观察每列宽度的变化)</strong>）：初始为
+                <code>true</code>，开启各列随容器宽度按比例调整。
+            </li>
+        </ul>
+    </section>
 }

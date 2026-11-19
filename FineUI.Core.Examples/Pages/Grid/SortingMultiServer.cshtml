@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
-            AllowSorting="true" SortingToolTip="true" SortingCancel="true" SortingMulti="true" _SortFieldArray="Gender,ASC" OnSort="Grid1_Sort">
+        AllowSorting="true" SortingToolTip="true" SortingCancel="true" SortingMulti="true" _SortFieldArray="Gender,ASC" OnSort="Grid1_Sort">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" SortField="Name" Width="150" />
@@ -42,15 +42,18 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由后台一次设置多列排序条件，同时更新数据顺序和各列表头的方向标记。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>后台指定组合排序</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnChangeOnServer" title="[入学年份]正序，[姓名]倒序">[入学年份]正序，[姓名]倒序</strong>。<br />结果：后台先按入学年份升序排列，同一年份再按姓名降序排列；重新绑定后的记录和两个列标题标记一致。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SortFieldArray</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>Gender,ASC</code>，保存有先后顺序的字段与方向组合；本页按钮把<strong>入学年份</strong> ASC、姓名 DESC 依次写入并重新绑定数据。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由后台一次设置多列排序条件，同时更新数据顺序和各列表头的方向标记。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>后台指定组合排序</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnChangeOnServer"
+                    title="[入学年份]正序，[姓名]倒序">[入学年份]正序，[姓名]倒序</strong>。<br />结果：后台先按入学年份升序排列，同一年份再按姓名降序排列；重新绑定后的记录和两个列标题标记一致。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SortFieldArray</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>Gender,ASC</code>，保存有先后顺序的字段与方向组合；本页按钮把<strong>入学年份</strong> ASC、姓名 DESC 依次写入并重新绑定数据。
+            </li>
+        </ul>
+    </section>
 }

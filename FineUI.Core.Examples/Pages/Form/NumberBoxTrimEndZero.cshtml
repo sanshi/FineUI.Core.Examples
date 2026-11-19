@@ -30,18 +30,25 @@
                 结果：第一个显示 <code>1.2</code>，第二个保留 <code>1.20</code>。
             </li>
             <li>
-                在<strong class="example-control-reference" data-example-control="NumberBox2" title="小数（两位精度，初始值：1.20，TrimEndZero=false）">第二个字段</strong>输入 <code>2.4</code>，然后移开焦点。<br />
+                在<strong class="example-control-reference" data-example-control="NumberBox2" title="小数（两位精度，初始值：1.20，TrimEndZero=false）">第二个字段</strong>输入
+                <code>2.4</code>，然后移开焦点。<br />
                 结果：补足两位小数显示 <code>2.40</code>。
             </li>
             <li>
-                在<strong class="example-control-reference" data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">第一个字段</strong>输入 <code>2.467</code>，然后移开焦点。<br />
+                在<strong class="example-control-reference" data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">第一个字段</strong>输入
+                <code>2.467</code>，然后移开焦点。<br />
                 结果：仍按两位精度处理，显示 <code>2.47</code>；去除末尾零不表示放宽精度。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>TrimEndZero</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">小数（两位精度，初始值：1.20，TrimEndZero=true）</strong>）：<strong class="example-control-reference" data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">第一个字段</strong>为 <code>true</code>，第二个为 <code>false</code>。</li>
-            <li><code>DecimalPrecision</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">小数（两位精度，初始值：1.20，TrimEndZero=true）</strong>、<strong class="example-control-reference" data-example-control="NumberBox2" title="小数（两位精度，初始值：1.20，TrimEndZero=false）">小数（两位精度，初始值：1.20，TrimEndZero=false）</strong>）：初始为<code>2</code>，保留两位小数，先处理精度再决定是否去除末尾零。</li>
+            <li><code>TrimEndZero</code>（<strong class="example-control-reference" data-example-control="NumberBox1"
+                    title="小数（两位精度，初始值：1.20，TrimEndZero=true）">小数（两位精度，初始值：1.20，TrimEndZero=true）</strong>）：<strong class="example-control-reference"
+                    data-example-control="NumberBox1" title="小数（两位精度，初始值：1.20，TrimEndZero=true）">第一个字段</strong>为 <code>true</code>，第二个为 <code>false</code>。</li>
+            <li><code>DecimalPrecision</code>（<strong class="example-control-reference" data-example-control="NumberBox1"
+                    title="小数（两位精度，初始值：1.20，TrimEndZero=true）">小数（两位精度，初始值：1.20，TrimEndZero=true）</strong>、<strong class="example-control-reference"
+                    data-example-control="NumberBox2"
+                    title="小数（两位精度，初始值：1.20，TrimEndZero=false）">小数（两位精度，初始值：1.20，TrimEndZero=false）</strong>）：初始为<code>2</code>，保留两位小数，先处理精度再决定是否去除末尾零。</li>
         </ul>
     </section>
 }

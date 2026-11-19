@@ -10,11 +10,11 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
         <Items>
-            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd HH:mm" Label="开始日期" EmptyText="请选择开始日期"
-                          ShowRedStar="true" ShowTime="true" ShowSecond="false" SelectedDate="DateTime.Now.AddDays(2)">
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd HH:mm" Label="开始日期" EmptyText="请选择开始日期" ShowRedStar="true"
+                ShowTime="true" ShowSecond="false" SelectedDate="DateTime.Now.AddDays(2)">
             </f:DatePicker>
             <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd HH:mm" ShowRedStar="true"
-                          CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" ShowTime="true" ShowSecond="false">
+                CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" ShowTime="true" ShowSecond="false">
             </f:DatePicker>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
         </Items>
@@ -38,8 +38,13 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为<code>yyyy-MM-dd HH:mm</code>，控制选中值的文字格式。</li>
-            <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为 <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。</li>
+            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong
+                    class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为<code>yyyy-MM-dd
+                    HH:mm</code>，控制选中值的文字格式。</li>
+            <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong
+                    class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为
+                <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。
+            </li>
         </ul>
     </section>
 }

@@ -19,7 +19,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name">
+        OnRowCommand="Grid1_RowCommand" _DataKeyNames="Id,Name">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -65,15 +65,17 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在客户端行命令回调中拦截指定动作，其他命令继续交给后台处理。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照客户端拦截与后台处理</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中的<strong>客户端命令</strong>，再点击普通服务器命令。<br />结果：指定命令只显示浏览器提示，回调返回 false 后不执行后台事件；普通命令仍回发并显示本次行信息。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>rowcommand</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：浏览器回调根据命令名判断是否拦截，返回 false 只取消当前命令的后台处理。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在客户端行命令回调中拦截指定动作，其他命令继续交给后台处理。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照客户端拦截与后台处理</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>中的<strong>客户端命令</strong>，再点击普通服务器命令。<br />结果：指定命令只显示浏览器提示，回调返回 false 后不执行后台事件；普通命令仍回发并显示本次行信息。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>rowcommand</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：浏览器回调根据命令名判断是否拦截，返回 false 只取消当前命令的后台处理。</li>
+        </ul>
+    </section>
 }

@@ -10,13 +10,13 @@
 @section body {
 
     <f:Button ID="Button1" Text="在本页面弹出窗体" ClickHandler="onOpenWindow1Click"></f:Button>
-    <f:Window ID="Window1" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow")"
-              EnableMaximize="true" EnableResize="true" Height="500" Width="900" Title="窗体一" OnClose="Window1_Close">
+    <f:Window ID="Window1" Hidden="true" EnableIFrame="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow")" EnableMaximize="true" EnableResize="true" Height="500"
+        Width="900" Title="窗体一" OnClose="Window1_Close">
     </f:Window>
     <br />
     <f:Button ID="Button2" Text="在父页面弹出窗体" ClickHandler="onOpenWindow2Click"></f:Button>
-    <f:Window ID="Window2" Hidden="true" EnableIFrame="true" EnableMaximize="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow")"
-              EnableResize="true" Target="Parent" Height="500" Width="900" Title="窗体二" OnClose="Window2_Close">
+    <f:Window ID="Window2" Hidden="true" EnableIFrame="true" EnableMaximize="true" IFrameUrl="@Url.Content("~/IFrame/IFrameCloseAll/IFrameWindow")" EnableResize="true" Target="Parent"
+        Height="500" Width="900" Title="窗体二" OnClose="Window2_Close">
     </f:Window>
     <br />
     <br />
@@ -41,19 +41,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示从最内层子窗体关闭整组嵌套窗体，并通知最外层页面。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>逐层打开并关闭窗体</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="在本页面弹出窗体">在本页面弹出窗体</strong>。<br />结果：先打开包含子页面的第一层窗体。</li>
-        <li>在子页面继续打开内层 <code>iframe</code> 窗体。<br />结果：第二层窗体在本页指定的承载位置显示，原有外层页面继续保留。</li>
-        <li>在最内层点击<strong>全部关闭</strong>。<br />结果：对应窗体按本页调用顺序关闭，最外层结果标签显示关闭信息或时间。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>Parent</code>，分别控制每一层窗体的显示位置。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>true</code>，各层使用独立子页面。</li>
-        <li><code>F.getActiveWindow()</code>（<strong>嵌套子页面</strong>）：从子页面取得对应活动窗体，避免关闭错误的父层。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示从最内层子窗体关闭整组嵌套窗体，并通知最外层页面。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>逐层打开并关闭窗体</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="在本页面弹出窗体">在本页面弹出窗体</strong>。<br />结果：先打开包含子页面的第一层窗体。</li>
+            <li>在子页面继续打开内层 <code>iframe</code> 窗体。<br />结果：第二层窗体在本页指定的承载位置显示，原有外层页面继续保留。</li>
+            <li>在最内层点击<strong>全部关闭</strong>。<br />结果：对应窗体按本页调用顺序关闭，最外层结果标签显示关闭信息或时间。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window2"
+                    title="窗体二">窗体二</strong>）：初始为<code>Parent</code>，分别控制每一层窗体的显示位置。</li>
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>、<strong
+                    class="example-control-reference" data-example-control="Window2" title="窗体二">窗体二</strong>）：初始为<code>true</code>，各层使用独立子页面。</li>
+            <li><code>F.getActiveWindow()</code>（<strong>嵌套子页面</strong>）：从子页面取得对应活动窗体，避免关闭错误的父层。</li>
+        </ul>
+    </section>
 }

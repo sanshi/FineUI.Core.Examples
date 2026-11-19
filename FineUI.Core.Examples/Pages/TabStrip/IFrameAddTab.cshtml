@@ -33,22 +33,27 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示后台按固定 <code>ID</code> 添加或更新 <code>iframe</code> 标签，重复使用同一标签显示不同页面。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>复用和新增标签</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="打开DeepSeek官网（tab1_iframe）">打开DeepSeek官网（tab1_iframe）</strong>。<br />结果：后台添加并激活第一个动态 <code>iframe</code> 标签。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button2" title="打开ASP.NET官网（tab1_iframe）">打开ASP.NET官网（tab1_iframe）</strong>。<br />结果：后台使用相同标签 <code>ID</code> 更新标题和地址，不重复创建另一个同名标签。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="打开FineUI官网（tab2_iframe）">打开FineUI官网（tab2_iframe）</strong>。<br />结果：后台使用另一标签 <code>ID</code> 打开新标签，原标签继续保留。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>由于设置了相同的<code>tabID</code>，专业版示例和开源版示例在同一个选项卡中打开。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AddTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：相同 <code>ID</code> 对应同一个逻辑标签，新增和更新由本页后台代码区分。</li>
-        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="TabExample1" title="FineUI官网">FineUI官网</strong>）：初始为<code>https://fineui.com/</code>，更新标签中实际打开的页面地址。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示后台按固定 <code>ID</code> 添加或更新 <code>iframe</code> 标签，重复使用同一标签显示不同页面。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>复用和新增标签</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="打开DeepSeek官网（tab1_iframe）">打开DeepSeek官网（tab1_iframe）</strong>。<br />结果：后台添加并激活第一个动态 <code>iframe</code> 标签。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button2"
+                    title="打开ASP.NET官网（tab1_iframe）">打开ASP.NET官网（tab1_iframe）</strong>。<br />结果：后台使用相同标签 <code>ID</code> 更新标题和地址，不重复创建另一个同名标签。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3"
+                    title="打开FineUI官网（tab2_iframe）">打开FineUI官网（tab2_iframe）</strong>。<br />结果：后台使用另一标签 <code>ID</code> 打开新标签，原标签继续保留。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>由于设置了相同的<code>tabID</code>，专业版示例和开源版示例在同一个选项卡中打开。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AddTab()</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：相同 <code>ID</code>
+                对应同一个逻辑标签，新增和更新由本页后台代码区分。</li>
+            <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="TabExample1"
+                    title="FineUI官网">FineUI官网</strong>）：初始为<code>https://fineui.com/</code>，更新标签中实际打开的页面地址。</li>
+        </ul>
+    </section>
 }

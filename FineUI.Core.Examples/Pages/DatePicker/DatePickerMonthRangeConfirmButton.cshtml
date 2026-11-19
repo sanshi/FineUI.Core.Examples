@@ -10,8 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
         <Items>
-            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy/MM"
-                          Label="月份范围" EmptyText="请选择月份范围" ShowRedStar="true" DisplayType="MonthRange" ShowConfirmButton="true" ConfirmToSelect="true">
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy/MM" Label="月份范围" EmptyText="请选择月份范围" ShowRedStar="true"
+                DisplayType="MonthRange" ShowConfirmButton="true" ConfirmToSelect="true">
             </f:DatePicker>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
         </Items>
@@ -43,8 +43,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ShowConfirmButton</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="月份范围">月份范围</strong>）：显示面板中的<strong>确定</strong>按钮；是否延后提交选择由 <code>ConfirmToSelect</code> 控制。</li>
-            <li><code>ConfirmToSelect</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="月份范围">月份范围</strong>）：将当前选择暂存在面板中，点击<strong>确定</strong>后才提交当前值并触发选中事件。</li>
+            <li><code>ShowConfirmButton</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="月份范围">月份范围</strong>）：显示面板中的<strong>确定</strong>按钮；是否延后提交选择由 <code>ConfirmToSelect</code> 控制。</li>
+            <li><code>ConfirmToSelect</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="月份范围">月份范围</strong>）：将当前选择暂存在面板中，点击<strong>确定</strong>后才提交当前值并触发选中事件。</li>
         </ul>
     </section>
 }

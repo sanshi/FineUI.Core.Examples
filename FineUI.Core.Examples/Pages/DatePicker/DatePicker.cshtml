@@ -10,9 +10,11 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
         <Items>
-            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd" Label="开始日期" EmptyText="请选择开始日期" ShowRedStar="true" SelectedDate="DateTime.Now.AddDays(2)">
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd" Label="开始日期" EmptyText="请选择开始日期" ShowRedStar="true"
+                SelectedDate="DateTime.Now.AddDays(2)">
             </f:DatePicker>
-            <f:DatePicker ID="DatePicker2" Label="结束日期" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" ShowRedStar="true">
+            <f:DatePicker ID="DatePicker2" Label="结束日期" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd"
+                CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" ShowRedStar="true">
             </f:DatePicker>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
         </Items>
@@ -51,11 +53,16 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为<code>yyyy-MM-dd</code>，控制选中值的文字格式。</li>
-            <li><code>SelectedDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>）：设置当前选中值，显示和高亮随当前值更新。</li>
-            <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：结束字段引用同组开始字段，校验时读取该字段当前值进行比较。</li>
-            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：本页要求结束值严格大于开始值；相等或更早时不能通过验证。</li>
-            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
+            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong
+                    class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：初始为<code>yyyy-MM-dd</code>，控制选中值的文字格式。</li>
+            <li><code>SelectedDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="开始日期">开始日期</strong>）：设置当前选中值，显示和高亮随当前值更新。</li>
+            <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期">结束日期</strong>）：结束字段引用同组开始字段，校验时读取该字段当前值进行比较。</li>
+            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期">结束日期</strong>）：本页要求结束值严格大于开始值；相等或更早时不能通过验证。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>、<strong
+                    class="example-control-reference" data-example-control="DatePicker2" title="结束日期">结束日期</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
         </ul>
     </section>
 }

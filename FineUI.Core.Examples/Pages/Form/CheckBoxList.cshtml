@@ -26,7 +26,8 @@
             <f:CheckBoxList ID="CheckBoxList2" Label="列表二（一列）" ColumnNumber="1">
             </f:CheckBoxList>
             <f:Label></f:Label>
-            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="CheckBoxList3_SelectedIndexChanged">
+            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true"
+                OnSelectedIndexChanged="CheckBoxList3_SelectedIndexChanged">
                 <f:CheckItem Text="可选项 1（很长很长很长很长很长很长的可选项）" Value="value1" />
                 <f:CheckItem Text="可选项 2" Value="value2" />
                 <f:CheckItem Text="可选项 3" Value="value3" />
@@ -87,7 +88,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-check-box-checked" aria-hidden="true"></i>设置并读取多选值</h3>
         <ol>
             <li>
-                点击<strong class="example-control-reference" data-example-control="btnServerSetSelectedValue" title="选中上面列表中的第一项和第三项">选中上面列表中的第一项和第三项</strong>。<br />
+                点击<strong class="example-control-reference" data-example-control="btnServerSetSelectedValue"
+                    title="选中上面列表中的第一项和第三项">选中上面列表中的第一项和第三项</strong>。<br />
                 结果：回发后由后台将<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>选为第一项和第三项，第二项取消选中。
             </li>
             <li>
@@ -95,7 +97,9 @@
                 结果：回发后由后台显示 <code>value1</code>、<code>value3</code> 这两个选项值。
             </li>
             <li>
-                手动改变<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>的勾选，再点击<strong class="example-control-reference" data-example-control="btnClientGetSelectedValue" title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript 脚本）</strong>。<br />
+                手动改变<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>的勾选，再点击<strong
+                    class="example-control-reference" data-example-control="btnClientGetSelectedValue" title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript
+                    脚本）</strong>。<br />
                 结果：浏览器直接读取当前选中值数组并弹出显示，无需回发。
             </li>
         </ol>
@@ -106,17 +110,38 @@
                 结果：选择变化后回发，由后台显示<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三</strong>的当前选中值。
             </li>
             <li>
-                对照<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二（一列）</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二</strong>逐行排列，<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>分成三列并优先按列向下排列；多选规则相同。
+                对照<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二（一列）</strong>和<strong
+                    class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二</strong>逐行排列，<strong
+                    class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>分成三列并优先按列向下排列；多选规则相同。
             </li>
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>）：读取或设置多个选项值，本例可设为 <code>value1</code>、<code>value3</code>。</li>
-            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二</strong>为 <code>1</code>，<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>为 <code>3</code>。</li>
-            <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三</strong>选择变化后回发，后台返回当前选中值。</li>
-            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4" title="列表四（竖排）">列表四</strong>必须各选至少一项，<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>时检查。</li>
+            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（一列）">列表二（一列）</strong>、<strong
+                    class="example-control-reference" data-example-control="CheckBoxList3" title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>）：读取或设置多个选项值，本例可设为
+                <code>value1</code>、<code>value3</code>。
+            </li>
+            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="CheckBoxList2"
+                    title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList2"
+                    title="列表二（一列）">列表二</strong>为 <code>1</code>，<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四</strong>为 <code>3</code>。</li>
+            <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三</strong>选择变化后回发，后台返回当前选中值。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三（选中项改变事件）</strong>、<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="CheckBoxList3"
+                    title="列表三（选中项改变事件）">列表三</strong>和<strong class="example-control-reference" data-example-control="CheckBoxList4"
+                    title="列表四（竖排）">列表四</strong>必须各选至少一项，<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="提交表单">提交表单</strong>时检查。</li>
         </ul>
     </section>
 }

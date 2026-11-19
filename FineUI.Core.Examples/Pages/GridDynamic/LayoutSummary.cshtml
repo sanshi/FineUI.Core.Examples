@@ -5,14 +5,12 @@
 }
 
 @section body {
-    <f:Grid ID="Grid1" Title="动态修改列锁定与合计" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400"
-            DataIDField="Id" DataTextField="Name" AllowPaging="false" IsDatabasePaging="false"
-            IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true"
-            >
+    <f:Grid ID="Grid1" Title="动态修改列锁定与合计" ShowHeader="true" ShowBorder="true" IsFluid="true" Height="400" DataIDField="Id" DataTextField="Name"
+        AllowPaging="false" IsDatabasePaging="false" IsDatabaseSorting="false" EnableMultiSelect="false" PagingToolbarVisible="true">
         <Columns>
             <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" SortField="Name" Width="220" />
-            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int"
-                    SortField="EntranceYear" Width="240" SummaryType="Count" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" SortField="EntranceYear" Width="240"
+                SummaryType="Count" />
         </Columns>
         <PageItems>
             <f:Button ID="BusinessButton" Text="业务按钮" OnClick="BusinessButton_Click" />
@@ -29,19 +27,24 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过后台同时切换姓名列锁定与合计行的启用、位置。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="应用配置">应用配置</strong>。<br />结果：<strong>姓名</strong>列锁定在左侧，同时在顶部启用合计行；横向滚动时锁定列留在原侧。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>开启普通列锁定和合计，并把合计行放到顶部。合计按当前数据计算，不需要重新绑定数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AllowColumnLocking / Locked</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改列锁定与合计">动态修改列锁定与合计</strong>）：表格允许列锁定后，<strong>姓名</strong>列的 Locked 指定它实际进入锁定区域。</li>
-        <li><code>EnableSummary / SummaryPosition</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="动态修改列锁定与合计">动态修改列锁定与合计</strong>）：显示合计行并放到 Top；恢复配置时关闭合计及列锁定。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过后台同时切换姓名列锁定与合计行的启用、位置。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>应用后再次读取配置</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1"
+                    title="应用配置">应用配置</strong>。<br />结果：<strong>姓名</strong>列锁定在左侧，同时在顶部启用合计行；横向滚动时锁定列留在原侧。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="Button3" title="读取当前配置">读取当前配置</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="Button2" title="恢复配置">恢复配置</strong>。<br />结果：新的独立回发读取到刚才生效的配置；恢复按钮再把本页相关设置还原为初始状态。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>开启普通列锁定和合计，并把合计行放到顶部。合计按当前数据计算，不需要重新绑定数据。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AllowColumnLocking / Locked</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="动态修改列锁定与合计">动态修改列锁定与合计</strong>）：表格允许列锁定后，<strong>姓名</strong>列的 Locked 指定它实际进入锁定区域。</li>
+            <li><code>EnableSummary / SummaryPosition</code>（<strong>表格配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="动态修改列锁定与合计">动态修改列锁定与合计</strong>）：显示合计行并放到 Top；恢复配置时关闭合计及列锁定。</li>
+        </ul>
+    </section>
 }

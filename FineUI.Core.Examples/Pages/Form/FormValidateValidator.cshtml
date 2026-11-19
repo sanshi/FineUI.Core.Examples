@@ -12,7 +12,8 @@
         <Items>
             <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin">
             </f:TextBox>
-            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister" TextMode="Password" ValidatorFunction="passwordValidator">
+            <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister" TextMode="Password"
+                ValidatorFunction="passwordValidator">
             </f:TextBox>
             <f:Button ID="btnRegister" Text="注册" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="btnRegister_Click"></f:Button>
         </Items>
@@ -43,7 +44,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>执行自定义验证</h3>
         <ol>
             <li>
-                <strong class="example-control-reference" data-example-control="tbxUserName" title="用户名">用户名</strong>保持有值，密码输入<code>123</code>，点击<strong class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>。<br />
+                <strong class="example-control-reference" data-example-control="tbxUserName" title="用户名">用户名</strong>保持有值，密码输入<code>123</code>，点击<strong
+                    class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>。<br />
                 结果：密码框显示“密码必须为 <code>6</code> 个字符！”，浏览器阻止回发。
             </li>
             <li>
@@ -53,7 +55,9 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ValidatorFunction</code>（<strong class="example-control-reference" data-example-control="tbxPassword" title="密码">密码</strong>）：指定 <code>passwordValidator</code>；函数读取当前密码，符合条件返回 <code>true</code>，否则返回错误文字。</li>
+            <li><code>ValidatorFunction</code>（<strong class="example-control-reference" data-example-control="tbxPassword" title="密码">密码</strong>）：指定
+                <code>passwordValidator</code>；函数读取当前密码，符合条件返回 <code>true</code>，否则返回错误文字。
+            </li>
         </ul>
     </section>
 }

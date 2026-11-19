@@ -20,8 +20,8 @@
 
     <f:Panel ID="Panel2" ShowBorder="false" Layout="VBox" BodyPadding="10" ShowHeader="false" IsViewPort="true">
         <Items>
-            <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="购物车" BoxFlex="1" DataIDField="Id" DataTextField="Name"
-                    EnableCheckBoxSelect="true" EnableTextSelection="true" KeepCurrentSelection="true">
+            <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="购物车" BoxFlex="1" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+                EnableTextSelection="true" KeepCurrentSelection="true">
                 <Columns>
                     <f:RowNumberField />
                     <f:RenderField HeaderText="商品代码" DataField="Code" Width="150" />
@@ -193,19 +193,26 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在表格中修改商品数量并勾选商品，实时计算所选商品合计，再把结算明细交给后台读取。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>数量、选择与结算联动</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="购物车">购物车</strong>修改一个商品<strong>数量</strong>为<code>2</code>，再勾选该商品。<br />结果：这一行<strong>小计</strong>按单价乘<strong>数量</strong>更新，底部只累计已选商品；输入框过滤非数字字符。</li>
-        <li>再勾选另一件商品，或取消已有商品的勾选。<br />结果：商品数按选中行数计算，总价按选中商品及其当前<strong>数量</strong>重新累计；没有可结算金额时结算按钮禁用。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnGotoPay" title="去结算">去结算</strong>。<br />结果：客户端收集所选行的商品标识、名称、单价和输入<strong>数量</strong>，后台显示结算明细；本页不创建订单或完成支付。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="购物车">购物车</strong>）：初始为 <code>true</code>，勾选行决定哪些商品参与合计与结算。</li>
-        <li><code>selectionchange / input</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="购物车">购物车</strong>）：行选择和<strong>数量</strong>输入变化时重新计算<strong>小计</strong>与所选总价。</li>
-        <li><code>F.customEvent</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="购物车">购物车</strong>）：将本次选择及输入<strong>数量</strong>提交到示例结算处理，不把浏览器计算结果当作真实支付结果。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在表格中修改商品数量并勾选商品，实时计算所选商品合计，再把结算明细交给后台读取。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>数量、选择与结算联动</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="购物车">购物车</strong>修改一个商品<strong>数量</strong>为<code>2</code>，再勾选该商品。<br />结果：这一行<strong>小计</strong>按单价乘<strong>数量</strong>更新，底部只累计已选商品；输入框过滤非数字字符。
+            </li>
+            <li>再勾选另一件商品，或取消已有商品的勾选。<br />结果：商品数按选中行数计算，总价按选中商品及其当前<strong>数量</strong>重新累计；没有可结算金额时结算按钮禁用。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnGotoPay"
+                    title="去结算">去结算</strong>。<br />结果：客户端收集所选行的商品标识、名称、单价和输入<strong>数量</strong>，后台显示结算明细；本页不创建订单或完成支付。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="Grid1" title="购物车">购物车</strong>）：初始为
+                <code>true</code>，勾选行决定哪些商品参与合计与结算。
+            </li>
+            <li><code>selectionchange / input</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="购物车">购物车</strong>）：行选择和<strong>数量</strong>输入变化时重新计算<strong>小计</strong>与所选总价。</li>
+            <li><code>F.customEvent</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="购物车">购物车</strong>）：将本次选择及输入<strong>数量</strong>提交到示例结算处理，不把浏览器计算结果当作真实支付结果。</li>
+        </ul>
+    </section>
 }

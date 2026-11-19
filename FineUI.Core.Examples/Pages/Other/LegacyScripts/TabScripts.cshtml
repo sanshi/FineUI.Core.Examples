@@ -12,7 +12,9 @@
     <f:TabStrip ID="TabStrip1" Height="250" ActiveTabIndex="0">
         <Tabs>
             <f:Tab ID="Tab1" Title="初始页面" BodyPadding="10">
-                <Items><f:Label ID="labInitial" Text="点击上方按钮追加选项卡" /></Items>
+                <Items>
+                    <f:Label ID="labInitial" Text="点击上方按钮追加选项卡" />
+                </Items>
             </f:Tab>
         </Tabs>
     </f:TabStrip>
@@ -20,20 +22,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用旧脚本引用向指定 TabStrip 添加 IFrame 标签，重复点击不重复创建。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="btnAdd" title="添加旧脚本选项卡">添加旧脚本选项卡</strong>中，连续点击添加旧脚本选项卡两次。<br />结果：第一次显示内嵌页，第二次仍只有一个对应标签。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>GetAddTabReference 生成的旧脚本仍能新增 IFrame 选项卡；重复点击不创建重复 ID。</li>
-        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>GetAddTabReference</code>（<strong class="example-control-reference" data-example-control="btnAdd" title="添加旧脚本选项卡">添加旧脚本选项卡</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用旧脚本引用向指定 TabStrip 添加 IFrame 标签，重复点击不重复创建。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="btnAdd"
+                    title="添加旧脚本选项卡">添加旧脚本选项卡</strong>中，连续点击添加旧脚本选项卡两次。<br />结果：第一次显示内嵌页，第二次仍只有一个对应标签。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>GetAddTabReference 生成的旧脚本仍能新增 IFrame 选项卡；重复点击不创建重复 ID。</li>
+            <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>GetAddTabReference</code>（<strong class="example-control-reference" data-example-control="btnAdd"
+                    title="添加旧脚本选项卡">添加旧脚本选项卡</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+        </ul>
+    </section>
 }

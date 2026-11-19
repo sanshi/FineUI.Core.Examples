@@ -8,42 +8,49 @@
 
 @section body {
 
-<f:SimpleForm ID="Form1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="添加文章">
-    <Items>
-        <f:TextBox ID="tbxTitle" Label="文章标题" Required="true">
-        </f:TextBox>
-        <f:HtmlEditor Label="文章正文" ID="HtmlEditor1"
-                      Editor="UEditor" BasePath="@Url.Content("~/res/third-party/ueditor/")" ToolbarSet="Full" Height="400" Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
-        </f:HtmlEditor>
-        <f:HtmlEditor Label="文章摘要" ID="HtmlEditor2"
-                      Editor="UEditor" BasePath="@Url.Content("~/res/third-party/ueditor/")" ToolbarSet="Basic" Height="200">
-        </f:HtmlEditor>
-    </Items>
-    <Toolbars>
-        <f:Toolbar ToolbarAlign="Right" Position="Bottom">
-            <Items>
-                <f:Button ID="Button1" _ValidateForms="Form1" Text="获取文章内容" OnClick="Button1_Click"></f:Button>
-                <f:Button ID="Button2" Text="更新文章摘要" OnClick="Button2_Click"></f:Button>
-            </Items>
-        </f:Toolbar>
-    </Toolbars>
-</f:SimpleForm>
+    <f:SimpleForm ID="Form1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="添加文章">
+        <Items>
+            <f:TextBox ID="tbxTitle" Label="文章标题" Required="true">
+            </f:TextBox>
+            <f:HtmlEditor Label="文章正文" ID="HtmlEditor1" Editor="UEditor" BasePath="@Url.Content("~/res/third-party/ueditor/")" ToolbarSet="Full" Height="400"
+                Text="<p>FineUI.Core<br>.NET 企业级全栈 UI 框架<br><br>支持的浏览器<br>Chrome、Firefox、Safari、Edge<br><br>相关链接<br>首页：http://fineui.com/<br>示例：https://fineui.com/core/demo-mvc/</p>">
+            </f:HtmlEditor>
+            <f:HtmlEditor Label="文章摘要" ID="HtmlEditor2" Editor="UEditor" BasePath="@Url.Content("~/res/third-party/ueditor/")" ToolbarSet="Basic" Height="200">
+            </f:HtmlEditor>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ToolbarAlign="Right" Position="Bottom">
+                <Items>
+                    <f:Button ID="Button1" _ValidateForms="Form1" Text="获取文章内容" OnClick="Button1_Click"></f:Button>
+                    <f:Button ID="Button2" Text="更新文章摘要" OnClick="Button2_Click"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
 
 }
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>同时使用两个 UEditor，把文章正文和摘要分开编辑，并由正文生成摘要。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>正文与摘要分别处理</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文章正文">文章正文</strong>输入一段文字并设置加粗，点击<strong class="example-control-reference" data-example-control="Button2" title="更新文章摘要">更新文章摘要</strong>。<br />结果：后台读取正文 HTML、移除标签并按本页长度限制生成摘要，只更新<strong class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>。</li>
-        <li>填写<strong class="example-control-reference" data-example-control="tbxTitle" title="文章标题">文章标题</strong>后点击<strong class="example-control-reference" data-example-control="Button1" title="获取文章内容">获取文章内容</strong>。<br />结果：后台分别读取标题、正文和摘要并显示结果，正文与摘要不会互相覆盖。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文章正文">文章正文</strong>、<strong class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>）：初始为 <code>Full</code>、<code>Basic</code>，选择编辑器的工具栏组合。</li>
-        <li><code>Text</code>（<strong class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>）：两份编辑器各自保存 HTML；摘要按钮只给摘要编辑器赋值。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>同时使用两个 UEditor，把文章正文和摘要分开编辑，并由正文生成摘要。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>正文与摘要分别处理</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文章正文">文章正文</strong>输入一段文字并设置加粗，点击<strong
+                    class="example-control-reference" data-example-control="Button2" title="更新文章摘要">更新文章摘要</strong>。<br />结果：后台读取正文
+                HTML、移除标签并按本页长度限制生成摘要，只更新<strong class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>。</li>
+            <li>填写<strong class="example-control-reference" data-example-control="tbxTitle" title="文章标题">文章标题</strong>后点击<strong
+                    class="example-control-reference" data-example-control="Button1" title="获取文章内容">获取文章内容</strong>。<br />结果：后台分别读取标题、正文和摘要并显示结果，正文与摘要不会互相覆盖。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="文章正文">文章正文</strong>、<strong
+                    class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>）：初始为
+                <code>Full</code>、<code>Basic</code>，选择编辑器的工具栏组合。
+            </li>
+            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="HtmlEditor2" title="文章摘要">文章摘要</strong>）：两份编辑器各自保存
+                HTML；摘要按钮只给摘要编辑器赋值。</li>
+        </ul>
+    </section>
 }

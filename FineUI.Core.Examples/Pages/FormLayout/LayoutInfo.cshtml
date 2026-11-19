@@ -39,7 +39,8 @@
                                         <f:ListItem Text="男" Value="男" Selected="true" />
                                         <f:ListItem Text="女" Value="女" />
                                     </f:DropDownList>
-                                    <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" EnableEdit="false" ShowRedStar="true" Required="true"></f:DatePicker>
+                                    <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" EnableEdit="false" ShowRedStar="true" Required="true">
+                                    </f:DatePicker>
                                     <f:TextBox ID="tbxAge" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！"></f:TextBox>
                                     <f:DropDownList ID="ddlMarriage" Label="婚姻状况" ShowRedStar="true" Required="true">
                                         <f:ListItem Text="未婚" Value="0" Selected="true" />
@@ -227,8 +228,13 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>LabelWidth</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>）：控制标签宽度，使各行输入对齐。</li>
-            <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 2 个面板（面板1）">第 2 个面板（面板1）</strong>、<strong class="example-control-reference" data-example-control="Panel4" title="第 3 个面板">第 3 个面板</strong>、<strong class="example-control-reference" data-example-control="tbxConfName" title="并发症">并发症</strong>、<strong class="example-control-reference" data-example-control="Panel5" title="第 4 个面板（面板1）">第 4 个面板（面板1）</strong>、<strong class="example-control-reference" data-example-control="Image1" title="图片">图片</strong>）：按比例分配左右资料面板的宽度。</li>
+            <li><code>LabelWidth</code>（<strong class="example-control-reference" data-example-control="Form1" title="第 1 个表单">第 1 个表单</strong>）：控制标签宽度，使各行输入对齐。
+            </li>
+            <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="Panel1" title="第 2 个面板（面板1）">第 2 个面板（面板1）</strong>、<strong
+                    class="example-control-reference" data-example-control="Panel4" title="第 3 个面板">第 3 个面板</strong>、<strong class="example-control-reference"
+                    data-example-control="tbxConfName" title="并发症">并发症</strong>、<strong class="example-control-reference" data-example-control="Panel5"
+                    title="第 4 个面板（面板1）">第 4 个面板（面板1）</strong>、<strong class="example-control-reference" data-example-control="Image1"
+                    title="图片">图片</strong>）：按比例分配左右资料面板的宽度。</li>
         </ul>
     </section>
 }

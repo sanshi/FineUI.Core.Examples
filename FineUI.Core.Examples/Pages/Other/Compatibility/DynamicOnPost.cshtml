@@ -10,27 +10,28 @@
             <f:FormRow Items="@ViewBag.DynamicItems" />
         </Rows>
     </f:Form>
-    <f:Button ID="Button1" Text="验证表单并提交" _ValidateForms="Form2" ValidateTarget="Top"
-        OnClick="@Url.Handler("Button1_Click")" OnClickFields="Form2" />
+    <f:Button ID="Button1" Text="验证表单并提交" _ValidateForms="Form2" ValidateTarget="Top" OnClick="@Url.Handler("Button1_Click")" OnClickFields="Form2" />
 
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>把后台创建的动态表单字段交给旧 OnPost，连续回发保留输入与选择。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Form2" title="动态表单">动态表单</strong>中，输入用户名，更改性别并提交；再次修改后重复提交。<br />结果：性别变化与提交分别显示本轮值，连续回发不清空输入，也不恢复为第一次选择。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>沿用 RazorPages 的写法：OnGet 首次创建字段并放入 ViewBag.DynamicItems，事件指向本页 OnPost。</li>
-        <li>全局开启 RazorForms 后，选择性别、输入姓名、提交，再次修改后仍可继续操作。</li>
-        <li>无需在回发时再次创建字段或登记 URL 事件；OnPost 仍须校验当前用户及业务权限。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>OnPost / 动态控件 ID</code>（<strong class="example-control-reference" data-example-control="Form2" title="动态表单">动态表单</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>把后台创建的动态表单字段交给旧 OnPost，连续回发保留输入与选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Form2"
+                    title="动态表单">动态表单</strong>中，输入用户名，更改性别并提交；再次修改后重复提交。<br />结果：性别变化与提交分别显示本轮值，连续回发不清空输入，也不恢复为第一次选择。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>沿用 RazorPages 的写法：OnGet 首次创建字段并放入 ViewBag.DynamicItems，事件指向本页 OnPost。</li>
+            <li>全局开启 RazorForms 后，选择性别、输入姓名、提交，再次修改后仍可继续操作。</li>
+            <li>无需在回发时再次创建字段或登记 URL 事件；OnPost 仍须校验当前用户及业务权限。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>OnPost / 动态控件 ID</code>（<strong class="example-control-reference" data-example-control="Form2"
+                    title="动态表单">动态表单</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

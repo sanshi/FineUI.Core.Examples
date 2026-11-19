@@ -12,23 +12,22 @@
         <Items>
             <f:DatePicker ID="DatePicker1" Label="开始日期" Required="true">
             </f:DatePicker>
-            <f:DatePicker ID="DatePicker2" Label="结束日期（大于开始日期）" Required="true" CompareControl="DatePicker1"
-                          CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期！">
+            <f:DatePicker ID="DatePicker2" Label="结束日期（大于开始日期）" Required="true" CompareControl="DatePicker1" CompareOperator="GreaterThan"
+                CompareMessage="结束日期应该大于开始日期！">
             </f:DatePicker>
             <f:TextBox ID="TextBox1" Required="true" Label="文本框 1" Text="FineUI.Pro">
             </f:TextBox>
-            <f:TextBox ID="TextBox2" Required="true" Label="文本框 2（等于文本框 1）" CompareControl="TextBox1"
-                       CompareOperator="Equal" CompareMessage="文本框 2 应该等于文本框 1！">
+            <f:TextBox ID="TextBox2" Required="true" Label="文本框 2（等于文本框 1）" CompareControl="TextBox1" CompareOperator="Equal" CompareMessage="文本框 2 应该等于文本框 1！">
             </f:TextBox>
             <f:NumberBox ID="NumberBox1" Required="true" Label="数字框 1" Text="30">
             </f:NumberBox>
-            <f:NumberBox ID="NumberBox2" Required="true" Label="数字框 2（大于等于数字框 1）" CompareControl="NumberBox1"
-                         CompareOperator="GreaterThanEqual" CompareMessage="数字框 2 应该大于等于数字框 1!">
+            <f:NumberBox ID="NumberBox2" Required="true" Label="数字框 2（大于等于数字框 1）" CompareControl="NumberBox1" CompareOperator="GreaterThanEqual"
+                CompareMessage="数字框 2 应该大于等于数字框 1!">
             </f:NumberBox>
             <f:Label ID="Label1" Label="标签 1" Text="88">
             </f:Label>
-            <f:NumberBox ID="NumberBox3" Required="true" Label="文本框 3（大于等于标签 1）" CompareControl="Label1"
-                         CompareOperator="GreaterThanEqual" CompareType="Int" CompareMessage="文本框 3 应该大于等于标签 1！" >
+            <f:NumberBox ID="NumberBox3" Required="true" Label="文本框 3（大于等于标签 1）" CompareControl="Label1" CompareOperator="GreaterThanEqual" CompareType="Int"
+                CompareMessage="文本框 3 应该大于等于标签 1！">
             </f:NumberBox>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" CssClass="marginr" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
             <f:Button ID="btnReset" Text="重置表单" ClickHandler="onResetClick"></f:Button>
@@ -55,38 +54,61 @@
         <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>准备可通过的输入</h3>
         <ol>
             <li>
-                在<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>输入<code>2026-06-10</code>，在<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>输入<code>2026-06-11</code>。<br />
-                结果：<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>晚于<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>，满足日期比较规则。
+                在<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>输入<code>2026-06-10</code>，在<strong
+                    class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>输入<code>2026-06-11</code>。<br />
+                结果：<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>晚于<strong
+                    class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>，满足日期比较规则。
             </li>
             <li>
-                将<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>和<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>都填为<code>FineUI</code>。<br />
-                结果：<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>与<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>文字相同，满足文本相等规则。
+                将<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>和<strong
+                    class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>都填为<code>FineUI</code>。<br />
+                结果：<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>与<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>文字相同，满足文本相等规则。
             </li>
             <li>
-                将<strong class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>和<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>都填为<code>30</code>，将<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>填为<code>88</code>。<br />
-                结果：<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>等于<strong class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>，<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>等于<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的<code>88</code>，两项大于等于规则均可通过。
+                将<strong class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>和<strong
+                    class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>都填为<code>30</code>，将<strong
+                    class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>填为<code>88</code>。<br />
+                结果：<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>等于<strong
+                    class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>，<strong class="example-control-reference"
+                    data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>等于<strong class="example-control-reference"
+                    data-example-control="Label1" title="标签 1">标签 1</strong>的<code>88</code>，两项大于等于规则均可通过。
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>依次验证四种比较规则</h3>
         <ol>
             <li>
-                接着上面的有效输入，将<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>改为<code>2026-06-10</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>出现必须大于<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>的错误提示，浏览器阻止提交。
+                接着上面的有效输入，将<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期（大于开始日期）">结束日期</strong>改为<code>2026-06-10</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="提交表单">提交表单</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>出现必须大于<strong
+                    class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>的错误提示，浏览器阻止提交。
             </li>
             <li>
-                关闭验证提示，将<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>恢复为<code>2026-06-11</code>，将<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>改为<code>Different</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>与<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>不同，出现文本必须相等的错误提示，浏览器阻止提交。
+                关闭验证提示，将<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期（大于开始日期）">结束日期</strong>恢复为<code>2026-06-11</code>，将<strong class="example-control-reference" data-example-control="TextBox2"
+                    title="文本框 2（等于文本框 1）">文本框 2</strong>改为<code>Different</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="提交表单">提交表单</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>与<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>不同，出现文本必须相等的错误提示，浏览器阻止提交。
             </li>
             <li>
-                关闭验证提示，将<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>恢复为<code>FineUI</code>，将<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>改为<code>29</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>小于<strong class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>的<code>30</code>，出现大于等于比较失败的提示，浏览器阻止提交。
+                关闭验证提示，将<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框
+                    2</strong>恢复为<code>FineUI</code>，将<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框
+                    2</strong>改为<code>29</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>小于<strong
+                    class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>的<code>30</code>，出现大于等于比较失败的提示，浏览器阻止提交。
             </li>
             <li>
-                关闭验证提示，将<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>恢复为<code>30</code>，在<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>输入<code>87</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
-                结果：<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>小于<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的<code>88</code>，出现与标签值比较失败的提示，浏览器阻止提交。
+                关闭验证提示，将<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框
+                    2</strong>恢复为<code>30</code>，在<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框
+                    3</strong>输入<code>87</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
+                结果：<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>小于<strong
+                    class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的<code>88</code>，出现与标签值比较失败的提示，浏览器阻止提交。
             </li>
             <li>
-                关闭验证提示，将<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>恢复为<code>88</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
+                关闭验证提示，将<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框
+                    3</strong>恢复为<code>88</code>，点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>。<br />
                 结果：全部比较通过后才回发，后台读取并显示当前表单字段值。
             </li>
         </ol>
@@ -99,14 +121,29 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>）：设置为<code>DatePicker1</code>，指定<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>作为比较对象。</li>
-            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="DatePicker2" title="结束日期（大于开始日期）">结束日期</strong>）：设置为<code>GreaterThan</code>，要求晚于<strong class="example-control-reference" data-example-control="DatePicker1" title="开始日期">开始日期</strong>。</li>
-            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框 2</strong>）：设置为<code>Equal</code>，要求与<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框 1</strong>的文字相同。</li>
-            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>）：设置为<code>GreaterThanEqual</code>，要求不小于<strong class="example-control-reference" data-example-control="NumberBox1" title="数字框 1">数字框 1</strong>。</li>
-            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>）：设置为<code>GreaterThanEqual</code>，要求不小于<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的值。</li>
-            <li><code>CompareMessage</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框 2</strong>）：比较失败时显示本页设置的错误文字：<code>数字框 2 应该大于等于数字框 1!</code>。</li>
-            <li><code>CompareType</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框 3</strong>）：设置为<code>Int</code>，与<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的值按整数比较。</li>
-            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="提交表单">提交表单</strong>）：设置为<code>SimpleForm1</code>，先验证<strong class="example-control-reference" data-example-control="SimpleForm1" title="简单表单">简单表单</strong>的全部字段，通过后才回发。</li>
+            <li><code>CompareControl</code>（<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期（大于开始日期）">结束日期</strong>）：设置为<code>DatePicker1</code>，指定<strong class="example-control-reference"
+                    data-example-control="DatePicker1" title="开始日期">开始日期</strong>作为比较对象。</li>
+            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="DatePicker2"
+                    title="结束日期（大于开始日期）">结束日期</strong>）：设置为<code>GreaterThan</code>，要求晚于<strong class="example-control-reference"
+                    data-example-control="DatePicker1" title="开始日期">开始日期</strong>。</li>
+            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="TextBox2" title="文本框 2（等于文本框 1）">文本框
+                    2</strong>）：设置为<code>Equal</code>，要求与<strong class="example-control-reference" data-example-control="TextBox1" title="文本框 1">文本框
+                    1</strong>的文字相同。</li>
+            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框
+                    2</strong>）：设置为<code>GreaterThanEqual</code>，要求不小于<strong class="example-control-reference" data-example-control="NumberBox1"
+                    title="数字框 1">数字框 1</strong>。</li>
+            <li><code>CompareOperator</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框
+                    3</strong>）：设置为<code>GreaterThanEqual</code>，要求不小于<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签
+                    1</strong>的值。</li>
+            <li><code>CompareMessage</code>（<strong class="example-control-reference" data-example-control="NumberBox2" title="数字框 2（大于等于数字框 1）">数字框
+                    2</strong>）：比较失败时显示本页设置的错误文字：<code>数字框 2 应该大于等于数字框 1!</code>。</li>
+            <li><code>CompareType</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="文本框 3（大于等于标签 1）">文本框
+                    3</strong>）：设置为<code>Int</code>，与<strong class="example-control-reference" data-example-control="Label1" title="标签 1">标签 1</strong>的值按整数比较。
+            </li>
+            <li><code>_ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="提交表单">提交表单</strong>）：设置为<code>SimpleForm1</code>，先验证<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="简单表单">简单表单</strong>的全部字段，通过后才回发。</li>
         </ul>
     </section>
 }

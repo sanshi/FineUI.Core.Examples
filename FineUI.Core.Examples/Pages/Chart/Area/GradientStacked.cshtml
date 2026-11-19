@@ -5,22 +5,20 @@
 }
 
 @section body {
-    <f:Chart ID="ChartAreaGradientStacked" Height="550" DataCategoryField="Category"
-        Title="Gradient Stacked Area Chart" TitleAlign="Left" Palette="#80FFA5,#00DDFF,#37A2FF,#FF0087,#FFBF00"
-        ShowLegend="true" CategoryBoundaryGap="false" AxisPointerType="cross" AxisPointerLabelColor="#6a7985"
+    <f:Chart ID="ChartAreaGradientStacked" Height="550" DataCategoryField="Category" Title="Gradient Stacked Area Chart" TitleAlign="Left"
+        Palette="#80FFA5,#00DDFF,#37A2FF,#FF0087,#FFBF00" ShowLegend="true" CategoryBoundaryGap="false" AxisPointerType="cross" AxisPointerLabelColor="#6a7985"
         ShowSaveAsImage="true">
         <Series>
-            <f:ChartSeries Key="line1" Type="Area" Name="Line 1" DataValueField="Line1" Stack="Total" Smooth="true"
-                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#80ffa5,#01bfec" FocusSeries="true" />
-            <f:ChartSeries Key="line2" Type="Area" Name="Line 2" DataValueField="Line2" Stack="Total" Smooth="true"
-                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#00ddff,#4d77ff" FocusSeries="true" />
-            <f:ChartSeries Key="line3" Type="Area" Name="Line 3" DataValueField="Line3" Stack="Total" Smooth="true"
-                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#37a2ff,#7415db" FocusSeries="true" />
-            <f:ChartSeries Key="line4" Type="Area" Name="Line 4" DataValueField="Line4" Stack="Total" Smooth="true"
-                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#ff0087,#87009d" FocusSeries="true" />
-            <f:ChartSeries Key="line5" Type="Area" Name="Line 5" DataValueField="Line5" Stack="Total" Smooth="true"
-                LineWidth="0" ShowSymbol="false" AreaOpacity="0.8" AreaGradient="#ffbf00,#e03e4c" FocusSeries="true"
-                ShowLabel="true" />
+            <f:ChartSeries Key="line1" Type="Area" Name="Line 1" DataValueField="Line1" Stack="Total" Smooth="true" LineWidth="0" ShowSymbol="false"
+                AreaOpacity="0.8" AreaGradient="#80ffa5,#01bfec" FocusSeries="true" />
+            <f:ChartSeries Key="line2" Type="Area" Name="Line 2" DataValueField="Line2" Stack="Total" Smooth="true" LineWidth="0" ShowSymbol="false"
+                AreaOpacity="0.8" AreaGradient="#00ddff,#4d77ff" FocusSeries="true" />
+            <f:ChartSeries Key="line3" Type="Area" Name="Line 3" DataValueField="Line3" Stack="Total" Smooth="true" LineWidth="0" ShowSymbol="false"
+                AreaOpacity="0.8" AreaGradient="#37a2ff,#7415db" FocusSeries="true" />
+            <f:ChartSeries Key="line4" Type="Area" Name="Line 4" DataValueField="Line4" Stack="Total" Smooth="true" LineWidth="0" ShowSymbol="false"
+                AreaOpacity="0.8" AreaGradient="#ff0087,#87009d" FocusSeries="true" />
+            <f:ChartSeries Key="line5" Type="Area" Name="Line 5" DataValueField="Line5" Stack="Total" Smooth="true" LineWidth="0" ShowSymbol="false"
+                AreaOpacity="0.8" AreaGradient="#ffbf00,#e03e4c" FocusSeries="true" ShowLabel="true" />
         </Series>
     </f:Chart>
 
@@ -28,19 +26,27 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为堆叠面积使用纵向渐变，并分别控制轮廓、点标记和标签。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照渐变堆叠面积图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>中的分类、数值和形状。<br />结果：五组数据按天堆叠，每组用两种颜色从上到下渐变。隐藏轮廓线和数据点标记，顶层保留数值标签。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=area-stack-gradient" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AreaGradient</code>（<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始为 <code>#80ffa5,#01bfec</code>，第一层从上方的浅绿过渡到下方的蓝色，其余各层分别设置自己的两端颜色。</li>
-        <li><code>AreaOpacity</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始为 <code>0.8</code>，将每层渐变填充的不透明度设为 80%。</li>
-        <li><code>LineWidth / ShowSymbol</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始分别为 <code>0</code>、<code>false</code>，隐藏轮廓线和数据点标记，保留渐变填充。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为堆叠面积使用纵向渐变，并分别控制轮廓、点标记和标签。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照渐变堆叠面积图</h3>
+        <ul>
+            <li>对照<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked
+                    Area Chart</strong>中的分类、数值和形状。<br />结果：五组数据按天堆叠，每组用两种颜色从上到下渐变。隐藏轮廓线和数据点标记，顶层保留数值标签。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <a href="https://echarts.apache.org/examples/zh/editor.html?c=area-stack-gradient" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AreaGradient</code>（<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked"
+                    title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始为
+                <code>#80ffa5,#01bfec</code>，第一层从上方的浅绿过渡到下方的蓝色，其余各层分别设置自己的两端颜色。
+            </li>
+            <li><code>AreaOpacity</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control="ChartAreaGradientStacked"
+                    title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始为 <code>0.8</code>，将每层渐变填充的不透明度设为 80%。</li>
+            <li><code>LineWidth / ShowSymbol</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                    data-example-control="ChartAreaGradientStacked" title="Gradient Stacked Area Chart">Gradient Stacked Area Chart</strong>）：初始分别为
+                <code>0</code>、<code>false</code>，隐藏轮廓线和数据点标记，保留渐变填充。
+            </li>
+        </ul>
+    </section>
 }

@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" DataIDField="Id" DataTextField="Name" AllowCellEditing="true"
+        ClicksToEdit="1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name">
@@ -29,7 +30,8 @@
                     <f:NumberBox ID="nbxEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025"></f:NumberBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss" Width="200">
+            <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date"
+                RendererArgument="yyyy-MM-dd HH:mm:ss" Width="200">
                 <Editor>
                     <f:DatePicker ID="dpEntranceDate" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" ShowTime="true"></f:DatePicker>
                 </Editor>
@@ -40,8 +42,8 @@
                     <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField Width="180" ColumnID="LogTime" DataField="LogTime" FieldType="Date"
-                           Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss" HeaderText="注册日期">
+            <f:RenderField Width="180" ColumnID="LogTime" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss"
+                HeaderText="注册日期">
             </f:RenderField>
         </Columns>
     </f:Grid>
@@ -64,22 +66,26 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在单元格日期编辑器中同时选择日期和时间，显示精度保留到秒。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改日期与时间</h3>
-    <ul>
-        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>入学日期</strong>，同时调整日期与时间，再结束编辑。<br />结果：单元格按年月日、时分秒显示结果；重新进入编辑时可继续调整同样精度的时间。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li><strong>入学日期</strong>列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss"</li>
-        <li><strong><strong>入学日期</strong></strong>的编辑表单字段（DatePicker）：DateFormatString="yyyy-MM-dd HH:mm:ss" ShowTime="true"</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate" title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>true</code>，在日期弹层中显示时间选择区。</li>
-        <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate" title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>yyyy-MM-dd HH:mm:ss</code>，编辑器按本页格式读取与回显完整日期时间。</li>
-        <li><code>RendererArgument</code>（<strong>入学日期</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>yyyy-MM-dd HH:mm:ss</code>，单元格采用与编辑器一致的日期时间显示精度。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在单元格日期编辑器中同时选择日期和时间，显示精度保留到秒。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改日期与时间</h3>
+        <ul>
+            <li>单击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>入学日期</strong>，同时调整日期与时间，再结束编辑。<br />结果：单元格按年月日、时分秒显示结果；重新进入编辑时可继续调整同样精度的时间。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li><strong>入学日期</strong>列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss"</li>
+            <li><strong><strong>入学日期</strong></strong>的编辑表单字段（DatePicker）：DateFormatString="yyyy-MM-dd HH:mm:ss" ShowTime="true"</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate"
+                    title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>true</code>，在日期弹层中显示时间选择区。</li>
+            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="dpEntranceDate"
+                    title="入学日期列的日期选择框">入学日期列的日期选择框</strong>）：初始为 <code>yyyy-MM-dd HH:mm:ss</code>，编辑器按本页格式读取与回显完整日期时间。</li>
+            <li><code>RendererArgument</code>（<strong>入学日期</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为 <code>yyyy-MM-dd HH:mm:ss</code>，单元格采用与编辑器一致的日期时间显示精度。</li>
+        </ul>
+    </section>
 }

@@ -9,9 +9,9 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（网址数据源，5,000行）" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=5000&type=simple")"
-            EnableCheckBoxSelect="true" Height="500" EnableBigData="true" FixedRowHeight="true"
-            EnableBigDataRowTip="true" PagingToolbarVisible="false">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（网址数据源，5,000行）" DataIDField="Id" DataTextField="Name"
+        DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=5000&type=simple")" EnableCheckBoxSelect="true" Height="500" EnableBigData="true" FixedRowHeight="true" EnableBigDataRowTip="true"
+        PagingToolbarVisible="false">
         <Columns>
             <f:RowNumberField Width="50" />
             <f:RenderField HeaderText="姓名" DataField="Name" Width="150" />
@@ -37,17 +37,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用虚拟渲染显示 5000 条记录，滚动时只绘制当前视口附近的行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>滚动到大量记录的中后部</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>内部持续向下滚动，再返回顶部。<br />结果：视口中的行随滚动位置更新，行数提示反映当前范围与总数；数据规模为 5000 条，不需要同时为每条记录保留完整可见行 DOM。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableBigData</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，启用按可视位置绘制数据行的模式。</li>
-        <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，使用固定行高计算滚动位置及可见范围。</li>
-        <li><code>EnableBigDataRowTip</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，滚动时提示当前显示范围和全部行数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用虚拟渲染显示 5000 条记录，滚动时只绘制当前视口附近的行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>滚动到大量记录的中后部</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>内部持续向下滚动，再返回顶部。<br />结果：视口中的行随滚动位置更新，行数提示反映当前范围与总数；数据规模为 5000 条，不需要同时为每条记录保留完整可见行 DOM。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableBigData</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，启用按可视位置绘制数据行的模式。</li>
+            <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，使用固定行高计算滚动位置及可见范围。</li>
+            <li><code>EnableBigDataRowTip</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，5,000行）">表格（网址数据源，5,000行）</strong>）：初始为 <code>true</code>，滚动时提示当前显示范围和全部行数。</li>
+        </ul>
+    </section>
 }

@@ -10,7 +10,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataUrl="@Url.Content("~/GridDataUrl/GridDataUrlData")"
-            _SelectedRowIDArray="105,110">
+        _SelectedRowIDArray="105,110">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -43,18 +43,22 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为异步加载记录设置初始选择，并按稳定行标识切换到指定学生。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>数据到达后应用行选择</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSelectNamedRows" title="选中[陈飞]，[彭博]，[唐超]所在的行">选中[陈飞]，[彭博]，[唐超]所在的行</strong>。<br />结果：选择切换到陈飞、彭博、唐超对应的行，按主键 102、106、108 定位，不把它们解释为当前行序号。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRows" title="选中了哪些行">选中了哪些行</strong>。<br />结果：显示当前选择的行标识与名称；更改选择不重新请求全部数据。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：表格默认选中了[康颖颖]，[徐鹏]所在的行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>SelectedRowIDArray</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>105,110</code>，初始按本页指定主键选择记录，数据加载后应用；按钮再切换为另一组主键。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为异步加载记录设置初始选择，并按稳定行标识切换到指定学生。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>数据到达后应用行选择</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSelectNamedRows"
+                    title="选中[陈飞]，[彭博]，[唐超]所在的行">选中[陈飞]，[彭博]，[唐超]所在的行</strong>。<br />结果：选择切换到陈飞、彭博、唐超对应的行，按主键 102、106、108 定位，不把它们解释为当前行序号。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRows"
+                    title="选中了哪些行">选中了哪些行</strong>。<br />结果：显示当前选择的行标识与名称；更改选择不重新请求全部数据。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：表格默认选中了[康颖颖]，[徐鹏]所在的行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectedRowIDArray</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>105,110</code>，初始按本页指定主键选择记录，数据加载后应用；按钮再切换为另一组主键。
+            </li>
+        </ul>
+    </section>
 }

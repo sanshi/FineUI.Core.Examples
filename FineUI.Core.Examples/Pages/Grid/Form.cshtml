@@ -22,15 +22,15 @@
 
     <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格与表单" Layout="HBox" Height="500">
         <Items>
-            <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" EnableCollapse="false" BoxFlex="1" CssClass="maingrid"
-                    DataIDField="Id" DataTextField="Name" AllowCellEditing="true" ClicksToEdit="2">
+            <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" EnableCollapse="false" BoxFlex="1" CssClass="maingrid" DataIDField="Id" DataTextField="Name"
+                AllowCellEditing="true" ClicksToEdit="2">
                 <Columns>
                     <f:RowNumberField Width="60" />
                     <f:RenderField HeaderText="姓名" ColumnID="Name" DataField="Name" />
                     <f:RenderField HeaderText="性别" ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" Hidden="true" />
                     <f:RenderField HeaderText="入学年份" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" />
-                    <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                                   Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" Hidden="true" />
+                    <f:RenderField HeaderText="入学日期" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date"
+                        RendererArgument="yyyy-MM-dd" Width="150" Hidden="true" />
                     <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" EnableColumnEdit="false" />
                     <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
                 </Columns>
@@ -46,8 +46,8 @@
                         <f:RadioItem Text="男" Value="1" />
                         <f:RadioItem Text="女" Value="0" />
                     </f:RadioButtonList>
-                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true"
-                                 MinValue="2000" MaxValue="2025" ShowRedStar="true" Required="true"></f:NumberBox>
+                    <f:NumberBox ID="nbFormEntranceYear" Label="入学年份" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" ShowRedStar="true"
+                        Required="true"></f:NumberBox>
                     <f:DatePicker ID="dpFormEntranceDate" Label="入学日期" ShowRedStar="true" Required="true"></f:DatePicker>
                     <f:CheckBox ID="cbFormAtSchool" Label="是否在校"></f:CheckBox>
                     <f:DropDownList ID="ddlFormMajor" Label="所学专业" ShowRedStar="true" Required="true" AutoSelectFirstItem="false">
@@ -127,25 +127,33 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>选择表格行填充旁边表单，在同一表单中完成新增、编辑与删除。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择记录后编辑并保存</h3>
-    <ol>
-        <li>选择<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>一行。<br />结果：表单填入所选记录的<strong>姓名</strong>、<strong>性别</strong>、年份等资料，保存行为切换到编辑该条记录。</li>
-        <li>将<strong class="example-control-reference" data-example-control="tbxFormUserName" title="第 1 个文本框（姓名）">表单的姓名</strong>改为<code>改过的名字</code>，点击<strong class="example-control-reference" data-example-control="btnSave" title="保存数据（新增）">保存数据（新增）</strong>。<br />结果：表单验证通过后回发，后台按记录标识更新示例数据并重新绑定，原行显示新<strong>姓名</strong>。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>用同一表单新增记录</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control="btnNew" title="新增（加号图标）">新增（加号图标）</strong>，填写<strong>姓名</strong>等必填资料并保存。<br />结果：清空原记录标识，表单进入新增状态；验证通过后后台创建新记录并绑定到表格，不覆盖刚才的原记录。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>确认删除所选记录</h3>
-    <ul>
-        <li>选择一条已有记录，点击<strong class="example-control-reference" data-example-control="btnDelete" title="删除（删除图标）">删除（删除图标）</strong>并确认。<br />结果：后台删除对应示例记录并重新绑定；未选择已有记录时不会以新增表单的空标识删除数据。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>rowselect / setValue</code>（<strong>表格选择与表单回填脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：选择当前行后把行数据填入表单，同时记录本次编辑的业务主键。</li>
-        <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSave" title="保存数据（新增）">保存数据（新增）</strong>）：初始为 <code>SimpleForm1</code>，提交前检查本页编辑表单，失败时保留用户输入并阻止保存。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>选择表格行填充旁边表单，在同一表单中完成新增、编辑与删除。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择记录后编辑并保存</h3>
+        <ol>
+            <li>选择<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>一行。<br />结果：表单填入所选记录的<strong>姓名</strong>、<strong>性别</strong>、年份等资料，保存行为切换到编辑该条记录。</li>
+            <li>将<strong class="example-control-reference" data-example-control="tbxFormUserName"
+                    title="第 1 个文本框（姓名）">表单的姓名</strong>改为<code>改过的名字</code>，点击<strong class="example-control-reference" data-example-control="btnSave"
+                    title="保存数据（新增）">保存数据（新增）</strong>。<br />结果：表单验证通过后回发，后台按记录标识更新示例数据并重新绑定，原行显示新<strong>姓名</strong>。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>用同一表单新增记录</h3>
+        <ul>
+            <li>点击<strong class="example-control-reference" data-example-control="btnNew"
+                    title="新增（加号图标）">新增（加号图标）</strong>，填写<strong>姓名</strong>等必填资料并保存。<br />结果：清空原记录标识，表单进入新增状态；验证通过后后台创建新记录并绑定到表格，不覆盖刚才的原记录。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>确认删除所选记录</h3>
+        <ul>
+            <li>选择一条已有记录，点击<strong class="example-control-reference" data-example-control="btnDelete"
+                    title="删除（删除图标）">删除（删除图标）</strong>并确认。<br />结果：后台删除对应示例记录并重新绑定；未选择已有记录时不会以新增表单的空标识删除数据。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>rowselect / setValue</code>（<strong>表格选择与表单回填脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：选择当前行后把行数据填入表单，同时记录本次编辑的业务主键。</li>
+            <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSave" title="保存数据（新增）">保存数据（新增）</strong>）：初始为
+                <code>SimpleForm1</code>，提交前检查本页编辑表单，失败时保留用户输入并阻止保存。
+            </li>
+        </ul>
+    </section>
 }

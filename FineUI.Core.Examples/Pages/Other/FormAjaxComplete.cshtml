@@ -91,16 +91,19 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>表单验证通过后禁用提交按钮并显示自定义加载状态，请求完成时恢复。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>提交期间反馈处理状态</h3>
-    <ol>
-        <li>填写<strong class="example-control-reference" data-example-control="TextBox2" title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control="DropDownList3" title="审批人">审批人</strong>、申请数量和描述，再点击<strong class="example-control-reference" data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：验证不通过时显示字段错误；全部通过后才回发，并显示本页自定义提交状态。</li>
-        <li>等待本次请求完成。<br />结果：后台读取字段并显示通知，完成回调恢复提交按钮，不需要刷新页面。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>F.doPostBack.complete</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>）：在请求结束后恢复按钮状态；开始请求前先验证表单，避免验证失败后仍进入加载状态。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>表单验证通过后禁用提交按钮并显示自定义加载状态，请求完成时恢复。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>提交期间反馈处理状态</h3>
+        <ol>
+            <li>填写<strong class="example-control-reference" data-example-control="TextBox2" title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference"
+                    data-example-control="DropDownList3" title="审批人">审批人</strong>、申请数量和描述，再点击<strong class="example-control-reference"
+                    data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：验证不通过时显示字段错误；全部通过后才回发，并显示本页自定义提交状态。</li>
+            <li>等待本次请求完成。<br />结果：后台读取字段并显示通知，完成回调恢复提交按钮，不需要刷新页面。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>F.doPostBack.complete</code>（<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="验证此表单并提交">验证此表单并提交</strong>）：在请求结束后恢复按钮状态；开始请求前先验证表单，避免验证失败后仍进入加载状态。</li>
+        </ul>
+    </section>
 }

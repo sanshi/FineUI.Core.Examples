@@ -27,7 +27,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            FixedRowHeight="true" RowHeight="60" RowHeightCompact="48" RowHeightSmall="48" RowHeightLargeSpace="72" RowHeightLarge="72">
+        FixedRowHeight="true" RowHeight="60" RowHeightCompact="48" RowHeightSmall="48" RowHeightLargeSpace="72" RowHeightLarge="72">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -91,23 +91,28 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用固定行高显示记录，长文字在统一高度内换行，超过三行的文字省略。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对行高一致性</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>比较不同描述长度的记录，再向下滚动。<br />结果：各行使用同一套固定高度，滚动后后续记录也保持等高；文字最多显示三行并省略其余部分。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>尽量将行高设置为默认行高的整数倍，防止文字换行时被部分遮挡的问题。</li>
-        <li>需要为所有显示模式设置行高（RowHeight、RowHeightCompact、RowHeightSmall、RowHeightLargeSpace、RowHeightLarge）。</li>
-        <li>推荐使用 RowHeightLines 属性快速为所有显示模式设置行高。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，初始为 <code>true</code>，按统一行高显示记录。</li>
-        <li><code>RowHeight / RowHeightSmall / RowHeightLarge</code>（<strong>表格行高配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：普通、小间距与大间距初始分别为 <code>60</code>、<code>48</code>、<code>72</code>，指定对应密度采用的行高。</li>
-        <li><code>CSS</code>（<strong>单元格文字</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：单元格允许换行，并把文本最多显示行数限制为 <code>3</code>。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用固定行高显示记录，长文字在统一高度内换行，超过三行的文字省略。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对行高一致性</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>比较不同描述长度的记录，再向下滚动。<br />结果：各行使用同一套固定高度，滚动后后续记录也保持等高；文字最多显示三行并省略其余部分。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>尽量将行高设置为默认行高的整数倍，防止文字换行时被部分遮挡的问题。</li>
+            <li>需要为所有显示模式设置行高（RowHeight、RowHeightCompact、RowHeightSmall、RowHeightLargeSpace、RowHeightLarge）。</li>
+            <li>推荐使用 RowHeightLines 属性快速为所有显示模式设置行高。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，初始为 <code>true</code>，按统一行高显示记录。
+            </li>
+            <li><code>RowHeight / RowHeightSmall / RowHeightLarge</code>（<strong>表格行高配置</strong>，位于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格">表格</strong>）：普通、小间距与大间距初始分别为 <code>60</code>、<code>48</code>、<code>72</code>，指定对应密度采用的行高。</li>
+            <li><code>CSS</code>（<strong>单元格文字</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：单元格允许换行，并把文本最多显示行数限制为 <code>3</code>。</li>
+        </ul>
+    </section>
 }

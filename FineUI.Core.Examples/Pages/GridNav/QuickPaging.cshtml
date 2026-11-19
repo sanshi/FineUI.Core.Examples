@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowPaging="true" PageSize="5" QuickPaging="true" MouseWheelSelection="true" Height="500">
+        AllowPaging="true" PageSize="5" QuickPaging="true" MouseWheelSelection="true" Height="500">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -37,25 +37,31 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在当前页边界继续导航时自动翻页，使用已加载的完整数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从当前页末行继续向下</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>第一页最后一行，按向下箭头。<br />结果：表格切到第二页并选中该页第一行；记录已全部加载，普通翻页在浏览器完成。</li>
-        <li>在第二页第一行按向上箭头。<br />结果：返回上一页并把选择移到上一页末行；鼠标滚轮同样可用于行导航。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>本示例启用了QuickPaging，可以通过上下按键和鼠标滚轮（需设置MouseWheelSelection=&quot;true&quot;）快速切换分页，分页后自动选中第一项或者最后一项。</p>
-    <ul>
-        <li>先选中一行，然后通过上下按键和鼠标滚轮来切换选中行。</li>
-        <li>选中最后一行，向下按键或者向下滚动鼠标滚轮，会自动切换到下一页，并选中第一行。</li>
-        <li>选中第一行，向上按键或者向上滚动鼠标滚轮，会自动切换到上一页，并选中最后一行。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>QuickPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，在行导航越过当前页边界时切换分页。</li>
-        <li><code>MouseWheelSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，让滚轮参与选择行的移动。</li>
-        <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：本页加载完整数据后在浏览器分页。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在当前页边界继续导航时自动翻页，使用已加载的完整数据。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从当前页末行继续向下</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>第一页最后一行，按向下箭头。<br />结果：表格切到第二页并选中该页第一行；记录已全部加载，普通翻页在浏览器完成。</li>
+            <li>在第二页第一行按向上箭头。<br />结果：返回上一页并把选择移到上一页末行；鼠标滚轮同样可用于行导航。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>本示例启用了QuickPaging，可以通过上下按键和鼠标滚轮（需设置MouseWheelSelection=&quot;true&quot;）快速切换分页，分页后自动选中第一项或者最后一项。</p>
+        <ul>
+            <li>先选中一行，然后通过上下按键和鼠标滚轮来切换选中行。</li>
+            <li>选中最后一行，向下按键或者向下滚动鼠标滚轮，会自动切换到下一页，并选中第一行。</li>
+            <li>选中第一行，向上按键或者向上滚动鼠标滚轮，会自动切换到上一页，并选中最后一行。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>QuickPaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，在行导航越过当前页边界时切换分页。
+            </li>
+            <li><code>MouseWheelSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，让滚轮参与选择行的移动。
+            </li>
+            <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：本页加载完整数据后在浏览器分页。
+            </li>
+        </ul>
+    </section>
 }

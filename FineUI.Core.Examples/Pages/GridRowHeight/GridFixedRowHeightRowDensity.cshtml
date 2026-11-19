@@ -27,7 +27,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            FixedRowHeight="true" RowHeightLines="3">
+        FixedRowHeight="true" RowHeightLines="3">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -42,10 +42,14 @@
         <Tools>
             <f:Tool ID="toolRowDensity" runat="server" IconFont="_List" Text="行密度">
                 <Menu runat="server">
-                    <f:MenuCheckBox Text="小间距" AttributeDataTag="small" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
-                    <f:MenuCheckBox Text="标准间距" AttributeDataTag="normal" Checked="true" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
-                    <f:MenuCheckBox Text="大间距" AttributeDataTag="large" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
-                    <f:MenuCheckBox Text="超大间距" AttributeDataTag="xlarge" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                    <f:MenuCheckBox Text="小间距" AttributeDataTag="small" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange">
+                    </f:MenuCheckBox>
+                    <f:MenuCheckBox Text="标准间距" AttributeDataTag="normal" Checked="true" GroupName="RowDensity" runat="server"
+                        ClickHandler="onRowDensityChange"></f:MenuCheckBox>
+                    <f:MenuCheckBox Text="大间距" AttributeDataTag="large" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange">
+                    </f:MenuCheckBox>
+                    <f:MenuCheckBox Text="超大间距" AttributeDataTag="xlarge" GroupName="RowDensity" runat="server" ClickHandler="onRowDensityChange">
+                    </f:MenuCheckBox>
                 </Menu>
             </f:Tool>
         </Tools>
@@ -54,7 +58,7 @@
     <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
     <br />
     <br />
-     
+
 }
 
 
@@ -74,17 +78,23 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过行密度菜单调整行内间距。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换行密度</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>标题栏的齿轮，选择超大间距，再改回普通。<br />结果：浏览器直接更新行密度，行内上下间距和最终行高相应变化；数据不变，也不为间距调整重新查询。每次切换后各行仍保持该密度下的统一高度。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>setRowDensity</code>（<strong>行密度菜单与表格脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：菜单把 <code>small</code>、<code>normal</code>、<code>large</code>、<code>xlarge</code> 传给表格，初始选择普通。</li>
-        <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>true</code>，初始为 <code>true</code>，按统一行高显示记录。</li>
-        <li><code>RowHeightLines</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>3</code>，初始为 <code>3</code>，为行内容预留三行文字对应的高度，再结合当前行密度计算。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过行密度菜单调整行内间距。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换行密度</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>标题栏的齿轮，选择超大间距，再改回普通。<br />结果：浏览器直接更新行密度，行内上下间距和最终行高相应变化；数据不变，也不为间距调整重新查询。每次切换后各行仍保持该密度下的统一高度。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>setRowDensity</code>（<strong>行密度菜单与表格脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：菜单把 <code>small</code>、<code>normal</code>、<code>large</code>、<code>xlarge</code> 传给表格，初始选择普通。</li>
+            <li><code>FixedRowHeight</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>true</code>，初始为 <code>true</code>，按统一行高显示记录。
+            </li>
+            <li><code>RowHeightLines</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>3</code>，初始为 <code>3</code>，为行内容预留三行文字对应的高度，再结合当前行密度计算。
+            </li>
+        </ul>
+    </section>
 }

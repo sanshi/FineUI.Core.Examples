@@ -14,8 +14,8 @@
             </f:TextBox>
             <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister" TextMode="Password">
             </f:TextBox>
-            <f:Button ID="btnRegister" Text="注册" OnClick="btnRegister_Click" ClickHandler="onClientValidateClick"
-                      _ValidateForms="SimpleForm1" ValidateTarget="Top"></f:Button>
+            <f:Button ID="btnRegister" Text="注册" OnClick="btnRegister_Click" ClickHandler="onClientValidateClick" _ValidateForms="SimpleForm1"
+                ValidateTarget="Top"></f:Button>
         </Items>
     </f:SimpleForm>
 
@@ -48,7 +48,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>校验失败后修正</h3>
         <ol>
             <li>
-                <strong class="example-control-reference" data-example-control="tbxUserName" title="用户名">用户名</strong>保持有值，密码输入 <code>123</code>，点击<strong class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>。<br />
+                <strong class="example-control-reference" data-example-control="tbxUserName" title="用户名">用户名</strong>保持有值，密码输入 <code>123</code>，点击<strong
+                    class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>。<br />
                 结果：浏览器提示“密码必须为 <code>6</code> 个字符！”并标记密码字段，客户端回调返回 <code>false</code>，后续处理停止。
             </li>
             <li>
@@ -63,9 +64,13 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>）：客户端函数先检查密码长度，返回 <code>false</code> 阻止后台事件。</li>
-            <li><code>markInvalid()</code>（<strong class="example-control-reference" data-example-control="tbxPassword" title="密码">密码</strong>）：浏览器把业务错误标记到密码输入框。</li>
-            <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>）：只在表单验证与客户端回调都通过后执行后台方法。</li>
+            <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="btnRegister" title="注册">注册</strong>）：客户端函数先检查密码长度，返回
+                <code>false</code> 阻止后台事件。
+            </li>
+            <li><code>markInvalid()</code>（<strong class="example-control-reference" data-example-control="tbxPassword"
+                    title="密码">密码</strong>）：浏览器把业务错误标记到密码输入框。</li>
+            <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="btnRegister"
+                    title="注册">注册</strong>）：只在表单验证与客户端回调都通过后执行后台方法。</li>
         </ul>
     </section>
 }

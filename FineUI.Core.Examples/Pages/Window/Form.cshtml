@@ -8,8 +8,8 @@
 
 @section body {
 
-    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true"
-              EnableCollapse="false" EnableResize="true" BodyPadding="10" Layout="Fit" IsModal="false">
+    <f:Window ID="Window1" Width="650" Height="300" Icon="TagBlue" Title="窗体" EnableMaximize="true" EnableCollapse="false" EnableResize="true" BodyPadding="10"
+        Layout="Fit" IsModal="false">
         <Items>
             <f:Form BodyPadding="10" ID="Form2" LabelWidth="100" ShowBorder="false" ShowHeader="false" Title="表单 1">
                 <Rows>
@@ -82,18 +82,28 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在窗体中容纳完整表单，并在窗体工具栏提交该表单的字段。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>只验证窗体中的表单</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：必填下拉列表和文本框未填写时显示验证提示，窗体保持打开。</li>
-        <li>为<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>选择可选项1，在<strong class="example-control-reference" data-example-control="TextBox1" title="文本框">文本框</strong>输入 <code>窗体表单测试</code>，再次提交。<br />结果：后台读取窗体表单当前字段，通知中显示提交内容。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为 <code>Fit</code>，规定容器内子控件的排列和空间分配方式。</li>
-        <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>）：初始为 <code>Form2</code>，提交前验证指定表单；验证失败时显示提示并阻止回发。</li>
-        <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="TextBox1" title="文本框">文本框</strong>）：初始为 <code>true</code>，要求先填写或选择该字段，未通过时阻止表单提交。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在窗体中容纳完整表单，并在窗体工具栏提交该表单的字段。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>只验证窗体中的表单</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSubmit"
+                    title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：必填下拉列表和文本框未填写时显示验证提示，窗体保持打开。</li>
+            <li>为<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>选择可选项1，在<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本框">文本框</strong>输入
+                <code>窗体表单测试</code>，再次提交。<br />结果：后台读取窗体表单当前字段，通知中显示提交内容。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体">窗体</strong>）：初始为
+                <code>Fit</code>，规定容器内子控件的排列和空间分配方式。
+            </li>
+            <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="btnSubmit" title="验证此表单并提交">验证此表单并提交</strong>）：初始为
+                <code>Form2</code>，提交前验证指定表单；验证失败时显示提示并阻止回发。
+            </li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>、<strong
+                    class="example-control-reference" data-example-control="TextBox1" title="文本框">文本框</strong>）：初始为 <code>true</code>，要求先填写或选择该字段，未通过时阻止表单提交。
+            </li>
+        </ul>
+    </section>
 }

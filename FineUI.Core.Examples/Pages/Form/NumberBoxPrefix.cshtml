@@ -10,13 +10,12 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false" Title="简单表单" LabelWidth="120">
         <Items>
-            <f:NumberBox Label="人民币" ID="NumberBox1" NoDecimal="true" NoNegative="true" Text="3000000" EnableCommas="true"
-                         Required="true" ShowRedStar="true" NumberPrefix="￥" />
-            <f:NumberBox Label="美元" ID="NumberBox2" NoDecimal="true" NoNegative="true" Text="100000" EnableCommas="true"
-                         Required="true" ShowRedStar="true" NumberPrefix="$" />
-            <f:NumberBox Label="百分比" ID="NumberBox3" NoNegative="true" Text="42.567" DecimalPrecision="2"
-                         Required="true" ShowRedStar="true" NumberSuffix="%" />
-            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单"  OnClick="btnSubmit_Click">
+            <f:NumberBox Label="人民币" ID="NumberBox1" NoDecimal="true" NoNegative="true" Text="3000000" EnableCommas="true" Required="true" ShowRedStar="true"
+                NumberPrefix="￥" />
+            <f:NumberBox Label="美元" ID="NumberBox2" NoDecimal="true" NoNegative="true" Text="100000" EnableCommas="true" Required="true" ShowRedStar="true"
+                NumberPrefix="$" />
+            <f:NumberBox Label="百分比" ID="NumberBox3" NoNegative="true" Text="42.567" DecimalPrecision="2" Required="true" ShowRedStar="true" NumberSuffix="%" />
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
             </f:Button>
         </Items>
     </f:SimpleForm>
@@ -42,8 +41,11 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>NumberPrefix</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="人民币">人民币</strong>、<strong class="example-control-reference" data-example-control="NumberBox2" title="美元">美元</strong>）：<strong class="example-control-reference" data-example-control="NumberBox1" title="人民币">人民币</strong>和美元字段分别使用 ￥、$。</li>
-            <li><code>NumberSuffix</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="百分比">百分比</strong>）：<strong class="example-control-reference" data-example-control="NumberBox3" title="百分比">百分比</strong>字段使用 %，只控制显示单位，不自动除以 <code>100</code>。</li>
+            <li><code>NumberPrefix</code>（<strong class="example-control-reference" data-example-control="NumberBox1" title="人民币">人民币</strong>、<strong
+                    class="example-control-reference" data-example-control="NumberBox2" title="美元">美元</strong>）：<strong class="example-control-reference"
+                    data-example-control="NumberBox1" title="人民币">人民币</strong>和美元字段分别使用 ￥、$。</li>
+            <li><code>NumberSuffix</code>（<strong class="example-control-reference" data-example-control="NumberBox3" title="百分比">百分比</strong>）：<strong
+                    class="example-control-reference" data-example-control="NumberBox3" title="百分比">百分比</strong>字段使用 %，只控制显示单位，不自动除以 <code>100</code>。</li>
         </ul>
     </section>
 }

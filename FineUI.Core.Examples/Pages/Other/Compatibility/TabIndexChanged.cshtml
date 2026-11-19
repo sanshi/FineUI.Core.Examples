@@ -4,18 +4,28 @@
     ViewBag.Title = "选项卡切换与附加参数";
 }
 @section body {
-    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="220" ActiveTabIndex="0"
-        OnTabIndexChanged="@Url.Handler("Changed")"
+    <f:TabStrip ID="TabStrip1" IsFluid="true" Height="220" ActiveTabIndex="0" OnTabIndexChanged="@Url.Handler("Changed")"
         OnTabIndexChangedParameter1="@(Parameter.FromFunction("activeIndex", "getCompatibilityTabIndex"))">
         <Tabs>
-            <f:Tab Title="基本资料" BodyPadding="10"><Items><f:Label Text="基本资料内容" /></Items></f:Tab>
-            <f:Tab ID="TabExample2" Title="联系方式" BodyPadding="10"><Items><f:Label Text="联系方式内容" /></Items></f:Tab>
-            <f:Tab ID="TabExample3" Title="操作记录" BodyPadding="10"><Items><f:Label Text="操作记录内容" /></Items></f:Tab>
+            <f:Tab Title="基本资料" BodyPadding="10">
+                <Items>
+                    <f:Label Text="基本资料内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="TabExample2" Title="联系方式" BodyPadding="10">
+                <Items>
+                    <f:Label Text="联系方式内容" />
+                </Items>
+            </f:Tab>
+            <f:Tab ID="TabExample3" Title="操作记录" BodyPadding="10">
+                <Items>
+                    <f:Label Text="操作记录内容" />
+                </Items>
+            </f:Tab>
         </Tabs>
     </f:TabStrip>
     <br />
-    <f:Button ID="btnNext" Text="下一个标签" OnClick="@Url.Handler("Next")"
-        OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getCompatibilityTabIndex"))" />
+    <f:Button ID="btnNext" Text="下一个标签" OnClick="@Url.Handler("Next")" OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getCompatibilityTabIndex"))" />
     <br />
     <f:Label ID="labResult" Text="当前标签：0" />
 
@@ -29,20 +39,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>用旧 OnPost 接收当前标签索引，并可从后台切换下一个标签。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>中，点击联系方式标签，再点击<strong class="example-control-reference" data-example-control="btnNext" title="下一个标签">下一个标签</strong>。<br />结果：先显示索引 1，再切到<strong class="example-control-reference" data-example-control="TabExample3" title="操作记录">操作记录</strong>并显示索引 2；索引从 0 开始。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>保留旧 TabIndexChanged 和按钮 OnPost 写法，Parameter 每轮读取活动索引。</li>
-        <li>后台也可以通过 UIHelper 切换标签。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ActiveTabIndex / OnTabIndexChanged</code>（<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>用旧 OnPost 接收当前标签索引，并可从后台切换下一个标签。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="TabStrip1" title="选项卡">选项卡</strong>中，点击联系方式标签，再点击<strong
+                    class="example-control-reference" data-example-control="btnNext" title="下一个标签">下一个标签</strong>。<br />结果：先显示索引 1，再切到<strong
+                    class="example-control-reference" data-example-control="TabExample3" title="操作记录">操作记录</strong>并显示索引 2；索引从 0 开始。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>保留旧 TabIndexChanged 和按钮 OnPost 写法，Parameter 每轮读取活动索引。</li>
+            <li>后台也可以通过 UIHelper 切换标签。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ActiveTabIndex / OnTabIndexChanged</code>（<strong class="example-control-reference" data-example-control="TabStrip1"
+                    title="选项卡">选项卡</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

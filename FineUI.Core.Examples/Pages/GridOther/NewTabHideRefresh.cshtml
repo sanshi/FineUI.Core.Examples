@@ -9,7 +9,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="@("表格 - 页面加载时间：" + DateTime.Now.ToLongTimeString())" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="@("表格 - 页面加载时间：" + DateTime.Now.ToLongTimeString())" DataIDField="Id" DataTextField="Name"
+        EnableCheckBoxSelect="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -102,17 +103,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>子页关闭后刷新来源页签，演示编辑页与父页签之间的返回通知。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把关闭通知交回来源页</h3>
-    <ol>
-        <li>在框架主页面打开本例，点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>某行的编辑入口，再打开另一条记录。<br />结果：网址携带来源页签标识，子页可以在关闭时找到原页面；标题与记录参数对应。</li>
-        <li>在子页执行本例提供的关闭或保存后关闭操作。<br />结果：来源页签重新加载，显示它重新读取的页面数据；本例重点是关闭通知，不表示业务保存已接入。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>addExampleTab / id</code>（<strong>框架页签调用</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：通过框架页面提供的函数打开页签，id 决定复用哪一个标签；本例需要在框架中操作。</li>
-        <li><code>parenttabid</code>（<strong>父子页参数</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：网址携带来源页签标识，关闭回调按该标识刷新父页或调用父页更新函数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>子页关闭后刷新来源页签，演示编辑页与父页签之间的返回通知。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把关闭通知交回来源页</h3>
+        <ol>
+            <li>在框架主页面打开本例，点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>某行的编辑入口，再打开另一条记录。<br />结果：网址携带来源页签标识，子页可以在关闭时找到原页面；标题与记录参数对应。</li>
+            <li>在子页执行本例提供的关闭或保存后关闭操作。<br />结果：来源页签重新加载，显示它重新读取的页面数据；本例重点是关闭通知，不表示业务保存已接入。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>addExampleTab / id</code>（<strong>框架页签调用</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：通过框架页面提供的函数打开页签，id 决定复用哪一个标签；本例需要在框架中操作。</li>
+            <li><code>parenttabid</code>（<strong>父子页参数</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：网址携带来源页签标识，关闭回调按该标识刷新父页或调用父页更新函数。</li>
+        </ul>
+    </section>
 }

@@ -36,15 +36,19 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在文本框按回车时用 F.customEvent 发送自定义事件，把当前输入复制到另一字段。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>按回车触发后台事件</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="TextBox1" title="输入一些文字并按 ENTER 键">输入一些文字并按 ENTER 键</strong>输入 <code>本次输入</code>，按回车。<br />结果：自定义事件回发，后台读取第一个文本框，将同样文字写入<strong class="example-control-reference" data-example-control="TextBox2" title="第 2 个文本框">第 2 个文本框</strong>。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>F.customEvent()</code>（<strong class="example-control-reference" data-example-control="TextBox1" title="输入一些文字并按 ENTER 键">输入一些文字并按 ENTER 键</strong>）：传入本页后台识别的事件名，按回车回调发送；不是普通按钮点击。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在文本框按回车时用 F.customEvent 发送自定义事件，把当前输入复制到另一字段。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>按回车触发后台事件</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="TextBox1" title="输入一些文字并按 ENTER 键">输入一些文字并按 ENTER 键</strong>输入
+                <code>本次输入</code>，按回车。<br />结果：自定义事件回发，后台读取第一个文本框，将同样文字写入<strong class="example-control-reference" data-example-control="TextBox2"
+                    title="第 2 个文本框">第 2 个文本框</strong>。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>F.customEvent()</code>（<strong class="example-control-reference" data-example-control="TextBox1" title="输入一些文字并按 ENTER 键">输入一些文字并按 ENTER
+                    键</strong>）：传入本页后台识别的事件名，按回车回调发送；不是普通按钮点击。</li>
+        </ul>
+    </section>
 }

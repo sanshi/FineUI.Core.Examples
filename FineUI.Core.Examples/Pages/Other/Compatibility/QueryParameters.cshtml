@@ -8,12 +8,9 @@
     <f:SimpleForm ID="SimpleForm1" Title="参数提交" ShowHeader="true" BodyPadding="10">
         <Items>
             <f:TextBox ID="tbxNote" Label="备注" Text="首次备注" />
-            <f:Button ID="btnSubmit" Text="仅提交 Parameter" CssClass="marginr" OnClick="@Url.Handler("Save")"
-                OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
+            <f:Button ID="btnSubmit" Text="仅提交 Parameter" CssClass="marginr" OnClick="@Url.Handler("Save")" OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
                 OnClickParameter2="@(Parameter.FromData("source", "兼容示例"))" />
-            <f:Button ID="btnSubmitExplicit" Text="同时提交显式网址参数"
-                OnClick="@Url.Page(null, "Save", new { id = 105, dialog = 1 })"
-                OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
+            <f:Button ID="btnSubmitExplicit" Text="同时提交显式网址参数" OnClick="@Url.Page(null, "Save", new { id = 105, dialog = 1 })" OnClickParameter1="@(Parameter.FromFunction("note", "getCompatibilityNote"))"
                 OnClickParameter2="@(Parameter.FromData("source", "兼容示例"))" />
         </Items>
     </f:SimpleForm>
@@ -32,23 +29,27 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>区分当前地址中的查询参数与回发地址显式给出的参数。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="参数提交">参数提交</strong>中，填写备注，先点击<strong class="example-control-reference" data-example-control="btnSubmit" title="仅提交 Parameter">仅提交 Parameter</strong>，再点击<strong class="example-control-reference" data-example-control="btnSubmitExplicit" title="同时提交显式网址参数">同时提交显式网址参数</strong>。<br />结果：第一个按钮结果中的 id 和 dialog 均为 0；第二个为显式传入的 105 和 1。备注和来源按本次 Parameter 读取，不自动沿用地址中的 999 和 2。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>第一个按钮使用 Url.Handler，不自动携带页面网址中的 id 和 dialog，后台两个整数参数均为默认值 0。</li>
-        <li>第二个按钮使用 Url.Page，显式传入 id=105 和 dialog=1。</li>
-        <li>Parameter.FromFunction 每次提交时读取最新备注，Parameter.FromData 提供固定的来源参数。</li>
-        <li>两个按钮的参数写法均兼容严格 CSP。</li>
-        <li>页面支持附加分类路由值，分类内容含斜杠时可使用编码后的 %2F，不必手工重复编码。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Parameter.FromFunction / Parameter.FromData</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="参数提交">参数提交</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>区分当前地址中的查询参数与回发地址显式给出的参数。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="参数提交">参数提交</strong>中，填写备注，先点击<strong
+                    class="example-control-reference" data-example-control="btnSubmit" title="仅提交 Parameter">仅提交 Parameter</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnSubmitExplicit" title="同时提交显式网址参数">同时提交显式网址参数</strong>。<br />结果：第一个按钮结果中的 id 和
+                dialog 均为 0；第二个为显式传入的 105 和 1。备注和来源按本次 Parameter 读取，不自动沿用地址中的 999 和 2。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>第一个按钮使用 Url.Handler，不自动携带页面网址中的 id 和 dialog，后台两个整数参数均为默认值 0。</li>
+            <li>第二个按钮使用 Url.Page，显式传入 id=105 和 dialog=1。</li>
+            <li>Parameter.FromFunction 每次提交时读取最新备注，Parameter.FromData 提供固定的来源参数。</li>
+            <li>两个按钮的参数写法均兼容严格 CSP。</li>
+            <li>页面支持附加分类路由值，分类内容含斜杠时可使用编码后的 %2F，不必手工重复编码。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Parameter.FromFunction / Parameter.FromData</code>（<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="参数提交">参数提交</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

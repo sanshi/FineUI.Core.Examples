@@ -12,7 +12,8 @@
         <Items>
             <f:GroupPanel BoxFlex="1" Title="数据源" Layout="Fit" BodyPadding="0">
                 <Items>
-                    <f:Grid ID="Grid1" ShowBorder="false" ShowHeader="false" EnableCollapse="false" DataIDField="Id" ShowGridHeader="false" EnableRowLines="false" EnableAlternateRowColor="false">
+                    <f:Grid ID="Grid1" ShowBorder="false" ShowHeader="false" EnableCollapse="false" DataIDField="Id" ShowGridHeader="false"
+                        EnableRowLines="false" EnableAlternateRowColor="false">
                         <Columns>
                             <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" BoxFlex="1" />
                         </Columns>
@@ -29,7 +30,8 @@
             </f:Panel>
             <f:GroupPanel ID="GroupPanel1" BoxFlex="1" Title="已选择" Layout="Fit" BodyPadding="0">
                 <Items>
-                    <f:Grid ID="Grid2" BoxFlex="1" ShowBorder="false" ShowHeader="false" EnableCollapse="false" DataIDField="Id" ShowGridHeader="false" EnableRowLines="false" EnableAlternateRowColor="false">
+                    <f:Grid ID="Grid2" BoxFlex="1" ShowBorder="false" ShowHeader="false" EnableCollapse="false" DataIDField="Id" ShowGridHeader="false"
+                        EnableRowLines="false" EnableAlternateRowColor="false">
                         <Columns>
                             <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" BoxFlex="1" />
                         </Columns>
@@ -156,18 +158,23 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在左右两个列表之间移动记录，以右侧列表的完整内容作为最终选择。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>单项与全部移入移出</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="第 1 个表格">左侧待选列表</strong>选择一项，点击<strong class="example-control-reference" data-example-control="Button1" title="向右移动（右箭头）">向右移动</strong>。<br />结果：该记录加入<strong class="example-control-reference" data-example-control="Grid2" title="第 2 个表格">右侧已选列表</strong>，同时从左侧移除；向左移动则返回待选列表。</li>
-        <li>尝试双箭头的全部向右或全部向左入口。<br />结果：对应侧全部记录一起移动，仍按稳定行标识区分，不重复保留同一项。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnCheckSelected" title="选择了那些用户（自定义回发）">选择了那些用户（自定义回发）</strong>。<br />结果：客户端将右侧完整列表提交，后台显示最终已选用户，不只读取右侧当前高亮行。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>addNewRecords / deleteRows</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="第 1 个表格">第 1 个表格</strong>）：先在目标列表添加实际记录，再从来源列表移除；本页移动列表数据，不是复制一份 DOM。</li>
-        <li><code>DataIDField</code>（<strong>左右表格</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="第 1 个表格">第 1 个表格</strong>）：两个列表使用稳定行标识识别同一记录，右侧完整集合表示最终选择。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在左右两个列表之间移动记录，以右侧列表的完整内容作为最终选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>单项与全部移入移出</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1" title="第 1 个表格">左侧待选列表</strong>选择一项，点击<strong
+                    class="example-control-reference" data-example-control="Button1" title="向右移动（右箭头）">向右移动</strong>。<br />结果：该记录加入<strong
+                    class="example-control-reference" data-example-control="Grid2" title="第 2 个表格">右侧已选列表</strong>，同时从左侧移除；向左移动则返回待选列表。</li>
+            <li>尝试双箭头的全部向右或全部向左入口。<br />结果：对应侧全部记录一起移动，仍按稳定行标识区分，不重复保留同一项。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnCheckSelected"
+                    title="选择了那些用户（自定义回发）">选择了那些用户（自定义回发）</strong>。<br />结果：客户端将右侧完整列表提交，后台显示最终已选用户，不只读取右侧当前高亮行。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>addNewRecords / deleteRows</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="第 1 个表格">第 1 个表格</strong>）：先在目标列表添加实际记录，再从来源列表移除；本页移动列表数据，不是复制一份 DOM。</li>
+            <li><code>DataIDField</code>（<strong>左右表格</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="第 1 个表格">第 1
+                    个表格</strong>）：两个列表使用稳定行标识识别同一记录，右侧完整集合表示最终选择。</li>
+        </ul>
+    </section>
 }

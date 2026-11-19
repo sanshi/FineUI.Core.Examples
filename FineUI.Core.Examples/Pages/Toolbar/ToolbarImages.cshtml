@@ -79,21 +79,22 @@
 
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示工具栏图片加载完成后重新布局，使图片与按钮按实际尺寸排列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>核对图片加载后的排列</h3>
-    <ul>
-        <li>打开页面，对照<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>内图片及相邻按钮的位置。<br />结果：本页脚本等待工具栏图片加载完成，再重新布局面板，避免使用未加载时的图片尺寸。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>由于页面布局时图片尚未加载，所以会造成布局错乱</li>
-        <li>需要自己通过脚本在所有图片加载完毕后，重新对面板进行布局</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>load</code>（<strong>工具栏图片</strong>）：图片完成加载后才统计当前尺寸。</li>
-        <li><code>doLayout()</code>（<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>）：重新计算包含工具栏的面板布局。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示工具栏图片加载完成后重新布局，使图片与按钮按实际尺寸排列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>核对图片加载后的排列</h3>
+        <ul>
+            <li>打开页面，对照<strong class="example-control-reference" data-example-control="Panel1"
+                    title="面板">面板</strong>内图片及相邻按钮的位置。<br />结果：本页脚本等待工具栏图片加载完成，再重新布局面板，避免使用未加载时的图片尺寸。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>由于页面布局时图片尚未加载，所以会造成布局错乱</li>
+            <li>需要自己通过脚本在所有图片加载完毕后，重新对面板进行布局</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>load</code>（<strong>工具栏图片</strong>）：图片完成加载后才统计当前尺寸。</li>
+            <li><code>doLayout()</code>（<strong class="example-control-reference" data-example-control="Panel1" title="面板">面板</strong>）：重新计算包含工具栏的面板布局。</li>
+        </ul>
+    </section>
 }

@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" RowDataBoundFunction="onGrid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name"
+        RowDataBoundFunction="onGrid1RowDataBound">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -47,15 +48,17 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在客户端行绑定时禁止指定记录被选择，其他记录仍可正常选择。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>限制指定记录的选择</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中入学年份大于等于 2008 的行复选框，再选择一条允许选择的记录。<br />结果：受限制的记录不会因点击新增选择，允许选择的记录正常勾选。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>RowDataBoundFunction / unselectable</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：行绑定函数按入学年份设置不可选标记，不影响其他记录。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在客户端行绑定时禁止指定记录被选择，其他记录仍可正常选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>限制指定记录的选择</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>中入学年份大于等于 2008
+                的行复选框，再选择一条允许选择的记录。<br />结果：受限制的记录不会因点击新增选择，允许选择的记录正常勾选。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RowDataBoundFunction / unselectable</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：行绑定函数按入学年份设置不可选标记，不影响其他记录。</li>
+        </ul>
+    </section>
 }

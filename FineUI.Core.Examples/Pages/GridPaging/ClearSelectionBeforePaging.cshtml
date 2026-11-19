@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" AllowPaging="true" PageSize="5" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（跨页选中行）" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+        AllowPaging="true" PageSize="5" KeepCurrentSelection="true" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" ColumnID="Name" />
@@ -47,25 +48,36 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>浏览器分页时保留其他页面的选中行，避免换页后丢失选择。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>保留其他页面的选择</h3>
-    <ol>
-        <li>勾选<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>第一页的一行，再点击下一页。<br />结果：翻页后原来选中的行仍保留在选择集合中；浏览器切换到已加载数据的下一页。</li>
-        <li>再勾选第二页的一行。<br />结果：选择集合包含来自两页的记录。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRows" title="选中了哪些行">选中了哪些行</strong>。<br />结果：提示列出两页选中的行标识；返回第一页可看到对应记录仍被勾选。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>由后台选择并清空</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="btnSelectCell" title="选择第二页姓名单元格">选择第二页姓名单元格</strong>，再点击<strong class="example-control-reference" data-example-control="btnReadSelection" title="服务端读取选择">服务端读取选择</strong>。<br />结果：后台选择第二页的姓名单元格，读取结果同时包含该单元格与对应的行选择。</li>
-        <li>点击<strong class="example-control-reference" data-example-control="btnClearSelection" title="服务端清空全部选择">服务端清空全部选择</strong>，再读取选择。<br />结果：后台清空所有页面的行与单元格选择，读取结果为空。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>Id</code>，跨页选择缓存按业务主键区分记录，避免把不同页面中的相同行位置混为同一条数据。</li>
-        <li><code>ClearSelectionBeforePaging</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，翻页时不清空已有选择。</li>
-        <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，增加选择时保留原先已选中的记录。</li>
-        <li><code>KeepPagedSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，保留不在当前页中的选中记录。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>浏览器分页时保留其他页面的选中行，避免换页后丢失选择。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>保留其他页面的选择</h3>
+        <ol>
+            <li>勾选<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>第一页的一行，再点击下一页。<br />结果：翻页后原来选中的行仍保留在选择集合中；浏览器切换到已加载数据的下一页。</li>
+            <li>再勾选第二页的一行。<br />结果：选择集合包含来自两页的记录。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnShowSelectedRows"
+                    title="选中了哪些行">选中了哪些行</strong>。<br />结果：提示列出两页选中的行标识；返回第一页可看到对应记录仍被勾选。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>由后台选择并清空</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="btnSelectCell" title="选择第二页姓名单元格">选择第二页姓名单元格</strong>，再点击<strong
+                    class="example-control-reference" data-example-control="btnReadSelection"
+                    title="服务端读取选择">服务端读取选择</strong>。<br />结果：后台选择第二页的姓名单元格，读取结果同时包含该单元格与对应的行选择。</li>
+            <li>点击<strong class="example-control-reference" data-example-control="btnClearSelection"
+                    title="服务端清空全部选择">服务端清空全部选择</strong>，再读取选择。<br />结果：后台清空所有页面的行与单元格选择，读取结果为空。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为
+                <code>Id</code>，跨页选择缓存按业务主键区分记录，避免把不同页面中的相同行位置混为同一条数据。
+            </li>
+            <li><code>ClearSelectionBeforePaging</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>false</code>，翻页时不清空已有选择。</li>
+            <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为 <code>true</code>，增加选择时保留原先已选中的记录。</li>
+            <li><code>KeepPagedSelection</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（跨页选中行）">表格（跨页选中行）</strong>）：初始为
+                <code>true</code>，保留不在当前页中的选中记录。
+            </li>
+        </ul>
+    </section>
 }

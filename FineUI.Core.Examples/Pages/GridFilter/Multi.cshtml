@@ -13,8 +13,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
-            AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" AllowFilters="true"
+        OnFilterChanged="Grid1_FilterChanged">
         <Columns>
             <f:RowNumberField />
             <f:RenderField ColumnID="Name" HeaderText="姓名" DataField="Name" EnableFilter="true">
@@ -52,16 +52,19 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>为姓名配置多个条件，并选择满足任意一项或全部条件。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较任一与全部匹配</h3>
-    <ol>
-        <li>打开<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>的<strong>姓名</strong>列表头过滤菜单，设置包含<code>国</code>与包含<code>张</code>两个条件，使用任一匹配并确定。<br />结果：<strong>姓名</strong>包含国或张的记录保留；多个条件属于同一列，按当前匹配方式组合。</li>
-        <li>保留两个条件，将匹配方式改为全部并确定。<br />结果：只有同时满足两个包含条件的<strong>姓名</strong>才保留；无匹配记录时显示空表，不沿用之前结果。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableMultiConditions / MatcherDefault</code>（<strong>姓名列过滤器</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：允许同列多个条件，初始匹配方式为 <code>any</code>；any 表示任一条件满足，all 表示全部满足。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>为姓名配置多个条件，并选择满足任意一项或全部条件。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较任一与全部匹配</h3>
+        <ol>
+            <li>打开<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>的<strong>姓名</strong>列表头过滤菜单，设置包含<code>国</code>与包含<code>张</code>两个条件，使用任一匹配并确定。<br />结果：<strong>姓名</strong>包含国或张的记录保留；多个条件属于同一列，按当前匹配方式组合。
+            </li>
+            <li>保留两个条件，将匹配方式改为全部并确定。<br />结果：只有同时满足两个包含条件的<strong>姓名</strong>才保留；无匹配记录时显示空表，不沿用之前结果。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableMultiConditions / MatcherDefault</code>（<strong>姓名列过滤器</strong>，位于<strong class="example-control-reference"
+                    data-example-control="Grid1" title="表格">表格</strong>）：允许同列多个条件，初始匹配方式为 <code>any</code>；any 表示任一条件满足，all 表示全部满足。</li>
+        </ul>
+    </section>
 }

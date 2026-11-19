@@ -7,14 +7,15 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" Title="部门与通知" ShowHeader="true" BodyPadding="10">
         <Items>
-            <f:DropDownList ID="ddlDepartment" Name="Department" Label="部门" AutoPostBack="true"
-                OnSelectedIndexChanged="@Url.Handler("DepartmentChanged")" OnSelectedIndexChangedFields="ddlDepartment">
+            <f:DropDownList ID="ddlDepartment" Name="Department" Label="部门" AutoPostBack="true" OnSelectedIndexChanged="@Url.Handler("DepartmentChanged")"
+                OnSelectedIndexChangedFields="ddlDepartment">
                 <Items>
                     <f:ListItem Text="研发部" Value="dev" />
                     <f:ListItem Text="销售部" Value="sales" />
                 </Items>
             </f:DropDownList>
-            <f:CheckBox ID="cbxEnabled" Name="Enabled" Text="接收通知" AutoPostBack="true" OnCheckedChanged="@Url.Handler("EnabledChanged")" OnCheckedChangedFields="cbxEnabled" />
+            <f:CheckBox ID="cbxEnabled" Name="Enabled" Text="接收通知" AutoPostBack="true" OnCheckedChanged="@Url.Handler("EnabledChanged")"
+                OnCheckedChangedFields="cbxEnabled" />
         </Items>
     </f:SimpleForm>
     <div style="margin-top: 10px">
@@ -24,20 +25,22 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>让下拉选择和复选框变化分别调用旧 OnPost 处理程序。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="SimpleForm1" title="部门与通知">部门与通知</strong>中，选择另一个部门，再切换接收通知选项。<br />结果：各次变化分别回发，结果显示本次部门或布尔值，其它字段保留。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>下拉框与复选框继续通过 Url.Handler 调用本页 OnPost。</li>
-        <li>处理程序读取本次输入，使用 UIHelper 即时更新提示。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AutoPostBack / OnSelectedIndexChanged / OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="SimpleForm1" title="部门与通知">部门与通知</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>让下拉选择和复选框变化分别调用旧 OnPost 处理程序。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照兼容入口的实际结果</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="SimpleForm1"
+                    title="部门与通知">部门与通知</strong>中，选择另一个部门，再切换接收通知选项。<br />结果：各次变化分别回发，结果显示本次部门或布尔值，其它字段保留。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>下拉框与复选框继续通过 Url.Handler 调用本页 OnPost。</li>
+            <li>处理程序读取本次输入，使用 UIHelper 即时更新提示。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>AutoPostBack / OnSelectedIndexChanged / OnCheckedChanged</code>（<strong class="example-control-reference"
+                    data-example-control="SimpleForm1" title="部门与通知">部门与通知</strong>）：本页保留对应的旧处理入口，参数仍从本次提交值读取，响应更新当前页面控件。</li>
+        </ul>
+    </section>
 }

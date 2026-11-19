@@ -15,20 +15,23 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>由子窗口的旧保存脚本关闭自身并更新父页。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Window1" title="旧保存关窗写法">旧保存关窗写法</strong>中，<strong class="example-control-reference" data-example-control="btnOpen" title="打开子窗口">打开子窗口</strong>，在子页点击保存，重新打开后再测试关闭回调按钮。<br />结果：保存关闭后父页显示子窗口已保存并关闭；另一条回调显示关闭后的父页脚本已执行。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul class="compatibility-notes">
-        <li>子页用 ActiveWindow.GetHideReference 关闭自身，再执行父页的结果更新脚本。</li>
-        <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ActiveWindow.GetHideReference</code>（<strong class="example-control-reference" data-example-control="Window1" title="旧保存关窗写法">旧保存关窗写法</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>由子窗口的旧保存脚本关闭自身并更新父页。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>对照当前旧写法</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Window1" title="旧保存关窗写法">旧保存关窗写法</strong>中，<strong
+                    class="example-control-reference" data-example-control="btnOpen"
+                    title="打开子窗口">打开子窗口</strong>，在子页点击保存，重新打开后再测试关闭回调按钮。<br />结果：保存关闭后父页显示子窗口已保存并关闭；另一条回调显示关闭后的父页脚本已执行。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul class="compatibility-notes">
+            <li>子页用 ActiveWindow.GetHideReference 关闭自身，再执行父页的结果更新脚本。</li>
+            <li>本页已禁用 CSP 脚本限制，用于演示和验证旧脚本写法；启用严格 CSP 的页面应使用结构化动作或具名函数。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ActiveWindow.GetHideReference</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="旧保存关窗写法">旧保存关窗写法</strong>）：本页用于对照仍需兼容的旧写法；已明确关闭脚本 CSP 限制。严格 CSP 页面应使用结构化动作或具名函数。</li>
+        </ul>
+    </section>
 }

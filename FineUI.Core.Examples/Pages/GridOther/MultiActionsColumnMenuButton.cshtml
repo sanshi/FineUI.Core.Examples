@@ -37,8 +37,8 @@
     <br>
     <br>
 
-    <f:Window ID="Window1" Title="审批" Hidden="true" EnableIFrame="true"
-              EnableMaximize="true" EnableResize="true" Target="Top" OnClose="Window1_Close" IsModal="true" Width="850" Height="500">
+    <f:Window ID="Window1" Title="审批" Hidden="true" EnableIFrame="true" EnableMaximize="true" EnableResize="true" Target="Top" OnClose="Window1_Close"
+        IsModal="true" Width="850" Height="500">
     </f:Window>
 
 
@@ -180,18 +180,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>在同一个操作列中组合编辑、删除与 More 菜单，菜单操作仍能识别所属行。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>从同一列进入不同操作</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>操作列中的编辑图标。<br />结果：浏览器读取图标所在行的数据并打开审批窗口，窗口地址及标题对应当前记录。</li>
-        <li>关闭窗口，再点击某行的删除图标并确认。<br />结果：本页提交该行标识，后台提示点击的删除命令及对应记录；示例用提示说明命令处理，不代表已经删除数据库记录。</li>
-        <li>打开另一行的 More 菜单，选择操作一、操作二或操作三。<br />结果：公共菜单根据本次打开它的按钮确定所属行，后台提示所选操作及该行信息，不沿用上次打开菜单的记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>RendererFunction</code>（<strong>操作列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在一个单元格中生成多个操作入口，事件委托按入口类型分别处理。</li>
-        <li><code>menu.target</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：公共菜单从当前触发按钮找到所属行，不用全局变量记住上一次的行。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>在同一个操作列中组合编辑、删除与 More 菜单，菜单操作仍能识别所属行。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>从同一列进入不同操作</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>操作列中的编辑图标。<br />结果：浏览器读取图标所在行的数据并打开审批窗口，窗口地址及标题对应当前记录。</li>
+            <li>关闭窗口，再点击某行的删除图标并确认。<br />结果：本页提交该行标识，后台提示点击的删除命令及对应记录；示例用提示说明命令处理，不代表已经删除数据库记录。</li>
+            <li>打开另一行的 More 菜单，选择操作一、操作二或操作三。<br />结果：公共菜单根据本次打开它的按钮确定所属行，后台提示所选操作及该行信息，不沿用上次打开菜单的记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RendererFunction</code>（<strong>操作列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：在一个单元格中生成多个操作入口，事件委托按入口类型分别处理。</li>
+            <li><code>menu.target</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：公共菜单从当前触发按钮找到所属行，不用全局变量记住上一次的行。</li>
+        </ul>
+    </section>
 }

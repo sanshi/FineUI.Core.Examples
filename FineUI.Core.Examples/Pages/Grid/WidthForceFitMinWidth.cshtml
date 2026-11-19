@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）" DataIDField="Id" DataTextField="Name" IsViewPort="true" Margin="24" ForceFit="true">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）" DataIDField="Id"
+        DataTextField="Name" IsViewPort="true" Margin="24" ForceFit="true">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" MinWidth="100" MaxWidth="150" />
@@ -29,16 +30,24 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>按表格宽度压缩各列，同时用最小和最大宽度限制姓名列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>调整可用宽度核对列宽</h3>
-    <ol>
-        <li>缩窄再放宽<strong class="example-control-reference" data-example-control="Grid1" title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>所在区域。<br />结果：<strong>姓名</strong>列宽保持在本页的 100 到 150 范围内，其他列继续分配剩余空间；达到宽度限制后不再无限压缩<strong>姓名</strong>。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ForceFit</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>）：初始为 <code>true</code>，按可用空间重新分配列宽。</li>
-        <li><code>MinWidth / MaxWidth</code>（<strong>姓名列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>）：<strong>姓名</strong>列初始分别为 <code>100</code> 与 <code>150</code>，约束自动分配后的宽度。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>按表格宽度压缩各列，同时用最小和最大宽度限制姓名列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>调整可用宽度核对列宽</h3>
+        <ol>
+            <li>缩窄再放宽<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>所在区域。<br />结果：<strong>姓名</strong>列宽保持在本页的
+                100 到 150 范围内，其他列继续分配剩余空间；达到宽度限制后不再无限压缩<strong>姓名</strong>。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>ForceFit</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>）：初始为
+                <code>true</code>，按可用空间重新分配列宽。
+            </li>
+            <li><code>MinWidth / MaxWidth</code>（<strong>姓名列</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）">表格（ForceFit=true，各列宽度自适应）（注意对比[性别]和[姓名]列的区别）</strong>）：<strong>姓名</strong>列初始分别为
+                <code>100</code> 与 <code>150</code>，约束自动分配后的宽度。
+            </li>
+        </ul>
+    </section>
 }

@@ -16,7 +16,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableHeaderMenu="false"
-            _DataKeyNames="Id,Name,Gender,Major">
+        _DataKeyNames="Id,Name,Gender,Major">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -86,16 +86,20 @@
     </script>
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>关闭表头自带菜单入口，改用标题栏的管理列工具打开列选择菜单。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>使用自定义入口切换列显示</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="toolColumns" title="管理列">管理列</strong>，取消<strong><strong>入学年份</strong></strong>的勾选，再重新勾选。<br />结果：菜单控制对应列的显示与隐藏，数据不被删除；列全部隐藏时采用本页配置的提示样式。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableHeaderMenu</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为 <code>false</code>，初始关闭内置表头菜单入口。</li>
-        <li><code>showColumnsMenu</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：在管理列工具旁打开表格自己的列选择菜单，无需重新创建数据列。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>关闭表头自带菜单入口，改用标题栏的管理列工具打开列选择菜单。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>使用自定义入口切换列显示</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="toolColumns"
+                    title="管理列">管理列</strong>，取消<strong><strong>入学年份</strong></strong>的勾选，再重新勾选。<br />结果：菜单控制对应列的显示与隐藏，数据不被删除；列全部隐藏时采用本页配置的提示样式。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableHeaderMenu</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：初始为
+                <code>false</code>，初始关闭内置表头菜单入口。
+            </li>
+            <li><code>showColumnsMenu</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：在管理列工具旁打开表格自己的列选择菜单，无需重新创建数据列。</li>
+        </ul>
+    </section>
 }

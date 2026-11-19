@@ -8,12 +8,16 @@
 @section body {
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="自定义工具栏">
         <Items>
-            <f:HtmlEditor ID="HtmlEditor1" Label="正文" Height="320" Text="@initialHtml" Readonly="false" ToolbarSet="Basic"><Options><f:OptionItem Key="toolbar" JsonValue="@Model.ToolbarOption" /></Options></f:HtmlEditor>
-            
+            <f:HtmlEditor ID="HtmlEditor1" Label="正文" Height="320" Text="@initialHtml" Readonly="false" ToolbarSet="Basic">
+                <Options>
+                    <f:OptionItem Key="toolbar" JsonValue="@Model.ToolbarOption" />
+                </Options>
+            </f:HtmlEditor>
+
             <f:TextArea ID="TextArea1" Label="HTML 内容" Height="120" Text="@initialHtml" />
             <f:Button ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
             <f:Button ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
-            
+
         </Items>
     </f:SimpleForm>
 
@@ -48,13 +52,17 @@ function getSourceContent() {
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>工具栏配置参考</h3>
         <p>通过 <code>Options</code> 中键名为 <code>toolbar</code> 的数组 选择按钮，本例的配置如下：</p>
         <p><code>["bold", "italic", "underline", "|", "bulletList", "link", "source"]</code></p>
-        <p>显式配置会替换 <code>ToolbarSet</code> 预设，按钮按数组顺序显示；<code>"|"</code> 表示分隔线，需要源码按钮时将 <code>source</code> 放在最后。不设置此数组时使用 <code>Basic</code> 或 <code>Full</code> 预设。</p>
+        <p>显式配置会替换 <code>ToolbarSet</code> 预设，按钮按数组顺序显示；<code>"|"</code> 表示分隔线，需要源码按钮时将 <code>source</code> 放在最后。不设置此数组时使用 <code>Basic</code> 或
+            <code>Full</code> 预设。
+        </p>
         <p>以下分组适用于内置编辑器 <code>Editor.Default</code>（纯 JS 配置值为 <code>default</code>）；旧第三方编辑器仍使用各自的参数。</p>
         <p><strong>支持的工具栏项</strong>（分组、配置值与功能）</p>
         <ul>
             <li><strong>编辑操作</strong>：<span><code>undo</code>（撤销）</span> <span><code>redo</code>（重做）</span> <span><code>clear</code>（清除格式）</span></li>
             <li><strong>段落</strong>：<span><code>heading</code>（正文／标题）</span> <span><code>quote</code>（引用）</span> <span><code>rule</code>（水平分隔线）</span></li>
-            <li><strong>文字样式</strong>：<span><code>bold</code>（加粗）</span> <span><code>italic</code>（斜体）</span> <span><code>underline</code>（下划线）</span> <span><code>strike</code>（删除线）</span></li>
+            <li><strong>文字样式</strong>：<span><code>bold</code>（加粗）</span> <span><code>italic</code>（斜体）</span> <span><code>underline</code>（下划线）</span>
+                <span><code>strike</code>（删除线）</span>
+            </li>
             <li><strong>字体字号</strong>：<span><code>fontFamily</code>（字体）</span> <span><code>fontSize</code>（字号）</span></li>
             <li><strong>颜色</strong>：<span><code>color</code>（文字颜色）</span> <span><code>background</code>（背景颜色）</span></li>
             <li><strong>列表</strong>：<span><code>orderedList</code>（有序列表）</span> <span><code>bulletList</code>（无序列表）</span></li>
@@ -65,8 +73,12 @@ function getSourceContent() {
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：本页预设为 <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
-            <li><code>Options</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：<code>toolbar</code> 数组为 <code>bold</code>、<code>italic</code>、<code>underline</code>、|、<code>bulletList</code>、<code>link</code>、<code>source</code>；| 为分隔线，<code>source</code> 放最后。</li>
+            <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：本页预设为
+                <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。
+            </li>
+            <li><code>Options</code>（<strong class="example-control-reference" data-example-control="HtmlEditor1" title="正文">正文</strong>）：<code>toolbar</code>
+                数组为 <code>bold</code>、<code>italic</code>、<code>underline</code>、|、<code>bulletList</code>、<code>link</code>、<code>source</code>；|
+                为分隔线，<code>source</code> 放最后。</li>
         </ul>
     </section>
 }

@@ -10,8 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" Title="简单表单">
         <Items>
-            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd"
-                          Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true" DisplayType="DayRange">
+            <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd" Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true"
+                DisplayType="DayRange">
             </f:DatePicker>
             <f:Button CssClass="marginr" ID="btnMoveStart" Text="开始日期后移一天" OnClick="btnMoveStart_Click"></f:Button>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click"></f:Button>
@@ -58,11 +58,16 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd</code>，控制选中值的文字格式。</li>
-            <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：本页采用<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>面板，选择起点和终点。</li>
-            <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：设置范围起点，与终点共同组成当前范围。</li>
-            <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：设置范围终点，与起点共同组成当前范围。</li>
-            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
+            <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd</code>，控制选中值的文字格式。</li>
+            <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>）：本页采用<strong
+                    class="example-control-reference" data-example-control="DatePicker1" title="日期范围">日期范围</strong>面板，选择起点和终点。</li>
+            <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期范围">日期范围</strong>）：设置范围起点，与终点共同组成当前范围。</li>
+            <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期范围">日期范围</strong>）：设置范围终点，与起点共同组成当前范围。</li>
+            <li><code>Required</code>（<strong class="example-control-reference" data-example-control="DatePicker1"
+                    title="日期范围">日期范围</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
         </ul>
     </section>
 }

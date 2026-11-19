@@ -10,7 +10,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉列表（多选）" ShowHeader="true">
         <Items>
-            <f:DropDownList ID="DropDownList1" EnableMultiSelect="true" AutoShowClearIcon="true" OnClearIconClick="DropDownList1_ClearIconClick" MultiSelectMode="Tags">
+            <f:DropDownList ID="DropDownList1" EnableMultiSelect="true" AutoShowClearIcon="true" OnClearIconClick="DropDownList1_ClearIconClick"
+                MultiSelectMode="Tags">
                 <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
                 <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
                 <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
@@ -49,8 +50,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：有内容时显示清空图标。 本页声明值为 <code>true</code>。</li>
-            <li><code>OnClearIconClick</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：点击清空图标后请求后台处理。 本页声明值为 <code>DropDownList1</code><code>_ClearIconClick</code>。</li>
+            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：有内容时显示清空图标。 本页声明值为 <code>true</code>。</li>
+            <li><code>OnClearIconClick</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：点击清空图标后请求后台处理。 本页声明值为 <code>DropDownList1</code><code>_ClearIconClick</code>。</li>
         </ul>
     </section>
 }

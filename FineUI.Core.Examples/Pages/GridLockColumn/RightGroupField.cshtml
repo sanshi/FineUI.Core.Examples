@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-            AllowColumnLocking="true" ColumnLockingRight="true" AllowSorting="true" Width="1000">
+        AllowColumnLocking="true" ColumnLockingRight="true" AllowSorting="true" Width="1000">
         <Columns>
             <f:RowNumberField />
             <f:RenderField _HeaderTextRawHtml="姓名<br>（换行）" DataField="Name" SortField="Name" EnableLock="true" Locked="true" />
@@ -46,17 +46,20 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>对分组表头使用右侧列锁定，锁定分组中的列时保持分组结构完整。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按分组整体锁定</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong>考试成绩</strong>等<strong>分组</strong>的叶子列表头菜单选择锁定，再横向滚动。<br />结果：同组子列一起进入锁定区域，<strong>分组</strong>标题覆盖对应子列；其余非锁定列继续滚动。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <p>注：当分组表头的某一列变成锁定列时，则该分组表头中的其他列都会自动变成锁定列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>GroupField.Columns / Locked</code>（<strong>列锁定配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：子列归属于<strong>分组</strong>表头；锁定处理保留<strong>分组</strong>边界，不把一个组头拆成无关标题。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>对分组表头使用右侧列锁定，锁定分组中的列时保持分组结构完整。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按分组整体锁定</h3>
+        <ul>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong><strong>考试成绩</strong>等<strong>分组</strong>的叶子列表头菜单选择锁定，再横向滚动。<br />结果：同组子列一起进入锁定区域，<strong>分组</strong>标题覆盖对应子列；其余非锁定列继续滚动。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：当分组表头的某一列变成锁定列时，则该分组表头中的其他列都会自动变成锁定列。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>GroupField.Columns / Locked</code>（<strong>列锁定配置</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：子列归属于<strong>分组</strong>表头；锁定处理保留<strong>分组</strong>边界，不把一个组头拆成无关标题。</li>
+        </ul>
+    </section>
 }

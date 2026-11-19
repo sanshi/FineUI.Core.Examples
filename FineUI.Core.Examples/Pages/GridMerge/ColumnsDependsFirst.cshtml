@@ -54,20 +54,23 @@
 
 }
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>后续列只在第一列已经合并的区域内继续合并相同值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>沿依赖边界核对合并</h3>
-    <ul>
-        <li>沿<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong><strong><strong>所学专业</strong></strong>、<strong>分组</strong>和<strong>注册日期</strong>等配置列逐行查看合并边界。<br />结果：后续列各自比较相同值，但都不越过第一列合并块；不要求逐级依赖紧邻前一列。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>[<strong>分组</strong>]列的单元格合并，依赖于[<strong>所学专业</strong>]列的单元格是否处于合并状态；</li>
-        <li>[<strong>注册日期</strong>]列的单元格合并，依赖于[<strong>所学专业</strong>]列的单元格是否处于合并状态。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>mergeColumns / dependsFirst</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1" title="表格">表格</strong>）：选项 dependsFirst 为 true，所有后续列依赖第一列边界。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>后续列只在第一列已经合并的区域内继续合并相同值。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>沿依赖边界核对合并</h3>
+        <ul>
+            <li>沿<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong><strong><strong>所学专业</strong></strong>、<strong>分组</strong>和<strong>注册日期</strong>等配置列逐行查看合并边界。<br />结果：后续列各自比较相同值，但都不越过第一列合并块；不要求逐级依赖紧邻前一列。
+            </li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <ul>
+            <li>[<strong>分组</strong>]列的单元格合并，依赖于[<strong>所学专业</strong>]列的单元格是否处于合并状态；</li>
+            <li>[<strong>注册日期</strong>]列的单元格合并，依赖于[<strong>所学专业</strong>]列的单元格是否处于合并状态。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>mergeColumns / dependsFirst</code>（<strong>页面合并脚本</strong>，作用于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格">表格</strong>）：选项 dependsFirst 为 true，所有后续列依赖第一列边界。</li>
+        </ul>
+    </section>
 }

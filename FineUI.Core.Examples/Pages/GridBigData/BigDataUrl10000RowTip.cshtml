@@ -10,9 +10,8 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（网址数据源，10,000行）" DataIDField="Id" DataTextField="Name"
-            DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=10000&type=simple")"
-            EnableCheckBoxSelect="true" Height="500" EnableBigData="true" EnableBigDataRowTip="false" FixedRowHeight="true"
-            EnableBigDataRowTip="false" PagingToolbarVisible="false">
+        DataUrl="@Url.Content("~/GridBigData/BigDataUrlData?total=10000&type=simple")" EnableCheckBoxSelect="true" Height="500" EnableBigData="true" EnableBigDataRowTip="false" FixedRowHeight="true"
+        EnableBigDataRowTip="false" PagingToolbarVisible="false">
         <Columns>
             <f:RowNumberField Width="50" />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -67,18 +66,24 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>跳转到指定记录，并用页面标签自定义显示当前可见行范围与总数。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>定位后更新自定义范围提示</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="nbRowNumber" title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference" data-example-control="btnGoToRow" title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000 行附近并渲染该位置的记录，不必逐页翻到该行。<strong class="example-control-reference" data-example-control="labRowTip" title="可见行范围提示">可见行范围提示</strong>显示新的可见行范围及总行数。</li>
-        <li>继续滚动表格。<br />结果：行范围提示随视口更新，不始终停留在刚输入的行号；此处统计总数为本页完整示例数据。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>scrollToRow</code>（<strong>定位脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：方法接收从 0 开始的行索引，本页把输入行号减 1 后再传入。</li>
-        <li><code>EnableBigDataRowTip</code>（<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>false</code>，本页关闭默认悬浮行数提示，定位或自定义标签按本页脚本处理。</li>
-        <li><code>bigdatarowtip</code>（<strong>范围提示脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1" title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：事件提供可见起止行号及总行数，脚本用这些值更新自定义标签。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>跳转到指定记录，并用页面标签自定义显示当前可见行范围与总数。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>定位后更新自定义范围提示</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="nbRowNumber" title="转到行">转到行</strong>输入<code>5000</code>，点击<strong
+                    class="example-control-reference" data-example-control="btnGoToRow" title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000
+                行附近并渲染该位置的记录，不必逐页翻到该行。<strong class="example-control-reference" data-example-control="labRowTip" title="可见行范围提示">可见行范围提示</strong>显示新的可见行范围及总行数。
+            </li>
+            <li>继续滚动表格。<br />结果：行范围提示随视口更新，不始终停留在刚输入的行号；此处统计总数为本页完整示例数据。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>scrollToRow</code>（<strong>定位脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：方法接收从 0 开始的行索引，本页把输入行号减 1 后再传入。</li>
+            <li><code>EnableBigDataRowTip</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：初始为 <code>false</code>，本页关闭默认悬浮行数提示，定位或自定义标签按本页脚本处理。</li>
+            <li><code>bigdatarowtip</code>（<strong>范围提示脚本</strong>，位于<strong class="example-control-reference" data-example-control="Grid1"
+                    title="表格（网址数据源，10,000行）">表格（网址数据源，10,000行）</strong>）：事件提供可见起止行号及总行数，脚本用这些值更新自定义标签。</li>
+        </ul>
+    </section>
 }
